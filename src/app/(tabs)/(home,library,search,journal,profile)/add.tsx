@@ -7,6 +7,7 @@ import { uploadBook } from '../../../jobs';
 import { Button, Chip } from '../../../components/ui';
 import { usePad } from '../../../playback';
 import { c, themed } from '../../../theme';
+import { watchForReadyBooks } from '../../../ready';
 
 const HINTS = [
   'Bullet points',
@@ -41,6 +42,7 @@ export default function AddBook() {
     if (!file || !title.trim()) return;
     setBusy(true);
     try {
+      watchForReadyBooks().catch(() => {});
       const slug = await uploadBook({ ...file, title: title.trim(), instructions: explain ? instructions.trim() : '', lang, explanations: explain });
       router.replace({ pathname: '/jobs', params: { fresh: slug } });
     } catch (e) {

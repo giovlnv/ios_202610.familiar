@@ -4,7 +4,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { File, Paths } from 'expo-file-system';
 import { AudioPlayer, createAudioPlayer } from 'expo-audio';
 import { useTextToSpeech } from 'react-native-executorch';
-import { englishVoice, wav } from '../kokoro';
+import { englishVoice, saveM4a } from '../kokoro';
 import { usePlayback } from '../playback';
 import { chosenVoice, langOf } from '../languages';
 import { c, themed } from '../theme';
@@ -36,7 +36,7 @@ export default function ListenBar({ text }: { text: string }) {
   const start = async () => {
     if (state === 'playing') return (player.current?.pause(), setState('paused'));
     if (state === 'paused') return (player.current?.play(), setState('playing'));
-    const f = new File(Paths.cache, `explain-${hash(chosenVoice(langOf('en')) + text)}.wav`);
+    const f = new File(Paths.cache, `explain-${hash(chosenVoice(langOf('en')) + text)}.m4a`);
     if (f.exists) return play(f.uri);
     if (!tts.isReady || !tts.synthesize) return setMsg('The voice is still loading…');
     setState('making');
@@ -48,7 +48,7 @@ export default function ListenBar({ text }: { text: string }) {
         rate = ch.sampleRate;
         setMsg(`Preparing ${ch.chunkIndex + 1} of ${ch.totalChunks}`);
       }
-      f.write(wav(parts, rate));
+      await saveM4a(parts, rate, f);
       setMsg('');
       play(f.uri);
     } catch (e) {

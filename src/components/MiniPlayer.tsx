@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { usePlayback } from '../playback';
@@ -7,7 +7,7 @@ import { c, themed } from '../theme';
 import { explainStart, explanationsOn, useExplanations } from '../explanations';
 
 export default function MiniPlayer() {
-  const { item, sec, t, status, toggle, skip, stop, setMiniH } = usePlayback();
+  const { item, sec, t, status, toggle, skip, stop, setMiniH, preparing } = usePlayback();
   const section = item?.book.sections[sec];
   useExplanations();
   const endT = (item && !explanationsOn(item.folder) && explainStart(section)) || status.duration || 0;
@@ -36,7 +36,7 @@ export default function MiniPlayer() {
           <Ionicons name="arrow-undo" size={22} color={c.text} />
         </Pressable>
         <Pressable onPress={toggle} hitSlop={8}>
-          <Ionicons name={status.playing ? 'pause' : 'play'} size={28} color={c.gold} />
+          {preparing ? <ActivityIndicator color={c.gold} /> : <Ionicons name={status.playing ? 'pause' : 'play'} size={28} color={c.gold} />}
         </Pressable>
         <Pressable onPress={stop} hitSlop={8}>
           <Ionicons name="close" size={22} color={c.dim} />

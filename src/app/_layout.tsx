@@ -6,6 +6,7 @@ import { pushToGithub } from "../sync";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { PlaybackProvider } from "../playback";
+import "../ready";
 import ToastHost from "../components/Toast";
 import { Splash } from "../components/Splash";
 import { getOnboarding } from "../familiar";

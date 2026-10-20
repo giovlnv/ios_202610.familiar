@@ -1,6 +1,7 @@
 import { Directory, File, Paths } from 'expo-file-system';
 import * as DocumentPicker from 'expo-document-picker';
 import { unzipSync } from 'fflate';
+import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
 
 const MAJOR = [
   'The Fool', 'The Magician', 'The High Priestess', 'The Empress', 'The Emperor', 'The Hierophant', 'The Lovers', 'The Chariot',
@@ -140,7 +141,7 @@ export function matchCard(fileName: string): string | undefined {
   return num !== undefined && Number(num) <= 21 ? `m${num.padStart(2, '0')}` : undefined;
 }
 
-function storeImages(name: string, items: { name: string; write: (dest: File) => void }[], source: string) {
+async function storeImages(name: string, items: { name: string; write: (dest: File) => void }[], source: string) {
   const id = slug(name);
   const dir = new Directory(root(), id);
   dir.create({ idempotent: true });
@@ -155,6 +156,7 @@ function storeImages(name: string, items: { name: string; write: (dest: File) =>
     const dest = new File(dir, `${cid}.jpg`);
     if (dest.exists) dest.delete();
     it.write(dest);
+    await shrink(dest);
     cards.add(cid);
   }
   if (!cards.size) {
@@ -163,6 +165,18 @@ function storeImages(name: string, items: { name: string; write: (dest: File) =>
   }
   save(id, { name, source, cards: [...cards] });
   return { id, matched: cards.size, skipped };
+}
+
+const MAX_W = 1200;
+async function shrink(f: File) {
+  try {
+    const img = await ImageManipulator.manipulate(f.uri).renderAsync();
+    if (img.width <= MAX_W) return;
+    const out = await ImageManipulator.manipulate(f.uri).resize({ width: MAX_W }).renderAsync();
+    const saved = await out.saveAsync({ format: SaveFormat.JPEG, compress: 0.9 });
+    f.delete();
+    new File(saved.uri).move(f);
+  } catch {}
 }
 
 const isImage = (n: string) => /\.(jpe?g|png|webp|heic)$/i.test(n) && !n.split('/').pop()!.startsWith('.');
@@ -193,7 +207,7 @@ export async function importDeckFromUrl(name: string, url: string) {
   if (tmp.exists) tmp.delete();
   await File.downloadFileAsync(url, tmp);
   try {
-    return fromZip(name, await tmp.bytes(), url);
+    return await fromZip(name, await tmp.bytes(), url);
   } finally {
     tmp.delete();
   }

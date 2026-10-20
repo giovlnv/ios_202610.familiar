@@ -13,11 +13,6 @@ export default function Development() {
       <View style={ss.row}>
         <Btn label="Run setup again" onPress={() => router.push('/onboarding')} />
       </View>
-      <Text style={ss.h2}>Voice lab</Text>
-      <Text style={ss.p}>Test the Kokoro voice running on this iPhone, offline.</Text>
-      <View style={ss.row}>
-        <Btn label="Open voice lab" onPress={() => router.push('/voice-lab')} />
-      </View>
       <Text style={ss.h2}>Version</Text>
       <View style={ss.card}>
         <Text style={ss.meta}>App {Constants.expoConfig?.version ?? '?'} · runtime {Updates.runtimeVersion ?? '?'}</Text>

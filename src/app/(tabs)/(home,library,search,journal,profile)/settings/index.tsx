@@ -42,7 +42,7 @@ export default function Settings() {
       <View style={[ss.menu, { marginTop: 6 }]}>
         <MenuRow icon="language-outline" title="Languages" sub="App language, audiobook voices" to="/settings/languages" />
         <MenuRow icon="server-outline" title="Storage" sub="Audio on this iPhone, temporary files" to="/settings/storage" />
-        <MenuRow icon="construct-outline" title="Development" sub="Setup, voice lab, version" to="/settings/development" />
+        <MenuRow icon="construct-outline" title="Development" sub="Setup, version" to="/settings/development" />
       </View>
     </Page>
   );

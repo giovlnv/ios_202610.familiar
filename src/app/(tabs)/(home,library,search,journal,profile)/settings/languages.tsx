@@ -19,6 +19,7 @@ import {
   voices,
 } from '../../../../languages';
 import { mb } from '../../../../storage';
+import { getVoiceMode, setVoiceMode, VoiceMode } from '../../../../voicer';
 import { Page, ss } from '../../../../components/settings-ui';
 import { c, themed } from '../../../../theme';
 
@@ -79,6 +80,24 @@ export default function Languages() {
               {!u.ready && <Text style={ss.meta}>Work in progress</Text>}
             </View>
             {prefs.ui === u.id && <Ionicons name="checkmark" size={20} color={c.gold} />}
+          </Pressable>
+        ))}
+      </View>
+
+      <Text style={ss.label}>Make book voices</Text>
+      <View style={[ss.menu, { marginTop: 6 }]}>
+        {(
+          [
+            ['phone', 'On this iPhone', 'Made while you listen, two sections ahead. Works offline.'],
+            ['github', 'On GitHub', 'The whole book is made at once; uses GitHub minutes.'],
+          ] as [VoiceMode, string, string][]
+        ).map(([m, title, sub]) => (
+          <Pressable key={m} style={s.row} onPress={() => (setVoiceMode(m), refresh())}>
+            <View style={{ flex: 1 }}>
+              <Text style={s.title}>{title}</Text>
+              <Text style={ss.meta}>{sub}</Text>
+            </View>
+            {getVoiceMode() === m && <Ionicons name="checkmark" size={20} color={c.gold} />}
           </Pressable>
         ))}
       </View>

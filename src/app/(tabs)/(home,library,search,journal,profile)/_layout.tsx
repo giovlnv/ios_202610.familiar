@@ -47,7 +47,6 @@ export default function TabStack({ segment }: { segment: string }) {
       <Stack.Screen name="title/[id]" options={{ title: "" }} />
       <Stack.Screen name="review/[year]" options={{ title: "" }} />
       <Stack.Screen name="add" options={{ title: "Add a book" }} />
-      <Stack.Screen name="voice-lab" options={{ title: "Voice lab" }} />
       <Stack.Screen name="jobs" options={{ title: "Books in progress" }} />
       <Stack.Screen name="job/[slug]" options={{ title: "" }} />
       <Stack.Screen name="familiars" options={{ title: "Your familiars" }} />

@@ -1,6 +1,20 @@
+import { File, Paths } from 'expo-file-system';
+import AudioEncoder from '../modules/audio-encoder';
 import { KokoroTtsModel, models } from 'react-native-executorch';
 
 export const englishVoice = models.textToSpeech.KOKORO.EN_US.COREML_FP32 as KokoroTtsModel<string>;
+
+export const BITRATE = 48000;
+
+export async function saveM4a(parts: Float32Array[], rate: number, dest: File) {
+  const tmp = new File(Paths.cache, `${dest.name}.wav`);
+  tmp.write(wav(parts, rate));
+  try {
+    await AudioEncoder.toM4a(tmp.uri, dest.uri, BITRATE);
+  } finally {
+    tmp.delete();
+  }
+}
 
 export const wav = (parts: Float32Array[], rate: number) => {
   const n = parts.reduce((a, p) => a + p.length, 0);

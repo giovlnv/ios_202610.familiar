@@ -4,6 +4,8 @@ import { audioSource, clearOldExplanationAudio, LibraryItem, loadProgress, refre
 import { getToken } from './sync';
 import { addListening } from './tracker';
 import { explainStart, explanationsOn, useExplanations } from './explanations';
+import { isPhoneBook, liveFor, needsVoice, onVoicer, prepareBook, snapshot, want } from './voicer';
+import VoicerHost from './components/VoicerHost';
 
 export type SleepKind = 'off' | 'section' | 'explain' | number;
 type Sleep = { kind: 'min'; until: number } | { kind: 'section' } | { kind: 'explain'; sec: number; end: number } | null;
@@ -26,6 +28,7 @@ type Playback = {
   sleep: Sleep;
   sleepLeft: number | null;
   setSleep: (k: SleepKind) => void;
+  preparing: boolean;
 };
 
 const setVolume = (p: AudioPlayer, v: number) => {
@@ -55,6 +58,11 @@ export function PlaybackProvider({ children }: { children: ReactNode }) {
   useExplanations();
   const skipFrom = item && !explanationsOn(item.folder) ? explainStart(section) : undefined;
   const skipped = useRef('');
+  const liveDur = useRef<number | null>(null);
+  const [liveLen, setLiveLen] = useState<number | null>(null);
+  const setLive = (v: number | null) => ((liveDur.current = v), setLiveLen(v));
+  const waiting = useRef(false);
+  const [, bump] = useState(0);
 
   const save = (i: number, time: number) =>
     item && saveProgress(item.folder, { section: i, time, done: [...done.current] });
@@ -65,9 +73,49 @@ export function PlaybackProvider({ children }: { children: ReactNode }) {
     clearOldExplanationAudio();
   }, []);
 
+  const tryLive = () => {
+    if (!item || !section || liveDur.current === null) return;
+    const l = liveFor(item.folder, section.id) ?? (needsVoice(item.folder, item.book, section) ? null : { done: true, seconds: 0 });
+    if (!l) return;
+    const at = liveDur.current > 0 ? t : (pending.current?.time ?? 0);
+    const play = waiting.current || status.playing || !!pending.current?.play;
+    if (l.done) {
+      setLive(null);
+      waiting.current = false;
+      pending.current = { time: at, play };
+      return player.replace(audioSource(item.folder, section.audio));
+    }
+    const first = liveDur.current === 0 && l.seconds >= Math.max(6, at + 6);
+    const grow = liveDur.current > 0 && (waiting.current || liveDur.current - t < 4) && l.seconds > liveDur.current + 3;
+    if (!first && !grow) return;
+    const snap = snapshot(liveFor(item.folder, section.id)!);
+    setLive(snap.seconds);
+    waiting.current = false;
+    pending.current = { time: at, play };
+    player.replace({ uri: snap.uri });
+  };
+
+  useEffect(
+    () =>
+      onVoicer(() => {
+        bump((n) => n + 1);
+        tryLive();
+      }),
+  );
+
   useEffect(() => {
     if (!item || !section) return;
-    player.replace(audioSource(item.folder, section.audio));
+    if (isPhoneBook(item.book)) prepareBook(item.book);
+    if (needsVoice(item.folder, item.book, section)) {
+      if (liveDur.current !== 0) player.pause();
+      liveDur.current = 0;
+      queueMicrotask(() => (setLiveLen(0), tryLive()));
+    } else {
+      liveDur.current = null;
+      queueMicrotask(() => setLiveLen(null));
+      player.replace(audioSource(item.folder, section.audio));
+    }
+    want(item.folder, item.book, sec);
     player.setActiveForLockScreen(true, { title: section.title, artist: item.book.title, albumTitle: item.book.title });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item, sec]);
@@ -99,7 +147,7 @@ export function PlaybackProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  const ready = !!section && status.isLoaded && Math.abs((status.duration || 0) - section.duration) < 3;
+  const ready = !!section && status.isLoaded && Math.abs((status.duration || 0) - (liveLen ?? section.duration)) < 3;
   useEffect(() => {
     if (!ready || !pending.current) return;
     const p = pending.current;
@@ -119,6 +167,10 @@ export function PlaybackProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (!status.didJustFinish || !item || !section) return;
+    if (liveDur.current !== null) {
+      waiting.current = true;
+      return tryLive();
+    }
     done.current.add(section.id);
     const stopHere = sleep && sleep.kind !== 'min';
     if (stopHere) queueMicrotask(() => setSleepState(null));
@@ -207,6 +259,7 @@ export function PlaybackProvider({ children }: { children: ReactNode }) {
     prevT.current = t;
     if (status.playing && dt > 0 && dt < 3) heard.current += dt / rate;
     if (heard.current > 30) flushHeard();
+    if (liveDur.current) tryLive();
     if (Math.abs(t - lastSave.current) > 5) {
       lastSave.current = t;
       save(sec, t);
@@ -229,7 +282,11 @@ export function PlaybackProvider({ children }: { children: ReactNode }) {
     open,
     goTo,
     skip: (d) => player.seekTo(Math.max(0, Math.min(t + d, status.duration || t + d))),
-    toggle: () => (status.playing ? player.pause() : player.play()),
+    toggle: () => {
+      if (liveDur.current === 0) pending.current = { time: pending.current?.time ?? 0, play: !pending.current?.play };
+      else if (status.playing) player.pause();
+      else player.play();
+    },
     setRate: (r) => {
       setRateState(r);
       player.setPlaybackRate(r, 'high');
@@ -239,6 +296,7 @@ export function PlaybackProvider({ children }: { children: ReactNode }) {
     sleep,
     sleepLeft,
     setSleep,
+    preparing: liveLen === 0 || (liveLen !== null && status.didJustFinish),
     stop: () => {
       setSleepState(null);
       setVolume(player, 1);
@@ -249,5 +307,10 @@ export function PlaybackProvider({ children }: { children: ReactNode }) {
       setItem(null);
     },
   };
-  return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
+  return (
+    <Ctx.Provider value={value}>
+      {item && isPhoneBook(item.book) && <VoicerHost lang={(item.book as { lang?: string }).lang ?? 'en'} />}
+      {children}
+    </Ctx.Provider>
+  );
 }

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
+  ActivityIndicator,
   Alert,
   FlatList,
   ScrollView,
@@ -86,7 +87,7 @@ export default function Player({
   const { book, folder } = item;
   const familiar = useMemo(() => familiarFor(loadTracker().books.find((b) => b.audio === folder)?.paths), [folder]);
   const pb = usePlayback();
-  const { player, status, t, rate, goTo, skip, toggle, sleep, sleepLeft, setSleep } = pb;
+  const { player, status, t, rate, goTo, skip, toggle, sleep, sleepLeft, setSleep, preparing } = pb;
   const [sleepOpen, setSleepOpen] = useState(false);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => pb.open(item, start), [item.folder, start]);
@@ -462,12 +463,16 @@ export default function Player({
           />
           <Btn icon="arrow-undo" label="15" onPress={() => skip(-15)} />
           <Pressable style={s.play} onPress={toggle}>
-            <Ionicons
-              name={status.playing ? "pause" : "play"}
-              size={30}
-              color={c.bg}
-              style={!status.playing && { marginLeft: 4 }}
-            />
+            {preparing ? (
+              <ActivityIndicator color={c.bg} />
+            ) : (
+              <Ionicons
+                name={status.playing ? "pause" : "play"}
+                size={30}
+                color={c.bg}
+                style={!status.playing && { marginLeft: 4 }}
+              />
+            )}
           </Pressable>
           <Btn icon="arrow-redo" label="15" onPress={() => skip(15)} />
           <Btn
