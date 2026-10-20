@@ -196,7 +196,7 @@ export default function Languages() {
           );
         })}
       </View>
-      <Text style={ss.p}>Read by the iPhone's own voice, since Kokoro has none for these. Better-quality voices: iPhone Settings → Accessibility → Spoken Content → Voices.</Text>
+      <Text style={ss.p}>Read by the iPhone’s own voice, since Kokoro has none for these. Better-quality voices: iPhone Settings → Accessibility → Spoken Content → Voices.</Text>
     </Page>
   );
 }
