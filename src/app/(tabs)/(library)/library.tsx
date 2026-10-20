@@ -27,6 +27,7 @@ import { Chip, Cover, Stars } from "../../../components/ui";
 import { PATHS } from "../../../familiar";
 import { c, themed } from "../../../theme";
 import DiaryList from "../../../components/DiaryList";
+import EmptyState from '../../../components/EmptyState';
 
 type Filter = "all" | Status | `shelf:${string}` | `path:${string}`;
 const FILTERS: Filter[] = ["all", "reading", "want", "read", "dnf"];
@@ -161,11 +162,10 @@ export default function Library() {
         columnWrapperStyle={{ gap: 14 }}
         contentContainerStyle={{ gap: 18, paddingBottom: 30 + pad }}
         ListEmptyComponent={
-          <Text style={s.empty}>
-            {shelf
-              ? "This shelf is empty. Add books from their page."
-              : "No audiobooks yet. Add a book below to turn it into one."}
-          </Text>
+          <EmptyState
+            pose={shelf ? 'idle' : 'reading'}
+            text={shelf ? 'This shelf is empty. Add books from their page.' : 'No audiobooks yet. Add a book below to turn it into one.'}
+          />
         }
         ListFooterComponent={
           <View style={{ gap: 10, marginTop: 10 }}>

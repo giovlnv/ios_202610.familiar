@@ -7,6 +7,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { load, Tracker } from '../tracker';
 import { Cover, fmtDate, Stars } from '../components/ui';
 import { c, themed } from '../theme';
+import EmptyState from './EmptyState';
 
 export default function DiaryList({ header }: { header?: ReactElement }) {
   const pad = usePad();
@@ -32,7 +33,7 @@ export default function DiaryList({ header }: { header?: ReactElement }) {
       ListHeaderComponent={header}
       contentContainerStyle={{ paddingBottom: 40 + pad }}
       ListEmptyComponent={
-        <Text style={s.empty}>Your diary is empty. Open a book and tap “Log” when you finish it.</Text>
+        <EmptyState pose="reading" text="Your diary is empty. Open a book and tap “Log” when you finish it." />
       }
       renderSectionHeader={({ section }) => (
         <Text style={s.month}>
@@ -67,7 +68,6 @@ export default function DiaryList({ header }: { header?: ReactElement }) {
 
 const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg },
-  empty: { color: c.dim, fontSize: 16, lineHeight: 22, marginTop: 20 },
   month: { color: c.gold, fontWeight: '700', fontSize: 13, letterSpacing: 1, textTransform: 'uppercase', marginTop: 18, marginBottom: 6 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 8, borderBottomWidth: StyleSheet.hairlineWidth, borderColor: c.line },
   day: { color: c.text, fontSize: 20, fontWeight: '700', width: 28, textAlign: 'center' },

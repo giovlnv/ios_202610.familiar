@@ -11,6 +11,9 @@ import CardSheet from '../../../components/CardSheet';
 import { Chip, fmtDate } from '../../../components/ui';
 import { usePad } from '../../../playback';
 import { c, themed } from '../../../theme';
+import EmptyState from '../../../components/EmptyState';
+
+const TAROT = ['tarot'];
 
 const WEEK = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 const day = (r: Reading) => r.at.slice(0, 10);
@@ -151,12 +154,12 @@ export default function Journal() {
       renderSectionHeader={({ section }) => <Text style={s.day}>{section.title}</Text>}
       renderItem={({ item }) => <ReadingRow r={item} j={j} />}
       ListEmptyComponent={
-        <Pressable style={s.empty} onPress={create}>
-          <Ionicons name="add-circle-outline" size={28} color={c.gold} />
-          <Text style={s.emptyText}>
-            {j.readings.length ? 'No readings here.' : 'Log your first reading: question, spread, cards and what you saw in them.'}
-          </Text>
-        </Pressable>
+        <EmptyState
+          paths={TAROT}
+          onPress={create}
+          action="Log a reading"
+          text={j.readings.length ? 'No readings here.' : 'Log your first reading: question, spread, cards and what you saw in them.'}
+        />
       }
     />
   );
@@ -238,8 +241,6 @@ const s = themed(() => ({
   viewText: { color: c.dim, fontWeight: '600' },
   chips: { gap: 8, paddingTop: 12 },
   day: { color: c.gold, fontWeight: '700', fontSize: 13, letterSpacing: 1, textTransform: 'uppercase', marginTop: 18, marginBottom: 8 },
-  empty: { alignItems: 'center', gap: 10, padding: 30 },
-  emptyText: { color: c.dim, textAlign: 'center', lineHeight: 20 },
   cal: { backgroundColor: c.panel, borderRadius: 12, padding: 12, marginTop: 12 },
   calHead: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 },
   calTitle: { color: c.text, fontSize: 16, fontWeight: '700' },

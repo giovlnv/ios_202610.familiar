@@ -21,6 +21,7 @@ import { Book, Consult, Note } from '../types';
 import { fmtTime } from '../format';
 import { toast } from './Toast';
 import { c, F, themed } from '../theme';
+import EmptyState from './EmptyState';
 
 export type AskDraft = { section: string; para: number; time: number; quote: string; parent?: Consult };
 
@@ -159,10 +160,7 @@ export function ConsultList({
           keyExtractor={(x) => String(x.id)}
           contentContainerStyle={{ paddingBottom: 40 }}
           ListEmptyComponent={
-            <Text style={s.empty}>
-              Tap “Ask” while listening, or long-press a paragraph, to ask Claude about a passage. Your question opens in
-              the Claude app; copy the answer and paste it back here.
-            </Text>
+            <EmptyState text="Tap “Ask” while listening, or long-press a paragraph, to ask Claude about a passage. Your question opens in the Claude app; copy the answer and paste it back here." />
           }
           renderItem={({ item: x }) => {
             const sec = book.sections.find((y) => y.id === x.section);

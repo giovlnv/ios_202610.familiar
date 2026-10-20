@@ -8,6 +8,9 @@ import CardSheet from '../../../components/CardSheet';
 import { fmtDate } from '../../../components/ui';
 import { c, F, themed } from '../../../theme';
 import { Page, ss } from '../../../components/settings-ui';
+import EmptyState from '../../../components/EmptyState';
+
+const TAROT = ['tarot'];
 
 function Bars({ rows }: { rows: readonly (readonly [string, number])[] }) {
   const max = Math.max(1, ...rows.map((r) => r[1]));
@@ -44,7 +47,7 @@ export default function JournalStats() {
   if (!st.total)
     return (
       <Page>
-        <Text style={ss.p}>No readings yet. Your stats grow as you log readings and cards of the day.</Text>
+        <EmptyState paths={TAROT} text="No readings yet. Your stats grow as you log readings and cards of the day." />
       </Page>
     );
   return (

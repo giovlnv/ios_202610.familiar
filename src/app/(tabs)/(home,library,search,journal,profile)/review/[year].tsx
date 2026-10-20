@@ -11,6 +11,7 @@ import { router, Stack, useLocalSearchParams } from "expo-router";
 import { daysBetween, load, TBook } from "../../../../tracker";
 import { Cover, Stars } from "../../../../components/ui";
 import { c, F, themed } from "../../../../theme";
+import EmptyState from '../../../../components/EmptyState';
 
 const MONTHS = [
   "January",
@@ -86,7 +87,7 @@ export default function Review() {
         ))}
       </View>
 
-      {!read.length && <Text style={s.p}>Nothing logged in {year} yet.</Text>}
+      {!read.length && <EmptyState pose="sleeping" text={`Nothing logged in ${year} yet.`} />}
 
       {best.length > 0 && (
         <>

@@ -6,6 +6,7 @@ import { addList, load, Tracker } from '../../../tracker';
 import { Cover } from '../../../components/ui';
 import { usePad } from '../../../playback';
 import { c, themed } from '../../../theme';
+import EmptyState from '../../../components/EmptyState';
 
 export const newList = (then: (id: string) => void) =>
   Alert.prompt('New list', 'e.g. Best tarot books', (name) => name?.trim() && then(addList(name).id));
@@ -34,7 +35,7 @@ export default function Lists() {
           }}
         />
       }
-      ListEmptyComponent={<Text style={s.dim}>Ranked lists you order yourself, with a note per book. Tap + to start one.</Text>}
+      ListEmptyComponent={<EmptyState text="Ranked lists you order yourself, with a note per book. Tap + to start one." />}
       renderItem={({ item: l }) => (
         <Pressable style={s.card} onPress={() => open(l.id)}>
           <View style={s.covers}>
