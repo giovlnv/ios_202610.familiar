@@ -22,6 +22,7 @@ import { fmtTime } from '../format';
 import { toast } from './Toast';
 import { c, F, themed } from '../theme';
 import EmptyState from './EmptyState';
+import type { Saved, Store } from '../explain';
 
 export type AskDraft = { section: string; para: number; time: number; quote: string; parent?: Consult };
 
@@ -103,6 +104,9 @@ export function ConsultList({
   onDelete,
   onSaveNote,
   onExport,
+  explained,
+  onJumpExplained,
+  onSaveExplainedNote,
 }: {
   visible: boolean;
   book: Book;
@@ -115,9 +119,20 @@ export function ConsultList({
   onDelete: (cst: Consult) => void;
   onSaveNote: (cst: Consult, keep: boolean) => void;
   onExport: () => void;
+  explained: Store;
+  onJumpExplained: (section: string, item: Saved) => void;
+  onSaveExplainedNote: (section: string, item: Saved) => void;
 }) {
+  const [tab, setTab] = useState<'consults' | 'explained'>('consults');
   const [filter, setFilter] = useState<'all' | 'asked' | 'answered'>('all');
+  const explainedList = Object.entries(explained)
+    .flatMap(([section, v]) => [
+      ...(v.section ? [{ section, item: v.section, whole: true }] : []),
+      ...(v.passages ?? []).map((item) => ({ section, item, whole: false })),
+    ])
+    .sort((a, b) => b.item.at - a.item.at);
   const [open, setOpen] = useState<number | null>(null);
+  const [openEx, setOpenEx] = useState<string | null>(null);
   const data = [...consults].filter((x) => filter === 'all' || x.status === filter).sort((a, b) => b.id - a.id);
 
   const paste = async (cst: Consult) => {
@@ -132,10 +147,11 @@ export function ConsultList({
       <SafeAreaView style={s.wrap} edges={['bottom']}>
         <View style={s.top}>
           <Text style={s.h2}>
-            <Ionicons name="sparkles-outline" size={20} color={c.claude} /> Claude consults
+            <Ionicons name={tab === 'consults' ? 'sparkles-outline' : 'bulb-outline'} size={20} color={c.claude} />{' '}
+            {tab === 'consults' ? 'Claude consults' : 'Explanations'}
           </Text>
           <View style={s.topRight}>
-            {!!consults.length && (
+            {tab === 'consults' && !!consults.length && (
               <Pressable onPress={onExport} hitSlop={8}>
                 <Text style={s.link}>Export</Text>
               </Pressable>
@@ -145,6 +161,54 @@ export function ConsultList({
             </Pressable>
           </View>
         </View>
+        <View style={s.filters}>
+          {(['consults', 'explained'] as const).map((t) => (
+            <Pressable key={t} onPress={() => setTab(t)} style={[s.chip, tab === t && s.chipOn]}>
+              <Text style={[s.chipText, tab === t && s.chipTextOn]}>
+                {t === 'consults' ? `Consults (${consults.length})` : `Explanations (${explainedList.length})`}
+              </Text>
+            </Pressable>
+          ))}
+        </View>
+        {tab === 'explained' ? (
+          <FlatList
+            data={explainedList}
+            keyExtractor={(x) => `${x.section}-${x.item.at}`}
+            contentContainerStyle={{ paddingBottom: 40 }}
+            ListEmptyComponent={<EmptyState text="Explanations you save while listening appear here." />}
+            renderItem={({ item: { section, item, whole } }) => {
+              const sec = book.sections.find((y) => y.id === section);
+              const key = `${section}-${item.at}`;
+              const expanded = openEx === key;
+              return (
+                <Pressable style={s.card} onPress={() => setOpenEx(expanded ? null : key)}>
+                  <Text style={s.meta}>
+                    {sec?.title} · {whole ? 'whole section' : 'passage'}
+                  </Text>
+                  {!!item.quote && (
+                    <Text style={s.quote} numberOfLines={expanded ? undefined : 2}>
+                      “{item.quote}”
+                    </Text>
+                  )}
+                  <Text style={s.answer} numberOfLines={expanded ? undefined : 3} selectable={expanded}>
+                    {item.text}
+                  </Text>
+                  {expanded && (
+                    <View style={[s.actions, { marginTop: 8 }]}>
+                      {item.noted ? (
+                        <Text style={{ color: c.dim, alignSelf: 'center' }}>Saved as note</Text>
+                      ) : (
+                        <Btn label="Save as note" primary onPress={() => onSaveExplainedNote(section, item)} />
+                      )}
+                      <Btn label="Go to passage" onPress={() => onJumpExplained(section, item)} />
+                    </View>
+                  )}
+                </Pressable>
+              );
+            }}
+          />
+        ) : (
+          <>
         <View style={s.filters}>
           {(['all', 'asked', 'answered'] as const).map((f) => (
             <Pressable key={f} onPress={() => setFilter(f)} style={[s.chip, filter === f && s.chipOn]}>
@@ -221,6 +285,8 @@ export function ConsultList({
             );
           }}
         />
+          </>
+        )}
       </SafeAreaView>
     </Modal>
   );

@@ -37,7 +37,8 @@ import CardSheet from "./CardSheet";
 import { cardName } from "../decks";
 import TextStyleSheet from "./TextStyleSheet";
 import ExplainSheet, { ExplainTarget } from "./ExplainSheet";
-import { loadExplained, saveExplained } from "../explain";
+import { toast } from "./Toast";
+import { loadExplained, markExplainedNoted, saveExplained } from "../explain";
 import {
   allExplanationsOn,
   bookOverride,
@@ -760,6 +761,31 @@ export default function Player({
           );
         }}
         onExport={exportConsults}
+        explained={explained}
+        onJumpExplained={(id, x) => {
+          const i = book.sections.findIndex((y) => y.id === id);
+          goTo(i, x.para !== undefined ? (book.sections[i]?.paras[x.para]?.start ?? 0) : 0);
+          setPanel("none");
+        }}
+        onSaveExplainedNote={(id, x) => {
+          const sec = book.sections.find((y) => y.id === id);
+          const next = [
+            ...notes,
+            {
+              id: String(Date.now()),
+              section: id,
+              time: x.para !== undefined ? (sec?.paras[x.para]?.start ?? 0) : 0,
+              para: x.para ?? 0,
+              quote: x.quote ?? sec?.title ?? "",
+              text: `Explanation: ${x.text}`,
+              created: Date.now(),
+            },
+          ];
+          setNotes(next);
+          saveNotes(folder, next);
+          setExplained(markExplainedNoted(folder, id, x.at));
+          toast("Saved as note");
+        }}
       />
     </SafeAreaView>
   );

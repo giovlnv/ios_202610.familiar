@@ -2,8 +2,8 @@ import { Directory, File, Paths } from 'expo-file-system';
 import { Book, Section } from './types';
 import { read, write } from './theme';
 
-export type Saved = { para?: number; quote?: string; text: string; at: number };
-type Store = Record<string, { section?: Saved; passages?: Saved[] }>;
+export type Saved = { para?: number; quote?: string; text: string; at: number; noted?: boolean };
+export type Store = Record<string, { section?: Saved; passages?: Saved[] }>;
 
 const file = (folder: string) => new File(new Directory(Paths.document, 'books', folder), 'explained.json');
 
@@ -14,6 +14,16 @@ export function loadExplained(folder: string): Store {
   } catch {
     return {};
   }
+}
+
+export function markExplainedNoted(folder: string, sectionId: string, at: number) {
+  const all = loadExplained(folder);
+  const cur = all[sectionId];
+  if (!cur) return all;
+  if (cur.section?.at === at) cur.section.noted = true;
+  cur.passages?.forEach((p) => p.at === at && (p.noted = true));
+  file(folder).write(JSON.stringify(all));
+  return all;
 }
 
 export function saveExplained(folder: string, sectionId: string, item: Saved, kind: 'passage' | 'section') {
