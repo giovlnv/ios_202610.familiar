@@ -93,6 +93,7 @@ export default function AddBook() {
       <View style={s.row}>
         <Chip label="English" on={lang === 'en'} onPress={() => setLang('en')} />
         <Chip label="Português (BR)" on={lang === 'pt'} onPress={() => setLang('pt')} />
+        <Chip label="Français" on={lang === 'fr'} onPress={() => setLang('fr')} />
       </View>
       <Button label={busy ? 'Uploading…' : 'Upload & start'} icon="cloud-upload-outline" primary onPress={busy ? () => {} : upload} />
       <Text style={s.small}>
