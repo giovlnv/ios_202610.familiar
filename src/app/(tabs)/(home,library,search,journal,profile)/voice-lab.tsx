@@ -7,6 +7,7 @@ import { KokoroTtsModel, models, useTextToSpeech } from "react-native-executorch
 import { c, themed } from "../../../theme";
 import { wav } from "../../../kokoro";
 import { usePad, usePlayback } from "../../../playback";
+import { listBooks } from "../../../storage";
 
 type Lang = "EN" | "PT";
 type Backend = "COREML_FP32" | "XNNPACK_FP32";
@@ -25,6 +26,16 @@ const config = (lang: Lang, backend: Backend) =>
   (lang === "EN" ? models.textToSpeech.KOKORO.EN_US : models.textToSpeech.KOKORO.PT)[backend] as KokoroTtsModel<string>;
 
 const sec = (ms: number) => `${(ms / 1000).toFixed(1)} s`;
+const min = (ms: number) => `${(ms / 60000).toFixed(1)} min`;
+
+const CHAPTERS = ["The Fool", "Common Sense"];
+const chapter = (title: string) => {
+  for (const { book } of listBooks()) {
+    const hit = book.sections.find((x) => x.title.toLowerCase().includes(title.toLowerCase()));
+    if (hit) return hit.paras.filter((p) => p.kind === "book" || p.kind === "head" || p.kind === "title").map((p) => p.text).join("\n\n");
+  }
+  return "";
+};
 
 export default function VoiceLab() {
   const pad = usePad();
@@ -65,9 +76,13 @@ export default function VoiceLab() {
     player.current.play();
   };
 
-  const run = async (repeat: number) => {
+  const run = async (repeat: number, name?: string) => {
     if (!tts.synthesize || busy) return;
-    const input = Array(repeat).fill(text.trim()).join(" ");
+    const input = name ? chapter(name) : Array(repeat).fill(text.trim()).join(" ");
+    if (!input) return setResults((r) => [`${name}: not found in your library`, ...r]);
+    const quarters: number[] = [];
+    let qAudio = 0;
+    let qStart = Date.now();
     const parts: Float32Array[] = [];
     let audio = 0;
     let first = 0;
@@ -80,12 +95,20 @@ export default function VoiceLab() {
         parts.push(ch.audio);
         audio += ch.duration;
         rate = ch.sampleRate;
-        setBusy(`Chunk ${ch.chunkIndex + 1} of ${ch.totalChunks}`);
+        qAudio += ch.duration;
+        if (name && quarters.length < 3 && (ch.chunkIndex + 1) / ch.totalChunks >= (quarters.length + 1) / 4) {
+          quarters.push(qAudio / ((Date.now() - qStart) / 1000));
+          qAudio = 0;
+          qStart = Date.now();
+        }
+        setBusy(`Chunk ${ch.chunkIndex + 1} of ${ch.totalChunks} · ${min(Date.now() - t0)}`);
       }
       const ms = Date.now() - t0;
       const f = new File(Paths.cache, `voice-lab-${t0}.wav`);
       f.write(wav(parts, rate));
-      const line = `${lang} · ${voice} · ${backend === "COREML_FP32" ? "Core ML" : "XNNPACK"} · ${input.length} chars · first audio ${sec(first)} · total ${sec(ms)} · audio ${audio.toFixed(1)} s · ${(audio / (ms / 1000)).toFixed(1)}× real time`;
+      if (name) quarters.push(qAudio / ((Date.now() - qStart) / 1000));
+      const head = name ? `Chapter test: ${name} · total ${min(ms)} · audio ${(audio / 60).toFixed(1)} min · by quarter ${quarters.map((q) => `${q.toFixed(1)}×`).join(" / ")}\n` : "";
+      const line = `${head}${lang} · ${voice} · ${backend === "COREML_FP32" ? "Core ML" : "XNNPACK"} · ${input.length} chars · first audio ${sec(first)} · total ${sec(ms)} · audio ${audio.toFixed(1)} s · ${(audio / (ms / 1000)).toFixed(1)}× real time`;
       setResults((r) => [line, ...r]);
       play(f.uri);
     } catch (e) {
@@ -136,6 +159,10 @@ export default function VoiceLab() {
         <View style={s.row}>
           <Btn label="Test passage" primary onPress={() => run(1)} disabled={!tts.isReady || !!busy} />
           <Btn label="Long test (×8)" onPress={() => run(8)} disabled={!tts.isReady || !!busy} />
+          {lang === "EN" &&
+            CHAPTERS.map((ch) => (
+              <Btn key={ch} label={`Chapter test: ${ch}`} onPress={() => run(1, ch)} disabled={!tts.isReady || !!busy} />
+            ))}
           {!!busy && <Btn label="Stop" onPress={() => tts.synthesizeStop?.()} />}
         </View>
         {!!busy && <Text style={s.meta}>{busy}</Text>}
