@@ -1,5 +1,6 @@
 import { Directory, File, Paths } from 'expo-file-system';
 import { download, KokoroTtsModel, models } from 'react-native-executorch';
+import AudioEncoder from '../modules/audio-encoder';
 import { listBooks } from './storage';
 import { Book } from './types';
 
@@ -56,10 +57,23 @@ export function bookLanguages() {
   return langs;
 }
 
-/** Book languages the user can pick: English plus every downloaded audiobook language. */
+/** Languages read by the iOS system voice (no Kokoro voice yet). */
+export const SYSTEM_LANGS = [{ book: 'ar', name: 'Arabic', native: 'العربية', locale: 'ar-SA', rtl: true }];
+export const systemLang = (book?: string) => SYSTEM_LANGS.find((l) => l.book === book);
+export const systemVoices = (locale: string) => {
+  try {
+    return AudioEncoder.systemVoices(locale.slice(0, 2));
+  } catch {
+    return [];
+  }
+};
+export const isRtl = (book?: string) => !!systemLang(book)?.rtl;
+
+/** Book languages the user can pick: English, every downloaded audiobook language, and system-voice languages. */
 export const bookLangChoices = () => {
   const seen = new Set<string>();
-  return AUDIO_LANGS.filter((l) => (l.id === 'en' || installed(l)) && !seen.has(l.book) && seen.add(l.book));
+  const kokoro = AUDIO_LANGS.filter((l) => (l.id === 'en' || installed(l)) && !seen.has(l.book) && seen.add(l.book));
+  return [...kokoro.map((l) => ({ book: l.book, native: l.native })), ...SYSTEM_LANGS.filter((l) => systemVoices(l.locale).length)];
 };
 
 export const keptByBooks = (l: AudioLang) => l.id === 'en' || (l.book !== 'en' && bookLanguages().has(l.book));

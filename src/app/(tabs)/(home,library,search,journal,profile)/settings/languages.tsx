@@ -14,6 +14,8 @@ import {
   removeLanguage,
   removeVoice,
   setLangPrefs,
+  SYSTEM_LANGS,
+  systemVoices,
   UI_LANGS,
   voiceName,
   voices,
@@ -178,7 +180,23 @@ export default function Languages() {
             </Pressable>
           ))}
       </View>
-      <Text style={ss.p}>Arabic has no on-phone voice yet.</Text>
+      <Text style={ss.label}>iPhone voices</Text>
+      <View style={[ss.menu, { marginTop: 6 }]}>
+        {SYSTEM_LANGS.map((l) => {
+          const vs = systemVoices(l.locale);
+          return (
+            <View key={l.book} style={s.row}>
+              <View style={{ flex: 1 }}>
+                <Text style={s.title}>{l.name}</Text>
+                <Text style={ss.meta}>
+                  {l.native} · {vs.length ? vs.map((v) => v.name).join(', ') : 'no voice on this iPhone'}
+                </Text>
+              </View>
+            </View>
+          );
+        })}
+      </View>
+      <Text style={ss.p}>Read by the iPhone's own voice, since Kokoro has none for these. Better-quality voices: iPhone Settings → Accessibility → Spoken Content → Voices.</Text>
     </Page>
   );
 }

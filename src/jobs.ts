@@ -69,7 +69,7 @@ export async function uploadBook(o: { uri: string; name: string; title: string; 
   await put(`inbox/${slug}/book.${ext}`, new File(o.uri).base64Sync(), `Upload ${o.title}`);
   await put(
     `inbox/${slug}/request.json`,
-    b64(JSON.stringify({ title: o.title, instructions: o.instructions, lang: o.lang, explanations: o.explanations, voices: getVoiceMode(), created: Date.now() })),
+    b64(JSON.stringify({ title: o.title, instructions: o.instructions, lang: o.lang, explanations: o.explanations, voices: o.lang === 'ar' ? 'phone' : getVoiceMode(), created: Date.now() })),
     `Request ${o.title}`
   );
   return slug;

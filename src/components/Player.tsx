@@ -56,6 +56,7 @@ import { SleepKind, usePlayback } from "../playback";
 import { FamiliarArt } from "./Familiar";
 import { familiarFor } from "../familiar";
 import { load as loadTracker } from "../tracker";
+import { isRtl } from "../languages";
 
 const fmt = (t: number) => {
   const h = Math.floor(t / 3600);
@@ -85,6 +86,7 @@ export default function Player({
   onClose: () => void;
 }) {
   const { book, folder } = item;
+  const rtl = isRtl((book as { lang?: string }).lang);
   const familiar = useMemo(() => familiarFor(loadTracker().books.find((b) => b.audio === folder)?.paths), [folder]);
   const pb = usePlayback();
   const { player, status, t, rate, goTo, skip, toggle, sleep, sleepLeft, setSleep, preparing } = pb;
@@ -372,7 +374,7 @@ export default function Player({
                   {card.reversed ? " · reversed" : ""}
                 </Text>
               </Pressable>
-              <Passage para={!expOn && isExplain(section.paras[current]?.kind ?? "") ? undefined : section.paras[current]} t={t} ts={ts} height={passageH} />
+              <Passage para={!expOn && isExplain(section.paras[current]?.kind ?? "") ? undefined : section.paras[current]} t={t} ts={ts} height={passageH} rtl={rtl} />
             </View>
           ) : (
             <View style={{ alignItems: "center", gap: 14 }}>
@@ -409,7 +411,7 @@ export default function Player({
               style={[s.para, { marginBottom: ts.gap }, index === current && s.paraOn]}
             >
               <Text
-                style={[bodyText(ts, index === current), styleFor(p, ts)]}
+                style={[bodyText(ts, index === current), styleFor(p, ts), rtl && s.rtl]}
               >
                 {asked.has(index) && (
                   <Ionicons
@@ -809,7 +811,7 @@ const styleFor = (p: Para, t: TextStyle) => {
           : null;
 };
 
-function Passage({ para, t, ts, height }: { para?: Para; t: number; ts: TextStyle; height: number }) {
+function Passage({ para, t, ts, height, rtl }: { para?: Para; t: number; ts: TextStyle; height: number; rtl: boolean }) {
   const LINE = lineHeight(ts);
   const ref = useRef<ScrollView>(null);
   const [contentH, setContentH] = useState(0);
@@ -829,7 +831,7 @@ function Passage({ para, t, ts, height }: { para?: Para; t: number; ts: TextStyl
   return (
     <View style={[s.passage, { height }]}>
       <ScrollView ref={ref} scrollEnabled={false} showsVerticalScrollIndicator={false} onContentSizeChange={(_, h) => setContentH(h)}>
-        <Text style={[bodyText(ts, true), para && styleFor(para, ts)]}>{para?.text}</Text>
+        <Text style={[bodyText(ts, true), para && styleFor(para, ts), rtl && s.rtl]}>{para?.text}</Text>
       </ScrollView>
     </View>
   );
@@ -937,6 +939,7 @@ const s = themed(() => ({
   pText: { color: c.dim, fontSize: 17, lineHeight: 26 },
   pTextOn: { color: c.text },
   kTitle: { fontSize: 22, fontWeight: "700", color: c.gold },
+  rtl: { writingDirection: "rtl", textAlign: "right" },
   kHead: {
     fontSize: 15,
     fontWeight: "700",

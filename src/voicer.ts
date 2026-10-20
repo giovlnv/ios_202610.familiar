@@ -1,5 +1,6 @@
 import { Directory, File, Paths } from 'expo-file-system';
 import type { KokoroTtsChunk } from 'react-native-executorch';
+import AudioEncoder from '../modules/audio-encoder';
 import { saveM4a, wav } from './kokoro';
 import { read, write } from './theme';
 import { Book, Para, Section } from './types';
@@ -113,4 +114,30 @@ async function run() {
     if (live?.done || stopped) live = null;
     running = false;
   }
+}
+
+/** iOS system voice for languages Kokoro has no voice for (Arabic). Yields one chunk per text. */
+export function systemSynth(language: string, voice: string | null): Synth {
+  return async function* (text: string) {
+    const out = new File(Paths.cache, `sys-${Date.now()}.wav`);
+    await AudioEncoder.speakToWav(text, language, voice, out.uri);
+    const bytes = await out.bytes();
+    out.delete();
+    const v = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+    let o = 12;
+    let rate = 22050;
+    while (o + 8 <= v.byteLength) {
+      const id = String.fromCharCode(v.getUint8(o), v.getUint8(o + 1), v.getUint8(o + 2), v.getUint8(o + 3));
+      const size = v.getUint32(o + 4, true);
+      if (id === 'fmt ') rate = v.getUint32(o + 12, true);
+      if (id === 'data') {
+        const n = Math.floor(Math.min(size, v.byteLength - o - 8) / 2);
+        const audio = new Float32Array(n);
+        for (let i = 0; i < n; i++) audio[i] = v.getInt16(o + 8 + i * 2, true) / 0x8000;
+        yield { audio, sampleRate: rate, duration: n / rate, chunkIndex: 0, totalChunks: 1 };
+        return;
+      }
+      o += 8 + size + (size % 2);
+    }
+  };
 }
