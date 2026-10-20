@@ -8,6 +8,7 @@ import { Button, Chip } from '../../../components/ui';
 import { usePad } from '../../../playback';
 import { c, themed } from '../../../theme';
 import { watchForReadyBooks } from '../../../ready';
+import { bookLangChoices } from '../../../languages';
 
 const HINTS = [
   'Bullet points',
@@ -91,9 +92,10 @@ export default function AddBook() {
       )}
       <Text style={s.label}>Language</Text>
       <View style={s.row}>
-        <Chip label="English" on={lang === 'en'} onPress={() => setLang('en')} />
-        <Chip label="Português (BR)" on={lang === 'pt'} onPress={() => setLang('pt')} />
-        <Chip label="Français" on={lang === 'fr'} onPress={() => setLang('fr')} />
+        {bookLangChoices().map((l) => (
+          <Chip key={l.book} label={l.native} on={lang === l.book} onPress={() => setLang(l.book)} />
+        ))}
+        <Chip label="More languages…" onPress={() => router.push('/settings/languages')} />
       </View>
       <Button label={busy ? 'Uploading…' : 'Upload & start'} icon="cloud-upload-outline" primary onPress={busy ? () => {} : upload} />
       <Text style={s.small}>

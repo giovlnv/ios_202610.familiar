@@ -56,6 +56,12 @@ export function bookLanguages() {
   return langs;
 }
 
+/** Book languages the user can pick: English plus every downloaded audiobook language. */
+export const bookLangChoices = () => {
+  const seen = new Set<string>();
+  return AUDIO_LANGS.filter((l) => (l.id === 'en' || installed(l)) && !seen.has(l.book) && seen.add(l.book));
+};
+
 export const keptByBooks = (l: AudioLang) => l.id === 'en' || (l.book !== 'en' && bookLanguages().has(l.book));
 
 export const downloadVoices = (l: AudioLang, list: string[], onProgress: (p: number) => void) =>

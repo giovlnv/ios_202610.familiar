@@ -103,7 +103,7 @@ export default function Languages() {
       </View>
 
       <Text style={ss.label}>Audiobook languages</Text>
-      <Text style={[ss.p, { marginTop: 6 }]}>Voices that read on this iPhone. A language with books in your library is always kept.</Text>
+      <Text style={[ss.p, { marginTop: 6 }]}>Download a language to add books in it and hear them on this iPhone. A language with books in your library is always kept.</Text>
       <View style={ss.menu}>
         {mine.map((l) => {
           const isOpen = open === l.id;
