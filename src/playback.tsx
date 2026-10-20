@@ -2,6 +2,7 @@ import { createContext, ReactNode, useContext, useEffect, useRef, useState } fro
 import { AudioPlayer, AudioStatus, setAudioModeAsync, useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
 import { audioSource, clearOldExplanationAudio, LibraryItem, loadProgress, refreshStreamingBooks, saveProgress, setStreamToken } from './storage';
 import { getToken } from './sync';
+import { write } from './theme';
 import { addListening } from './tracker';
 import { explainStart, explanationsOn, useExplanations } from './explanations';
 import { isPhoneBook, liveFor, needsVoice, onVoicer, prepareBook, snapshot, want } from './voicer';
@@ -17,7 +18,7 @@ type Playback = {
   t: number;
   status: AudioStatus;
   player: AudioPlayer;
-  open: (item: LibraryItem, start?: number) => void;
+  open: (item: LibraryItem, start?: number, play?: boolean) => void;
   goTo: (i: number, time: number, play?: boolean) => void;
   skip: (d: number) => void;
   toggle: () => void;
@@ -120,9 +121,10 @@ export function PlaybackProvider({ children }: { children: ReactNode }) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item, sec]);
 
-  const open = (next: LibraryItem, start?: number) => {
+  const open = (next: LibraryItem, start?: number, play = false) => {
     if (item?.folder === next.folder) {
-      if (start !== undefined && start !== sec) goTo(start, 0);
+      if (start !== undefined && start !== sec) goTo(start, 0, play || status.playing);
+      else if (play && !status.playing) player.play();
       return;
     }
     if (item) save(sec, t);
@@ -131,9 +133,10 @@ export function PlaybackProvider({ children }: { children: ReactNode }) {
     const p = loadProgress(next.folder);
     const s = Math.min(start ?? p.section, next.book.sections.length - 1);
     done.current = new Set(p.done ?? []);
-    pending.current = { time: start === undefined || start === p.section ? p.time : 0, play: false };
+    pending.current = { time: start === undefined || start === p.section ? p.time : 0, play };
     setSec(s);
     setItem(next);
+    write('last-book.txt', next.folder);
   };
 
   const goTo = (i: number, time: number, play = status.playing) => {

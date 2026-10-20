@@ -41,6 +41,7 @@ export default function Settings() {
       <Text style={ss.label}>App</Text>
       <View style={[ss.menu, { marginTop: 6 }]}>
         <MenuRow icon="language-outline" title="Languages" sub="App language, audiobook voices" to="/settings/languages" />
+        <MenuRow icon="apps-outline" title="Widget" sub="Home-screen widget colours" to="/settings/widget" />
         <MenuRow icon="server-outline" title="Storage" sub="Audio on this iPhone, temporary files" to="/settings/storage" />
         <MenuRow icon="construct-outline" title="Development" sub="Setup, version" to="/settings/development" />
       </View>

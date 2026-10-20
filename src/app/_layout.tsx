@@ -8,6 +8,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { PlaybackProvider } from "../playback";
 import "../ready";
 import ToastHost from "../components/Toast";
+import Actions from "../components/Actions";
 import { Splash } from "../components/Splash";
 import { getOnboarding } from "../familiar";
 import { applyTheme, c, F, mode, onThemeChange, scheme } from "../theme";
@@ -80,6 +81,7 @@ export default function RootLayout() {
             <Stack.Screen name="onboarding" options={{ headerShown: false, presentation: "fullScreenModal", gestureEnabled: false }} />
           </Stack>}
           <ToastHost />
+          <Actions />
           <Splash />
         </View>
       </PlaybackProvider>

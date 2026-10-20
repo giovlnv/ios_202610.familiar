@@ -40,6 +40,7 @@ export default function TabStack({ segment }: { segment: string }) {
       <Stack.Screen name="settings/decks/[path]" options={{ title: "" }} />
       <Stack.Screen name="settings/storage" options={{ title: "Storage" }} />
       <Stack.Screen name="settings/languages" options={{ title: "Languages" }} />
+      <Stack.Screen name="settings/widget" options={{ title: "Widget" }} />
       <Stack.Screen name="settings/numerology" options={{ title: "Numerology" }} />
       <Stack.Screen name="settings/astrology" options={{ title: "Astrology" }} />
       <Stack.Screen name="settings/development" options={{ title: "Development" }} />

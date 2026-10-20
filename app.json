@@ -13,6 +13,11 @@
         "UIFileSharingEnabled": true,
         "LSSupportsOpeningDocumentsInPlace": true,
         "ITSAppUsesNonExemptEncryption": false
+      },
+      "entitlements": {
+        "com.apple.security.application-groups": [
+          "group.com.giovlnv.tarotreader"
+        ]
       }
     },
     "android": {
@@ -99,7 +104,8 @@
           }
         ]
       ],
-      "expo-background-task"
+      "expo-background-task",
+      "@bacons/apple-targets"
     ],
     "scheme": "tarotreader",
     "experiments": {

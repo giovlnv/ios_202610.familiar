@@ -1,5 +1,7 @@
 import { usePad, usePlayback } from '../../../playback';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { captureRef } from 'react-native-view-shot';
+import { syncWidget } from '../../../widget';
 import { Alert, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -42,6 +44,19 @@ export default function Home() {
   const [picking, setPicking] = useState(false);
   const [, tick] = useState(0);
   useFocusEffect(useCallback(() => tick((n) => n + 1), []));
+  const art = useRef<View>(null);
+  useFocusEffect(
+    useCallback(() => {
+      const id = setTimeout(
+        () =>
+          captureRef(art, { format: 'png', result: 'base64', width: 256, height: 256 })
+            .then((png) => syncWidget(png))
+            .catch(() => {}),
+        1200,
+      );
+      return () => clearTimeout(id);
+    }, []),
+  );
   const entry = todaysCotd();
   const legacy = todaysDraw();
   const mine = entry?.cards[1]?.card ? entry : legacy;
@@ -86,7 +101,9 @@ export default function Home() {
   return (
     <ScrollView style={s.wrap} contentContainerStyle={{ paddingBottom: 40 + pad }}>
       <Pressable style={s.familiar} onPress={() => router.push({ pathname: '/den/[id]', params: { id: guide.id } })}>
-        <FamiliarArt familiar={guide} pose={playing ? 'reading' : nightNow() ? 'sleeping' : 'idle'} size={92} vial alive />
+        <View ref={art} collapsable={false}>
+          <FamiliarArt familiar={guide} pose={playing ? 'reading' : nightNow() ? 'sleeping' : 'idle'} size={92} vial alive />
+        </View>
         <View style={{ flex: 1 }}>
           <Text style={s.famName}>{msg.title}</Text>
           <Text style={s.greet}>{msg.text}</Text>
