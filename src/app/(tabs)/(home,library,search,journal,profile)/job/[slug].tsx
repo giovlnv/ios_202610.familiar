@@ -186,7 +186,7 @@ export default function JobScreen() {
 
       {canCancel(job) && (
         <Button
-          label="Cancel this book"
+          label={job.stage === 'cancelling' ? 'Try cancelling again' : 'Cancel this book'}
           icon="close-circle-outline"
           onPress={() =>
             Alert.alert('Cancel this book?', 'This stops the work on GitHub and deletes the uploaded file and everything made from it. You can upload it again later.', [

@@ -140,12 +140,11 @@ export async function downloadJob(job: Job, onProgress: (done: number, total: nu
   return setStage(job, 'imported');
 }
 
-export const canCancel = (job: Job) => job.stage !== 'imported' && job.stage !== 'cancelling';
+export const canCancel = (job: Job) => job.stage !== 'imported';
 
 export async function cancelJob(job: Job) {
-  const next = await setStage(job, 'cancelling');
-  await gh('/actions/workflows/cancel.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main', inputs: { book: job.slug } }) });
-  return next;
+  await put(`cancel/${job.slug}`, b64(String(Date.now())), `Cancel ${job.slug}`);
+  return { ...job, stage: 'cancelling' as const, updated: Date.now() };
 }
 
 export const estimateMinutes = (job: Job) => Math.round(((job.words ?? 0) / 150 / 2.4 / 6) * 1.2 + 8);
