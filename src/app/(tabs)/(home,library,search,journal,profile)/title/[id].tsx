@@ -1,3 +1,4 @@
+import { exportAudio, exportBookZip } from '../../../../ownBooks';
 import { t as tr } from '../../../../i18n';
 import { usePad } from '../../../../playback';
 import { useCallback, useState } from "react";
@@ -18,7 +19,7 @@ import {
   useLocalSearchParams,
 } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { bookSizes, canStream, deleteBook, downloadAudio, estimateAudio, freeSpace, getBook, loadConsults, loadNotes, mb, refreshStreamingBooks, removeAudio } from "../../../../storage";
+import { bookSizes, canStream, deleteBook, downloadAudio, estimateAudio, freeSpace, getBook, loadConsults, loadNotes, loadProgress, mb, refreshStreamingBooks, removeAudio } from "../../../../storage";
 import {
   addLog,
   patchList,
@@ -126,6 +127,17 @@ export default function Title() {
                         const size = bookSizes(folder).audio;
                         return size > 0
                           ? [
+                              {
+                                text: tr("Export audio"),
+                                onPress: () => {
+                                  const s = item.book.sections[loadProgress(folder).section] ?? item.book.sections[0];
+                                  Alert.alert(tr("Export audio"), tr("For your own use. Choose what to export."), [
+                                    { text: tr("This section: {0}", { 0: s.title }), onPress: () => void exportAudio(folder, s) },
+                                    { text: tr("Whole book (.zip)"), onPress: () => void exportBookZip(folder, item.book).catch((e) => Alert.alert(tr("Export failed"), String(e?.message ?? e))) },
+                                    { text: tr("Cancel"), style: "cancel" },
+                                  ]);
+                                },
+                              },
                               {
                                 text: tr("Remove downloaded audio ({0})", { 0: mb(size) }),
                                 onPress: async () => {

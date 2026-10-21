@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import { router, useFocusEffect } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { importBook, installSampleOnce } from "../../../storage";
+import { installSampleOnce } from "../../../storage";
 import {
   latestRating,
   removeShelf,
@@ -53,16 +53,6 @@ export default function Library() {
       .then((added) => added && refresh())
       .catch(() => {});
   }, [refresh]);
-
-  const importAudio = async () => {
-    try {
-      const msg = await importBook();
-      if (msg) Alert.alert(tr("Import"), msg);
-      refresh();
-    } catch (e) {
-      Alert.alert(tr("Import failed"), String((e as Error).message ?? e));
-    }
-  };
 
   const shelf = filter.startsWith("shelf:")
     ? t.shelves?.find((x) => `shelf:${x.id}` === filter)
@@ -177,9 +167,9 @@ export default function Library() {
               <Ionicons name="timer-outline" size={16} color={c.gold} />
               <Text style={s.importText}>{tr("Books in progress")}</Text>
             </Pressable>
-            <Pressable style={s.import} onPress={importAudio}>
+            <Pressable style={s.import} onPress={() => router.push('/import')}>
               <Ionicons name="headset" size={16} color={c.gold} />
-              <Text style={s.importText}>{tr("Import audiobook files")}</Text>
+              <Text style={s.importText}>{tr("Import a book or audiobook")}</Text>
             </Pressable>
           </View>
         }
