@@ -211,13 +211,16 @@ export async function exportBookZip(folder: string, book: Book) {
   await Sharing.shareAsync(out.uri, { mimeType: 'application/zip', dialogTitle: book.title });
 }
 
-function pdfParas(pages: string[]): Para[][] {
+function pdfLines(pages: string[]) {
   const lines = pages.map((p) => p.split('\n').map((l) => l.trim()).filter(Boolean));
   const edge = new Map<string, number>();
   for (const ls of lines) for (const l of [ls[0], ls[ls.length - 1]]) if (l) edge.set(l.replace(/\d+/g, '#'), (edge.get(l.replace(/\d+/g, '#')) ?? 0) + 1);
   const junk = (l: string) => /^\d+$/.test(l) || (pages.length > 4 && (edge.get(l.replace(/\d+/g, '#')) ?? 0) > pages.length * 0.4);
-  return lines.map((ls, page) => {
-    const kept = ls.filter((l, j) => !((j === 0 || j === ls.length - 1) && junk(l)));
+  return lines.map((ls) => ls.filter((l, j) => !((j === 0 || j === ls.length - 1) && junk(l))));
+}
+
+function pdfParas(lines: string[][]): Para[][] {
+  return lines.map((kept, page) => {
     const out: Para[] = [];
     let cur = '';
     for (const l of kept) {
@@ -232,6 +235,46 @@ function pdfParas(pages: string[]): Para[][] {
   });
 }
 
+const KEY =
+  /^(chapter|chap\.|cap[íi]tulo|chapitre|part|parte|partie|book|livro|livre|prologue|pr[óo]logo|epilogue|ep[íi]logo|[ée]pilogue|introduction|introdu[çc][ãa]o|preface|pref[áa]cio|pr[ée]face|foreword|afterword|conclusion|conclus[ãa]o|appendix|ap[êe]ndice|annexe|interlude)\b/i;
+const NUM = /^([ivxlc]{1,7}|\d{1,2})\.?$/i;
+const tocLine = (l: string) => /\.{3,}|…\s*\d+$/.test(l) || (l.split(/\s+/).length > 2 && /\s\d{1,3}$/.test(l));
+const short = (l?: string) => !!l && l.length <= 70 && !/[.,;]$/.test(l);
+
+function pdfHeadings(lines: string[][]) {
+  const out: { title: string; page: number }[] = [];
+  let last = '';
+  lines.forEach((ls, page) => {
+    if (ls.filter((l) => KEY.test(l)).length >= 3) return;
+    const top = ls.slice(0, 5);
+    for (const [j, l] of top.entries()) {
+      if (l.length > 70 || tocLine(l)) continue;
+      const next = top[j + 1];
+      let title = '';
+      if (KEY.test(l)) title = l.split(/\s+/).length <= 3 && short(next) && !KEY.test(next!) ? `${l} - ${next}` : l;
+      else if (page > 0 && NUM.test(l) && short(next) && next!.length > 3) title = `${l} - ${next}`;
+      if (!title) continue;
+      const k = title.toLowerCase().replace(/\W+/g, '');
+      if (k !== last) out.push({ title, page });
+      last = k;
+      break;
+    }
+  });
+  return out;
+}
+
+function outlineCuts(outline: { title: string; page: number; depth: number }[]) {
+  const cuts: { title: string; page: number }[] = [];
+  outline.forEach((o, i) => {
+    const next = outline[i + 1];
+    const parent = o.depth === 0 && next?.depth === 1;
+    if (parent && next.page <= o.page) return;
+    cuts.push({ title: o.title, page: o.page });
+  });
+  const sorted = cuts.sort((a, b) => a.page - b.page);
+  return sorted.filter((c, i) => sorted[i + 1]?.page !== c.page);
+}
+
 export async function readPdf(uri: string, onScan?: (page: number, of: number) => boolean): Promise<{ title: string; drafts: Draft[] }> {
   const { default: AudioEncoder } = await import('../modules/audio-encoder');
   const pages = AudioEncoder.pdfPages(uri);
@@ -241,16 +284,21 @@ export async function readPdf(uri: string, onScan?: (page: number, of: number) =
     pages[i] = (await AudioEncoder.ocrPage(uri, i)) || pages[i];
   }
   if (!pages.join('').trim()) throw new Error('No text found in this PDF.');
-  const per = pdfParas(pages);
-  const outline = AudioEncoder.pdfOutline(uri).filter((o) => o.depth === 0);
-  const cuts = outline.length > 1 ? outline : Array.from({ length: Math.ceil(pages.length / 10) }, (_, i) => ({ title: `Pages ${i * 10 + 1}–${Math.min(pages.length, i * 10 + 10)}`, page: i * 10, depth: 0 }));
+  const lines = pdfLines(pages);
+  const per = pdfParas(lines);
+  const fromOutline = outlineCuts(AudioEncoder.pdfOutline(uri));
+  const found = fromOutline.length > 1 ? fromOutline : pdfHeadings(lines);
+  const cuts = found.length > 1 ? found : Array.from({ length: Math.ceil(pages.length / 10) }, (_, i) => ({ title: `Pages ${i * 10 + 1}–${Math.min(pages.length, i * 10 + 10)}`, page: i * 10 }));
   const drafts: Draft[] = cuts.map((cut, i) => {
     const end = cuts[i + 1]?.page ?? pages.length;
     const text = per.slice(cut.page, Math.max(cut.page + 1, end)).flat();
     const words = wordCount(text);
     return { title: cut.title, text, words, keep: words >= 25 };
   });
-  if (cuts[0].page > 0) drafts.unshift({ title: 'Front matter', text: per.slice(0, cuts[0].page).flat(), words: 0, keep: false });
+  if (cuts[0].page > 0) {
+    const text = per.slice(0, cuts[0].page).flat();
+    drafts.unshift({ title: 'Front matter', text, words: wordCount(text), keep: false });
+  }
   return { title: '', drafts };
 }
 

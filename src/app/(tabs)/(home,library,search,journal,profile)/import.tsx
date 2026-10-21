@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Alert, Pressable, Text, TextInput, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import * as DocumentPicker from 'expo-document-picker';
-import { File } from 'expo-file-system';
+import { Directory, File, Paths } from 'expo-file-system';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Draft, DrmError, readEpub, readPdf, saveAudioBook, saveTextBook } from '../../../ownBooks';
 import { bookLangChoices } from '../../../languages';
@@ -31,6 +31,15 @@ async function pickEpub(onScan?: Scan) {
   const res = await DocumentPicker.getDocumentAsync({ type: ['application/epub+zip', 'application/pdf', '*/*'], copyToCacheDirectory: true });
   if (res.canceled) return null;
   return readBookFile(res.assets[0].uri, res.assets[0].name, onScan);
+}
+
+function takeIn(uri: string, name: string) {
+  const dir = new Directory(Paths.cache, 'incoming');
+  if (!dir.exists) dir.create({ intermediates: true });
+  const dest = new File(dir, name);
+  if (dest.exists) dest.delete();
+  new File(uri).copySync(dest);
+  return dest.uri;
 }
 
 const AUDIO = /\.(mp3|m4a|m4b|aac|wav)$/i;
@@ -81,7 +90,14 @@ export default function ImportScreen() {
   useEffect(() => {
     if (!file) return;
     const name = decodeURIComponent(file.split('/').pop() ?? 'file');
-    const t = setTimeout(() => (AUDIO.test(name) ? (setAudio([{ uri: file, name }]), setTitle(name.replace(/\.[^.]+$/, ''))) : startEpub(() => readBookFile(file, name, onScan))), 0);
+    let uri: string;
+    try {
+      uri = takeIn(file, name);
+    } catch (e) {
+      fail(e);
+      return;
+    }
+    const t = setTimeout(() => (AUDIO.test(name) ? (setAudio([{ uri, name }]), setTitle(name.replace(/\.[^.]+$/, ''))) : startEpub(() => readBookFile(uri, name, onScan))), 0);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [file]);
