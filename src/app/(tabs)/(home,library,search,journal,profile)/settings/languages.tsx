@@ -22,7 +22,7 @@ import {
 } from '../../../../languages';
 import { mb } from '../../../../storage';
 import { getVoiceMode, setVoiceMode, VoiceMode } from '../../../../voicer';
-import { Page, ss } from '../../../../components/settings-ui';
+import { MenuRow, Page, ss } from '../../../../components/settings-ui';
 import { c, themed } from '../../../../theme';
 
 export default function Languages() {
@@ -103,6 +103,8 @@ export default function Languages() {
           </Pressable>
         ))}
       </View>
+
+      <MenuRow icon="cloud-outline" title="Cloud voices" sub="Gemini or ElevenLabs with your own key" to="/settings/cloud-voices" />
 
       <Text style={ss.label}>Audiobook languages</Text>
       <Text style={[ss.p, { marginTop: 6 }]}>Download a language to add books in it and hear them on this iPhone. A language with books in your library is always kept.</Text>
