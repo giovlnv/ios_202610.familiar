@@ -7,6 +7,9 @@ import { getBook } from '../../../../storage';
 import { buildReader, Chapter, fetchSource, getPos, imageUri, keepSource, loadReader, ReaderBook, setPos, sourceFile } from '../../../../reader';
 import { HIGHLIGHTS, highlightBg, HighlightColour, loadMarks, Mark, setHighlight, toggleBookmark } from '../../../../marks';
 import PdfBook from '../../../../components/PdfBook';
+import { CardEditor } from '../../../../components/StudyEditors';
+import { CardDraft, isSubject } from '../../../../study';
+import { bookPaths } from '../../../../journal';
 import PagedChapters, { Look, markKey } from '../../../../components/PagedChapters';
 import { bodyText, useTextStyle } from '../../../../textStyle';
 import TextStyleSheet from '../../../../components/TextStyleSheet';
@@ -94,6 +97,7 @@ export default function Reader() {
   const [marks, setMarks] = useState<Mark[]>(() => loadMarks(id));
   const [toc, setToc] = useState(false);
   const [styling, setStyling] = useState(false);
+  const [flash, setFlash] = useState<CardDraft | null>(null);
   const list = useRef<FlatList<Chapter>>(null);
   const pb = usePlayback();
 
@@ -202,6 +206,9 @@ export default function Reader() {
           ]),
       },
       { text: look.bm.has(k) ? tr('Remove bookmark') : tr('Bookmark here'), onPress: () => setMarks(toggleBookmark(id, { ...at, quote })) },
+      ...(b.text
+        ? [{ text: tr('Make a flashcard'), onPress: () => setFlash({ subject: bookPaths(id).find(isSubject), back: b.text, book: id, ...(b.at ? { section: item.book.sections[b.at[0]].id, para: b.at[1] } : {}) }) }]
+        : []),
       { text: tr('Cancel'), style: 'cancel' },
     ]);
   };
@@ -311,6 +318,7 @@ export default function Reader() {
         </View>
       </Modal>
       <TextStyleSheet visible={styling} reader onClose={() => setStyling(false)} />
+      {flash && <CardEditor draft={flash} source={item.book.title} onClose={() => setFlash(null)} />}
     </View>
   );
 }

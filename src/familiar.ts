@@ -1,5 +1,6 @@
 import { t as tr } from './i18n';
 import { listSystems } from './systems';
+import { listSubjects } from './study';
 import { File, Paths } from 'expo-file-system';
 import { ART, CRESCENT } from './familiar-art';
 import { paletteId } from './theme';
@@ -111,7 +112,11 @@ export const PATHS = [
   { id: 'custom', name: tr('Make your own'), color: '#B9B6C3' },
 ];
 
-export const allPaths = () => [...PATHS, ...listSystems().map((x) => ({ id: x.id, name: x.name, color: x.color }))];
+export const allPaths = () => [
+  ...PATHS,
+  ...listSystems().map((x) => ({ id: x.id, name: x.name, color: x.color })),
+  ...listSubjects().map((x) => ({ id: x.id, name: x.name, color: x.color })),
+];
 
 export const SHADOW: Familiar = {
   id: 'shadow',

@@ -55,7 +55,9 @@ import {
 } from "../explanations";
 import { bodyText, lineHeight, TextStyle, useTextStyle } from "../textStyle";
 import { Link, loadLinks, sectionCard, setLink } from "../sectionCards";
-import { bookSystem } from "../journal";
+import { bookPaths, bookSystem } from "../journal";
+import { CardDraft, isSubject } from "../study";
+import { CardEditor } from "./StudyEditors";
 import { SleepKind, usePlayback } from "../playback";
 import { FamiliarArt } from "./Familiar";
 import { familiarFor } from "../familiar";
@@ -134,6 +136,7 @@ export default function Player({
   const [ask, setAsk] = useState<AskDraft | null>(null);
   const [notes, setNotes] = useState<Note[]>(() => loadNotes(folder));
   const [draft, setDraft] = useState<Draft | null>(null);
+  const [flash, setFlash] = useState<CardDraft | null>(null);
   const list = useRef<FlatList<Para>>(null);
   const section = book.sections[sec];
   const endT = (!expOn && explainStart(section)) || status.duration || 0;
@@ -306,6 +309,7 @@ export default function Player({
       { text: bm.has(index) ? tr("Remove bookmark") : tr("Bookmark here"), onPress: () => setMarks(toggleBookmark(folder, { section: section.id, para: index, quote: quoteOf(index) })) },
       ...(isPublic ? [] : [{ text: tr("Explain this passage"), onPress: () => explainPassage(index) }]),
       { text: tr("Add note"), onPress: () => newNote(index, time) },
+      { text: tr("Make a flashcard"), onPress: () => setFlash({ subject: bookPaths(folder).find(isSubject), back: section.paras[index]?.text ?? '', book: folder, section: section.id, para: index }) },
       ...(isPublic ? [] : [{ text: tr("Ask Claude"), onPress: () => startAsk(index, time) }]),
       { text: tr("Cancel"), style: "cancel" },
     ]);
@@ -666,9 +670,21 @@ export default function Player({
                     });
                   }}
                 >
-                  <Text style={s.noteMeta}>
-                    {book.sections[i]?.title} · {fmt(n.time)}
-                  </Text>
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <Text style={[s.noteMeta, { flex: 1 }]}>
+                      {book.sections[i]?.title} · {fmt(n.time)}
+                    </Text>
+                    <Pressable
+                      hitSlop={10}
+                      accessibilityLabel={tr("Make a flashcard")}
+                      onPress={() => {
+                        setPanel("none");
+                        setTimeout(() => setFlash({ subject: bookPaths(folder).find(isSubject), front: n.text, back: n.quote, book: folder, section: n.section, para: n.para }), 450);
+                      }}
+                    >
+                      <Ionicons name="layers-outline" size={17} color={c.gold} />
+                    </Pressable>
+                  </View>
                   <Text style={s.quote}>“{n.quote}”</Text>
                   <Text style={s.pText}>{n.text}</Text>
                 </Pressable>
@@ -732,6 +748,7 @@ export default function Player({
       />
       <TextStyleSheet visible={styling} sample={section.paras[current]?.text} onClose={() => setStyling(false)} />
       <CardSheet id={cardInfo} here={folder} onClose={() => setCardInfo(null)} />
+      {flash && <CardEditor draft={flash} source={book.title} onClose={() => setFlash(null)} />}
       <AskSheet draft={ask} onCancel={() => setAsk(null)} onSend={sendAsk} />
       <ConsultList
         visible={panel === "consults"}

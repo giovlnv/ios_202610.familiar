@@ -9,6 +9,7 @@ import { activeSystem, SYSTEM_NAME } from '../../../../numerology';
 import { HOUSES } from '../../../../astrology';
 import { PALETTES, paletteId } from '../../../../theme';
 import { getState } from '../../../../sync';
+import { listSubjects } from '../../../../study';
 import { MenuRow, Page, ss, when } from '../../../../components/settings-ui';
 
 export default function Settings() {
@@ -29,6 +30,7 @@ export default function Settings() {
         <MenuRow icon="albums-outline" title={tr("Tarot")} sub={tr("Decks: default deck, custom decks")} to="/settings/configuration" />
         <MenuRow icon="albums-outline" title={tr("Lenormand")} sub={tr("Decks, card names, significator")} to="/settings/decks/lenormand" />
         <MenuRow icon="albums-outline" title={tr("Make your own")} sub={tr("Your own systems and decks")} to="/settings/decks/custom" />
+        <MenuRow icon="book-outline" title={tr("Study subjects")} sub={listSubjects().map((x) => x.name).join(' · ') || tr("Notes and flashcards for anything you study")} to="/settings/study" />
         {(getOnboarding().paths ?? []).includes('astrology') && (
           <MenuRow icon="planet-outline" title={tr("Astrology")} sub={tr("Houses: {0}", { 0: HOUSES.find((h) => h.id === (getOnboarding().houses ?? 'placidus'))?.name })} to="/settings/astrology" />
         )}

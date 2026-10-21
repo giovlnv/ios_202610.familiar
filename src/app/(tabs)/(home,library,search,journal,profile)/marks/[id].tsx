@@ -6,6 +6,9 @@ import { getBook } from '../../../../storage';
 import { HIGHLIGHTS, loadMarks, Mark, saveMarks } from '../../../../marks';
 import { Chip } from '../../../../components/ui';
 import EmptyState from '../../../../components/EmptyState';
+import { CardEditor } from '../../../../components/StudyEditors';
+import { CardDraft, isSubject } from '../../../../study';
+import { bookPaths } from '../../../../journal';
 import { t as tr } from '../../../../i18n';
 import { usePad } from '../../../../playback';
 import { c, themed } from '../../../../theme';
@@ -16,6 +19,7 @@ export default function Marks() {
   const item = useMemo(() => getBook(id), [id]);
   const [marks, setMarks] = useState<Mark[]>([]);
   const [filter, setFilter] = useState<string>('all');
+  const [flash, setFlash] = useState<CardDraft | null>(null);
   useFocusEffect(useCallback(() => setMarks(loadMarks(id)), [id]));
   if (!item) return <Text style={{ color: c.dim, padding: 20 }}>{tr('Book not found.')}</Text>;
   const secIndex = new Map(item.book.sections.map((s, i) => [s.id, i]));
@@ -27,7 +31,8 @@ export default function Marks() {
       ? router.push({ pathname: '/player/[id]', params: { id, section: String(secIndex.get(m.section) ?? 0), para: String(m.para ?? 0) } })
       : router.push({ pathname: '/read/[id]', params: { id, chapter: String(m.chapter ?? 0), block: String(m.block ?? 0) } });
   const remove = (m: Mark) =>
-    Alert.alert(tr('Remove this mark?'), m.quote.slice(0, 120), [
+    Alert.alert(tr('This mark'), m.quote.slice(0, 120), [
+      { text: tr('Make a flashcard'), onPress: () => setFlash({ subject: bookPaths(id).find(isSubject), back: (m.section !== undefined ? item.book.sections[secIndex.get(m.section) ?? 0]?.paras[m.para ?? 0]?.text : undefined) ?? m.quote, book: id, section: m.section, para: m.para }) },
       { text: tr('Cancel'), style: 'cancel' },
       { text: tr('Remove'), style: 'destructive', onPress: () => (saveMarks(id, marks.filter((x) => x.id !== m.id)), setMarks(loadMarks(id))) },
     ]);
@@ -62,6 +67,7 @@ export default function Marks() {
           </Pressable>
         )}
       />
+      {flash && <CardEditor draft={flash} source={item.book.title} onClose={() => setFlash(null)} />}
     </View>
   );
 }

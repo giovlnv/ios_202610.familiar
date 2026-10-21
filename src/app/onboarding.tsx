@@ -8,6 +8,7 @@ import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { addSubject } from '../study';
 import { EYES, Familiar, getOnboarding, allPaths, saveFamiliar, setOnboarding, setWithYou, withYou } from '../familiar';
 import { EyesMarkStep, FamiliarArt, Label, NameStep, ShapeCoatStep, SpeciesStep, s as fs } from '../components/Familiar';
 import { getClaudeLink, setClaudeLink } from '../components/Consults';
@@ -125,6 +126,20 @@ export default function Onboarding() {
                 </Pressable>
               );
             })}
+            <Pressable
+              style={st.row}
+              onPress={() =>
+                Alert.prompt(tr('Something else'), tr('Name a subject you study, for example Herbalism or Jungian psychology. Its notes and flashcards live in the Journal.'), (n) => {
+                  const name = n?.trim();
+                  if (name) setPaths([...paths, addSubject(name).id]);
+                })
+              }
+            >
+              <View style={[st.chip, { backgroundColor: c.raised }]}>
+                <Ionicons name="add" size={16} color={c.gold} />
+              </View>
+              <Text style={[st.rowTitle, { flex: 1 }]}>{tr('Something else…')}</Text>
+            </Pressable>
           </>
         );
       case 'species':
