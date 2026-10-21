@@ -3,6 +3,7 @@ import { KeyboardAvoidingView, Modal, Pressable, ScrollView, Share, Switch, Text
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Clipboard from 'expo-clipboard';
 import { CARDS, cardName, cardUri } from '../decks';
+import { isLenormand } from '../lenormand';
 import { CHIPS, explainPrompt, loadChips, Saved, saveChips } from '../explain';
 import { Book, Section } from '../types';
 import { shareToClaude } from './Consults';
@@ -40,7 +41,7 @@ export default function ExplainSheet({
 
   const full = target.text ?? '';
   const quote = sel.end > sel.start ? full.slice(sel.start, sel.end).trim() : full;
-  const img = target.card && CARDS.some((x) => x.id === target.card) ? cardUri(target.card) : undefined;
+  const img = target.card && (CARDS.some((x) => x.id === target.card) || isLenormand(target.card)) ? cardUri(target.card) : undefined;
   const flip = (id: string) => {
     const next = chips.includes(id) ? chips.filter((x) => x !== id) : [...chips, id];
     setChips(next);

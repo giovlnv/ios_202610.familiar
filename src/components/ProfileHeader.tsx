@@ -6,7 +6,8 @@ import { File, Paths } from 'expo-file-system';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { getProfile, Profile } from '../tracker';
 import { c, F, read, themed, write } from '../theme';
-import { birthCards, showDate } from '../journal';
+import { birthCards, dailyCard, loadJournal, mostDrawn, showDate } from '../journal';
+import { lenormandPrefs } from '../lenormand';
 import { cardName } from '../decks';
 import { CardImage } from './Cards';
 import CardSheet from './CardSheet';
@@ -93,6 +94,36 @@ function TarotPanel({ dob, onCard }: { dob?: string; onCard: (id: string, role: 
   );
 }
 
+function LenormandPanel({ onCard }: { onCard: (id: string, role: string) => void }) {
+  const readings = loadJournal().readings.filter((r) => r.system === 'lenormand');
+  const top = mostDrawn(readings, 1)[0]?.[0];
+  const list: [string, string | undefined, string][] = [
+    ['You', lenormandPrefs().significator, 'Your significator: the card that stands for you in a Grand Tableau. Change it in Settings → Lenormand.'],
+    ['Today', dailyCard('lenormand'), 'Today’s calculated Lenormand card.'],
+    ['Most drawn', top, 'The Lenormand card that appears most often in your journal.'],
+  ];
+  return (
+    <>
+      <View style={s.cards}>
+        {list
+          .filter(([, id]) => id)
+          .map(([label, id, role]) => (
+            <Pressable key={label} style={s.cardCol} onPress={() => onCard(id!, role)}>
+              <CardImage id={id!} width={54} />
+              <Text style={s.cardLabel}>{label}</Text>
+              <Text style={s.cardName} numberOfLines={2}>
+                {cardName(id!).split(' · ').pop()}
+              </Text>
+            </Pressable>
+          ))}
+      </View>
+      <Text style={s.line}>
+        {readings.length} Lenormand {readings.length === 1 ? 'reading' : 'readings'} in your journal
+      </Text>
+    </>
+  );
+}
+
 function NumerologyPanel({ dob }: { dob?: string }) {
   if (!dob) return <Text style={s.user}>Add your birth date to see your numbers.</Text>;
   const n = numbers();
@@ -174,7 +205,8 @@ export default function ProfileHeader() {
       {active.id === 'tarot' && <TarotPanel dob={p.dob} onCard={(id, role) => setOpen({ id, role })} />}
       {active.id === 'numerology' && <NumerologyPanel dob={p.dob} />}
       {active.id === 'astrology' && <AstrologyPanel />}
-      {(active.id === 'lenormand' || active.id === 'custom') && <Text style={s.user}>Arrives with the {active.name} path.</Text>}
+      {active.id === 'lenormand' && <LenormandPanel onCard={(id, role) => setOpen({ id, role })} />}
+      {active.id === 'custom' && <Text style={s.user}>Arrives with the {active.name} path.</Text>}
       <CardSheet id={open?.id ?? null} role={open?.role} onClose={() => setOpen(null)} />
     </View>
   );

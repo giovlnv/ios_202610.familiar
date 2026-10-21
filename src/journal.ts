@@ -1,4 +1,5 @@
-import { CARDS, cardName } from './decks';
+import { CARDS, cardName, System, systemOf } from './decks';
+import { Layout, lenormandInTitle, lenormandOfTheDay, LENORMAND, lenormandPrefs } from './lenormand';
 import { listBooks } from './storage';
 import { loadLinks, loadSources, sectionCard, Sources, usesBook } from './sectionCards';
 import { load, save, Tracker, uid } from './tracker';
@@ -6,7 +7,7 @@ import { load, save, Tracker, uid } from './tracker';
 export const bookPaths = (folder: string) => load().books.find((b) => b.audio === folder)?.paths ?? [];
 
 export type Person = { id: string; name: string; dob?: string; background?: string };
-export type Spread = { id: string; name: string; positions: string[]; custom?: boolean };
+export type Spread = { id: string; name: string; positions: string[]; custom?: boolean; system?: 'lenormand'; layout?: Layout; daily?: boolean };
 export type Placed = { card?: string; reversed?: boolean };
 export type Answer = { text: string; at: number };
 export type Reading = {
@@ -16,6 +17,8 @@ export type Reading = {
   personId?: string;
   area?: string;
   spreadId: string;
+  system?: 'lenormand';
+  significator?: string;
   cards: Placed[];
   interpretation?: string;
   keyPoints?: string;
@@ -28,7 +31,7 @@ export type JournalData = { readings: Reading[]; people: Person[]; spreads: Spre
 
 export const BASE_AREAS = ['Love', 'Family', 'Money', 'Job', 'Personal', 'Spiritual'];
 export const BASE_SPREADS: Spread[] = [
-  { id: 'cotd', name: 'COTD', positions: ['Calculated', 'Drawn'] },
+  { id: 'cotd', name: 'COTD', positions: ['Calculated', 'Drawn'], daily: true },
   { id: 'one', name: 'One card', positions: ['Card'] },
   { id: 'three', name: 'Three cards', positions: ['Past', 'Present', 'Future'] },
   { id: 'situation', name: 'Situation · action · outcome', positions: ['Situation', 'Action', 'Outcome'] },
@@ -37,7 +40,29 @@ export const BASE_SPREADS: Spread[] = [
     name: 'Celtic Cross',
     positions: ['Present', 'Challenge', 'Foundation', 'Recent past', 'Crown', 'Near future', 'Self', 'Environment', 'Hopes and fears', 'Outcome'],
   },
+  { id: 'lcotd', name: 'COTD', positions: ['Calculated', 'Drawn'], system: 'lenormand', daily: true },
+  { id: 'l1', name: 'One card', positions: ['Card'], system: 'lenormand' },
+  { id: 'l3', name: 'Line of 3', positions: ['First', 'Centre', 'Last'], system: 'lenormand', layout: 'line' },
+  { id: 'l5', name: 'Line of 5', positions: ['1', '2', 'Centre', '4', '5'], system: 'lenormand', layout: 'line' },
+  { id: 'l7', name: 'Line of 7', positions: ['1', '2', '3', 'Centre', '5', '6', '7'], system: 'lenormand', layout: 'line' },
+  {
+    id: 'l9',
+    name: 'Box of 9',
+    positions: ['Past · above', 'Now · above', 'Future · above', 'Past', 'Centre', 'Future', 'Past · below', 'Now · below', 'Future · below'],
+    system: 'lenormand',
+    layout: 'box',
+  },
+  { id: 'gt49', name: 'Grand Tableau 4×9', positions: houses(), system: 'lenormand', layout: 'gt49' },
+  { id: 'gt84', name: 'Grand Tableau 8×4+4', positions: houses(), system: 'lenormand', layout: 'gt84' },
 ];
+
+function houses() {
+  return LENORMAND.map((x) => `House ${x.n} · ${x.en}`);
+}
+
+export const readingSystem = (r: { system?: 'lenormand' }): System => r.system ?? 'tarot';
+export const spreadsFor = (j: JournalData, system: System, cotd = false) =>
+  allSpreads(j).filter((x) => (x.system ?? 'tarot') === system && (x.daily ?? false) === cotd);
 
 const get = (t: Tracker): JournalData => ({ readings: [], people: [], spreads: [], areas: [], ...t.journal });
 
@@ -62,18 +87,22 @@ const stamp = () => {
   return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}T${pad(now.getHours())}:${pad(now.getMinutes())}`;
 };
 
-export const cotdDraft = (drawn?: string, reversed = false): Reading => ({
+export const cotdDraft = (drawn?: string, reversed = false, system: System = 'tarot'): Reading => ({
   id: uid(),
   at: stamp(),
-  question: 'Card of the day',
-  spreadId: 'cotd',
-  cards: [{ card: cardOfTheDay() }, drawn ? { card: drawn, reversed } : {}],
+  question: system === 'lenormand' ? 'Lenormand card of the day' : 'Card of the day',
+  spreadId: system === 'lenormand' ? 'lcotd' : 'cotd',
+  ...(system === 'lenormand' ? { system } : {}),
+  cards: [{ card: dailyCard(system) }, drawn ? { card: drawn, reversed: system === 'tarot' && reversed } : {}],
   daily: 'cotd',
   created: Date.now(),
 });
 
+export const dailyCard = (system: System, date = new Date()) => (system === 'lenormand' ? lenormandOfTheDay(date) : cardOfTheDay(date));
+
 const isToday = (r: Reading) => r.at.slice(0, 10) === stamp().slice(0, 10);
-export const todaysCotd = () => loadJournal().readings.filter((r) => r.spreadId === 'cotd' && isToday(r)).pop();
+export const todaysCotd = (system: System = 'tarot') =>
+  loadJournal().readings.filter((r) => r.spreadId === (system === 'lenormand' ? 'lcotd' : 'cotd') && isToday(r)).pop();
 export const todaysDraw = () => loadJournal().readings.filter((r) => r.daily === 'drawn' && isToday(r)).pop();
 
 export const saveReading = (r: Reading) => updateJournal((j) => j.readings.push(r));
@@ -85,11 +114,12 @@ export function cardOfTheDay(date = new Date()) {
   return CARDS[h % CARDS.length].id;
 }
 
-export function newReading(): Reading {
+export function newReading(system: System = 'tarot'): Reading {
   const now = new Date();
   const pad = (n: number) => String(n).padStart(2, '0');
   const at = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}T${pad(now.getHours())}:${pad(now.getMinutes())}`;
-  const r: Reading = { id: uid(), at, question: '', spreadId: 'three', cards: [], created: Date.now() };
+  const r: Reading = { id: uid(), at, question: '', spreadId: system === 'lenormand' ? 'l3' : 'three', cards: [], created: Date.now() };
+  if (system === 'lenormand') Object.assign(r, { system, significator: lenormandPrefs().significator });
   updateJournal((j) => j.readings.push(r));
   return r;
 }
@@ -108,8 +138,8 @@ export const addPerson = (p: Omit<Person, 'id'>) => {
   return person;
 };
 
-export const addSpread = (name: string, positions: string[]) => {
-  const sp: Spread = { id: uid(), name, positions, custom: true };
+export const addSpread = (name: string, positions: string[], system?: 'lenormand') => {
+  const sp: Spread = { id: uid(), name, positions, custom: true, ...(system ? { system } : {}) };
   updateJournal((j) => j.spreads.push(sp));
   return sp;
 };
@@ -141,9 +171,33 @@ export function cardSections(id: string, sources: Sources | null = loadSources()
   const out: { folder: string; book: string; index: number; title: string }[] = [];
   for (const b of listBooks()) {
     if (sources && !usesBook(sources, b.folder, bookPaths(b.folder))) continue;
+    const sys = bookSystem(b.folder);
+    if (sys !== systemOf(id)) continue;
     const links = loadLinks(b.folder);
-    const i = b.book.sections.findIndex((s) => sectionCard(links, s)?.card === id);
+    const i = b.book.sections.findIndex((s) => sectionCard(links, s, sys)?.card === id);
     if (i >= 0) out.push({ folder: b.folder, book: b.book.title, index: i, title: b.book.sections[i].title });
+  }
+  return out;
+}
+
+export const bookSystem = (folder: string): System => {
+  const p = bookPaths(folder);
+  return p.includes('lenormand') && !p.includes('tarot') ? 'lenormand' : 'tarot';
+};
+
+export type PairSection = { other: string; folder: string; book: string; index: number; title: string };
+
+export function pairsFor(id: string, sources: Sources | null = loadSources()) {
+  const out: PairSection[] = [];
+  if (systemOf(id) !== 'lenormand') return out;
+  for (const b of listBooks()) {
+    if (bookSystem(b.folder) !== 'lenormand') continue;
+    if (sources && !usesBook(sources, b.folder, bookPaths(b.folder))) continue;
+    b.book.sections.forEach((sec, index) => {
+      const found = lenormandInTitle(sec.title);
+      if (found.length === 2 && found.includes(id))
+        out.push({ other: found.find((x) => x !== id)!, folder: b.folder, book: b.book.title, index, title: sec.title });
+    });
   }
   return out;
 }
@@ -156,7 +210,8 @@ export function readingPrompt(r: Reading, j: JournalData) {
     `Question: ${r.question || '(none)'}`,
     `For: ${person ? [person.name, person.dob && `born ${person.dob}`, person.background].filter(Boolean).join(' · ') : 'me'}`,
     r.area ? `Area: ${r.area}` : '',
-    `Spread: ${sp.name}`,
+    `Spread: ${sp.name}${r.system === 'lenormand' ? ' (Lenormand, Brazilian school)' : ''}`,
+    r.system === 'lenormand' && r.significator ? `Significator: ${cardName(r.significator)}` : '',
     ...sp.positions.map((pos, i) => {
       const p = r.cards[i];
       return `- ${pos}: ${p?.card ? `${cardName(p.card)}${p.reversed ? ' (reversed)' : ''}` : '—'}`;
@@ -164,7 +219,9 @@ export function readingPrompt(r: Reading, j: JournalData) {
     r.interpretation ? `\nMy interpretation:\n${r.interpretation}` : '',
     r.keyPoints ? `\nKey points:\n${r.keyPoints}` : '',
     `\nOpen questions:\n${r.openQuestions || '(help me read the spread as a whole)'}`,
-    '\nPlease answer the open questions, combining a Jungian view with the traditional meanings.',
+    r.system === 'lenormand'
+      ? '\nPlease answer the open questions, reading the cards in pairs and by position as Lenormand is read (no reversals).'
+      : '\nPlease answer the open questions, combining a Jungian view with the traditional meanings.',
   ];
   return lines.filter(Boolean).join('\n');
 }
@@ -229,7 +286,7 @@ export function journalStats(j: JournalData) {
     const key = iso(m).slice(0, 7);
     return [key, rs.filter((r) => r.at.startsWith(key)).length] as const;
   });
-  const suitOf = (id: string) => (id.startsWith('m') ? 'Major Arcana' : (CARDS.find((c) => c.id === id)?.group ?? ''));
+  const suitOf = (id: string) => (systemOf(id) === 'lenormand' ? 'Lenormand' : id.startsWith('m') ? 'Major Arcana' : (CARDS.find((c) => c.id === id)?.group ?? ''));
   const WEEK = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   return {
     total: rs.length,

@@ -1,5 +1,6 @@
 import { Directory, File, Paths } from 'expo-file-system';
-import { CARDS, cardName } from './decks';
+import { CARDS, cardName, System } from './decks';
+import { lenormandInTitle, LENORMAND } from './lenormand';
 import { Section } from './types';
 
 export type Link = { card: string | null; reversed?: boolean };
@@ -41,12 +42,19 @@ export function cardPattern(id: string) {
 
 const ORDER = [...CARDS.filter((x) => !x.id.startsWith('m')), ...CARDS.filter((x) => x.id.startsWith('m'))];
 
-export const cardInTitle = (title: string) => ORDER.find((x) => cardPattern(x.id).test(title))?.id;
+export function cardInTitle(title: string, system: System = 'tarot') {
+  if (system === 'tarot') return ORDER.find((x) => cardPattern(x.id).test(title))?.id;
+  const found = lenormandInTitle(title);
+  const num = Number(title.match(/\b(\d{1,2})\b/)?.[1]);
+  const byNum = LENORMAND[num - 1]?.id;
+  if (byNum && found.includes(byNum)) return byNum;
+  return found.length === 1 ? found[0] : undefined;
+}
 
-export function sectionCard(links: Record<string, Link>, s: Section): SectionCard | null {
+export function sectionCard(links: Record<string, Link>, s: Section, system: System = 'tarot'): SectionCard | null {
   const l = links[s.id];
   if (l) return l.card ? { card: l.card, reversed: !!l.reversed, auto: false } : null;
-  const card = cardInTitle(s.title);
+  const card = cardInTitle(s.title, system);
   return card ? { card, reversed: false, auto: true } : null;
 }
 

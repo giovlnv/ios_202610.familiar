@@ -1,0 +1,22 @@
+name: Publish Lenormand deck
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deck:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pillow
+      - run: python3 scripts/fetch_lenormand.py
+      - name: Publish release
+        run: |
+          gh release delete deck-lenormand --yes --cleanup-tag || true
+          gh release create deck-lenormand deck/* --title "Lenormand deck (Dondorf Wahrsage-Karten, 1910)" \
+            --notes "Petit Lenormand by Bernard J. Dondorf, Germany, 1910. Scans by the Etteilla Foundation (etteilla.org), CC BY-NC 4.0: non-commercial use with attribution. Downloaded by the app from Settings → Lenormand decks."

@@ -2,7 +2,7 @@
 
 Personal-use app first; a public App Store version later. New books arrive occasionally, so automation can be slow (hours) as long as it needs no effort.
 
-Status: ✅ done · 🔨 next · 📋 planned · Last revised: 15 Oct 2026 (app 1.4.0)
+Status: ✅ done · 🔨 next · 📋 planned · Last revised: 21 Oct 2026 (app 1.6.0)
 
 ---
 
@@ -52,41 +52,27 @@ Status: ✅ done · 🔨 next · 📋 planned · Last revised: 15 Oct 2026 (app 
 
 ## Next 🔨
 
-Arranged 15 Oct. Hours include building and testing.
+Revised 21 Oct (app 1.6.0). Items 1–7, 12, 13 and 20 are done.
 
-**Now — keep the app small**
-1. Storage screen: space per book, remove audio but keep notes and progress, clear caches (2–3 h)
-2. Smaller speech audio: mono AAC ~32 kbps, re-encode existing books (2 h)
-3. Offer to remove finished books' audio; warn before big downloads (1 h)
-
-**Next**
-4. Research keeping audio off the phone: on-phone voices vs streaming downloaded audio (1–2 h)
-5. Build the chosen option (3–5 h)
-6. Take explanations out of the book audio; strip them from old books (2–3 h)
-7. On-demand explanations: tap a passage, get text and audio; listening off by default (3–4 h)
-
-**Soon**
-8. Journal stats and search
-9. Next native build: book-ready notification
-10. Familiar in the mini player and empty states
-
-**Design** (new art drawn by a commissioned illustrator)
-- Now: illustrator briefing document; expressions (angry, silly, happy)
-- Later: more poses and per-path props; wordmark fine-tuning
-- Public-later: petting sounds, paid familiars (owl, toad, snake), accessories
+**Now**
+10. Lenormand path: 36-card deck (Brazilian names, Etteilla scans), lines 3/5/7, box of 9, Grand Tableau 4×9 and 8×4+4 with houses, pair lookups, card of the day and journal (7–9 h)
 
 ## Later 📋
 
-- Lenormand path (cards, spreads, public-domain deck)
-- Astrology path (ephemeris/chart API research, natal chart from birth details, signs, houses, aspects)
-- Numerology path (calculations and meanings)
-- Custom systems
-- Books and voices in Portuguese, French and Arabic
-- Home-screen widget
+11. Custom systems
+14. Numerology: Chaldean and Kabbalistic systems
+
+## Follow up — design 🎨
+
+Waits until the illustrator starts. The briefing (#7) is written.
+- 8. Expressions (angry, silly, happy)
+- 9. Element vial redesign
+- 15. More poses and per-path props · 16. Wordmark fine-tuning
+- Public-later: petting sounds, paid familiars (owl, toad, snake), accessories
 
 ## Public version 📋
 
-Variant flag (personal build keeps Claude and unlocks everything) → public onboarding → viability check for bring-your-own-books → bring your own book or audiobook → voices on the phone → Portuguese UI (French and Arabic for books and voices only) → "Other" study path (notes, flashcards) → free/paid tiers → privacy → TestFlight → App Store. Then accounts + sync, Android, shareable cards with streaks.
+Variant flag (personal build keeps Claude and unlocks everything) → public onboarding → bring your own book or audiobook (viability check done) → own-key cloud voices → Portuguese UI (French and Arabic for books and voices only) → "Other" study path (notes, flashcards) → free/paid tiers → privacy → TestFlight → App Store. Then accounts + sync, Android, shareable cards with streaks.
 
 ## Parked 💤
 

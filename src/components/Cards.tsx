@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useReducer, useState } from 'react';
 import { FlatList, Image, Modal, Pressable, ScrollView, Switch, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { CARDS, cardName, cardUri, onDecksChange } from '../decks';
+import { cardName, cardsOf, cardUri, onDecksChange, System } from '../decks';
+import { lother } from '../lenormand';
 import { Chip } from './ui';
 import { c, F, themed } from '../theme';
 
@@ -33,20 +34,30 @@ export function CardPicker({
   onPick,
   deck,
   title = 'Choose a card',
+  system = 'tarot',
+  taken,
+  stayOpen,
 }: {
   visible: boolean;
   onClose: () => void;
   onPick?: (id: string, reversed: boolean) => void;
   deck?: string;
   title?: string;
+  system?: System;
+  taken?: string[];
+  stayOpen?: boolean;
 }) {
   const [group, setGroup] = useState('Major Arcana');
   const [q, setQ] = useState('');
   const [reversed, setReversed] = useState(false);
-  const list = useMemo(
-    () => (q.trim() ? CARDS.filter((x) => x.name.toLowerCase().includes(q.trim().toLowerCase())) : CARDS.filter((x) => x.group === group)),
-    [q, group],
-  );
+  const tarot = system === 'tarot';
+  const list = useMemo(() => {
+    const all = cardsOf(system);
+    const plain = (t: string) => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const query = plain(q.trim());
+    if (query) return all.filter((x) => plain(`${x.name} ${tarot ? '' : lother(x.id)}`).includes(query));
+    return tarot ? all.filter((x) => x.group === group) : all;
+  }, [q, group, system, tarot]);
   const w = 100;
 
   return (
@@ -59,7 +70,7 @@ export function CardPicker({
           </Pressable>
         </View>
         <TextInput style={s.input} placeholder="Search cards" placeholderTextColor={c.dim} value={q} onChangeText={setQ} autoCorrect={false} />
-        {!q.trim() && (
+        {tarot && !q.trim() && (
           <View>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.chips}>
               {GROUPS.map((g) => (
@@ -68,7 +79,7 @@ export function CardPicker({
             </ScrollView>
           </View>
         )}
-        {onPick && (
+        {onPick && tarot && (
           <View style={s.switchRow}>
             <Text style={s.text}>Reversed</Text>
             <Switch value={reversed} onValueChange={setReversed} trackColor={{ true: c.claude }} />
@@ -82,8 +93,12 @@ export function CardPicker({
           columnWrapperStyle={{ gap: 10, justifyContent: 'flex-start' }}
           contentContainerStyle={{ gap: 14, paddingBottom: 30 }}
           renderItem={({ item }) => (
-            <Pressable style={{ width: w }} disabled={!onPick} onPress={() => (onPick?.(item.id, reversed), onClose())}>
-              <CardImage id={item.id} width={w} deck={deck} reversed={!!onPick && reversed} />
+            <Pressable
+              style={{ width: w, opacity: taken?.includes(item.id) ? 0.3 : 1 }}
+              disabled={!onPick || taken?.includes(item.id)}
+              onPress={() => (onPick?.(item.id, tarot && reversed), !stayOpen && onClose())}
+            >
+              <CardImage id={item.id} width={w} deck={deck} reversed={!!onPick && tarot && reversed} />
               <Text style={s.name} numberOfLines={2}>
                 {item.name}
               </Text>

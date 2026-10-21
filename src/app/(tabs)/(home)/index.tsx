@@ -7,7 +7,7 @@ import { router, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { getBook as getAudio, installSampleOnce, loadProgress } from '../../../storage';
 import { getProfile, patchBook, syncAudioBooks, Tracker } from '../../../tracker';
-import { cardOfTheDay, patchReading, todaysCotd, todaysDraw } from '../../../journal';
+import { cardOfTheDay, dailyCard, patchReading, todaysCotd, todaysDraw } from '../../../journal';
 import { cardName } from '../../../decks';
 import { CardImage, CardPicker } from '../../../components/Cards';
 import CardSheet from '../../../components/CardSheet';
@@ -42,6 +42,19 @@ export default function Home() {
   const [about, setAbout] = useState<string | null>(null);
   const daily = cardOfTheDay();
   const [picking, setPicking] = useState(false);
+  const [lPicking, setLPicking] = useState(false);
+  const lenOn = (getOnboarding().paths ?? []).includes('lenormand');
+  const lDaily = dailyCard('lenormand');
+  const lEntry = lenOn ? todaysCotd('lenormand') : undefined;
+  const lMine = lEntry?.cards[1]?.card;
+  const openL = () => router.push({ pathname: '/reading/[id]', params: { id: lEntry?.id ?? 'draft', system: 'lenormand' } });
+  const logL = (card: string) =>
+    setTimeout(() => {
+      if (lEntry) {
+        patchReading(lEntry.id, (x) => (x.cards[1] = { card }));
+        router.push({ pathname: '/reading/[id]', params: { id: lEntry.id } });
+      } else router.push({ pathname: '/reading/[id]', params: { id: 'draft', card, system: 'lenormand' } });
+    }, 450);
   const [, tick] = useState(0);
   useFocusEffect(useCallback(() => tick((n) => n + 1), []));
   const art = useRef<View>(null);
@@ -174,12 +187,51 @@ export default function Home() {
             </View>
           </View>
         </View>
+        {lenOn && (
+          <View style={s.tCards}>
+            <Pressable onPress={() => setAbout(lDaily)} accessibilityLabel={`About ${cardName(lDaily)}`}>
+              <CardImage id={lDaily} width={cw} />
+            </Pressable>
+            {lMine ? (
+              <Pressable onPress={openL} accessibilityLabel="Your Lenormand card of the day">
+                <CardImage id={lMine} width={cw} />
+              </Pressable>
+            ) : (
+              <Pressable style={[s.blank, { width: cw, height: cw * 1.72, borderRadius: cw * 0.06 }]} onPress={() => setLPicking(true)} accessibilityLabel="Log the Lenormand card you drew">
+                <Ionicons name="add" size={22} color={c.gold} />
+              </Pressable>
+            )}
+            <View style={{ flex: 1, gap: 2 }}>
+              <Text style={s.tag}>Lenormand · calculated</Text>
+              <Text style={s.tName} numberOfLines={1}>{cardName(lDaily).split(' · ').pop()}</Text>
+              <Text style={[s.tag, { marginTop: 6 }]}>Yours</Text>
+              <Text style={s.tName} numberOfLines={1}>{lMine ? cardName(lMine).split(' · ').pop() : 'Not drawn yet'}</Text>
+              <View style={s.tBtns}>
+                {lMine ? (
+                  <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={openL}>
+                    <Ionicons name="book-outline" size={14} color={c.gold} />
+                    <Text style={[s.logBtnText, { color: c.gold }]}>Open entry</Text>
+                  </Pressable>
+                ) : (
+                  <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={() => setLPicking(true)}>
+                    <Ionicons name="add" size={14} color={c.gold} />
+                    <Text style={[s.logBtnText, { color: c.gold }]}>Log yours</Text>
+                  </Pressable>
+                )}
+                <Pressable style={s.logBtn} onPress={openL}>
+                  <Ionicons name="create-outline" size={14} color={c.bg} />
+                  <Text style={s.logBtnText}>Write</Text>
+                </Pressable>
+              </View>
+            </View>
+          </View>
+        )}
       <Pressable onPress={() => setHow(!how)} style={{ alignSelf: 'center', marginTop: 6 }}>
         <Text style={s.how}>{how ? 'Hide' : 'How is the calculated card chosen?'}</Text>
       </Pressable>
       {how && (
         <Text style={s.howText}>
-          Today’s date ({new Date().toLocaleDateString()}) is turned into a number with a simple hash, and that number picks one of the 78 cards. The same date always gives the same card, so it stays all day and changes at midnight. It doesn’t use your birth date, readings or anything about you, and it is never reversed.
+          Today’s date ({new Date().toLocaleDateString()}) is turned into a number with a simple hash, and that number picks one of the 78 cards{lenOn ? ' (and, separately, one of the 36 Lenormand cards)' : ''}. The same date always gives the same card, so it stays all day and changes at midnight. It doesn’t use your birth date, readings or anything about you, and it is never reversed.
         </Text>
       )}
       </View>
@@ -190,7 +242,13 @@ export default function Home() {
         onClose={() => setPicking(false)}
         onPick={(id, rev) => logDrawn(id, rev)}
       />
-      <CardSheet id={about} onClose={() => setAbout(null)} />
+      <CardPicker
+        visible={lPicking}
+        system="lenormand"
+        title="The Lenormand card you drew today"
+        onClose={() => setLPicking(false)}
+        onPick={(id) => logL(id)}
+      />
 
       {listening.length > 0 && (
         <>

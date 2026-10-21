@@ -2,6 +2,10 @@ import { Directory, File, Paths } from 'expo-file-system';
 import * as DocumentPicker from 'expo-document-picker';
 import { unzipSync } from 'fflate';
 import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
+import { isLenormand, LENORMAND, lname, matchLenormand } from './lenormand';
+
+export type System = 'tarot' | 'lenormand';
+export const systemOf = (cardId: string): System => (isLenormand(cardId) ? 'lenormand' : 'tarot');
 
 const MAJOR = [
   'The Fool', 'The Magician', 'The High Priestess', 'The Empress', 'The Emperor', 'The Hierophant', 'The Lovers', 'The Chariot',
@@ -22,7 +26,9 @@ export const CARDS: Card[] = [
   ...MAJOR.map((name, i) => ({ id: `m${String(i).padStart(2, '0')}`, name: `${toRoman(i)} · ${name}`, group: 'Major Arcana' })),
   ...SUITS.flatMap((s) => RANKS.map((r, i) => ({ id: `${s.id}${String(i + 1).padStart(2, '0')}`, name: `${r} of ${s.name}`, group: s.name }))),
 ];
-export const cardName = (id: string) => CARDS.find((x) => x.id === id)?.name ?? id;
+export const cardName = (id: string) => (isLenormand(id) ? lname(id) : (CARDS.find((x) => x.id === id)?.name ?? id));
+export const cardsOf = (system: System): Card[] =>
+  system === 'lenormand' ? LENORMAND.map((x) => ({ id: x.id, name: lname(x.id), group: 'Lenormand' })) : CARDS;
 
 function toRoman(n: number) {
   if (!n) return '0';
@@ -36,17 +42,19 @@ function toRoman(n: number) {
   return out;
 }
 
-export type Deck = { id: string; name: string; source?: string; cards: string[] };
+export type Deck = { id: string; name: string; source?: string; cards: string[]; system?: System };
+const deckSystem = (d: Deck): System => d.system ?? 'tarot';
 
 const root = () => {
   const d = new Directory(Paths.document, 'decks');
   d.create({ idempotent: true, intermediates: true });
   return d;
 };
-const defaultFile = () => new File(root(), 'default.txt');
+const defaultFile = (system: System = 'tarot') => new File(root(), system === 'tarot' ? 'default.txt' : `default-${system}.txt`);
 const RWS_URL = 'https://github.com/giovlnv/ios_202610.familiar/releases/download/deck-rws';
+const LENORMAND_URL = 'https://github.com/giovlnv/ios_202610.familiar/releases/download/deck-lenormand';
 
-let cache: { decks: Deck[]; def: string } | null = null;
+let cache: { decks: Deck[]; def: Record<System, string> } | null = null;
 const listeners = new Set<() => void>();
 export const onDecksChange = (fn: () => void) => (listeners.add(fn), () => void listeners.delete(fn));
 const changed = () => ((cache = null), listeners.forEach((fn) => fn()));
@@ -64,28 +72,35 @@ function read() {
       }
     })
     .filter((d): d is Deck => !!d && d.cards.length > 0);
-  const saved = defaultFile().exists ? defaultFile().textSync().trim() : '';
-  cache = { decks, def: decks.some((d) => d.id === saved) ? saved : (decks[0]?.id ?? '') };
+  const pick = (system: System) => {
+    const f = defaultFile(system);
+    const saved = f.exists ? f.textSync().trim() : '';
+    const own = decks.filter((d) => deckSystem(d) === system);
+    return own.some((d) => d.id === saved) ? saved : (own[0]?.id ?? '');
+  };
+  cache = { decks, def: { tarot: pick('tarot'), lenormand: pick('lenormand') } };
   return cache;
 }
 
-export const listDecks = () => read().decks;
-export const defaultDeck = () => read().def;
+export const listDecks = (system: System = 'tarot') => read().decks.filter((d) => deckSystem(d) === system);
+export const defaultDeck = (system: System = 'tarot') => read().def[system];
 
 export function setDefaultDeck(id: string) {
-  const f = defaultFile();
+  const d = read().decks.find((x) => x.id === id);
+  const f = defaultFile(d ? deckSystem(d) : 'tarot');
   if (!f.exists) f.create();
   f.write(id);
   changed();
 }
 
-export function cardUri(cardId: string, deckId = defaultDeck()) {
-  const deck = read().decks.find((d) => d.id === deckId);
-  return deck?.cards.includes(cardId) ? new File(root(), deckId, `${cardId}.jpg`).uri : undefined;
+export function cardUri(cardId: string, deckId?: string) {
+  const own = read().decks.find((d) => d.id === deckId);
+  const deck = own && deckSystem(own) === systemOf(cardId) ? own : read().decks.find((d) => d.id === defaultDeck(systemOf(cardId)));
+  return deck?.cards.includes(cardId) ? new File(root(), deck.id, `${cardId}.jpg`).uri : undefined;
 }
 
 export function deleteDeck(id: string) {
-  if (id === defaultDeck()) throw new Error('This is your default deck. Choose another default first.');
+  if (Object.values(read().def).includes(id)) throw new Error('This is your default deck. Choose another default first.');
   const d = new Directory(root(), id);
   if (d.exists) d.delete();
   changed();
@@ -95,7 +110,8 @@ function save(id: string, deck: Omit<Deck, 'id'>) {
   const f = new File(root(), id, 'deck.json');
   if (!f.exists) f.create();
   f.write(JSON.stringify(deck));
-  if (!defaultFile().exists) setDefaultDeck(id);
+  changed();
+  if (!defaultFile(deck.system ?? 'tarot').exists) setDefaultDeck(id);
   changed();
 }
 
@@ -114,6 +130,27 @@ export async function downloadRws(onProgress: (done: number, total: number) => v
     onProgress(i + 1, CARDS.length);
   }
   save(id, { name: 'Rider-Waite-Smith (1909)', source: 'Wikimedia Commons, public domain', cards: got });
+}
+
+export const LENORMAND_DECK = 'lenormand-dondorf';
+
+export async function downloadLenormand(onProgress: (done: number, total: number) => void) {
+  const dir = new Directory(root(), LENORMAND_DECK);
+  dir.create({ idempotent: true });
+  const got: string[] = [];
+  for (let i = 0; i < LENORMAND.length; i++) {
+    const cid = LENORMAND[i].id;
+    const dest = new File(dir, `${cid}.jpg`);
+    if (!dest.exists) await File.downloadFileAsync(`${LENORMAND_URL}/${cid}.jpg`, dest, { idempotent: true });
+    got.push(cid);
+    onProgress(i + 1, LENORMAND.length);
+  }
+  save(LENORMAND_DECK, {
+    name: 'Dondorf Wahrsage-Karten (1910)',
+    source: 'Scans by the Etteilla Foundation (etteilla.org), CC BY-NC 4.0',
+    cards: got,
+    system: 'lenormand',
+  });
 }
 
 const WORDS: Record<string, number> = {
@@ -141,14 +178,15 @@ export function matchCard(fileName: string): string | undefined {
   return num !== undefined && Number(num) <= 21 ? `m${num.padStart(2, '0')}` : undefined;
 }
 
-async function storeImages(name: string, items: { name: string; write: (dest: File) => void }[], source: string) {
+async function storeImages(name: string, items: { name: string; write: (dest: File) => void }[], source: string, system: System) {
+  const match = system === 'lenormand' ? matchLenormand : matchCard;
   const id = slug(name);
   const dir = new Directory(root(), id);
   dir.create({ idempotent: true });
   const cards = new Set<string>();
   const skipped: string[] = [];
   for (const it of items) {
-    const cid = matchCard(it.name);
+    const cid = match(system === 'lenormand' ? it.name.split('/').pop()! : it.name);
     if (!cid || cards.has(cid)) {
       skipped.push(it.name);
       continue;
@@ -161,9 +199,13 @@ async function storeImages(name: string, items: { name: string; write: (dest: Fi
   }
   if (!cards.size) {
     dir.delete();
-    throw new Error('No card names recognised in the file names (e.g. “the-fool.jpg”, “cups01.jpg”, “queen of swords.png”).');
+    throw new Error(
+      system === 'lenormand'
+        ? 'No card names recognised in the file names (e.g. “01.jpg”, “rider.jpg”, “o-cavaleiro.png”).'
+        : 'No card names recognised in the file names (e.g. “the-fool.jpg”, “cups01.jpg”, “queen of swords.png”).',
+    );
   }
-  save(id, { name, source, cards: [...cards] });
+  save(id, { name, source, cards: [...cards], ...(system === 'tarot' ? {} : { system }) });
   return { id, matched: cards.size, skipped };
 }
 
@@ -181,33 +223,35 @@ async function shrink(f: File) {
 
 const isImage = (n: string) => /\.(jpe?g|png|webp|heic)$/i.test(n) && !n.split('/').pop()!.startsWith('.');
 
-function fromZip(name: string, bytes: Uint8Array, source: string) {
+function fromZip(name: string, bytes: Uint8Array, source: string, system: System) {
   const files = unzipSync(bytes, { filter: (f) => isImage(f.name) });
   return storeImages(
     name,
     Object.entries(files).map(([n, data]) => ({ name: n, write: (dest) => (dest.create(), dest.write(data)) })),
     source,
+    system,
   );
 }
 
-export async function importDeckFromFiles(name: string) {
+export async function importDeckFromFiles(name: string, system: System = 'tarot') {
   const r = await DocumentPicker.getDocumentAsync({ multiple: true, copyToCacheDirectory: true, type: ['image/*', 'application/zip'] });
   if (r.canceled) return null;
   const zip = r.assets.find((a) => /\.zip$/i.test(a.name));
-  if (zip) return fromZip(name, await new File(zip.uri).bytes(), 'Imported zip');
+  if (zip) return fromZip(name, await new File(zip.uri).bytes(), 'Imported zip', system);
   return storeImages(
     name,
     r.assets.filter((a) => isImage(a.name)).map((a) => ({ name: a.name, write: (dest) => new File(a.uri).copySync(dest) })),
     'Imported images',
+    system,
   );
 }
 
-export async function importDeckFromUrl(name: string, url: string) {
+export async function importDeckFromUrl(name: string, url: string, system: System = 'tarot') {
   const tmp = new File(Paths.cache, 'deck-download.zip');
   if (tmp.exists) tmp.delete();
   await File.downloadFileAsync(url, tmp);
   try {
-    return await fromZip(name, await tmp.bytes(), url);
+    return await fromZip(name, await tmp.bytes(), url, system);
   } finally {
     tmp.delete();
   }

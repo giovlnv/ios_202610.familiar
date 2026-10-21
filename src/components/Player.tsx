@@ -52,6 +52,7 @@ import {
 } from "../explanations";
 import { bodyText, lineHeight, TextStyle, useTextStyle } from "../textStyle";
 import { Link, loadLinks, sectionCard, setLink } from "../sectionCards";
+import { bookSystem } from "../journal";
 import { SleepKind, usePlayback } from "../playback";
 import { FamiliarArt } from "./Familiar";
 import { familiarFor } from "../familiar";
@@ -144,14 +145,17 @@ export default function Player({
         ],
       ),
     );
-  const card = sectionCard(links, section);
+  const sys = useMemo(() => bookSystem(folder), [folder]);
+  const card = sectionCard(links, section, sys);
   const link = (l: Link | undefined) => setLinks(setLink(folder, section.id, l));
   const cardActions = () =>
     card
       ? Alert.alert(cardName(card.card), card.auto ? "Found in the section title" : undefined, [
           { text: "About this card", onPress: () => setCardInfo(card.card) },
           { text: "Change card", onPress: () => setPicking(true) },
-          { text: card.reversed ? "Show upright" : "Show reversed", onPress: () => link({ card: card.card, reversed: !card.reversed }) },
+          ...(sys === "tarot"
+            ? [{ text: card.reversed ? "Show upright" : "Show reversed", onPress: () => link({ card: card.card, reversed: !card.reversed }) }]
+            : []),
           { text: "Remove from this section", style: "destructive", onPress: () => link({ card: null }) },
           { text: "Cancel", style: "cancel" },
         ])
@@ -589,7 +593,7 @@ export default function Player({
                   {x.title}
                 </Text>
                 {(() => {
-                  const k = sectionCard(links, x);
+                  const k = sectionCard(links, x, sys);
                   return k ? <CardImage id={k.card} reversed={k.reversed} width={22} /> : null;
                 })()}
                 <Text style={s.time}>{fmt(shownDuration(x))}</Text>
@@ -696,6 +700,7 @@ export default function Player({
       <CardPicker
         visible={picking}
         title="Card for this section"
+        system={sys}
         onClose={() => setPicking(false)}
         onPick={(id, reversed) => link({ card: id, reversed })}
       />

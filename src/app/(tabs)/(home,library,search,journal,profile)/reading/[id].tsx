@@ -7,7 +7,6 @@ import {
   addPerson,
   addSpread,
   allAreas,
-  allSpreads,
   birthCards,
   cardSections,
   cotdDraft,
@@ -16,12 +15,16 @@ import {
   patchReading,
   Reading,
   readingPrompt,
+  readingSystem,
   removeReading,
   saveReading,
   showDate,
   spreadOf,
+  spreadsFor,
   updateJournal,
 } from '../../../../journal';
+import { dealt, lenormandPrefs, related } from '../../../../lenormand';
+import Tableau from '../../../../components/Tableau';
 import { personal } from '../../../../numerology';
 import { sky } from '../../../../astrology';
 import { getProfile } from '../../../../tracker';
@@ -40,13 +43,13 @@ const short = (id: string) => cardName(id).split(' · ').pop()!;
 
 export default function ReadingScreen() {
   const pad = usePad();
-  const { id, card, reversed } = useLocalSearchParams<{ id: string; card?: string; reversed?: string }>();
+  const { id, card, reversed, system: sysParam } = useLocalSearchParams<{ id: string; card?: string; reversed?: string; system?: string }>();
   const { width } = useWindowDimensions();
   const [j, setJ] = useState(loadJournal);
   const [draft, setDraft] = useState(id === 'draft');
-  const [r, setR] = useState<Reading | undefined>(() => (id === 'draft' ? cotdDraft(card, reversed === '1') : loadJournal().readings.find((x) => x.id === id)));
+  const [r, setR] = useState<Reading | undefined>(() => (id === 'draft' ? cotdDraft(card, reversed === '1', sysParam === 'lenormand' ? 'lenormand' : 'tarot') : loadJournal().readings.find((x) => x.id === id)));
   const [slot, setSlot] = useState<number | null>(null);
-  const [about, setAbout] = useState<{ id: string; role: string } | null>(null);
+  const [about, setAbout] = useState<{ id: string; role: string; near?: string[] } | null>(null);
   const [personSheet, setPersonSheet] = useState(false);
 
   useEffect(
@@ -60,7 +63,17 @@ export default function ReadingScreen() {
   if (!r) return <Text style={s.dim}>Reading not found.</Text>;
   const sp = spreadOf(j, r.spreadId);
   const person = j.people.find((p) => p.id === r.personId);
-  const slotW = (width - 32 - 20) / 3;
+  const system = readingSystem(r);
+  const len = system === 'lenormand';
+  const grand = sp.layout === 'gt49' || sp.layout === 'gt84' ? sp.layout : null;
+  const isLine = sp.layout === 'line' && sp.positions.length > 3;
+  const slotW = isLine ? 78 : (width - 32 - 20) / 3;
+  const showDecks = r.spreadId !== 'cotd' && r.spreadId !== 'lcotd' && (len || (getOnboarding().paths ?? []).includes('lenormand'));
+  const placed = r.cards.map((p) => p?.card).filter((x): x is string => !!x);
+  const nearOf = (i: number) => {
+    if (grand) return related(grand, i, 'near').map((k) => r.cards[k]?.card).filter((x): x is string => !!x);
+    return [r.cards[i - 1]?.card, r.cards[i + 1]?.card].filter((x): x is string => !!x);
+  };
 
   const set = (patch: Partial<Reading>) => {
     const next = { ...r, ...patch };
@@ -69,18 +82,45 @@ export default function ReadingScreen() {
   };
   const placeCard = (i: number, card: string | undefined, reversed = false) => {
     const cards = [...r.cards];
-    cards[i] = card ? { card, reversed } : {};
+    cards[i] = card ? { card, reversed: !len && reversed } : {};
     set({ cards });
+    if (grand && card) {
+      const next = sp.positions.findIndex((_, k) => k > i && !cards[k]?.card);
+      setSlot(next >= 0 ? next : null);
+    }
+  };
+  const switchSystem = (next: 'tarot' | 'lenormand') => {
+    if (next === system) return;
+    const go = () =>
+      set({
+        system: next === 'lenormand' ? 'lenormand' : undefined,
+        significator: next === 'lenormand' ? (r.significator ?? lenormandPrefs().significator) : undefined,
+        spreadId: next === 'lenormand' ? 'l3' : 'three',
+        cards: [],
+      });
+    if (!placed.length) return go();
+    Alert.alert('Switch deck?', 'The cards placed in this reading are cleared.', [
+      { text: 'Cancel', style: 'cancel' },
+      { text: 'Switch', style: 'destructive', onPress: go },
+    ]);
+  };
+  const deal = () => {
+    const go = () => set({ cards: dealt().map((card) => ({ card })) });
+    if (!placed.length) return go();
+    Alert.alert('Deal all 36 at random?', 'The cards already placed are replaced.', [
+      { text: 'Cancel', style: 'cancel' },
+      { text: 'Deal', onPress: go },
+    ]);
   };
   const reload = () => setJ(loadJournal());
 
-  const locked = (i: number) => r.spreadId === 'cotd' && i === 0;
+  const locked = (i: number) => (r.spreadId === 'cotd' || r.spreadId === 'lcotd') && i === 0;
   const slotMenu = (i: number) => {
     const p = r.cards[i];
     if (!p?.card) return locked(i) ? undefined : setSlot(i);
     const links = cardSections(p.card);
     Alert.alert(`${sp.positions[i]} · ${short(p.card)}${p.reversed ? ' (reversed)' : ''}`, undefined, [
-      { text: 'About this card', onPress: () => setAbout({ id: p.card!, role: sp.positions[i] }) },
+      { text: 'About this card', onPress: () => setAbout({ id: p.card!, role: sp.positions[i], near: len ? nearOf(i) : undefined }) },
       ...links.map((l) => ({
         text: `Listen: ${l.title}`,
         onPress: () => router.push({ pathname: '/player/[id]', params: { id: l.folder, section: String(l.index) } }),
@@ -88,7 +128,7 @@ export default function ReadingScreen() {
       ...(locked(i)
         ? []
         : [
-            { text: p.reversed ? 'Make upright' : 'Make reversed', onPress: () => placeCard(i, p.card, !p.reversed) },
+            ...(len ? [] : [{ text: p.reversed ? 'Make upright' : 'Make reversed', onPress: () => placeCard(i, p.card, !p.reversed) }]),
             { text: 'Change card', onPress: () => setSlot(i) },
             { text: 'Remove card', style: 'destructive' as const, onPress: () => placeCard(i, undefined) },
           ]),
@@ -111,7 +151,7 @@ export default function ReadingScreen() {
       Alert.prompt('Positions', 'Separate them with commas, in order (e.g. Me, You, Bond)', (pos) => {
         const positions = (pos ?? '').split(',').map((x) => x.trim()).filter(Boolean);
         if (!positions.length) return;
-        const created = addSpread(name.trim(), positions);
+        const created = addSpread(name.trim(), positions, len ? 'lenormand' : undefined);
         reload();
         set({ spreadId: created.id });
       });
@@ -225,15 +265,57 @@ export default function ReadingScreen() {
         <Chip label="+ Custom" onPress={newArea} />
       </View>
 
+      {showDecks && (
+        <>
+          <Text style={s.label}>Deck</Text>
+          <View style={s.chips}>
+            <Chip label="Tarot" on={!len} onPress={() => switchSystem('tarot')} />
+            <Chip label="Lenormand" on={len} onPress={() => switchSystem('lenormand')} />
+          </View>
+        </>
+      )}
+
       <Text style={s.label}>Spread</Text>
       <View style={s.chips}>
-        {allSpreads(j).filter((x) => (r.spreadId === 'cotd') === (x.id === 'cotd')).map((x) => (
+        {spreadsFor(j, system, !!sp.daily).map((x) => (
           <Chip key={x.id} label={x.name} on={r.spreadId === x.id} onPress={() => set({ spreadId: x.id })} />
         ))}
-        <Chip label="+ Custom" onPress={newSpread} />
+        {!sp.daily && <Chip label="+ Custom" onPress={newSpread} />}
       </View>
 
-      <View style={s.slots}>
+      {grand && (
+        <>
+          <Text style={s.label}>Significator</Text>
+          <View style={s.chips}>
+            <Chip label="29 · A Cigana" on={r.significator === 'l29'} onPress={() => set({ significator: 'l29' })} />
+            <Chip label="28 · O Cigano" on={r.significator === 'l28'} onPress={() => set({ significator: 'l28' })} />
+            <Chip label="Deal at random" onPress={deal} />
+            {!!placed.length && (
+              <Chip
+                label="Clear"
+                onPress={() =>
+                  Alert.alert('Clear all cards?', undefined, [
+                    { text: 'Cancel', style: 'cancel' },
+                    { text: 'Clear', style: 'destructive', onPress: () => set({ cards: [] }) },
+                  ])
+                }
+              />
+            )}
+          </View>
+          <Tableau
+            layout={grand}
+            cards={r.cards}
+            significator={r.significator}
+            onTap={(i) => setSlot(i)}
+            onHold={(i) => (r.cards[i]?.card ? slotMenu(i) : setSlot(i))}
+          />
+          <Text style={s.hint}>{placed.length} of 36 placed · picking a card moves on to the next empty place.</Text>
+        </>
+      )}
+
+      {!grand && (
+      <ScrollView horizontal={isLine} scrollEnabled={isLine} showsHorizontalScrollIndicator={false} contentContainerStyle={isLine ? { gap: 10 } : undefined}>
+      <View style={[s.slots, isLine && { flexWrap: 'nowrap' }]}>
         {sp.positions.map((pos, i) => {
           const p = r.cards[i];
           return (
@@ -258,7 +340,11 @@ export default function ReadingScreen() {
           );
         })}
       </View>
-      {!!filled.length && <Text style={s.hint}>Tap a card to flip, change it or listen to its section.</Text>}
+      </ScrollView>
+      )}
+      {!grand && !!filled.length && (
+        <Text style={s.hint}>{len ? 'Tap a card to change it or read about it.' : 'Tap a card to flip, change it or listen to its section.'}</Text>
+      )}
 
       <Text style={s.label}>My interpretation</Text>
       <TextInput
@@ -274,7 +360,7 @@ export default function ReadingScreen() {
         style={[s.input, { minHeight: 80 }]}
         value={r.keyPoints ?? ''}
         onChangeText={(keyPoints) => set({ keyPoints })}
-        placeholder="Strong Cups energy"
+        placeholder={len ? 'Heart next to the Ring' : 'Strong Cups energy'}
         placeholderTextColor={c.dim}
         multiline
       />
@@ -283,7 +369,7 @@ export default function ReadingScreen() {
         style={[s.input, { minHeight: 80 }]}
         value={r.openQuestions ?? ''}
         onChangeText={(openQuestions) => set({ openQuestions })}
-        placeholder="Why the Tower reversed in the outcome?"
+        placeholder={len ? 'What does the Clouds card near me mean?' : 'Why the Tower reversed in the outcome?'}
         placeholderTextColor={c.dim}
         multiline
       />
@@ -312,10 +398,13 @@ export default function ReadingScreen() {
         </Pressable>
       ))}
 
-      <CardSheet id={about?.id ?? null} role={about?.role} onClose={() => setAbout(null)} />
+      <CardSheet id={about?.id ?? null} role={about?.role} near={about?.near} onClose={() => setAbout(null)} />
       <CardPicker
         visible={slot !== null}
-        title={slot !== null ? sp.positions[slot] : ''}
+        title={slot !== null ? `${slot + 1}. ${sp.positions[slot]}` : ''}
+        system={system}
+        taken={len ? placed.filter((x) => x !== (slot !== null ? r.cards[slot]?.card : undefined)) : undefined}
+        stayOpen={!!grand}
         onClose={() => setSlot(null)}
         onPick={(card, reversed) => slot !== null && placeCard(slot, card, reversed)}
       />

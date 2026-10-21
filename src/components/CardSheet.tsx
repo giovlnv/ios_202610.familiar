@@ -4,8 +4,9 @@ import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { CardImage } from './Cards';
-import { cardName } from '../decks';
-import { bookPaths, cardSections } from '../journal';
+import { cardName, systemOf } from '../decks';
+import { lcard, lname, lother } from '../lenormand';
+import { bookPaths, cardSections, pairsFor } from '../journal';
 import { allSources, loadSources, saveSources, Sources, usesBook } from '../sectionCards';
 import { getOnboarding, PATHS } from '../familiar';
 import { getBook } from '../storage';
@@ -17,14 +18,28 @@ import { cardAstro } from '../astrology';
 const excerpt = (paras: { kind: string; text: string }[], kind: string, max: number) =>
   paras.filter((p) => p.kind === kind).slice(0, max).map((p) => p.text);
 
-export default function CardSheet({ id, role, here, onClose }: { id: string | null; role?: string; here?: string; onClose: () => void }) {
+export default function CardSheet({
+  id,
+  role,
+  here,
+  near,
+  onClose,
+}: {
+  id: string | null;
+  role?: string;
+  here?: string;
+  near?: string[];
+  onClose: () => void;
+}) {
   const [sources, setSources] = useState<Sources>(loadSources);
   const [menu, setMenu] = useState(false);
   const [openBooks, setOpenBooks] = useState<string[]>([]);
   const [shownId, setShownId] = useState(id);
   const myPaths = getOnboarding().paths ?? [];
-  const num = id && myPaths.includes('numerology') ? cardNumber(id) : undefined;
-  const astro = id && myPaths.includes('astrology') ? cardAstro(id) : undefined;
+  const len = !!id && systemOf(id) === 'lenormand';
+  const num = id && !len && myPaths.includes('numerology') ? cardNumber(id) : undefined;
+  const astro = id && !len && myPaths.includes('astrology') ? cardAstro(id) : undefined;
+  const lc = len ? lcard(id!) : undefined;
   if (shownId !== id) {
     setShownId(id);
     if (id) setSources(loadSources());
@@ -34,6 +49,9 @@ export default function CardSheet({ id, role, here, onClose }: { id: string | nu
 
   const found = useMemo(() => (id ? cardSections(id, null).map((f) => ({ ...f, paths: bookPaths(f.folder) })) : []), [id]);
   const shown = found.filter((f) => usesBook(sources, f.folder, f.paths));
+  const pairs = useMemo(() => (id && len ? pairsFor(id, sources) : []), [id, len, sources]);
+  const nearPairs = near?.length ? pairs.filter((p) => near.includes(p.other)) : [];
+  const otherPairs = pairs.filter((p) => !nearPairs.includes(p));
   const paths = PATHS.filter((p) => found.some((f) => f.paths.includes(p.id)));
 
   const update = (next: Sources) => (setSources(next), saveSources(next));
@@ -60,6 +78,9 @@ export default function CardSheet({ id, role, here, onClose }: { id: string | nu
               <CardImage id={id} width={120} />
               <View style={{ flex: 1, gap: 6 }}>
                 <Text style={s.name}>{cardName(id)}</Text>
+                {lc && <Text style={s.role}>{lother(id)}</Text>}
+                {lc && <Text style={s.role}>Playing card {lc.inset} · {lc.keywords}</Text>}
+                {lc && <Text style={s.role}>Its house is position {lc.n} in a Grand Tableau.</Text>}
                 {!!role && <Text style={s.role}>{role}</Text>}
                 {num && <Text style={s.role}>Numerology: {num}</Text>}
                 {astro && <Text style={s.role}>Astrology: {astro}</Text>}
@@ -67,7 +88,9 @@ export default function CardSheet({ id, role, here, onClose }: { id: string | nu
             </View>
 
             {!found.length ? (
-              <Text style={s.dim}>None of your audiobooks has a section for this card yet. Add a tarot book and it will show up here.</Text>
+              <Text style={s.dim}>
+                None of your audiobooks has a section for this card yet. Add a {len ? 'Lenormand' : 'tarot'} book{len ? ' (tag it with the Lenormand path)' : ''} and it will show up here.
+              </Text>
             ) : (
               <>
                 <Pressable style={s.drop} onPress={() => setMenu(!menu)} accessibilityState={{ expanded: menu }}>
@@ -107,6 +130,30 @@ export default function CardSheet({ id, role, here, onClose }: { id: string | nu
               </>
             )}
 
+            {!!pairs.length && (
+              <View style={s.card}>
+                <Text style={s.book}>Combinations</Text>
+                {[...nearPairs, ...otherPairs].map((p) => (
+                  <Pressable
+                    key={`${p.folder}${p.index}`}
+                    style={s.pair}
+                    onPress={() => (onClose(), router.push({ pathname: '/player/[id]', params: { id: p.folder, section: String(p.index) } }))}
+                  >
+                    <CardImage id={p.other} width={26} />
+                    <View style={{ flex: 1 }}>
+                      <Text style={[s.text, nearPairs.includes(p) && { color: c.gold, fontWeight: '700' }]} numberOfLines={1}>
+                        {lname(p.other)}
+                        {nearPairs.includes(p) ? ' · in this reading' : ''}
+                      </Text>
+                      <Text style={s.dim} numberOfLines={1}>
+                        {p.book} · {p.title}
+                      </Text>
+                    </View>
+                    <Ionicons name="headset-outline" size={16} color={c.dim} />
+                  </Pressable>
+                ))}
+              </View>
+            )}
             {shown.map((f) => {
               const sec = getBook(f.folder)?.book.sections[f.index];
               if (!sec) return null;
@@ -203,4 +250,5 @@ const s = themed(() => ({
   text: { color: c.text, fontSize: 15, lineHeight: 22 },
   listen: { flexDirection: 'row', gap: 8, alignItems: 'center', justifyContent: 'center', backgroundColor: c.gold, borderRadius: 10, padding: 11, marginTop: 10 },
   listenText: { color: c.bg, fontWeight: '700' },
+  pair: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 4 },
 }));
