@@ -1,8 +1,8 @@
 import { useCallback, useState } from 'react';
-import { FlatList, Pressable, RefreshControl, Text, View } from 'react-native';
+import { Alert, FlatList, Pressable, RefreshControl, Text, View } from 'react-native';
 import { router, Stack, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { Job, listJobs, STAGE_LABEL } from '../../../jobs';
+import { cancelJob, canCancel, Job, listJobs, STAGE_LABEL } from '../../../jobs';
 import { usePad } from '../../../playback';
 import { c, themed } from '../../../theme';
 import EmptyState from '../../../components/EmptyState';
@@ -16,6 +16,7 @@ const ICON: Record<string, keyof typeof Ionicons.glyphMap> = {
   ready: 'cloud-download-outline',
   imported: 'checkmark-circle',
   error: 'close',
+  cancelling: 'close-circle-outline',
 };
 
 export default function Jobs() {
@@ -55,7 +56,24 @@ export default function Jobs() {
       }
       ListEmptyComponent={busy ? null : <EmptyState text="No books in progress. Tap + to add one." />}
       renderItem={({ item: j }) => (
-        <Pressable style={s.card} onPress={() => router.push({ pathname: '/job/[slug]', params: { slug: j.slug } })}>
+        <Pressable
+          style={s.card}
+          onPress={() => router.push({ pathname: '/job/[slug]', params: { slug: j.slug } })}
+          onLongPress={() =>
+            canCancel(j) &&
+            Alert.alert(j.title, 'Cancel this book? This stops the work on GitHub and deletes the uploaded file and everything made from it.', [
+              { text: 'Keep it', style: 'cancel' },
+              {
+                text: 'Cancel book',
+                style: 'destructive',
+                onPress: () =>
+                  cancelJob(j)
+                    .then(load)
+                    .catch((e) => Alert.alert('Could not cancel', String(e.message ?? e))),
+              },
+            ])
+          }
+        >
           <Ionicons name={ICON[j.stage]} size={22} color={j.stage === 'explanations' || j.stage === 'fix' ? c.claude : j.stage === 'error' ? c.claude : c.gold} />
           <View style={{ flex: 1, gap: 2 }}>
             <Text style={s.title} numberOfLines={2}>

@@ -3,7 +3,7 @@ import { Alert, Pressable, RefreshControl, ScrollView, Text, View } from 'react-
 import { router, Stack, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import * as Clipboard from 'expo-clipboard';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { downloadJob, estimateMinutes, getJob, Job, setStage, STAGE_LABEL } from '../../../../jobs';
+import { cancelJob, canCancel, downloadJob, estimateMinutes, getJob, Job, setStage, STAGE_LABEL } from '../../../../jobs';
 import { syncAudioBooks } from '../../../../tracker';
 import { shareToClaude } from '../../../../components/Consults';
 import { Button } from '../../../../components/ui';
@@ -178,6 +178,23 @@ export default function JobScreen() {
             }
           />
         </>
+      )}
+
+      {job.stage === 'cancelling' && (
+        <Text style={s.p}>GitHub is stopping the work and deleting the upload and everything made from it. The book disappears from this list in a minute or two.</Text>
+      )}
+
+      {canCancel(job) && (
+        <Button
+          label="Cancel this book"
+          icon="close-circle-outline"
+          onPress={() =>
+            Alert.alert('Cancel this book?', 'This stops the work on GitHub and deletes the uploaded file and everything made from it. You can upload it again later.', [
+              { text: 'Keep it', style: 'cancel' },
+              { text: 'Cancel book', style: 'destructive', onPress: () => run(() => cancelJob(job)) },
+            ])
+          }
+        />
       )}
 
       {job.stage === 'imported' && (

@@ -5,7 +5,7 @@ import { getVoiceMode } from './voicer';
 
 const API = 'https://api.github.com/repos/giovlnv/ios_202610.familiar_library';
 
-export type Stage = 'splitting' | 'review' | 'fix' | 'explanations' | 'queued' | 'voices' | 'ready' | 'imported' | 'error';
+export type Stage = 'splitting' | 'review' | 'fix' | 'explanations' | 'queued' | 'voices' | 'ready' | 'imported' | 'error' | 'cancelling';
 export type Job = {
   slug: string;
   title: string;
@@ -34,6 +34,7 @@ export const STAGE_LABEL: Record<Stage, string> = {
   ready: 'Ready to download',
   imported: 'In your library',
   error: 'Something went wrong',
+  cancelling: 'Cancelling…',
 };
 
 async function gh(path: string, init: RequestInit & { raw?: boolean } = {}) {
@@ -137,6 +138,14 @@ export async function downloadJob(job: Job, onProgress: (done: number, total: nu
     onProgress(i + 1, order.length);
   }
   return setStage(job, 'imported');
+}
+
+export const canCancel = (job: Job) => job.stage !== 'imported' && job.stage !== 'cancelling';
+
+export async function cancelJob(job: Job) {
+  const next = await setStage(job, 'cancelling');
+  await gh('/actions/workflows/cancel.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main', inputs: { book: job.slug } }) });
+  return next;
 }
 
 export const estimateMinutes = (job: Job) => Math.round(((job.words ?? 0) / 150 / 2.4 / 6) * 1.2 + 8);
