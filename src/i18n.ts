@@ -13,10 +13,17 @@ const lang = json<{ ui?: string }>('languages.json', {}).ui ?? 'en';
 export const uiLang = () => lang;
 export const loc = () => (lang === 'pt' ? 'pt-BR' : undefined);
 
-export const PRONOUNS = ['she/her', 'he/him', 'they/them', 'ela/dela', 'ele/dele', 'elu/delu'];
-const GENDER: Record<string, number> = { 'she/her': 0, 'ela/dela': 0, 'he/him': 1, 'ele/dele': 1, 'they/them': 2, 'elu/delu': 2 };
-let gender = GENDER[json<{ profile?: { pronouns?: string } }>('tracker.json', {}).profile?.pronouns ?? ''] ?? 0;
-export const setPronouns = (p?: string) => (gender = GENDER[p ?? ''] ?? 0);
+export const PRONOUNS = ['she', 'he', 'they'];
+const OLD: Record<string, string> = { 'she/her': 'she', 'ela/dela': 'she', 'he/him': 'he', 'ele/dele': 'he', 'they/them': 'they', 'elu/delu': 'they' };
+export const pronounKey = (p?: string) => (p ? (OLD[p] ?? (PRONOUNS.includes(p) ? p : undefined)) : undefined);
+export const pronounLabel = (p?: string) => {
+  const k = pronounKey(p);
+  if (!k) return undefined;
+  const i = PRONOUNS.indexOf(k);
+  return (lang === 'pt' ? ['ela/dela', 'ele/dele', 'elu/delu'] : ['she/her', 'he/him', 'they/them'])[i];
+};
+let gender = Math.max(0, PRONOUNS.indexOf(pronounKey(json<{ profile?: { pronouns?: string } }>('tracker.json', {}).profile?.pronouns) ?? 'she'));
+export const setPronouns = (p?: string) => (gender = Math.max(0, PRONOUNS.indexOf(pronounKey(p) ?? 'she')));
 
 export function t(s: string, vars?: Record<string, unknown>) {
   let out = lang === 'pt' ? (PT[s] ?? s) : s;

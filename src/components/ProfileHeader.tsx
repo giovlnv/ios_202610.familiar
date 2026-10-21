@@ -1,4 +1,4 @@
-import { t as tr } from '../i18n';
+import { pronounLabel, t as tr } from '../i18n';
 import { streaks } from '../streaks';
 import { useCallback, useState } from 'react';
 import { Href, router, useFocusEffect } from 'expo-router';
@@ -219,7 +219,7 @@ export default function ProfileHeader() {
         <FamiliarArt familiar={currentGuide()} pose={playing ? 'reading' : nightNow() ? 'sleeping' : 'idle'} size={84} vial alive />
         <View style={{ flex: 1 }}>
           <Text style={s.name}>{p.name || tr("Set up your profile")}</Text>
-          <Text style={s.user}>{p.username ? `@${p.username}${p.pronouns ? ` · ${p.pronouns}` : ""}` : p.pronouns ?? tr("Add a photo, name and username")}</Text>
+          <Text style={s.user}>{p.username ? `@${p.username}${p.pronouns ? ` · ${pronounLabel(p.pronouns)}` : ""}` : (pronounLabel(p.pronouns) ?? tr("Add a photo, name and username"))}</Text>
           {!!p.dob && <Text style={s.user}>{tr("Born")}{' '}{showDate(p.dob)}</Text>}
           {(() => {
             const st = streaks();

@@ -1,4 +1,4 @@
-import { PRONOUNS, setPronouns, t as tr } from '../../../../i18n';
+import { pronounKey, pronounLabel, PRONOUNS, setPronouns, t as tr } from '../../../../i18n';
 import { Chip } from '../../../../components/ui';
 import { useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
@@ -19,7 +19,7 @@ export default function EditProfile() {
   const [photo, setPhoto] = useState(p.photo);
   const [name, setName] = useState(p.name ?? '');
   const [username, setUsername] = useState(p.username ?? '');
-  const [pronouns, setPron] = useState(p.pronouns);
+  const [pronouns, setPron] = useState(pronounKey(p.pronouns));
   const [dob, setDob] = useState(showDate(p.dob));
   const [time, setTime] = useState(ob.birthTime ?? '');
   const [place, setPlace] = useState<Place | undefined>(
@@ -70,11 +70,10 @@ export default function EditProfile() {
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
           <Chip label={tr("No pronouns shown")} on={!pronouns} onPress={() => setPron(undefined)} />
           {PRONOUNS.map((x) => (
-            <Chip key={x} label={x} on={pronouns === x} onPress={() => setPron(x)} />
+            <Chip key={x} label={pronounLabel(x)!} on={pronouns === x} onPress={() => setPron(x)} />
           ))}
         </View>
-        <Text style={ss.meta}>{tr("In Portuguese, the app also uses them for words about you (Nascida, Nascido, Nascide).")}</Text>
-      </View>
+              </View>
       <View style={ss.card}>
         <Text style={ss.label}>{tr("Birth date")}</Text>
         <DateInput style={ss.input} value={dob} onChange={setDob} />
