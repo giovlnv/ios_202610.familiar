@@ -54,6 +54,7 @@ import { newList } from "../lists";
 import { FamiliarArt } from "../../../../components/Familiar";
 import { familiarFor, allPaths } from "../../../../familiar";
 import { useStudy } from "../../../../study";
+import { isPublic } from "../../../../variant";
 
 const STATUSES: Status[] = ["want", "reading", "read", "dnf"];
 
@@ -333,10 +334,13 @@ export default function Title() {
           [
             ["list", tr("Sections"), getBook(b.audio)?.book.sections.length, () => router.push({ pathname: "/book/[id]", params: { id: b.audio! } })],
             ["create-outline", tr("Notes"), notes, () => router.push({ pathname: "/book-items/[id]", params: { id: b.audio!, kind: "notes" } })],
-            ["sparkles-outline", tr("Consults"), consults, () => router.push({ pathname: "/book-items/[id]", params: { id: b.audio!, kind: "consults" } })],
             ["layers-outline", tr("Flashcards"), cards, () => router.push({ pathname: "/book-items/[id]", params: { id: b.audio!, kind: "cards" } })],
           ] as const
-        ).map(([icon, label, count, go]) => (
+        )
+          .flatMap((row, i) =>
+            i === 2 && !isPublic ? [["sparkles-outline", tr("Consults"), consults, () => router.push({ pathname: "/book-items/[id]", params: { id: b.audio!, kind: "consults" } })] as const, row] : [row],
+          )
+          .map(([icon, label, count, go]) => (
           <Pressable key={label} style={s.row} onPress={go}>
             <Ionicons name={icon} size={18} color={c.gold} />
             <Text style={s.rowText}>{label}</Text>
