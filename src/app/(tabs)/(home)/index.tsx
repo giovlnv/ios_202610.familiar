@@ -15,7 +15,7 @@ import { Cover, fmtDate, Stars } from '../../../components/ui';
 import { fmtTime } from '../../../format';
 import { c, F, read, themed, write } from '../../../theme';
 import { FamiliarArt } from '../../../components/Familiar';
-import { getOnboarding, nightNow } from '../../../familiar';
+import { getOnboarding, nightNow, PATHS } from '../../../familiar';
 import { personal } from '../../../numerology';
 import { dailyMessage } from '../../../daily';
 import { sky } from '../../../astrology';
@@ -85,6 +85,10 @@ export default function Home() {
   const { width: W } = useWindowDimensions();
   const cw = Math.min(64, (W - 32) / 6);
   const [how, setHow] = useState(false);
+  const [pageW, setPageW] = useState(0);
+  const [page, setPage] = useState(0);
+  const pager = useRef<ScrollView>(null);
+  const myPaths = getOnboarding().paths ?? [];
   const mark = (p: { section: number; time: number }) => `${p.section}:${Math.floor(p.time)}`;
   const hide = (folder: string, p: { section: number; time: number }) => {
     const next = { ...hidden, [folder]: mark(p) };
@@ -107,6 +111,13 @@ export default function Home() {
   const dob = getProfile().dob;
   const pn = dob && (getOnboarding().paths ?? []).includes('numerology') ? personal(dob) : null;
   const skyLine = (getOnboarding().paths ?? []).includes('astrology') ? sky() : '';
+  const pages = PATHS.filter(
+    (p) =>
+      (p.id === 'tarot' && (!myPaths.length || myPaths.includes('tarot'))) ||
+      (p.id === 'lenormand' && lenOn) ||
+      (p.id === 'numerology' && !!pn) ||
+      (p.id === 'astrology' && !!skyLine),
+  );
   const recent = [...t.logs].sort((a, b) => b.date.localeCompare(a.date) || b.created - a.created).slice(0, 6);
 
   const openTitle = (id: string) => router.push({ pathname: '/title/[id]', params: { id } });
@@ -136,104 +147,98 @@ export default function Home() {
             </View>
           </View>
         </View>
-        {!!skyLine && (
-          <Pressable onPress={() => router.push('/astrology')}>
-            <Text style={s.today}>{skyLine}</Text>
-          </Pressable>
-        )}
-        {pn && (
-          <Pressable onPress={() => router.push('/numerology')}>
-            <Text style={s.today}>
-              Personal day {pn.day} · month {pn.month} · year {pn.year}
-            </Text>
-          </Pressable>
-        )}
-        <View style={s.tCards}>
-          <Pressable onPress={() => setAbout(daily)} accessibilityLabel={`About ${cardName(daily)}`}>
-            <CardImage id={daily} width={cw} />
-          </Pressable>
-          {mine && mineCard?.card ? (
-            <Pressable onPress={() => router.push({ pathname: '/reading/[id]', params: { id: mine.id } })} accessibilityLabel="Your card of the day">
-              <CardImage id={mineCard.card} reversed={mineCard.reversed} width={cw} />
-            </Pressable>
-          ) : (
-            <Pressable style={[s.blank, { width: cw, height: cw * 1.72, borderRadius: cw * 0.06 }]} onPress={() => setPicking(true)} accessibilityLabel="Log the card you drew">
-              <Ionicons name="add" size={22} color={c.gold} />
-            </Pressable>
+        <View onLayout={(e) => setPageW(e.nativeEvent.layout.width)}>
+          {pageW > 0 && (
+            <ScrollView
+              horizontal
+              pagingEnabled
+              showsHorizontalScrollIndicator={false}
+              ref={pager}
+              onMomentumScrollEnd={(e) => setPage(Math.round(e.nativeEvent.contentOffset.x / pageW))}
+            >
+              {pages.map((pg) => (
+                <View key={pg.id} style={{ width: pageW }}>
+                  {pg.id === 'tarot' && (
+                    <DayCard
+                      label="Tarot"
+                      daily={daily}
+                      mine={mine && mineCard?.card ? mineCard : undefined}
+                      cw={cw}
+                      onAbout={() => setAbout(daily)}
+                      onLog={() => setPicking(true)}
+                      onOpen={() => (mine ? router.push({ pathname: '/reading/[id]', params: { id: mine.id } }) : openCotd())}
+                      onWrite={openCotd}
+                    />
+                  )}
+                  {pg.id === 'lenormand' && (
+                    <DayCard
+                      label="Lenormand"
+                      daily={lDaily}
+                      mine={lMine ? { card: lMine } : undefined}
+                      cw={cw}
+                      onAbout={() => setAbout(lDaily)}
+                      onLog={() => setLPicking(true)}
+                      onOpen={openL}
+                      onWrite={openL}
+                    />
+                  )}
+                  {pg.id === 'numerology' && pn && (
+                    <Pressable style={s.page} onPress={() => router.push('/numerology')}>
+                      <Text style={s.tag}>Numerology</Text>
+                      <View style={s.tiles}>
+                        {(
+                          [
+                            ['Personal day', pn.day],
+                            ['Month', pn.month],
+                            ['Year', pn.year],
+                          ] as const
+                        ).map(([label, v]) => (
+                          <View key={label} style={s.tile}>
+                            <Text style={s.tileValue}>{v}</Text>
+                            <Text style={s.tileLabel}>{label}</Text>
+                          </View>
+                        ))}
+                      </View>
+                      <Text style={s.more}>All numbers ›</Text>
+                    </Pressable>
+                  )}
+                  {pg.id === 'astrology' && (
+                    <Pressable style={s.page} onPress={() => router.push('/astrology')}>
+                      <Text style={s.tag}>Astrology · today’s sky</Text>
+                      <Text style={[s.tName, { lineHeight: 22 }]}>{skyLine}</Text>
+                      <Text style={s.more}>Your chart ›</Text>
+                    </Pressable>
+                  )}
+                </View>
+              ))}
+            </ScrollView>
           )}
-          <View style={{ flex: 1, gap: 2 }}>
-            <Text style={s.tag}>Calculated</Text>
-            <Text style={s.tName} numberOfLines={1}>{cardName(daily).split(' · ').pop()}</Text>
-            <Text style={[s.tag, { marginTop: 6 }]}>Yours</Text>
-            <Text style={s.tName} numberOfLines={1}>
-              {mine && mineCard?.card ? `${cardName(mineCard.card).split(' · ').pop()}${mineCard.reversed ? ' (rev.)' : ''}` : 'Not drawn yet'}
-            </Text>
-            <View style={s.tBtns}>
-              {mine && mineCard?.card ? (
-                <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={() => router.push({ pathname: '/reading/[id]', params: { id: mine.id } })}>
-                  <Ionicons name="book-outline" size={14} color={c.gold} />
-                  <Text style={[s.logBtnText, { color: c.gold }]}>Open entry</Text>
-                </Pressable>
-              ) : (
-                <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={() => setPicking(true)}>
-                  <Ionicons name="add" size={14} color={c.gold} />
-                  <Text style={[s.logBtnText, { color: c.gold }]}>Log yours</Text>
-                </Pressable>
-              )}
-              <Pressable style={s.logBtn} onPress={openCotd}>
-                <Ionicons name="create-outline" size={14} color={c.bg} />
-                <Text style={s.logBtnText}>Write</Text>
-              </Pressable>
-            </View>
-          </View>
         </View>
-        {lenOn && (
-          <View style={s.tCards}>
-            <Pressable onPress={() => setAbout(lDaily)} accessibilityLabel={`About ${cardName(lDaily)}`}>
-              <CardImage id={lDaily} width={cw} />
-            </Pressable>
-            {lMine ? (
-              <Pressable onPress={openL} accessibilityLabel="Your Lenormand card of the day">
-                <CardImage id={lMine} width={cw} />
+        {pages.length > 1 && (
+          <View style={s.dots}>
+            {pages.map((pg, i) => (
+              <Pressable
+                key={pg.id}
+                hitSlop={6}
+                onPress={() => (pager.current?.scrollTo({ x: i * pageW, animated: true }), setPage(i))}
+                accessibilityLabel={pg.name}
+                style={[s.dotChip, i === page && { borderColor: pg.color, backgroundColor: pg.color + '2e' }]}
+              >
+                <Text style={[s.dotText, { color: i === page ? pg.color : c.dim }]}>{pg.name}</Text>
               </Pressable>
-            ) : (
-              <Pressable style={[s.blank, { width: cw, height: cw * 1.72, borderRadius: cw * 0.06 }]} onPress={() => setLPicking(true)} accessibilityLabel="Log the Lenormand card you drew">
-                <Ionicons name="add" size={22} color={c.gold} />
-              </Pressable>
-            )}
-            <View style={{ flex: 1, gap: 2 }}>
-              <Text style={s.tag}>Lenormand · calculated</Text>
-              <Text style={s.tName} numberOfLines={1}>{cardName(lDaily).split(' · ').pop()}</Text>
-              <Text style={[s.tag, { marginTop: 6 }]}>Yours</Text>
-              <Text style={s.tName} numberOfLines={1}>{lMine ? cardName(lMine).split(' · ').pop() : 'Not drawn yet'}</Text>
-              <View style={s.tBtns}>
-                {lMine ? (
-                  <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={openL}>
-                    <Ionicons name="book-outline" size={14} color={c.gold} />
-                    <Text style={[s.logBtnText, { color: c.gold }]}>Open entry</Text>
-                  </Pressable>
-                ) : (
-                  <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={() => setLPicking(true)}>
-                    <Ionicons name="add" size={14} color={c.gold} />
-                    <Text style={[s.logBtnText, { color: c.gold }]}>Log yours</Text>
-                  </Pressable>
-                )}
-                <Pressable style={s.logBtn} onPress={openL}>
-                  <Ionicons name="create-outline" size={14} color={c.bg} />
-                  <Text style={s.logBtnText}>Write</Text>
-                </Pressable>
-              </View>
-            </View>
+            ))}
           </View>
         )}
-      <Pressable onPress={() => setHow(!how)} style={{ alignSelf: 'center', marginTop: 6 }}>
-        <Text style={s.how}>{how ? 'Hide' : 'How is the calculated card chosen?'}</Text>
-      </Pressable>
-      {how && (
-        <Text style={s.howText}>
-          Today’s date ({new Date().toLocaleDateString()}) is turned into a number with a simple hash, and that number picks one of the 78 cards{lenOn ? ' (and, separately, one of the 36 Lenormand cards)' : ''}. The same date always gives the same card, so it stays all day and changes at midnight. It doesn’t use your birth date, readings or anything about you, and it is never reversed.
-        </Text>
-      )}
+        {(pages[page]?.id === 'tarot' || pages[page]?.id === 'lenormand') && (
+          <Pressable onPress={() => setHow(!how)} style={{ alignSelf: 'center', marginTop: 4 }}>
+            <Text style={s.how}>{how ? 'Hide' : 'How is the calculated card chosen?'}</Text>
+          </Pressable>
+        )}
+        {how && (pages[page]?.id === 'tarot' || pages[page]?.id === 'lenormand') && (
+          <Text style={s.howText}>
+            Today’s date ({new Date().toLocaleDateString()}) is turned into a number with a simple hash, and that number picks one of the {pages[page].id === 'lenormand' ? '36 Lenormand' : '78 tarot'} cards. The same date always gives the same card, so it stays all day and changes at midnight. It doesn’t use your birth date, readings or anything about you, and it is never reversed.
+          </Text>
+        )}
       </View>
       <CardSheet id={about} onClose={() => setAbout(null)} />
       <CardPicker
@@ -330,6 +335,69 @@ export default function Home() {
   );
 }
 
+function DayCard({
+  label,
+  daily,
+  mine,
+  cw,
+  onAbout,
+  onLog,
+  onOpen,
+  onWrite,
+}: {
+  label: string;
+  daily: string;
+  mine?: { card?: string; reversed?: boolean };
+  cw: number;
+  onAbout: () => void;
+  onLog: () => void;
+  onOpen: () => void;
+  onWrite: () => void;
+}) {
+  const short = (id: string) => cardName(id).split(' · ').pop();
+  return (
+    <View style={s.tCards}>
+      <Pressable onPress={onAbout} accessibilityLabel={`About ${cardName(daily)}`}>
+        <CardImage id={daily} width={cw} />
+      </Pressable>
+      {mine?.card ? (
+        <Pressable onPress={onOpen} accessibilityLabel={`Your ${label} card of the day`}>
+          <CardImage id={mine.card} reversed={mine.reversed} width={cw} />
+        </Pressable>
+      ) : (
+        <Pressable style={[s.blank, { width: cw, height: cw * 1.72, borderRadius: cw * 0.06 }]} onPress={onLog} accessibilityLabel={`Log the ${label} card you drew`}>
+          <Ionicons name="add" size={22} color={c.gold} />
+        </Pressable>
+      )}
+      <View style={{ flex: 1, gap: 2 }}>
+        <Text style={s.tag}>{label} · calculated</Text>
+        <Text style={s.tName} numberOfLines={1}>{short(daily)}</Text>
+        <Text style={[s.tag, { marginTop: 6 }]}>Yours</Text>
+        <Text style={s.tName} numberOfLines={1}>
+          {mine?.card ? `${short(mine.card)}${mine.reversed ? ' (rev.)' : ''}` : 'Not drawn yet'}
+        </Text>
+        <View style={s.tBtns}>
+          {mine?.card ? (
+            <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={onOpen}>
+              <Ionicons name="book-outline" size={14} color={c.gold} />
+              <Text style={[s.logBtnText, { color: c.gold }]}>Open entry</Text>
+            </Pressable>
+          ) : (
+            <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={onLog}>
+              <Ionicons name="add" size={14} color={c.gold} />
+              <Text style={[s.logBtnText, { color: c.gold }]}>Log yours</Text>
+            </Pressable>
+          )}
+          <Pressable style={s.logBtn} onPress={onWrite}>
+            <Ionicons name="create-outline" size={14} color={c.bg} />
+            <Text style={s.logBtnText}>Write</Text>
+          </Pressable>
+        </View>
+      </View>
+    </View>
+  );
+}
+
 const s = themed(() => ({
   familiar: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 14, paddingVertical: 8, paddingHorizontal: 10, marginTop: 12 },
   famName: { color: c.text, fontSize: 18, fontFamily: F.heading },
@@ -357,6 +425,15 @@ const s = themed(() => ({
   logBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, alignSelf: 'center', backgroundColor: c.gold, borderRadius: 16, paddingVertical: 6, paddingHorizontal: 12, marginTop: 6 },
   logBtnText: { color: c.bg, fontWeight: '700', fontSize: 13 },
   logBtnAlt: { backgroundColor: 'transparent', borderWidth: 1, borderColor: c.gold },
+  page: { gap: 8, paddingVertical: 6 },
+  tiles: { flexDirection: 'row', gap: 8 },
+  tile: { flex: 1, backgroundColor: c.raised, borderRadius: 10, paddingVertical: 12, alignItems: 'center', gap: 2 },
+  tileValue: { color: c.gold, fontSize: 22, fontFamily: F.heading },
+  tileLabel: { color: c.dim, fontSize: 11 },
+  more: { color: c.gold, fontWeight: '600', fontSize: 13, alignSelf: 'flex-end' },
+  dots: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 6, marginTop: 6 },
+  dotChip: { borderRadius: 12, paddingVertical: 3, paddingHorizontal: 10, borderWidth: 1, borderColor: 'transparent' },
+  dotText: { fontSize: 12, fontWeight: '600' },
   h2: { color: c.text, fontSize: 19, marginTop: 24, marginBottom: 10, fontFamily: F.heading },
   listen: { flexDirection: 'row', gap: 12, alignItems: 'center', backgroundColor: c.panel, borderRadius: 12, padding: 10, marginBottom: 8 },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },
