@@ -1,4 +1,5 @@
 import { Directory, File, Paths } from 'expo-file-system';
+import { FileSystemUploadType, uploadAsync } from 'expo-file-system/legacy';
 import { getToken } from './sync';
 import { getVoiceMode } from './voicer';
 
@@ -63,13 +64,36 @@ export const slugify = (t: string) =>
   '-' +
   Date.now().toString(36).slice(-4);
 
+const BIG = 30 * 1024 * 1024;
+
+/** Big books go to the "inbox" release as an asset (up to 2 GB); the contents API stops near 50 MB. */
+async function uploadAsset(uri: string, name: string) {
+  let r = await gh('/releases/tags/inbox');
+  if (!r.ok)
+    r = await gh('/releases', { method: 'POST', body: JSON.stringify({ tag_name: 'inbox', name: 'Inbox', body: 'Uploaded books waiting to be prepared.' }) });
+  const release = (await r.json()) as { id: number; assets?: { id: number; name: string }[] };
+  const old = release.assets?.find((a) => a.name === name);
+  if (old) await gh(`/releases/assets/${old.id}`, { method: 'DELETE' });
+  const token = await getToken();
+  const up = await uploadAsync(`https://uploads.github.com/repos/giovlnv/ios_202610.familiar_library/releases/${release.id}/assets?name=${encodeURIComponent(name)}`, uri, {
+    httpMethod: 'POST',
+    uploadType: FileSystemUploadType.BINARY_CONTENT,
+    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/octet-stream', Accept: 'application/vnd.github+json' },
+  });
+  if (up.status >= 300) throw new Error(`GitHub ${up.status}: ${up.body.slice(0, 160)}`);
+  return name;
+}
+
 export async function uploadBook(o: { uri: string; name: string; title: string; instructions: string; lang: string; explanations: boolean }) {
   const slug = slugify(o.title);
   const ext = o.name.toLowerCase().endsWith('.pdf') ? 'pdf' : 'epub';
-  await put(`inbox/${slug}/book.${ext}`, new File(o.uri).base64Sync(), `Upload ${o.title}`);
+  const src = new File(o.uri);
+  let asset: string | undefined;
+  if ((src.size ?? 0) > BIG) asset = await uploadAsset(src.uri, `${slug}.${ext}`);
+  else await put(`inbox/${slug}/book.${ext}`, src.base64Sync(), `Upload ${o.title}`);
   await put(
     `inbox/${slug}/request.json`,
-    b64(JSON.stringify({ title: o.title, instructions: o.instructions, lang: o.lang, explanations: o.explanations, voices: o.lang === 'ar' ? 'phone' : getVoiceMode(), created: Date.now() })),
+    b64(JSON.stringify({ title: o.title, instructions: o.instructions, lang: o.lang, explanations: o.explanations, asset, voices: o.lang === 'ar' ? 'phone' : getVoiceMode(), created: Date.now() })),
     `Request ${o.title}`
   );
   return slug;
