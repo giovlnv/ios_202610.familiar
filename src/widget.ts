@@ -1,4 +1,5 @@
 import { ExtensionStorage } from '@bacons/apple-targets';
+import AudioEncoder from '../modules/audio-encoder';
 import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
 import { longitude, signOf } from './astrology';
 import { cardName, cardUri } from './decks';
@@ -10,8 +11,22 @@ import { getBook, loadProgress } from './storage';
 import { c, read, write } from './theme';
 import { getProfile, load } from './tracker';
 
-export const APP_GROUP = 'group.com.giovlnv.tarotreader';
-const store = new ExtensionStorage(APP_GROUP);
+const DEFAULT_GROUP = 'group.com.giovlnv.tarotreader';
+export function appGroups(): string[] {
+  try {
+    return AudioEncoder.appGroups();
+  } catch {
+    return [];
+  }
+}
+export const appGroup = () => {
+  const g = appGroups();
+  return g.find((x) => x.includes('tarotreader')) ?? g[0] ?? DEFAULT_GROUP;
+};
+let cached: ExtensionStorage | null = null;
+export const widgetStore = () => (cached ??= new ExtensionStorage(appGroup()));
+let status = 'Not synced yet';
+export const widgetStatus = () => status;
 
 export type WidgetColors = { theme: boolean; bg: string; text: string; accent: string };
 export const BG = ['#14111C', '#0D1626', '#1A0D10', '#0E1813', '#0F1730', '#F6F2F8', '#FFFFFF'];
@@ -28,7 +43,7 @@ export function getWidgetColors(): WidgetColors {
 
 export function setWidgetColors(p: Partial<WidgetColors>) {
   write('widget-colors.json', JSON.stringify({ ...getWidgetColors(), ...p }));
-  syncWidget().catch(() => {});
+  trySyncWidget();
 }
 
 const ymd = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -79,8 +94,18 @@ export async function syncWidget(familiarPng?: string) {
   }
   const col = getWidgetColors();
   const colors = col.theme ? { bg: c.bg, text: c.text, accent: c.gold } : col;
+  const store = widgetStore();
   store.set('data', JSON.stringify({ days, listening: listening(), colors: { bg: colors.bg, text: colors.text, accent: colors.accent } }));
   for (const [id, b64] of Object.entries(images)) if (b64) store.set(`card-${id}`, b64);
   if (familiarPng) store.set('familiar', familiarPng);
   ExtensionStorage.reloadWidget();
+  status = `Synced ${new Date().toLocaleTimeString()} · ${days.length} days · ${Object.keys(images).length} cards${familiarPng ? ' · familiar' : ''}`;
+}
+
+export async function trySyncWidget(familiarPng?: string) {
+  try {
+    await syncWidget(familiarPng);
+  } catch (e) {
+    status = `Sync failed: ${String((e as Error).message ?? e)}`;
+  }
 }

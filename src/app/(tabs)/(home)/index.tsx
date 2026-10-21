@@ -1,7 +1,7 @@
 import { usePad, usePlayback } from '../../../playback';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { captureRef } from 'react-native-view-shot';
-import { syncWidget } from '../../../widget';
+import { trySyncWidget } from '../../../widget';
 import { Alert, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -50,8 +50,8 @@ export default function Home() {
       const id = setTimeout(
         () =>
           captureRef(art, { format: 'png', result: 'base64', width: 256, height: 256 })
-            .then((png) => syncWidget(png))
-            .catch(() => {}),
+            .then((png) => trySyncWidget(png))
+            .catch(() => trySyncWidget()),
         1200,
       );
       return () => clearTimeout(id);

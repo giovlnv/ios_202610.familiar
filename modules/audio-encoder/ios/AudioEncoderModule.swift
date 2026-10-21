@@ -1,6 +1,17 @@
 import AVFoundation
 import ExpoModulesCore
 
+func provisionedAppGroups() -> [String] {
+  guard let url = Bundle.main.url(forResource: "embedded", withExtension: "mobileprovision"),
+        let data = try? Data(contentsOf: url),
+        let start = data.range(of: Data("<?xml".utf8)),
+        let end = data.range(of: Data("</plist>".utf8), in: start.lowerBound..<data.endIndex),
+        let plist = try? PropertyListSerialization.propertyList(from: data.subdata(in: start.lowerBound..<end.upperBound), format: nil) as? [String: Any],
+        let ents = plist["Entitlements"] as? [String: Any]
+  else { return [] }
+  return ents["com.apple.security.application-groups"] as? [String] ?? []
+}
+
 public class AudioEncoderModule: Module {
   private let speech = AVSpeechSynthesizer()
 
@@ -26,6 +37,10 @@ public class AudioEncoderModule: Module {
         if buf.frameLength == 0 { break }
         try dst.write(from: buf)
       }
+    }
+
+    Function("appGroups") { () -> [String] in
+      provisionedAppGroups()
     }
 
     Function("systemVoices") { (language: String) -> [[String: String]] in

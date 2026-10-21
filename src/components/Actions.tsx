@@ -1,13 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { AppState } from 'react-native';
 import { router } from 'expo-router';
-import { ExtensionStorage } from '@bacons/apple-targets';
 import { usePlayback } from '../playback';
 import { getBook } from '../storage';
 import { read } from '../theme';
-import { APP_GROUP, syncWidget } from '../widget';
-
-const store = new ExtensionStorage(APP_GROUP);
+import { trySyncWidget, widgetStore } from '../widget';
 
 /** Runs what Siri or a Shortcut asked for, and refreshes the widget when the app opens. */
 export default function Actions() {
@@ -27,7 +24,8 @@ export default function Actions() {
       if (sleep) setTimeout(() => latest.current.setSleep(sleep), 1500);
     };
     const run = () => {
-      syncWidget().catch(() => {});
+      trySyncWidget();
+      const store = widgetStore();
       const a = store.get('action');
       if (!a) return;
       store.remove('action');

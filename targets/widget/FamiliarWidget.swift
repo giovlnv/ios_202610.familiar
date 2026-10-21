@@ -156,7 +156,7 @@ struct FamiliarWidgetView: View {
     let list = items
     Group {
       if entry.data == nil {
-        Text("Open Familiar once to set up the widget.").font(.system(size: 12)).foregroundColor(text).multilineTextAlignment(.center)
+        Text(provisionedAppGroups().isEmpty ? "This install has no shared app group, so the widget can't read Familiar's data." : "Open Familiar once to set up the widget.").font(.system(size: 12)).foregroundColor(text).multilineTextAlignment(.center)
       } else if family == .systemSmall {
         VStack(spacing: 6) {
           if let first = list.first { item(first) }

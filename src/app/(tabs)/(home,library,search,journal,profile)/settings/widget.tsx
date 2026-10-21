@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Pressable, Switch, Text, View } from 'react-native';
 import { Page, ss } from '../../../../components/settings-ui';
-import { ACCENT, BG, getWidgetColors, setWidgetColors, TEXT, WidgetColors } from '../../../../widget';
+import { ACCENT, appGroup, appGroups, BG, getWidgetColors, setWidgetColors, TEXT, WidgetColors, widgetStatus } from '../../../../widget';
 import { c, themed } from '../../../../theme';
 
 const ROWS: [keyof Omit<WidgetColors, 'theme'>, string, string[]][] = [
@@ -42,6 +42,12 @@ export default function WidgetSettings() {
             </View>
           </View>
         ))}
+      <Text style={[ss.label, { marginTop: 14 }]}>Status</Text>
+      <View style={ss.card}>
+        <Text style={ss.meta}>{widgetStatus()}</Text>
+        <Text style={ss.meta}>Shared storage: {appGroup()}</Text>
+        <Text style={ss.meta}>App groups in this install: {appGroups().join(', ') || 'none'}</Text>
+      </View>
       <View style={[s.preview, { backgroundColor: col.theme ? c.bg : col.bg }]}>
         <Text style={{ color: col.theme ? c.gold : col.accent, fontSize: 22, fontWeight: '700' }}>7</Text>
         <Text style={{ color: col.theme ? c.text : col.text, fontSize: 14 }}>Preview · Personal day</Text>
