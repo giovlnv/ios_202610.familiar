@@ -75,9 +75,31 @@ export async function canStream(folder: string, book: Book) {
   return !!r?.ok;
 }
 
+/** Folders restored from a backup have notes and progress but no book.json: fetch it from GitHub. */
+async function restoreMissingBooks() {
+  const dir = root();
+  if (!dir.exists) return 0;
+  let n = 0;
+  for (const d of dir.list()) {
+    if (!(d instanceof Directory) || new File(d, 'book.json').exists) continue;
+    const src = remoteAudio(d.name, 'book.json');
+    const r = await fetch(src.uri, { headers: src.headers }).catch(() => null);
+    if (!r?.ok) continue;
+    const text = await r.text();
+    try {
+      JSON.parse(text);
+    } catch {
+      continue;
+    }
+    new File(d, 'book.json').write(text);
+    n++;
+  }
+  return n;
+}
+
 export async function refreshStreamingBooks() {
   if (!token) return 0;
-  let n = 0;
+  let n = await restoreMissingBooks();
   for (const b of listBooks()) {
     if (bookSizes(b.folder).audio > 0) continue;
     const src = remoteAudio(b.folder, 'book.json');

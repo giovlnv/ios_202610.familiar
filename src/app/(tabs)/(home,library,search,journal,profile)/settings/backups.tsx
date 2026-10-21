@@ -4,6 +4,7 @@ import { router, useFocusEffect } from 'expo-router';
 import { backupToFile, getState, getToken, pullFromGithub, pushToGithub, restoreFromFile, SyncState } from '../../../../sync';
 import { c } from '../../../../theme';
 import { Btn, confirmRestore, Page, ss, when } from '../../../../components/settings-ui';
+import { refreshStreamingBooks } from '../../../../storage';
 
 export default function Backups() {
   const [state, setState] = useState<SyncState>({});
@@ -19,6 +20,7 @@ export default function Backups() {
     setBusy(true);
     try {
       const r = await fn();
+      if (typeof r === 'number') await refreshStreamingBooks().catch(() => 0);
       if (ok) Alert.alert(ok, typeof r === 'number' ? `${r} book(s) restored.` : undefined);
     } catch (e) {
       Alert.alert('Something went wrong', String((e as Error).message ?? e));
