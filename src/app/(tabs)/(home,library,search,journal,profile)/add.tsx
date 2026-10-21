@@ -27,7 +27,7 @@ export default function AddBook() {
   const [instructions, setInstructions] = useState('');
   const [lang, setLang] = useState('en');
   const [explain, setExplain] = useState(true);
-  const [split, setSplit] = useState<'toc' | 'cards'>('toc');
+  const [split, setSplit] = useState<'toc' | 'cards' | 'headings'>('toc');
   const epub = !!file && /\.epub$/i.test(file.name);
   const addHint = (h: string) => setInstructions((v) => (v.trim() ? `${v.trim()}\n• ${h}` : `• ${h}`));
   const [busy, setBusy] = useState(false);
@@ -67,14 +67,17 @@ export default function AddBook() {
       {epub && (
         <>
           <Text style={s.label}>Sections</Text>
-          <View style={s.row}>
+          <View style={[s.row, { flexWrap: 'wrap' }]}>
             <Chip label="Follow the book’s table" on={split === 'toc'} onPress={() => setSplit('toc')} />
             <Chip label="Split per card" on={split === 'cards'} onPress={() => setSplit('cards')} />
+            <Chip label="Split at sub-headings" on={split === 'headings'} onPress={() => setSplit('headings')} />
           </View>
           <Text style={s.dim}>
             {split === 'toc'
               ? 'One section per chapter in the table of contents.'
-              : 'Chapters that list cards in the table of contents are split into one section per card.'}
+              : split === 'cards'
+                ? 'Chapters that list cards in the table of contents are split into one section per card.'
+                : 'Long chapters and parts are split at their own sub-headings. Notes and credits stay whole.'}
           </Text>
         </>
       )}

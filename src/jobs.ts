@@ -85,7 +85,7 @@ async function uploadAsset(uri: string, name: string) {
   return name;
 }
 
-export async function uploadBook(o: { uri: string; name: string; title: string; instructions: string; lang: string; explanations: boolean; split?: 'toc' | 'cards' }) {
+export async function uploadBook(o: { uri: string; name: string; title: string; instructions: string; lang: string; explanations: boolean; split?: 'toc' | 'cards' | 'headings' }) {
   const slug = slugify(o.title);
   const ext = o.name.toLowerCase().endsWith('.pdf') ? 'pdf' : 'epub';
   const src = new File(o.uri);
