@@ -16,6 +16,7 @@ export type TBook = {
   genres?: string[];
   genresEdited?: boolean;
   paths?: string[];
+  numSystem?: import('./numerology').NumSystem;
   status: Status;
   audio?: string;
   isbn?: string;

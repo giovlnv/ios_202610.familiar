@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { getProfile } from '../../../../tracker';
 import { getOnboarding } from '../../../../familiar';
+import { activeSystem, SYSTEM_NAME } from '../../../../numerology';
 import { HOUSES } from '../../../../astrology';
 import { PALETTES, paletteId } from '../../../../theme';
 import { getState } from '../../../../sync';
@@ -30,7 +31,7 @@ export default function Settings() {
           <MenuRow icon="planet-outline" title="Astrology" sub={`Houses: ${HOUSES.find((h) => h.id === (getOnboarding().houses ?? 'placidus'))?.name}`} to="/settings/astrology" />
         )}
         {(getOnboarding().paths ?? []).includes('numerology') && (
-          <MenuRow icon="keypad-outline" title="Numerology" sub={`Pythagorean · Y as ${getOnboarding().yVowel ? 'vowel' : 'consonant'}`} to="/settings/numerology" />
+          <MenuRow icon="keypad-outline" title="Numerology" sub={`${SYSTEM_NAME[activeSystem()]} · Y as ${getOnboarding().yVowel ? 'vowel' : 'consonant'}`} to="/settings/numerology" />
         )}
       </View>
       <Text style={ss.label}>Account</Text>

@@ -291,6 +291,9 @@ export type Onboarding = {
   birthLon?: number;
   birthTz?: string;
   yVowel?: boolean;
+  numSystem?: import('./numerology').NumSystem;
+  numAccents?: boolean;
+  numX?: number;
   houses?: HouseSystem;
 };
 export type HouseSystem = 'placidus' | 'whole' | 'equal';

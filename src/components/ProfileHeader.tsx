@@ -164,7 +164,7 @@ function NumerologyPanel({ dob }: { dob?: string }) {
   return (
     <>
       <View style={s.tiles}>
-        {n.core.slice(0, 1).concat(n.core.filter((r) => ['expression', 'soulUrge', 'personality'].includes(r.key))).map((r) => (
+        {n.core.slice(0, 1).concat(n.core.filter((r) => ['expression', 'soulUrge', 'personality', 'name'].includes(r.key))).map((r) => (
           <Tile key={r.key} value={show(r.value)} label={r.label} onPress={go} />
         ))}
       </View>
