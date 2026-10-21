@@ -53,6 +53,7 @@ import { GenreSheet } from "../../../../components/GenreSheet";
 import { newList } from "../lists";
 import { FamiliarArt } from "../../../../components/Familiar";
 import { familiarFor, allPaths } from "../../../../familiar";
+import { useStudy } from "../../../../study";
 
 const STATUSES: Status[] = ["want", "reading", "read", "dnf"];
 
@@ -64,6 +65,7 @@ export default function Title() {
   const [shelving, setShelving] = useState(false);
   const [editStart, setEditStart] = useState(false);
   const [genring, setGenring] = useState(false);
+  const study = useStudy();
   const refresh = useCallback(() => setT(syncAudioBooks()), []);
   useFocusEffect(refresh);
 
@@ -72,6 +74,7 @@ export default function Title() {
   const logs = logsFor(t, b.id);
   const notes = b.audio ? loadNotes(b.audio).length : 0;
   const consults = b.audio ? loadConsults(b.audio).length : 0;
+  const cards = b.audio ? study.cards.filter((x) => x.book === b.audio).length : 0;
   const fav = !!t.favorites?.includes(b.id);
   const myShelves = (t.shelves ?? []).filter((sh) => sh.books.includes(b.id));
 
@@ -325,20 +328,22 @@ export default function Title() {
         )}
       </View>
 
-      {b.audio && (
-        <Pressable
-          style={s.row}
-          onPress={() =>
-            router.push({ pathname: "/book/[id]", params: { id: b.audio! } })
-          }
-        >
-          <Ionicons name="list" size={18} color={c.gold} />
-          <Text style={s.rowText}>
-            {tr("Sections, notes (")}{notes}{tr(") and consults (")}{consults})
-          </Text>
-          <Ionicons name="chevron-forward" size={16} color={c.dim} />
-        </Pressable>
-      )}
+      {b.audio &&
+        (
+          [
+            ["list", tr("Sections"), getBook(b.audio)?.book.sections.length, () => router.push({ pathname: "/book/[id]", params: { id: b.audio! } })],
+            ["create-outline", tr("Notes"), notes, () => router.push({ pathname: "/book-items/[id]", params: { id: b.audio!, kind: "notes" } })],
+            ["sparkles-outline", tr("Consults"), consults, () => router.push({ pathname: "/book-items/[id]", params: { id: b.audio!, kind: "consults" } })],
+            ["layers-outline", tr("Flashcards"), cards, () => router.push({ pathname: "/book-items/[id]", params: { id: b.audio!, kind: "cards" } })],
+          ] as const
+        ).map(([icon, label, count, go]) => (
+          <Pressable key={label} style={s.row} onPress={go}>
+            <Ionicons name={icon} size={18} color={c.gold} />
+            <Text style={s.rowText}>{label}</Text>
+            {!!count && <Text style={{ color: c.dim, fontVariant: ["tabular-nums"] }}>{count}</Text>}
+            <Ionicons name="chevron-forward" size={16} color={c.dim} />
+          </Pressable>
+        ))}
 
       <Text style={s.h2}>{tr("Reading history")}</Text>
       {logs.length ? (

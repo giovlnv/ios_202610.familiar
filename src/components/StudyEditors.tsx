@@ -5,6 +5,18 @@ import { getOnboarding, setOnboarding } from '../familiar';
 import { t as tr } from '../i18n';
 import { c, F, themed } from '../theme';
 
+export const confirmDeleteCard = (id: string, done?: () => void) =>
+  Alert.alert(tr('Delete this flashcard?'), undefined, [
+    { text: tr('Cancel'), style: 'cancel' },
+    { text: tr('Delete'), style: 'destructive', onPress: () => (removeCard(id), done?.()) },
+  ]);
+
+export const confirmDeleteNote = (id: string, done?: () => void) =>
+  Alert.alert(tr('Delete this note?'), undefined, [
+    { text: tr('Cancel'), style: 'cancel' },
+    { text: tr('Delete'), style: 'destructive', onPress: () => (removeNote(id), done?.()) },
+  ]);
+
 export function promptSubject(onDone?: (s: Subject) => void) {
   Alert.prompt(tr('New study subject'), tr('Its name is also the name of its path'), (n) => {
     const name = n?.trim();
@@ -77,7 +89,7 @@ export function CardEditor({ draft, source, onClose }: { draft: CardDraft; sourc
       title={draft.id ? tr('Flashcard') : tr('New flashcard')}
       onClose={onClose}
       onSave={save}
-      onDelete={draft.id ? () => Alert.alert(tr('Delete this flashcard?'), undefined, [{ text: tr('Cancel'), style: 'cancel' }, { text: tr('Delete'), style: 'destructive', onPress: () => (removeCard(draft.id!), onClose()) }]) : undefined}
+      onDelete={draft.id ? () => confirmDeleteCard(draft.id!, onClose) : undefined}
     >
       <Text style={s.label}>{tr('Subject')}</Text>
       <SubjectChips value={subject} onChange={setSubject} />
@@ -106,7 +118,7 @@ export function NoteEditor({ draft, onClose }: { draft: Partial<StudyNote>; onCl
       title={draft.id ? tr('Note') : tr('New note')}
       onClose={onClose}
       onSave={save}
-      onDelete={draft.id ? () => Alert.alert(tr('Delete this note?'), undefined, [{ text: tr('Cancel'), style: 'cancel' }, { text: tr('Delete'), style: 'destructive', onPress: () => (removeNote(draft.id!), onClose()) }]) : undefined}
+      onDelete={draft.id ? () => confirmDeleteNote(draft.id!, onClose) : undefined}
     >
       <Text style={s.label}>{tr('Subject')}</Text>
       <SubjectChips value={subject} onChange={setSubject} />

@@ -1,9 +1,9 @@
 import { ReactNode, useState } from 'react';
-import { FlatList, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { ActionSheetIOS, FlatList, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { router, Stack } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { CardDraft, Flashcard, isDue, StudyNote, updateStudy, useStudy } from '../study';
-import { CardEditor, NoteEditor, promptSubject } from './StudyEditors';
+import { CardEditor, confirmDeleteCard, confirmDeleteNote, NoteEditor, promptSubject } from './StudyEditors';
 import { Chip, fmtDate } from './ui';
 import { usePad } from '../playback';
 import { t as tr } from '../i18n';
@@ -25,6 +25,8 @@ export default function StudyJournal({ tab, switcher }: { tab: 'notes' | 'cards'
   const cards = d.cards.filter((x) => (!subject || x.subject === subject) && match(x.front, x.back)).sort((a, b) => b.created - a.created);
   const pool = d.cards.filter((x) => !subject || x.subject === subject);
   const due = d.review === 'spaced' ? pool.filter(isDue).length : pool.length;
+  const menu = (edit: () => void, del: () => void) =>
+    ActionSheetIOS.showActionSheetWithOptions({ options: [tr('Edit'), tr('Delete'), tr('Cancel')], destructiveButtonIndex: 1, cancelButtonIndex: 2 }, (i) => (i === 0 ? edit() : i === 1 ? del() : undefined));
   const add = () => (tab === 'notes' ? setNote({ subject: subject ?? undefined }) : setCard({ subject: subject ?? undefined }));
 
   const header = (
@@ -97,7 +99,7 @@ export default function StudyJournal({ tab, switcher }: { tab: 'notes' | 'cards'
           ListEmptyComponent={empty}
           contentContainerStyle={{ padding: 16, gap: 10, paddingBottom: 40 + pad }}
           renderItem={({ item: n }) => (
-            <Pressable style={s.row} onPress={() => setNote(n)}>
+            <Pressable style={s.row} onPress={() => setNote(n)} onLongPress={() => menu(() => setNote(n), () => confirmDeleteNote(n.id))}>
               <View style={[s.dot, { backgroundColor: color.get(n.subject) ?? c.dim }]} />
               <View style={{ flex: 1, gap: 3 }}>
                 {!!n.title && <Text style={s.title}>{n.title}</Text>}
@@ -120,7 +122,7 @@ export default function StudyJournal({ tab, switcher }: { tab: 'notes' | 'cards'
           ListEmptyComponent={empty}
           contentContainerStyle={{ padding: 16, gap: 10, paddingBottom: 40 + pad }}
           renderItem={({ item: x }: { item: Flashcard }) => (
-            <Pressable style={s.row} onPress={() => setCard(x)}>
+            <Pressable style={s.row} onPress={() => setCard(x)} onLongPress={() => menu(() => setCard(x), () => confirmDeleteCard(x.id))}>
               <View style={[s.dot, { backgroundColor: color.get(x.subject) ?? c.dim }]} />
               <View style={{ flex: 1, gap: 3 }}>
                 <Text style={s.title} numberOfLines={2}>
@@ -131,6 +133,9 @@ export default function StudyJournal({ tab, switcher }: { tab: 'notes' | 'cards'
                 </Text>
                 {d.review === 'spaced' && <Text style={s.small}>{isDue(x) ? tr('Due today') : tr('Next: {0}', { 0: fmtDate(x.due!, { day: 'numeric', month: 'short' }) })}</Text>}
               </View>
+              <Pressable hitSlop={10} onPress={() => menu(() => setCard(x), () => confirmDeleteCard(x.id))} accessibilityLabel={tr('Edit or delete')}>
+                <Ionicons name="ellipsis-horizontal" size={18} color={c.dim} />
+              </Pressable>
             </Pressable>
           )}
         />

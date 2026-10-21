@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { dueCards, grade, loadStudy, subjectOf } from '../../../../study';
+import { CardDraft, dueCards, grade, loadStudy, subjectOf, useStudy } from '../../../../study';
+import { CardEditor, confirmDeleteCard } from '../../../../components/StudyEditors';
 import { usePad } from '../../../../playback';
 import { t as tr } from '../../../../i18n';
 import { c, F, themed } from '../../../../theme';
@@ -10,17 +11,19 @@ import { c, F, themed } from '../../../../theme';
 const shuffle = <T,>(a: T[]) => a.map((x) => [Math.random(), x] as const).sort((p, q) => p[0] - q[0]).map((p) => p[1]);
 
 export default function Review() {
-  const { subject } = useLocalSearchParams<{ subject?: string }>();
+  const { subject, book } = useLocalSearchParams<{ subject?: string; book?: string }>();
   const pad = usePad();
   const [queue, setQueue] = useState(() => {
     const d = loadStudy();
-    const ids = (d.review === 'spaced' ? dueCards(subject) : d.cards.filter((x) => !subject || x.subject === subject)).map((x) => x.id);
+    const ids = (d.review === 'spaced' ? dueCards(subject) : d.cards.filter((x) => !subject || x.subject === subject)).filter((x) => !book || x.book === book).map((x) => x.id);
     return shuffle(ids);
   });
   const [i, setI] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [score, setScore] = useState({ ok: 0, again: 0 });
-  const card = loadStudy().cards.find((x) => x.id === queue[i]);
+  const [editing, setEditing] = useState<CardDraft | null>(null);
+  const study = useStudy();
+  const card = study.cards.find((x) => x.id === queue[i]);
   const sub = subjectOf(card?.subject ?? subject);
 
   const answer = (ok: boolean) => {
@@ -34,7 +37,22 @@ export default function Review() {
 
   return (
     <View style={[s.wrap, { paddingBottom: 24 + pad }]}>
-      <Stack.Screen options={{ title: subjectOf(subject)?.name ?? tr('Review') }} />
+      <Stack.Screen
+        options={{
+          title: subjectOf(subject)?.name ?? tr('Review'),
+          headerRight: () =>
+            card ? (
+              <View style={{ flexDirection: 'row', gap: 18 }}>
+                <Pressable hitSlop={10} onPress={() => setEditing(card)} accessibilityLabel={tr('Edit')}>
+                  <Ionicons name="create-outline" size={21} color={c.gold} />
+                </Pressable>
+                <Pressable hitSlop={10} onPress={() => confirmDeleteCard(card.id, () => (setQueue((q) => q.filter((id, j) => j < i || id !== card.id)), setFlipped(false)))} accessibilityLabel={tr('Delete')}>
+                  <Ionicons name="trash-outline" size={20} color={c.gold} />
+                </Pressable>
+              </View>
+            ) : null,
+        }}
+      />
       {!card ? (
         <View style={s.done}>
           <Ionicons name="checkmark-circle-outline" size={48} color={c.gold} />
@@ -68,6 +86,7 @@ export default function Review() {
           )}
         </>
       )}
+      {editing && <CardEditor draft={editing} onClose={() => setEditing(null)} />}
     </View>
   );
 }
