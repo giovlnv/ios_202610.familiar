@@ -1,6 +1,7 @@
+import { isPublic } from '../../../variant';
 import { t as tr } from '../../../i18n';
 import { useCallback, useState } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { describe, loadFamiliars, allPaths } from '../../../familiar';
@@ -54,13 +55,23 @@ export default function Familiars() {
           </View>
         );
       })}
-      <Pressable style={s.add} onPress={() => router.push({ pathname: '/familiar/[id]', params: { id: 'new' } })}>
-        <Ionicons name="add" size={22} color={c.gold} />
-        <View style={{ flex: 1 }}>
-          <Text style={s.title}>{tr("Add a familiar")}</Text>
-          <Text style={s.dim}>{tr("As many as you like")}</Text>
-        </View>
-      </Pressable>
+      {isPublic ? (
+        <Pressable style={s.add} onPress={() => Alert.alert(tr("Familiar+"), tr("More familiars come with Familiar+, coming soon."))}>
+          <Ionicons name="lock-closed-outline" size={20} color={c.dim} />
+          <View style={{ flex: 1 }}>
+            <Text style={[s.title, { color: c.dim }]}>{tr("Add a familiar")}</Text>
+            <Text style={s.dim}>{tr("Familiar+ · coming soon")}</Text>
+          </View>
+        </Pressable>
+      ) : (
+        <Pressable style={s.add} onPress={() => router.push({ pathname: '/familiar/[id]', params: { id: 'new' } })}>
+          <Ionicons name="add" size={22} color={c.gold} />
+          <View style={{ flex: 1 }}>
+            <Text style={s.title}>{tr("Add a familiar")}</Text>
+            <Text style={s.dim}>{tr("As many as you like")}</Text>
+          </View>
+        </Pressable>
+      )}
     </ScrollView>
   );
 }

@@ -1,3 +1,4 @@
+import { isPublic } from '../../../../variant';
 import { t as tr } from '../../../../i18n';
 import { useCallback, useState } from 'react';
 import { Text, View } from 'react-native';
@@ -37,8 +38,8 @@ export default function Settings() {
       </View>
       <Text style={ss.label}>{tr("Account")}</Text>
       <View style={[ss.menu, { marginTop: 6 }]}>
-        <MenuRow icon="key-outline" title={tr("Keys")} sub={tr("GitHub and Claude")} to="/settings/account" />
-        <MenuRow icon="cloud-upload-outline" title={tr("Backups")} sub={tr("Last GitHub sync: {0}", { 0: when(sync.lastGithub) })} to="/settings/backups" />
+        {!isPublic && <MenuRow icon="key-outline" title={tr("Keys")} sub={tr("GitHub and Claude")} to="/settings/account" />}
+        <MenuRow icon="cloud-upload-outline" title={tr("Backups")} sub={isPublic ? tr("Backup file") : tr("Last GitHub sync: {0}", { 0: when(sync.lastGithub) })} to="/settings/backups" />
       </View>
       <Text style={ss.label}>{tr("App")}</Text>
       <View style={[ss.menu, { marginTop: 6 }]}>

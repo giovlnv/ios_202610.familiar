@@ -1,3 +1,4 @@
+import { isPublic } from '../../../../variant';
 import * as Updates from 'expo-updates';
 import { t as tr } from '../../../../i18n';
 import { useState } from 'react';
@@ -99,7 +100,7 @@ export default function Languages() {
             ['phone', 'On this iPhone', 'Made while you listen, two sections ahead. Works offline.'],
             ['github', 'On GitHub', 'The whole book is made at once; uses GitHub minutes.'],
           ] as [VoiceMode, string, string][]
-        ).map(([m, title, sub]) => (
+        ).filter(([m]) => !isPublic || m === 'phone').map(([m, title, sub]) => (
           <Pressable key={m} style={s.row} onPress={() => (setVoiceMode(m), refresh())}>
             <View style={{ flex: 1 }}>
               <Text style={s.title}>{title}</Text>

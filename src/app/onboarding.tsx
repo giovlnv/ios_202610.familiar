@@ -1,3 +1,4 @@
+import { isPublic } from '../variant';
 import * as Updates from 'expo-updates';
 import { getLangPrefs, setLangPrefs } from '../languages';
 import { t as tr, uiLang } from '../i18n';
@@ -17,8 +18,10 @@ import { c, F, themed } from '../theme';
 import { DateInput, TimeInput } from '../components/SplitInput';
 import { Place, PlaceField } from '../components/PlaceField';
 
-const STEPS = ['welcome', 'paths', 'species', 'shape', 'eyes', 'name', 'claude', 'about', 'backups', 'book'] as const;
-type Step = (typeof STEPS)[number];
+const ALL = ['welcome', 'paths', 'species', 'shape', 'eyes', 'name', 'claude', 'voice', 'about', 'backups', 'data', 'book'] as const;
+type Step = (typeof ALL)[number];
+const STEPS: Step[] = ALL.filter((x) => (isPublic ? x !== 'claude' && x !== 'backups' : x !== 'voice' && x !== 'data'));
+const HELP: Step = isPublic ? 'voice' : 'claude';
 const GOALS = ['Learn the cards', 'Read for others', 'Know myself', 'Daily practice', 'Go deeper'];
 
 export default function Onboarding() {
@@ -65,7 +68,7 @@ export default function Onboarding() {
     setI(Math.min(i + 1, STEPS.length - 1));
   };
   const back = () => (step === 'eyes' && f.species !== 'cat' ? go('species') : setI(Math.max(0, i - 1)));
-  const finish = (to: '/add' | '/') => {
+  const finish = (to: '/add' | '/import' | '/') => {
     setOnboarding({ done: Date.now() });
     router.replace(to);
     if (language !== uiLang()) {
@@ -222,6 +225,19 @@ export default function Onboarding() {
           </>
         );
       }
+      case 'voice':
+        return (
+          <>
+            <Head title={tr("Voices")} sub={tr("Your books are read aloud by voices made on this iPhone, offline and free. Add languages and voices any time in Settings → Languages; you can also use a cloud voice with your own key.")} />
+          </>
+        );
+      case 'data':
+        return (
+          <>
+            <Head title={tr("Your data stays here")} sub={tr("Everything you add stays on this iPhone. No account, nothing sent to us. Save a backup file to Files or iCloud Drive whenever you like.")} />
+            <Primary label={tr("Save a backup file now")} onPress={() => backupToFile().catch(() => {})} />
+          </>
+        );
       case 'book':
         return (
           <View style={{ alignItems: 'center', gap: 12 }}>
@@ -251,13 +267,13 @@ export default function Onboarding() {
       <View style={[st.pad, { paddingBottom: insets.bottom + 12, gap: 6 }]}>
         {step === 'book' ? (
           <>
-            <Primary label={tr("Add a book")} onPress={() => finish('/add')} />
+            <Primary label={tr("Add a book")} onPress={() => finish(isPublic ? '/import' : '/add')} />
             <Link label={tr("Explore first")} onPress={() => finish('/')} />
           </>
         ) : (
           <>
             <Primary label={tr("Continue")} onPress={next} />
-            {familiarStep && <Link label={tr("Skip — keep {0}", { 0: withYou().name })} onPress={() => (setF(withYou()), go('claude'))} />}
+            {familiarStep && <Link label={tr("Skip — keep {0}", { 0: withYou().name })} onPress={() => (setF(withYou()), go(HELP))} />}
             {(step === 'about' || step === 'claude') && <Link label={tr("Skip")} onPress={() => setI(i + 1)} />}
           </>
         )}

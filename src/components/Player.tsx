@@ -1,3 +1,4 @@
+import { isPublic } from '../variant';
 import { HIGHLIGHTS, highlightBg, loadMarks, setHighlight, toggleBookmark } from '../marks';
 import { t as tr } from '../i18n';
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -303,9 +304,9 @@ export default function Player({
     Alert.alert(tr("This passage"), undefined, [
       { text: tr("Highlight…"), onPress: () => highlight(index) },
       { text: bm.has(index) ? tr("Remove bookmark") : tr("Bookmark here"), onPress: () => setMarks(toggleBookmark(folder, { section: section.id, para: index, quote: quoteOf(index) })) },
-      { text: tr("Explain this passage"), onPress: () => explainPassage(index) },
+      ...(isPublic ? [] : [{ text: tr("Explain this passage"), onPress: () => explainPassage(index) }]),
       { text: tr("Add note"), onPress: () => newNote(index, time) },
-      { text: tr("Ask Claude"), onPress: () => startAsk(index, time) },
+      ...(isPublic ? [] : [{ text: tr("Ask Claude"), onPress: () => startAsk(index, time) }]),
       { text: tr("Cancel"), style: "cancel" },
     ]);
 
@@ -346,7 +347,7 @@ export default function Player({
               <Ionicons name="text" size={16} color={showText ? c.bg : c.dim} />
             </View>
           </Pressable>
-          <Pressable onPress={() => setPanel("consults")} hitSlop={8}>
+          <Pressable onPress={() => setPanel("consults")} hitSlop={8} style={isPublic && { display: 'none' }}>
             <View style={s.iconLink}>
               <Ionicons name="sparkles-outline" size={17} color={c.claude} />
               <Text style={[s.link, { color: c.claude }]}>
@@ -573,7 +574,7 @@ export default function Player({
             value={sleep ? (sleepLeft !== null ? fmtLeft(sleepLeft) : sleep.kind === "section" ? "End of section" : "End of explanation") : "Off"}
             onPress={() => fromMenu(() => setSleepOpen(true))}
           />
-          <MenuRow
+          {!isPublic && <><MenuRow
             icon="bulb-outline"
             label={tr("Explanations")}
             value={`${expOn ? "On" : "Off"}${bookOverride(folder) !== undefined ? " · this book" : ""}`}
@@ -584,10 +585,10 @@ export default function Player({
             label={tr("Explain this section")}
             value={explained[section.id]?.section || section.explain?.length ? "Saved" : undefined}
             onPress={() => fromMenu(explainSection)}
-          />
+          /></>}
           <MenuRow icon="text-outline" label={tr("Text size and style")} onPress={() => fromMenu(() => setStyling(true))} />
           <MenuRow icon="create-outline" label={tr("Add a note here")} onPress={() => fromMenu(() => newNote(current, t))} />
-          <MenuRow icon="sparkles-outline" label={tr("Ask Claude about this")} color={c.claude} onPress={() => fromMenu(() => startAsk(current, t))} />
+          {!isPublic && <MenuRow icon="sparkles-outline" label={tr("Ask Claude about this")} color={c.claude} onPress={() => fromMenu(() => startAsk(current, t))} />}
         </View>
       </Modal>
 

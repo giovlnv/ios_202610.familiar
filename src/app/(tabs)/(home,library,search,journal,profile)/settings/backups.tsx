@@ -1,3 +1,4 @@
+import { isPublic } from '../../../../variant';
 import { t as tr } from '../../../../i18n';
 import { useCallback, useState } from 'react';
 import { Alert, Text, View } from 'react-native';
@@ -33,6 +34,8 @@ export default function Backups() {
 
   return (
     <Page>
+      {!isPublic && (
+        <>
       <Text style={ss.h2}>{tr("Automatic · GitHub")}</Text>
       <Text style={ss.p}>{tr("Notes, Claude consults, progress and your familiars are saved to your private ios_202610.familiar_library repo whenever you leave the app.")}</Text>
       <View style={ss.card}>
@@ -57,6 +60,8 @@ export default function Backups() {
           </View>
         )}
       </View>
+        </>
+      )}
       <Text style={ss.h2}>{tr("Manual · file")}</Text>
       <Text style={ss.p}>{tr("Save a backup file to Files or iCloud Drive. You’ll get a reminder in the Library after 7 days.")}</Text>
       <View style={ss.card}>

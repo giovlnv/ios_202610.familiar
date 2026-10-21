@@ -1,3 +1,4 @@
+import { isPublic } from '../../../../variant';
 import { t as tr } from '../../../../i18n';
 import { useEffect, useState } from 'react';
 import { Alert, KeyboardAvoidingView, Modal, Pressable, ScrollView, Text, TextInput, useWindowDimensions, View } from 'react-native';
@@ -390,9 +391,11 @@ export default function ReadingScreen() {
       />
 
       <View style={s.actions}>
-        <View style={{ flex: 1 }}>
-          <Button label={tr("Ask Claude")} icon="sparkles-outline" primary onPress={() => shareToClaude(readingPrompt(r, j))} />
-        </View>
+        {!isPublic && (
+          <View style={{ flex: 1 }}>
+            <Button label={tr("Ask Claude")} icon="sparkles-outline" primary onPress={() => shareToClaude(readingPrompt(r, j))} />
+          </View>
+        )}
         <View style={{ flex: 1 }}>
           <Button label={tr("Paste answer")} icon="clipboard-outline" onPress={pasteAnswer} />
         </View>
