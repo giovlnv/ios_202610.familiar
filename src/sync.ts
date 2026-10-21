@@ -116,24 +116,34 @@ const api = (token: string, init?: RequestInit) => ({
 });
 const url = `https://api.github.com/repos/${REPO}/contents/${PATH}`;
 
-export async function pushToGithub(): Promise<boolean> {
+let pushing: Promise<boolean> | null = null;
+export const pushToGithub = () => (pushing ??= push().finally(() => (pushing = null)));
+
+const currentSha = async (token: string) => {
+  const head = await fetch(`${url}?t=${Date.now()}`, { ...api(token), cache: 'no-store' });
+  return head.ok ? ((await head.json()) as { sha: string }).sha : undefined;
+};
+
+async function push(): Promise<boolean> {
   const token = await getToken();
   if (!token) return false;
   try {
-    const head = await fetch(url, api(token));
-    const sha = head.ok ? ((await head.json()) as { sha: string }).sha : undefined;
     const tmp = new File(Paths.cache, 'sync-upload.json');
     if (tmp.exists) tmp.delete();
     tmp.create();
     tmp.write(JSON.stringify(collect(), null, 1));
-    const res = await fetch(
-      url,
-      api(token, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: 'Familiar backup', content: tmp.base64Sync(), sha }),
-      })
-    );
+    const content = tmp.base64Sync();
+    const put = async () =>
+      fetch(
+        url,
+        api(token, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: 'Familiar backup', content, sha: await currentSha(token) }),
+        })
+      );
+    let res = await put();
+    if (res.status === 409 || res.status === 422) res = await put();
     if (!res.ok) throw new Error(`GitHub ${res.status}`);
     setState({ lastGithub: Date.now(), lastError: undefined });
     return true;
@@ -146,7 +156,7 @@ export async function pushToGithub(): Promise<boolean> {
 export async function pullFromGithub() {
   const token = await getToken();
   if (!token) throw new Error('Add your GitHub key first.');
-  const res = await fetch(url, api(token, { headers: { Accept: 'application/vnd.github.raw+json' } }));
+  const res = await fetch(`${url}?t=${Date.now()}`, { ...api(token, { headers: { Accept: 'application/vnd.github.raw+json' } }), cache: 'no-store' });
   if (!res.ok) throw new Error(res.status === 404 ? 'No backup on GitHub yet.' : `GitHub ${res.status}`);
   return apply(JSON.parse(await res.text()));
 }
