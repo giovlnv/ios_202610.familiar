@@ -28,6 +28,14 @@ jobs:
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" | tail -40
           mkdir -p Payload
           cp -R build/app.xcarchive/Products/Applications/*.app Payload/
+          APP=$(ls -d Payload/*.app | head -1)
+          find "$APP" \( -name "*.framework" -o -name "*.dylib" \) -print0 | xargs -0 -I{} codesign -f -s - {}
+          for X in "$APP"/PlugIns/*.appex; do
+            NAME=$(basename "$X" .appex)
+            codesign -f -s - --entitlements "ios/.targets/$NAME/generated.entitlements" "$X"
+          done
+          codesign -f -s - --entitlements "$(ls ios/*/*.entitlements | head -1)" "$APP"
+          codesign -d --entitlements - "$APP" "$APP"/PlugIns/*.appex
           zip -qr Familiar.ipa Payload
       - name: Publish release
         env:
@@ -35,4 +43,4 @@ jobs:
         run: |
           gh release delete latest --yes --cleanup-tag || true
           gh release create latest Familiar.ipa --title "Familiar (build ${{ github.run_number }})" \
-            --notes "Download Familiar.ipa on your iPhone and open it with Sideloadly."
+            --notes "Download Familiar.ipa on your iPhone and open it with AltStore or Sideloadly."
