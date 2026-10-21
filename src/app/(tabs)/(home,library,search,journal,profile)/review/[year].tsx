@@ -12,6 +12,10 @@ import { daysBetween, load, TBook } from "../../../../tracker";
 import { Cover, Stars } from "../../../../components/ui";
 import { c, F, themed } from "../../../../theme";
 import EmptyState from '../../../../components/EmptyState';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { ShareFrame, useShareCard } from '../../../../components/ShareCard';
+import { streaks } from '../../../../streaks';
+import { loadJournal } from '../../../../journal';
 
 const MONTHS = [
   "January",
@@ -68,16 +72,52 @@ export default function Review() {
   const open = (id: string) =>
     router.push({ pathname: "/title/[id]", params: { id } });
 
+  const st = streaks(year);
+  const readings = loadJournal().readings.filter((r) => r.at.startsWith(year)).length;
   const facts: [string, string][] = [
     ["Books", String(read.length)],
     ["Pages", pages.toLocaleString()],
     ["Hours listened", (secs / 3600).toFixed(1)],
     ["Rereads", String(read.filter((x) => x.l.reread).length)],
+    ["Readings", String(readings)],
+    ["Longest streak", `${st.longest} ${st.longest === 1 ? "day" : "days"}`],
   ];
+  const card = useShareCard();
+  const share = () =>
+    card.share(
+      <ShareFrame>
+        <Text style={s.shareYear}>{year} in review</Text>
+        <View style={[s.facts, { width: 312 }]}>
+          {facts.map(([k, v]) => (
+            <View key={k} style={[s.fact, { width: 150 }]}>
+              <Text style={s.factNum}>{v}</Text>
+              <Text style={s.dim}>{k}</Text>
+            </View>
+          ))}
+        </View>
+        {best[0] && (
+          <View style={{ alignItems: "center", gap: 6 }}>
+            <Text style={s.dim}>Highest rated</Text>
+            <Cover book={best[0].b} width={70} />
+            <Text style={[s.rowText, { textAlign: "center", flex: 0 }]}>{best[0].b.title}</Text>
+          </View>
+        )}
+      </ShareFrame>,
+      `${year} in review: ${facts.map(([k, v]) => `${k} ${v}`).join(" · ")}`,
+    );
 
   return (
     <ScrollView style={s.wrap} contentContainerStyle={{ paddingBottom: 50 + pad }}>
-      <Stack.Screen options={{ title: `${year} in review` }} />
+      <Stack.Screen
+        options={{
+          title: `${year} in review`,
+          headerRight: () => (
+            <Pressable hitSlop={10} onPress={share} accessibilityLabel="Share">
+              <Ionicons name="share-outline" size={22} color={c.gold} />
+            </Pressable>
+          ),
+        }}
+      />
       <View style={s.facts}>
         {facts.map(([k, v]) => (
           <View key={k} style={s.fact}>
@@ -155,6 +195,7 @@ export default function Review() {
           </Pressable>
         ))}
       </View>
+      {card.host}
     </ScrollView>
   );
 }
@@ -203,4 +244,5 @@ const s = themed(() => ({
   line: { gap: 2 },
   lineV: { color: c.text, fontSize: 15 },
   grid: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
+  shareYear: { color: c.text, fontFamily: F.heading, fontSize: 22 },
 }));

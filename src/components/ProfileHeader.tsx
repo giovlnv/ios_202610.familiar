@@ -1,3 +1,4 @@
+import { streaks } from '../streaks';
 import { useCallback, useState } from 'react';
 import { Href, router, useFocusEffect } from 'expo-router';
 import { Image, Pressable, Text, View } from 'react-native';
@@ -219,6 +220,14 @@ export default function ProfileHeader() {
           <Text style={s.name}>{p.name || 'Set up your profile'}</Text>
           <Text style={s.user}>{p.username ? `@${p.username}` : 'Add a photo, name and username'}</Text>
           {!!p.dob && <Text style={s.user}>Born {showDate(p.dob)}</Text>}
+          {(() => {
+            const st = streaks();
+            return st.longest > 0 ? (
+              <Text style={[s.user, { color: c.gold }]}>
+                {st.current > 0 ? `${st.current}-day streak` : 'No streak today yet'} · longest {st.longest}
+              </Text>
+            ) : null;
+          })()}
         </View>
         <Ionicons name="create-outline" size={18} color={c.dim} />
       </Pressable>

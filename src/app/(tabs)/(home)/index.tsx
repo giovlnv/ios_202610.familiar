@@ -22,6 +22,8 @@ import { dailyMessage } from '../../../daily';
 import { sky } from '../../../astrology';
 import { currentGuide, moonPhase } from '../../../guide';
 import MoonIcon from '../../../components/MoonIcon';
+import { ShareFrame, useShareCard } from '../../../components/ShareCard';
+import { streaks } from '../../../streaks';
 
 export default function Home() {
   const pad = usePad();
@@ -74,6 +76,23 @@ export default function Home() {
       return () => clearTimeout(id);
     }, []),
   );
+  const card = useShareCard();
+  const streak = streaks().current;
+  const shareDay = (label: string, daily: string, mine?: { card?: string; reversed?: boolean }) => {
+    const date = new Date().toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long' });
+    const show = mine?.card ?? daily;
+    const name = `${cardName(show)}${mine?.card && mine.reversed ? ' (reversed)' : ''}`;
+    card.share(
+      <ShareFrame>
+        <Text style={s.shareDate}>{date}</Text>
+        <Text style={s.tag}>{label} · {mine?.card ? 'my card of the day' : 'card of the day'}</Text>
+        <CardImage id={show} reversed={!!mine?.card && mine.reversed} width={170} />
+        <Text style={s.shareName}>{name}</Text>
+        {streak > 1 && <Text style={s.streak}>{streak}-day streak</Text>}
+      </ShareFrame>,
+      `${date} · ${label} card of the day: ${name}`,
+    );
+  };
   const entry = todaysCotd();
   const legacy = todaysDraw();
   const mine = entry?.cards[1]?.card ? entry : legacy;
@@ -143,6 +162,7 @@ export default function Home() {
           <View>
             <Text style={s.midDay}>{new Date().toLocaleDateString(undefined, { weekday: 'long' })}</Text>
             <Text style={s.tDate}>{new Date().toLocaleDateString(undefined, { day: 'numeric', month: 'long' })}</Text>
+            {streak > 0 && <Text style={s.streak}>{streak}-day streak</Text>}
           </View>
           <View style={s.tMoon}>
             <MoonIcon frac={moon.frac} size={22} />
@@ -173,6 +193,7 @@ export default function Home() {
                       onLog={() => setPicking(true)}
                       onOpen={() => (mine ? router.push({ pathname: '/reading/[id]', params: { id: mine.id } }) : openCotd())}
                       onWrite={openCotd}
+                      onShare={() => shareDay('Tarot', daily, mine && mineCard?.card ? mineCard : undefined)}
                     />
                   )}
                   {pg.id !== 'tarot' && pg.id !== 'numerology' && pg.id !== 'astrology' && (() => {
@@ -187,6 +208,7 @@ export default function Home() {
                         onLog={() => setSysPick(pg.id)}
                         onOpen={() => openSys(pg.id)}
                         onWrite={() => openSys(pg.id)}
+                        onShare={() => shareDay(pg.name, d.daily, d.mine)}
                       />
                     );
                   })()}
@@ -339,6 +361,7 @@ export default function Home() {
       ) : (
         <Text style={s.dim}>Finished books you log will appear here.</Text>
       )}
+      {card.host}
     </ScrollView>
   );
 }
@@ -352,6 +375,7 @@ function DayCard({
   onLog,
   onOpen,
   onWrite,
+  onShare,
 }: {
   label: string;
   daily: string;
@@ -361,6 +385,7 @@ function DayCard({
   onLog: () => void;
   onOpen: () => void;
   onWrite: () => void;
+  onShare: () => void;
 }) {
   const short = (id: string) => cardName(id).split(' · ').pop();
   return (
@@ -400,6 +425,9 @@ function DayCard({
             <Ionicons name="create-outline" size={14} color={c.bg} />
             <Text style={s.logBtnText}>Write</Text>
           </Pressable>
+          <Pressable style={s.shareBtn} onPress={onShare} hitSlop={8} accessibilityLabel="Share card of the day">
+            <Ionicons name="share-outline" size={18} color={c.gold} />
+          </Pressable>
         </View>
       </View>
     </View>
@@ -416,7 +444,11 @@ const s = themed(() => ({
   tMoon: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   tCards: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 6 },
   tName: { color: c.text, fontSize: 15, fontFamily: F.heading },
-  tBtns: { flexDirection: 'row', gap: 8, marginTop: 6 },
+  tBtns: { flexDirection: 'row', gap: 8, marginTop: 6, alignItems: 'center' },
+  shareBtn: { marginTop: 6, paddingHorizontal: 4 },
+  streak: { color: c.gold, fontSize: 12, fontWeight: '600', marginTop: 2 },
+  shareDate: { color: c.text, fontFamily: F.heading, fontSize: 17 },
+  shareName: { color: c.text, fontFamily: F.heading, fontSize: 18, textAlign: 'center' },
   daily: { flexDirection: 'row', alignItems: 'center', gap: 6 },
   greet: { color: c.text, fontSize: 14, lineHeight: 20, marginTop: 4 },
   slot: { flex: 1, alignItems: 'center', gap: 5 },
