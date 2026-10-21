@@ -52,10 +52,9 @@ Status: ✅ done · 🔨 next · 📋 planned · Last revised: 21 Oct 2026 (app 
 
 ## Next 🔨
 
-Revised 21 Oct (app 1.6.0). Items 1–7, 12, 13 and 20 are done.
+Revised 21 Oct (app 1.6.0). Items 1–7, 10, 12, 13 and 20 are done.
 
-**Now**
-10. Lenormand path: 36-card deck (Brazilian names, Etteilla scans), lines 3/5/7, box of 9, Grand Tableau 4×9 and 8×4+4 with houses, pair lookups, card of the day and journal (7–9 h)
+- ✅ 10. Lenormand path (21 Oct): 36-card deck (Brazilian names, Dondorf 1910 scans from the Etteilla Foundation), lines 3/5/7, box of 9, Grand Tableau 4×9 and 8×4+4 with houses and helpers, combinations from books, card of the day and journal
 
 ## Later 📋
 
