@@ -85,7 +85,7 @@ async function uploadAsset(uri: string, name: string) {
   return name;
 }
 
-export async function uploadBook(o: { uri: string; name: string; title: string; instructions: string; lang: string; explanations: boolean }) {
+export async function uploadBook(o: { uri: string; name: string; title: string; instructions: string; lang: string; explanations: boolean; split?: 'toc' | 'cards' }) {
   const slug = slugify(o.title);
   const ext = o.name.toLowerCase().endsWith('.pdf') ? 'pdf' : 'epub';
   const src = new File(o.uri);
@@ -94,7 +94,7 @@ export async function uploadBook(o: { uri: string; name: string; title: string; 
   else await put(`inbox/${slug}/book.${ext}`, src.base64Sync(), `Upload ${o.title}`);
   await put(
     `inbox/${slug}/request.json`,
-    b64(JSON.stringify({ title: o.title, instructions: o.instructions, lang: o.lang, explanations: o.explanations, asset, voices: o.lang === 'ar' ? 'phone' : getVoiceMode(), created: Date.now() })),
+    b64(JSON.stringify({ title: o.title, instructions: o.instructions, lang: o.lang, explanations: o.explanations, split: o.split ?? 'toc', asset, voices: o.lang === 'ar' ? 'phone' : getVoiceMode(), created: Date.now() })),
     `Request ${o.title}`
   );
   return slug;

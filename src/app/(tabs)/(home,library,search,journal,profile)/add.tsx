@@ -27,6 +27,8 @@ export default function AddBook() {
   const [instructions, setInstructions] = useState('');
   const [lang, setLang] = useState('en');
   const [explain, setExplain] = useState(true);
+  const [split, setSplit] = useState<'toc' | 'cards'>('toc');
+  const epub = !!file && /\.epub$/i.test(file.name);
   const addHint = (h: string) => setInstructions((v) => (v.trim() ? `${v.trim()}\n• ${h}` : `• ${h}`));
   const [busy, setBusy] = useState(false);
 
@@ -44,7 +46,7 @@ export default function AddBook() {
     setBusy(true);
     try {
       watchForReadyBooks().catch(() => {});
-      const slug = await uploadBook({ ...file, title: title.trim(), instructions: explain ? instructions.trim() : '', lang, explanations: explain });
+      const slug = await uploadBook({ ...file, title: title.trim(), instructions: explain ? instructions.trim() : '', lang, explanations: explain, split: epub ? split : 'toc' });
       router.replace({ pathname: '/jobs', params: { fresh: slug } });
     } catch (e) {
       Alert.alert('Upload failed', String((e as Error).message ?? e));
@@ -62,6 +64,20 @@ export default function AddBook() {
       </Pressable>
       <Text style={s.label}>Title</Text>
       <TextInput style={s.input} value={title} onChangeText={setTitle} placeholder="Book title" placeholderTextColor={c.dim} />
+      {epub && (
+        <>
+          <Text style={s.label}>Sections</Text>
+          <View style={s.row}>
+            <Chip label="Follow the book’s table" on={split === 'toc'} onPress={() => setSplit('toc')} />
+            <Chip label="Split per card" on={split === 'cards'} onPress={() => setSplit('cards')} />
+          </View>
+          <Text style={s.dim}>
+            {split === 'toc'
+              ? 'One section per chapter in the table of contents.'
+              : 'Chapters that list cards in the table of contents are split into one section per card.'}
+          </Text>
+        </>
+      )}
       <View style={s.switchRow}>
         <View style={{ flex: 1, gap: 2 }}>
           <Text style={s.switchTitle}>Add explanations</Text>
