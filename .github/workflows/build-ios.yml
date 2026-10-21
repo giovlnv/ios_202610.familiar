@@ -2,11 +2,18 @@ name: Build iPhone app
 
 on:
   workflow_dispatch:
+    inputs:
+      variant:
+        description: personal or public
+        default: personal
   push:
     tags: ['v*']
 
 permissions:
   contents: write
+
+env:
+  APP_VARIANT: ${{ inputs.variant || 'personal' }}
 
 jobs:
   ipa:
@@ -37,7 +44,14 @@ jobs:
           codesign -f -s - --entitlements "$(ls ios/*/*.entitlements | head -1)" "$APP"
           codesign -d --entitlements - "$APP" "$APP"/PlugIns/*.appex
           zip -qr Familiar.ipa Payload
+      - name: Keep the test build
+        if: github.ref != 'refs/heads/main' && !startsWith(github.ref, 'refs/tags/v')
+        uses: actions/upload-artifact@v4
+        with:
+          name: Familiar-${{ env.APP_VARIANT }}-${{ github.run_number }}
+          path: Familiar.ipa
       - name: Publish release
+        if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
