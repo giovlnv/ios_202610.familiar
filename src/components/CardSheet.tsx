@@ -8,7 +8,7 @@ import { cardName, systemOf } from '../decks';
 import { lcard, lname, lother } from '../lenormand';
 import { bookPaths, cardSections, pairsFor } from '../journal';
 import { allSources, loadSources, saveSources, Sources, usesBook } from '../sectionCards';
-import { getOnboarding, PATHS } from '../familiar';
+import { getOnboarding, allPaths } from '../familiar';
 import { getBook } from '../storage';
 import { explanationsOn } from '../explanations';
 import { c, themed } from '../theme';
@@ -52,14 +52,14 @@ export default function CardSheet({
   const pairs = useMemo(() => (id && len ? pairsFor(id, sources) : []), [id, len, sources]);
   const nearPairs = near?.length ? pairs.filter((p) => near.includes(p.other)) : [];
   const otherPairs = pairs.filter((p) => !nearPairs.includes(p));
-  const paths = PATHS.filter((p) => found.some((f) => f.paths.includes(p.id)));
+  const paths = allPaths().filter((p) => found.some((f) => f.paths.includes(p.id)));
 
   const update = (next: Sources) => (setSources(next), saveSources(next));
   const flip = (list: string[], x: string) => (list.includes(x) ? list.filter((y) => y !== x) : [...list, x]);
   const label = allSources(sources)
     ? 'All books'
     : [
-        ...sources.paths.map((p) => PATHS.find((x) => x.id === p)?.name ?? p),
+        ...sources.paths.map((p) => allPaths().find((x) => x.id === p)?.name ?? p),
         ...sources.books.map((b) => found.find((f) => f.folder === b)?.book ?? getBook(b)?.book.title ?? b),
       ].join(', ');
 

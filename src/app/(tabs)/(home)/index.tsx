@@ -15,7 +15,7 @@ import { Cover, fmtDate, Stars } from '../../../components/ui';
 import { fmtTime } from '../../../format';
 import { c, F, read, themed, write } from '../../../theme';
 import { FamiliarArt } from '../../../components/Familiar';
-import { getOnboarding, nightNow, PATHS } from '../../../familiar';
+import { getOnboarding, nightNow, allPaths } from '../../../familiar';
 import { personal } from '../../../numerology';
 import { dailyMessage } from '../../../daily';
 import { sky } from '../../../astrology';
@@ -111,7 +111,7 @@ export default function Home() {
   const dob = getProfile().dob;
   const pn = dob && (getOnboarding().paths ?? []).includes('numerology') ? personal(dob) : null;
   const skyLine = (getOnboarding().paths ?? []).includes('astrology') ? sky() : '';
-  const pages = PATHS.filter(
+  const pages = allPaths().filter(
     (p) =>
       (p.id === 'tarot' && (!myPaths.length || myPaths.includes('tarot'))) ||
       (p.id === 'lenormand' && lenOn) ||

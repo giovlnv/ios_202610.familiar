@@ -50,7 +50,7 @@ import { c, F, themed } from "../../../../theme";
 import { GenreSheet } from "../../../../components/GenreSheet";
 import { newList } from "../lists";
 import { FamiliarArt } from "../../../../components/Familiar";
-import { familiarFor, PATHS } from "../../../../familiar";
+import { familiarFor, allPaths } from "../../../../familiar";
 
 const STATUSES: Status[] = ["want", "reading", "read", "dnf"];
 
@@ -262,7 +262,7 @@ export default function Title() {
       <View style={s.row}>
         <FamiliarArt familiar={familiarFor(b.paths)} size={30} />
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 6 }}>
-          {PATHS.map((p) => {
+          {allPaths().map((p) => {
             const on = !!b.paths?.includes(p.id);
             return (
               <Pressable

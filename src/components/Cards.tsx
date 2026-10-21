@@ -1,14 +1,19 @@
 import { useEffect, useMemo, useReducer, useState } from 'react';
 import { FlatList, Image, Modal, Pressable, ScrollView, Switch, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { cardName, cardsOf, cardUri, onDecksChange, System } from '../decks';
+import { cardName, cardsOf, cardUri, onDecksChange, reversible, System } from '../decks';
+import { onSystemsChange } from '../systems';
 import { lother } from '../lenormand';
 import { Chip } from './ui';
 import { c, F, themed } from '../theme';
 
 export function useDecks() {
   const [, bump] = useReducer((n: number) => n + 1, 0);
-  useEffect(() => onDecksChange(bump), []);
+  useEffect(() => {
+    const a = onDecksChange(bump);
+    const b = onSystemsChange(bump);
+    return () => (a(), b());
+  }, []);
 }
 
 export function CardImage({ id, reversed, width, deck }: { id: string; reversed?: boolean; width: number; deck?: string }) {
@@ -25,8 +30,6 @@ export function CardImage({ id, reversed, width, deck }: { id: string; reversed?
     </View>
   );
 }
-
-const GROUPS = ['Major Arcana', 'Wands', 'Cups', 'Swords', 'Pentacles'];
 
 export function CardPicker({
   visible,
@@ -47,17 +50,20 @@ export function CardPicker({
   taken?: string[];
   stayOpen?: boolean;
 }) {
-  const [group, setGroup] = useState('Major Arcana');
+  useDecks();
+  const all = cardsOf(system);
+  const groups = [...new Set(all.map((x) => x.group))];
+  const [picked, setGroup] = useState('');
+  const group = groups.includes(picked) ? picked : groups[0];
   const [q, setQ] = useState('');
   const [reversed, setReversed] = useState(false);
-  const tarot = system === 'tarot';
+  const canFlip = reversible(system);
   const list = useMemo(() => {
-    const all = cardsOf(system);
     const plain = (t: string) => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const query = plain(q.trim());
-    if (query) return all.filter((x) => plain(`${x.name} ${tarot ? '' : lother(x.id)}`).includes(query));
-    return tarot ? all.filter((x) => x.group === group) : all;
-  }, [q, group, system, tarot]);
+    if (query) return all.filter((x) => plain(`${x.name} ${system === 'lenormand' ? lother(x.id) : ''}`).includes(query));
+    return groups.length > 1 ? all.filter((x) => x.group === group) : all;
+  }, [q, group, system, all, groups.length]);
   const w = 100;
 
   return (
@@ -70,16 +76,16 @@ export function CardPicker({
           </Pressable>
         </View>
         <TextInput style={s.input} placeholder="Search cards" placeholderTextColor={c.dim} value={q} onChangeText={setQ} autoCorrect={false} />
-        {tarot && !q.trim() && (
+        {groups.length > 1 && !q.trim() && (
           <View>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.chips}>
-              {GROUPS.map((g) => (
+              {groups.map((g) => (
                 <Chip key={g} label={g} on={g === group} onPress={() => setGroup(g)} />
               ))}
             </ScrollView>
           </View>
         )}
-        {onPick && tarot && (
+        {onPick && canFlip && (
           <View style={s.switchRow}>
             <Text style={s.text}>Reversed</Text>
             <Switch value={reversed} onValueChange={setReversed} trackColor={{ true: c.claude }} />
@@ -96,9 +102,9 @@ export function CardPicker({
             <Pressable
               style={{ width: w, opacity: taken?.includes(item.id) ? 0.3 : 1 }}
               disabled={!onPick || taken?.includes(item.id)}
-              onPress={() => (onPick?.(item.id, tarot && reversed), !stayOpen && onClose())}
+              onPress={() => (onPick?.(item.id, canFlip && reversed), !stayOpen && onClose())}
             >
-              <CardImage id={item.id} width={w} deck={deck} reversed={!!onPick && tarot && reversed} />
+              <CardImage id={item.id} width={w} deck={deck} reversed={!!onPick && canFlip && reversed} />
               <Text style={s.name} numberOfLines={2}>
                 {item.name}
               </Text>

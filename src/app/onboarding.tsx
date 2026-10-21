@@ -4,7 +4,7 @@ import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { EYES, Familiar, getOnboarding, PATHS, saveFamiliar, setOnboarding, setWithYou, withYou } from '../familiar';
+import { EYES, Familiar, getOnboarding, allPaths, saveFamiliar, setOnboarding, setWithYou, withYou } from '../familiar';
 import { EyesMarkStep, FamiliarArt, Label, NameStep, ShapeCoatStep, SpeciesStep, s as fs } from '../components/Familiar';
 import { getClaudeLink, setClaudeLink } from '../components/Consults';
 import { backupToFile, getState, getToken, setToken } from '../sync';
@@ -103,7 +103,7 @@ export default function Onboarding() {
         return (
           <>
             <Head title="What do you study?" sub="Pick the paths your familiar will walk with you. You can change this later." />
-            {PATHS.map((p) => {
+            {allPaths().map((p) => {
               const on = paths.includes(p.id);
               return (
                 <Pressable key={p.id} style={st.row} onPress={() => setPaths(toggle(paths, p.id))} accessibilityState={{ checked: on }}>
