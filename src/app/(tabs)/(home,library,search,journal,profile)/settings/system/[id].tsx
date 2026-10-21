@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../../i18n';
 import { useState } from 'react';
 import { Alert, Pressable, Switch, Text, useWindowDimensions, View } from 'react-native';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
@@ -18,7 +19,7 @@ export default function SystemScreen() {
   const [busy, setBusy] = useState(false);
   const [group, setGroup] = useState<string | null>(null);
   const sys = getSystem(id);
-  if (!sys) return <Page><Text style={ss.p}>This system was deleted.</Text></Page>;
+  if (!sys) return <Page><Text style={ss.p}>{tr("This system was deleted.")}</Text></Page>;
   const own = !sys.base;
   const groups = [...new Set(sys.cards.map((x) => x.group))];
   const shown = group && groups.includes(group) ? sys.cards.filter((x) => x.group === group) : sys.cards;
@@ -30,15 +31,15 @@ export default function SystemScreen() {
     if (!r.canceled && a) await setCardImage(sys.id, cardIdOf(sys.id, key), a.uri);
   };
   const rename = (key: string, cur: string) =>
-    Alert.prompt('Card name', undefined, (n) => n?.trim() && patchSystem(sys.id, (s) => (s.cards.find((x) => x.key === key)!.name = n.trim())), 'plain-text', cur);
+    Alert.prompt(tr("Card name"), undefined, (n) => n?.trim() && patchSystem(sys.id, (s) => (s.cards.find((x) => x.key === key)!.name = n.trim())), 'plain-text', cur);
   const askGroup = (then: (g: string) => void) =>
-    Alert.alert('Group', 'Like a suit', [
+    Alert.alert(tr("Group"), tr("Like a suit"), [
       ...groups.map((g) => ({ text: g, onPress: () => then(g) })),
-      { text: 'New group…', onPress: () => Alert.prompt('New group', undefined, (g) => g?.trim() && then(g.trim())) },
-      { text: 'Cancel', style: 'cancel' as const },
+      { text: tr("New group…"), onPress: () => Alert.prompt(tr("New group"), undefined, (g) => g?.trim() && then(g.trim())) },
+      { text: tr("Cancel"), style: 'cancel' as const },
     ]);
   const addCard = () =>
-    Alert.prompt('New card', 'Name', (n) => {
+    Alert.prompt(tr("New card"), tr("Name"), (n) => {
       const name = n?.trim();
       if (!name) return;
       const put = (g: string) =>
@@ -51,15 +52,15 @@ export default function SystemScreen() {
   const cardMenu = (key: string) => {
     const card = sys.cards.find((x) => x.key === key)!;
     Alert.alert(card.name, card.group, [
-      { text: 'Choose a picture', onPress: () => photo(key) },
-      { text: 'Rename', onPress: () => rename(key, card.name) },
+      { text: tr("Choose a picture"), onPress: () => photo(key) },
+      { text: tr("Rename"), onPress: () => rename(key, card.name) },
       ...(own
         ? [
-            { text: 'Change group', onPress: () => askGroup((g) => patchSystem(sys.id, (s) => (s.cards.find((x) => x.key === key)!.group = g))) },
-            { text: 'Remove card', style: 'destructive' as const, onPress: () => removeCustomCard(sys.id, key) },
+            { text: tr("Change group"), onPress: () => askGroup((g) => patchSystem(sys.id, (s) => (s.cards.find((x) => x.key === key)!.group = g))) },
+            { text: tr("Remove card"), style: 'destructive' as const, onPress: () => removeCustomCard(sys.id, key) },
           ]
         : []),
-      { text: 'Cancel', style: 'cancel' },
+      { text: tr("Cancel"), style: 'cancel' },
     ]);
   };
   const doImport = async () => {
@@ -68,16 +69,16 @@ export default function SystemScreen() {
       const r = await importIntoSystem(sys.id);
       if (r) setMsg(`${r.matched} pictures added${r.added ? ` · ${r.added} new cards` : ''}${r.skipped.length ? ` · ${r.skipped.length} files not recognised` : ''}`);
     } catch (e) {
-      Alert.alert('Import', String((e as Error).message ?? e));
+      Alert.alert(tr("Import"), String((e as Error).message ?? e));
     } finally {
       setBusy(false);
     }
   };
   const remove = () =>
-    Alert.alert(`Delete ${sys.name}?`, 'Its cards and pictures are deleted. Readings made with it stay in your journal, with the card names gone.', [
-      { text: 'Cancel', style: 'cancel' },
+    Alert.alert(tr("Delete {0}?", { 0: sys.name }), tr("Its cards and pictures are deleted. Readings made with it stay in your journal, with the card names gone."), [
+      { text: tr("Cancel"), style: 'cancel' },
       {
-        text: 'Delete',
+        text: tr("Delete"),
         style: 'destructive',
         onPress: () => {
           setOnboarding({ paths: (getOnboarding().paths ?? []).filter((p) => p !== sys.id) });
@@ -91,45 +92,45 @@ export default function SystemScreen() {
     <Page>
       <Stack.Screen options={{ title: sys.name }} />
       <View style={ss.card}>
-        <Pressable style={s.row} onPress={() => Alert.prompt('Name', undefined, (n) => n?.trim() && patchSystem(sys.id, (x) => (x.name = n.trim())), 'plain-text', sys.name)}>
+        <Pressable style={s.row} onPress={() => Alert.prompt(tr("Name"), undefined, (n) => n?.trim() && patchSystem(sys.id, (x) => (x.name = n.trim())), 'plain-text', sys.name)}>
           <Text style={ss.paletteName}>{sys.name}</Text>
-          <Text style={s.link}>Rename</Text>
+          <Text style={s.link}>{tr("Rename")}</Text>
         </Pressable>
         <Text style={ss.meta}>
-          {sys.base === 'tarot' ? 'Based on tarot: its spreads are here too.' : sys.base === 'lenormand' ? 'Based on Lenormand: its spreads and the Grand Tableau are here too.' : 'Your own deck.'} Make spreads of its own from a reading with “+ Custom”.
+          {sys.base === 'tarot' ? tr("Based on tarot: its spreads are here too.") : sys.base === 'lenormand' ? tr("Based on Lenormand: its spreads and the Grand Tableau are here too.") : tr("Your own deck.")}{' '}{tr("Make spreads of its own from a reading with “+ Custom”.")}
         </Text>
-        <Text style={ss.label}>Path colour</Text>
+        <Text style={ss.label}>{tr("Path colour")}</Text>
         <View style={ss.row}>
           {SYSTEM_COLORS.map((col) => (
             <Pressable
               key={col}
               onPress={() => patchSystem(sys.id, (x) => (x.color = col))}
               style={[s.swatch, { backgroundColor: col }, sys.color === col && { borderColor: c.text }]}
-              accessibilityLabel={`Colour ${col}`}
+              accessibilityLabel={tr("Colour {0}", { 0: col })}
             />
           ))}
         </View>
         <View style={s.row}>
-          <Text style={ss.paletteName}>Reversed cards</Text>
+          <Text style={ss.paletteName}>{tr("Reversed cards")}</Text>
           <Switch value={sys.reversals} onValueChange={(v) => patchSystem(sys.id, (x) => (x.reversals = v))} trackColor={{ true: c.claude }} />
         </View>
       </View>
 
-      <Text style={ss.h2}>Cards · {sys.cards.length}</Text>
+      <Text style={ss.h2}>{tr("Cards ·")}{' '}{sys.cards.length}</Text>
       <View style={ss.card}>
         <View style={ss.row}>
-          <Btn label={busy ? 'Importing…' : 'Import pictures'} primary onPress={doImport} />
-          {own && <Btn label="Add a card" onPress={addCard} />}
+          <Btn label={busy ? tr("Importing…") : tr("Import pictures")} primary onPress={doImport} />
+          {own && <Btn label={tr("Add a card")} onPress={addCard} />}
         </View>
         <Text style={ss.meta}>
           {own
-            ? 'Pick images or one .zip. Each picture becomes a card named after its file (“03-the-river.jpg” → The river); folders in a zip become groups.'
-            : `Pick images or one .zip. Files are matched to the ${sys.base} cards by name, like ${sys.base === 'tarot' ? '“the-fool.jpg” or “cups01.png”' : '“01.jpg” or “o-cavaleiro.png”'}.`}
+            ? tr("Pick images or one .zip. Each picture becomes a card named after its file (“03-the-river.jpg” → The river); folders in a zip become groups.")
+            : tr("Pick images or one .zip. Files are matched to the {0} cards by name, like {1}.", { 0: sys.base, 1: sys.base === 'tarot' ? '“the-fool.jpg” or “cups01.png”' : '“01.jpg” or “o-cavaleiro.png”' })}
         </Text>
         {!!msg && <Text style={ss.meta}>{msg}</Text>}
         {groups.length > 1 && (
           <View style={ss.row}>
-            <Chip label="All" on={!group} onPress={() => setGroup(null)} />
+            <Chip label={tr("All")} on={!group} onPress={() => setGroup(null)} />
             {groups.map((g) => (
               <Chip key={g} label={g} on={group === g} onPress={() => setGroup(g)} />
             ))}
@@ -145,11 +146,11 @@ export default function SystemScreen() {
             </Pressable>
           ))}
         </View>
-        {!sys.cards.length && <Text style={ss.meta}>No cards yet. Import pictures or add cards one by one.</Text>}
+        {!sys.cards.length && <Text style={ss.meta}>{tr("No cards yet. Import pictures or add cards one by one.")}</Text>}
       </View>
 
       <View style={[ss.row, { marginBottom: 30 }]}>
-        <Btn label="Delete this system" onPress={remove} />
+        <Btn label={tr("Delete this system")} onPress={remove} />
       </View>
     </Page>
   );

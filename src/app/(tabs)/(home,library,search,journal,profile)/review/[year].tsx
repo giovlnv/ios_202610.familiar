@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { usePad } from '../../../../playback';
 import { useMemo } from "react";
 import {
@@ -86,7 +87,7 @@ export default function Review() {
   const share = () =>
     card.share(
       <ShareFrame>
-        <Text style={s.shareYear}>{year} in review</Text>
+        <Text style={s.shareYear}>{year}{' '}{tr("in review")}</Text>
         <View style={[s.facts, { width: 312 }]}>
           {facts.map(([k, v]) => (
             <View key={k} style={[s.fact, { width: 150 }]}>
@@ -97,7 +98,7 @@ export default function Review() {
         </View>
         {best[0] && (
           <View style={{ alignItems: "center", gap: 6 }}>
-            <Text style={s.dim}>Highest rated</Text>
+            <Text style={s.dim}>{tr("Highest rated")}</Text>
             <Cover book={best[0].b} width={70} />
             <Text style={[s.rowText, { textAlign: "center", flex: 0 }]}>{best[0].b.title}</Text>
           </View>
@@ -110,9 +111,9 @@ export default function Review() {
     <ScrollView style={s.wrap} contentContainerStyle={{ paddingBottom: 50 + pad }}>
       <Stack.Screen
         options={{
-          title: `${year} in review`,
+          title: tr("{0} in review", { 0: year }),
           headerRight: () => (
-            <Pressable hitSlop={10} onPress={share} accessibilityLabel="Share">
+            <Pressable hitSlop={10} onPress={share} accessibilityLabel={tr("Share")}>
               <Ionicons name="share-outline" size={22} color={c.gold} />
             </Pressable>
           ),
@@ -127,11 +128,11 @@ export default function Review() {
         ))}
       </View>
 
-      {!read.length && <EmptyState pose="sleeping" text={`Nothing logged in ${year} yet.`} />}
+      {!read.length && <EmptyState pose="sleeping" text={tr("Nothing logged in {0} yet.", { 0: year })} />}
 
       {best.length > 0 && (
         <>
-          <Text style={s.h2}>Highest rated</Text>
+          <Text style={s.h2}>{tr("Highest rated")}</Text>
           {best.map((x) => (
             <Pressable key={x.l.id} style={s.row} onPress={() => open(x.b.id)}>
               <Cover book={x.b} width={44} />
@@ -149,7 +150,7 @@ export default function Review() {
           {perMonth[busiest] > 0 && (
             <Line
               k="Busiest month"
-              v={`${MONTHS[busiest]} · ${perMonth[busiest]} books`}
+              v={tr('{0} · {1} books', { 0: tr(MONTHS[busiest]), 1: perMonth[busiest] })}
             />
           )}
           {topAuthor && (
@@ -187,7 +188,7 @@ export default function Review() {
         </View>
       )}
 
-      {read.length > 0 && <Text style={s.h2}>Every book, in order</Text>}
+      {read.length > 0 && <Text style={s.h2}>{tr("Every book, in order")}</Text>}
       <View style={s.grid}>
         {read.map((x) => (
           <Pressable key={x.l.id} onPress={() => open(x.b.id)}>

@@ -1,3 +1,4 @@
+import { t as tr } from './i18n';
 import { File, Paths } from 'expo-file-system';
 
 const RAW: [string, string, string, string][] = [
@@ -150,12 +151,12 @@ export function related(layout: 'gt49' | 'gt84', i: number, kind: Helper): numbe
 }
 
 export const HELPERS: { id: Helper; name: string; hint: string }[] = [
-  { id: 'near', name: 'Near', hint: 'the cards touching it' },
-  { id: 'mirror', name: 'Mirror', hint: 'the same place across the middle, left–right and top–bottom' },
-  { id: 'knight', name: 'Knighting', hint: 'a chess knight’s move away' },
-  { id: 'diagonal', name: 'Diagonals', hint: 'the lines running corner to corner' },
-  { id: 'row', name: 'Row', hint: 'the same line' },
-  { id: 'column', name: 'Column', hint: 'the same column' },
+  { id: 'near', name: 'Near', hint: tr("the cards touching it") },
+  { id: 'mirror', name: 'Mirror', hint: tr("the same place across the middle, left–right and top–bottom") },
+  { id: 'knight', name: 'Knighting', hint: tr("a chess knight’s move away") },
+  { id: 'diagonal', name: 'Diagonals', hint: tr("the lines running corner to corner") },
+  { id: 'row', name: 'Row', hint: tr("the same line") },
+  { id: 'column', name: 'Column', hint: tr("the same column") },
 ];
 
 export function dealt(): string[] {

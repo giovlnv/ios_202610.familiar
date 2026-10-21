@@ -1,3 +1,4 @@
+import { t as tr } from './i18n';
 import * as A from 'astronomy-engine';
 import { getProfile } from './tracker';
 import { getOnboarding, HouseSystem } from './familiar';
@@ -197,5 +198,5 @@ export function myChart() {
 export function sky(date = new Date()) {
   const moon = signOf(longitude('Moon', date)).name;
   const back = BODIES.filter((b) => retro(b, date));
-  return `Moon in ${moon}${back.length ? ` · ℞\uFE0E ${back.join(', ')}` : ''}`;
+  return tr('Moon in {0}', { 0: tr(moon) }) + (back.length ? ` · ℞\uFE0E ${back.map((b) => tr(b)).join(', ')}` : '');
 }

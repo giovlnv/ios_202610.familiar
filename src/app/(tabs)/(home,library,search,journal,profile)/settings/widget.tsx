@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { useState } from 'react';
 import { Pressable, Switch, Text, View } from 'react-native';
 import { Page, ss } from '../../../../components/settings-ui';
@@ -19,11 +20,10 @@ export default function WidgetSettings() {
   return (
     <Page>
       <Text style={ss.p}>
-        Add the widget from the Home Screen: touch and hold, tap Edit → Add Widget, then pick Familiar in small, medium or large. Touch and hold
-        the widget → Edit Widget to choose what it shows.
+        {tr("Add the widget from the Home Screen: touch and hold, tap Edit → Add Widget, then pick Familiar in small, medium or large. Touch and hold the widget → Edit Widget to choose what it shows.")}
       </Text>
       <View style={[ss.card, s.between]}>
-        <Text style={s.title}>Match the app theme</Text>
+        <Text style={s.title}>{tr("Match the app theme")}</Text>
         <Switch value={col.theme} onValueChange={(v) => set({ theme: v })} trackColor={{ true: c.gold }} />
       </View>
       {!col.theme &&
@@ -42,15 +42,15 @@ export default function WidgetSettings() {
             </View>
           </View>
         ))}
-      <Text style={[ss.label, { marginTop: 14 }]}>Status</Text>
+      <Text style={[ss.label, { marginTop: 14 }]}>{tr("Status")}</Text>
       <View style={ss.card}>
         <Text style={ss.meta}>{widgetStatus()}</Text>
-        <Text style={ss.meta}>Shared storage: {appGroup()}</Text>
-        <Text style={ss.meta}>App groups in this install: {appGroups().join(', ') || 'none'}</Text>
+        <Text style={ss.meta}>{tr("Shared storage:")}{' '}{appGroup()}</Text>
+        <Text style={ss.meta}>{tr("App groups in this install:")}{' '}{appGroups().join(', ') || 'none'}</Text>
       </View>
       <View style={[s.preview, { backgroundColor: col.theme ? c.bg : col.bg }]}>
         <Text style={{ color: col.theme ? c.gold : col.accent, fontSize: 22, fontWeight: '700' }}>7</Text>
-        <Text style={{ color: col.theme ? c.text : col.text, fontSize: 14 }}>Preview · Personal day</Text>
+        <Text style={{ color: col.theme ? c.text : col.text, fontSize: 14 }}>{tr("Preview · Personal day")}</Text>
       </View>
     </Page>
   );

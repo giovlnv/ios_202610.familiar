@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { usePad } from '../playback';
 import { useState } from 'react';
 import { ActivityIndicator, FlatList, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
@@ -34,7 +35,7 @@ export default function SearchView({ onPick }: { onPick: (r: OLResult) => void }
     <View style={s.wrap}>
       <TextInput
         style={s.input}
-        placeholder="Title, author or ISBN"
+        placeholder={tr("Title, author or ISBN")}
         placeholderTextColor={c.dim}
         value={q}
         onChangeText={setQ}
@@ -43,7 +44,7 @@ export default function SearchView({ onPick }: { onPick: (r: OLResult) => void }
         autoCorrect={false}
       />
       {busy && <ActivityIndicator color={c.gold} style={{ marginTop: 20 }} />}
-      {!!error && <Text style={s.dim}>Couldn’t search ({error}). Check the connection and try again.</Text>}
+      {!!error && <Text style={s.dim}>{tr("Couldn’t search (")}{error}{tr("). Check the connection and try again.")}</Text>}
       <FlatList
         data={results}
         keyExtractor={(r) => r.olKey}
@@ -51,7 +52,7 @@ export default function SearchView({ onPick }: { onPick: (r: OLResult) => void }
         ListHeaderComponent={
           mine.length ? (
             <View>
-              <Text style={s.section}>In your library</Text>
+              <Text style={s.section}>{tr("In your library")}</Text>
               {mine.map((b) => (
                 <Pressable key={b.id} style={s.row} onPress={() => router.push({ pathname: '/title/[id]', params: { id: b.id } })}>
                   <Cover book={b} width={48} />
@@ -65,7 +66,7 @@ export default function SearchView({ onPick }: { onPick: (r: OLResult) => void }
                   </View>
                 </Pressable>
               ))}
-              {!!results.length && <Text style={s.section}>Open Library</Text>}
+              {!!results.length && <Text style={s.section}>{tr("Open Library")}</Text>}
             </View>
           ) : null
         }
@@ -78,7 +79,7 @@ export default function SearchView({ onPick }: { onPick: (r: OLResult) => void }
                 {r.title}
               </Text>
               <Text style={s.dim} numberOfLines={1}>
-                {r.authors.join(', ') || 'Unknown author'}
+                {r.authors.join(', ') || tr("Unknown author")}
                 {r.year ? ` · ${r.year}` : ''}
               </Text>
             </View>

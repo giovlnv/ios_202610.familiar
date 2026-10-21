@@ -1,3 +1,4 @@
+import { loc } from '../i18n';
 import { useState } from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -150,7 +151,7 @@ export const fmtDate = (
     month: "short",
     year: "numeric",
   },
-) => new Date(`${d}T12:00:00`).toLocaleDateString(undefined, opts);
+) => new Date(`${d}T12:00:00`).toLocaleDateString(loc(), opts);
 
 const s = themed(() => ({
   placeholder: {

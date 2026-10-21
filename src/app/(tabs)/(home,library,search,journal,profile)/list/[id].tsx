@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { useCallback, useRef, useState } from 'react';
 import { Alert, FlatList, Modal, Pressable, Share, StyleSheet, Text, TextInput, View } from 'react-native';
 import { router, Stack, useFocusEffect, useLocalSearchParams } from 'expo-router';
@@ -31,16 +32,16 @@ export default function ListScreen() {
 
   const menu = (i: number) =>
     Alert.alert(items[i].b.title, undefined, [
-      { text: 'Move up', onPress: () => move(i, i - 1) },
-      { text: 'Move down', onPress: () => move(i, i + 1) },
-      { text: 'Move to #1', onPress: () => move(i, 0) },
+      { text: tr("Move up"), onPress: () => move(i, i - 1) },
+      { text: tr("Move down"), onPress: () => move(i, i + 1) },
+      { text: tr("Move to #1"), onPress: () => move(i, 0) },
       {
-        text: items[i].note ? 'Edit note' : 'Add note',
+        text: items[i].note ? tr("Edit note") : tr("Add note"),
         onPress: () =>
-          Alert.prompt('Note', `Why #${i + 1}?`, (note) => change((l) => (l.items[i].note = note?.trim() || undefined)), 'plain-text', items[i].note),
+          Alert.prompt(tr("Note"), tr("Why #{0}?", { 0: i + 1 }), (note) => change((l) => (l.items[i].note = note?.trim() || undefined)), 'plain-text', items[i].note),
       },
-      { text: 'Remove from list', style: 'destructive', onPress: () => change((l) => l.items.splice(i, 1)) },
-      { text: 'Cancel', style: 'cancel' },
+      { text: tr("Remove from list"), style: 'destructive', onPress: () => change((l) => l.items.splice(i, 1)) },
+      { text: tr("Cancel"), style: 'cancel' },
     ]);
 
   const share = async () => {
@@ -74,9 +75,9 @@ export default function ListScreen() {
                 hitSlop={10}
                 onPress={() =>
                   Alert.alert(list.name, undefined, [
-                    { text: 'Rename', onPress: () => Alert.prompt('Rename list', undefined, (n) => n?.trim() && change((l) => (l.name = n.trim())), 'plain-text', list.name) },
-                    { text: 'Delete list', style: 'destructive', onPress: () => (removeList(list.id), router.back()) },
-                    { text: 'Cancel', style: 'cancel' },
+                    { text: tr("Rename"), onPress: () => Alert.prompt(tr("Rename list"), undefined, (n) => n?.trim() && change((l) => (l.name = n.trim())), 'plain-text', list.name) },
+                    { text: tr("Delete list"), style: 'destructive', onPress: () => (removeList(list.id), router.back()) },
+                    { text: tr("Cancel"), style: 'cancel' },
                   ])
                 }
               >
@@ -91,10 +92,10 @@ export default function ListScreen() {
         data={items}
         keyExtractor={(x) => x.bookId}
         contentContainerStyle={{ padding: 16, paddingBottom: 40 + pad }}
-        ListHeaderComponent={<Text style={s.dim}>Long-press a book to reorder, add a note or remove it.</Text>}
+        ListHeaderComponent={<Text style={s.dim}>{tr("Long-press a book to reorder, add a note or remove it.")}</Text>}
         ListFooterComponent={
           <View style={{ marginTop: 16 }}>
-            <Button label="Add book to list" icon="add" onPress={() => setAdding(true)} />
+            <Button label={tr("Add book to list")} icon="add" onPress={() => setAdding(true)} />
           </View>
         }
         renderItem={({ item: x, index }) => (
@@ -131,19 +132,19 @@ export default function ListScreen() {
               </View>
             </View>
           ))}
-          <Text style={s.brand}>Familiar</Text>
+          <Text style={s.brand}>{tr("Familiar")}</Text>
         </View>
       </View>
 
       <Modal visible={adding} animationType="slide" presentationStyle="pageSheet" onRequestClose={() => setAdding(false)}>
         <View style={[s.wrap, { padding: 16, gap: 10 }]}>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-            <Text style={s.h2}>Add to {list.name}</Text>
+            <Text style={s.h2}>{tr("Add to")}{' '}{list.name}</Text>
             <Pressable onPress={() => setAdding(false)} hitSlop={10}>
-              <Text style={{ color: c.gold, fontSize: 16 }}>Done</Text>
+              <Text style={{ color: c.gold, fontSize: 16 }}>{tr("Done")}</Text>
             </Pressable>
           </View>
-          <TextInput style={s.input} value={q} onChangeText={setQ} placeholder="Search your library" placeholderTextColor={c.dim} autoCorrect={false} />
+          <TextInput style={s.input} value={q} onChangeText={setQ} placeholder={tr("Search your library")} placeholderTextColor={c.dim} autoCorrect={false} />
           <FlatList
             data={candidates}
             keyExtractor={(b) => b.id}

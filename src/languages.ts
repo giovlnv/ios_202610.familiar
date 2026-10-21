@@ -21,7 +21,7 @@ export const AUDIO_LANGS: AudioLang[] = [
 
 export const UI_LANGS = [
   { id: 'en', name: 'English', ready: true },
-  { id: 'pt', name: 'Português (Brasil)', ready: false },
+  { id: 'pt', name: 'Português (Brasil)', ready: true },
 ];
 
 export const langOf = (id: string) => AUDIO_LANGS.find((l) => l.id === id)!;

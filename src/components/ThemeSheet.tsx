@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { useState } from 'react';
 import { Alert, Image, Modal, Platform, Pressable, ScrollView, Text, View } from 'react-native';
 import { getAppIconName, setAlternateAppIcon } from 'expo-alternate-app-icons';
@@ -33,11 +34,11 @@ export function IconPicker({ heading = true }: { heading?: boolean }) {
   const pick = (name: string | null) =>
     setAlternateAppIcon(name as never).then(
       () => setIcon(name as never),
-      (e: Error) => Alert.alert('Couldn’t change the icon', e?.message ?? String(e)),
+      (e: Error) => Alert.alert(tr("Couldn’t change the icon"), e?.message ?? String(e)),
     );
   return (
     <>
-      {heading && <Text style={s.sub}>App icon</Text>}
+      {heading && <Text style={s.sub}>{tr("App icon")}</Text>}
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.icons}>
         {ICONS.map(([name, label, img]) => {
           const on = icon === name;
@@ -56,9 +57,9 @@ export function IconPicker({ heading = true }: { heading?: boolean }) {
 export function ThemeSheet({ visible, onClose }: { visible: boolean; onClose: () => void }) {
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
-      <Pressable style={s.dim} onPress={onClose} accessibilityLabel="Close" />
+      <Pressable style={s.dim} onPress={onClose} accessibilityLabel={tr("Close")} />
       <View style={s.sheet}>
-        <Text style={s.h2}>Theme</Text>
+        <Text style={s.h2}>{tr("Theme")}</Text>
         <View style={s.modes}>
           {MODES.map(([m, label, icon]) => (
             <Pressable key={m} style={[s.mode, mode === m && s.modeOn]} onPress={() => (onClose(), setMode(m))}>

@@ -1,3 +1,4 @@
+import { t as tr } from './i18n';
 import { cardName } from './decks';
 import { getOnboarding } from './familiar';
 import { getProfile } from './tracker';
@@ -53,7 +54,7 @@ const CARD_AHEAD = ['Your card today is {c}.', 'Today brings {c}.', '{c} walks w
 const CARD_PAST = ['Today’s card was {c}.', 'Today belonged to {c}.', 'Look back through {c}.', '{c} walked with you today.', 'Where did {c} show up today?'];
 
 const seed = (d: Date) => d.getFullYear() * 372 + d.getMonth() * 31 + d.getDate();
-const pick = (xs: string[], d: Date, salt: number) => xs[(seed(d) + salt) % xs.length];
+const pick = (xs: string[], d: Date, salt: number) => tr(xs[(seed(d) + salt) % xs.length]);
 
 const isRetro = (body: string, d: Date) => {
   const a = longitude(body, d);
@@ -64,7 +65,7 @@ const isRetro = (body: string, d: Date) => {
 export function dailyMessage(card: string, now = new Date()) {
   const h = now.getHours();
   const evening = h >= 18 || h < 4;
-  const hello = evening ? 'Good evening' : h < 12 ? 'Good morning' : 'Good afternoon';
+  const hello = tr(evening ? 'Good evening' : h < 12 ? 'Good morning' : 'Good afternoon');
   const name = getProfile().name?.split(' ')[0];
   const paths = getOnboarding().paths ?? [];
   const dob = getProfile().dob;

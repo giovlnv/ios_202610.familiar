@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { useCallback, useState } from 'react';
 import { Alert, Text, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
@@ -21,9 +22,9 @@ export default function Backups() {
     try {
       const r = await fn();
       if (typeof r === 'number') await refreshStreamingBooks().catch(() => 0);
-      if (ok) Alert.alert(ok, typeof r === 'number' ? `${r} book(s) restored.` : undefined);
+      if (ok) Alert.alert(ok, typeof r === 'number' ? tr("{0} book(s) restored.", { 0: r }) : undefined);
     } catch (e) {
-      Alert.alert('Something went wrong', String((e as Error).message ?? e));
+      Alert.alert(tr("Something went wrong"), String((e as Error).message ?? e));
     } finally {
       setBusy(false);
       refresh();
@@ -32,15 +33,15 @@ export default function Backups() {
 
   return (
     <Page>
-      <Text style={ss.h2}>Automatic · GitHub</Text>
-      <Text style={ss.p}>Notes, Claude consults, progress and your familiars are saved to your private ios_202610.familiar_library repo whenever you leave the app.</Text>
+      <Text style={ss.h2}>{tr("Automatic · GitHub")}</Text>
+      <Text style={ss.p}>{tr("Notes, Claude consults, progress and your familiars are saved to your private ios_202610.familiar_library repo whenever you leave the app.")}</Text>
       <View style={ss.card}>
-        <Text style={ss.meta}>Last sync: {when(state.lastGithub)}</Text>
-        {state.lastError && <Text style={[ss.meta, { color: c.claude }]}>Last error: {state.lastError}</Text>}
+        <Text style={ss.meta}>{tr("Last sync:")}{' '}{when(state.lastGithub)}</Text>
+        {state.lastError && <Text style={[ss.meta, { color: c.claude }]}>{tr("Last error:")}{' '}{state.lastError}</Text>}
         {hasToken ? (
           <View style={ss.row}>
             <Btn
-              label="Sync now"
+              label={tr("Sync now")}
               primary
               onPress={() =>
                 run(async () => {
@@ -48,24 +49,24 @@ export default function Backups() {
                 }, 'Synced')
               }
             />
-            <Btn label="Restore from GitHub" onPress={() => confirmRestore(() => run(pullFromGithub, 'Restored'))} />
+            <Btn label={tr("Restore from GitHub")} onPress={() => confirmRestore(() => run(pullFromGithub, 'Restored'))} />
           </View>
         ) : (
           <View style={ss.row}>
-            <Btn label="Add your GitHub key" primary onPress={() => router.push('/settings/account')} />
+            <Btn label={tr("Add your GitHub key")} primary onPress={() => router.push('/settings/account')} />
           </View>
         )}
       </View>
-      <Text style={ss.h2}>Manual · file</Text>
-      <Text style={ss.p}>Save a backup file to Files or iCloud Drive. You’ll get a reminder in the Library after 7 days.</Text>
+      <Text style={ss.h2}>{tr("Manual · file")}</Text>
+      <Text style={ss.p}>{tr("Save a backup file to Files or iCloud Drive. You’ll get a reminder in the Library after 7 days.")}</Text>
       <View style={ss.card}>
-        <Text style={ss.meta}>Last backup file: {when(state.lastFile)}</Text>
+        <Text style={ss.meta}>{tr("Last backup file:")}{' '}{when(state.lastFile)}</Text>
         <View style={ss.row}>
-          <Btn label="Back up now" primary onPress={() => run(backupToFile)} />
-          <Btn label="Restore from file" onPress={() => confirmRestore(() => run(restoreFromFile, 'Restored'))} />
+          <Btn label={tr("Back up now")} primary onPress={() => run(backupToFile)} />
+          <Btn label={tr("Restore from file")} onPress={() => confirmRestore(() => run(restoreFromFile, 'Restored'))} />
         </View>
       </View>
-      {busy && <Text style={ss.meta}>Working…</Text>}
+      {busy && <Text style={ss.meta}>{tr("Working…")}</Text>}
     </Page>
   );
 }

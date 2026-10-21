@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -49,7 +50,7 @@ export default function Tableau({
                 style={{ position: 'absolute', left: col * (W + GAP), top: row * (h + GAP + 14) + (row >= rows ? 8 : 0), width: W, alignItems: 'center' }}
                 onPress={() => (p?.card ? setFocus(i) : onTap(i))}
                 onLongPress={() => onHold(i)}
-                accessibilityLabel={`Position ${i + 1}${p?.card ? `, ${cardName(p.card)}` : ', empty'}`}
+                accessibilityLabel={tr("Position {0}{1}", { 0: i + 1, 1: p?.card ? `, ${cardName(p.card)}` : ', empty' })}
               >
                 <View style={[s.frame, on && s.focus, near && s.near]}>
                   {p?.card ? (
@@ -73,19 +74,19 @@ export default function Tableau({
       {cur && at !== null ? (
         <View style={s.info}>
           <Text style={s.infoHead}>
-            Position {at + 1} · House of {lcard(`l${String(at + 1).padStart(2, '0')}`).en} ({lcard(`l${String(at + 1).padStart(2, '0')}`).pt})
+            {tr("Position")}{' '}{at + 1}{' '}{tr("· House of")}{' '}{lcard(`l${String(at + 1).padStart(2, '0')}`).en} ({lcard(`l${String(at + 1).padStart(2, '0')}`).pt})
           </Text>
           <Text style={s.infoText}>
             {cardName(cur)}
-            {lit.length ? ` · ${HELPERS.find((x) => x.id === helper)!.name.toLowerCase()}: ${lit.filter((x) => cards[x]?.card).map((x) => cardName(cards[x].card!).split(' · ').pop()).join(', ') || 'none placed'}` : ''}
+            {lit.length ? ` · ${HELPERS.find((x) => x.id === helper)!.name.toLowerCase()}: ${lit.filter((x) => cards[x]?.card).map((x) => cardName(cards[x].card!).split(' · ').pop()).join(', ') || tr("none placed")}` : ''}
           </Text>
           <Pressable style={s.more} onPress={() => onHold(at)}>
-            <Text style={s.moreText}>Card options</Text>
+            <Text style={s.moreText}>{tr("Card options")}</Text>
             <Ionicons name="chevron-forward" size={14} color={c.gold} />
           </Pressable>
         </View>
       ) : (
-        <Text style={s.hint}>Tap an empty place to add a card. Tap a card to see how it links to the others; hold it for options.</Text>
+        <Text style={s.hint}>{tr("Tap an empty place to add a card. Tap a card to see how it links to the others; hold it for options.")}</Text>
       )}
 
       <View style={s.chips}>

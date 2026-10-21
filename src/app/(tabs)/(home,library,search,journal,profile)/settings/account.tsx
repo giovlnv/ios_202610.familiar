@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { useCallback, useState } from 'react';
 import { Alert, Text, TextInput, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
@@ -15,17 +16,17 @@ export default function Account() {
   const save = (t: string) =>
     setToken(t)
       .then(() => (setDraft(''), refresh()))
-      .catch((e) => Alert.alert('Something went wrong', String(e?.message ?? e)));
+      .catch((e) => Alert.alert(tr("Something went wrong"), String(e?.message ?? e)));
 
   return (
     <Page>
-      <Text style={ss.h2}>GitHub</Text>
-      <Text style={ss.p}>The key lets the app back up to your private ios_202610.familiar_library repo and send books to the audiobook pipeline.</Text>
+      <Text style={ss.h2}>{tr("GitHub")}</Text>
+      <Text style={ss.p}>{tr("The key lets the app back up to your private ios_202610.familiar_library repo and send books to the audiobook pipeline.")}</Text>
       <View style={ss.card}>
-        <Text style={ss.meta}>Status: {hasToken ? 'connected' : 'not connected'}</Text>
+        <Text style={ss.meta}>{tr("Status:")}{' '}{hasToken ? 'connected' : tr("not connected")}</Text>
         <TextInput
           style={ss.input}
-          placeholder={hasToken ? 'Saved — paste a new key to replace' : 'Paste GitHub key (github_pat_…)'}
+          placeholder={hasToken ? tr("Saved — paste a new key to replace") : tr("Paste GitHub key (github_pat_…)")}
           placeholderTextColor={c.dim}
           autoCapitalize="none"
           autoCorrect={false}
@@ -34,12 +35,12 @@ export default function Account() {
           onChangeText={setDraft}
         />
         <View style={ss.row}>
-          <Btn label="Save key" primary onPress={() => draft.trim() && save(draft.trim())} />
-          {hasToken && <Btn label="Remove key" onPress={() => save('')} />}
+          <Btn label={tr("Save key")} primary onPress={() => draft.trim() && save(draft.trim())} />
+          {hasToken && <Btn label={tr("Remove key")} onPress={() => save('')} />}
         </View>
       </View>
-      <Text style={ss.h2}>Claude chat</Text>
-      <Text style={ss.p}>“Send to Claude” copies the message and opens this chat. Paste it there.</Text>
+      <Text style={ss.h2}>{tr("Claude chat")}</Text>
+      <Text style={ss.p}>{tr("“Send to Claude” copies the message and opens this chat. Paste it there.")}</Text>
       <View style={ss.card}>
         <TextInput
           style={ss.input}
@@ -52,7 +53,7 @@ export default function Account() {
           onChangeText={setLink}
         />
         <View style={ss.row}>
-          <Btn label="Save link" primary onPress={() => (setClaudeLink(link), Alert.alert('Saved'))} />
+          <Btn label={tr("Save link")} primary onPress={() => (setClaudeLink(link), Alert.alert(tr("Saved")))} />
         </View>
       </View>
     </Page>

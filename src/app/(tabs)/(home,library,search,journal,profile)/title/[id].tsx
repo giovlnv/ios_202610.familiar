@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { usePad } from '../../../../playback';
 import { useCallback, useState } from "react";
 import {
@@ -66,7 +67,7 @@ export default function Title() {
   useFocusEffect(refresh);
 
   const b = t.books.find((x) => x.id === id);
-  if (!b) return <Text style={s.dim}>Book not found.</Text>;
+  if (!b) return <Text style={s.dim}>{tr("Book not found.")}</Text>;
   const logs = logsFor(t, b.id);
   const notes = b.audio ? loadNotes(b.audio).length : 0;
   const consults = b.audio ? loadConsults(b.audio).length : 0;
@@ -88,7 +89,7 @@ export default function Title() {
               onPress={() =>
                 Alert.alert(b.title, undefined, [
                   {
-                    text: "Add to a list",
+                    text: tr("Add to a list"),
                     onPress: () => {
                       const lists = t.lists ?? [];
                       const add = (id: string) => {
@@ -97,22 +98,22 @@ export default function Title() {
                         });
                         refresh();
                       };
-                      Alert.alert("Add to a list", undefined, [
+                      Alert.alert(tr("Add to a list"), undefined, [
                         ...lists.map((l) => ({ text: l.name, onPress: () => add(l.id) })),
-                        { text: "New list…", onPress: () => newList(add) },
-                        { text: "Cancel", style: "cancel" as const },
+                        { text: tr("New list…"), onPress: () => newList(add) },
+                        { text: tr("Cancel"), style: "cancel" as const },
                       ]);
                     },
                   },
                   {
                     text: fav
-                      ? "Remove from top 4 favorites"
-                      : "Add to top 4 favorites",
+                      ? tr("Remove from top 4 favorites")
+                      : tr("Add to top 4 favorites"),
                     onPress: () => {
                       if (!fav && (t.favorites?.length ?? 0) >= 4)
                         return Alert.alert(
-                          "Top 4 is full",
-                          "Remove a favorite on its book page first.",
+                          tr("Top 4 is full"),
+                          tr("Remove a favorite on its book page first."),
                         );
                       toggleFavorite(b.id);
                       refresh();
@@ -126,35 +127,35 @@ export default function Title() {
                         return size > 0
                           ? [
                               {
-                                text: `Remove downloaded audio (${mb(size)})`,
+                                text: tr("Remove downloaded audio ({0})", { 0: mb(size) }),
                                 onPress: async () => {
                                   if (!(await canStream(folder, item.book)))
-                                    return Alert.alert("Can't stream this book yet", "Its audio isn't on GitHub, so removing it would lose it. Keep it for now.");
-                                  Alert.alert(`Free ${mb(size)}?`, "Notes, progress and card links stay. The book plays by streaming from your library on GitHub (needs internet).", [
-                                    { text: "Cancel", style: "cancel" },
-                                    { text: "Remove audio", style: "destructive", onPress: () => (removeAudio(folder), refreshStreamingBooks().catch(() => {}), setT(load())) },
+                                    return Alert.alert(tr("Can't stream this book yet"), tr("Its audio isn't on GitHub, so removing it would lose it. Keep it for now."));
+                                  Alert.alert(tr("Free {0}?", { 0: mb(size) }), tr("Notes, progress and card links stay. The book plays by streaming from your library on GitHub (needs internet)."), [
+                                    { text: tr("Cancel"), style: "cancel" },
+                                    { text: tr("Remove audio"), style: "destructive", onPress: () => (removeAudio(folder), refreshStreamingBooks().catch(() => {}), setT(load())) },
                                   ]);
                                 },
                               },
                             ]
                           : [
                               {
-                                text: `Download audio for offline (~${mb(estimateAudio(item.book))})`,
+                                text: tr("Download audio for offline (~{0})", { 0: mb(estimateAudio(item.book)) }),
                                 onPress: () => {
                                   const need = estimateAudio(item.book);
                                   const free = freeSpace();
                                   const go = () =>
                                     downloadAudio(folder, item.book, () => {})
-                                      .then(() => Alert.alert("Downloaded", `${mb(bookSizes(folder).audio)} on this iPhone.`))
-                                      .catch((e) => Alert.alert("Download failed", String(e?.message ?? e)));
+                                      .then(() => Alert.alert(tr("Downloaded"), tr("{0} on this iPhone.", { 0: mb(bookSizes(folder).audio) })))
+                                      .catch((e) => Alert.alert(tr("Download failed"), String(e?.message ?? e)));
                                   if (free && need > free * 0.8)
-                                    return Alert.alert("Not much space left", `This needs about ${mb(need)} and your iPhone has ${mb(free)} free.`, [
-                                      { text: "Cancel", style: "cancel" },
-                                      { text: "Download anyway", onPress: go },
+                                    return Alert.alert(tr("Not much space left"), tr("This needs about {0} and your iPhone has {1} free.", { 0: mb(need), 1: mb(free) }), [
+                                      { text: tr("Cancel"), style: "cancel" },
+                                      { text: tr("Download anyway"), onPress: go },
                                     ]);
-                                  Alert.alert(`Download ~${mb(need)}?`, `${mb(free)} free on your iPhone.`, [
-                                    { text: "Cancel", style: "cancel" },
-                                    { text: "Download", onPress: go },
+                                  Alert.alert(tr("Download ~{0}?", { 0: mb(need) }), tr("{0} free on your iPhone.", { 0: mb(free) }), [
+                                    { text: tr("Cancel"), style: "cancel" },
+                                    { text: tr("Download"), onPress: go },
                                   ]);
                                 },
                               },
@@ -162,21 +163,21 @@ export default function Title() {
                       })()
                     : []),
                   {
-                    text: "Find details on Open Library",
+                    text: tr("Find details on Open Library"),
                     onPress: () =>
                       router.push({ pathname: "/find", params: { id: b.id } }),
                   },
                   {
-                    text: "Delete audiobook",
+                    text: tr("Delete audiobook"),
                     style: "destructive" as const,
                     onPress: () =>
                       Alert.alert(
-                        "Delete this audiobook?",
-                        "Audio, notes, consults, progress and its diary entries are removed from this iPhone.",
+                        tr("Delete this audiobook?"),
+                        tr("Audio, notes, consults, progress and its diary entries are removed from this iPhone."),
                         [
-                          { text: "Cancel", style: "cancel" },
+                          { text: tr("Cancel"), style: "cancel" },
                           {
-                            text: "Delete",
+                            text: tr("Delete"),
                             style: "destructive",
                             onPress: () => {
                               if (b.audio) deleteBook(b.audio);
@@ -187,7 +188,7 @@ export default function Title() {
                         ],
                       ),
                   },
-                  { text: "Cancel", style: "cancel" as const },
+                  { text: tr("Cancel"), style: "cancel" as const },
                 ])
               }
             >
@@ -242,8 +243,8 @@ export default function Title() {
           <Ionicons name="calendar-outline" size={18} color={c.gold} />
           <Text style={s.rowText}>
             {b.started
-              ? `Started ${fmtDate(b.started)} · day ${daysBetween(b.started, today())}`
-              : "Add start date"}
+              ? tr("Started {0} · day {1}", { 0: fmtDate(b.started), 1: daysBetween(b.started, today()) })
+              : tr("Add start date")}
           </Text>
           <Ionicons name="create-outline" size={16} color={c.dim} />
         </Pressable>
@@ -254,7 +255,7 @@ export default function Title() {
         <Text style={s.rowText} numberOfLines={2}>
           {myShelves.length
             ? myShelves.map((sh) => sh.name).join(" · ")
-            : "Add to shelf"}
+            : tr("Add to shelf")}
         </Text>
         <Ionicons name="chevron-forward" size={16} color={c.dim} />
       </Pressable>
@@ -281,7 +282,7 @@ export default function Title() {
       <Pressable style={s.row} onPress={() => setGenring(true)}>
         <Ionicons name="pricetags-outline" size={18} color={c.gold} />
         <Text style={s.rowText} numberOfLines={2}>
-          {b.genres?.length ? b.genres.join(" · ") : "Find genres"}
+          {b.genres?.length ? b.genres.join(" · ") : tr("Find genres")}
         </Text>
         <Ionicons name="chevron-forward" size={16} color={c.dim} />
       </Pressable>
@@ -290,7 +291,7 @@ export default function Title() {
       <View style={s.actions}>
         <View style={{ flex: 1 }}>
           <Button
-            label={logs.length ? "Log again" : "Log"}
+            label={logs.length ? tr("Log again") : tr("Log")}
             icon="checkmark-circle"
             primary
             onPress={() => setLogging(true)}
@@ -299,7 +300,7 @@ export default function Title() {
         {b.audio && (
           <View style={{ flex: 1 }}>
             <Button
-              label="Listen"
+              label={tr("Listen")}
               icon="headset"
               onPress={() =>
                 router.push({
@@ -321,23 +322,23 @@ export default function Title() {
         >
           <Ionicons name="list" size={18} color={c.gold} />
           <Text style={s.rowText}>
-            Sections, notes ({notes}) and consults ({consults})
+            {tr("Sections, notes (")}{notes}{tr(") and consults (")}{consults})
           </Text>
           <Ionicons name="chevron-forward" size={16} color={c.dim} />
         </Pressable>
       )}
 
-      <Text style={s.h2}>Reading history</Text>
+      <Text style={s.h2}>{tr("Reading history")}</Text>
       {logs.length ? (
         logs.map((l) => (
           <Pressable
             key={l.id}
             style={s.log}
             onLongPress={() =>
-              Alert.alert("Delete this entry?", fmtDate(l.date), [
-                { text: "Cancel", style: "cancel" },
+              Alert.alert(tr("Delete this entry?"), fmtDate(l.date), [
+                { text: tr("Cancel"), style: "cancel" },
                 {
-                  text: "Delete",
+                  text: tr("Delete"),
                   style: "destructive",
                   onPress: () => (removeLog(l.id), refresh()),
                 },
@@ -354,7 +355,7 @@ export default function Title() {
           </Pressable>
         ))
       ) : (
-        <Text style={s.dim}>Not logged yet. Tap “Log” when you finish it.</Text>
+        <Text style={s.dim}>{tr("Not logged yet. Tap “Log” when you finish it.")}</Text>
       )}
 
       <LogSheet
@@ -372,9 +373,9 @@ export default function Title() {
           if (folder && item && size > 0)
             setTimeout(async () => {
               if (!(await canStream(folder, item.book))) return;
-              Alert.alert(`Finished! Free ${mb(size)}?`, "Remove this book’s audio from your iPhone. Notes and progress stay, and it streams from GitHub if you listen again.", [
-                { text: "Keep", style: "cancel" },
-                { text: "Remove audio", style: "destructive", onPress: () => (removeAudio(folder), refreshStreamingBooks().catch(() => {}), refresh()) },
+              Alert.alert(tr("Finished! Free {0}?", { 0: mb(size) }), tr("Remove this book’s audio from your iPhone. Notes and progress stay, and it streams from GitHub if you listen again."), [
+                { text: tr("Keep"), style: "cancel" },
+                { text: tr("Remove audio"), style: "destructive", onPress: () => (removeAudio(folder), refreshStreamingBooks().catch(() => {}), refresh()) },
               ]);
             }, 500);
         }}
@@ -388,17 +389,17 @@ export default function Title() {
       >
         <Pressable style={s.dimBg} onPress={() => setEditStart(false)} />
         <View style={s.sheet}>
-          <Text style={s.h2}>Started reading</Text>
+          <Text style={s.h2}>{tr("Started reading")}</Text>
           <DateStepper
             value={b.started ?? today()}
             max={today()}
             onChange={(d) => set({ started: d })}
           />
           <View style={s.quick}>
-            <Chip label="Today" onPress={() => set({ started: today() })} />
+            <Chip label={tr("Today")} onPress={() => set({ started: today() })} />
             {b.started && (
               <Chip
-                label="Clear"
+                label={tr("Clear")}
                 onPress={() => (
                   set({ started: undefined }),
                   setEditStart(false)
@@ -407,7 +408,7 @@ export default function Title() {
             )}
           </View>
           <Button
-            label="Done"
+            label={tr("Done")}
             primary
             onPress={() => (
               b.started || set({ started: today() }),
@@ -425,7 +426,7 @@ export default function Title() {
       >
         <Pressable style={s.dimBg} onPress={() => setShelving(false)} />
         <View style={[s.sheet, { maxHeight: "75%" }]}>
-          <Text style={s.h2}>Shelves</Text>
+          <Text style={s.h2}>{tr("Shelves")}</Text>
           <ScrollView contentContainerStyle={{ gap: 2 }}>
             {(t.shelves ?? []).map((sh) => {
               const on = sh.books.includes(b.id);
@@ -447,17 +448,17 @@ export default function Title() {
             })}
           </ScrollView>
           <Button
-            label="New shelf"
+            label={tr("New shelf")}
             icon="add"
             onPress={() =>
-              Alert.prompt("New shelf", undefined, (name) => {
+              Alert.prompt(tr("New shelf"), undefined, (name) => {
                 if (!name?.trim()) return;
                 toggleShelf(addShelf(name).id, b.id);
                 refresh();
               })
             }
           />
-          <Button label="Done" primary onPress={() => setShelving(false)} />
+          <Button label={tr("Done")} primary onPress={() => setShelving(false)} />
         </View>
       </Modal>
     </ScrollView>
@@ -503,17 +504,17 @@ function LogSheet({
     >
       <Pressable style={s.dimBg} onPress={onClose} />
       <View style={s.sheet}>
-        <Text style={s.h2}>Log</Text>
-        <Text style={s.label}>Finished on</Text>
+        <Text style={s.h2}>{tr("Log")}</Text>
+        <Text style={s.label}>{tr("Finished on")}</Text>
         <View style={s.dateRow}>
           <Pressable onPress={() => setOffset(offset - 1)} hitSlop={10}>
             <Ionicons name="chevron-back" size={22} color={c.gold} />
           </Pressable>
           <Text style={s.date}>
             {offset === 0
-              ? "Today"
+              ? tr("Today")
               : offset === -1
-                ? "Yesterday"
+                ? tr("Yesterday")
                 : fmtDate(date)}
           </Text>
           <Pressable
@@ -528,17 +529,17 @@ function LogSheet({
           </Pressable>
         </View>
         <View style={s.quick}>
-          <Chip label="Today" on={offset === 0} onPress={() => setOffset(0)} />
+          <Chip label={tr("Today")} on={offset === 0} onPress={() => setOffset(0)} />
           <Chip
-            label="Yesterday"
+            label={tr("Yesterday")}
             on={offset === -1}
             onPress={() => setOffset(-1)}
           />
-          <Chip label="−7 days" onPress={() => setOffset(offset - 7)} />
-          <Chip label="−30 days" onPress={() => setOffset(offset - 30)} />
+          <Chip label={tr("−7 days")} onPress={() => setOffset(offset - 7)} />
+          <Chip label={tr("−30 days")} onPress={() => setOffset(offset - 30)} />
         </View>
         <View style={s.switchRow}>
-          <Text style={s.label}>Started on</Text>
+          <Text style={s.label}>{tr("Started on")}</Text>
           <View style={{ flex: 1 }} />
           <Switch
             value={!!started}
@@ -556,15 +557,15 @@ function LogSheet({
             </Text>
           </>
         )}
-        <Text style={s.label}>Rating</Text>
+        <Text style={s.label}>{tr("Rating")}</Text>
         <View style={{ alignItems: "center", paddingVertical: 6 }}>
           <Stars value={rating} size={34} onChange={setRating} />
           <Text style={[s.dim, { marginTop: 6 }]}>
-            {rating ? `${rating} / 5` : "Tap left or right half of a star"}
+            {rating ? `${rating} / 5` : tr("Tap left or right half of a star")}
           </Text>
         </View>
         <View style={s.switchRow}>
-          <Text style={s.rowText}>I’ve read this before</Text>
+          <Text style={s.rowText}>{tr("I’ve read this before")}</Text>
           <Switch
             value={reread}
             onValueChange={setReread}
@@ -572,7 +573,7 @@ function LogSheet({
           />
         </View>
         <Button
-          label="Save"
+          label={tr("Save")}
           primary
           onPress={() =>
             onSave(

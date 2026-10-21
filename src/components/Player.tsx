@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ActivityIndicator,
@@ -131,17 +132,17 @@ export default function Player({
   const explainMenu = () =>
     fromMenu(() =>
       Alert.alert(
-        "Explanations",
+        tr("Explanations"),
         bookOverride(folder) === undefined
-          ? `${allExplanationsOn() ? "On" : "Off"} for all books.`
-          : `${expOn ? "On" : "Off"} for this book (all books: ${allExplanationsOn() ? "on" : "off"}).`,
+          ? tr("{0} for all books.", { 0: allExplanationsOn() ? "On" : "Off" })
+          : tr("{0} for this book (all books: {1}).", { 0: expOn ? "On" : "Off", 1: allExplanationsOn() ? "on" : "off" }),
         [
-          { text: allExplanationsOn() ? "Turn off for all books" : "Turn on for all books", onPress: () => setAllExplanations(!allExplanationsOn()) },
-          { text: expOn ? "Turn off for this book only" : "Turn on for this book only", onPress: () => setBookExplanations(folder, !expOn) },
+          { text: allExplanationsOn() ? tr("Turn off for all books") : tr("Turn on for all books"), onPress: () => setAllExplanations(!allExplanationsOn()) },
+          { text: expOn ? tr("Turn off for this book only") : tr("Turn on for this book only"), onPress: () => setBookExplanations(folder, !expOn) },
           ...(bookOverride(folder) !== undefined
-            ? [{ text: "This book follows all books", onPress: () => setBookExplanations(folder, undefined) }]
+            ? [{ text: tr("This book follows all books"), onPress: () => setBookExplanations(folder, undefined) }]
             : []),
-          { text: "Cancel", style: "cancel" as const },
+          { text: tr("Cancel"), style: "cancel" as const },
         ],
       ),
     );
@@ -150,14 +151,14 @@ export default function Player({
   const link = (l: Link | undefined) => setLinks(setLink(folder, section.id, l));
   const cardActions = () =>
     card
-      ? Alert.alert(cardName(card.card), card.auto ? "Found in the section title" : undefined, [
-          { text: "About this card", onPress: () => setCardInfo(card.card) },
-          { text: "Change card", onPress: () => setPicking(true) },
+      ? Alert.alert(cardName(card.card), card.auto ? tr("Found in the section title") : undefined, [
+          { text: tr("About this card"), onPress: () => setCardInfo(card.card) },
+          { text: tr("Change card"), onPress: () => setPicking(true) },
           ...(reversible(sys)
-            ? [{ text: card.reversed ? "Show upright" : "Show reversed", onPress: () => link({ card: card.card, reversed: !card.reversed }) }]
+            ? [{ text: card.reversed ? tr("Show upright") : tr("Show reversed"), onPress: () => link({ card: card.card, reversed: !card.reversed }) }]
             : []),
-          { text: "Remove from this section", style: "destructive", onPress: () => link({ card: null }) },
-          { text: "Cancel", style: "cancel" },
+          { text: tr("Remove from this section"), style: "destructive", onPress: () => link({ card: null }) },
+          { text: tr("Cancel"), style: "cancel" },
         ])
       : setPicking(true);
 
@@ -183,12 +184,12 @@ export default function Player({
   const customRate = () =>
     fromMenu(() =>
       Alert.prompt(
-        "Custom speed",
-        "Between 0.1 and 2.0",
+        tr("Custom speed"),
+        tr("Between 0.1 and 2.0"),
         (v) => {
           const r = Number(v.replace(",", "."));
           if (r >= 0.1 && r <= 2) pb.setRate(Math.round(r * 100) / 100);
-          else Alert.alert("Speed must be between 0.1 and 2.0");
+          else Alert.alert(tr("Speed must be between 0.1 and 2.0"));
         },
         "plain-text",
         String(rate),
@@ -285,11 +286,11 @@ export default function Player({
   const explainSection = () =>
     setExplain({ kind: "section", section, card: card?.card, saved: explained[section.id]?.section, builtIn: section.explain });
   const paraActions = (index: number, time: number) =>
-    Alert.alert("This passage", undefined, [
-      { text: "Explain this passage", onPress: () => explainPassage(index) },
-      { text: "Add note", onPress: () => newNote(index, time) },
-      { text: "Ask Claude", onPress: () => startAsk(index, time) },
-      { text: "Cancel", style: "cancel" },
+    Alert.alert(tr("This passage"), undefined, [
+      { text: tr("Explain this passage"), onPress: () => explainPassage(index) },
+      { text: tr("Add note"), onPress: () => newNote(index, time) },
+      { text: tr("Ask Claude"), onPress: () => startAsk(index, time) },
+      { text: tr("Cancel"), style: "cancel" },
     ]);
 
   const asked = useMemo(
@@ -320,7 +321,7 @@ export default function Player({
           <Pressable
             onPress={toggleText}
             hitSlop={8}
-            accessibilityLabel="Follow-along text"
+            accessibilityLabel={tr("Follow-along text")}
             accessibilityState={{ selected: showText }}
           >
             <View style={[s.textBtn, showText && s.textBtnOn]}>
@@ -354,7 +355,7 @@ export default function Player({
           </Text>
         </View>
         {showText && card && (
-          <Pressable onPress={toggleText} accessibilityLabel={`Show ${cardName(card.card)}`}>
+          <Pressable onPress={toggleText} accessibilityLabel={tr("Show {0}", { 0: cardName(card.card) })}>
             <CardImage id={card.card} reversed={card.reversed} width={30} />
           </Pressable>
         )}
@@ -375,7 +376,7 @@ export default function Player({
                 />
                 <Text style={s.cardName}>
                   {cardName(card.card)}
-                  {card.reversed ? " · reversed" : ""}
+                  {card.reversed ? tr(" · reversed") : ""}
                 </Text>
               </Pressable>
               <Passage para={!expOn && isExplain(section.paras[current]?.kind ?? "") ? undefined : section.paras[current]} t={t} ts={ts} height={passageH} rtl={rtl} />
@@ -385,7 +386,7 @@ export default function Player({
               <FamiliarArt familiar={familiar} pose={status.playing ? "reading" : "idle"} size={160} />
               <Pressable style={s.linkBtn} onPress={() => setPicking(true)}>
                 <Ionicons name="add-circle-outline" size={18} color={c.gold} />
-                <Text style={s.link}>Link a card to this section</Text>
+                <Text style={s.link}>{tr("Link a card to this section")}</Text>
               </Pressable>
             </View>
           )}
@@ -436,7 +437,7 @@ export default function Player({
         />
         {!follow && (
           <Pressable style={s.follow} onPress={() => setFollow(true)}>
-            <Text style={s.followText}>Follow along</Text>
+            <Text style={s.followText}>{tr("Follow along")}</Text>
           </Pressable>
         )}
       </View>
@@ -486,7 +487,7 @@ export default function Player({
             onPress={() => sec < book.sections.length - 1 && goTo(sec + 1, 0)}
           />
         </View>
-        <Pressable style={s.more} onPress={() => setMore(true)} accessibilityLabel="More options">
+        <Pressable style={s.more} onPress={() => setMore(true)} accessibilityLabel={tr("More options")}>
           <Ionicons name="ellipsis-horizontal" size={20} color={c.text} />
           {rate !== 1 && <Text style={s.moreTag}>{fmtRate(rate)}</Text>}
           {!!sleep && (
@@ -499,9 +500,9 @@ export default function Player({
       </View>
 
       <Modal visible={sleepOpen} transparent animationType="slide" onRequestClose={() => setSleepOpen(false)}>
-        <Pressable style={{ flex: 1, backgroundColor: "#0008" }} onPress={() => setSleepOpen(false)} accessibilityLabel="Close" />
+        <Pressable style={{ flex: 1, backgroundColor: "#0008" }} onPress={() => setSleepOpen(false)} accessibilityLabel={tr("Close")} />
         <View style={s.sleepSheet}>
-          <Text style={s.h2}>Sleep timer</Text>
+          <Text style={s.h2}>{tr("Sleep timer")}</Text>
           {(
             [
               ["off", "Off"],
@@ -526,15 +527,15 @@ export default function Player({
             );
           })}
           <Text style={s.sleepNote}>
-            {sleep?.kind === "min" ? `Fades out over the last 10 seconds · ${fmtLeft(sleepLeft ?? 0)} left` : "Timed options fade out over the last 10 seconds."}
+            {sleep?.kind === "min" ? tr("Fades out over the last 10 seconds · {0} left", { 0: fmtLeft(sleepLeft ?? 0) }) : tr("Timed options fade out over the last 10 seconds.")}
           </Text>
         </View>
       </Modal>
 
       <Modal visible={more} transparent animationType="slide" onRequestClose={() => setMore(false)}>
-        <Pressable style={{ flex: 1, backgroundColor: "#0008" }} onPress={() => setMore(false)} accessibilityLabel="Close" />
+        <Pressable style={{ flex: 1, backgroundColor: "#0008" }} onPress={() => setMore(false)} accessibilityLabel={tr("Close")} />
         <View style={s.sleepSheet}>
-          <Text style={s.moreHead}>Speed</Text>
+          <Text style={s.moreHead}>{tr("Speed")}</Text>
           <View style={s.rates}>
             {RATES.map((r) => (
               <Pressable key={r} style={[s.rate, r === rate && s.rateOn]} onPress={() => pb.setRate(r)}>
@@ -543,31 +544,31 @@ export default function Player({
             ))}
             <Pressable style={[s.rate, !RATES.includes(rate) && s.rateOn]} onPress={customRate}>
               <Text style={[s.rateText, !RATES.includes(rate) && s.rateTextOn]}>
-                {RATES.includes(rate) ? "Custom" : fmtRate(rate)}
+                {RATES.includes(rate) ? tr("Custom") : fmtRate(rate)}
               </Text>
             </Pressable>
           </View>
           <MenuRow
             icon={sleep ? "moon" : "moon-outline"}
-            label="Sleep timer"
+            label={tr("Sleep timer")}
             value={sleep ? (sleepLeft !== null ? fmtLeft(sleepLeft) : sleep.kind === "section" ? "End of section" : "End of explanation") : "Off"}
             onPress={() => fromMenu(() => setSleepOpen(true))}
           />
           <MenuRow
             icon="bulb-outline"
-            label="Explanations"
+            label={tr("Explanations")}
             value={`${expOn ? "On" : "Off"}${bookOverride(folder) !== undefined ? " · this book" : ""}`}
             onPress={explainMenu}
           />
           <MenuRow
             icon="bulb-outline"
-            label="Explain this section"
+            label={tr("Explain this section")}
             value={explained[section.id]?.section || section.explain?.length ? "Saved" : undefined}
             onPress={() => fromMenu(explainSection)}
           />
-          <MenuRow icon="text-outline" label="Text size and style" onPress={() => fromMenu(() => setStyling(true))} />
-          <MenuRow icon="create-outline" label="Add a note here" onPress={() => fromMenu(() => newNote(current, t))} />
-          <MenuRow icon="sparkles-outline" label="Ask Claude about this" color={c.claude} onPress={() => fromMenu(() => startAsk(current, t))} />
+          <MenuRow icon="text-outline" label={tr("Text size and style")} onPress={() => fromMenu(() => setStyling(true))} />
+          <MenuRow icon="create-outline" label={tr("Add a note here")} onPress={() => fromMenu(() => newNote(current, t))} />
+          <MenuRow icon="sparkles-outline" label={tr("Ask Claude about this")} color={c.claude} onPress={() => fromMenu(() => startAsk(current, t))} />
         </View>
       </Modal>
 
@@ -578,7 +579,7 @@ export default function Player({
         onRequestClose={() => setPanel("none")}
       >
         <SafeAreaView style={s.wrap} edges={["bottom"]}>
-          <Header title="Sections" onClose={() => setPanel("none")} />
+          <Header title={tr("Sections")} onClose={() => setPanel("none")} />
           <FlatList
             data={book.sections}
             keyExtractor={(x) => x.id}
@@ -611,7 +612,7 @@ export default function Player({
       >
         <SafeAreaView style={s.wrap} edges={["bottom"]}>
           <Header
-            title="Notes"
+            title={tr("Notes")}
             onClose={() => setPanel("none")}
             action={notes.length ? ["Export", share] : undefined}
           />
@@ -625,8 +626,7 @@ export default function Player({
             keyExtractor={(n) => n.id}
             ListEmptyComponent={
               <Text style={s.empty}>
-                Tap “Note here” while listening, or long-press any paragraph, to
-                add a note.
+                {tr("Tap “Note here” while listening, or long-press any paragraph, to add a note.")}
               </Text>
             }
             renderItem={({ item: n }) => {
@@ -678,28 +678,28 @@ export default function Player({
             <TextInput
               autoFocus
               multiline
-              placeholder="Your note…"
+              placeholder={tr("Your note…")}
               placeholderTextColor={c.dim}
               style={s.input}
               value={draft?.text}
               onChangeText={(text) => setDraft((d) => (d ? { ...d, text } : d))}
             />
             <View style={s.row}>
-              <Btn label="Cancel" onPress={() => setDraft(null)} />
+              <Btn label={tr("Cancel")} onPress={() => setDraft(null)} />
               {draft?.id && (
                 <Btn
-                  label="Delete"
+                  label={tr("Delete")}
                   onPress={() => setDraft((d) => (d ? { ...d, text: "" } : d))}
                 />
               )}
-              <Btn label="Save" onPress={commit} />
+              <Btn label={tr("Save")} onPress={commit} />
             </View>
           </View>
         </KeyboardAvoidingView>
       </Modal>
       <CardPicker
         visible={picking}
-        title="Card for this section"
+        title={tr("Card for this section")}
         system={sys}
         onClose={() => setPicking(false)}
         onPick={(id, reversed) => link({ card: id, reversed })}
@@ -760,7 +760,7 @@ export default function Player({
               time: x.time,
               para: x.para,
               quote: x.quote,
-              text: `Q: ${x.question}\n\nClaude: ${x.answer}`,
+              text: tr("Q: {0}\n\nClaude: {1}", { 0: x.question, 1: x.answer }),
               created: Date.now(),
             },
           ];
@@ -789,7 +789,7 @@ export default function Player({
               time: x.para !== undefined ? (sec?.paras[x.para]?.start ?? 0) : 0,
               para: x.para ?? 0,
               quote: x.quote ?? sec?.title ?? "",
-              text: `Explanation: ${x.text}`,
+              text: tr("Explanation: {0}", { 0: x.text }),
               created: Date.now(),
             },
           ];
@@ -898,7 +898,7 @@ const Header = ({
         </Pressable>
       )}
       <Pressable onPress={onClose} hitSlop={8}>
-        <Text style={s.link}>Done</Text>
+        <Text style={s.link}>{tr("Done")}</Text>
       </Pressable>
     </View>
   </View>

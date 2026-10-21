@@ -1,3 +1,4 @@
+import { t as tr } from './i18n';
 import { getProfile, load } from './tracker';
 import { getOnboarding } from './familiar';
 import { CARDS } from './decks';
@@ -128,18 +129,18 @@ export function personal(dob: string, on = new Date()) {
 export type NumberRow = { key: string; label: string; value: number; about: string; compound?: number };
 
 export const MEANING: Record<string, string> = {
-  lifePath: 'From your birth date: the main path and lesson of this life.',
-  birthday: 'From the day you were born: a specific gift you bring.',
-  expression: 'All the letters of the name: your talents and how you express them.',
-  soulUrge: 'The vowels: what you long for inside.',
-  personality: 'The consonants: how others first see you.',
-  maturity: 'Life path plus expression: who you grow into.',
-  name: 'All the letters of the name you are known by. The compound number is read first, then the single digit.',
-  birth: 'The day you were born.',
-  destiny: 'Every digit of your birth date added together.',
-  motivacao: 'Motivação, the vowels: what moves you inside.',
-  impressao: 'Impressão, the consonants: the impression you make.',
-  expressao: 'Expressão, all the letters: how you act in the world.',
+  lifePath: tr('From your birth date: the main path and lesson of this life.'),
+  birthday: tr('From the day you were born: a specific gift you bring.'),
+  expression: tr('All the letters of the name: your talents and how you express them.'),
+  soulUrge: tr('The vowels: what you long for inside.'),
+  personality: tr('The consonants: how others first see you.'),
+  maturity: tr('Life path plus expression: who you grow into.'),
+  name: tr('All the letters of the name you are known by. The compound number is read first, then the single digit.'),
+  birth: tr('The day you were born.'),
+  destiny: tr('Every digit of your birth date added together.'),
+  motivacao: tr('Motivação, the vowels: what moves you inside.'),
+  impressao: tr('Impressão, the consonants: the impression you make.'),
+  expressao: tr('Expressão, all the letters: how you act in the world.'),
 };
 
 const withCompound = (key: string, label: string, compound: number, about: string): NumberRow => ({
@@ -156,16 +157,16 @@ const nctRows = (name: string): NumberRow[] => {
   const gs = glyphs(name, 'nct');
   const v = vowels();
   return [
-    { key: 'expression', label: 'Expression', value: reduce(sum(gs)), about: MEANING.expressao },
-    { key: 'soulUrge', label: 'Motivation', value: reduce(sum(gs, (ch) => v.includes(ch))), about: MEANING.motivacao },
-    { key: 'personality', label: 'Impression', value: reduce(sum(gs, (ch) => !v.includes(ch))), about: MEANING.impressao },
+    { key: 'expression', label: tr("Expression"), value: reduce(sum(gs)), about: MEANING.expressao },
+    { key: 'soulUrge', label: tr("Motivation"), value: reduce(sum(gs, (ch) => v.includes(ch))), about: MEANING.motivacao },
+    { key: 'personality', label: tr("Impression"), value: reduce(sum(gs, (ch) => !v.includes(ch))), about: MEANING.impressao },
   ];
 };
 
 const nameRows = (name: string): NumberRow[] => [
-  { key: 'expression', label: 'Expression', value: expression(name), about: MEANING.expression },
-  { key: 'soulUrge', label: 'Soul urge', value: soulUrge(name), about: MEANING.soulUrge },
-  { key: 'personality', label: 'Personality', value: personality(name), about: MEANING.personality },
+  { key: 'expression', label: tr("Expression"), value: expression(name), about: MEANING.expression },
+  { key: 'soulUrge', label: tr("Soul urge"), value: soulUrge(name), about: MEANING.soulUrge },
+  { key: 'personality', label: tr("Personality"), value: personality(name), about: MEANING.personality },
 ];
 
 export function numbers(sys: NumSystem = activeSystem()) {
@@ -186,8 +187,8 @@ export function numbers(sys: NumSystem = activeSystem()) {
   if (sys === 'nct') {
     const core: NumberRow[] = p.dob
       ? [
-          { key: 'lifePath', label: 'Destiny', value: lifePath(p.dob), about: MEANING.lifePath },
-          { key: 'birthday', label: 'Birthday', value: birthday(p.dob), about: MEANING.birthday },
+          { key: 'lifePath', label: tr("Destiny"), value: lifePath(p.dob), about: MEANING.lifePath },
+          { key: 'birthday', label: tr("Birthday"), value: birthday(p.dob), about: MEANING.birthday },
         ]
       : [];
     if (p.birthName) core.push(...nctRows(p.birthName));
@@ -196,13 +197,13 @@ export function numbers(sys: NumSystem = activeSystem()) {
   }
   const core: NumberRow[] = p.dob
     ? [
-        { key: 'lifePath', label: 'Life path', value: lifePath(p.dob), about: MEANING.lifePath },
-        { key: 'birthday', label: 'Birthday', value: birthday(p.dob), about: MEANING.birthday },
+        { key: 'lifePath', label: tr("Life path"), value: lifePath(p.dob), about: MEANING.lifePath },
+        { key: 'birthday', label: tr("Birthday"), value: birthday(p.dob), about: MEANING.birthday },
       ]
     : [];
   if (p.birthName) {
     core.push(...nameRows(p.birthName));
-    if (p.dob) core.push({ key: 'maturity', label: 'Maturity', value: maturity(p.dob, p.birthName), about: MEANING.maturity });
+    if (p.dob) core.push({ key: 'maturity', label: tr("Maturity"), value: maturity(p.dob, p.birthName), about: MEANING.maturity });
   }
   const now = current && letters(current) !== letters(p.birthName ?? '') ? nameRows(current) : [];
   return { core, current: now, currentName: current, birthName: p.birthName, history: p.names ?? [] };

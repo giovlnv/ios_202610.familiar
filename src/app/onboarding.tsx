@@ -1,3 +1,6 @@
+import * as Updates from 'expo-updates';
+import { getLangPrefs, setLangPrefs } from '../languages';
+import { t as tr, uiLang } from '../i18n';
 import { useEffect, useState } from 'react';
 import { Alert, Image, KeyboardAvoidingView, Pressable, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View } from 'react-native';
 import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
@@ -65,6 +68,10 @@ export default function Onboarding() {
   const finish = (to: '/add' | '/') => {
     setOnboarding({ done: Date.now() });
     router.replace(to);
+    if (language !== uiLang()) {
+      setLangPrefs({ ...getLangPrefs(), ui: language });
+      Updates.reloadAsync().catch(() => {});
+    }
   };
   const set = (patch: Partial<Familiar>) => setF((x) => ({ ...x, ...patch }));
   const toggle = (list: string[], v: string) => (list.includes(v) ? list.filter((x) => x !== v) : [...list, v]);
@@ -85,13 +92,13 @@ export default function Onboarding() {
           </Svg>
         </View>
         <View style={st.brand}>
-          <Text style={st.word}>Familiar</Text>
-          <Text style={st.tagline}>your familiar knows the way.</Text>
+          <Text style={st.word}>{tr("Familiar")}</Text>
+          <Text style={st.tagline}>{tr("your familiar knows the way.")}</Text>
         </View>
         <View style={{ flex: 1, minHeight: 24 }} />
         <View style={st.pad}>
-          <Primary label="Begin" onPress={next} />
-          <Link label="I’m already set up — skip" onPress={() => finish('/')} />
+          <Primary label={tr("Begin")} onPress={next} />
+          <Link label={tr("I’m already set up — skip")} onPress={() => finish('/')} />
         </View>
       </ScrollView>
     );
@@ -102,7 +109,7 @@ export default function Onboarding() {
       case 'paths':
         return (
           <>
-            <Head title="What do you study?" sub="Pick the paths your familiar will walk with you. You can change this later." />
+            <Head title={tr("What do you study?")} sub={tr("Pick the paths your familiar will walk with you. You can change this later.")} />
             {allPaths().map((p) => {
               const on = paths.includes(p.id);
               return (
@@ -120,21 +127,21 @@ export default function Onboarding() {
       case 'species':
         return (
           <>
-            <Head title="Who walks with you?" sub={`Choose your familiar. ${withYou().name} is waiting if you’d rather skip.`} />
+            <Head title={tr("Who walks with you?")} sub={tr("Choose your familiar. {0} is waiting if you’d rather skip.", { 0: withYou().name })} />
             <SpeciesStep f={f} set={set} />
           </>
         );
       case 'shape':
         return (
           <>
-            <Head title="Shape and coat" />
+            <Head title={tr("Shape and coat")} />
             <ShapeCoatStep f={f} set={set} />
           </>
         );
       case 'eyes':
         return (
           <>
-            <Head title={f.species === 'cat' ? 'Eyes and mark' : 'Colour and eyes'} />
+            <Head title={f.species === 'cat' ? tr("Eyes and mark") : tr("Colour and eyes")} />
             {f.species !== 'cat' && <ShapeCoatStep f={f} set={set} />}
             {f.species === 'cat' ? <EyesMarkStep f={f} set={set} /> : <EyesOnly f={f} set={set} />}
           </>
@@ -142,26 +149,26 @@ export default function Onboarding() {
       case 'name':
         return (
           <>
-            <Head title="What shall we call them?" sub="Your familiar answers to any name." />
+            <Head title={tr("What shall we call them?")} sub={tr("Your familiar answers to any name.")} />
             <NameStep f={f} set={set} />
           </>
         );
       case 'claude':
         return (
           <>
-            <Head title="Your study helpers" sub="Claude writes the explanations; GitHub makes the voices and keeps your backups." />
-            <Label>GITHUB KEY</Label>
+            <Head title={tr("Your study helpers")} sub={tr("Claude writes the explanations; GitHub makes the voices and keeps your backups.")} />
+            <Label>{tr("GITHUB KEY")}</Label>
             <TextInput
               style={fs.input}
               value={key}
               onChangeText={setKey}
-              placeholder={hasKey ? 'Saved — type to replace' : 'github_pat_…'}
+              placeholder={hasKey ? tr("Saved — type to replace") : tr("github_pat_…")}
               placeholderTextColor={c.dim}
               autoCapitalize="none"
               autoCorrect={false}
               secureTextEntry
             />
-            <Label>CLAUDE CHAT FOR QUESTIONS</Label>
+            <Label>{tr("CLAUDE CHAT FOR QUESTIONS")}</Label>
             <TextInput
               style={fs.input}
               value={link}
@@ -172,20 +179,20 @@ export default function Onboarding() {
               autoCorrect={false}
               keyboardType="url"
             />
-            <Note text="Books you add are split here, explained by Claude in the FAMILIAR project, and voiced on GitHub." />
+            <Note text={tr("Books you add are split here, explained by Claude in the FAMILIAR project, and voiced on GitHub.")} />
           </>
         );
       case 'about':
         return (
           <>
-            <Head title="A little about you" sub="Optional. Used for astrology and numerology, never shared." />
-            <Label>BIRTH DATE</Label>
+            <Head title={tr("A little about you")} sub={tr("Optional. Used for astrology and numerology, never shared.")} />
+            <Label>{tr("BIRTH DATE")}</Label>
             <DateInput style={fs.input} value={dob} onChange={setDob} />
-            <Label>BIRTH TIME</Label>
+            <Label>{tr("BIRTH TIME")}</Label>
             <TimeInput style={[fs.input, { maxWidth: 160 }]} value={birthTime} onChange={setBirthTime} />
-            <Label>BIRTH PLACE</Label>
+            <Label>{tr("BIRTH PLACE")}</Label>
             <PlaceField value={place?.label ?? ''} onPick={setPlace} language={language} />
-            <Label>LANGUAGE</Label>
+            <Label>{tr("LANGUAGE")}</Label>
             <View style={fs.row}>
               {[
                 ['en', 'English'],
@@ -194,7 +201,7 @@ export default function Onboarding() {
                 <Pill key={id} label={name} on={language === id} onPress={() => setLanguage(id)} />
               ))}
             </View>
-            <Label>WHAT ARE YOU HOPING FOR?</Label>
+            <Label>{tr("WHAT ARE YOU HOPING FOR?")}</Label>
             <View style={[fs.row, { flexWrap: 'wrap' }]}>
               {GOALS.map((g) => (
                 <Pill key={g} label={g} on={goals.includes(g)} onPress={() => setGoals(toggle(goals, g))} />
@@ -206,11 +213,11 @@ export default function Onboarding() {
         const sync = getState();
         return (
           <>
-            <Head title="Backups are on" sub="Your library syncs to your private GitHub repo whenever you leave the app." />
-            <Status icon="logo-github" title="GitHub sync" text={sync.lastGithub ? `Last sync ${new Date(sync.lastGithub).toLocaleString()}` : hasKey ? 'Runs when you leave the app' : 'Add your GitHub key to turn it on'} />
-            <Status icon="document-outline" title="Backup file" text="Saved to Files or iCloud Drive; you get a reminder every 7 days." />
-            <Pressable style={st.secondary} onPress={() => backupToFile().catch((e) => Alert.alert('Backup failed', String(e?.message ?? e)))}>
-              <Text style={st.secondaryText}>Save a backup file now</Text>
+            <Head title={tr("Backups are on")} sub={tr("Your library syncs to your private GitHub repo whenever you leave the app.")} />
+            <Status icon="logo-github" title={tr("GitHub sync")} text={sync.lastGithub ? tr("Last sync {0}", { 0: new Date(sync.lastGithub).toLocaleString() }) : hasKey ? tr("Runs when you leave the app") : tr("Add your GitHub key to turn it on")} />
+            <Status icon="document-outline" title={tr("Backup file")} text={tr("Saved to Files or iCloud Drive; you get a reminder every 7 days.")} />
+            <Pressable style={st.secondary} onPress={() => backupToFile().catch((e) => Alert.alert(tr("Backup failed"), String(e?.message ?? e)))}>
+              <Text style={st.secondaryText}>{tr("Save a backup file now")}</Text>
             </Pressable>
           </>
         );
@@ -219,7 +226,7 @@ export default function Onboarding() {
         return (
           <View style={{ alignItems: 'center', gap: 12 }}>
             <FamiliarArt familiar={f} pose="reading" size={240} vial alive />
-            <Head title={`${f.name || 'Shadow'} is ready to read`} sub="Add your next book and you’ll study it together." center />
+            <Head title={tr("{0} is ready to read", { 0: f.name || 'Shadow' })} sub={tr("Add your next book and you’ll study it together.")} center />
           </View>
         );
     }
@@ -228,7 +235,7 @@ export default function Onboarding() {
   return (
     <KeyboardAvoidingView behavior="padding" style={st.wrap}>
       <View style={[st.top, { paddingTop: insets.top + 8 }]}>
-        <Pressable hitSlop={12} onPress={back} accessibilityLabel="Back">
+        <Pressable hitSlop={12} onPress={back} accessibilityLabel={tr("Back")}>
           <Ionicons name="chevron-back" size={26} color={c.gold} />
         </Pressable>
         <View style={st.dots}>
@@ -244,14 +251,14 @@ export default function Onboarding() {
       <View style={[st.pad, { paddingBottom: insets.bottom + 12, gap: 6 }]}>
         {step === 'book' ? (
           <>
-            <Primary label="Add a book" onPress={() => finish('/add')} />
-            <Link label="Explore first" onPress={() => finish('/')} />
+            <Primary label={tr("Add a book")} onPress={() => finish('/add')} />
+            <Link label={tr("Explore first")} onPress={() => finish('/')} />
           </>
         ) : (
           <>
-            <Primary label="Continue" onPress={next} />
-            {familiarStep && <Link label={`Skip — keep ${withYou().name}`} onPress={() => (setF(withYou()), go('claude'))} />}
-            {(step === 'about' || step === 'claude') && <Link label="Skip" onPress={() => setI(i + 1)} />}
+            <Primary label={tr("Continue")} onPress={next} />
+            {familiarStep && <Link label={tr("Skip — keep {0}", { 0: withYou().name })} onPress={() => (setF(withYou()), go('claude'))} />}
+            {(step === 'about' || step === 'claude') && <Link label={tr("Skip")} onPress={() => setI(i + 1)} />}
           </>
         )}
       </View>
@@ -262,7 +269,7 @@ export default function Onboarding() {
 function EyesOnly({ f, set }: { f: Familiar; set: (p: Partial<Familiar>) => void }) {
   return (
     <>
-      <Label>EYES</Label>
+      <Label>{tr("EYES")}</Label>
       <View style={fs.swatches}>
         {EYES.map((e) => (
           <Pressable key={e.hex} accessibilityLabel={e.name} onPress={() => set({ eyes: e.hex })} style={[fs.swatch, { backgroundColor: e.hex }, f.eyes === e.hex && fs.swatchOn]} />

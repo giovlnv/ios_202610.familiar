@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { useState } from 'react';
 import {
   Alert,
@@ -60,7 +61,7 @@ export function AskSheet({
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={s.dim}>
         <View style={s.sheet}>
           <Text style={s.meta}>
-            <Ionicons name="sparkles-outline" size={13} color={c.claude} /> Ask Claude{draft?.parent ? ` · follow-up to #C${draft.parent.id}` : ''} · {fmtTime(draft?.time ?? 0)}
+            <Ionicons name="sparkles-outline" size={13} color={c.claude} />{' '}{tr("Ask Claude")}{draft?.parent ? tr(" · follow-up to #C{0}", { 0: draft.parent.id }) : ''} · {fmtTime(draft?.time ?? 0)}
           </Text>
           <Text style={s.quote} numberOfLines={3}>
             “{draft?.quote}”
@@ -68,16 +69,16 @@ export function AskSheet({
           <TextInput
             autoFocus
             multiline
-            placeholder="Your question…"
+            placeholder={tr("Your question…")}
             placeholderTextColor={c.dim}
             style={s.input}
             value={q}
             onChangeText={setQ}
           />
           <View style={s.row}>
-            <Btn label="Cancel" onPress={close} />
+            <Btn label={tr("Cancel")} onPress={close} />
             <Btn
-              label="Send to Claude"
+              label={tr("Send to Claude")}
               primary
               onPress={() => {
                 if (!q.trim()) return;
@@ -137,7 +138,7 @@ export function ConsultList({
 
   const paste = async (cst: Consult) => {
     const text = (await Clipboard.getStringAsync()).trim();
-    if (!text) return Alert.alert('Nothing to paste', 'Copy Claude’s answer first (long-press the reply → Copy).');
+    if (!text) return Alert.alert(tr("Nothing to paste"), tr("Copy Claude’s answer first (long-press the reply → Copy)."));
     onAnswer(cst, text);
     setOpen(cst.id);
   };
@@ -148,16 +149,16 @@ export function ConsultList({
         <View style={s.top}>
           <Text style={s.h2}>
             <Ionicons name={tab === 'consults' ? 'sparkles-outline' : 'bulb-outline'} size={20} color={c.claude} />{' '}
-            {tab === 'consults' ? 'Claude consults' : 'Explanations'}
+            {tab === 'consults' ? tr("Claude consults") : tr("Explanations")}
           </Text>
           <View style={s.topRight}>
             {tab === 'consults' && !!consults.length && (
               <Pressable onPress={onExport} hitSlop={8}>
-                <Text style={s.link}>Export</Text>
+                <Text style={s.link}>{tr("Export")}</Text>
               </Pressable>
             )}
             <Pressable onPress={onClose} hitSlop={8}>
-              <Text style={s.link}>Done</Text>
+              <Text style={s.link}>{tr("Done")}</Text>
             </Pressable>
           </View>
         </View>
@@ -165,7 +166,7 @@ export function ConsultList({
           {(['consults', 'explained'] as const).map((t) => (
             <Pressable key={t} onPress={() => setTab(t)} style={[s.chip, tab === t && s.chipOn]}>
               <Text style={[s.chipText, tab === t && s.chipTextOn]}>
-                {t === 'consults' ? `Consults (${consults.length})` : `Explanations (${explainedList.length})`}
+                {t === 'consults' ? tr("Consults ({0})", { 0: consults.length }) : tr("Explanations ({0})", { 0: explainedList.length })}
               </Text>
             </Pressable>
           ))}
@@ -175,7 +176,7 @@ export function ConsultList({
             data={explainedList}
             keyExtractor={(x) => `${x.section}-${x.item.at}`}
             contentContainerStyle={{ paddingBottom: 40 }}
-            ListEmptyComponent={<EmptyState text="Explanations you save while listening appear here." />}
+            ListEmptyComponent={<EmptyState text={tr("Explanations you save while listening appear here.")} />}
             renderItem={({ item: { section, item, whole } }) => {
               const sec = book.sections.find((y) => y.id === section);
               const key = `${section}-${item.at}`;
@@ -183,7 +184,7 @@ export function ConsultList({
               return (
                 <Pressable style={s.card} onPress={() => setOpenEx(expanded ? null : key)}>
                   <Text style={s.meta}>
-                    {sec?.title} · {whole ? 'whole section' : 'passage'}
+                    {sec?.title} · {whole ? tr("whole section") : 'passage'}
                   </Text>
                   {!!item.quote && (
                     <Text style={s.quote} numberOfLines={expanded ? undefined : 2}>
@@ -196,11 +197,11 @@ export function ConsultList({
                   {expanded && (
                     <View style={[s.actions, { marginTop: 8 }]}>
                       {item.noted ? (
-                        <Text style={{ color: c.dim, alignSelf: 'center' }}>Saved as note</Text>
+                        <Text style={{ color: c.dim, alignSelf: 'center' }}>{tr("Saved as note")}</Text>
                       ) : (
-                        <Btn label="Save as note" primary onPress={() => onSaveExplainedNote(section, item)} />
+                        <Btn label={tr("Save as note")} primary onPress={() => onSaveExplainedNote(section, item)} />
                       )}
-                      <Btn label="Go to passage" onPress={() => onJumpExplained(section, item)} />
+                      <Btn label={tr("Go to passage")} onPress={() => onJumpExplained(section, item)} />
                     </View>
                   )}
                 </Pressable>
@@ -213,7 +214,7 @@ export function ConsultList({
           {(['all', 'asked', 'answered'] as const).map((f) => (
             <Pressable key={f} onPress={() => setFilter(f)} style={[s.chip, filter === f && s.chipOn]}>
               <Text style={[s.chipText, filter === f && s.chipTextOn]}>
-                {f === 'all' ? 'All' : f === 'asked' ? 'Waiting' : 'Answered'} (
+                {f === 'all' ? tr("All") : f === 'asked' ? tr("Waiting") : tr("Answered")} (
                 {f === 'all' ? consults.length : consults.filter((x) => x.status === f).length})
               </Text>
             </Pressable>
@@ -224,7 +225,7 @@ export function ConsultList({
           keyExtractor={(x) => String(x.id)}
           contentContainerStyle={{ paddingBottom: 40 }}
           ListEmptyComponent={
-            <EmptyState text="Tap “Ask” while listening, or long-press a paragraph, to ask Claude about a passage. Your question opens in the Claude app; copy the answer and paste it back here." />
+            <EmptyState text={tr("Tap “Ask” while listening, or long-press a paragraph, to ask Claude about a passage. Your question opens in the Claude app; copy the answer and paste it back here.")} />
           }
           renderItem={({ item: x }) => {
             const sec = book.sections.find((y) => y.id === x.section);
@@ -239,7 +240,7 @@ export function ConsultList({
                     {x.status === 'answered' ? 'answered' : 'waiting'}
                   </Text>
                 </View>
-                {x.parent && <Text style={s.dimSmall}>Follow-up to #C{x.parent}</Text>}
+                {x.parent && <Text style={s.dimSmall}>{tr("Follow-up to #C")}{x.parent}</Text>}
                 <Text style={s.question}>{x.question}</Text>
                 {expanded && (
                   <View style={{ gap: 10, marginTop: 8 }}>
@@ -252,29 +253,29 @@ export function ConsultList({
                       </ScrollView>
                     ) : null}
                     <View style={s.actions}>
-                      <Btn label={x.answer ? 'Replace answer' : 'Paste answer'} primary={!x.answer} onPress={() => paste(x)} />
-                      {x.status === 'asked' && <Btn label="Send again" onPress={() => onResend(x)} />}
-                      {x.answer && <Btn label="Follow-up" onPress={() => onFollowUp(x)} />}
+                      <Btn label={x.answer ? tr("Replace answer") : tr("Paste answer")} primary={!x.answer} onPress={() => paste(x)} />
+                      {x.status === 'asked' && <Btn label={tr("Send again")} onPress={() => onResend(x)} />}
+                      {x.answer && <Btn label={tr("Follow-up")} onPress={() => onFollowUp(x)} />}
                       {x.answer && !x.noted && (
                         <Btn
-                          label="Save as note"
+                          label={tr("Save as note")}
                           onPress={() =>
-                            Alert.alert(`Save #C${x.id} as a note?`, 'The question and Claude’s answer become a note on this passage.', [
-                              { text: 'Keep consult too', onPress: () => onSaveNote(x, true) },
-                              { text: 'Move to notes', onPress: () => onSaveNote(x, false) },
-                              { text: 'Cancel', style: 'cancel' },
+                            Alert.alert(tr("Save #C{0} as a note?", { 0: x.id }), tr("The question and Claude’s answer become a note on this passage."), [
+                              { text: tr("Keep consult too"), onPress: () => onSaveNote(x, true) },
+                              { text: tr("Move to notes"), onPress: () => onSaveNote(x, false) },
+                              { text: tr("Cancel"), style: 'cancel' },
                             ])
                           }
                         />
                       )}
-                      {x.noted && <Text style={{ color: c.dim, alignSelf: 'center' }}>Saved as note</Text>}
-                      <Btn label="Go to passage" onPress={() => onJump(x)} />
+                      {x.noted && <Text style={{ color: c.dim, alignSelf: 'center' }}>{tr("Saved as note")}</Text>}
+                      <Btn label={tr("Go to passage")} onPress={() => onJump(x)} />
                       <Btn
-                        label="Delete"
+                        label={tr("Delete")}
                         onPress={() =>
-                          Alert.alert(`Delete #C${x.id}?`, undefined, [
-                            { text: 'Cancel', style: 'cancel' },
-                            { text: 'Delete', style: 'destructive', onPress: () => onDelete(x) },
+                          Alert.alert(tr("Delete #C{0}?", { 0: x.id }), undefined, [
+                            { text: tr("Cancel"), style: 'cancel' },
+                            { text: tr("Delete"), style: 'destructive', onPress: () => onDelete(x) },
                           ])
                         }
                       />
@@ -310,8 +311,8 @@ export const setClaudeLink = (url: string) => {
 const askForLink = () =>
   new Promise<string>((done) =>
     Alert.prompt(
-      'Claude chat link',
-      'Paste the link of the chat where consults go (claude.ai/chat/…). You can change it in Settings.',
+      tr("Claude chat link"),
+      tr("Paste the link of the chat where consults go (claude.ai/chat/…). You can change it in Settings."),
       (v) => {
         const url = v?.trim() ?? '';
         if (/^https?:\/\//.test(url)) setClaudeLink(url);

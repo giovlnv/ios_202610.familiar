@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -47,12 +48,12 @@ export default function EditProfile() {
         onPress={() => pickPhoto().then((ph) => ph && (setProfile({ photo: ph }), setPhoto(ph)))}
       >
         <Avatar photo={photo} name={name} size={96} />
-        <Text style={{ color: c.gold, fontWeight: '600' }}>{photo ? 'Change photo' : 'Add photo'}</Text>
+        <Text style={{ color: c.gold, fontWeight: '600' }}>{photo ? tr("Change photo") : tr("Add photo")}</Text>
       </Pressable>
       <View style={ss.card}>
-        <Text style={ss.label}>Name</Text>
-        <TextInput style={ss.input} value={name} onChangeText={setName} placeholder="Your name" placeholderTextColor={c.dim} />
-        <Text style={ss.label}>Username</Text>
+        <Text style={ss.label}>{tr("Name")}</Text>
+        <TextInput style={ss.input} value={name} onChangeText={setName} placeholder={tr("Your name")} placeholderTextColor={c.dim} />
+        <Text style={ss.label}>{tr("Username")}</Text>
         <TextInput
           style={ss.input}
           value={username}
@@ -64,38 +65,38 @@ export default function EditProfile() {
         />
       </View>
       <View style={ss.card}>
-        <Text style={ss.label}>Birth date</Text>
+        <Text style={ss.label}>{tr("Birth date")}</Text>
         <DateInput style={ss.input} value={dob} onChange={setDob} />
-        <Text style={ss.label}>Birth time</Text>
+        <Text style={ss.label}>{tr("Birth time")}</Text>
         <TimeInput style={[ss.input, { maxWidth: 160 }]} value={time} onChange={setTime} />
-        <Text style={ss.label}>Birth place</Text>
+        <Text style={ss.label}>{tr("Birth place")}</Text>
         <PlaceField value={place?.label ?? ''} onPick={setPlace} language={ob.language} />
-        <Text style={ss.meta}>Used for your element vial, astrology and the personality, essence and year cards in the Journal.</Text>
+        <Text style={ss.meta}>{tr("Used for your element vial, astrology and the personality, essence and year cards in the Journal.")}</Text>
       </View>
       {numerology && (
         <View style={ss.card}>
-          <Text style={ss.label}>Full birth name</Text>
-          <TextInput style={ss.input} value={birthName} onChangeText={setBirthName} placeholder="As on your birth certificate" placeholderTextColor={c.dim} autoCorrect={false} />
-          <Text style={ss.label}>Name you use</Text>
-          <TextInput style={ss.input} value={used} onChangeText={(v) => (setUsed(v), v.trim() !== last?.name && since === showDate(last?.since) && setSince(''))} placeholder="If different, e.g. after marriage" placeholderTextColor={c.dim} autoCorrect={false} />
-          <Text style={ss.label}>Using it since</Text>
+          <Text style={ss.label}>{tr("Full birth name")}</Text>
+          <TextInput style={ss.input} value={birthName} onChangeText={setBirthName} placeholder={tr("As on your birth certificate")} placeholderTextColor={c.dim} autoCorrect={false} />
+          <Text style={ss.label}>{tr("Name you use")}</Text>
+          <TextInput style={ss.input} value={used} onChangeText={(v) => (setUsed(v), v.trim() !== last?.name && since === showDate(last?.since) && setSince(''))} placeholder={tr("If different, e.g. after marriage")} placeholderTextColor={c.dim} autoCorrect={false} />
+          <Text style={ss.label}>{tr("Using it since")}</Text>
           <DateInput style={ss.input} value={since} onChange={setSince} />
-          {names.length > 1 && <Text style={ss.label}>Earlier names</Text>}
+          {names.length > 1 && <Text style={ss.label}>{tr("Earlier names")}</Text>}
           {names.slice(0, -1).map((n, i) => (
             <View key={i} style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
               <Text style={[ss.meta, { flex: 1, color: c.text }]}>
                 {n.name}
-                {n.since ? `  ·  since ${showDate(n.since)}` : ''}
+                {n.since ? tr("  ·  since {0}", { 0: showDate(n.since) }) : ''}
               </Text>
               <Pressable hitSlop={8} onPress={() => setNames(names.filter((_, j) => j !== i))}>
                 <Ionicons name="close-circle-outline" size={20} color={c.dim} />
               </Pressable>
             </View>
           ))}
-          <Text style={ss.meta}>Numerology: the birth name gives your core numbers; the name you use gives your current ones. Typing a new name keeps the old one in the history.</Text>
+          <Text style={ss.meta}>{tr("Numerology: the birth name gives your core numbers; the name you use gives your current ones. Typing a new name keeps the old one in the history.")}</Text>
         </View>
       )}
-      <Btn label="Save" primary onPress={save} />
+      <Btn label={tr("Save")} primary onPress={save} />
     </Page>
   );
 }

@@ -1,3 +1,4 @@
+import { t as tr } from '../../../i18n';
 import { useCallback, useState } from 'react';
 import { Alert, FlatList, Pressable, RefreshControl, Text, View } from 'react-native';
 import { router, Stack, useFocusEffect } from 'expo-router';
@@ -54,22 +55,22 @@ export default function Jobs() {
           {!!err && <Text style={s.err}>{err}</Text>}
         </>
       }
-      ListEmptyComponent={busy ? null : <EmptyState text="No books in progress. Tap + to add one." />}
+      ListEmptyComponent={busy ? null : <EmptyState text={tr("No books in progress. Tap + to add one.")} />}
       renderItem={({ item: j }) => (
         <Pressable
           style={s.card}
           onPress={() => router.push({ pathname: '/job/[slug]', params: { slug: j.slug } })}
           onLongPress={() =>
             canCancel(j) &&
-            Alert.alert(j.title, 'Cancel this book? This stops the work on GitHub and deletes the uploaded file and everything made from it.', [
-              { text: 'Keep it', style: 'cancel' },
+            Alert.alert(j.title, tr("Cancel this book? This stops the work on GitHub and deletes the uploaded file and everything made from it."), [
+              { text: tr("Keep it"), style: 'cancel' },
               {
-                text: 'Cancel book',
+                text: tr("Cancel book"),
                 style: 'destructive',
                 onPress: () =>
                   cancelJob(j)
                     .then(load)
-                    .catch((e) => Alert.alert('Could not cancel', String(e.message ?? e))),
+                    .catch((e) => Alert.alert(tr("Could not cancel"), String(e.message ?? e))),
               },
             ])
           }
@@ -81,7 +82,7 @@ export default function Jobs() {
             </Text>
             <Text style={[s.dim, j.stage === 'review' && { color: c.gold }]}>
               {STAGE_LABEL[j.stage]}
-              {j.sections ? ` · ${j.sections.length} sections` : ''}
+              {j.sections ? tr(" · {0} sections", { 0: j.sections.length }) : ''}
             </Text>
           </View>
           <Ionicons name="chevron-forward" size={16} color={c.dim} />

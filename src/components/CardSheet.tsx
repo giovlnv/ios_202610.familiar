@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { useMemo, useState } from 'react';
 import { Modal, Pressable, ScrollView, Text, View } from 'react-native';
 import { router } from 'expo-router';
@@ -73,7 +74,7 @@ export default function CardSheet({
         <View style={s.top}>
           <View />
           <Pressable hitSlop={10} onPress={onClose}>
-            <Text style={s.link}>Done</Text>
+            <Text style={s.link}>{tr("Done")}</Text>
           </Pressable>
         </View>
         {id && (
@@ -83,26 +84,26 @@ export default function CardSheet({
               <View style={{ flex: 1, gap: 6 }}>
                 <Text style={s.name}>{cardName(id)}</Text>
                 {cc && <Text style={s.role}>{[sysName, cc.card.group].join(' · ')}</Text>}
-                {based && based !== cc?.card.name && <Text style={s.role}>Based on {based}</Text>}
+                {based && based !== cc?.card.name && <Text style={s.role}>{tr("Based on")}{' '}{based}</Text>}
                 {lc && <Text style={s.role}>{lother(id)}</Text>}
-                {lc && <Text style={s.role}>Playing card {lc.inset} · {lc.keywords}</Text>}
-                {lc && <Text style={s.role}>Its house is position {lc.n} in a Grand Tableau.</Text>}
+                {lc && <Text style={s.role}>{tr("Playing card")}{' '}{lc.inset} · {lc.keywords}</Text>}
+                {lc && <Text style={s.role}>{tr("Its house is position")}{' '}{lc.n}{' '}{tr("in a Grand Tableau.")}</Text>}
                 {!!role && <Text style={s.role}>{role}</Text>}
-                {num && <Text style={s.role}>Numerology: {num}</Text>}
-                {astro && <Text style={s.role}>Astrology: {astro}</Text>}
+                {num && <Text style={s.role}>{tr("Numerology:")}{' '}{num}</Text>}
+                {astro && <Text style={s.role}>{tr("Astrology:")}{' '}{astro}</Text>}
               </View>
             </View>
 
             {!found.length ? (
               <Text style={s.dim}>
                 {cc
-                  ? `None of your audiobooks has a section for this card yet. Tag a book with the ${sysName} path and its sections about this card show up here.`
-                  : `None of your audiobooks has a section for this card yet. Add a ${len ? 'Lenormand' : 'tarot'} book${len ? ' (tag it with the Lenormand path)' : ''} and it will show up here.`}
+                  ? tr("None of your audiobooks has a section for this card yet. Tag a book with the {0} path and its sections about this card show up here.", { 0: sysName })
+                  : tr("None of your audiobooks has a section for this card yet. Add a {0} book{1} and it will show up here.", { 0: len ? 'Lenormand' : 'tarot', 1: len ? ' (tag it with the Lenormand path)' : '' })}
               </Text>
             ) : (
               <>
                 <Pressable style={s.drop} onPress={() => setMenu(!menu)} accessibilityState={{ expanded: menu }}>
-                  <Text style={s.dropLabel}>From</Text>
+                  <Text style={s.dropLabel}>{tr("From")}</Text>
                   <Text style={s.dropValue} numberOfLines={1}>
                     {label}
                   </Text>
@@ -110,8 +111,8 @@ export default function CardSheet({
                 </Pressable>
                 {menu && (
                   <View style={s.menu}>
-                    <Option label="All books" on={allSources(sources)} onPress={() => update({ paths: [], books: [] })} />
-                    {!!paths.length && <Text style={s.menuHead}>Paths</Text>}
+                    <Option label={tr("All books")} on={allSources(sources)} onPress={() => update({ paths: [], books: [] })} />
+                    {!!paths.length && <Text style={s.menuHead}>{tr("Paths")}</Text>}
                     {paths.map((p) => (
                       <Option
                         key={p.id}
@@ -121,7 +122,7 @@ export default function CardSheet({
                         onPress={() => update({ ...sources, paths: flip(sources.paths, p.id) })}
                       />
                     ))}
-                    <Text style={s.menuHead}>Books</Text>
+                    <Text style={s.menuHead}>{tr("Books")}</Text>
                     {found.map((f) => (
                       <Option
                         key={f.folder}
@@ -140,7 +141,7 @@ export default function CardSheet({
 
             {!!pairs.length && (
               <View style={s.card}>
-                <Text style={s.book}>Combinations</Text>
+                <Text style={s.book}>{tr("Combinations")}</Text>
                 {[...nearPairs, ...otherPairs].map((p) => (
                   <Pressable
                     key={`${p.folder}${p.index}`}
@@ -151,7 +152,7 @@ export default function CardSheet({
                     <View style={{ flex: 1 }}>
                       <Text style={[s.text, nearPairs.includes(p) && { color: c.gold, fontWeight: '700' }]} numberOfLines={1}>
                         {lname(p.other)}
-                        {nearPairs.includes(p) ? ' · in this reading' : ''}
+                        {nearPairs.includes(p) ? tr(" · in this reading") : ''}
                       </Text>
                       <Text style={s.dim} numberOfLines={1}>
                         {p.book} · {p.title}
@@ -184,13 +185,13 @@ export default function CardSheet({
                   {open && (
                     <View style={{ gap: 6 }}>
                       {!!sec.summary && <Text style={s.summary}>{sec.summary}</Text>}
-                      {!!book.length && <Text style={s.label}>From the book</Text>}
+                      {!!book.length && <Text style={s.label}>{tr("From the book")}</Text>}
                       {book.map((t, i) => (
                         <Text key={i} style={s.text}>
                           {t}
                         </Text>
                       ))}
-                      {!!explain.length && <Text style={s.label}>Interpretation</Text>}
+                      {!!explain.length && <Text style={s.label}>{tr("Interpretation")}</Text>}
                       {explain.map((t, i) => (
                         <Text key={i} style={[s.text, { color: c.explain }]}>
                           {t}
@@ -205,7 +206,7 @@ export default function CardSheet({
                           }}
                         >
                           <Ionicons name="headset" size={16} color={c.bg} />
-                          <Text style={s.listenText}>Listen to this section</Text>
+                          <Text style={s.listenText}>{tr("Listen to this section")}</Text>
                         </Pressable>
                       )}
                     </View>

@@ -1,3 +1,4 @@
+import { t as tr } from '../../../i18n';
 import { Alert } from 'react-native';
 import { router } from 'expo-router';
 import SearchView from '../../../components/SearchView';
@@ -18,10 +19,10 @@ export default function Search() {
         const books = syncAudioBooks().books;
         const match = books.find((b) => b.olKey === r.olKey);
         if (match) return router.push({ pathname: '/title/[id]', params: { id: match.id } });
-        Alert.alert(r.title, 'Use these details for one of your audiobooks, or upload this book to make it one.', [
+        Alert.alert(r.title, tr("Use these details for one of your audiobooks, or upload this book to make it one."), [
           ...books.map((b) => ({ text: b.title, onPress: () => apply(b.id, r) })),
-          { text: 'Upload this book…', onPress: () => router.push({ pathname: '/add', params: { title: r.title } }) },
-          { text: 'Cancel', style: 'cancel' as const },
+          { text: tr("Upload this book…"), onPress: () => router.push({ pathname: '/add', params: { title: r.title } }) },
+          { text: tr("Cancel"), style: 'cancel' as const },
         ]);
       }}
     />

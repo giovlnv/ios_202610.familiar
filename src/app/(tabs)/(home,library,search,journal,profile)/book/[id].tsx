@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { usePad } from '../../../../playback';
 import { useCallback, useMemo, useState } from 'react';
 import { FlatList, Pressable, Text, View } from 'react-native';
@@ -24,7 +25,7 @@ export default function BookPage() {
     }, [id])
   );
 
-  if (!item) return <Text style={s.empty}>Book not found.</Text>;
+  if (!item) return <Text style={s.empty}>{tr("Book not found.")}</Text>;
   const { book } = item;
   const done = new Set(progress.done ?? []);
   const total = book.sections.reduce((t, x) => t + x.duration, 0);
@@ -44,17 +45,17 @@ export default function BookPage() {
           <View style={s.head}>
             <Text style={s.title}>{book.title}</Text>
             <Text style={s.meta}>
-              {book.sections.length} sections · {fmtHours(total)} · {done.size} finished · {notes.length} notes · {consults.length} consults
+              {book.sections.length}{' '}{tr("sections ·")}{' '}{fmtHours(total)} · {done.size}{' '}{tr("finished ·")}{' '}{notes.length}{' '}{tr("notes ·")}{' '}{consults.length} consults
             </Text>
             <Pressable style={s.btn} onPress={() => open()}>
-              <Text style={s.btnText}>{progress.time || progress.section ? 'Continue' : 'Start listening'}</Text>
+              <Text style={s.btnText}>{progress.time || progress.section ? tr("Continue") : tr("Start listening")}</Text>
               {current && (progress.time > 0 || progress.section > 0) && (
                 <Text style={s.btnSub} numberOfLines={1}>
                   {current.title} · {fmtTime(progress.time)}
                 </Text>
               )}
             </Pressable>
-            <Text style={s.h2}>Sections</Text>
+            <Text style={s.h2}>{tr("Sections")}</Text>
           </View>
         }
         renderItem={({ item: x, index }) => {

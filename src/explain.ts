@@ -1,3 +1,4 @@
+import { t as tr } from './i18n';
 import { Directory, File, Paths } from 'expo-file-system';
 import { Book, Section } from './types';
 import { read, write } from './theme';
@@ -41,14 +42,14 @@ export function saveExplained(folder: string, sectionId: string, item: Saved, ki
 export type Chip = { id: string; label: string; line: string; section?: boolean };
 
 export const CHIPS: Chip[] = [
-  { id: 'plain', label: 'Plain meaning', line: 'What it means, in plain words (2–3 sentences)' },
-  { id: 'jung', label: 'Jungian', line: 'The Jungian angle: the archetype(s) or psychological idea behind it' },
-  { id: 'pop', label: 'Pop culture (3)', line: 'Three examples from fictional characters or pop culture, each with the specific traits that show it, plus its shadow side' },
-  { id: 'famous', label: 'Famous people (3)', line: 'Three real-life famous people (artists, historical figures), each with the specific characteristics that embody it' },
-  { id: 'reading', label: 'In a reading', line: 'How it can show up in a reading (upright and reversed, if it is about a card)' },
-  { id: 'keep', label: 'Keep in mind', line: 'Keep in mind: main symbols (positive and negative) and what the book says about it as a tendency, in love and as the card of the day', section: true },
-  { id: 'keywords', label: 'Keywords', line: 'Keywords: 3–4 for the light side and 3–4 for the shadow side' },
-  { id: 'questions', label: 'Questions (2–3)', line: '2–3 questions to reflect on' },
+  { id: 'plain', label: tr("Plain meaning"), line: 'What it means, in plain words (2–3 sentences)' },
+  { id: 'jung', label: tr("Jungian"), line: 'The Jungian angle: the archetype(s) or psychological idea behind it' },
+  { id: 'pop', label: tr("Pop culture (3)"), line: 'Three examples from fictional characters or pop culture, each with the specific traits that show it, plus its shadow side' },
+  { id: 'famous', label: tr("Famous people (3)"), line: 'Three real-life famous people (artists, historical figures), each with the specific characteristics that embody it' },
+  { id: 'reading', label: tr("In a reading"), line: 'How it can show up in a reading (upright and reversed, if it is about a card)' },
+  { id: 'keep', label: tr("Keep in mind"), line: 'Keep in mind: main symbols (positive and negative) and what the book says about it as a tendency, in love and as the card of the day', section: true },
+  { id: 'keywords', label: tr("Keywords"), line: 'Keywords: 3–4 for the light side and 3–4 for the shadow side' },
+  { id: 'questions', label: tr("Questions (2–3)"), line: '2–3 questions to reflect on' },
 ];
 
 export const loadChips = () => {

@@ -1,3 +1,4 @@
+import { t as tr } from '../../../i18n';
 import { useCallback, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
@@ -47,24 +48,24 @@ export default function JournalStats() {
   if (!st.total)
     return (
       <Page>
-        <EmptyState paths={TAROT} text="No readings yet. Your stats grow as you log readings and cards of the day." />
+        <EmptyState paths={TAROT} text={tr("No readings yet. Your stats grow as you log readings and cards of the day.")} />
       </Page>
     );
   return (
     <Page>
       <View style={s.tiles}>
         <Tile value={st.total} label="readings" />
-        <Tile value={st.cards} label="cards drawn" />
+        <Tile value={st.cards} label={tr("cards drawn")} />
       </View>
       <View style={s.tiles}>
-        <Tile value={st.streak} label={`day streak · best ${st.best}`} />
+        <Tile value={st.streak} label={tr("day streak · best {0}", { 0: st.best })} />
         <Tile value={`${st.reversed}%`} label="reversed" />
       </View>
-      <Text style={ss.h2}>Last 12 months</Text>
+      <Text style={ss.h2}>{tr("Last 12 months")}</Text>
       <Bars rows={st.months.map(([m, n]) => [fmtDate(`${m}-01`, { month: 'short', year: '2-digit' }), n] as const)} />
       {st.top.length > 0 && (
         <>
-          <Text style={ss.h2}>Most drawn</Text>
+          <Text style={ss.h2}>{tr("Most drawn")}</Text>
           <View style={[ss.card, s.cards]}>
             {st.top.map(([id, n]) => (
               <Pressable key={id} style={s.cardCol} onPress={() => setOpen({ id, role: `Drawn ${n} times.` })}>
@@ -79,21 +80,21 @@ export default function JournalStats() {
       )}
       {st.groups.length > 0 && (
         <>
-          <Text style={ss.h2}>Majors and suits</Text>
+          <Text style={ss.h2}>{tr("Majors and suits")}</Text>
           <Bars rows={st.groups} />
         </>
       )}
       {st.areas.length > 0 && (
         <>
-          <Text style={ss.h2}>Areas</Text>
+          <Text style={ss.h2}>{tr("Areas")}</Text>
           <Bars rows={st.areas} />
         </>
       )}
-      <Text style={ss.h2}>Who for</Text>
+      <Text style={ss.h2}>{tr("Who for")}</Text>
       <Bars rows={st.people} />
-      <Text style={ss.h2}>Spreads</Text>
+      <Text style={ss.h2}>{tr("Spreads")}</Text>
       <Bars rows={st.spreads} />
-      <Text style={ss.h2}>Days of the week</Text>
+      <Text style={ss.h2}>{tr("Days of the week")}</Text>
       <Bars rows={st.weekdays} />
       <CardSheet id={open?.id ?? null} role={open?.role} onClose={() => setOpen(null)} />
     </Page>

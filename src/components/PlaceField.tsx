@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -41,7 +42,7 @@ export function PlaceField({ value, onPick, language = 'en' }: { value: string; 
           style={s.input}
           value={q}
           onChangeText={(t) => (setQ(t), setOpen(true))}
-          placeholder="City"
+          placeholder={tr("City")}
           placeholderTextColor={c.dim}
           autoCorrect={false}
         />

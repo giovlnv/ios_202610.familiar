@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -16,7 +17,7 @@ export default function AstrologySettings() {
   const [sys, setSys] = useState(getOnboarding().houses ?? 'placidus');
   return (
     <Page>
-      <Text style={ss.label}>House system</Text>
+      <Text style={ss.label}>{tr("House system")}</Text>
       <View style={[ss.card, { marginTop: 6 }]}>
         {HOUSES.map((h) => (
           <Pressable key={h.id} onPress={() => (setOnboarding({ houses: h.id }), setSys(h.id))} style={{ flexDirection: 'row', gap: 12, alignItems: 'center' }}>
@@ -28,7 +29,7 @@ export default function AstrologySettings() {
           </Pressable>
         ))}
       </View>
-      <Text style={ss.meta}>Needs your birth time and place. Tropical zodiac.</Text>
+      <Text style={ss.meta}>{tr("Needs your birth time and place. Tropical zodiac.")}</Text>
     </Page>
   );
 }

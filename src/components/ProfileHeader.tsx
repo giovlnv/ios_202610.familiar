@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { streaks } from '../streaks';
 import { useCallback, useState } from 'react';
 import { Href, router, useFocusEffect } from 'expo-router';
@@ -73,7 +74,7 @@ function TarotPanel({ dob, onCard }: { dob?: string; onCard: (id: string, role: 
   };
   const roleOf = (label: string) => ROLE[label] ?? `Your card for ${new Date().getFullYear()}: the theme of the year, from your birth day and month plus the current year.`;
   const bc = birthCards(dob);
-  if (!bc) return <Text style={s.user}>Add your birth date to see your personality cards.</Text>;
+  if (!bc) return <Text style={s.user}>{tr("Add your birth date to see your personality cards.")}</Text>;
   const birth: [string, string | undefined][] = [
     ['Personality', bc.personality],
     ['Essence', bc.essence !== bc.personality ? bc.essence : undefined],
@@ -120,7 +121,7 @@ function LenormandPanel({ onCard }: { onCard: (id: string, role: string) => void
           ))}
       </View>
       <Text style={s.line}>
-        {readings.length} Lenormand {readings.length === 1 ? 'reading' : 'readings'} in your journal
+        {readings.length}{' '}{tr("Lenormand")}{' '}{readings.length === 1 ? 'reading' : 'readings'}{' '}{tr("in your journal")}
       </Text>
     </>
   );
@@ -150,15 +151,15 @@ function SystemPanel({ id, onCard }: { id: string; onCard: (id: string, role: st
           ))}
       </View>
       <Text style={s.line}>
-        {readings.length} {readings.length === 1 ? 'reading' : 'readings'} in your journal
+        {readings.length} {readings.length === 1 ? 'reading' : 'readings'}{' '}{tr("in your journal")}
       </Text>
-      <More label="Edit this system" to={`/settings/system/${id}`} />
+      <More label={tr("Edit this system")} to={`/settings/system/${id}`} />
     </>
   );
 }
 
 function NumerologyPanel({ dob }: { dob?: string }) {
-  if (!dob) return <Text style={s.user}>Add your birth date to see your numbers.</Text>;
+  if (!dob) return <Text style={s.user}>{tr("Add your birth date to see your numbers.")}</Text>;
   const n = numbers();
   const go = () => router.push('/numerology');
   const pn = personal(dob);
@@ -169,16 +170,16 @@ function NumerologyPanel({ dob }: { dob?: string }) {
           <Tile key={r.key} value={show(r.value)} label={r.label} onPress={go} />
         ))}
       </View>
-      {!n.birthName && <Text style={s.user}>Add your full birth name for the name numbers.</Text>}
-      <Text style={s.line}>Today: personal day {pn.day} · month {pn.month} · year {pn.year}</Text>
-      <More label="All numbers" to="/numerology" />
+      {!n.birthName && <Text style={s.user}>{tr("Add your full birth name for the name numbers.")}</Text>}
+      <Text style={s.line}>{tr("Today: personal day")}{' '}{pn.day}{' '}{tr("· month")}{' '}{pn.month}{' '}{tr("· year")}{' '}{pn.year}</Text>
+      <More label={tr("All numbers")} to="/numerology" />
     </>
   );
 }
 
 function AstrologyPanel() {
   const ch = myChart();
-  if (!ch) return <Text style={s.user}>Add your birth date, time and place to see your chart.</Text>;
+  if (!ch) return <Text style={s.user}>{tr("Add your birth date, time and place to see your chart.")}</Text>;
   const go = () => router.push('/astrology');
   const top = (o: Record<string, number>) => Object.entries(o).sort((a, b) => b[1] - a[1])[0]?.[0];
   return (
@@ -187,15 +188,15 @@ function AstrologyPanel() {
         {ch.list
           .filter((x) => ['Sun', 'Moon', 'Ascendant'].includes(x.name))
           .map((x) => (
-            <Tile key={x.name} value={`${signOf(x.lon).glyph} ${signOf(x.lon).name}`} label={`${x.name === 'Ascendant' ? 'Rising' : x.name} · ${fmtDeg(x.lon)}`} onPress={go} />
+            <Tile key={x.name} value={`${signOf(x.lon).glyph} ${tr(signOf(x.lon).name)}`} label={`${x.name === 'Ascendant' ? tr("Rising") : tr(x.name)} · ${fmtDeg(x.lon)}`} onPress={go} />
           ))}
       </View>
-      {!ch.timed && <Text style={s.user}>Add your birth time and place for your rising sign.</Text>}
+      {!ch.timed && <Text style={s.user}>{tr("Add your birth time and place for your rising sign.")}</Text>}
       <Text style={s.line}>
-        Mostly {top(ch.elements)} · {top(ch.modes)}
+        {tr("Mostly")}{' '}{tr(top(ch.elements) ?? '')} · {tr(top(ch.modes) ?? '')}
       </Text>
-      <Text style={s.line}>Today: {sky()}</Text>
-      <More label="Birth chart" to="/astrology" />
+      <Text style={s.line}>{tr("Today:")}{' '}{sky()}</Text>
+      <More label={tr("Birth chart")} to="/astrology" />
     </>
   );
 }
@@ -217,14 +218,14 @@ export default function ProfileHeader() {
         <Avatar photo={p.photo} name={p.name} size={84} />
         <FamiliarArt familiar={currentGuide()} pose={playing ? 'reading' : nightNow() ? 'sleeping' : 'idle'} size={84} vial alive />
         <View style={{ flex: 1 }}>
-          <Text style={s.name}>{p.name || 'Set up your profile'}</Text>
-          <Text style={s.user}>{p.username ? `@${p.username}` : 'Add a photo, name and username'}</Text>
-          {!!p.dob && <Text style={s.user}>Born {showDate(p.dob)}</Text>}
+          <Text style={s.name}>{p.name || tr("Set up your profile")}</Text>
+          <Text style={s.user}>{p.username ? `@${p.username}` : tr("Add a photo, name and username")}</Text>
+          {!!p.dob && <Text style={s.user}>{tr("Born")}{' '}{showDate(p.dob)}</Text>}
           {(() => {
             const st = streaks();
             return st.longest > 0 ? (
               <Text style={[s.user, { color: c.gold }]}>
-                {st.current > 0 ? `${st.current}-day streak` : 'No streak today yet'} · longest {st.longest}
+                {st.current > 0 ? tr("{0}-day streak", { 0: st.current }) : tr("No streak today yet")}{' '}{tr("· longest")}{' '}{st.longest}
               </Text>
             ) : null;
           })()}
@@ -249,7 +250,7 @@ export default function ProfileHeader() {
       {active.id === 'lenormand' && <LenormandPanel onCard={(id, role) => setOpen({ id, role })} />}
       {active.id === 'custom' && (
         <Pressable onPress={() => router.push('/settings/decks/custom')}>
-          <Text style={s.user}>Make a system of your own in Settings → Make your own.</Text>
+          <Text style={s.user}>{tr("Make a system of your own in Settings → Make your own.")}</Text>
         </Pressable>
       )}
       {isCustomSystem(active.id) && <SystemPanel id={active.id} onCard={(id, role) => setOpen({ id, role })} />}

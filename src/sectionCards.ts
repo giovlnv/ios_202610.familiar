@@ -1,5 +1,5 @@
 import { Directory, File, Paths } from 'expo-file-system';
-import { CARDS, cardName, System } from './decks';
+import { CARDS, System } from './decks';
 import { lenormandInTitle, LENORMAND } from './lenormand';
 import { cardIdOf, getSystem } from './systems';
 import { Section } from './types';
@@ -33,7 +33,7 @@ const RANK_WORDS = ['ace', 'two', 'three', 'four', 'five', 'six', 'seven', 'eigh
 
 export function cardPattern(id: string) {
   if (id.startsWith('m')) {
-    const name = cardName(id).split(' · ')[1].replace(/^The /, '').toLowerCase().replace('judgement', 'judge?ment');
+    const name = CARDS.find((c) => c.id === id)!.name.split(' · ')[1].replace(/^The /, '').toLowerCase().replace('judgement', 'judge?ment');
     return new RegExp(`\\b${name}\\b`, 'i');
   }
   const suit = SUIT_WORDS[id.replace(/\d+$/, '')];

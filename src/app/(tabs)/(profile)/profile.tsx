@@ -1,3 +1,4 @@
+import { t as tr } from '../../../i18n';
 import { usePad } from '../../../playback';
 import { useCallback, useState } from "react";
 import {
@@ -120,12 +121,12 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
       <Stack.Screen
         options={{
           headerLeft: () => (
-            <Pressable hitSlop={10} onPress={() => setTheming(true)} accessibilityLabel="Theme">
+            <Pressable hitSlop={10} onPress={() => setTheming(true)} accessibilityLabel={tr("Theme")}>
               <Ionicons name="color-palette-outline" size={24} color={c.gold} />
             </Pressable>
           ),
           headerRight: () => (
-            <Pressable hitSlop={10} onPress={() => router.push("/settings")} accessibilityLabel="Settings">
+            <Pressable hitSlop={10} onPress={() => router.push("/settings")} accessibilityLabel={tr("Settings")}>
               <Ionicons name="settings-outline" size={24} color={c.gold} />
             </Pressable>
           ),
@@ -136,15 +137,15 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
       <Pressable style={s.familiar} onPress={() => router.push("/familiars")}>
         <FamiliarArt familiar={withYou()} size={56} vial />
         <View style={{ flex: 1 }}>
-          <Text style={s.famTitle}>Your familiars</Text>
+          <Text style={s.famTitle}>{tr("Your familiars")}</Text>
           <Text style={s.famDim}>
-            {withYou().name} is with you · {loadFamiliars().list.length} in all
+            {withYou().name}{' '}{tr("is with you ·")}{' '}{loadFamiliars().list.length}{' '}{tr("in all")}
           </Text>
         </View>
         <Ionicons name="chevron-forward" size={16} color={c.dim} />
       </Pressable>
       <Pressable style={s.foldHead} onPress={() => (write('top4.txt', top4 ? '0' : '1'), setTop4(!top4))} accessibilityState={{ expanded: top4 }}>
-        <Text style={[s.h2, { marginTop: 0, marginBottom: 0 }]}>Top 4</Text>
+        <Text style={[s.h2, { marginTop: 0, marginBottom: 0 }]}>{tr("Top 4")}</Text>
         <Ionicons name={top4 ? 'chevron-up' : 'chevron-down'} size={18} color={c.dim} />
       </Pressable>
       {top4 && (
@@ -167,7 +168,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
         </View>
         {favs.length < 4 && (
           <Text style={s.note}>
-            Add favorites from the menu on a book’s page (top right).
+            {tr("Add favorites from the menu on a book’s page (top right).")}
           </Text>
         )}
         </>
@@ -175,12 +176,12 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
 
       <Pressable style={s.link} onPress={() => router.push("/stats")}>
         <Ionicons name="stats-chart-outline" size={18} color={c.gold} />
-        <Text style={s.linkText}>Stats · {t.logs.length} books logged</Text>
+        <Text style={s.linkText}>{tr("Stats ·")}{' '}{t.logs.length}{' '}{tr("books logged")}</Text>
         <Ionicons name="chevron-forward" size={16} color={c.dim} />
       </Pressable>
       <Pressable style={s.link} onPress={() => router.push("/lists")}>
         <Ionicons name="list" size={18} color={c.gold} />
-        <Text style={s.linkText}>Lists ({t.lists?.length ?? 0})</Text>
+        <Text style={s.linkText}>{tr("Lists (")}{t.lists?.length ?? 0})</Text>
         <Ionicons name="chevron-forward" size={16} color={c.dim} />
       </Pressable>
         </>
@@ -195,7 +196,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
         {years.map((y) => (
           <Chip key={y} label={y} on={year === y} onPress={() => setYear(y)} />
         ))}
-        <Chip label="All time" on={all} onPress={() => setYear("all")} />
+        <Chip label={tr("All time")} on={all} onPress={() => setYear("all")} />
       </ScrollView>
 
       <View style={s.tiles}>
@@ -209,7 +210,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
 
       <View style={s.headRow}>
         <Text style={[s.h2, { margin: 0 }]}>
-          {all ? "By year" : "By month"}
+          {all ? tr("By year") : tr("By month")}
         </Text>
         <View style={{ flexDirection: "row", gap: 6 }}>
           {(["books", "pages", "hours"] as Metric[]).map((m) => (
@@ -229,14 +230,13 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
       />
       {metric === "pages" && logs.some((l) => !pagesOf(l.bookId)) && (
         <Text style={s.note}>
-          Some books have no page count. Use “Find details on Open Library” on
-          their page.
+          {tr("Some books have no page count. Use “Find details on Open Library” on their page.")}
         </Text>
       )}
 
       {genres.length > 0 && (
         <>
-          <Text style={s.h2}>Genres</Text>
+          <Text style={s.h2}>{tr("Genres")}</Text>
           <View style={[s.card, { gap: 10 }]}>
             {genres.map(([g, n]) => (
               <View key={g} style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
@@ -253,7 +253,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
         </>
       )}
 
-      <Text style={s.h2}>Top authors</Text>
+      <Text style={s.h2}>{tr("Top authors")}</Text>
       {authors.length ? (
         <View style={s.card}>
           {authors.map(([a, n]) => (
@@ -268,12 +268,12 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
           ))}
         </View>
       ) : (
-        <Text style={s.dim}>Log books with authors to see this.</Text>
+        <Text style={s.dim}>{tr("Log books with authors to see this.")}</Text>
       )}
 
       {topAudio.length > 0 && (
         <>
-          <Text style={s.h2}>Most listened</Text>
+          <Text style={s.h2}>{tr("Most listened")}</Text>
           {topAudio.map(({ b, n }) => (
             <Pressable key={b!.id} style={s.row} onPress={() => open(b!.id)}>
               <Cover book={b!} width={36} />
@@ -288,7 +288,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
 
       {longest && (
         <>
-          <Text style={s.h2}>Longest read</Text>
+          <Text style={s.h2}>{tr("Longest read")}</Text>
           <Pressable style={s.row} onPress={() => open(longest.id)}>
             <Cover book={longest} width={36} />
             <Text style={s.lineText} numberOfLines={1}>
@@ -307,12 +307,12 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
           }
         >
           <Ionicons name="sparkles-outline" size={18} color={c.gold} />
-          <Text style={s.linkText}>{year} in review</Text>
+          <Text style={s.linkText}>{year}{' '}{tr("in review")}</Text>
           <Ionicons name="chevron-forward" size={16} color={c.dim} />
         </Pressable>
       )}
 
-      <Text style={s.h2}>Ratings</Text>
+      <Text style={s.h2}>{tr("Ratings")}</Text>
       <Bars
         values={dist}
         labels={["½", "1", "", "2", "", "3", "", "4", "", "5"]}

@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { useEffect, useState } from 'react';
 import { Alert, KeyboardAvoidingView, Modal, Pressable, ScrollView, Text, TextInput, useWindowDimensions, View } from 'react-native';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
@@ -63,7 +64,7 @@ export default function ReadingScreen() {
     [id],
   );
 
-  if (!r) return <Text style={s.dim}>Reading not found.</Text>;
+  if (!r) return <Text style={s.dim}>{tr("Reading not found.")}</Text>;
   const sp = spreadOf(j, r.spreadId);
   const person = j.people.find((p) => p.id === r.personId);
   const system = readingSystem(r);
@@ -109,18 +110,18 @@ export default function ReadingScreen() {
         cards: [],
       });
     if (!placed.length) return go();
-    Alert.alert('Switch deck?', 'The cards placed in this reading are cleared.', [
-      { text: 'Cancel', style: 'cancel' },
-      { text: 'Switch', style: 'destructive', onPress: go },
+    Alert.alert(tr("Switch deck?"), tr("The cards placed in this reading are cleared."), [
+      { text: tr("Cancel"), style: 'cancel' },
+      { text: tr("Switch"), style: 'destructive', onPress: go },
     ]);
   };
   const deal = () => {
     const own = (x: string) => (isCustomSystem(system) ? cardIdOf(system, x) : x);
     const go = () => set({ cards: dealt().map((x) => ({ card: getSystem(system) && !getSystem(system)!.cards.some((k) => k.key === x) ? undefined : own(x) })) });
     if (!placed.length) return go();
-    Alert.alert('Deal all 36 at random?', 'The cards already placed are replaced.', [
-      { text: 'Cancel', style: 'cancel' },
-      { text: 'Deal', onPress: go },
+    Alert.alert(tr("Deal all 36 at random?"), tr("The cards already placed are replaced."), [
+      { text: tr("Cancel"), style: 'cancel' },
+      { text: tr("Deal"), onPress: go },
     ]);
   };
   const reload = () => setJ(loadJournal());
@@ -130,25 +131,25 @@ export default function ReadingScreen() {
     const p = r.cards[i];
     if (!p?.card) return locked(i) ? undefined : setSlot(i);
     const links = cardSections(p.card);
-    Alert.alert(`${sp.positions[i]} · ${short(p.card)}${p.reversed ? ' (reversed)' : ''}`, undefined, [
-      { text: 'About this card', onPress: () => setAbout({ id: p.card!, role: sp.positions[i], near: len ? nearOf(i) : undefined }) },
+    Alert.alert(`${sp.positions[i]} · ${short(p.card)}${p.reversed ? tr(" (reversed)") : ''}`, undefined, [
+      { text: tr("About this card"), onPress: () => setAbout({ id: p.card!, role: sp.positions[i], near: len ? nearOf(i) : undefined }) },
       ...links.map((l) => ({
-        text: `Listen: ${l.title}`,
+        text: tr("Listen: {0}", { 0: l.title }),
         onPress: () => router.push({ pathname: '/player/[id]', params: { id: l.folder, section: String(l.index) } }),
       })),
       ...(locked(i)
         ? []
         : [
-            ...(!flips ? [] : [{ text: p.reversed ? 'Make upright' : 'Make reversed', onPress: () => placeCard(i, p.card, !p.reversed) }]),
-            { text: 'Change card', onPress: () => setSlot(i) },
-            { text: 'Remove card', style: 'destructive' as const, onPress: () => placeCard(i, undefined) },
+            ...(!flips ? [] : [{ text: p.reversed ? tr("Make upright") : tr("Make reversed"), onPress: () => placeCard(i, p.card, !p.reversed) }]),
+            { text: tr("Change card"), onPress: () => setSlot(i) },
+            { text: tr("Remove card"), style: 'destructive' as const, onPress: () => placeCard(i, undefined) },
           ]),
-      { text: 'Cancel', style: 'cancel' as const },
+      { text: tr("Cancel"), style: 'cancel' as const },
     ]);
   };
 
   const newArea = () =>
-    Alert.prompt('New area', undefined, (v) => {
+    Alert.prompt(tr("New area"), undefined, (v) => {
       const a = v?.trim();
       if (!a) return;
       if (!allAreas(j).includes(a)) updateJournal((x) => x.areas.push(a));
@@ -157,9 +158,9 @@ export default function ReadingScreen() {
     });
 
   const newSpread = () =>
-    Alert.prompt('New spread', 'Name of the layout', (name) => {
+    Alert.prompt(tr("New spread"), tr("Name of the layout"), (name) => {
       if (!name?.trim()) return;
-      Alert.prompt('Positions', 'Separate them with commas, in order (e.g. Me, You, Bond)', (pos) => {
+      Alert.prompt(tr("Positions"), tr("Separate them with commas, in order (e.g. Me, You, Bond)"), (pos) => {
         const positions = (pos ?? '').split(',').map((x) => x.trim()).filter(Boolean);
         if (!positions.length) return;
         const created = addSpread(name.trim(), positions, system === 'tarot' ? undefined : system);
@@ -170,7 +171,7 @@ export default function ReadingScreen() {
 
   const pasteAnswer = async () => {
     const text = (await Clipboard.getStringAsync()).trim();
-    if (!text) return Alert.alert('Clipboard is empty', 'Copy Claude’s answer first, then tap Paste answer.');
+    if (!text) return Alert.alert(tr("Clipboard is empty"), tr("Copy Claude’s answer first, then tap Paste answer."));
     set({ answers: [...(r.answers ?? []), { text, at: Date.now() }] });
   };
 
@@ -188,16 +189,16 @@ export default function ReadingScreen() {
           title: fmtDate(date, { day: 'numeric', month: 'short' }),
           headerRight: () => draft ? (
             <Pressable hitSlop={10} onPress={() => (saveReading(r), setDraft(false), setJ(loadJournal()))}>
-              <Text style={{ color: c.gold, fontSize: 16, fontWeight: '700' }}>Save</Text>
+              <Text style={{ color: c.gold, fontSize: 16, fontWeight: '700' }}>{tr("Save")}</Text>
             </Pressable>
           ) : (
             <Pressable
               hitSlop={10}
               onPress={() =>
-                Alert.alert('Delete this reading?', undefined, [
-                  { text: 'Cancel', style: 'cancel' },
+                Alert.alert(tr("Delete this reading?"), undefined, [
+                  { text: tr("Cancel"), style: 'cancel' },
                   {
-                    text: 'Delete',
+                    text: tr("Delete"),
                     style: 'destructive',
                     onPress: () => {
                       removeReading(r.id);
@@ -213,14 +214,14 @@ export default function ReadingScreen() {
         }}
       />
       {draft && (
-        <Text style={{ color: c.dim, fontSize: 13, marginBottom: 4 }}>Not saved yet. Tap Save (top right) to keep it in your journal.</Text>
+        <Text style={{ color: c.dim, fontSize: 13, marginBottom: 4 }}>{tr("Not saved yet. Tap Save (top right) to keep it in your journal.")}</Text>
       )}
 
       <TextInput
         style={s.question}
         value={r.question}
         onChangeText={(question) => set({ question })}
-        placeholder="What is the question?"
+        placeholder={tr("What is the question?")}
         placeholderTextColor={c.dim}
         multiline
       />
@@ -233,8 +234,8 @@ export default function ReadingScreen() {
           style={s.time}
           onPress={() =>
             Alert.prompt(
-              'Time',
-              'HH:MM',
+              tr("Time"),
+              tr("HH:MM"),
               (v) => {
                 const t = maskTime(v ?? '');
                 if (/^\d{2}:\d{2}$/.test(t)) set({ at: `${date}T${t}` });
@@ -250,15 +251,15 @@ export default function ReadingScreen() {
         </Pressable>
       </View>
       {!!skyStamp && <Text style={s.stamp}>{skyStamp}</Text>}
-      {stamp && <Text style={s.stamp}>Personal day {stamp.day} · month {stamp.month} · year {stamp.year}</Text>}
+      {stamp && <Text style={s.stamp}>{tr("Personal day")}{' '}{stamp.day}{' '}{tr("· month")}{' '}{stamp.month}{' '}{tr("· year")}{' '}{stamp.year}</Text>}
 
-      <Text style={s.label}>For</Text>
+      <Text style={s.label}>{tr("For")}</Text>
       <View style={s.chips}>
-        <Chip label="Me" on={!r.personId} onPress={() => set({ personId: undefined })} />
+        <Chip label={tr("Me")} on={!r.personId} onPress={() => set({ personId: undefined })} />
         {j.people.map((p) => (
           <Chip key={p.id} label={p.name} on={r.personId === p.id} onPress={() => set({ personId: p.id })} />
         ))}
-        <Chip label="+ Person" onPress={() => setPersonSheet(true)} />
+        <Chip label={tr("+ Person")} onPress={() => setPersonSheet(true)} />
       </View>
       {person && (
         <Text style={s.dim}>
@@ -268,17 +269,17 @@ export default function ReadingScreen() {
         </Text>
       )}
 
-      <Text style={s.label}>Area</Text>
+      <Text style={s.label}>{tr("Area")}</Text>
       <View style={s.chips}>
         {allAreas(j).map((a) => (
-          <Chip key={a} label={a} on={r.area === a} onPress={() => set({ area: r.area === a ? undefined : a })} />
+          <Chip key={a} label={tr(a)} on={r.area === a} onPress={() => set({ area: r.area === a ? undefined : a })} />
         ))}
-        <Chip label="+ Custom" onPress={newArea} />
+        <Chip label={tr("+ Custom")} onPress={newArea} />
       </View>
 
       {showDecks && (
         <>
-          <Text style={s.label}>Deck</Text>
+          <Text style={s.label}>{tr("Deck")}</Text>
           <View style={s.chips}>
             {decks.map((d) => (
               <Chip key={d} label={systemName(d)} on={system === d} onPress={() => switchSystem(d)} />
@@ -287,30 +288,30 @@ export default function ReadingScreen() {
         </>
       )}
 
-      <Text style={s.label}>Spread</Text>
+      <Text style={s.label}>{tr("Spread")}</Text>
       <View style={s.chips}>
         {spreadsFor(j, system, !!sp.daily).map((x) => (
           <Chip key={x.id} label={x.name} on={r.spreadId === x.id} onPress={() => set({ spreadId: x.id })} />
         ))}
-        {!sp.daily && <Chip label="+ Custom" onPress={newSpread} />}
+        {!sp.daily && <Chip label={tr("+ Custom")} onPress={newSpread} />}
       </View>
 
       {grand && (
         <>
-          <Text style={s.label}>Significator</Text>
+          <Text style={s.label}>{tr("Significator")}</Text>
           <View style={s.chips}>
             {(['l29', 'l28'] as const).map((x) => {
               const sig = significatorFor(system, x)!;
               return <Chip key={x} label={cardName(sig)} on={r.significator === sig} onPress={() => set({ significator: sig })} />;
             })}
-            <Chip label="Deal at random" onPress={deal} />
+            <Chip label={tr("Deal at random")} onPress={deal} />
             {!!placed.length && (
               <Chip
-                label="Clear"
+                label={tr("Clear")}
                 onPress={() =>
-                  Alert.alert('Clear all cards?', undefined, [
-                    { text: 'Cancel', style: 'cancel' },
-                    { text: 'Clear', style: 'destructive', onPress: () => set({ cards: [] }) },
+                  Alert.alert(tr("Clear all cards?"), undefined, [
+                    { text: tr("Cancel"), style: 'cancel' },
+                    { text: tr("Clear"), style: 'destructive', onPress: () => set({ cards: [] }) },
                   ])
                 }
               />
@@ -323,7 +324,7 @@ export default function ReadingScreen() {
             onTap={(i) => setSlot(i)}
             onHold={(i) => (r.cards[i]?.card ? slotMenu(i) : setSlot(i))}
           />
-          <Text style={s.hint}>{placed.length} of 36 placed · picking a card moves on to the next empty place.</Text>
+          <Text style={s.hint}>{placed.length}{' '}{tr("of 36 placed · picking a card moves on to the next empty place.")}</Text>
         </>
       )}
 
@@ -357,43 +358,43 @@ export default function ReadingScreen() {
       </ScrollView>
       )}
       {!grand && !!filled.length && (
-        <Text style={s.hint}>{flips ? 'Tap a card to flip, change it or listen to its section.' : 'Tap a card to change it or read about it.'}</Text>
+        <Text style={s.hint}>{flips ? tr("Tap a card to flip, change it or listen to its section.") : tr("Tap a card to change it or read about it.")}</Text>
       )}
 
-      <Text style={s.label}>My interpretation</Text>
+      <Text style={s.label}>{tr("My interpretation")}</Text>
       <TextInput
         style={[s.input, { minHeight: 110 }]}
         value={r.interpretation ?? ''}
         onChangeText={(interpretation) => set({ interpretation })}
-        placeholder="What I see in the cards…"
+        placeholder={tr("What I see in the cards…")}
         placeholderTextColor={c.dim}
         multiline
       />
-      <Text style={s.label}>Key points · one per line</Text>
+      <Text style={s.label}>{tr("Key points · one per line")}</Text>
       <TextInput
         style={[s.input, { minHeight: 80 }]}
         value={r.keyPoints ?? ''}
         onChangeText={(keyPoints) => set({ keyPoints })}
-        placeholder={len ? 'Heart next to the Ring' : 'Strong Cups energy'}
+        placeholder={len ? tr("Heart next to the Ring") : tr("Strong Cups energy")}
         placeholderTextColor={c.dim}
         multiline
       />
-      <Text style={s.label}>Open questions · one per line</Text>
+      <Text style={s.label}>{tr("Open questions · one per line")}</Text>
       <TextInput
         style={[s.input, { minHeight: 80 }]}
         value={r.openQuestions ?? ''}
         onChangeText={(openQuestions) => set({ openQuestions })}
-        placeholder={len ? 'What does the Clouds card near me mean?' : 'Why the Tower reversed in the outcome?'}
+        placeholder={len ? tr("What does the Clouds card near me mean?") : tr("Why the Tower reversed in the outcome?")}
         placeholderTextColor={c.dim}
         multiline
       />
 
       <View style={s.actions}>
         <View style={{ flex: 1 }}>
-          <Button label="Ask Claude" icon="sparkles-outline" primary onPress={() => shareToClaude(readingPrompt(r, j))} />
+          <Button label={tr("Ask Claude")} icon="sparkles-outline" primary onPress={() => shareToClaude(readingPrompt(r, j))} />
         </View>
         <View style={{ flex: 1 }}>
-          <Button label="Paste answer" icon="clipboard-outline" onPress={pasteAnswer} />
+          <Button label={tr("Paste answer")} icon="clipboard-outline" onPress={pasteAnswer} />
         </View>
       </View>
       {(r.answers ?? []).map((a, i) => (
@@ -401,13 +402,13 @@ export default function ReadingScreen() {
           key={a.at}
           style={s.answer}
           onLongPress={() =>
-            Alert.alert('Delete this answer?', undefined, [
-              { text: 'Cancel', style: 'cancel' },
-              { text: 'Delete', style: 'destructive', onPress: () => set({ answers: r.answers!.filter((_, k) => k !== i) }) },
+            Alert.alert(tr("Delete this answer?"), undefined, [
+              { text: tr("Cancel"), style: 'cancel' },
+              { text: tr("Delete"), style: 'destructive', onPress: () => set({ answers: r.answers!.filter((_, k) => k !== i) }) },
             ])
           }
         >
-          <Text style={s.answerHead}>Claude · {new Date(a.at).toLocaleDateString()}</Text>
+          <Text style={s.answerHead}>{tr("Claude ·")}{' '}{new Date(a.at).toLocaleDateString()}</Text>
           <Text style={s.answerText}>{a.text}</Text>
         </Pressable>
       ))}
@@ -453,20 +454,20 @@ function PersonSheet({
       <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
       <Pressable style={s.dimBg} onPress={onClose} />
       <View style={s.sheet}>
-        <Text style={s.h2}>Reading for someone</Text>
-        <TextInput style={s.input} value={name} onChangeText={setName} placeholder="Name" placeholderTextColor={c.dim} />
-        <Text style={s.dim}>Birth date (optional)</Text>
+        <Text style={s.h2}>{tr("Reading for someone")}</Text>
+        <TextInput style={s.input} value={name} onChangeText={setName} placeholder={tr("Name")} placeholderTextColor={c.dim} />
+        <Text style={s.dim}>{tr("Birth date (optional)")}</Text>
         <DateInput style={s.input} value={dob} onChange={setDob} />
         <TextInput
           style={[s.input, { minHeight: 70 }]}
           value={bg}
           onChangeText={setBg}
-          placeholder="Short background (optional)"
+          placeholder={tr("Short background (optional)")}
           placeholderTextColor={c.dim}
           multiline
         />
         <Button
-          label="Save"
+          label={tr("Save")}
           primary
           onPress={() => name.trim() && onSave({ name: name.trim(), dob: parseDate(dob), background: bg.trim() || undefined })}
         />

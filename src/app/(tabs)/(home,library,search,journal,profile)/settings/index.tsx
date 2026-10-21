@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { useCallback, useState } from 'react';
 import { Text, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
@@ -16,35 +17,35 @@ export default function Settings() {
   const sync = getState();
   return (
     <Page>
-      <Text style={ss.label}>Appearance</Text>
+      <Text style={ss.label}>{tr("Appearance")}</Text>
       <View style={[ss.menu, { marginTop: 6 }]}>
-        <MenuRow icon="color-palette-outline" title="App" sub={`${PALETTES.find((x) => x.id === paletteId)?.name ?? ''} · mode · app icon`} to="/settings/appearance" />
-        <MenuRow icon="person-circle-outline" title="Profile" sub={p.name ? `${p.name}${p.username ? ` · @${p.username}` : ''}` : 'Photo, name, birth details'} to="/settings/profile" />
-        <MenuRow icon="paw-outline" title="Familiar" sub="Your familiars, linked paths" to="/familiars" />
+        <MenuRow icon="color-palette-outline" title={tr("App")} sub={tr("{0} · mode · app icon", { 0: PALETTES.find((x) => x.id === paletteId)?.name ?? '' })} to="/settings/appearance" />
+        <MenuRow icon="person-circle-outline" title={tr("Profile")} sub={p.name ? `${p.name}${p.username ? ` · @${p.username}` : ''}` : tr("Photo, name, birth details")} to="/settings/profile" />
+        <MenuRow icon="paw-outline" title={tr("Familiar")} sub={tr("Your familiars, linked paths")} to="/familiars" />
       </View>
-      <Text style={ss.label}>Paths</Text>
+      <Text style={ss.label}>{tr("Paths")}</Text>
       <View style={[ss.menu, { marginTop: 6 }]}>
-        <MenuRow icon="albums-outline" title="Tarot" sub="Decks: default deck, custom decks" to="/settings/configuration" />
-        <MenuRow icon="albums-outline" title="Lenormand" sub="Decks, card names, significator" to="/settings/decks/lenormand" />
-        <MenuRow icon="albums-outline" title="Make your own" sub="Your own systems and decks" to="/settings/decks/custom" />
+        <MenuRow icon="albums-outline" title={tr("Tarot")} sub={tr("Decks: default deck, custom decks")} to="/settings/configuration" />
+        <MenuRow icon="albums-outline" title={tr("Lenormand")} sub={tr("Decks, card names, significator")} to="/settings/decks/lenormand" />
+        <MenuRow icon="albums-outline" title={tr("Make your own")} sub={tr("Your own systems and decks")} to="/settings/decks/custom" />
         {(getOnboarding().paths ?? []).includes('astrology') && (
-          <MenuRow icon="planet-outline" title="Astrology" sub={`Houses: ${HOUSES.find((h) => h.id === (getOnboarding().houses ?? 'placidus'))?.name}`} to="/settings/astrology" />
+          <MenuRow icon="planet-outline" title={tr("Astrology")} sub={tr("Houses: {0}", { 0: HOUSES.find((h) => h.id === (getOnboarding().houses ?? 'placidus'))?.name })} to="/settings/astrology" />
         )}
         {(getOnboarding().paths ?? []).includes('numerology') && (
-          <MenuRow icon="keypad-outline" title="Numerology" sub={`${SYSTEM_NAME[activeSystem()]} · Y as ${getOnboarding().yVowel ? 'vowel' : 'consonant'}`} to="/settings/numerology" />
+          <MenuRow icon="keypad-outline" title={tr("Numerology")} sub={tr("{0} · Y as {1}", { 0: SYSTEM_NAME[activeSystem()], 1: tr(getOnboarding().yVowel ? 'vowel' : 'consonant') })} to="/settings/numerology" />
         )}
       </View>
-      <Text style={ss.label}>Account</Text>
+      <Text style={ss.label}>{tr("Account")}</Text>
       <View style={[ss.menu, { marginTop: 6 }]}>
-        <MenuRow icon="key-outline" title="Keys" sub="GitHub and Claude" to="/settings/account" />
-        <MenuRow icon="cloud-upload-outline" title="Backups" sub={`Last GitHub sync: ${when(sync.lastGithub)}`} to="/settings/backups" />
+        <MenuRow icon="key-outline" title={tr("Keys")} sub={tr("GitHub and Claude")} to="/settings/account" />
+        <MenuRow icon="cloud-upload-outline" title={tr("Backups")} sub={tr("Last GitHub sync: {0}", { 0: when(sync.lastGithub) })} to="/settings/backups" />
       </View>
-      <Text style={ss.label}>App</Text>
+      <Text style={ss.label}>{tr("App")}</Text>
       <View style={[ss.menu, { marginTop: 6 }]}>
-        <MenuRow icon="language-outline" title="Languages" sub="App language, audiobook voices" to="/settings/languages" />
-        <MenuRow icon="apps-outline" title="Widget" sub="Home-screen widget colours" to="/settings/widget" />
-        <MenuRow icon="server-outline" title="Storage" sub="Audio on this iPhone, temporary files" to="/settings/storage" />
-        <MenuRow icon="construct-outline" title="Development" sub="Setup, version" to="/settings/development" />
+        <MenuRow icon="language-outline" title={tr("Languages")} sub={tr("App language, audiobook voices")} to="/settings/languages" />
+        <MenuRow icon="apps-outline" title={tr("Widget")} sub={tr("Home-screen widget colours")} to="/settings/widget" />
+        <MenuRow icon="server-outline" title={tr("Storage")} sub={tr("Audio on this iPhone, temporary files")} to="/settings/storage" />
+        <MenuRow icon="construct-outline" title={tr("Development")} sub={tr("Setup, version")} to="/settings/development" />
       </View>
     </Page>
   );

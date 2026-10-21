@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { useState } from 'react';
 import { Alert, Switch, Text, View } from 'react-native';
 import { bookSizes, clearCache, freeSpace, listBooks, mb, storageBreakdown, totalSpace } from '../../../../storage';
@@ -13,20 +14,20 @@ export default function Storage() {
   const z = storageBreakdown();
   const pct = (n: number) => `${n && n < z.total / 100 ? '<1' : Math.round((n / (z.total || 1)) * 100)}%`;
   const parts = [
-    { label: 'Audio', bytes: z.audio, color: c.gold },
-    { label: 'Books & notes', bytes: z.books, color: c.explain },
-    { label: 'Decks', bytes: z.decks, color: c.claude },
-    { label: 'Voices', bytes: z.voices, color: c.text },
-    { label: 'Temporary', bytes: z.temp, color: c.dim },
-    { label: 'Other app data', bytes: z.other, color: c.line },
+    { label: tr("Audio"), bytes: z.audio, color: c.gold },
+    { label: tr("Books & notes"), bytes: z.books, color: c.explain },
+    { label: tr("Decks"), bytes: z.decks, color: c.claude },
+    { label: tr("Voices"), bytes: z.voices, color: c.text },
+    { label: tr("Temporary"), bytes: z.temp, color: c.dim },
+    { label: tr("Other app data"), bytes: z.other, color: c.line },
   ].filter((p) => p.bytes > 0);
   const total = totalSpace();
   const free = freeSpace();
   const phone = total
     ? [
-        { label: 'Familiar', bytes: z.total, color: c.gold },
-        { label: 'Other apps and files', bytes: Math.max(0, total - free - z.total), color: c.dim },
-        { label: 'Free', bytes: free, color: c.raised },
+        { label: tr("Familiar"), bytes: z.total, color: c.gold },
+        { label: tr("Other apps and files"), bytes: Math.max(0, total - free - z.total), color: c.dim },
+        { label: tr("Free"), bytes: free, color: c.raised },
       ]
     : [];
   const books = listBooks()
@@ -36,7 +37,7 @@ export default function Storage() {
     <Page>
       {!!total && (
         <View style={s.card}>
-          <Text style={s.used}>Your iPhone</Text>
+          <Text style={s.used}>{tr("Your iPhone")}</Text>
           <View style={s.row}>
             <Text style={s.big}>{gb(z.total)}</Text>
             <Text style={s.free}>of {gb(total)}</Text>
@@ -59,13 +60,13 @@ export default function Storage() {
         </View>
       )}
       <View style={s.toggle}>
-        <Text style={s.legendText}>Show Familiar breakdown</Text>
+        <Text style={s.legendText}>{tr("Show Familiar breakdown")}</Text>
         <Switch value={detail} onValueChange={(v) => (write('storage-detail.txt', v ? '1' : '0'), setDetail(v))} trackColor={{ true: c.gold }} />
       </View>
       {detail && (
         <>
       <View style={s.card}>
-        <Text style={s.used}>Used by Familiar · 100%</Text>
+        <Text style={s.used}>{tr("Used by Familiar · 100%")}</Text>
         <View style={s.row}>
           <Text style={s.big}>{gb(z.total)}</Text>
           <Text style={s.free}>{gb(freeSpace())} free</Text>
@@ -90,7 +91,7 @@ export default function Storage() {
       )}
       {books.length ? (
         <>
-          <Text style={ss.h2}>Audio on this iPhone</Text>
+          <Text style={ss.h2}>{tr("Audio on this iPhone")}</Text>
           {books.map((b) => (
             <Text key={b.title} style={ss.meta}>
               {b.title} · {mb(b.audio)}
@@ -98,19 +99,19 @@ export default function Storage() {
           ))}
         </>
       ) : null}
-      <Text style={ss.p}>To free space, open a book’s page → ⋯ → Remove downloaded audio; it then streams from GitHub.</Text>
+      <Text style={ss.p}>{tr("To free space, open a book’s page → ⋯ → Remove downloaded audio; it then streams from GitHub.")}</Text>
       {(() => {
         const unused = unusedVoices().reduce((n, f) => n + (f.size ?? 0), 0);
         return unused > 0 ? (
           <Btn
-            label={`Remove unused voices (${mb(unused)})`}
-            onPress={() => (Alert.alert('Removed', `${mb(removeUnusedVoices())} freed. Voices for languages in your library are kept and download again if needed.`), tick((n) => n + 1))}
+            label={tr("Remove unused voices ({0})", { 0: mb(unused) })}
+            onPress={() => (Alert.alert(tr("Removed"), tr("{0} freed. Voices for languages in your library are kept and download again if needed.", { 0: mb(removeUnusedVoices()) })), tick((n) => n + 1))}
           />
         ) : null;
       })()}
       <Btn
-        label={`Clear temporary files (${mb(z.temp)})`}
-        onPress={() => (clearCache(), tick((n) => n + 1), Alert.alert('Cleared', 'Temporary files removed. Decks, books and notes are untouched.'))}
+        label={tr("Clear temporary files ({0})", { 0: mb(z.temp) })}
+        onPress={() => (clearCache(), tick((n) => n + 1), Alert.alert(tr("Cleared"), tr("Temporary files removed. Decks, books and notes are untouched.")))}
       />
     </Page>
   );

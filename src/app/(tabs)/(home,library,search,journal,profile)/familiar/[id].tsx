@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { useState } from 'react';
 import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
@@ -24,19 +25,19 @@ export default function FamiliarScreen() {
     router.back();
   };
   const remove = () =>
-    Alert.alert(`Let ${f.name || 'this familiar'} go?`, 'Its look and name are removed. Your books and notes stay.', [
-      { text: 'Cancel', style: 'cancel' },
-      { text: 'Remove', style: 'destructive', onPress: () => (removeFamiliar(f.id), router.back()) },
+    Alert.alert(tr("Let {0} go?", { 0: f.name || 'this familiar' }), tr("Its look and name are removed. Your books and notes stay."), [
+      { text: tr("Cancel"), style: 'cancel' },
+      { text: tr("Remove"), style: 'destructive', onPress: () => (removeFamiliar(f.id), router.back()) },
     ]);
 
   return (
     <ScrollView style={s.wrap} contentContainerStyle={{ padding: 16, gap: 14, paddingBottom: 40 + pad }} keyboardShouldPersistTaps="handled">
       <Stack.Screen
         options={{
-          title: existing ? f.name || 'Familiar' : 'New familiar',
+          title: existing ? f.name || tr("Familiar") : tr("New familiar"),
           headerRight: () => (
             <Pressable hitSlop={10} onPress={save}>
-              <Text style={s.save}>Save</Text>
+              <Text style={s.save}>{tr("Save")}</Text>
             </Pressable>
           ),
         }}
@@ -44,7 +45,7 @@ export default function FamiliarScreen() {
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 6 }}>
         {TABS.filter((t) => cat || t !== 'Shape').map((t) => (
           <Pressable key={t} onPress={() => setTab(t)} style={[s.tab, tab === t && s.tabOn]}>
-            <Text style={[s.tabText, tab === t && { color: c.bg }]}>{!cat && t === 'Eyes' ? 'Colour & eyes' : t}</Text>
+            <Text style={[s.tabText, tab === t && { color: c.bg }]}>{!cat && t === 'Eyes' ? tr("Colour & eyes") : t}</Text>
           </Pressable>
         ))}
       </ScrollView>
@@ -54,7 +55,7 @@ export default function FamiliarScreen() {
       {tab === 'Name' && <NameStep f={f} set={set} />}
       {tab === 'Paths' && (
         <View style={{ gap: 10 }}>
-          <Text style={s.p}>Books of a linked path show this familiar. A path can have one familiar.</Text>
+          <Text style={s.p}>{tr("Books of a linked path show this familiar. A path can have one familiar.")}</Text>
           {allPaths().map((p) => {
             const on = f.paths.includes(p.id);
             const other = loadFamiliars().list.find((x) => x.id !== f.id && x.paths.includes(p.id));
@@ -67,7 +68,7 @@ export default function FamiliarScreen() {
                 <View style={[s.dot, { backgroundColor: p.color }]} />
                 <View style={{ flex: 1 }}>
                   <Text style={s.title}>{p.name}</Text>
-                  {!!other && !on && <Text style={s.dim}>Now with {other.name}</Text>}
+                  {!!other && !on && <Text style={s.dim}>{tr("Now with")}{' '}{other.name}</Text>}
                 </View>
                 <Ionicons name={on ? 'checkmark-circle' : 'ellipse-outline'} size={24} color={on ? c.gold : c.line} />
               </Pressable>
@@ -77,7 +78,7 @@ export default function FamiliarScreen() {
       )}
       {existing && loadFamiliars().list.length > 1 && (
         <Pressable onPress={remove} style={{ alignSelf: 'center', padding: 10 }}>
-          <Text style={{ color: c.claude, fontWeight: '600' }}>Remove familiar</Text>
+          <Text style={{ color: c.claude, fontWeight: '600' }}>{tr("Remove familiar")}</Text>
         </Pressable>
       )}
     </ScrollView>
@@ -88,7 +89,7 @@ function BasicEyes({ f, set }: { f: Familiar; set: (p: Partial<Familiar>) => voi
   return (
     <View style={{ gap: 14 }}>
       <ShapeCoatStep f={f} set={set} />
-      <Label>EYES</Label>
+      <Label>{tr("EYES")}</Label>
       <View style={{ flexDirection: 'row', gap: 14 }}>
         {EYES.map((e) => (
           <Pressable

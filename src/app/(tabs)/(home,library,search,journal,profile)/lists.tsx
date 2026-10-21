@@ -1,3 +1,4 @@
+import { t as tr } from '../../../i18n';
 import { useCallback, useState } from 'react';
 import { Alert, FlatList, Pressable, Text, View } from 'react-native';
 import { router, Stack, useFocusEffect } from 'expo-router';
@@ -9,7 +10,7 @@ import { c, themed } from '../../../theme';
 import EmptyState from '../../../components/EmptyState';
 
 export const newList = (then: (id: string) => void) =>
-  Alert.prompt('New list', 'e.g. Best tarot books', (name) => name?.trim() && then(addList(name).id));
+  Alert.prompt(tr("New list"), tr("e.g. Best tarot books"), (name) => name?.trim() && then(addList(name).id));
 
 export default function Lists() {
   const pad = usePad();
@@ -35,7 +36,7 @@ export default function Lists() {
           }}
         />
       }
-      ListEmptyComponent={<EmptyState text="Ranked lists you order yourself, with a note per book. Tap + to start one." />}
+      ListEmptyComponent={<EmptyState text={tr("Ranked lists you order yourself, with a note per book. Tap + to start one.")} />}
       renderItem={({ item: l }) => (
         <Pressable style={s.card} onPress={() => open(l.id)}>
           <View style={s.covers}>

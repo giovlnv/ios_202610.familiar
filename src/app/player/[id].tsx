@@ -1,3 +1,4 @@
+import { t as tr } from '../../i18n';
 import { useMemo } from 'react';
 import { Text } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -7,6 +8,6 @@ import { getBook } from '../../storage';
 export default function PlayerScreen() {
   const { id, section } = useLocalSearchParams<{ id: string; section?: string }>();
   const item = useMemo(() => getBook(id), [id]);
-  if (!item) return <Text>Book not found.</Text>;
+  if (!item) return <Text>{tr("Book not found.")}</Text>;
   return <Player item={item} start={section !== undefined ? Number(section) : undefined} onClose={() => router.back()} />;
 }

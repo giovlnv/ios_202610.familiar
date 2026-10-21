@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { useEffect, useMemo, useReducer, useState } from 'react';
 import { FlatList, Image, Modal, Pressable, ScrollView, Switch, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -72,10 +73,10 @@ export function CardPicker({
         <View style={s.top}>
           <Text style={s.h2}>{title}</Text>
           <Pressable hitSlop={10} onPress={onClose}>
-            <Text style={s.link}>Done</Text>
+            <Text style={s.link}>{tr("Done")}</Text>
           </Pressable>
         </View>
-        <TextInput style={s.input} placeholder="Search cards" placeholderTextColor={c.dim} value={q} onChangeText={setQ} autoCorrect={false} />
+        <TextInput style={s.input} placeholder={tr("Search cards")} placeholderTextColor={c.dim} value={q} onChangeText={setQ} autoCorrect={false} />
         {groups.length > 1 && !q.trim() && (
           <View>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.chips}>
@@ -87,7 +88,7 @@ export function CardPicker({
         )}
         {onPick && canFlip && (
           <View style={s.switchRow}>
-            <Text style={s.text}>Reversed</Text>
+            <Text style={s.text}>{tr("Reversed")}</Text>
             <Switch value={reversed} onValueChange={setReversed} trackColor={{ true: c.claude }} />
           </View>
         )}

@@ -1,3 +1,4 @@
+import { t as tr } from '../../../i18n';
 import { usePad } from '../../../playback';
 import { useCallback, useEffect, useState } from "react";
 import {
@@ -56,10 +57,10 @@ export default function Library() {
   const importAudio = async () => {
     try {
       const msg = await importBook();
-      if (msg) Alert.alert("Import", msg);
+      if (msg) Alert.alert(tr("Import"), msg);
       refresh();
     } catch (e) {
-      Alert.alert("Import failed", String((e as Error).message ?? e));
+      Alert.alert(tr("Import failed"), String((e as Error).message ?? e));
     }
   };
 
@@ -74,10 +75,10 @@ export default function Library() {
   const shelfMenu = (id: string, name: string) =>
     Alert.alert(name, undefined, [
       {
-        text: "Rename",
+        text: tr("Rename"),
         onPress: () =>
           Alert.prompt(
-            "Rename shelf",
+            tr("Rename shelf"),
             undefined,
             (v) => v?.trim() && (renameShelf(id, v), refresh()),
             "plain-text",
@@ -85,11 +86,11 @@ export default function Library() {
           ),
       },
       {
-        text: "Delete shelf",
+        text: tr("Delete shelf"),
         style: "destructive",
         onPress: () => (removeShelf(id), setFilter("all"), refresh()),
       },
-      { text: "Cancel", style: "cancel" },
+      { text: tr("Cancel"), style: "cancel" },
     ]);
 
   const views = (
@@ -97,7 +98,7 @@ export default function Library() {
       {(["books", "diary"] as const).map((v) => (
         <Pressable key={v} style={[s.view, view === v && s.viewOn]} onPress={() => setView(v)}>
           <Ionicons name={v === "books" ? "grid-outline" : "calendar-outline"} size={15} color={view === v ? c.bg : c.dim} />
-          <Text style={[s.viewText, view === v && { color: c.bg }]}>{v === "books" ? "Books" : "Diary"}</Text>
+          <Text style={[s.viewText, view === v && { color: c.bg }]}>{v === "books" ? tr("Books") : tr("Diary")}</Text>
         </Pressable>
       ))}
     </View>
@@ -116,8 +117,7 @@ export default function Library() {
       {stale && (
         <Pressable style={s.banner} onPress={() => router.push("/settings/backups")}>
           <Text style={s.bannerText}>
-            {lastBackup() ? "Last backup over 7 days ago" : "No backup yet"} ·
-            tap to back up
+            {lastBackup() ? tr("Last backup over 7 days ago") : tr("No backup yet")}{' '}{tr("· tap to back up")}
           </Text>
         </Pressable>
       )}
@@ -132,7 +132,7 @@ export default function Library() {
               key={f}
               on={filter === f}
               onPress={() => setFilter(f)}
-              label={`${f === "all" ? "All" : STATUS_LABEL[f as Status]} ${t.books.filter((b) => match(b, f)).length}`}
+              label={`${f === "all" ? tr("All") : STATUS_LABEL[f as Status]} ${t.books.filter((b) => match(b, f)).length}`}
             />
           ))}
           {allPaths().filter((p) => t.books.some((b) => b.paths?.includes(p.id))).map((p) => (
@@ -164,22 +164,22 @@ export default function Library() {
         ListEmptyComponent={
           <EmptyState
             pose={shelf ? 'idle' : 'reading'}
-            text={shelf ? 'This shelf is empty. Add books from their page.' : 'No audiobooks yet. Add a book below to turn it into one.'}
+            text={shelf ? tr("This shelf is empty. Add books from their page.") : tr("No audiobooks yet. Add a book below to turn it into one.")}
           />
         }
         ListFooterComponent={
           <View style={{ gap: 10, marginTop: 10 }}>
             <Pressable style={s.import} onPress={() => router.push('/add')}>
               <Ionicons name="cloud-upload-outline" size={16} color={c.gold} />
-              <Text style={s.importText}>Add a book (EPUB or PDF)</Text>
+              <Text style={s.importText}>{tr("Add a book (EPUB or PDF)")}</Text>
             </Pressable>
             <Pressable style={s.import} onPress={() => router.push('/jobs')}>
               <Ionicons name="timer-outline" size={16} color={c.gold} />
-              <Text style={s.importText}>Books in progress</Text>
+              <Text style={s.importText}>{tr("Books in progress")}</Text>
             </Pressable>
             <Pressable style={s.import} onPress={importAudio}>
               <Ionicons name="headset" size={16} color={c.gold} />
-              <Text style={s.importText}>Import audiobook files</Text>
+              <Text style={s.importText}>{tr("Import audiobook files")}</Text>
             </Pressable>
           </View>
         }

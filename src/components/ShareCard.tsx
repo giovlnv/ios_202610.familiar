@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { ReactNode, useRef, useState } from 'react';
 import { Share, Text, View } from 'react-native';
 import * as Sharing from 'expo-sharing';
@@ -7,9 +8,9 @@ import { c, F, themed } from '../theme';
 export function ShareFrame({ children, width = 360 }: { children: ReactNode; width?: number }) {
   return (
     <View style={[s.frame, { width }]}>
-      <Text style={s.brand}>FAMILIAR</Text>
+      <Text style={s.brand}>{tr("FAMILIAR")}</Text>
       {children}
-      <Text style={s.tagline}>Your familiar knows the way.</Text>
+      <Text style={s.tagline}>{tr("Your familiar knows the way.")}</Text>
     </View>
   );
 }

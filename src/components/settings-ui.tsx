@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { ReactNode } from 'react';
 import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
 import { Href, router } from 'expo-router';
@@ -8,9 +9,9 @@ import { c, F, themed } from '../theme';
 export const when = (t?: number) => (t ? new Date(t).toLocaleString() : 'never');
 
 export const confirmRestore = (go: () => void) =>
-  Alert.alert('Restore?', 'Notes, consults and progress in the backup replace the ones on this iPhone.', [
-    { text: 'Cancel', style: 'cancel' },
-    { text: 'Restore', style: 'destructive', onPress: go },
+  Alert.alert(tr("Restore?"), tr("Notes, consults and progress in the backup replace the ones on this iPhone."), [
+    { text: tr("Cancel"), style: 'cancel' },
+    { text: tr("Restore"), style: 'destructive', onPress: go },
   ]);
 
 export const Btn = ({ label, onPress, primary }: { label: string; onPress: () => void; primary?: boolean }) => (

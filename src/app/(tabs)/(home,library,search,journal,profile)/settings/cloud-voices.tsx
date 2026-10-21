@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { useCallback, useState } from 'react';
 import { ActivityIndicator, Alert, Text, TextInput, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
@@ -31,10 +32,10 @@ function KeyCard({ p, has, onSaved }: { p: Provider; has: boolean; onSaved: () =
   return (
     <View style={ss.card}>
       <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{PROVIDER_NAME[p]}</Text>
-      <Text style={ss.meta}>Status: {has ? 'key saved' : 'no key'}</Text>
+      <Text style={ss.meta}>{tr("Status:")}{' '}{has ? tr("key saved") : tr("no key")}</Text>
       <TextInput
         style={ss.input}
-        placeholder={has ? 'Saved — paste a new key to replace' : `Paste your ${PROVIDER_NAME[p]} API key`}
+        placeholder={has ? tr("Saved — paste a new key to replace") : tr("Paste your {0} API key", { 0: PROVIDER_NAME[p] })}
         placeholderTextColor={c.dim}
         autoCapitalize="none"
         autoCorrect={false}
@@ -43,8 +44,8 @@ function KeyCard({ p, has, onSaved }: { p: Provider; has: boolean; onSaved: () =
         onChangeText={setDraft}
       />
       <View style={ss.row}>
-        <Btn label="Save key" primary onPress={() => draft.trim() && save(draft.trim())} />
-        {has && <Btn label="Remove key" onPress={() => save('')} />}
+        <Btn label={tr("Save key")} primary onPress={() => draft.trim() && save(draft.trim())} />
+        {has && <Btn label={tr("Remove key")} onPress={() => save('')} />}
       </View>
     </View>
   );
@@ -67,7 +68,7 @@ export default function CloudVoices() {
     setBusy('eleven');
     elevenVoices(k)
       .then(setEleven)
-      .catch((e) => Alert.alert('Could not load voices', String(e.message ?? e)))
+      .catch((e) => Alert.alert(tr("Could not load voices"), String(e.message ?? e)))
       .finally(() => setBusy(null));
   };
 
@@ -88,29 +89,28 @@ export default function CloudVoices() {
     if (!ch || !k) return;
     setBusy(lang);
     testVoice(ch, k)
-      .then((ok) => Alert.alert(ok ? 'It works' : 'No audio came back'))
-      .catch((e) => Alert.alert('It did not work', String(e.message ?? e)))
+      .then((ok) => Alert.alert(ok ? tr("It works") : tr("No audio came back")))
+      .catch((e) => Alert.alert(tr("It did not work"), String(e.message ?? e)))
       .finally(() => setBusy(null));
   };
 
   return (
     <Page>
       <Text style={ss.p}>
-        Read a language with a cloud voice instead of the voices on this iPhone. You use your own key, so the cost goes to your own Gemini or ElevenLabs
-        account, and the book text being read is sent to that provider. Needs internet while a section is being voiced.
+        {tr("Read a language with a cloud voice instead of the voices on this iPhone. You use your own key, so the cost goes to your own Gemini or ElevenLabs account, and the book text being read is sent to that provider. Needs internet while a section is being voiced.")}
       </Text>
       {PROVIDERS.map((p) => (
         <KeyCard key={p} p={p} has={keys[p]} onSaved={refresh} />
       ))}
-      {!!cloudError() && <Text style={[ss.meta, { color: '#E07A7A' }]}>Last error · {cloudError()}</Text>}
-      <Text style={ss.h2}>Voice per language</Text>
+      {!!cloudError() && <Text style={[ss.meta, { color: '#E07A7A' }]}>{tr("Last error ·")}{' '}{cloudError()}</Text>}
+      <Text style={ss.h2}>{tr("Voice per language")}</Text>
       {LANGS.map((l) => {
         const ch = prefs[l.book];
         return (
           <View key={l.book} style={ss.card}>
             <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{l.name}</Text>
             <View style={row}>
-              <Chip label="This iPhone" on={!ch} onPress={() => choose(l.book, null)} />
+              <Chip label={tr("This iPhone")} on={!ch} onPress={() => choose(l.book, null)} />
               {PROVIDERS.filter((p) => keys[p]).map((p) => (
                 <Chip key={p} label={PROVIDER_NAME[p]} on={ch?.provider === p} onPress={() => choose(l.book, p)} />
               ))}
@@ -135,14 +135,14 @@ export default function CloudVoices() {
                   ))}
                 </View>
               ) : (
-                <Btn label={`Voice: ${ch.voiceName ?? ch.voice} · show all voices`} onPress={loadEleven} />
+                <Btn label={tr("Voice: {0} · show all voices", { 0: ch.voiceName ?? ch.voice })} onPress={loadEleven} />
               ))}
-            {!!ch && (busy === l.book ? <ActivityIndicator color={c.gold} /> : <Btn label="Test this voice" onPress={() => test(l.book)} />)}
+            {!!ch && (busy === l.book ? <ActivityIndicator color={c.gold} /> : <Btn label={tr("Test this voice")} onPress={() => test(l.book)} />)}
           </View>
         );
       })}
       {busy === 'eleven' && <ActivityIndicator color={c.gold} />}
-      <Text style={ss.meta}>Gemini detects the language by itself. ElevenLabs uses its multilingual model, which covers Arabic and Portuguese.</Text>
+      <Text style={ss.meta}>{tr("Gemini detects the language by itself. ElevenLabs uses its multilingual model, which covers Arabic and Portuguese.")}</Text>
     </Page>
   );
 }

@@ -1,3 +1,4 @@
+import { t as tr } from './i18n';
 import { listSystems } from './systems';
 import { File, Paths } from 'expo-file-system';
 import { ART, CRESCENT } from './familiar-art';
@@ -26,70 +27,70 @@ export type Familiar = {
 };
 
 export const SPECIES: { id: Species; name: string; desc: string }[] = [
-  { id: 'cat', name: 'Cat', desc: 'Build, coat, eyes, mark' },
-  { id: 'bat', name: 'Bat', desc: 'Colour, eyes' },
-  { id: 'crow', name: 'Crow', desc: 'Colour, eyes' },
-  { id: 'spider', name: 'Spider', desc: 'Colour, eyes' },
+  { id: 'cat', name: tr('Cat'), desc: tr('Build, coat, eyes, mark') },
+  { id: 'bat', name: tr('Bat'), desc: tr('Colour, eyes') },
+  { id: 'crow', name: tr('Crow'), desc: tr('Colour, eyes') },
+  { id: 'spider', name: tr('Spider'), desc: tr('Colour, eyes') },
 ];
 
 export const COATS: { id: Coat; name: string }[] = [
-  { id: 'solid', name: 'Solid' },
-  { id: 'socks', name: 'Socks' },
-  { id: 'tabby', name: 'Tabby' },
-  { id: 'tuxedo', name: 'Tuxedo' },
-  { id: 'calico', name: 'Calico' },
-  { id: 'colourpoint', name: 'Point' },
+  { id: 'solid', name: tr('Solid') },
+  { id: 'socks', name: tr('Socks') },
+  { id: 'tabby', name: tr('Tabby') },
+  { id: 'tuxedo', name: tr('Tuxedo') },
+  { id: 'calico', name: tr('Calico') },
+  { id: 'colourpoint', name: tr('Point') },
 ];
 
 export const COLORS: Record<Species, { hex: string; name: string }[]> = {
   cat: [
-    { hex: '#1E1B24', name: 'Black' },
-    { hex: '#30263F', name: 'Plum' },
-    { hex: '#1E2A3F', name: 'Marine' },
-    { hex: '#22302A', name: 'Forest' },
-    { hex: '#2B2B30', name: 'Charcoal' },
-    { hex: '#5C4233', name: 'Brown' },
-    { hex: '#E9E3DA', name: 'White' },
+    { hex: '#1E1B24', name: tr('Black') },
+    { hex: '#30263F', name: tr('Plum') },
+    { hex: '#1E2A3F', name: tr('Marine') },
+    { hex: '#22302A', name: tr('Forest') },
+    { hex: '#2B2B30', name: tr('Charcoal') },
+    { hex: '#5C4233', name: tr('Brown') },
+    { hex: '#E9E3DA', name: tr('White') },
   ],
   bat: [
-    { hex: '#1E1B24', name: 'Black' },
-    { hex: '#4A3B2E', name: 'Brown' },
-    { hex: '#55515C', name: 'Grey' },
+    { hex: '#1E1B24', name: tr('Black') },
+    { hex: '#4A3B2E', name: tr('Brown') },
+    { hex: '#55515C', name: tr('Grey') },
   ],
   crow: [
-    { hex: '#1E1B24', name: 'Black' },
-    { hex: '#1B2433', name: 'Blue-black' },
+    { hex: '#1E1B24', name: tr('Black') },
+    { hex: '#1B2433', name: tr('Blue-black') },
   ],
   spider: [
-    { hex: '#1E1B24', name: 'Black' },
-    { hex: '#3B2A4A', name: 'Purple' },
-    { hex: '#4A3B2E', name: 'Brown' },
+    { hex: '#1E1B24', name: tr('Black') },
+    { hex: '#3B2A4A', name: tr('Purple') },
+    { hex: '#4A3B2E', name: tr('Brown') },
   ],
 };
 
 export const LIGHTS = ['#CDBFD3', '#C4CAD6', '#C9D1C6', '#D6D0C4'];
 
 export const EYES = [
-  { hex: '#F2C94C', name: 'Yellow' },
-  { hex: '#8FD18C', name: 'Green' },
-  { hex: '#8FB8DE', name: 'Blue' },
-  { hex: '#E39A4C', name: 'Amber' },
+  { hex: '#F2C94C', name: tr('Yellow') },
+  { hex: '#8FD18C', name: tr('Green') },
+  { hex: '#8FB8DE', name: tr('Blue') },
+  { hex: '#E39A4C', name: tr('Amber') },
 ];
 
 export const MARK_COLORS = [
-  { hex: '#E8C767', name: 'Gold' },
+  { hex: '#E8C767', name: tr('Gold') },
   { hex: '#D9D6E2', name: 'Silver' },
   { hex: '#D49A9E', name: 'Rose' },
   { hex: '#8FB8DE', name: 'Moon blue' },
   { hex: '#F3ECDF', name: 'Pearl' },
-  { hex: '#7FC48A', name: 'Green' },
-  { hex: '#B48CD9', name: 'Purple' },
+  { hex: '#7FC48A', name: tr('Green') },
+  { hex: '#B48CD9', name: tr('Purple') },
 ];
 
 export const STRIPES = [
   { hex: '', name: 'Auto' },
   { hex: '#2A2430', name: 'Dark' },
-  { hex: '#6E6A75', name: 'Grey' },
+  { hex: '#6E6A75', name: tr('Grey') },
   { hex: '#C98B5B', name: 'Ginger' },
   { hex: '#DED5C9', name: 'Cream' },
 ];
@@ -97,17 +98,17 @@ export const STRIPES = [
 export const MARKS: { id: Mark; name: string }[] = [
   { id: 'crescent', name: 'Crescent' },
   { id: 'star', name: 'Star' },
-  { id: 'sun', name: 'Sun' },
-  { id: 'eye', name: 'Eye' },
-  { id: 'none', name: 'None' },
+  { id: 'sun', name: tr('Sun') },
+  { id: 'eye', name: tr('Eye') },
+  { id: 'none', name: tr('None') },
 ];
 
 export const PATHS = [
-  { id: 'tarot', name: 'Tarot', color: '#D9B45B' },
+  { id: 'tarot', name: tr('Tarot'), color: '#D9B45B' },
   { id: 'lenormand', name: 'Lenormand', color: '#D49A9E' },
-  { id: 'astrology', name: 'Astrology', color: '#8FB8DE' },
-  { id: 'numerology', name: 'Numerology', color: '#7FC4C9' },
-  { id: 'custom', name: 'Make your own', color: '#B9B6C3' },
+  { id: 'astrology', name: tr('Astrology'), color: '#8FB8DE' },
+  { id: 'numerology', name: tr('Numerology'), color: '#7FC4C9' },
+  { id: 'custom', name: tr('Make your own'), color: '#B9B6C3' },
 ];
 
 export const allPaths = () => [...PATHS, ...listSystems().map((x) => ({ id: x.id, name: x.name, color: x.color }))];

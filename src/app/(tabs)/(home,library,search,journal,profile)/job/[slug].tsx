@@ -1,3 +1,4 @@
+import { loc, t as tr } from '../../../../i18n';
 import { useCallback, useState } from 'react';
 import { Alert, Pressable, RefreshControl, ScrollView, Text, View } from 'react-native';
 import { router, Stack, useFocusEffect, useLocalSearchParams } from 'expo-router';
@@ -23,7 +24,7 @@ export default function JobScreen() {
     setBusy(true);
     getJob(slug)
       .then((j) => setJob(j ?? { slug, title: slug, stage: 'splitting' }))
-      .catch((e) => Alert.alert('Could not load', String(e.message ?? e)))
+      .catch((e) => Alert.alert(tr("Could not load"), String(e.message ?? e)))
       .finally(() => setBusy(false));
   }, [slug]);
   useFocusEffect(load);
@@ -34,7 +35,7 @@ export default function JobScreen() {
       const j = await fn();
       if (j) setJob(j);
     } catch (e) {
-      Alert.alert('Something went wrong', String((e as Error).message ?? e));
+      Alert.alert(tr("Something went wrong"), String((e as Error).message ?? e));
     } finally {
       setBusy(false);
       setProgress('');
@@ -70,26 +71,26 @@ export default function JobScreen() {
         })}
       </View>
 
-      {job.stage === 'splitting' && <Text style={s.p}>GitHub is splitting the book into sections. This takes a minute or two — pull down to refresh.</Text>}
+      {job.stage === 'splitting' && <Text style={s.p}>{tr("GitHub is splitting the book into sections. This takes a minute or two — pull down to refresh.")}</Text>}
 
       {job.stage === 'error' && <Text style={s.p}>{job.error}</Text>}
 
       {(job.stage === 'review' || job.stage === 'fix') && (
         <>
           <Text style={s.p}>
-            {job.sections?.length} sections · {(job.words ?? 0).toLocaleString()} words · about {Math.round((job.words ?? 0) / 150 / 60 * 10) / 10} h of audio
-            {noExplain ? '(no explanations)' : '(plus explanations)'}. Check the titles and lengths: very short or very long sections usually mean a bad split.
+            {job.sections?.length}{' '}{tr("sections ·")}{' '}{(job.words ?? 0).toLocaleString()}{' '}{tr("words · about")}{' '}{Math.round((job.words ?? 0) / 150 / 60 * 10) / 10}{' '}{tr("h of audio")}
+            {noExplain ? tr("(no explanations)") : tr("(plus explanations)")}{tr(". Check the titles and lengths: very short or very long sections usually mean a bad split.")}
           </Text>
           {job.stage === 'review' && (
             <View style={s.row}>
               <View style={{ flex: 1 }}>
-                <Button label="Looks right" icon="checkmark-circle" primary onPress={() => run(() => setStage(job, noExplain ? 'queued' : 'explanations'))} />
+                <Button label={tr("Looks right")} icon="checkmark-circle" primary onPress={() => run(() => setStage(job, noExplain ? 'queued' : 'explanations'))} />
               </View>
               <View style={{ flex: 1 }}>
                 <Button
-                  label="Something’s off"
+                  label={tr("Something’s off")}
                   onPress={() =>
-                    Alert.prompt('What looks wrong?', 'Claude will read this and fix the split.', (note) =>
+                    Alert.prompt(tr("What looks wrong?"), tr("Claude will read this and fix the split."), (note) =>
                       run(() => setStage(job, 'fix', { note }))
                     )
                   }
@@ -99,8 +100,8 @@ export default function JobScreen() {
           )}
           {job.stage === 'fix' && (
             <>
-              <Text style={s.p}>Your note: “{job.note}”. Send it to Claude in the TAROT chat to fix the split.</Text>
-              <Button label="Send to Claude" icon="sparkles-outline" primary onPress={() => shareToClaude(fixMsg)} />
+              <Text style={s.p}>{tr("Your note: “")}{job.note}{tr("”. Send it to Claude in the TAROT chat to fix the split.")}</Text>
+              <Button label={tr("Send to Claude")} icon="sparkles-outline" primary onPress={() => shareToClaude(fixMsg)} />
             </>
           )}
           <View style={s.card}>
@@ -120,38 +121,38 @@ export default function JobScreen() {
       {job.stage === 'explanations' && (
         <>
           <Text style={s.p}>
-            Next step happens in the TAROT chat with Claude: open it and send the message below. Claude writes the explanations and starts the voices.
+            {tr("Next step happens in the TAROT chat with Claude: open it and send the message below. Claude writes the explanations and starts the voices.")}
           </Text>
           <View style={s.quote}>
             <Text style={s.quoteText}>{askClaude}</Text>
           </View>
           <View style={s.row}>
             <View style={{ flex: 1 }}>
-              <Button label="Send to Claude" icon="sparkles-outline" primary onPress={() => shareToClaude(askClaude)} />
+              <Button label={tr("Send to Claude")} icon="sparkles-outline" primary onPress={() => shareToClaude(askClaude)} />
             </View>
             <View style={{ flex: 1 }}>
-              <Button label="Copy" onPress={() => Clipboard.setStringAsync(askClaude)} />
+              <Button label={tr("Copy")} onPress={() => Clipboard.setStringAsync(askClaude)} />
             </View>
           </View>
         </>
       )}
 
-      {job.stage === 'queued' && <Text style={s.p}>No explanations for this book, so the voices start on GitHub by themselves in a minute. Pull down to refresh.</Text>}
+      {job.stage === 'queued' && <Text style={s.p}>{tr("No explanations for this book, so the voices start on GitHub by themselves in a minute. Pull down to refresh.")}</Text>}
 
       {job.stage === 'voices' && (
         <Text style={s.p}>
-          Generating the two voices on GitHub (6 parallel jobs). Usually about {estimateMinutes(job)} minutes
-          {job.started ? `, started ${new Date(job.started).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}` : ''}. Pull down to refresh.
+          {tr("Generating the two voices on GitHub (6 parallel jobs). Usually about")}{' '}{estimateMinutes(job)} minutes
+          {job.started ? tr(", started {0}", { 0: new Date(job.started).toLocaleTimeString(loc(), { hour: '2-digit', minute: '2-digit' }) }) : ''}{tr(". Pull down to refresh.")}
         </Text>
       )}
 
       {job.stage === 'ready' && (
         <>
           <Text style={s.p}>
-            {job.hours} h of audio · {job.files?.filter((f) => f.endsWith(".m4a")).length ?? 0} audio files. Streaming keeps it off your iPhone (needs internet); you can download the audio later from the book page.
+            {job.hours}{' '}{tr("h of audio ·")}{' '}{job.files?.filter((f) => f.endsWith(".m4a")).length ?? 0}{' '}{tr("audio files. Streaming keeps it off your iPhone (needs internet); you can download the audio later from the book page.")}
           </Text>
           <Button
-            label={progress || 'Add to library (stream)'}
+            label={progress || tr("Add to library (stream)")}
             icon="headset"
             primary
             onPress={() =>
@@ -165,7 +166,7 @@ export default function JobScreen() {
             }
           />
           <Button
-            label={`Add and download audio (~${Math.round((job.hours ?? 0) * 23)} MB)`}
+            label={tr("Add and download audio (~{0} MB)", { 0: Math.round((job.hours ?? 0) * 23) })}
             icon="cloud-download-outline"
             onPress={() =>
               busy
@@ -181,34 +182,34 @@ export default function JobScreen() {
       )}
 
       {job.stage === 'cancelling' && (
-        <Text style={s.p}>GitHub is stopping the work and deleting the upload and everything made from it. The book disappears from this list in a minute or two.</Text>
+        <Text style={s.p}>{tr("GitHub is stopping the work and deleting the upload and everything made from it. The book disappears from this list in a minute or two.")}</Text>
       )}
 
       {canCancel(job) && (
         <Button
-          label={job.stage === 'cancelling' ? 'Try cancelling again' : 'Cancel this book'}
+          label={job.stage === 'cancelling' ? tr("Try cancelling again") : tr("Cancel this book")}
           icon="close-circle-outline"
           onPress={() =>
-            Alert.alert('Cancel this book?', 'This stops the work on GitHub and deletes the uploaded file and everything made from it. You can upload it again later.', [
-              { text: 'Keep it', style: 'cancel' },
-              { text: 'Cancel book', style: 'destructive', onPress: () => run(() => cancelJob(job)) },
+            Alert.alert(tr("Cancel this book?"), tr("This stops the work on GitHub and deletes the uploaded file and everything made from it. You can upload it again later."), [
+              { text: tr("Keep it"), style: 'cancel' },
+              { text: tr("Cancel book"), style: 'destructive', onPress: () => run(() => cancelJob(job)) },
             ])
           }
         />
       )}
 
       {job.stage === 'imported' && (
-        <Button label="Open in Library" icon="headset" primary onPress={() => router.push({ pathname: '/book/[id]', params: { id: job.slug } })} />
+        <Button label={tr("Open in Library")} icon="headset" primary onPress={() => router.push({ pathname: '/book/[id]', params: { id: job.slug } })} />
       )}
 
       {!!job.instructions && (
         <>
-          <Text style={s.label}>How the explanations should be</Text>
+          <Text style={s.label}>{tr("How the explanations should be")}</Text>
           <Text style={s.p}>{job.instructions}</Text>
         </>
       )}
       <Pressable onPress={load}>
-        <Text style={[s.dim, { textAlign: 'center', marginTop: 8 }]}>Pull down or tap to refresh</Text>
+        <Text style={[s.dim, { textAlign: 'center', marginTop: 8 }]}>{tr("Pull down or tap to refresh")}</Text>
       </Pressable>
     </ScrollView>
   );

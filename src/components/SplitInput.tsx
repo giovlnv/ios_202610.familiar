@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { useRef } from 'react';
 import { StyleProp, Text, TextInput, TextStyle, View } from 'react-native';
 import { c } from '../theme';
@@ -39,9 +40,9 @@ function Split({ value, onChange, parts, sep, style }: { value: string; onChange
 }
 
 export const DateInput = (p: { value: string; onChange: (v: string) => void; style?: StyleProp<TextStyle> }) => (
-  <Split {...p} sep="/" parts={[{ len: 2, placeholder: 'DD' }, { len: 2, placeholder: 'MM' }, { len: 4, placeholder: 'YYYY' }]} />
+  <Split {...p} sep="/" parts={[{ len: 2, placeholder: tr("DD") }, { len: 2, placeholder: tr("MM") }, { len: 4, placeholder: tr("YYYY") }]} />
 );
 
 export const TimeInput = (p: { value: string; onChange: (v: string) => void; style?: StyleProp<TextStyle> }) => (
-  <Split {...p} sep=":" parts={[{ len: 2, placeholder: 'HH' }, { len: 2, placeholder: 'MM' }]} />
+  <Split {...p} sep=":" parts={[{ len: 2, placeholder: tr("HH") }, { len: 2, placeholder: tr("MM") }]} />
 );

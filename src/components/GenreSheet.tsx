@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { useState } from 'react';
 import { ActivityIndicator, Alert, Modal, Pressable, Text, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -38,8 +39,8 @@ export function GenreSheet({ book, visible, onClose }: { book: TBook; visible: b
     >
       <Pressable style={s.dimBg} onPress={onClose} />
       <View style={s.sheet}>
-        <Text style={s.h2}>Genres</Text>
-        <Text style={s.dim}>Tap to remove. Top 5 are picked from Goodreads, Amazon and Open Library; your edits are kept.</Text>
+        <Text style={s.h2}>{tr("Genres")}</Text>
+        <Text style={s.dim}>{tr("Tap to remove. Top 5 are picked from Goodreads, Amazon and Open Library; your edits are kept.")}</Text>
         <View style={s.wrap}>
           {mine.map((g) => (
             <Pressable key={g} style={[s.chip, s.on]} onPress={() => toggle(g)}>
@@ -49,16 +50,16 @@ export function GenreSheet({ book, visible, onClose }: { book: TBook; visible: b
           ))}
           <Pressable
             style={s.chip}
-            onPress={() => Alert.prompt('Add a genre', undefined, (g) => g?.trim() && setMine((m) => [...m, g.trim()]))}
+            onPress={() => Alert.prompt(tr("Add a genre"), undefined, (g) => g?.trim() && setMine((m) => [...m, g.trim()]))}
           >
             <Ionicons name="add" size={14} color={c.gold} />
-            <Text style={s.chipText}>Add</Text>
+            <Text style={s.chipText}>{tr("Add")}</Text>
           </Pressable>
         </View>
         {busy && <ActivityIndicator color={c.gold} />}
         {!!suggestions.length && (
           <>
-            <Text style={s.label}>Suggestions</Text>
+            <Text style={s.label}>{tr("Suggestions")}</Text>
             <View style={s.wrap}>
               {suggestions.map((g) => (
                 <Pressable key={g} style={s.chip} onPress={() => toggle(g)}>
@@ -69,14 +70,14 @@ export function GenreSheet({ book, visible, onClose }: { book: TBook; visible: b
             </View>
           </>
         )}
-        {!!info && <Text style={s.dim}>Found: {info}</Text>}
+        {!!info && <Text style={s.dim}>{tr("Found:")}{' '}{info}</Text>}
         <View style={{ flexDirection: 'row', gap: 10 }}>
           <View style={{ flex: 1 }}>
-            <Button label="Fetch again" onPress={busy ? () => {} : find} />
+            <Button label={tr("Fetch again")} onPress={busy ? () => {} : find} />
           </View>
           <View style={{ flex: 1 }}>
             <Button
-              label="Save"
+              label={tr("Save")}
               primary
               onPress={() => {
                 setGenres(book.id, mine, true);

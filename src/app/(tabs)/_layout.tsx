@@ -1,3 +1,4 @@
+import { t as tr } from '../../i18n';
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Tabs } from "expo-router";
 import { BottomTabBar } from "expo-router/build/react-navigation/bottom-tabs";
@@ -41,23 +42,23 @@ export default function TabsLayout() {
       >
         <Tabs.Screen
           name="(home)"
-          options={{ title: "Home", tabBarIcon: icon("home") }}
+          options={{ title: tr("Home"), tabBarIcon: icon("home") }}
         />
         <Tabs.Screen
           name="(library)"
-          options={{ title: "Library", tabBarIcon: icon("library") }}
+          options={{ title: tr("Library"), tabBarIcon: icon("library") }}
         />
         <Tabs.Screen
           name="(search)"
-          options={{ title: "Search", tabBarIcon: icon("search") }}
+          options={{ title: tr("Search"), tabBarIcon: icon("search") }}
         />
         <Tabs.Screen
           name="(journal)"
-          options={{ title: "Journal", tabBarIcon: icon("book") }}
+          options={{ title: tr("Journal"), tabBarIcon: icon("book") }}
         />
         <Tabs.Screen
           name="(profile)"
-          options={{ title: "Profile", tabBarIcon: icon("person-circle") }}
+          options={{ title: tr("Profile"), tabBarIcon: icon("person-circle") }}
         />
       </Tabs>
       <View

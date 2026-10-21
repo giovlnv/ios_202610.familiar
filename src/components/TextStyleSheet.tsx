@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { Modal, Pressable, ScrollView, Text, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { c, F, themed } from '../theme';
@@ -27,22 +28,22 @@ export default function TextStyleSheet({ visible, sample, onClose }: { visible: 
 
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
-      <Pressable style={{ flex: 1 }} onPress={onClose} accessibilityLabel="Close" />
+      <Pressable style={{ flex: 1 }} onPress={onClose} accessibilityLabel={tr("Close")} />
       <View style={s.sheet}>
         <View style={s.top}>
-          <Text style={s.h2}>Text</Text>
+          <Text style={s.h2}>{tr("Text")}</Text>
           <View style={{ flexDirection: 'row', gap: 18 }}>
             <Pressable hitSlop={8} onPress={() => setTextStyle(DEFAULT_STYLE)}>
-              <Text style={s.dimLink}>Reset</Text>
+              <Text style={s.dimLink}>{tr("Reset")}</Text>
             </Pressable>
             <Pressable hitSlop={8} onPress={onClose}>
-              <Text style={s.link}>Done</Text>
+              <Text style={s.link}>{tr("Done")}</Text>
             </Pressable>
           </View>
         </View>
         <View style={s.preview}>
           <Text style={bodyText(t, true)} numberOfLines={3}>
-            {sample || 'The Fool steps off the cliff, trusting the path will appear beneath his feet.'}
+            {sample || tr("The Fool steps off the cliff, trusting the path will appear beneath his feet.")}
           </Text>
         </View>
         <ScrollView contentContainerStyle={{ gap: 14, paddingBottom: 8 }}>
@@ -56,11 +57,11 @@ export default function TextStyleSheet({ visible, sample, onClose }: { visible: 
             <View key={k} style={s.row}>
               <Ionicons name={icon} size={18} color={c.dim} />
               <Text style={s.label}>{label}</Text>
-              <Pressable style={s.step} onPress={() => step(k, -1)} accessibilityLabel={`Less ${label}`}>
+              <Pressable style={s.step} onPress={() => step(k, -1)} accessibilityLabel={tr("Less {0}", { 0: label })}>
                 <Ionicons name="remove" size={18} color={c.text} />
               </Pressable>
               <Text style={s.value}>{show(k)}</Text>
-              <Pressable style={s.step} onPress={() => step(k, 1)} accessibilityLabel={`More ${label}`}>
+              <Pressable style={s.step} onPress={() => step(k, 1)} accessibilityLabel={tr("More {0}", { 0: label })}>
                 <Ionicons name="add" size={18} color={c.text} />
               </Pressable>
             </View>
@@ -84,7 +85,7 @@ export default function TextStyleSheet({ visible, sample, onClose }: { visible: 
             {(['left', 'justify'] as const).map((a) => (
               <Pressable key={a} style={[s.chip, t.align === a && s.chipOn]} onPress={() => setTextStyle({ align: a })}>
                 <Ionicons name={a === 'left' ? 'reorder-three-outline' : 'menu-outline'} size={16} color={t.align === a ? c.bg : c.text} />
-                <Text style={[s.chipText, t.align === a && s.chipTextOn]}>{a === 'left' ? 'Left' : 'Justified'}</Text>
+                <Text style={[s.chipText, t.align === a && s.chipTextOn]}>{a === 'left' ? tr("Left") : tr("Justified")}</Text>
               </Pressable>
             ))}
           </View>

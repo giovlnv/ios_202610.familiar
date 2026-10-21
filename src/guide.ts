@@ -1,3 +1,4 @@
+import { t as tr } from './i18n';
 import { familiarFor } from './familiar';
 import { getBook, loadProgress } from './storage';
 import { read } from './theme';
@@ -23,5 +24,5 @@ const PHASES = ['New moon', 'Waxing crescent', 'First quarter', 'Waxing gibbous'
 export function moonPhase(date = new Date()) {
   const age = ((((date.getTime() - NEW_MOON) / 86400000) % SYNODIC) + SYNODIC) % SYNODIC;
   const i = Math.floor((age / SYNODIC) * 8 + 0.5) % 8;
-  return { name: PHASES[i], frac: age / SYNODIC, age: Math.round(age), lit: Math.round(((1 - Math.cos((2 * Math.PI * age) / SYNODIC)) / 2) * 100) };
+  return { name: tr(PHASES[i]), frac: age / SYNODIC, age: Math.round(age), lit: Math.round(((1 - Math.cos((2 * Math.PI * age) / SYNODIC)) / 2) * 100) };
 }

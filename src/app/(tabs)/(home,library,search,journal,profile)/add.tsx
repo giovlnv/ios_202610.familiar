@@ -1,3 +1,4 @@
+import { t as tr } from '../../../i18n';
 import { useState } from 'react';
 import { Alert, Pressable, ScrollView, Switch, Text, TextInput, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -36,7 +37,7 @@ export default function AddBook() {
     const r = await DocumentPicker.getDocumentAsync({ type: ['application/pdf', 'application/epub+zip', '*/*'], copyToCacheDirectory: true });
     const a = r.assets?.[0];
     if (r.canceled || !a) return;
-    if (!/\.(pdf|epub)$/i.test(a.name)) return Alert.alert('Choose a PDF or EPUB file');
+    if (!/\.(pdf|epub)$/i.test(a.name)) return Alert.alert(tr("Choose a PDF or EPUB file"));
     setFile({ uri: a.uri, name: a.name, size: a.size });
     if (!title) setTitle(a.name.replace(/\.(pdf|epub)$/i, '').replace(/[_-]+/g, ' ').trim());
   };
@@ -49,7 +50,7 @@ export default function AddBook() {
       const slug = await uploadBook({ ...file, title: title.trim(), instructions: explain ? instructions.trim() : '', lang, explanations: explain, split: epub ? split : 'toc' });
       router.replace({ pathname: '/jobs', params: { fresh: slug } });
     } catch (e) {
-      Alert.alert('Upload failed', String((e as Error).message ?? e));
+      Alert.alert(tr("Upload failed"), String((e as Error).message ?? e));
     } finally {
       setBusy(false);
     }
@@ -59,44 +60,44 @@ export default function AddBook() {
     <ScrollView automaticallyAdjustKeyboardInsets style={s.wrap} contentContainerStyle={{ gap: 12, paddingBottom: 40 + pad }} keyboardShouldPersistTaps="handled">
       <Pressable style={s.drop} onPress={pick}>
         <Ionicons name={file ? 'document-text-outline' : 'cloud-upload-outline'} size={34} color={c.gold} />
-        <Text style={s.dropTitle}>{file ? file.name : 'Choose EPUB or PDF'}</Text>
-        <Text style={s.dim}>{file ? `${((file.size ?? 0) / 1e6).toFixed(1)} MB · tap to change` : 'from Files or iCloud Drive'}</Text>
+        <Text style={s.dropTitle}>{file ? file.name : tr("Choose EPUB or PDF")}</Text>
+        <Text style={s.dim}>{file ? tr("{0} MB · tap to change", { 0: ((file.size ?? 0) / 1e6).toFixed(1) }) : tr("from Files or iCloud Drive")}</Text>
       </Pressable>
-      <Text style={s.label}>Title</Text>
-      <TextInput style={s.input} value={title} onChangeText={setTitle} placeholder="Book title" placeholderTextColor={c.dim} />
+      <Text style={s.label}>{tr("Title")}</Text>
+      <TextInput style={s.input} value={title} onChangeText={setTitle} placeholder={tr("Book title")} placeholderTextColor={c.dim} />
       {epub && (
         <>
-          <Text style={s.label}>Sections</Text>
+          <Text style={s.label}>{tr("Sections")}</Text>
           <View style={[s.row, { flexWrap: 'wrap' }]}>
-            <Chip label="Follow the book’s table" on={split === 'toc'} onPress={() => setSplit('toc')} />
-            <Chip label="Split per card" on={split === 'cards'} onPress={() => setSplit('cards')} />
-            <Chip label="Split at sub-headings" on={split === 'headings'} onPress={() => setSplit('headings')} />
+            <Chip label={tr("Follow the book’s table")} on={split === 'toc'} onPress={() => setSplit('toc')} />
+            <Chip label={tr("Split per card")} on={split === 'cards'} onPress={() => setSplit('cards')} />
+            <Chip label={tr("Split at sub-headings")} on={split === 'headings'} onPress={() => setSplit('headings')} />
           </View>
           <Text style={s.dim}>
             {split === 'toc'
-              ? 'One section per chapter in the table of contents.'
+              ? tr("One section per chapter in the table of contents.")
               : split === 'cards'
-                ? 'Chapters that list cards in the table of contents are split into one section per card.'
-                : 'Long chapters and parts are split at their own sub-headings. Notes and credits stay whole.'}
+                ? tr("Chapters that list cards in the table of contents are split into one section per card.")
+                : tr("Long chapters and parts are split at their own sub-headings. Notes and credits stay whole.")}
           </Text>
         </>
       )}
       <View style={s.switchRow}>
         <View style={{ flex: 1, gap: 2 }}>
-          <Text style={s.switchTitle}>Add explanations</Text>
-          <Text style={s.dim}>{explain ? 'Claude explains each section in a second voice.' : 'Only the book is read aloud. Faster and smaller.'}</Text>
+          <Text style={s.switchTitle}>{tr("Add explanations")}</Text>
+          <Text style={s.dim}>{explain ? tr("Claude explains each section in a second voice.") : tr("Only the book is read aloud. Faster and smaller.")}</Text>
         </View>
         <Switch value={explain} onValueChange={setExplain} trackColor={{ true: c.gold }} />
       </View>
       {explain && (
         <>
-          <Text style={s.label}>How should the explanations be? (optional)</Text>
+          <Text style={s.label}>{tr("How should the explanations be? (optional)")}</Text>
           <TextInput
             style={[s.input, { minHeight: 110, textAlignVertical: 'top' }]}
             multiline
             value={instructions}
             onChangeText={setInstructions}
-            placeholder="e.g. bullet points with famous characters or pop culture, at most 1 min 30 s each…"
+            placeholder={tr("e.g. bullet points with famous characters or pop culture, at most 1 min 30 s each…")}
             placeholderTextColor={c.dim}
           />
           <View style={s.hints}>
@@ -109,17 +110,17 @@ export default function AddBook() {
           </View>
         </>
       )}
-      <Text style={s.label}>Language</Text>
+      <Text style={s.label}>{tr("Language")}</Text>
       <View style={s.row}>
         {bookLangChoices().map((l) => (
           <Chip key={l.book} label={l.native} on={lang === l.book} onPress={() => setLang(l.book)} />
         ))}
-        <Chip label="More languages…" onPress={() => router.push('/settings/languages')} />
+        <Chip label={tr("More languages…")} onPress={() => router.push('/settings/languages')} />
       </View>
-      <Button label={busy ? 'Uploading…' : 'Upload & start'} icon="cloud-upload-outline" primary onPress={busy ? () => {} : upload} />
+      <Button label={busy ? tr("Uploading…") : tr("Upload & start")} icon="cloud-upload-outline" primary onPress={busy ? () => {} : upload} />
       <Text style={s.small}>
-        Goes to your private ios_202610.familiar_library repo only. The book is split into sections and you check the split.{' '}
-        {explain ? 'Then Claude writes the explanations in the FAMILIAR project and the voices are generated on GitHub.' : 'Then the voices start on GitHub by themselves.'}
+        {tr("Goes to your private ios_202610.familiar_library repo only. The book is split into sections and you check the split.")}{' '}
+        {explain ? tr("Then Claude writes the explanations in the FAMILIAR project and the voices are generated on GitHub.") : tr("Then the voices start on GitHub by themselves.")}
       </Text>
     </ScrollView>
   );

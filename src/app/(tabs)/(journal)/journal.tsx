@@ -1,3 +1,4 @@
+import { t as tr } from '../../../i18n';
 import { useCallback, useMemo, useState } from 'react';
 import { Pressable, ScrollView, SectionList, Text, TextInput, View } from 'react-native';
 import { router, Stack, useFocusEffect } from 'expo-router';
@@ -71,27 +72,27 @@ export default function Journal() {
       <Stack.Screen
         options={{
           headerRight: () => (
-            <Pressable hitSlop={10} onPress={create} accessibilityLabel="New reading">
+            <Pressable hitSlop={10} onPress={create} accessibilityLabel={tr("New reading")}>
               <Ionicons name="add-circle-outline" size={26} color={c.gold} />
             </Pressable>
           ),
         }}
       />
-      <Text style={s.h3}>Readings</Text>
+      <Text style={s.h3}>{tr("Readings")}</Text>
       <View style={s.stats}>
         <View style={{ flex: 1, gap: 2 }}>
           <Text style={s.big}>{thisMonth}</Text>
-          <Text style={s.tileLabel}>this month</Text>
-          <Text style={[s.statLine, { marginTop: 10 }]}>{j.readings.length} in total</Text>
-          {topArea && <Text style={s.statLine}>Most asked about: {topArea[0]}</Text>}
+          <Text style={s.tileLabel}>{tr("this month")}</Text>
+          <Text style={[s.statLine, { marginTop: 10 }]}>{j.readings.length}{' '}{tr("in total")}</Text>
+          {topArea && <Text style={s.statLine}>{tr("Most asked about:")}{' '}{topArea[0]}</Text>}
           <Pressable onPress={() => router.push('/journal-stats')} hitSlop={6} style={{ marginTop: 8 }}>
-            <Text style={s.moreStats}>More stats ›</Text>
+            <Text style={s.moreStats}>{tr("More stats ›")}</Text>
           </Pressable>
         </View>
         {top ? (
           <Pressable style={{ alignItems: 'center', gap: 4, width: 96 }} onPress={() => setOpen({ id: top[0], role: `Your most drawn card · ${top[1]} times.` })}>
             <CardImage id={top[0]} width={64} />
-            <Text style={s.tileLabel}>Most drawn · {top[1]}×</Text>
+            <Text style={s.tileLabel}>{tr("Most drawn ·")}{' '}{top[1]}×</Text>
             <Text style={[s.tileCard, { textAlign: 'center' }]} numberOfLines={2}>
               {short(top[0])}
             </Text>
@@ -105,7 +106,7 @@ export default function Journal() {
           style={s.searchInput}
           value={q}
           onChangeText={setQ}
-          placeholder="Search questions, notes, cards, people"
+          placeholder={tr("Search questions, notes, cards, people")}
           placeholderTextColor={c.dim}
           autoCorrect={false}
           clearButtonMode="while-editing"
@@ -116,16 +117,16 @@ export default function Journal() {
         {(['timeline', 'calendar'] as const).map((v) => (
           <Pressable key={v} style={[s.view, view === v && s.viewOn]} onPress={() => (setView(v), setPicked(null))}>
             <Ionicons name={v === 'timeline' ? 'list' : 'calendar-outline'} size={15} color={view === v ? c.bg : c.dim} />
-            <Text style={[s.viewText, view === v && { color: c.bg }]}>{v === 'timeline' ? 'Timeline' : 'Calendar'}</Text>
+            <Text style={[s.viewText, view === v && { color: c.bg }]}>{v === 'timeline' ? tr("Timeline") : tr("Calendar")}</Text>
           </Pressable>
         ))}
       </View>
 
       {!!areas.length && (
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.chips}>
-          <Chip label="All" on={!area} onPress={() => setArea(null)} />
+          <Chip label={tr("All")} on={!area} onPress={() => setArea(null)} />
           {areas.map((a) => (
-            <Chip key={a} label={a} on={area === a} onPress={() => setArea(area === a ? null : a)} />
+            <Chip key={a} label={tr(a)} on={area === a} onPress={() => setArea(area === a ? null : a)} />
           ))}
         </ScrollView>
       )}
@@ -158,7 +159,7 @@ export default function Journal() {
           paths={TAROT}
           onPress={create}
           action="Log a reading"
-          text={j.readings.length ? 'No readings here.' : 'Log your first reading: question, spread, cards and what you saw in them.'}
+          text={j.readings.length ? tr("No readings here.") : tr("Log your first reading: question, spread, cards and what you saw in them.")}
         />
       }
     />

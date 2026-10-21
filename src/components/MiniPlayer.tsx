@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { useMemo } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
 import { router } from 'expo-router';
@@ -30,7 +31,7 @@ export default function MiniPlayer() {
           <Text style={s.title} numberOfLines={1}>
             {section.title}
           </Text>
-          <Text style={s.kind}>{explain ? 'Explanation' : 'Reading'}</Text>
+          <Text style={s.kind}>{explain ? tr("Explanation") : tr("Reading")}</Text>
         </Pressable>
         <Pressable onPress={() => skip(-15)} hitSlop={8}>
           <Ionicons name="arrow-undo" size={22} color={c.text} />

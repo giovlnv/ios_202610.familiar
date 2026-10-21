@@ -1,3 +1,4 @@
+import { t as tr, uiLang } from './i18n';
 import { Directory, File, Paths } from 'expo-file-system';
 import * as DocumentPicker from 'expo-document-picker';
 import { unzipSync } from 'fflate';
@@ -24,13 +25,26 @@ export const systemOf = (cardId: string): System => (isCustomCard(cardId) ? syst
 export const baseOf = (system: System): 'tarot' | 'lenormand' | undefined =>
   system === 'tarot' || system === 'lenormand' ? system : getSystem(system)?.base;
 export const reversible = (system: System) => (system === 'tarot' ? true : system === 'lenormand' ? false : !!getSystem(system)?.reversals);
-export const systemName = (system: System) => (system === 'tarot' ? 'Tarot' : system === 'lenormand' ? 'Lenormand' : (getSystem(system)?.name ?? 'Deleted system'));
+export const systemName = (system: System) => (system === 'tarot' ? tr('Tarot') : system === 'lenormand' ? 'Lenormand' : (getSystem(system)?.name ?? tr('Deleted system')));
 
 const MAJOR = [
   'The Fool', 'The Magician', 'The High Priestess', 'The Empress', 'The Emperor', 'The Hierophant', 'The Lovers', 'The Chariot',
   'Strength', 'The Hermit', 'Wheel of Fortune', 'Justice', 'The Hanged Man', 'Death', 'Temperance', 'The Devil', 'The Tower',
   'The Star', 'The Moon', 'The Sun', 'Judgement', 'The World',
 ];
+const PT_MAJOR = [
+  'O Louco', 'O Mago', 'A Sacerdotisa', 'A Imperatriz', 'O Imperador', 'O Hierofante', 'Os Enamorados', 'O Carro', 'A Força', 'O Eremita',
+  'A Roda da Fortuna', 'A Justiça', 'O Enforcado', 'A Morte', 'A Temperança', 'O Diabo', 'A Torre', 'A Estrela', 'A Lua', 'O Sol', 'O Julgamento', 'O Mundo',
+];
+const PT_RANKS = ['Ás', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez', 'Valete', 'Cavaleiro', 'Rainha', 'Rei'];
+const PT_SUITS: Record<string, string> = { Wands: 'Paus', Cups: 'Copas', Swords: 'Espadas', Pentacles: 'Ouros' };
+function tarotName(name: string) {
+  if (uiLang() !== 'pt') return name;
+  const [num, major] = name.split(' · ');
+  if (major) return `${num} · ${PT_MAJOR[MAJOR.indexOf(major)] ?? major}`;
+  const m = name.match(/^(\w+) of (\w+)$/);
+  return m ? `${PT_RANKS[RANKS.indexOf(m[1])] ?? m[1]} de ${PT_SUITS[m[2]] ?? m[2]}` : name;
+}
 const RANKS = ['Ace', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Page', 'Knight', 'Queen', 'King'];
 export const SUITS = [
   { id: 'wands', name: 'Wands', alias: ['wands', 'wand', 'rods', 'rod', 'staves', 'staffs', 'batons', 'clubs'] },
@@ -46,7 +60,7 @@ export const CARDS: Card[] = [
   ...SUITS.flatMap((s) => RANKS.map((r, i) => ({ id: `${s.id}${String(i + 1).padStart(2, '0')}`, name: `${r} of ${s.name}`, group: s.name }))),
 ];
 export const cardName = (id: string): string =>
-  isCustomCard(id) ? (customCard(id)?.card.name ?? 'Deleted card') : isLenormand(id) ? lname(id) : (CARDS.find((x) => x.id === id)?.name ?? id);
+  isCustomCard(id) ? (customCard(id)?.card.name ?? 'Deleted card') : isLenormand(id) ? lname(id) : tarotName(CARDS.find((x) => x.id === id)?.name ?? id);
 export const baseCards = (base: 'tarot' | 'lenormand'): Card[] =>
   base === 'lenormand' ? LENORMAND.map((x) => ({ id: x.id, name: lname(x.id), group: 'Lenormand' })) : CARDS;
 export const cardsOf = (system: System): Card[] => {

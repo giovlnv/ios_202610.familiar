@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { Pressable, Text, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { c, Mode, mode, PALETTES, paletteId, scheme, setMode, setPalette } from '../../../../theme';
@@ -13,7 +14,7 @@ const MODES = [
 export default function Appearance() {
   return (
     <Page>
-      <Text style={ss.h2}>Mode</Text>
+      <Text style={ss.h2}>{tr("Mode")}</Text>
       <View style={ss.modes}>
         {MODES.map(([m, label, icon]) => (
           <Pressable key={m} style={[ss.mode, mode === m && ss.modeOn]} onPress={() => m !== mode && setMode(m as Mode)}>
@@ -22,7 +23,7 @@ export default function Appearance() {
           </Pressable>
         ))}
       </View>
-      <Text style={ss.h2}>Colors</Text>
+      <Text style={ss.h2}>{tr("Colors")}</Text>
       <View style={[ss.card, { gap: 2 }]}>
         {PALETTES.map((p) => {
           const pc = scheme === 'light' ? p.light : p.c;
@@ -40,7 +41,7 @@ export default function Appearance() {
           );
         })}
       </View>
-      <Text style={ss.h2}>App icon</Text>
+      <Text style={ss.h2}>{tr("App icon")}</Text>
       <IconPicker heading={false} />
     </Page>
   );

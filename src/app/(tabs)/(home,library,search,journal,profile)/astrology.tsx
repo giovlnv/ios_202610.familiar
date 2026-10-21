@@ -1,3 +1,4 @@
+import { t as tr } from '../../../i18n';
 import { useCallback, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
@@ -15,9 +16,9 @@ function Row({ p, open, onToggle, onCard }: { p: Placement; open: boolean; onTog
     <Pressable onPress={onToggle} style={s.row}>
       <View style={s.line}>
         <Text style={s.glyph}>{p.glyph}</Text>
-        <Text style={s.name}>{p.name}</Text>
+        <Text style={s.name}>{tr(p.name)}</Text>
         <Text style={s.sign}>
-          {sign.glyph} {sign.name} {fmtDeg(p.lon)}
+          {sign.glyph} {tr(sign.name)} {fmtDeg(p.lon)}
           {p.retro ? ' ℞︎' : ''}
         </Text>
         <Text style={s.house}>{p.house ? `H${p.house}` : ''}</Text>
@@ -25,7 +26,7 @@ function Row({ p, open, onToggle, onCard }: { p: Placement; open: boolean; onTog
       {open && cards.length > 0 && (
         <View style={s.cards}>
           {cards.map((id) => (
-            <Pressable key={id} onPress={() => onCard(id, `Linked to ${p.name} in ${sign.name}.`)}>
+            <Pressable key={id} onPress={() => onCard(id, tr('Linked to {0} in {1}.', { 0: tr(p.name), 1: tr(sign.name) }))}>
               <CardImage id={id} width={30} />
             </Pressable>
           ))}
@@ -44,31 +45,31 @@ export default function Astrology() {
   if (!ch)
     return (
       <Page>
-        <Text style={ss.p}>Add your birth date, time and place to see your birth chart.</Text>
-        <Btn label="Edit birth details" onPress={edit} />
+        <Text style={ss.p}>{tr("Add your birth date, time and place to see your birth chart.")}</Text>
+        <Btn label={tr("Edit birth details")} onPress={edit} />
       </Page>
     );
   const bal = (o: Record<string, number>) =>
     Object.entries(o)
       .sort((a, b) => b[1] - a[1])
-      .map(([k, n]) => `${k} ${n}`)
+      .map(([k, n]) => `${tr(k)} ${n}`)
       .join(' · ');
   return (
     <Page>
-      <Text style={ss.p}>Tropical zodiac, {HOUSES.find((h) => h.id === (getOnboarding().houses ?? 'placidus'))?.name} houses. Tap a planet to see its tarot cards.</Text>
-      {!ch.timed && <Text style={ss.p}>Add your birth time and place for the Ascendant, Midheaven and houses.</Text>}
+      <Text style={ss.p}>{tr("Tropical zodiac,")}{' '}{tr(HOUSES.find((h) => h.id === (getOnboarding().houses ?? 'placidus'))?.name ?? '')}{' '}{tr("houses. Tap a planet to see its tarot cards.")}</Text>
+      {!ch.timed && <Text style={ss.p}>{tr("Add your birth time and place for the Ascendant, Midheaven and houses.")}</Text>}
       <View style={ss.card}>
         {ch.list.map((p) => (
           <Row key={p.name} p={p} open={open === p.name} onToggle={() => setOpen(open === p.name ? null : p.name)} onCard={(id, role) => setCard({ id, role })} />
         ))}
       </View>
-      <Text style={ss.h2}>Balance</Text>
+      <Text style={ss.h2}>{tr("Balance")}</Text>
       <View style={ss.card}>
-        <Text style={ss.meta}>Elements: {bal(ch.elements)}</Text>
-        <Text style={ss.meta}>Modalities: {bal(ch.modes)}</Text>
-        <Text style={ss.meta}>Counted: Sun to Pluto{ch.timed ? ' and the Ascendant' : ''}.</Text>
+        <Text style={ss.meta}>{tr("Elements:")}{' '}{bal(ch.elements)}</Text>
+        <Text style={ss.meta}>{tr("Modalities:")}{' '}{bal(ch.modes)}</Text>
+        <Text style={ss.meta}>{tr("Counted: Sun to Pluto")}{ch.timed ? tr(" and the Ascendant") : ''}.</Text>
       </View>
-      <Btn label="Edit birth details" onPress={edit} />
+      <Btn label={tr("Edit birth details")} onPress={edit} />
       <CardSheet id={card?.id ?? null} role={card?.role} onClose={() => setCard(null)} />
     </Page>
   );

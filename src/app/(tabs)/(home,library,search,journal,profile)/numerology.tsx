@@ -1,3 +1,4 @@
+import { t as tr } from '../../../i18n';
 import { useCallback, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
@@ -18,7 +19,7 @@ function Rows({ rows, onCard }: { rows: NumberRow[]; onCard: (id: string, n: num
           <Text style={s.num}>{show(r.value)}</Text>
           <View style={{ flex: 1 }}>
             <Text style={s.label}>{r.label}</Text>
-            {!!r.compound && <Text style={[ss.meta, { color: c.text }]}>Compound {r.compound}</Text>}
+            {!!r.compound && <Text style={[ss.meta, { color: c.text }]}>{tr("Compound")}{' '}{r.compound}</Text>}
             <Text style={ss.meta}>{r.about}</Text>
             <View style={s.cards}>
               {numberCards(r.value).map((id) => (
@@ -37,9 +38,9 @@ function Rows({ rows, onCard }: { rows: NumberRow[]; onCard: (id: string, n: num
 const today = (dob: string): NumberRow[] => {
   const p = personal(dob);
   return [
-    { key: 'day', label: 'Personal day', value: p.day, about: 'The theme of today.' },
-    { key: 'month', label: 'Personal month', value: p.month, about: 'The theme of this month.' },
-    { key: 'year', label: 'Personal year', value: p.year, about: `The theme of ${new Date().getFullYear()}, in a nine-year cycle.` },
+    { key: 'day', label: tr("Personal day"), value: p.day, about: tr("The theme of today.") },
+    { key: 'month', label: tr("Personal month"), value: p.month, about: tr("The theme of this month.") },
+    { key: 'year', label: tr("Personal year"), value: p.year, about: tr("The theme of {0}, in a nine-year cycle.", { 0: new Date().getFullYear() }) },
   ];
 };
 
@@ -61,7 +62,7 @@ function Triangle({ name }: { name: string }) {
   const lessons = karmicLessons(name);
   return (
     <>
-      <Text style={ss.h2}>Inverted triangle</Text>
+      <Text style={ss.h2}>{tr("Inverted triangle")}</Text>
       <View style={ss.card}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <View style={{ alignItems: 'center' }}>
@@ -77,13 +78,13 @@ function Triangle({ name }: { name: string }) {
           </View>
         </ScrollView>
         <Text style={ss.meta}>
-          {t.seqs.length ? `Negative sequences: ${t.seqs.join(', ')}` : 'No negative sequences (three equal digits in a row).'}
+          {t.seqs.length ? tr("Negative sequences: {0}", { 0: t.seqs.join(', ') }) : tr("No negative sequences (three equal digits in a row).")}
         </Text>
       </View>
-      <Text style={ss.h2}>Karmic lessons</Text>
+      <Text style={ss.h2}>{tr("Karmic lessons")}</Text>
       <View style={ss.card}>
-        <Text style={[ss.meta, { color: c.text }]}>{lessons.length ? lessons.join(' · ') : 'None: every number from 1 to 8 is in your name.'}</Text>
-        <Text style={ss.meta}>Numbers missing from the letters of the name.</Text>
+        <Text style={[ss.meta, { color: c.text }]}>{lessons.length ? lessons.join(' · ') : tr("None: every number from 1 to 8 is in your name.")}</Text>
+        <Text style={ss.meta}>{tr("Numbers missing from the letters of the name.")}</Text>
       </View>
     </>
   );
@@ -104,25 +105,25 @@ export default function Numerology() {
           <Chip key={v} label={SYSTEM_NAME[v]} on={v === sys} onPress={() => pick(v)} />
         ))}
       </View>
-      <Text style={ss.p}>{INTRO[sys]} Master numbers are shown with their reduced digit, like 11/2.</Text>
+      <Text style={ss.p}>{INTRO[sys]}{' '}{tr("Master numbers are shown with their reduced digit, like 11/2.")}</Text>
       {!!getProfile().dob && (
         <>
-          <Text style={ss.h2}>Today</Text>
+          <Text style={ss.h2}>{tr("Today")}</Text>
           <Rows rows={today(getProfile().dob!)} onCard={onCard} />
         </>
       )}
       {n.core.length > 0 && (
         <>
-          <Text style={ss.h2}>Core numbers{n.birthName ? ` · ${n.birthName}` : ''}</Text>
+          <Text style={ss.h2}>{tr("Core numbers")}{n.birthName ? ` · ${n.birthName}` : ''}</Text>
           <Rows rows={n.core} onCard={onCard} />
         </>
       )}
-      {!n.birthName && <Text style={ss.p}>Add your full birth name to see expression, soul urge, personality and maturity.</Text>}
+      {!n.birthName && <Text style={ss.p}>{tr("Add your full birth name to see expression, soul urge, personality and maturity.")}</Text>}
       {n.current.length > 0 && (
         <>
-          <Text style={ss.h2}>{sys === 'chaldean' ? 'Birth name' : 'Current name'} · {n.currentName}</Text>
+          <Text style={ss.h2}>{sys === 'chaldean' ? tr("Birth name") : tr("Current name")} · {n.currentName}</Text>
           <Text style={ss.p}>
-            {sys === 'chaldean' ? 'The name on your birth certificate, for comparison.' : 'The name you use now: its vibration sits on top of your core numbers.'}
+            {sys === 'chaldean' ? tr("The name on your birth certificate, for comparison.") : tr("The name you use now: its vibration sits on top of your core numbers.")}
           </Text>
           <Rows rows={n.current} onCard={onCard} />
         </>
@@ -130,18 +131,18 @@ export default function Numerology() {
       {sys === 'nct' && !!n.birthName && <Triangle name={n.birthName} />}
       {n.history.length > 1 && (
         <>
-          <Text style={ss.h2}>Names</Text>
+          <Text style={ss.h2}>{tr("Names")}</Text>
           <View style={ss.card}>
             {n.history.map((h, i) => (
               <Text key={i} style={[ss.meta, { color: c.text }]}>
                 {h.name}
-                {h.since ? `  ·  since ${showDate(h.since)}` : ''}
+                {h.since ? tr("  ·  since {0}", { 0: showDate(h.since) }) : ''}
               </Text>
             ))}
           </View>
         </>
       )}
-      <Btn label="Edit names and birth date" onPress={edit} />
+      <Btn label={tr("Edit names and birth date")} onPress={edit} />
       <CardSheet id={open?.id ?? null} role={open ? `A card of the number ${show(open.n)}.` : undefined} onClose={() => setOpen(null)} />
     </Page>
   );

@@ -1,3 +1,4 @@
+import { loc, t as tr } from '../../../i18n';
 import { usePad, usePlayback } from '../../../playback';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { captureRef } from 'react-native-view-shot';
@@ -79,16 +80,16 @@ export default function Home() {
   const card = useShareCard();
   const streak = streaks().current;
   const shareDay = (label: string, daily: string, mine?: { card?: string; reversed?: boolean }) => {
-    const date = new Date().toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long' });
+    const date = new Date().toLocaleDateString(loc(), { weekday: 'long', day: 'numeric', month: 'long' });
     const show = mine?.card ?? daily;
     const name = `${cardName(show)}${mine?.card && mine.reversed ? ' (reversed)' : ''}`;
     card.share(
       <ShareFrame>
         <Text style={s.shareDate}>{date}</Text>
-        <Text style={s.tag}>{label} · {mine?.card ? 'my card of the day' : 'card of the day'}</Text>
+        <Text style={s.tag}>{label} · {mine?.card ? tr("my card of the day") : tr("card of the day")}</Text>
         <CardImage id={show} reversed={!!mine?.card && mine.reversed} width={170} />
         <Text style={s.shareName}>{name}</Text>
-        {streak > 1 && <Text style={s.streak}>{streak}-day streak</Text>}
+        {streak > 1 && <Text style={s.streak}>{streak}{tr("-day streak")}</Text>}
       </ShareFrame>,
       `${date} · ${label} card of the day: ${name}`,
     );
@@ -160,15 +161,15 @@ export default function Home() {
       <View style={s.todayBox}>
         <View style={s.tHead}>
           <View>
-            <Text style={s.midDay}>{new Date().toLocaleDateString(undefined, { weekday: 'long' })}</Text>
-            <Text style={s.tDate}>{new Date().toLocaleDateString(undefined, { day: 'numeric', month: 'long' })}</Text>
-            {streak > 0 && <Text style={s.streak}>{streak}-day streak</Text>}
+            <Text style={s.midDay}>{new Date().toLocaleDateString(loc(), { weekday: 'long' })}</Text>
+            <Text style={s.tDate}>{new Date().toLocaleDateString(loc(), { day: 'numeric', month: 'long' })}</Text>
+            {streak > 0 && <Text style={s.streak}>{streak}{tr("-day streak")}</Text>}
           </View>
           <View style={s.tMoon}>
             <MoonIcon frac={moon.frac} size={22} />
             <View>
               <Text style={s.moonName}>{moon.name}</Text>
-              <Text style={s.midDay}>{moon.lit}% lit</Text>
+              <Text style={s.midDay}>{moon.lit}{tr("% lit")}</Text>
             </View>
           </View>
         </View>
@@ -185,7 +186,7 @@ export default function Home() {
                 <View key={pg.id} style={{ width: pageW }}>
                   {pg.id === 'tarot' && (
                     <DayCard
-                      label="Tarot"
+                      label={tr("Tarot")}
                       daily={daily}
                       mine={mine && mineCard?.card ? mineCard : undefined}
                       cw={cw}
@@ -214,7 +215,7 @@ export default function Home() {
                   })()}
                   {pg.id === 'numerology' && pn && (
                     <Pressable style={s.page} onPress={() => router.push('/numerology')}>
-                      <Text style={s.tag}>Numerology</Text>
+                      <Text style={s.tag}>{tr("Numerology")}</Text>
                       <View style={s.tiles}>
                         {(
                           [
@@ -229,14 +230,14 @@ export default function Home() {
                           </View>
                         ))}
                       </View>
-                      <Text style={s.more}>All numbers ›</Text>
+                      <Text style={s.more}>{tr("All numbers ›")}</Text>
                     </Pressable>
                   )}
                   {pg.id === 'astrology' && (
                     <Pressable style={s.page} onPress={() => router.push('/astrology')}>
-                      <Text style={s.tag}>Astrology · today’s sky</Text>
+                      <Text style={s.tag}>{tr("Astrology · today’s sky")}</Text>
                       <Text style={[s.tName, { lineHeight: 22 }]}>{skyLine}</Text>
-                      <Text style={s.more}>Your chart ›</Text>
+                      <Text style={s.more}>{tr("Your chart ›")}</Text>
                     </Pressable>
                   )}
                 </View>
@@ -261,43 +262,43 @@ export default function Home() {
         )}
         {!!pages[page] && pages[page].id !== 'numerology' && pages[page].id !== 'astrology' && (
           <Pressable onPress={() => setHow(!how)} style={{ alignSelf: 'center', marginTop: 4 }}>
-            <Text style={s.how}>{how ? 'Hide' : 'How is the calculated card chosen?'}</Text>
+            <Text style={s.how}>{how ? tr("Hide") : tr("How is the calculated card chosen?")}</Text>
           </Pressable>
         )}
         {how && !!pages[page] && pages[page].id !== 'numerology' && pages[page].id !== 'astrology' && (
           <Text style={s.howText}>
-            Today’s date ({new Date().toLocaleDateString()}) is turned into a number with a simple hash, and that number picks one of the {pages[page].id === 'lenormand' ? '36 Lenormand' : pages[page].id === 'tarot' ? '78 tarot' : `${cardsOf(pages[page].id).length} ${pages[page].name}`} cards. The same date always gives the same card, so it stays all day and changes at midnight. It doesn’t use your birth date, readings or anything about you, and it is never reversed.
+            {tr("Today’s date (")}{new Date().toLocaleDateString()}{tr(") is turned into a number with a simple hash, and that number picks one of the")}{' '}{pages[page].id === 'lenormand' ? tr("36 Lenormand") : pages[page].id === 'tarot' ? tr("78 tarot") : `${cardsOf(pages[page].id).length} ${pages[page].name}`}{' '}{tr("cards. The same date always gives the same card, so it stays all day and changes at midnight. It doesn’t use your birth date, readings or anything about you, and it is never reversed.")}
           </Text>
         )}
       </View>
       <CardSheet id={about} onClose={() => setAbout(null)} />
       <CardPicker
         visible={picking}
-        title="The card you drew today"
+        title={tr("The card you drew today")}
         onClose={() => setPicking(false)}
         onPick={(id, rev) => logDrawn(id, rev)}
       />
       <CardPicker
         visible={!!sysPick}
         system={sysPick ?? 'lenormand'}
-        title={`The ${sysPick ? systemName(sysPick) : ''} card you drew today`}
+        title={tr("The {0} card you drew today", { 0: sysPick ? systemName(sysPick) : '' })}
         onClose={() => setSysPick(null)}
         onPick={(id, rev) => sysPick && logSys(sysPick, id, rev)}
       />
 
       {listening.length > 0 && (
         <>
-          <Text style={s.h2}>Continue listening</Text>
+          <Text style={s.h2}>{tr("Continue listening")}</Text>
           {listening.map(({ b, audio, p }) => (
             <Pressable
               key={b.id}
               style={s.listen}
               onPress={() => router.push({ pathname: '/player/[id]', params: { id: b.audio! } })}
               onLongPress={() =>
-                Alert.alert(b.title, 'It comes back here when you play it again.', [
-                  { text: 'Remove from Continue listening', onPress: () => hide(b.audio!, p) },
-                  { text: 'Stop listening (Did not finish)', style: 'destructive', onPress: () => (patchBook(b.id, { status: 'dnf' }), hide(b.audio!, p), refresh()) },
-                  { text: 'Cancel', style: 'cancel' },
+                Alert.alert(b.title, tr("It comes back here when you play it again."), [
+                  { text: tr("Remove from Continue listening"), onPress: () => hide(b.audio!, p) },
+                  { text: tr("Stop listening (Did not finish)"), style: 'destructive', onPress: () => (patchBook(b.id, { status: 'dnf' }), hide(b.audio!, p), refresh()) },
+                  { text: tr("Cancel"), style: 'cancel' },
                 ])
               }
             >
@@ -321,7 +322,7 @@ export default function Home() {
         </>
       )}
 
-      <Text style={s.h2}>Currently reading</Text>
+      <Text style={s.h2}>{tr("Currently reading")}</Text>
       {reading.length ? (
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 12 }}>
           {reading.map((b) => (
@@ -334,10 +335,10 @@ export default function Home() {
           ))}
         </ScrollView>
       ) : (
-        <Text style={s.dim}>Mark a book as “Reading” to see it here.</Text>
+        <Text style={s.dim}>{tr("Mark a book as “Reading” to see it here.")}</Text>
       )}
 
-      <Text style={s.h2}>Recently logged</Text>
+      <Text style={s.h2}>{tr("Recently logged")}</Text>
       {recent.length ? (
         recent.map((l) => {
           const b = byId.get(l.bookId);
@@ -351,7 +352,7 @@ export default function Home() {
                 </Text>
                 <Text style={s.dim}>
                   {fmtDate(l.date)}
-                  {l.reread ? ' · reread' : ''}
+                  {l.reread ? tr(" · reread") : ''}
                 </Text>
               </View>
               <Stars value={l.rating} size={12} />
@@ -359,7 +360,7 @@ export default function Home() {
           );
         })
       ) : (
-        <Text style={s.dim}>Finished books you log will appear here.</Text>
+        <Text style={s.dim}>{tr("Finished books you log will appear here.")}</Text>
       )}
       {card.host}
     </ScrollView>
@@ -390,42 +391,42 @@ function DayCard({
   const short = (id: string) => cardName(id).split(' · ').pop();
   return (
     <View style={s.tCards}>
-      <Pressable onPress={onAbout} accessibilityLabel={`About ${cardName(daily)}`}>
+      <Pressable onPress={onAbout} accessibilityLabel={tr("About {0}", { 0: cardName(daily) })}>
         <CardImage id={daily} width={cw} />
       </Pressable>
       {mine?.card ? (
-        <Pressable onPress={onOpen} accessibilityLabel={`Your ${label} card of the day`}>
+        <Pressable onPress={onOpen} accessibilityLabel={tr("Your {0} card of the day", { 0: label })}>
           <CardImage id={mine.card} reversed={mine.reversed} width={cw} />
         </Pressable>
       ) : (
-        <Pressable style={[s.blank, { width: cw, height: cw * 1.72, borderRadius: cw * 0.06 }]} onPress={onLog} accessibilityLabel={`Log the ${label} card you drew`}>
+        <Pressable style={[s.blank, { width: cw, height: cw * 1.72, borderRadius: cw * 0.06 }]} onPress={onLog} accessibilityLabel={tr("Log the {0} card you drew", { 0: label })}>
           <Ionicons name="add" size={22} color={c.gold} />
         </Pressable>
       )}
       <View style={{ flex: 1, gap: 2 }}>
-        <Text style={s.tag}>{label} · calculated</Text>
+        <Text style={s.tag}>{label}{' '}{tr("· calculated")}</Text>
         <Text style={s.tName} numberOfLines={1}>{short(daily)}</Text>
-        <Text style={[s.tag, { marginTop: 6 }]}>Yours</Text>
+        <Text style={[s.tag, { marginTop: 6 }]}>{tr("Yours")}</Text>
         <Text style={s.tName} numberOfLines={1}>
-          {mine?.card ? `${short(mine.card)}${mine.reversed ? ' (rev.)' : ''}` : 'Not drawn yet'}
+          {mine?.card ? `${short(mine.card)}${mine.reversed ? tr(" (rev.)") : ''}` : tr("Not drawn yet")}
         </Text>
         <View style={s.tBtns}>
           {mine?.card ? (
             <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={onOpen}>
               <Ionicons name="book-outline" size={14} color={c.gold} />
-              <Text style={[s.logBtnText, { color: c.gold }]}>Open entry</Text>
+              <Text style={[s.logBtnText, { color: c.gold }]}>{tr("Open entry")}</Text>
             </Pressable>
           ) : (
             <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={onLog}>
               <Ionicons name="add" size={14} color={c.gold} />
-              <Text style={[s.logBtnText, { color: c.gold }]}>Log yours</Text>
+              <Text style={[s.logBtnText, { color: c.gold }]}>{tr("Log yours")}</Text>
             </Pressable>
           )}
           <Pressable style={s.logBtn} onPress={onWrite}>
             <Ionicons name="create-outline" size={14} color={c.bg} />
-            <Text style={s.logBtnText}>Write</Text>
+            <Text style={s.logBtnText}>{tr("Write")}</Text>
           </Pressable>
-          <Pressable style={s.shareBtn} onPress={onShare} hitSlop={8} accessibilityLabel="Share card of the day">
+          <Pressable style={s.shareBtn} onPress={onShare} hitSlop={8} accessibilityLabel={tr("Share card of the day")}>
             <Ionicons name="share-outline" size={18} color={c.gold} />
           </Pressable>
         </View>

@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { useState } from 'react';
 import { KeyboardAvoidingView, Modal, Pressable, ScrollView, Share, Switch, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -68,9 +69,9 @@ export default function ExplainSheet({
       <SafeAreaView style={s.wrap} edges={['bottom']}>
         <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
           <View style={s.top}>
-            <Text style={s.h2}>Explain this {target.kind}</Text>
+            <Text style={s.h2}>{tr("Explain this")}{' '}{target.kind}</Text>
             <Pressable hitSlop={10} onPress={onClose}>
-              <Text style={s.link}>Done</Text>
+              <Text style={s.link}>{tr("Done")}</Text>
             </Pressable>
           </View>
           <ScrollView automaticallyAdjustKeyboardInsets keyboardShouldPersistTaps="handled" contentContainerStyle={{ gap: 12, paddingBottom: 40 }}>
@@ -85,12 +86,12 @@ export default function ExplainSheet({
                   editable={false}
                   onSelectionChange={(e) => setSel(e.nativeEvent.selection)}
                 />
-                <Text style={s.hint}>{sel.end > sel.start ? `Only the selected part (${quote.split(/\s+/).length} words) will be sent.` : 'Select part of the text to explain only that.'}</Text>
+                <Text style={s.hint}>{sel.end > sel.start ? tr("Only the selected part ({0} words) will be sent.", { 0: quote.split(/\s+/).length }) : tr("Select part of the text to explain only that.")}</Text>
               </>
             )}
             {!!target.builtIn?.length && !answer && (
               <View style={s.card}>
-                <Text style={s.label}>From the book’s explanation</Text>
+                <Text style={s.label}>{tr("From the book’s explanation")}</Text>
                 {target.builtIn.map((p, i) => (
                   <Text key={i} style={s.text}>
                     {p}
@@ -98,7 +99,7 @@ export default function ExplainSheet({
                 ))}
               </View>
             )}
-            <Text style={s.label}>Include</Text>
+            <Text style={s.label}>{tr("Include")}</Text>
             <View style={s.chips}>
               {CHIPS.filter((x) => target.kind === 'section' || !x.section).map((x) => (
                 <Pressable key={x.id} style={[s.chip, chips.includes(x.id) && s.chipOn]} onPress={() => flip(x.id)}>
@@ -107,31 +108,31 @@ export default function ExplainSheet({
               ))}
               {img && (
                 <Pressable style={[s.chip, image && s.chipOn]} onPress={() => setImage(!image)}>
-                  <Text style={[s.chipText, image && s.chipTextOn]}>Card image</Text>
+                  <Text style={[s.chipText, image && s.chipTextOn]}>{tr("Card image")}</Text>
                 </Pressable>
               )}
             </View>
             <Pressable style={s.ask} onPress={ask}>
-              <Text style={s.askText}>Ask Claude</Text>
+              <Text style={s.askText}>{tr("Ask Claude")}</Text>
             </Pressable>
-            <Text style={s.label}>Claude’s answer</Text>
+            <Text style={s.label}>{tr("Claude’s answer")}</Text>
             {!!(answer.trim() || target.builtIn?.length) && (
               <View style={s.listenRow}>
-                <Text style={s.chipText}>Listen</Text>
+                <Text style={s.chipText}>{tr("Listen")}</Text>
                 <Switch value={listen} onValueChange={setListen} trackColor={{ true: c.gold }} />
               </View>
             )}
             {listen && <ListenBar text={answer.trim() || (target.builtIn ?? []).join('\n\n')} />}
-            <TextInput style={s.answer} multiline value={answer} onChangeText={setAnswer} placeholder="Paste Claude’s answer here" placeholderTextColor={c.dim} />
+            <TextInput style={s.answer} multiline value={answer} onChangeText={setAnswer} placeholder={tr("Paste Claude’s answer here")} placeholderTextColor={c.dim} />
             <View style={{ flexDirection: 'row', gap: 10 }}>
               <Pressable style={[s.btn, { flex: 1 }]} onPress={paste}>
-                <Text style={s.btnText}>Paste answer</Text>
+                <Text style={s.btnText}>{tr("Paste answer")}</Text>
               </Pressable>
               <Pressable
                 style={[s.btn, s.btnOn, { flex: 1 }]}
                 onPress={() => answer.trim() && (onSave(target, answer.trim(), target.kind === 'passage' ? quote : undefined), toast('Explanation saved'))}
               >
-                <Text style={[s.btnText, { color: c.bg }]}>Save</Text>
+                <Text style={[s.btnText, { color: c.bg }]}>{tr("Save")}</Text>
               </Pressable>
             </View>
           </ScrollView>

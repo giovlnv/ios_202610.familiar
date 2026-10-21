@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import { CardImage } from './Cards';
@@ -13,7 +14,7 @@ export default function ReadingRow({ r, j }: { r: Reading; j: JournalData }) {
     <Pressable style={s.card} onPress={() => router.push({ pathname: '/reading/[id]', params: { id: r.id } })}>
       <View style={s.top}>
         <Text style={s.q} numberOfLines={2}>
-          {r.question || 'Untitled reading'}
+          {r.question || tr("Untitled reading")}
         </Text>
         <Text style={s.time}>{r.at.slice(11, 16)}</Text>
       </View>
@@ -27,8 +28,8 @@ export default function ReadingRow({ r, j }: { r: Reading; j: JournalData }) {
       )}
       <View style={s.tags}>
         <Text style={s.tag}>{sp.name}</Text>
-        {!!r.area && <Text style={s.tag}>{r.area}</Text>}
-        <Text style={s.tag}>{person?.name ?? 'Me'}</Text>
+        {!!r.area && <Text style={s.tag}>{tr(r.area)}</Text>}
+        <Text style={s.tag}>{person?.name ?? tr("Me")}</Text>
         {!!open && <Text style={[s.tag, { color: c.gold, borderColor: c.gold }]}>{open} open</Text>}
       </View>
     </Pressable>

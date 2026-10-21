@@ -1,6 +1,7 @@
+import { t as tr, uiLang } from './i18n';
 import { baseOf, CARDS, cardName, cardsOf, System, systemName, systemOf } from './decks';
 import { cardIdOf, getSystem, isCustomSystem, listSystems } from './systems';
-import { Layout, lenormandInTitle, lenormandOfTheDay, LENORMAND, lenormandPrefs } from './lenormand';
+import { Layout, lenormandInTitle, lenormandOfTheDay, LENORMAND, lenormandPrefs, lname } from './lenormand';
 import { listBooks } from './storage';
 import { loadLinks, loadSources, sectionCard, Sources, usesBook } from './sectionCards';
 import { load, save, Tracker, uid } from './tracker';
@@ -32,33 +33,33 @@ export type JournalData = { readings: Reading[]; people: Person[]; spreads: Spre
 
 export const BASE_AREAS = ['Love', 'Family', 'Money', 'Job', 'Personal', 'Spiritual'];
 export const BASE_SPREADS: Spread[] = [
-  { id: 'cotd', name: 'COTD', positions: ['Calculated', 'Drawn'], daily: true },
-  { id: 'one', name: 'One card', positions: ['Card'] },
-  { id: 'three', name: 'Three cards', positions: ['Past', 'Present', 'Future'] },
-  { id: 'situation', name: 'Situation · action · outcome', positions: ['Situation', 'Action', 'Outcome'] },
+  { id: 'cotd', name: tr('COTD'), positions: [tr('Calculated'), tr('Drawn')], daily: true },
+  { id: 'one', name: tr('One card'), positions: [tr('Card')] },
+  { id: 'three', name: tr('Three cards'), positions: [tr('Past'), tr('Present'), tr('Future')] },
+  { id: 'situation', name: tr('Situation · action · outcome'), positions: [tr('Situation'), tr('Action'), tr('Outcome')] },
   {
     id: 'celtic',
-    name: 'Celtic Cross',
-    positions: ['Present', 'Challenge', 'Foundation', 'Recent past', 'Crown', 'Near future', 'Self', 'Environment', 'Hopes and fears', 'Outcome'],
+    name: tr('Celtic Cross'),
+    positions: [tr('Present'), tr('Challenge'), tr('Foundation'), tr('Recent past'), tr('Crown'), tr('Near future'), tr('Self'), tr('Environment'), tr('Hopes and fears'), tr('Outcome')],
   },
-  { id: 'lcotd', name: 'COTD', positions: ['Calculated', 'Drawn'], system: 'lenormand', daily: true },
-  { id: 'l1', name: 'One card', positions: ['Card'], system: 'lenormand' },
-  { id: 'l3', name: 'Line of 3', positions: ['First', 'Centre', 'Last'], system: 'lenormand', layout: 'line' },
-  { id: 'l5', name: 'Line of 5', positions: ['1', '2', 'Centre', '4', '5'], system: 'lenormand', layout: 'line' },
-  { id: 'l7', name: 'Line of 7', positions: ['1', '2', '3', 'Centre', '5', '6', '7'], system: 'lenormand', layout: 'line' },
+  { id: 'lcotd', name: tr('COTD'), positions: [tr('Calculated'), tr('Drawn')], system: 'lenormand', daily: true },
+  { id: 'l1', name: tr('One card'), positions: [tr('Card')], system: 'lenormand' },
+  { id: 'l3', name: tr('Line of 3'), positions: [tr('First'), tr('Centre'), tr('Last')], system: 'lenormand', layout: 'line' },
+  { id: 'l5', name: tr('Line of 5'), positions: ['1', '2', tr('Centre'), '4', '5'], system: 'lenormand', layout: 'line' },
+  { id: 'l7', name: tr('Line of 7'), positions: ['1', '2', '3', tr('Centre'), '5', '6', '7'], system: 'lenormand', layout: 'line' },
   {
     id: 'l9',
-    name: 'Box of 9',
-    positions: ['Past · above', 'Now · above', 'Future · above', 'Past', 'Centre', 'Future', 'Past · below', 'Now · below', 'Future · below'],
+    name: tr('Box of 9'),
+    positions: [tr('Past · above'), tr('Now · above'), tr('Future · above'), tr('Past'), tr('Centre'), tr('Future'), tr('Past · below'), tr('Now · below'), tr('Future · below')],
     system: 'lenormand',
     layout: 'box',
   },
-  { id: 'gt49', name: 'Grand Tableau 4×9', positions: houses(), system: 'lenormand', layout: 'gt49' },
-  { id: 'gt84', name: 'Grand Tableau 8×4+4', positions: houses(), system: 'lenormand', layout: 'gt84' },
+  { id: 'gt49', name: tr('Grand Tableau 4×9'), positions: houses(), system: 'lenormand', layout: 'gt49' },
+  { id: 'gt84', name: tr('Grand Tableau 8×4+4'), positions: houses(), system: 'lenormand', layout: 'gt84' },
 ];
 
 function houses() {
-  return LENORMAND.map((x) => `House ${x.n} · ${x.en}`);
+  return LENORMAND.map((x) => tr('House {0} · {1}', { 0: x.n, 1: uiLang() === 'pt' ? lname(x.id) : x.en }));
 }
 
 export const readingSystem = (r: { system?: string }): System => r.system ?? 'tarot';
@@ -321,7 +322,7 @@ export function journalStats(j: JournalData) {
     return [key, rs.filter((r) => r.at.startsWith(key)).length] as const;
   });
   const suitOf = (id: string) => (systemOf(id) !== 'tarot' ? systemName(systemOf(id)) : id.startsWith('m') ? 'Major Arcana' : (CARDS.find((c) => c.id === id)?.group ?? ''));
-  const WEEK = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const WEEK = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((w) => tr(w));
   return {
     total: rs.length,
     cards: placed.length,

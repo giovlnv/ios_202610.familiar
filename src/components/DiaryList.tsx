@@ -1,3 +1,4 @@
+import { t as tr } from '../i18n';
 import { usePad } from '../playback';
 import type { ReactElement } from 'react';
 import { useCallback, useState } from 'react';
@@ -33,7 +34,7 @@ export default function DiaryList({ header }: { header?: ReactElement }) {
       ListHeaderComponent={header}
       contentContainerStyle={{ paddingBottom: 40 + pad }}
       ListEmptyComponent={
-        <EmptyState pose="reading" text="Your diary is empty. Open a book and tap “Log” when you finish it." />
+        <EmptyState pose="reading" text={tr("Your diary is empty. Open a book and tap “Log” when you finish it.")} />
       }
       renderSectionHeader={({ section }) => (
         <Text style={s.month}>

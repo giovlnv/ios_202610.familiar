@@ -1,3 +1,5 @@
+import * as Updates from 'expo-updates';
+import { t as tr } from '../../../../i18n';
 import { useState } from 'react';
 import { ActivityIndicator, Alert, Pressable, Text, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -42,7 +44,7 @@ export default function Languages() {
       await downloadVoices(l, [v], (raw) => setBusy({ key: `${l.id}:${v}`, pct: Math.min(100, Math.round(raw > 1 ? raw : raw * 100)) }));
       if (!getLangPrefs().voice[l.id]) choose(l, v);
     } catch {
-      Alert.alert('Download failed', 'Check your connection and try again.');
+      Alert.alert(tr("Download failed"), tr("Check your connection and try again."));
     }
     setBusy(null);
     refresh();
@@ -61,32 +63,36 @@ export default function Languages() {
   };
 
   const drop = (l: AudioLang) =>
-    Alert.alert(`Remove ${l.name}?`, `Frees ${mb(langSize(l))}. You can download it again any time.`, [
-      { text: 'Cancel', style: 'cancel' },
-      { text: 'Remove', style: 'destructive', onPress: () => (removeLanguage(l), setOpen(null), refresh()) },
+    Alert.alert(tr("Remove {0}?", { 0: l.name }), tr("Frees {0}. You can download it again any time.", { 0: mb(langSize(l)) }), [
+      { text: tr("Cancel"), style: 'cancel' },
+      { text: tr("Remove"), style: 'destructive', onPress: () => (removeLanguage(l), setOpen(null), refresh()) },
     ]);
 
   return (
     <Page>
-      <Text style={ss.label}>App language</Text>
+      <Text style={ss.label}>{tr("App language")}</Text>
       <View style={[ss.menu, { marginTop: 6 }]}>
         {UI_LANGS.map((u) => (
           <Pressable
             key={u.id}
             style={s.row}
             disabled={!u.ready}
-            onPress={() => (setLangPrefs({ ...prefs, ui: u.id }), refresh())}
+            onPress={() => {
+              if (u.id === prefs.ui) return;
+              setLangPrefs({ ...prefs, ui: u.id });
+              Updates.reloadAsync().catch(() => Alert.alert(tr('Close and reopen Familiar to change the language.')));
+            }}
           >
             <View style={{ flex: 1 }}>
               <Text style={[s.title, !u.ready && { color: c.dim }]}>{u.name}</Text>
-              {!u.ready && <Text style={ss.meta}>Work in progress</Text>}
+              {!u.ready && <Text style={ss.meta}>{tr("Work in progress")}</Text>}
             </View>
             {prefs.ui === u.id && <Ionicons name="checkmark" size={20} color={c.gold} />}
           </Pressable>
         ))}
       </View>
 
-      <Text style={ss.label}>Make book voices</Text>
+      <Text style={ss.label}>{tr("Make book voices")}</Text>
       <View style={[ss.menu, { marginTop: 6 }]}>
         {(
           [
@@ -104,10 +110,10 @@ export default function Languages() {
         ))}
       </View>
 
-      <MenuRow icon="cloud-outline" title="Cloud voices" sub="Gemini or ElevenLabs with your own key" to="/settings/cloud-voices" />
+      <MenuRow icon="cloud-outline" title={tr("Cloud voices")} sub={tr("Gemini or ElevenLabs with your own key")} to="/settings/cloud-voices" />
 
-      <Text style={ss.label}>Audiobook languages</Text>
-      <Text style={[ss.p, { marginTop: 6 }]}>Download a language to add books in it and hear them on this iPhone. A language with books in your library is always kept.</Text>
+      <Text style={ss.label}>{tr("Audiobook languages")}</Text>
+      <Text style={[ss.p, { marginTop: 6 }]}>{tr("Download a language to add books in it and hear them on this iPhone. A language with books in your library is always kept.")}</Text>
       <View style={ss.menu}>
         {mine.map((l) => {
           const isOpen = open === l.id;
@@ -121,8 +127,8 @@ export default function Languages() {
                     {l.native !== l.name.split(' ')[0] ? ` · ${l.native}` : ''}
                   </Text>
                   <Text style={ss.meta}>
-                    {l.id === 'en' ? 'Default · ' : ''}
-                    {hasVoice(l, v) ? voiceName(v) : 'Not downloaded'} · {mb(langSize(l))}
+                    {l.id === 'en' ? tr("Default · ") : ''}
+                    {hasVoice(l, v) ? voiceName(v) : tr("Not downloaded")} · {mb(langSize(l))}
                   </Text>
                 </View>
                 <Ionicons name={isOpen ? 'chevron-up' : 'chevron-down'} size={16} color={c.dim} />
@@ -152,11 +158,11 @@ export default function Languages() {
                     );
                   })}
                   {keptByBooks(l) ? (
-                    l.id !== 'en' && <Text style={ss.meta}>Kept: you have books in this language.</Text>
+                    l.id !== 'en' && <Text style={ss.meta}>{tr("Kept: you have books in this language.")}</Text>
                   ) : (
                     installed(l) && (
                       <Pressable onPress={() => drop(l)}>
-                        <Text style={s.remove}>Remove language</Text>
+                        <Text style={s.remove}>{tr("Remove language")}</Text>
                       </Pressable>
                     )
                   )}
@@ -167,7 +173,7 @@ export default function Languages() {
         })}
         <Pressable style={s.row} onPress={() => setAdding(!adding)} disabled={!more.length}>
           <Ionicons name="add-circle-outline" size={20} color={more.length ? c.gold : c.dim} />
-          <Text style={[s.title, { flex: 1, color: more.length ? c.gold : c.dim }]}>Add a language</Text>
+          <Text style={[s.title, { flex: 1, color: more.length ? c.gold : c.dim }]}>{tr("Add a language")}</Text>
         </Pressable>
         {adding &&
           more.map((l) => (
@@ -182,7 +188,7 @@ export default function Languages() {
             </Pressable>
           ))}
       </View>
-      <Text style={ss.label}>iPhone voices</Text>
+      <Text style={ss.label}>{tr("iPhone voices")}</Text>
       <View style={[ss.menu, { marginTop: 6 }]}>
         {SYSTEM_LANGS.map((l) => {
           const vs = systemVoices(l.locale);
@@ -191,14 +197,14 @@ export default function Languages() {
               <View style={{ flex: 1 }}>
                 <Text style={s.title}>{l.name}</Text>
                 <Text style={ss.meta}>
-                  {l.native} · {vs.length ? vs.map((v) => v.name).join(', ') : 'no voice on this iPhone'}
+                  {l.native} · {vs.length ? vs.map((v) => v.name).join(', ') : tr("no voice on this iPhone")}
                 </Text>
               </View>
             </View>
           );
         })}
       </View>
-      <Text style={ss.p}>Read by the iPhone’s own voice, since Kokoro has none for these. Better-quality voices: iPhone Settings → Accessibility → Spoken Content → Voices.</Text>
+      <Text style={ss.p}>{tr("Read by the iPhone’s own voice, since Kokoro has none for these. Better-quality voices: iPhone Settings → Accessibility → Spoken Content → Voices.")}</Text>
     </Page>
   );
 }

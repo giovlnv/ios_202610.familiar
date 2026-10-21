@@ -1,3 +1,4 @@
+import { t as tr } from '../../../../i18n';
 import { useCallback, useRef, useState } from 'react';
 import { Animated, Easing, Pressable, ScrollView, Text, View } from 'react-native';
 import { router, Stack, useFocusEffect, useLocalSearchParams } from 'expo-router';
@@ -46,7 +47,7 @@ export default function Den() {
       setIsWithYou(withYou().id === id);
     }, [id]),
   );
-  if (!f) return <Text style={s.dim}>Familiar not found.</Text>;
+  if (!f) return <Text style={s.dim}>{tr("Familiar not found.")}</Text>;
   const el = myElement();
 
   const float = (texts: string[]) => {
@@ -91,12 +92,12 @@ export default function Den() {
           title: f.name,
           headerRight: () => (
             <Pressable hitSlop={10} onPress={() => router.push({ pathname: '/familiar/[id]', params: { id: f.id } })}>
-              <Text style={s.edit}>Edit</Text>
+              <Text style={s.edit}>{tr("Edit")}</Text>
             </Pressable>
           ),
         }}
       />
-      <Pressable onPress={pet} style={s.stage} accessibilityLabel={asleep ? `${f.name} is asleep` : `Pet ${f.name}`} accessibilityRole="button">
+      <Pressable onPress={pet} style={s.stage} accessibilityLabel={asleep ? tr("{0} is asleep", { 0: f.name }) : tr("Pet {0}", { 0: f.name })} accessibilityRole="button">
         {spider && !asleep && <Animated.View style={[s.thread, { height: Animated.add(drop, 30 + ART * 0.46) }]} />}
         <Animated.View style={{ transform: [{ translateY: spider ? drop : 0 }] }}>
           <FamiliarArt familiar={f} pose={asleep ? 'sleeping' : 'idle'} size={ART} closed={closed} vial alive />
@@ -107,24 +108,24 @@ export default function Den() {
           </Animated.Text>
         ))}
       </Pressable>
-      <Text style={s.hint}>{asleep ? `${f.name} is asleep. Pet gently.` : `Tap to pet ${f.name}.`}</Text>
+      <Text style={s.hint}>{asleep ? tr("{0} is asleep. Pet gently.", { 0: f.name }) : tr("Tap to pet {0}.", { 0: f.name })}</Text>
       <View style={s.card}>
         <Text style={s.name}>{f.name}</Text>
         <Text style={s.dim}>{describe(f)}</Text>
         {el && (
           <Text style={s.dim}>
-            {el.element[0].toUpperCase() + el.element.slice(1)} vial · {el.sign}
+            {el.element[0].toUpperCase() + el.element.slice(1)}{' '}{tr("vial ·")}{' '}{el.sign}
           </Text>
         )}
       </View>
       <View style={s.row}>
         <Pressable style={[s.btn, isWithYou && s.btnOn]} onPress={() => (setWithYou(f.id), setIsWithYou(true))} disabled={isWithYou}>
           <Ionicons name={isWithYou ? 'checkmark' : 'walk-outline'} size={18} color={isWithYou ? c.bg : c.text} />
-          <Text style={[s.btnText, isWithYou && { color: c.bg }]}>{isWithYou ? 'With you' : `Walk with ${f.name}`}</Text>
+          <Text style={[s.btnText, isWithYou && { color: c.bg }]}>{isWithYou ? tr("With you") : tr("Walk with {0}", { 0: f.name })}</Text>
         </Pressable>
         <Pressable style={s.btn} onPress={() => (setAsleep(!asleep), setClosed(false))}>
           <Ionicons name={asleep ? 'sunny-outline' : 'moon-outline'} size={18} color={c.text} />
-          <Text style={s.btnText}>{asleep ? 'Wake up' : 'Tuck in'}</Text>
+          <Text style={s.btnText}>{asleep ? tr("Wake up") : tr("Tuck in")}</Text>
         </Pressable>
       </View>
     </ScrollView>

@@ -1,3 +1,4 @@
+import { t as tr } from '../../../i18n';
 import { useCallback, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
@@ -14,12 +15,12 @@ export default function Familiars() {
 
   return (
     <ScrollView style={s.wrap} contentContainerStyle={{ padding: 16, gap: 10, paddingBottom: 40 + pad }}>
-      <Text style={s.p}>Tap a familiar to visit, pet it or walk with it. Link a familiar to a path and it appears with that path’s books.</Text>
+      <Text style={s.p}>{tr("Tap a familiar to visit, pet it or walk with it. Link a familiar to a path and it appears with that path’s books.")}</Text>
       {st.list.map((f) => {
         const on = f.id === st.withYou;
         return (
           <View key={f.id} style={[s.card, on && s.cardOn]}>
-            <Pressable style={s.main} onPress={() => router.push({ pathname: '/den/[id]', params: { id: f.id } })} accessibilityLabel={`Open ${f.name}`}>
+            <Pressable style={s.main} onPress={() => router.push({ pathname: '/den/[id]', params: { id: f.id } })} accessibilityLabel={tr("Open {0}", { 0: f.name })}>
               <View style={s.art}>
                 <FamiliarArt familiar={f} size={64} vial />
               </View>
@@ -28,7 +29,7 @@ export default function Familiars() {
                   <Text style={s.title}>{f.name}</Text>
                   {on && (
                     <View style={s.badge}>
-                      <Text style={s.badgeText}>WITH YOU</Text>
+                      <Text style={s.badgeText}>{tr("WITH YOU")}</Text>
                     </View>
                   )}
                 </View>
@@ -47,7 +48,7 @@ export default function Familiars() {
                 )}
               </View>
             </Pressable>
-            <Pressable hitSlop={10} onPress={() => router.push({ pathname: '/familiar/[id]', params: { id: f.id } })} accessibilityLabel={`Edit ${f.name}`}>
+            <Pressable hitSlop={10} onPress={() => router.push({ pathname: '/familiar/[id]', params: { id: f.id } })} accessibilityLabel={tr("Edit {0}", { 0: f.name })}>
               <Ionicons name="create-outline" size={20} color={c.dim} />
             </Pressable>
           </View>
@@ -56,8 +57,8 @@ export default function Familiars() {
       <Pressable style={s.add} onPress={() => router.push({ pathname: '/familiar/[id]', params: { id: 'new' } })}>
         <Ionicons name="add" size={22} color={c.gold} />
         <View style={{ flex: 1 }}>
-          <Text style={s.title}>Add a familiar</Text>
-          <Text style={s.dim}>As many as you like</Text>
+          <Text style={s.title}>{tr("Add a familiar")}</Text>
+          <Text style={s.dim}>{tr("As many as you like")}</Text>
         </View>
       </Pressable>
     </ScrollView>

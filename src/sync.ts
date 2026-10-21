@@ -1,3 +1,4 @@
+import { t as tr } from './i18n';
 import { Directory, File, Paths } from 'expo-file-system';
 import * as DocumentPicker from 'expo-document-picker';
 import * as SecureStore from 'expo-secure-store';
@@ -139,7 +140,7 @@ async function push(): Promise<boolean> {
         api(token, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: 'Familiar backup', content, sha: await currentSha(token) }),
+          body: JSON.stringify({ message: tr("Familiar backup"), content, sha: await currentSha(token) }),
         })
       );
     let res = await put();
