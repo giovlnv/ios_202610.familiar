@@ -5,9 +5,9 @@ import { c, F, scheme } from './theme';
 export type FontId = 'system' | 'georgia' | 'iowan' | 'playfair';
 export type ColorId = 'theme' | 'warm' | 'sepia' | 'cool' | 'rose';
 
-export type TextStyle = { size: number; line: number; gap: number; font: FontId; color: ColorId; align: 'left' | 'justify' };
+export type TextStyle = { size: number; line: number; gap: number; font: FontId; color: ColorId; align: 'left' | 'justify'; layout: 'pages' | 'scroll' };
 
-export const DEFAULT_STYLE: TextStyle = { size: 17, line: 1.5, gap: 2, font: 'system', color: 'theme', align: 'left' };
+export const DEFAULT_STYLE: TextStyle = { size: 17, line: 1.5, gap: 2, font: 'system', color: 'theme', align: 'left', layout: 'pages' };
 
 export const FONTS: { id: FontId; name: string; family?: string }[] = [
   { id: 'system', name: 'System' },

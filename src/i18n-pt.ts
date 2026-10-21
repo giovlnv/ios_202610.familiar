@@ -1242,4 +1242,10 @@ export const PT: Record<string, string> = {
   "”. Send it to Claude in the TAROT chat to fix the split.": "”. Envie ao Claude no chat TAROT para corrigir a divisão.",
   "−30 days": "−30 dias",
   "−7 days": "−7 dias",
+  "Size": "Tamanho",
+  "Line spacing": "Espaçamento entre linhas",
+  "Paragraph spacing": "Espaçamento entre parágrafos",
+  "Pages": "Páginas",
+  "Scroll": "Rolagem",
+  "Page {0} of {1}": "Página {0} de {1}",
 };

@@ -17,7 +17,7 @@ import {
 
 type Num = 'size' | 'line' | 'gap';
 
-export default function TextStyleSheet({ visible, sample, onClose }: { visible: boolean; sample?: string; onClose: () => void }) {
+export default function TextStyleSheet({ visible, sample, reader, onClose }: { visible: boolean; sample?: string; reader?: boolean; onClose: () => void }) {
   const t = useTextStyle();
   const step = (k: Num, dir: 1 | -1) => {
     const [min, max, by] = LIMITS[k];
@@ -33,7 +33,7 @@ export default function TextStyleSheet({ visible, sample, onClose }: { visible: 
         <View style={s.top}>
           <Text style={s.h2}>{tr("Text")}</Text>
           <View style={{ flexDirection: 'row', gap: 18 }}>
-            <Pressable hitSlop={8} onPress={() => setTextStyle(DEFAULT_STYLE)}>
+            <Pressable hitSlop={8} onPress={() => setTextStyle({ ...DEFAULT_STYLE, layout: t.layout })}>
               <Text style={s.dimLink}>{tr("Reset")}</Text>
             </Pressable>
             <Pressable hitSlop={8} onPress={onClose}>
@@ -56,12 +56,12 @@ export default function TextStyleSheet({ visible, sample, onClose }: { visible: 
           ).map(([k, label, icon]) => (
             <View key={k} style={s.row}>
               <Ionicons name={icon} size={18} color={c.dim} />
-              <Text style={s.label}>{label}</Text>
-              <Pressable style={s.step} onPress={() => step(k, -1)} accessibilityLabel={tr("Less {0}", { 0: label })}>
+              <Text style={s.label}>{tr(label)}</Text>
+              <Pressable style={s.step} onPress={() => step(k, -1)} accessibilityLabel={tr("Less {0}", { 0: tr(label) })}>
                 <Ionicons name="remove" size={18} color={c.text} />
               </Pressable>
               <Text style={s.value}>{show(k)}</Text>
-              <Pressable style={s.step} onPress={() => step(k, 1)} accessibilityLabel={tr("More {0}", { 0: label })}>
+              <Pressable style={s.step} onPress={() => step(k, 1)} accessibilityLabel={tr("More {0}", { 0: tr(label) })}>
                 <Ionicons name="add" size={18} color={c.text} />
               </Pressable>
             </View>
@@ -89,6 +89,16 @@ export default function TextStyleSheet({ visible, sample, onClose }: { visible: 
               </Pressable>
             ))}
           </View>
+          {reader && (
+            <View style={s.chips}>
+              {(['pages', 'scroll'] as const).map((l) => (
+                <Pressable key={l} style={[s.chip, t.layout === l && s.chipOn]} onPress={() => setTextStyle({ layout: l })}>
+                  <Ionicons name={l === 'pages' ? 'book-outline' : 'reorder-four-outline'} size={16} color={t.layout === l ? c.bg : c.text} />
+                  <Text style={[s.chipText, t.layout === l && s.chipTextOn]}>{l === 'pages' ? tr('Pages') : tr('Scroll')}</Text>
+                </Pressable>
+              ))}
+            </View>
+          )}
         </ScrollView>
       </View>
     </Modal>

@@ -4,17 +4,15 @@ import { router, Stack, useLocalSearchParams } from 'expo-router';
 import * as DocumentPicker from 'expo-document-picker';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { getBook } from '../../../../storage';
-import { Block, buildReader, Chapter, fetchSource, getPos, imageUri, keepSource, loadReader, ReaderBook, setPos, sourceFile } from '../../../../reader';
+import { buildReader, Chapter, fetchSource, getPos, imageUri, keepSource, loadReader, ReaderBook, setPos, sourceFile } from '../../../../reader';
 import { HIGHLIGHTS, highlightBg, HighlightColour, loadMarks, Mark, setHighlight, toggleBookmark } from '../../../../marks';
+import PagedChapters, { Look, markKey } from '../../../../components/PagedChapters';
 import { bodyText, useTextStyle } from '../../../../textStyle';
 import TextStyleSheet from '../../../../components/TextStyleSheet';
 import { usePlayback } from '../../../../playback';
 import { t as tr } from '../../../../i18n';
 import { c, F, themed } from '../../../../theme';
 import { Btn } from '../../../../components/settings-ui';
-
-type Look = { hl: Map<string, HighlightColour | undefined>; bm: Set<string> };
-const markKey = (ci: number, bi: number, b: Block) => (b.at ? `s${b.at[0]}:${b.at[1]}` : `c${ci}:${bi}`);
 
 const Page = memo(function Page({
   ch,
@@ -89,6 +87,9 @@ export default function Reader() {
   const start = useMemo(() => (chapter !== undefined ? { chapter: Number(chapter), block: Number(block ?? 0) } : getPos(id)), [id, chapter, block]);
   const [page, setPage] = useState(start.chapter);
   const [target, setTarget] = useState<{ ci: number; bi: number } | null>(start.block ? { ci: start.chapter, bi: start.block } : null);
+  const [jump, setJump] = useState({ ci: start.chapter, bi: start.block, n: 0 });
+  const ts = useTextStyle();
+  const paged = ts.layout === 'pages';
   const [marks, setMarks] = useState<Mark[]>(() => loadMarks(id));
   const [toc, setToc] = useState(false);
   const [styling, setStyling] = useState(false);
@@ -207,7 +208,8 @@ export default function Reader() {
     const ci = rb.chapters.findIndex((ch) => ch.blocks.some((b) => b.at?.[0] === now[0] && b.at?.[1] === now[1]));
     if (ci < 0) return;
     const bi = rb.chapters[ci].blocks.findIndex((b) => b.at?.[0] === now[0] && b.at?.[1] === now[1]);
-    list.current?.scrollToIndex({ index: ci, animated: false });
+    if (paged) setJump((j) => ({ ci, bi, n: j.n + 1 }));
+    else list.current?.scrollToIndex({ index: ci, animated: false });
     setPage(ci);
     setTarget({ ci, bi });
   };
@@ -234,36 +236,54 @@ export default function Reader() {
           ),
         }}
       />
-      <FlatList
-        ref={list}
-        data={rb.chapters}
-        horizontal
-        pagingEnabled
-        showsHorizontalScrollIndicator={false}
-        initialScrollIndex={Math.min(start.chapter, rb.chapters.length - 1)}
-        getItemLayout={(_, i) => ({ length: width, offset: width * i, index: i })}
-        keyExtractor={(_, i) => String(i)}
-        windowSize={3}
-        onMomentumScrollEnd={(e) => {
-          const ci = Math.round(e.nativeEvent.contentOffset.x / width);
-          setPage(ci);
-          setPos(id, ci, 0);
-        }}
-        renderItem={({ item: ch, index: ci }) => (
-          <Page
-            ch={ch}
-            ci={ci}
-            width={width}
-            look={look}
-            now={now}
-            target={target?.ci === ci ? target.bi : undefined}
-            folder={id}
-            onHold={hold}
-            onScrollTo={(c2, bi) => setPos(id, c2, bi)}
-          />
-        )}
-      />
-      <Text style={s.pager}>{tr('{0} of {1}', { 0: page + 1, 1: rb.chapters.length })}</Text>
+      {paged ? (
+        <PagedChapters
+          chapters={rb.chapters}
+          width={width}
+          look={look}
+          now={now}
+          folder={id}
+          jump={jump}
+          onHold={hold}
+          onPage={(ci, bi) => {
+            setPage(ci);
+            setPos(id, ci, bi);
+          }}
+        />
+      ) : (
+        <>
+        <FlatList
+          ref={list}
+          data={rb.chapters}
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={false}
+          initialScrollIndex={Math.min(start.chapter, rb.chapters.length - 1)}
+          getItemLayout={(_, i) => ({ length: width, offset: width * i, index: i })}
+          keyExtractor={(_, i) => String(i)}
+          windowSize={3}
+          onMomentumScrollEnd={(e) => {
+            const ci = Math.round(e.nativeEvent.contentOffset.x / width);
+            setPage(ci);
+            setPos(id, ci, 0);
+          }}
+          renderItem={({ item: ch, index: ci }) => (
+            <Page
+              ch={ch}
+              ci={ci}
+              width={width}
+              look={look}
+              now={now}
+              target={target?.ci === ci ? target.bi : undefined}
+              folder={id}
+              onHold={hold}
+              onScrollTo={(c2, bi) => setPos(id, c2, bi)}
+            />
+          )}
+        />
+        <Text style={s.pager}>{tr('{0} of {1}', { 0: page + 1, 1: rb.chapters.length })}</Text>
+        </>
+      )}
       <Modal visible={toc} animationType="slide" presentationStyle="pageSheet" onRequestClose={() => setToc(false)}>
         <View style={s.sheet}>
           <Text style={s.sheetTitle}>{tr('Contents')}</Text>
@@ -275,7 +295,8 @@ export default function Reader() {
                 style={s.tocRow}
                 onPress={() => {
                   setToc(false);
-                  list.current?.scrollToIndex({ index, animated: false });
+                  if (paged) setJump((j) => ({ ci: index, bi: 0, n: j.n + 1 }));
+                  else list.current?.scrollToIndex({ index, animated: false });
                   setPage(index);
                   setPos(id, index, 0);
                 }}
@@ -286,7 +307,7 @@ export default function Reader() {
           />
         </View>
       </Modal>
-      <TextStyleSheet visible={styling} onClose={() => setStyling(false)} />
+      <TextStyleSheet visible={styling} reader onClose={() => setStyling(false)} />
     </View>
   );
 }
