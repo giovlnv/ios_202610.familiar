@@ -20,6 +20,12 @@ public class AudioEncoderModule: Module {
   public func definition() -> ModuleDefinition {
     Name("AudioEncoder")
 
+    View(PdfReaderView.self) {
+      Events("onPageChange")
+      Prop("uri") { (view: PdfReaderView, uri: URL) in view.load(uri) }
+      Prop("page") { (view: PdfReaderView, page: Int) in view.go(page) }
+    }
+
     AsyncFunction("toM4a") { (input: URL, output: URL, bitrate: Int) in
       let src = try AVAudioFile(forReading: input)
       let fmt = src.processingFormat

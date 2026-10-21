@@ -144,3 +144,32 @@ export function setPos(folder: string, chapter: number, block: number) {
   if (!f.exists) f.create();
   f.write(JSON.stringify({ chapter, block }));
 }
+
+export type PdfLinks = { at: Record<string, number>; first: ([number, number] | undefined)[] };
+
+export async function pdfLinks(src: File, book: Book): Promise<PdfLinks> {
+  const { default: AudioEncoder } = await import('../modules/audio-encoder');
+  const norm = (t: string) => t.toLowerCase().normalize('NFD').replace(/[^a-z0-9]/g, '');
+  const pages = AudioEncoder.pdfPages(src.uri).map(norm);
+  const at: Record<string, number> = {};
+  const first: ([number, number] | undefined)[] = [];
+  let pg = 0;
+  book.sections.forEach((s, si) =>
+    s.paras.forEach((p, pi) => {
+      if (p.kind === 'explain' || p.kind === 'explainhead') return;
+      let found = p.page;
+      const k = found === undefined ? norm(p.text).slice(0, 40) : '';
+      if (k.length >= 12)
+        for (let i = pg; i < Math.min(pages.length, pg + 15); i++)
+          if (pages[i].includes(k)) {
+            found = i;
+            break;
+          }
+      if (found === undefined) return;
+      pg = found;
+      at[`${si}:${pi}`] = found;
+      first[found] ??= [si, pi];
+    }),
+  );
+  return { at, first };
+}

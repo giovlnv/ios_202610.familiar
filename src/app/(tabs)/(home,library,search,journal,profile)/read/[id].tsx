@@ -1,12 +1,12 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ActivityIndicator, Alert, FlatList, Image, Modal, Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
-import { WebView } from 'react-native-webview';
 import * as DocumentPicker from 'expo-document-picker';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { getBook } from '../../../../storage';
 import { buildReader, Chapter, fetchSource, getPos, imageUri, keepSource, loadReader, ReaderBook, setPos, sourceFile } from '../../../../reader';
 import { HIGHLIGHTS, highlightBg, HighlightColour, loadMarks, Mark, setHighlight, toggleBookmark } from '../../../../marks';
+import PdfBook from '../../../../components/PdfBook';
 import PagedChapters, { Look, markKey } from '../../../../components/PagedChapters';
 import { bodyText, useTextStyle } from '../../../../textStyle';
 import TextStyleSheet from '../../../../components/TextStyleSheet';
@@ -164,22 +164,7 @@ export default function Reader() {
       </View>
     );
 
-  if (src?.name.endsWith('.pdf'))
-    return (
-      <View style={s.wrap}>
-        <Stack.Screen
-          options={{
-            title: item.book.title,
-            headerRight: () => (
-              <Pressable hitSlop={10} onPress={() => import('expo-sharing').then((m) => m.shareAsync(src.uri))} accessibilityLabel={tr('Open in another app')}>
-                <Ionicons name="share-outline" size={21} color={c.gold} />
-              </Pressable>
-            ),
-          }}
-        />
-        <WebView source={{ uri: src.uri }} originWhitelist={['*']} allowFileAccess allowingReadAccessToURL={src.parentDirectory.uri} style={{ flex: 1, backgroundColor: c.bg }} />
-      </View>
-    );
+  if (src?.name.endsWith('.pdf')) return <PdfBook id={id} book={item.book} src={src} now={now} />;
 
   if (!src || !rb)
     return (

@@ -216,18 +216,18 @@ function pdfParas(pages: string[]): Para[][] {
   const edge = new Map<string, number>();
   for (const ls of lines) for (const l of [ls[0], ls[ls.length - 1]]) if (l) edge.set(l.replace(/\d+/g, '#'), (edge.get(l.replace(/\d+/g, '#')) ?? 0) + 1);
   const junk = (l: string) => /^\d+$/.test(l) || (pages.length > 4 && (edge.get(l.replace(/\d+/g, '#')) ?? 0) > pages.length * 0.4);
-  return lines.map((ls) => {
+  return lines.map((ls, page) => {
     const kept = ls.filter((l, j) => !((j === 0 || j === ls.length - 1) && junk(l)));
     const out: Para[] = [];
     let cur = '';
     for (const l of kept) {
       cur = cur ? (cur.endsWith('-') ? cur.slice(0, -1) + l : `${cur} ${l}`) : l;
       if (/[.!?:”"’)]$/.test(l) && l.length < 75) {
-        out.push({ kind: 'book', text: cur, start: 0, end: 0 });
+        out.push({ kind: 'book', text: cur, start: 0, end: 0, page });
         cur = '';
       }
     }
-    if (cur) out.push({ kind: 'book', text: cur, start: 0, end: 0 });
+    if (cur) out.push({ kind: 'book', text: cur, start: 0, end: 0, page });
     return out;
   });
 }
