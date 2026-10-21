@@ -1,3 +1,4 @@
+import type React from 'react';
 import { t as tr } from '../i18n';
 import { usePad } from '../playback';
 import { useState } from 'react';
@@ -7,7 +8,7 @@ import { load, OLResult, searchOpenLibrary, STATUS_LABEL, TBook } from '../track
 import { Cover } from './ui';
 import { c, themed } from '../theme';
 
-export default function SearchView({ onPick }: { onPick: (r: OLResult) => void }) {
+export default function SearchView({ onPick, header }: { onPick: (r: OLResult) => void; header?: React.ReactNode }) {
   const pad = usePad();
   const [q, setQ] = useState('');
   const [results, setResults] = useState<OLResult[]>([]);
@@ -33,6 +34,7 @@ export default function SearchView({ onPick }: { onPick: (r: OLResult) => void }
 
   return (
     <View style={s.wrap}>
+      {header}
       <TextInput
         style={s.input}
         placeholder={tr("Title, author or ISBN")}

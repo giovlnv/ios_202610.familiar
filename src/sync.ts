@@ -6,7 +6,7 @@ import * as Sharing from 'expo-sharing';
 
 const REPO = 'giovlnv/ios_202610.familiar_library';
 const PATH = 'userdata/backup.json';
-const DATA_FILES = ['notes.json', 'consults.json', 'progress.json', 'cards.json'];
+const DATA_FILES = ['notes.json', 'consults.json', 'progress.json', 'cards.json', 'marks.json'];
 
 type Backup = {
   version: 1;

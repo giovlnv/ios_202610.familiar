@@ -55,6 +55,20 @@ export default function BookPage() {
                 </Text>
               )}
             </Pressable>
+            <View style={s.tools}>
+              <Pressable style={s.tool} onPress={() => router.push({ pathname: '/read/[id]', params: { id } })}>
+                <Ionicons name="book-outline" size={18} color={c.gold} />
+                <Text style={s.toolText}>{tr("Read")}</Text>
+              </Pressable>
+              <Pressable style={s.tool} onPress={() => router.push({ pathname: '/booksearch', params: { folder: id } })}>
+                <Ionicons name="search-outline" size={18} color={c.gold} />
+                <Text style={s.toolText}>{tr("Search")}</Text>
+              </Pressable>
+              <Pressable style={s.tool} onPress={() => router.push({ pathname: '/marks/[id]', params: { id } })}>
+                <Ionicons name="bookmarks-outline" size={18} color={c.gold} />
+                <Text style={s.toolText}>{tr("Marks")}</Text>
+              </Pressable>
+            </View>
             <Text style={s.h2}>{tr("Sections")}</Text>
           </View>
         }
@@ -90,6 +104,9 @@ export default function BookPage() {
 }
 
 const s = themed(() => ({
+  tools: { flexDirection: 'row', gap: 8, marginTop: 12 },
+  tool: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, backgroundColor: c.panel, borderRadius: 10, paddingVertical: 10 },
+  toolText: { color: c.gold, fontWeight: '600' },
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
   empty: { color: c.dim, padding: 16 },
   head: { paddingBottom: 8 },

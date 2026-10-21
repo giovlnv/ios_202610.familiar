@@ -6,6 +6,7 @@ import { File } from 'expo-file-system';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Draft, DrmError, readEpub, saveAudioBook, saveTextBook } from '../../../ownBooks';
 import { bookLangChoices } from '../../../languages';
+import { keepSource } from '../../../reader';
 import { importBook } from '../../../storage';
 import { syncAudioBooks } from '../../../tracker';
 import { t as tr } from '../../../i18n';
@@ -20,7 +21,7 @@ async function pickEpub() {
   if (res.canceled) return null;
   const a = res.assets[0];
   if (!/\.epub$/i.test(a.name)) throw new Error(tr('Choose an EPUB file.'));
-  return readEpub(await new File(a.uri).bytes());
+  return { ...readEpub(await new File(a.uri).bytes()), uri: a.uri, name: a.name };
 }
 
 const drmMessage = () =>
@@ -34,6 +35,7 @@ export default function ImportScreen() {
   const [lang, setLang] = useState('en');
   const [drafts, setDrafts] = useState<Draft[] | null>(null);
   const [audio, setAudio] = useState<Audio[] | null>(null);
+  const [epub, setEpub] = useState<Audio | null>(null);
 
   const fail = (e: unknown) => Alert.alert(e instanceof DrmError ? tr('This book is locked') : tr('Import failed'), e instanceof DrmError ? drmMessage() : String((e as Error).message ?? e));
 
@@ -45,6 +47,7 @@ export default function ImportScreen() {
       if (!r.drafts.length) throw new Error(tr('No text found in this EPUB.'));
       setTitle(r.title);
       setDrafts(r.drafts);
+      setEpub({ uri: r.uri, name: r.name });
     } catch (e) {
       fail(e);
     } finally {
@@ -64,7 +67,10 @@ export default function ImportScreen() {
   const addText = async () => {
     try {
       const r = await pickEpub();
-      if (r) setDrafts(r.drafts);
+      if (r) {
+        setDrafts(r.drafts);
+        setEpub({ uri: r.uri, name: r.name });
+      }
     } catch (e) {
       fail(e);
     }
@@ -78,6 +84,7 @@ export default function ImportScreen() {
         folder = r.folder;
         if (r.unmatched) Alert.alert(tr('Chapters and files don’t match'), tr('The text and the audio files differ by {0}. Text was paired with files in order.', { 0: r.unmatched }));
       } else folder = saveTextBook(title.trim() || tr('Untitled'), lang, drafts!);
+      if (epub) keepSource(folder, epub.uri, epub.name);
       syncAudioBooks();
       router.replace({ pathname: '/book/[id]', params: { id: folder } });
     } catch (e) {
@@ -169,7 +176,7 @@ export default function ImportScreen() {
         </>
       )}
       <Btn label={tr('Add to library')} primary onPress={create} />
-      <Btn label={tr('Cancel')} onPress={() => (setDrafts(null), setAudio(null), setTitle(''))} />
+      <Btn label={tr('Cancel')} onPress={() => (setDrafts(null), setAudio(null), setEpub(null), setTitle(''))} />
     </Page>
   );
 }

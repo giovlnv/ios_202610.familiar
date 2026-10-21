@@ -7,15 +7,15 @@ export type Draft = { title: string; text: Para[]; words: number; keep: boolean 
 export class DrmError extends Error {}
 
 const ENT: Record<string, string> = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', rsquo: '’', lsquo: '‘', rdquo: '”', ldquo: '“', mdash: '—', ndash: '–', hellip: '…' };
-const decode = (s: string) =>
+export const decode = (s: string) =>
   s.replace(/&(#x[0-9a-f]+|#\d+|\w+);/gi, (m, e: string) =>
     e[0] === '#' ? String.fromCodePoint(e[1] === 'x' || e[1] === 'X' ? parseInt(e.slice(2), 16) : Number(e.slice(1))) : (ENT[e] ?? m),
   );
-const clean = (s: string) => decode(s.replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
+export const clean = (s: string) => decode(s.replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
 const attr = (tag: string, name: string) => tag.match(new RegExp(`${name}\\s*=\\s*["']([^"']*)["']`, 'i'))?.[1];
 const wordCount = (ps: Para[]) => ps.reduce((n, p) => n + p.text.split(/\s+/).filter(Boolean).length, 0);
 
-function join(base: string, href: string) {
+export function join(base: string, href: string) {
   const parts = base.split('/').slice(0, -1);
   for (const x of decodeURIComponent(href).split('#')[0].split('/')) {
     if (x === '..') parts.pop();
@@ -37,7 +37,7 @@ function paragraphs(html: string): Para[] {
     .map((x) => ({ kind: x.head ? 'head' : 'book', text: x.text, start: 0, end: 0 }) as Para);
 }
 
-export function readEpub(bytes: Uint8Array): { title: string; drafts: Draft[] } {
+export function openEpub(bytes: Uint8Array) {
   const zip = unzipSync(bytes);
   const text = (p: string) => (zip[p] ? strFromU8(zip[p]) : '');
   if (zip['META-INF/rights.xml']) throw new DrmError('rights');
@@ -66,14 +66,22 @@ export function readEpub(bytes: Uint8Array): { title: string; drafts: Draft[] } 
       if (!names[f]) names[f] = clean(m[1]);
     }
 
-  const drafts: Draft[] = [];
+  const spine: { href: string; named?: string }[] = [];
   for (const ref of opf.match(/<itemref\s[^>]*>/gi) ?? []) {
     if (attr(ref, 'linear') === 'no') continue;
     const it = items[attr(ref, 'idref') ?? ''];
-    if (!it) continue;
+    if (it) spine.push({ href: it.href, named: names[it.href] });
+  }
+  return { zip, text, title, spine };
+}
+
+export function readEpub(bytes: Uint8Array): { title: string; drafts: Draft[] } {
+  const { text, title, spine } = openEpub(bytes);
+  const drafts: Draft[] = [];
+  for (const it of spine) {
     const ps = paragraphs(text(it.href));
     if (!ps.length) continue;
-    const named = names[it.href];
+    const named = it.named;
     if (!named && drafts.length) {
       const last = drafts[drafts.length - 1];
       last.text.push(...ps);

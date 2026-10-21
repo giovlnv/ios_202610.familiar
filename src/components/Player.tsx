@@ -1,3 +1,4 @@
+import { HIGHLIGHTS, highlightBg, loadMarks, setHighlight, toggleBookmark } from '../marks';
 import { t as tr } from '../i18n';
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -81,10 +82,12 @@ type Draft = {
 export default function Player({
   item,
   start,
+  startPara,
   onClose,
 }: {
   item: LibraryItem;
   start?: number;
+  startPara?: number;
   onClose: () => void;
 }) {
   const { book, folder } = item;
@@ -93,8 +96,13 @@ export default function Player({
   const pb = usePlayback();
   const { player, status, t, rate, goTo, skip, toggle, sleep, sleepLeft, setSleep, preparing } = pb;
   const [sleepOpen, setSleepOpen] = useState(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => pb.open(item, start), [item.folder, start]);
+  useEffect(() => {
+    pb.open(item, start);
+    const at = start !== undefined && startPara !== undefined ? item.book.sections[start]?.paras[startPara]?.start : undefined;
+    if (at !== undefined && at < 1e8) setTimeout(() => goTo(start!, at + 0.01), 300);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [item.folder, start, startPara]);
+  const [marks, setMarks] = useState(() => loadMarks(folder));
   const sec = pb.item?.folder === folder ? pb.sec : 0;
   const [follow, setFollow] = useState(true);
   const [showText, setShowText] = useState(() => read("player-text.txt") !== "0");
@@ -285,8 +293,16 @@ export default function Player({
     });
   const explainSection = () =>
     setExplain({ kind: "section", section, card: card?.card, saved: explained[section.id]?.section, builtIn: section.explain });
+  const highlight = (index: number) =>
+    Alert.alert(tr("Highlight"), undefined, [
+      ...HIGHLIGHTS.map((h) => ({ text: tr(h.name), onPress: () => setMarks(setHighlight(folder, { section: section.id, para: index, quote: quoteOf(index) }, h.id)) })),
+      ...(hl.has(index) ? [{ text: tr("Remove highlight"), style: "destructive" as const, onPress: () => setMarks(setHighlight(folder, { section: section.id, para: index, quote: '' }, null)) }] : []),
+      { text: tr("Cancel"), style: "cancel" },
+    ]);
   const paraActions = (index: number, time: number) =>
     Alert.alert(tr("This passage"), undefined, [
+      { text: tr("Highlight…"), onPress: () => highlight(index) },
+      { text: bm.has(index) ? tr("Remove bookmark") : tr("Bookmark here"), onPress: () => setMarks(toggleBookmark(folder, { section: section.id, para: index, quote: quoteOf(index) })) },
       { text: tr("Explain this passage"), onPress: () => explainPassage(index) },
       { text: tr("Add note"), onPress: () => newNote(index, time) },
       { text: tr("Ask Claude"), onPress: () => startAsk(index, time) },
@@ -301,6 +317,8 @@ export default function Player({
     [consults, section],
   );
 
+  const hl = new Map(marks.filter((m) => m.kind === 'highlight' && m.section === section.id).map((m) => [m.para!, m.colour]));
+  const bm = new Set(marks.filter((m) => m.kind === 'bookmark' && m.section === section.id).map((m) => m.para!));
   const lit = useMemo(() => new Set((explained[section.id]?.passages ?? []).map((x) => x.para)), [explained, section]);
 
   const noted = useMemo(
@@ -413,7 +431,7 @@ export default function Player({
             <Pressable
               onPress={() => goTo(sec, p.start + 0.01)}
               onLongPress={() => paraActions(index, p.start)}
-              style={[s.para, { marginBottom: ts.gap }, index === current && s.paraOn]}
+              style={[s.para, { marginBottom: ts.gap }, hl.has(index) && { backgroundColor: highlightBg(hl.get(index)) }, index === current && s.paraOn]}
             >
               <Text
                 style={[bodyText(ts, index === current), styleFor(p, ts), rtl && s.rtl]}
@@ -429,7 +447,8 @@ export default function Player({
                   <Ionicons name="create-outline" size={15} color={c.gold} />
                 )}
                 {lit.has(index) && <Ionicons name="bulb-outline" size={15} color={c.explain} />}
-                {(asked.has(index) || noted.has(index) || lit.has(index)) && " "}
+                {bm.has(index) && <Ionicons name="bookmark" size={15} color={c.gold} />}
+                {(asked.has(index) || noted.has(index) || lit.has(index) || bm.has(index)) && " "}
                 {p.text}
               </Text>
             </Pressable>
