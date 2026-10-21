@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { EYES, Familiar, loadFamiliars, newFamiliar, PATHS, removeFamiliar, saveFamiliar } from '../../../../familiar';
+import { EYES, Familiar, loadFamiliars, newFamiliar, allPaths, removeFamiliar, saveFamiliar } from '../../../../familiar';
 import { EyesMarkStep, Label, NameStep, ShapeCoatStep, SpeciesStep } from '../../../../components/Familiar';
 import { usePad } from '../../../../playback';
 import { c, themed } from '../../../../theme';
@@ -55,7 +55,7 @@ export default function FamiliarScreen() {
       {tab === 'Paths' && (
         <View style={{ gap: 10 }}>
           <Text style={s.p}>Books of a linked path show this familiar. A path can have one familiar.</Text>
-          {PATHS.map((p) => {
+          {allPaths().map((p) => {
             const on = f.paths.includes(p.id);
             const other = loadFamiliars().list.find((x) => x.id !== f.id && x.paths.includes(p.id));
             return (

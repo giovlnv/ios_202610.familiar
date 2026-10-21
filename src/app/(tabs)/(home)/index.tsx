@@ -8,14 +8,15 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { getBook as getAudio, installSampleOnce, loadProgress } from '../../../storage';
 import { getProfile, patchBook, syncAudioBooks, Tracker } from '../../../tracker';
 import { cardOfTheDay, dailyCard, patchReading, todaysCotd, todaysDraw } from '../../../journal';
-import { cardName } from '../../../decks';
+import { cardName, cardsOf, systemName } from '../../../decks';
+import { isCustomSystem } from '../../../systems';
 import { CardImage, CardPicker } from '../../../components/Cards';
 import CardSheet from '../../../components/CardSheet';
 import { Cover, fmtDate, Stars } from '../../../components/ui';
 import { fmtTime } from '../../../format';
 import { c, F, read, themed, write } from '../../../theme';
 import { FamiliarArt } from '../../../components/Familiar';
-import { getOnboarding, nightNow, PATHS } from '../../../familiar';
+import { getOnboarding, nightNow, allPaths } from '../../../familiar';
 import { personal } from '../../../numerology';
 import { dailyMessage } from '../../../daily';
 import { sky } from '../../../astrology';
@@ -42,18 +43,21 @@ export default function Home() {
   const [about, setAbout] = useState<string | null>(null);
   const daily = cardOfTheDay();
   const [picking, setPicking] = useState(false);
-  const [lPicking, setLPicking] = useState(false);
+  const [sysPick, setSysPick] = useState<string | null>(null);
   const lenOn = (getOnboarding().paths ?? []).includes('lenormand');
-  const lDaily = dailyCard('lenormand');
-  const lEntry = lenOn ? todaysCotd('lenormand') : undefined;
-  const lMine = lEntry?.cards[1]?.card;
-  const openL = () => router.push({ pathname: '/reading/[id]', params: { id: lEntry?.id ?? 'draft', system: 'lenormand' } });
-  const logL = (card: string) =>
+  const dayOf = (sys: string) => {
+    const entry = todaysCotd(sys);
+    return { daily: dailyCard(sys), entry, mine: entry?.cards[1]?.card ? entry.cards[1] : undefined };
+  };
+  const openSys = (sys: string) =>
+    router.push({ pathname: '/reading/[id]', params: { id: todaysCotd(sys)?.id ?? 'draft', system: sys } });
+  const logSys = (sys: string, card: string, rev: boolean) =>
     setTimeout(() => {
-      if (lEntry) {
-        patchReading(lEntry.id, (x) => (x.cards[1] = { card }));
-        router.push({ pathname: '/reading/[id]', params: { id: lEntry.id } });
-      } else router.push({ pathname: '/reading/[id]', params: { id: 'draft', card, system: 'lenormand' } });
+      const entry = todaysCotd(sys);
+      if (entry) {
+        patchReading(entry.id, (x) => (x.cards[1] = { card, reversed: rev }));
+        router.push({ pathname: '/reading/[id]', params: { id: entry.id } });
+      } else router.push({ pathname: '/reading/[id]', params: { id: 'draft', card, reversed: rev ? '1' : '0', system: sys } });
     }, 450);
   const [, tick] = useState(0);
   useFocusEffect(useCallback(() => tick((n) => n + 1), []));
@@ -111,12 +115,13 @@ export default function Home() {
   const dob = getProfile().dob;
   const pn = dob && (getOnboarding().paths ?? []).includes('numerology') ? personal(dob) : null;
   const skyLine = (getOnboarding().paths ?? []).includes('astrology') ? sky() : '';
-  const pages = PATHS.filter(
+  const pages = allPaths().filter(
     (p) =>
       (p.id === 'tarot' && (!myPaths.length || myPaths.includes('tarot'))) ||
       (p.id === 'lenormand' && lenOn) ||
       (p.id === 'numerology' && !!pn) ||
-      (p.id === 'astrology' && !!skyLine),
+      (p.id === 'astrology' && !!skyLine) ||
+      (isCustomSystem(p.id) && myPaths.includes(p.id) && !!dailyCard(p.id)),
   );
   const recent = [...t.logs].sort((a, b) => b.date.localeCompare(a.date) || b.created - a.created).slice(0, 6);
 
@@ -170,18 +175,21 @@ export default function Home() {
                       onWrite={openCotd}
                     />
                   )}
-                  {pg.id === 'lenormand' && (
-                    <DayCard
-                      label="Lenormand"
-                      daily={lDaily}
-                      mine={lMine ? { card: lMine } : undefined}
-                      cw={cw}
-                      onAbout={() => setAbout(lDaily)}
-                      onLog={() => setLPicking(true)}
-                      onOpen={openL}
-                      onWrite={openL}
-                    />
-                  )}
+                  {pg.id !== 'tarot' && pg.id !== 'numerology' && pg.id !== 'astrology' && (() => {
+                    const d = dayOf(pg.id);
+                    return (
+                      <DayCard
+                        label={pg.name}
+                        daily={d.daily}
+                        mine={d.mine}
+                        cw={cw}
+                        onAbout={() => setAbout(d.daily)}
+                        onLog={() => setSysPick(pg.id)}
+                        onOpen={() => openSys(pg.id)}
+                        onWrite={() => openSys(pg.id)}
+                      />
+                    );
+                  })()}
                   {pg.id === 'numerology' && pn && (
                     <Pressable style={s.page} onPress={() => router.push('/numerology')}>
                       <Text style={s.tag}>Numerology</Text>
@@ -229,14 +237,14 @@ export default function Home() {
             ))}
           </View>
         )}
-        {(pages[page]?.id === 'tarot' || pages[page]?.id === 'lenormand') && (
+        {!!pages[page] && pages[page].id !== 'numerology' && pages[page].id !== 'astrology' && (
           <Pressable onPress={() => setHow(!how)} style={{ alignSelf: 'center', marginTop: 4 }}>
             <Text style={s.how}>{how ? 'Hide' : 'How is the calculated card chosen?'}</Text>
           </Pressable>
         )}
-        {how && (pages[page]?.id === 'tarot' || pages[page]?.id === 'lenormand') && (
+        {how && !!pages[page] && pages[page].id !== 'numerology' && pages[page].id !== 'astrology' && (
           <Text style={s.howText}>
-            Today’s date ({new Date().toLocaleDateString()}) is turned into a number with a simple hash, and that number picks one of the {pages[page].id === 'lenormand' ? '36 Lenormand' : '78 tarot'} cards. The same date always gives the same card, so it stays all day and changes at midnight. It doesn’t use your birth date, readings or anything about you, and it is never reversed.
+            Today’s date ({new Date().toLocaleDateString()}) is turned into a number with a simple hash, and that number picks one of the {pages[page].id === 'lenormand' ? '36 Lenormand' : pages[page].id === 'tarot' ? '78 tarot' : `${cardsOf(pages[page].id).length} ${pages[page].name}`} cards. The same date always gives the same card, so it stays all day and changes at midnight. It doesn’t use your birth date, readings or anything about you, and it is never reversed.
           </Text>
         )}
       </View>
@@ -248,11 +256,11 @@ export default function Home() {
         onPick={(id, rev) => logDrawn(id, rev)}
       />
       <CardPicker
-        visible={lPicking}
-        system="lenormand"
-        title="The Lenormand card you drew today"
-        onClose={() => setLPicking(false)}
-        onPick={(id) => logL(id)}
+        visible={!!sysPick}
+        system={sysPick ?? 'lenormand'}
+        title={`The ${sysPick ? systemName(sysPick) : ''} card you drew today`}
+        onClose={() => setSysPick(null)}
+        onPick={(id, rev) => sysPick && logSys(sysPick, id, rev)}
       />
 
       {listening.length > 0 && (

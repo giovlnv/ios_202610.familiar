@@ -4,11 +4,12 @@ import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { CardImage } from './Cards';
-import { cardName, systemOf } from '../decks';
+import { baseCards, cardName, systemName, systemOf } from '../decks';
+import { customCard } from '../systems';
 import { lcard, lname, lother } from '../lenormand';
 import { bookPaths, cardSections, pairsFor } from '../journal';
 import { allSources, loadSources, saveSources, Sources, usesBook } from '../sectionCards';
-import { getOnboarding, PATHS } from '../familiar';
+import { getOnboarding, allPaths } from '../familiar';
 import { getBook } from '../storage';
 import { explanationsOn } from '../explanations';
 import { c, themed } from '../theme';
@@ -40,6 +41,9 @@ export default function CardSheet({
   const num = id && !len && myPaths.includes('numerology') ? cardNumber(id) : undefined;
   const astro = id && !len && myPaths.includes('astrology') ? cardAstro(id) : undefined;
   const lc = len ? lcard(id!) : undefined;
+  const cc = id ? customCard(id) : undefined;
+  const sysName = id ? systemName(systemOf(id)) : '';
+  const based = cc?.card.base && cc.sys.base ? baseCards(cc.sys.base).find((x) => x.id === cc.card.base)?.name : undefined;
   if (shownId !== id) {
     setShownId(id);
     if (id) setSources(loadSources());
@@ -52,14 +56,14 @@ export default function CardSheet({
   const pairs = useMemo(() => (id && len ? pairsFor(id, sources) : []), [id, len, sources]);
   const nearPairs = near?.length ? pairs.filter((p) => near.includes(p.other)) : [];
   const otherPairs = pairs.filter((p) => !nearPairs.includes(p));
-  const paths = PATHS.filter((p) => found.some((f) => f.paths.includes(p.id)));
+  const paths = allPaths().filter((p) => found.some((f) => f.paths.includes(p.id)));
 
   const update = (next: Sources) => (setSources(next), saveSources(next));
   const flip = (list: string[], x: string) => (list.includes(x) ? list.filter((y) => y !== x) : [...list, x]);
   const label = allSources(sources)
     ? 'All books'
     : [
-        ...sources.paths.map((p) => PATHS.find((x) => x.id === p)?.name ?? p),
+        ...sources.paths.map((p) => allPaths().find((x) => x.id === p)?.name ?? p),
         ...sources.books.map((b) => found.find((f) => f.folder === b)?.book ?? getBook(b)?.book.title ?? b),
       ].join(', ');
 
@@ -78,6 +82,8 @@ export default function CardSheet({
               <CardImage id={id} width={120} />
               <View style={{ flex: 1, gap: 6 }}>
                 <Text style={s.name}>{cardName(id)}</Text>
+                {cc && <Text style={s.role}>{[sysName, cc.card.group].join(' · ')}</Text>}
+                {based && based !== cc?.card.name && <Text style={s.role}>Based on {based}</Text>}
                 {lc && <Text style={s.role}>{lother(id)}</Text>}
                 {lc && <Text style={s.role}>Playing card {lc.inset} · {lc.keywords}</Text>}
                 {lc && <Text style={s.role}>Its house is position {lc.n} in a Grand Tableau.</Text>}
@@ -89,7 +95,9 @@ export default function CardSheet({
 
             {!found.length ? (
               <Text style={s.dim}>
-                None of your audiobooks has a section for this card yet. Add a {len ? 'Lenormand' : 'tarot'} book{len ? ' (tag it with the Lenormand path)' : ''} and it will show up here.
+                {cc
+                  ? `None of your audiobooks has a section for this card yet. Tag a book with the ${sysName} path and its sections about this card show up here.`
+                  : `None of your audiobooks has a section for this card yet. Add a ${len ? 'Lenormand' : 'tarot'} book${len ? ' (tag it with the Lenormand path)' : ''} and it will show up here.`}
               </Text>
             ) : (
               <>

@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Alert, Pressable, Text, View } from 'react-native';
-import { Stack, useLocalSearchParams } from 'expo-router';
+import { router, Stack, useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { defaultDeck, deleteDeck, downloadLenormand, importDeckFromFiles, importDeckFromUrl, LENORMAND_DECK, listDecks, setDefaultDeck } from '../../../../../decks';
+import { createSystem, defaultDeck, deleteDeck, downloadLenormand, importDeckFromFiles, importDeckFromUrl, LENORMAND_DECK, listDecks, setDefaultDeck } from '../../../../../decks';
 import { lenormandPrefs, setLenormandPrefs } from '../../../../../lenormand';
+import { cardIdOf, listSystems } from '../../../../../systems';
+import { getOnboarding, setOnboarding } from '../../../../../familiar';
 import { CardImage, CardPicker, useDecks } from '../../../../../components/Cards';
 import { Chip } from '../../../../../components/ui';
 import { Btn, Page, ss } from '../../../../../components/settings-ui';
@@ -12,14 +14,53 @@ import { c } from '../../../../../theme';
 export default function PathDecks() {
   const { path } = useLocalSearchParams<{ path: string }>();
   if (path === 'lenormand') return <LenormandDecks />;
+  return <Systems />;
+}
+
+function Systems() {
+  useDecks();
+  const list = listSystems();
+  const make = (name: string, base?: 'tarot' | 'lenormand') => {
+    const sys = createSystem(name, base);
+    const paths = getOnboarding().paths ?? [];
+    setOnboarding({ paths: [...paths.filter((p) => p !== sys.id), sys.id] });
+    router.push({ pathname: '/settings/system/[id]', params: { id: sys.id } });
+  };
+  const start = () =>
+    Alert.prompt('New system', 'Its name is also the name of its path', (n) => {
+      const name = n?.trim();
+      if (!name) return;
+      Alert.alert(name, 'Start from', [
+        { text: 'Tarot (78 cards)', onPress: () => make(name, 'tarot') },
+        { text: 'Lenormand (36 cards)', onPress: () => make(name, 'lenormand') },
+        { text: 'A new deck of my own', onPress: () => make(name) },
+        { text: 'Cancel', style: 'cancel' },
+      ]);
+    });
   return (
     <Page>
       <Stack.Screen options={{ title: 'Make your own' }} />
-      <View style={ss.card}>
-        <Text style={ss.p}>
-          Build your own system: start from a base deck (tarot or Lenormand) and rename or redraw its cards, or import a zip of images with a list of the cards. Arrives with the Make your own path.
-        </Text>
-        <Text style={ss.meta}>Not built yet.</Text>
+      <Text style={ss.p}>
+        Build your own system. Start from tarot or Lenormand and give the cards new names and art, like a fairy tarot, or make a new deck with your own cards and groups. Each system is its own path: tag books with it and their sections become its meanings.
+      </Text>
+      <View style={[ss.card, { gap: 2 }]}>
+        {list.map((x) => (
+          <Pressable key={x.id} style={ss.palette} onPress={() => router.push({ pathname: '/settings/system/[id]', params: { id: x.id } })}>
+            <CardImage id={x.cards[0] ? cardIdOf(x.id, x.cards[0].key) : ''} width={26} />
+            <View style={{ flex: 1 }}>
+              <Text style={ss.paletteName}>{x.name}</Text>
+              <Text style={ss.meta}>
+                {x.base === 'tarot' ? 'Based on tarot' : x.base === 'lenormand' ? 'Based on Lenormand' : 'Own deck'} · {x.cards.length} cards
+              </Text>
+            </View>
+            <View style={[ss.dot, { backgroundColor: x.color }]} />
+            <Ionicons name="chevron-forward" size={16} color={c.dim} />
+          </Pressable>
+        ))}
+        {!list.length && <Text style={ss.meta}>No systems yet.</Text>}
+        <View style={[ss.row, { marginTop: 8 }]}>
+          <Btn label="New system" primary onPress={start} />
+        </View>
       </View>
     </Page>
   );

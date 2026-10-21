@@ -25,7 +25,7 @@ export default function Settings() {
       <View style={[ss.menu, { marginTop: 6 }]}>
         <MenuRow icon="albums-outline" title="Tarot" sub="Decks: default deck, custom decks" to="/settings/configuration" />
         <MenuRow icon="albums-outline" title="Lenormand" sub="Decks, card names, significator" to="/settings/decks/lenormand" />
-        <MenuRow icon="albums-outline" title="Make your own" sub="Decks: build your own system" to="/settings/decks/custom" />
+        <MenuRow icon="albums-outline" title="Make your own" sub="Your own systems and decks" to="/settings/decks/custom" />
         {(getOnboarding().paths ?? []).includes('astrology') && (
           <MenuRow icon="planet-outline" title="Astrology" sub={`Houses: ${HOUSES.find((h) => h.id === (getOnboarding().houses ?? 'placidus'))?.name}`} to="/settings/astrology" />
         )}

@@ -24,7 +24,7 @@ import {
 } from "../../../tracker";
 import { lastBackup } from "../../../sync";
 import { Chip, Cover, Stars } from "../../../components/ui";
-import { PATHS } from "../../../familiar";
+import { allPaths } from "../../../familiar";
 import { c, themed } from "../../../theme";
 import DiaryList from "../../../components/DiaryList";
 import EmptyState from '../../../components/EmptyState';
@@ -135,7 +135,7 @@ export default function Library() {
               label={`${f === "all" ? "All" : STATUS_LABEL[f as Status]} ${t.books.filter((b) => match(b, f)).length}`}
             />
           ))}
-          {PATHS.filter((p) => t.books.some((b) => b.paths?.includes(p.id))).map((p) => (
+          {allPaths().filter((p) => t.books.some((b) => b.paths?.includes(p.id))).map((p) => (
             <Chip
               key={p.id}
               on={filter === `path:${p.id}`}

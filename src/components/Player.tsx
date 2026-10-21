@@ -35,7 +35,7 @@ import {
 import { c, F, read, themed, write } from "../theme";
 import { CardImage, CardPicker } from "./Cards";
 import CardSheet from "./CardSheet";
-import { cardName } from "../decks";
+import { cardName, reversible } from "../decks";
 import TextStyleSheet from "./TextStyleSheet";
 import ExplainSheet, { ExplainTarget } from "./ExplainSheet";
 import { toast } from "./Toast";
@@ -153,7 +153,7 @@ export default function Player({
       ? Alert.alert(cardName(card.card), card.auto ? "Found in the section title" : undefined, [
           { text: "About this card", onPress: () => setCardInfo(card.card) },
           { text: "Change card", onPress: () => setPicking(true) },
-          ...(sys === "tarot"
+          ...(reversible(sys)
             ? [{ text: card.reversed ? "Show upright" : "Show reversed", onPress: () => link({ card: card.card, reversed: !card.reversed }) }]
             : []),
           { text: "Remove from this section", style: "destructive", onPress: () => link({ card: null }) },

@@ -3,9 +3,28 @@ import * as DocumentPicker from 'expo-document-picker';
 import { unzipSync } from 'fflate';
 import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
 import { isLenormand, LENORMAND, lname, matchLenormand } from './lenormand';
+import {
+  addSystem,
+  cardIdOf,
+  customCard,
+  CustomSystem,
+  getSystem,
+  isCustomCard,
+  listSystems,
+  nameFromFile,
+  nextKey,
+  patchSystem,
+  removeSystem,
+  SYSTEM_COLORS,
+  systemIdOf,
+} from './systems';
 
-export type System = 'tarot' | 'lenormand';
-export const systemOf = (cardId: string): System => (isLenormand(cardId) ? 'lenormand' : 'tarot');
+export type System = string;
+export const systemOf = (cardId: string): System => (isCustomCard(cardId) ? systemIdOf(cardId) : isLenormand(cardId) ? 'lenormand' : 'tarot');
+export const baseOf = (system: System): 'tarot' | 'lenormand' | undefined =>
+  system === 'tarot' || system === 'lenormand' ? system : getSystem(system)?.base;
+export const reversible = (system: System) => (system === 'tarot' ? true : system === 'lenormand' ? false : !!getSystem(system)?.reversals);
+export const systemName = (system: System) => (system === 'tarot' ? 'Tarot' : system === 'lenormand' ? 'Lenormand' : (getSystem(system)?.name ?? 'Deleted system'));
 
 const MAJOR = [
   'The Fool', 'The Magician', 'The High Priestess', 'The Empress', 'The Emperor', 'The Hierophant', 'The Lovers', 'The Chariot',
@@ -26,9 +45,15 @@ export const CARDS: Card[] = [
   ...MAJOR.map((name, i) => ({ id: `m${String(i).padStart(2, '0')}`, name: `${toRoman(i)} · ${name}`, group: 'Major Arcana' })),
   ...SUITS.flatMap((s) => RANKS.map((r, i) => ({ id: `${s.id}${String(i + 1).padStart(2, '0')}`, name: `${r} of ${s.name}`, group: s.name }))),
 ];
-export const cardName = (id: string) => (isLenormand(id) ? lname(id) : (CARDS.find((x) => x.id === id)?.name ?? id));
-export const cardsOf = (system: System): Card[] =>
-  system === 'lenormand' ? LENORMAND.map((x) => ({ id: x.id, name: lname(x.id), group: 'Lenormand' })) : CARDS;
+export const cardName = (id: string): string =>
+  isCustomCard(id) ? (customCard(id)?.card.name ?? 'Deleted card') : isLenormand(id) ? lname(id) : (CARDS.find((x) => x.id === id)?.name ?? id);
+export const baseCards = (base: 'tarot' | 'lenormand'): Card[] =>
+  base === 'lenormand' ? LENORMAND.map((x) => ({ id: x.id, name: lname(x.id), group: 'Lenormand' })) : CARDS;
+export const cardsOf = (system: System): Card[] => {
+  if (system === 'tarot' || system === 'lenormand') return baseCards(system);
+  const sys = getSystem(system);
+  return (sys?.cards ?? []).map((c) => ({ id: cardIdOf(sys!.id, c.key), name: c.name, group: c.group }));
+};
 
 function toRoman(n: number) {
   if (!n) return '0';
@@ -54,7 +79,7 @@ const defaultFile = (system: System = 'tarot') => new File(root(), system === 't
 const RWS_URL = 'https://github.com/giovlnv/ios_202610.familiar/releases/download/deck-rws';
 const LENORMAND_URL = 'https://github.com/giovlnv/ios_202610.familiar/releases/download/deck-lenormand';
 
-let cache: { decks: Deck[]; def: Record<System, string> } | null = null;
+let cache: { decks: Deck[]; def: Map<System, string> } | null = null;
 const listeners = new Set<() => void>();
 export const onDecksChange = (fn: () => void) => (listeners.add(fn), () => void listeners.delete(fn));
 const changed = () => ((cache = null), listeners.forEach((fn) => fn()));
@@ -72,18 +97,21 @@ function read() {
       }
     })
     .filter((d): d is Deck => !!d && d.cards.length > 0);
-  const pick = (system: System) => {
-    const f = defaultFile(system);
-    const saved = f.exists ? f.textSync().trim() : '';
-    const own = decks.filter((d) => deckSystem(d) === system);
-    return own.some((d) => d.id === saved) ? saved : (own[0]?.id ?? '');
-  };
-  cache = { decks, def: { tarot: pick('tarot'), lenormand: pick('lenormand') } };
+  cache = { decks, def: new Map() };
   return cache;
 }
 
 export const listDecks = (system: System = 'tarot') => read().decks.filter((d) => deckSystem(d) === system);
-export const defaultDeck = (system: System = 'tarot') => read().def[system];
+export function defaultDeck(system: System = 'tarot') {
+  const r = read();
+  if (!r.def.has(system)) {
+    const own = listDecks(system);
+    const f = system === 'tarot' || system === 'lenormand' ? defaultFile(system) : null;
+    const saved = f?.exists ? f.textSync().trim() : '';
+    r.def.set(system, own.some((d) => d.id === saved) ? saved : (own[0]?.id ?? ''));
+  }
+  return r.def.get(system)!;
+}
 
 export function setDefaultDeck(id: string) {
   const d = read().decks.find((x) => x.id === id);
@@ -100,7 +128,8 @@ export function cardUri(cardId: string, deckId?: string) {
 }
 
 export function deleteDeck(id: string) {
-  if (Object.values(read().def).includes(id)) throw new Error('This is your default deck. Choose another default first.');
+  const d0 = read().decks.find((x) => x.id === id);
+  if (d0 && defaultDeck(deckSystem(d0)) === id) throw new Error('This is your default deck. Choose another default first.');
   const d = new Directory(root(), id);
   if (d.exists) d.delete();
   changed();
@@ -111,7 +140,8 @@ function save(id: string, deck: Omit<Deck, 'id'>) {
   if (!f.exists) f.create();
   f.write(JSON.stringify(deck));
   changed();
-  if (!defaultFile(deck.system ?? 'tarot').exists) setDefaultDeck(id);
+  const sys = deck.system ?? 'tarot';
+  if ((sys === 'tarot' || sys === 'lenormand') && !defaultFile(sys).exists) setDefaultDeck(id);
   changed();
 }
 
@@ -255,4 +285,103 @@ export async function importDeckFromUrl(name: string, url: string, system: Syste
   } finally {
     tmp.delete();
   }
+}
+
+export function createSystem(name: string, base?: 'tarot' | 'lenormand') {
+  const cards = base ? baseCards(base).map((c) => ({ key: c.id, name: c.name, group: c.group, base: c.id })) : [];
+  return addSystem({ name, base, reversals: base === 'tarot', color: SYSTEM_COLORS[listSystems().length % SYSTEM_COLORS.length], cards });
+}
+
+const sysDeck = (sys: CustomSystem) => {
+  const dir = new Directory(root(), sys.id);
+  dir.create({ idempotent: true });
+  return dir;
+};
+
+function saveSysDeck(sys: CustomSystem, add: string[], drop: string[] = []) {
+  const f = new File(sysDeck(sys), 'deck.json');
+  let cards: string[] = [];
+  try {
+    cards = f.exists ? JSON.parse(f.textSync()).cards : [];
+  } catch {}
+  const next = [...new Set([...cards.filter((x) => !drop.includes(x)), ...add])];
+  if (!f.exists) f.create();
+  f.write(JSON.stringify({ name: sys.name, source: 'Your own images', cards: next, system: sys.id }));
+  changed();
+}
+
+export async function setCardImage(sysId: string, cardId: string, uri: string) {
+  const sys = getSystem(sysId);
+  if (!sys) return;
+  const dest = new File(sysDeck(sys), `${cardId}.jpg`);
+  if (dest.exists) dest.delete();
+  new File(uri).copySync(dest);
+  await shrink(dest);
+  saveSysDeck(sys, [cardId]);
+}
+
+export function removeCustomCard(sysId: string, key: string) {
+  const sys = getSystem(sysId);
+  if (!sys) return;
+  const id = cardIdOf(sysId, key);
+  const img = new File(sysDeck(sys), `${id}.jpg`);
+  if (img.exists) img.delete();
+  patchSystem(sysId, (s) => (s.cards = s.cards.filter((c) => c.key !== key)));
+  saveSysDeck(sys, [], [id]);
+}
+
+export function deleteSystem(sysId: string) {
+  const d = new Directory(root(), sysId);
+  if (d.exists) d.delete();
+  removeSystem(sysId);
+  changed();
+}
+
+export async function importIntoSystem(sysId: string) {
+  const sys = getSystem(sysId);
+  if (!sys) return null;
+  const r = await DocumentPicker.getDocumentAsync({ multiple: true, copyToCacheDirectory: true, type: ['image/*', 'application/zip'] });
+  if (r.canceled) return null;
+  type Item = { name: string; write: (dest: File) => void };
+  let items: Item[];
+  const zip = r.assets.find((a) => /\.zip$/i.test(a.name));
+  if (zip) {
+    const files = unzipSync(await new File(zip.uri).bytes(), { filter: (f) => isImage(f.name) });
+    items = Object.entries(files).map(([n, data]) => ({ name: n, write: (dest) => (dest.create(), dest.write(data)) }));
+  } else items = r.assets.filter((a) => isImage(a.name)).map((a) => ({ name: a.name, write: (dest) => new File(a.uri).copySync(dest) }));
+  items.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
+  const dir = sysDeck(sys);
+  const placed: string[] = [];
+  const skipped: string[] = [];
+  const added: { key: string; name: string; group: string }[] = [];
+  let next = Number(nextKey(sys));
+  for (const it of items) {
+    let key: string | undefined;
+    if (sys.base) {
+      const base = sys.base === 'lenormand' ? matchLenormand(it.name.split('/').pop()!) : matchCard(it.name);
+      key = base && sys.cards.some((c) => c.key === base) ? base : undefined;
+    } else {
+      const name = nameFromFile(it.name) || `Card ${next}`;
+      key = sys.cards.find((c) => c.name.toLowerCase() === name.toLowerCase())?.key;
+      if (!key) {
+        key = String(next++).padStart(3, '0');
+        const folder = it.name.includes('/') ? it.name.split('/').slice(-2, -1)[0] : '';
+        added.push({ key, name, group: folder ? nameFromFile(folder) || 'Cards' : 'Cards' });
+      }
+    }
+    const id = key && cardIdOf(sys.id, key);
+    if (!id || placed.includes(id)) {
+      skipped.push(it.name);
+      continue;
+    }
+    const dest = new File(dir, `${id}.jpg`);
+    if (dest.exists) dest.delete();
+    it.write(dest);
+    await shrink(dest);
+    placed.push(id);
+  }
+  if (added.length) patchSystem(sys.id, (s) => s.cards.push(...added));
+  if (!placed.length) throw new Error(sys.base ? 'No card names recognised in the file names.' : 'No images found.');
+  saveSysDeck(getSystem(sys.id)!, placed);
+  return { matched: placed.length, added: added.length, skipped };
 }

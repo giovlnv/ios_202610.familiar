@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { router, useFocusEffect } from 'expo-router';
+import { Href, router, useFocusEffect } from 'expo-router';
 import { Image, Pressable, Text, View } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { File, Paths } from 'expo-file-system';
@@ -8,11 +8,12 @@ import { getProfile, Profile } from '../tracker';
 import { c, F, read, themed, write } from '../theme';
 import { birthCards, dailyCard, loadJournal, mostDrawn, showDate } from '../journal';
 import { lenormandPrefs } from '../lenormand';
+import { isCustomSystem } from '../systems';
 import { cardName } from '../decks';
 import { CardImage } from './Cards';
 import CardSheet from './CardSheet';
 import { FamiliarArt } from './Familiar';
-import { getOnboarding, nightNow, PATHS } from '../familiar';
+import { getOnboarding, nightNow, allPaths } from '../familiar';
 import { currentGuide } from '../guide';
 import { usePlayback } from '../playback';
 import { numbers, personal, show } from '../numerology';
@@ -55,7 +56,7 @@ function Tile({ value, label, onPress }: { value: string; label: string; onPress
   );
 }
 
-function More({ label, to }: { label: string; to: '/numerology' | '/astrology' }) {
+function More({ label, to }: { label: string; to: Href }) {
   return (
     <Pressable onPress={() => router.push(to)} style={s.more}>
       <Text style={s.moreText}>{label}</Text>
@@ -124,6 +125,37 @@ function LenormandPanel({ onCard }: { onCard: (id: string, role: string) => void
   );
 }
 
+function SystemPanel({ id, onCard }: { id: string; onCard: (id: string, role: string) => void }) {
+  const readings = loadJournal().readings.filter((r) => r.system === id);
+  const top = mostDrawn(readings, 1)[0]?.[0];
+  const today = dailyCard(id);
+  const list: [string, string | undefined, string][] = [
+    ['Today', today || undefined, 'Today’s calculated card.'],
+    ['Most drawn', top, 'The card that appears most often in your journal.'],
+  ];
+  return (
+    <>
+      <View style={s.cards}>
+        {list
+          .filter(([, x]) => x)
+          .map(([label, x, role]) => (
+            <Pressable key={label} style={s.cardCol} onPress={() => onCard(x!, role)}>
+              <CardImage id={x!} width={54} />
+              <Text style={s.cardLabel}>{label}</Text>
+              <Text style={s.cardName} numberOfLines={2}>
+                {cardName(x!).split(' · ').pop()}
+              </Text>
+            </Pressable>
+          ))}
+      </View>
+      <Text style={s.line}>
+        {readings.length} {readings.length === 1 ? 'reading' : 'readings'} in your journal
+      </Text>
+      <More label="Edit this system" to={`/settings/system/${id}`} />
+    </>
+  );
+}
+
 function NumerologyPanel({ dob }: { dob?: string }) {
   if (!dob) return <Text style={s.user}>Add your birth date to see your numbers.</Text>;
   const n = numbers();
@@ -173,8 +205,8 @@ export default function ProfileHeader() {
   useFocusEffect(useCallback(() => (setP(getProfile()), setPaths(getOnboarding().paths ?? [])), []));
   const playing = usePlayback().status.playing;
   const [open, setOpen] = useState<{ id: string; role: string } | null>(null);
-  const shown = PATHS.filter((x) => paths.includes(x.id));
-  const list = shown.length ? shown : PATHS.slice(0, 1);
+  const shown = allPaths().filter((x) => paths.includes(x.id));
+  const list = shown.length ? shown : allPaths().slice(0, 1);
   const [tab, setTab] = useState(() => read('profile-path.txt') || 'tarot');
   const active = list.find((x) => x.id === tab) ?? list[0];
   const pick = (id: string) => (write('profile-path.txt', id), setTab(id));
@@ -206,7 +238,12 @@ export default function ProfileHeader() {
       {active.id === 'numerology' && <NumerologyPanel dob={p.dob} />}
       {active.id === 'astrology' && <AstrologyPanel />}
       {active.id === 'lenormand' && <LenormandPanel onCard={(id, role) => setOpen({ id, role })} />}
-      {active.id === 'custom' && <Text style={s.user}>Arrives with the {active.name} path.</Text>}
+      {active.id === 'custom' && (
+        <Pressable onPress={() => router.push('/settings/decks/custom')}>
+          <Text style={s.user}>Make a system of your own in Settings → Make your own.</Text>
+        </Pressable>
+      )}
+      {isCustomSystem(active.id) && <SystemPanel id={active.id} onCard={(id, role) => setOpen({ id, role })} />}
       <CardSheet id={open?.id ?? null} role={open?.role} onClose={() => setOpen(null)} />
     </View>
   );

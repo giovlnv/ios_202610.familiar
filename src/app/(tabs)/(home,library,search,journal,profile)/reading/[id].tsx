@@ -20,16 +20,19 @@ import {
   saveReading,
   showDate,
   spreadOf,
+  defaultSpread,
+  significatorFor,
   spreadsFor,
   updateJournal,
 } from '../../../../journal';
-import { dealt, lenormandPrefs, related } from '../../../../lenormand';
+import { dealt, related } from '../../../../lenormand';
+import { cardIdOf, getSystem, isCustomSystem, listSystems } from '../../../../systems';
 import Tableau from '../../../../components/Tableau';
 import { personal } from '../../../../numerology';
 import { sky } from '../../../../astrology';
 import { getProfile } from '../../../../tracker';
 import { getOnboarding } from '../../../../familiar';
-import { cardName } from '../../../../decks';
+import { baseOf, cardName, reversible, systemName } from '../../../../decks';
 import { CardImage, CardPicker } from '../../../../components/Cards';
 import CardSheet from '../../../../components/CardSheet';
 import { shareToClaude } from '../../../../components/Consults';
@@ -47,7 +50,7 @@ export default function ReadingScreen() {
   const { width } = useWindowDimensions();
   const [j, setJ] = useState(loadJournal);
   const [draft, setDraft] = useState(id === 'draft');
-  const [r, setR] = useState<Reading | undefined>(() => (id === 'draft' ? cotdDraft(card, reversed === '1', sysParam === 'lenormand' ? 'lenormand' : 'tarot') : loadJournal().readings.find((x) => x.id === id)));
+  const [r, setR] = useState<Reading | undefined>(() => (id === 'draft' ? cotdDraft(card, reversed === '1', sysParam || 'tarot') : loadJournal().readings.find((x) => x.id === id)));
   const [slot, setSlot] = useState<number | null>(null);
   const [about, setAbout] = useState<{ id: string; role: string; near?: string[] } | null>(null);
   const [personSheet, setPersonSheet] = useState(false);
@@ -64,11 +67,18 @@ export default function ReadingScreen() {
   const sp = spreadOf(j, r.spreadId);
   const person = j.people.find((p) => p.id === r.personId);
   const system = readingSystem(r);
-  const len = system === 'lenormand';
+  const len = baseOf(system) === 'lenormand';
+  const flips = reversible(system);
+  const myPaths = getOnboarding().paths ?? [];
+  const decks = [
+    'tarot',
+    ...(system === 'lenormand' || myPaths.includes('lenormand') ? ['lenormand'] : []),
+    ...listSystems().filter((x) => x.id === system || myPaths.includes(x.id)).map((x) => x.id),
+  ];
   const grand = sp.layout === 'gt49' || sp.layout === 'gt84' ? sp.layout : null;
   const isLine = sp.layout === 'line' && sp.positions.length > 3;
   const slotW = isLine ? 78 : (width - 32 - 20) / 3;
-  const showDecks = r.spreadId !== 'cotd' && r.spreadId !== 'lcotd' && (len || (getOnboarding().paths ?? []).includes('lenormand'));
+  const showDecks = !sp.daily && decks.length > 1;
   const placed = r.cards.map((p) => p?.card).filter((x): x is string => !!x);
   const nearOf = (i: number) => {
     if (grand) return related(grand, i, 'near').map((k) => r.cards[k]?.card).filter((x): x is string => !!x);
@@ -82,20 +92,20 @@ export default function ReadingScreen() {
   };
   const placeCard = (i: number, card: string | undefined, reversed = false) => {
     const cards = [...r.cards];
-    cards[i] = card ? { card, reversed: !len && reversed } : {};
+    cards[i] = card ? { card, reversed: flips && reversed } : {};
     set({ cards });
     if (grand && card) {
       const next = sp.positions.findIndex((_, k) => k > i && !cards[k]?.card);
       setSlot(next >= 0 ? next : null);
     }
   };
-  const switchSystem = (next: 'tarot' | 'lenormand') => {
+  const switchSystem = (next: string) => {
     if (next === system) return;
     const go = () =>
       set({
-        system: next === 'lenormand' ? 'lenormand' : undefined,
-        significator: next === 'lenormand' ? (r.significator ?? lenormandPrefs().significator) : undefined,
-        spreadId: next === 'lenormand' ? 'l3' : 'three',
+        system: next === 'tarot' ? undefined : next,
+        significator: significatorFor(next),
+        spreadId: defaultSpread(next),
         cards: [],
       });
     if (!placed.length) return go();
@@ -105,7 +115,8 @@ export default function ReadingScreen() {
     ]);
   };
   const deal = () => {
-    const go = () => set({ cards: dealt().map((card) => ({ card })) });
+    const own = (x: string) => (isCustomSystem(system) ? cardIdOf(system, x) : x);
+    const go = () => set({ cards: dealt().map((x) => ({ card: getSystem(system) && !getSystem(system)!.cards.some((k) => k.key === x) ? undefined : own(x) })) });
     if (!placed.length) return go();
     Alert.alert('Deal all 36 at random?', 'The cards already placed are replaced.', [
       { text: 'Cancel', style: 'cancel' },
@@ -128,7 +139,7 @@ export default function ReadingScreen() {
       ...(locked(i)
         ? []
         : [
-            ...(len ? [] : [{ text: p.reversed ? 'Make upright' : 'Make reversed', onPress: () => placeCard(i, p.card, !p.reversed) }]),
+            ...(!flips ? [] : [{ text: p.reversed ? 'Make upright' : 'Make reversed', onPress: () => placeCard(i, p.card, !p.reversed) }]),
             { text: 'Change card', onPress: () => setSlot(i) },
             { text: 'Remove card', style: 'destructive' as const, onPress: () => placeCard(i, undefined) },
           ]),
@@ -151,7 +162,7 @@ export default function ReadingScreen() {
       Alert.prompt('Positions', 'Separate them with commas, in order (e.g. Me, You, Bond)', (pos) => {
         const positions = (pos ?? '').split(',').map((x) => x.trim()).filter(Boolean);
         if (!positions.length) return;
-        const created = addSpread(name.trim(), positions, len ? 'lenormand' : undefined);
+        const created = addSpread(name.trim(), positions, system === 'tarot' ? undefined : system);
         reload();
         set({ spreadId: created.id });
       });
@@ -269,8 +280,9 @@ export default function ReadingScreen() {
         <>
           <Text style={s.label}>Deck</Text>
           <View style={s.chips}>
-            <Chip label="Tarot" on={!len} onPress={() => switchSystem('tarot')} />
-            <Chip label="Lenormand" on={len} onPress={() => switchSystem('lenormand')} />
+            {decks.map((d) => (
+              <Chip key={d} label={systemName(d)} on={system === d} onPress={() => switchSystem(d)} />
+            ))}
           </View>
         </>
       )}
@@ -287,8 +299,10 @@ export default function ReadingScreen() {
         <>
           <Text style={s.label}>Significator</Text>
           <View style={s.chips}>
-            <Chip label="29 · A Cigana" on={r.significator === 'l29'} onPress={() => set({ significator: 'l29' })} />
-            <Chip label="28 · O Cigano" on={r.significator === 'l28'} onPress={() => set({ significator: 'l28' })} />
+            {(['l29', 'l28'] as const).map((x) => {
+              const sig = significatorFor(system, x)!;
+              return <Chip key={x} label={cardName(sig)} on={r.significator === sig} onPress={() => set({ significator: sig })} />;
+            })}
             <Chip label="Deal at random" onPress={deal} />
             {!!placed.length && (
               <Chip
@@ -343,7 +357,7 @@ export default function ReadingScreen() {
       </ScrollView>
       )}
       {!grand && !!filled.length && (
-        <Text style={s.hint}>{len ? 'Tap a card to change it or read about it.' : 'Tap a card to flip, change it or listen to its section.'}</Text>
+        <Text style={s.hint}>{flips ? 'Tap a card to flip, change it or listen to its section.' : 'Tap a card to change it or read about it.'}</Text>
       )}
 
       <Text style={s.label}>My interpretation</Text>

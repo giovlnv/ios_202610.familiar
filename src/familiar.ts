@@ -1,3 +1,4 @@
+import { listSystems } from './systems';
 import { File, Paths } from 'expo-file-system';
 import { ART, CRESCENT } from './familiar-art';
 import { paletteId } from './theme';
@@ -108,6 +109,8 @@ export const PATHS = [
   { id: 'numerology', name: 'Numerology', color: '#7FC4C9' },
   { id: 'custom', name: 'Make your own', color: '#B9B6C3' },
 ];
+
+export const allPaths = () => [...PATHS, ...listSystems().map((x) => ({ id: x.id, name: x.name, color: x.color }))];
 
 export const SHADOW: Familiar = {
   id: 'shadow',

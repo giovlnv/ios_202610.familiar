@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { describe, loadFamiliars, PATHS } from '../../../familiar';
+import { describe, loadFamiliars, allPaths } from '../../../familiar';
 import { FamiliarArt } from '../../../components/Familiar';
 import { usePad } from '../../../playback';
 import { c, themed } from '../../../theme';
@@ -36,7 +36,7 @@ export default function Familiars() {
                 {!!f.paths.length && (
                   <View style={s.tags}>
                     {f.paths.map((p) => {
-                      const path = PATHS.find((x) => x.id === p);
+                      const path = allPaths().find((x) => x.id === p);
                       return path ? (
                         <View key={p} style={[s.tag, { backgroundColor: path.color + '29' }]}>
                           <Text style={[s.tagText, { color: path.color }]}>{path.name}</Text>

@@ -1,6 +1,7 @@
 import { Directory, File, Paths } from 'expo-file-system';
 import { CARDS, cardName, System } from './decks';
 import { lenormandInTitle, LENORMAND } from './lenormand';
+import { cardIdOf, getSystem } from './systems';
 import { Section } from './types';
 
 export type Link = { card: string | null; reversed?: boolean };
@@ -42,8 +43,21 @@ export function cardPattern(id: string) {
 
 const ORDER = [...CARDS.filter((x) => !x.id.startsWith('m')), ...CARDS.filter((x) => x.id.startsWith('m'))];
 
-export function cardInTitle(title: string, system: System = 'tarot') {
+const esc = (t: string) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const plainText = (t: string) => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+export function cardInTitle(title: string, system: System = 'tarot'): string | undefined {
   if (system === 'tarot') return ORDER.find((x) => cardPattern(x.id).test(title))?.id;
+  const sys = system === 'lenormand' ? undefined : getSystem(system);
+  if (sys) {
+    const t = plainText(title);
+    const named = [...sys.cards]
+      .sort((a, b) => b.name.length - a.name.length)
+      .find((c) => c.name.trim() && new RegExp(`\\b${esc(plainText(c.name.split(' · ').pop()!))}\\b`).test(t));
+    if (named) return cardIdOf(sys.id, named.key);
+    const base = sys.base ? cardInTitle(title, sys.base) : undefined;
+    return base && sys.cards.some((c) => c.key === base) ? cardIdOf(sys.id, base) : undefined;
+  }
   const found = lenormandInTitle(title);
   const num = Number(title.match(/\b(\d{1,2})\b/)?.[1]);
   const byNum = LENORMAND[num - 1]?.id;
