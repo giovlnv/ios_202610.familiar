@@ -11,6 +11,8 @@ import { getProfile, patchBook, syncAudioBooks, Tracker } from '../../../tracker
 import { cardOfTheDay, dailyCard, patchReading, todaysCotd, todaysDraw } from '../../../journal';
 import { cardName, cardsOf, systemName } from '../../../decks';
 import { isCustomSystem } from '../../../systems';
+import { isSubject } from '../../../study';
+import { StudyDay } from '../../../components/StudyJournal';
 import { CardImage, CardPicker } from '../../../components/Cards';
 import CardSheet from '../../../components/CardSheet';
 import { Cover, fmtDate, Stars } from '../../../components/ui';
@@ -141,7 +143,8 @@ export default function Home() {
       (p.id === 'lenormand' && lenOn) ||
       (p.id === 'numerology' && !!pn) ||
       (p.id === 'astrology' && !!skyLine) ||
-      (isCustomSystem(p.id) && myPaths.includes(p.id) && !!dailyCard(p.id)),
+      (isCustomSystem(p.id) && myPaths.includes(p.id) && !!dailyCard(p.id)) ||
+      (isSubject(p.id) && myPaths.includes(p.id)),
   );
   const recent = [...t.logs].sort((a, b) => b.date.localeCompare(a.date) || b.created - a.created).slice(0, 6);
 
@@ -197,7 +200,8 @@ export default function Home() {
                       onShare={() => shareDay('Tarot', daily, mine && mineCard?.card ? mineCard : undefined)}
                     />
                   )}
-                  {pg.id !== 'tarot' && pg.id !== 'numerology' && pg.id !== 'astrology' && (() => {
+                  {isSubject(pg.id) && <StudyDay id={pg.id} />}
+                  {pg.id !== 'tarot' && pg.id !== 'numerology' && pg.id !== 'astrology' && !isSubject(pg.id) && (() => {
                     const d = dayOf(pg.id);
                     return (
                       <DayCard

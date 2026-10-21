@@ -13,6 +13,9 @@ import { Chip, fmtDate } from '../../../components/ui';
 import { usePad } from '../../../playback';
 import { c, themed } from '../../../theme';
 import EmptyState from '../../../components/EmptyState';
+import StudyJournal, { JournalTabs } from '../../../components/StudyJournal';
+import { isSubject, useStudy } from '../../../study';
+import { getOnboarding } from '../../../familiar';
 
 const TAROT = ['tarot'];
 
@@ -29,6 +32,11 @@ export default function Journal() {
   const [picked, setPicked] = useState<string | null>(null);
   const [q, setQ] = useState('');
   const [open, setOpen] = useState<{ id: string; role: string } | null>(null);
+  const study = useStudy();
+  const [tab, setTab] = useState<'readings' | 'notes' | 'cards'>(() =>
+    loadJournal().readings.length || (getOnboarding().paths ?? []).some((p) => !isSubject(p)) || !study.subjects.length ? 'readings' : 'notes',
+  );
+  const switcher = study.subjects.length ? <JournalTabs tab={tab} onTab={setTab} /> : null;
   useFocusEffect(
     useCallback(() => {
       const refresh = () => setJ(loadJournal());
@@ -67,8 +75,11 @@ export default function Journal() {
   for (const r of j.readings) if (r.area) areaCount.set(r.area, (areaCount.get(r.area) ?? 0) + 1);
   const topArea = [...areaCount.entries()].sort((a, b) => b[1] - a[1])[0];
 
+  if (tab !== 'readings') return <StudyJournal tab={tab} switcher={switcher} />;
+
   const header = (
     <View>
+      {switcher && <View style={{ paddingHorizontal: 16, paddingTop: 12 }}>{switcher}</View>}
       <Stack.Screen
         options={{
           headerRight: () => (

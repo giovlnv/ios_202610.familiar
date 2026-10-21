@@ -6,11 +6,12 @@ import { Image, Pressable, Text, View } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { File, Paths } from 'expo-file-system';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { getProfile, Profile } from '../tracker';
+import { getProfile, load, Profile } from '../tracker';
 import { c, F, read, themed, write } from '../theme';
 import { birthCards, dailyCard, loadJournal, mostDrawn, showDate } from '../journal';
 import { lenormandPrefs } from '../lenormand';
 import { isCustomSystem } from '../systems';
+import { isDue, isSubject, useStudy } from '../study';
 import { cardName } from '../decks';
 import { CardImage } from './Cards';
 import CardSheet from './CardSheet';
@@ -201,6 +202,31 @@ function AstrologyPanel() {
   );
 }
 
+function StudyPanel({ id }: { id: string }) {
+  const d = useStudy();
+  const pool = d.cards.filter((x) => x.subject === id);
+  const books = load().books.filter((b) => b.paths?.includes(id)).length;
+  const tiles: [number, string][] = [
+    [books, tr('books')],
+    [d.notes.filter((n) => n.subject === id).length, tr('notes')],
+    [pool.length, tr('flashcards')],
+    [pool.filter(isDue).length, tr('due today')],
+  ];
+  return (
+    <>
+      <View style={s.tiles}>
+        {tiles.map(([v, l]) => (
+          <View key={l} style={s.tile}>
+            <Text style={s.tileValue}>{v}</Text>
+            <Text style={s.tileLabel}>{l}</Text>
+          </View>
+        ))}
+      </View>
+      <More label={tr('Review flashcards')} to={`/study/review?subject=${id}`} />
+    </>
+  );
+}
+
 export default function ProfileHeader() {
   const [p, setP] = useState<Profile>(getProfile);
   const [paths, setPaths] = useState<string[]>(() => getOnboarding().paths ?? []);
@@ -253,6 +279,7 @@ export default function ProfileHeader() {
           <Text style={s.user}>{tr("Make a system of your own in Settings → Make your own.")}</Text>
         </Pressable>
       )}
+      {isSubject(active.id) && <StudyPanel id={active.id} />}
       {isCustomSystem(active.id) && <SystemPanel id={active.id} onCard={(id, role) => setOpen({ id, role })} />}
       <CardSheet id={open?.id ?? null} role={open?.role} onClose={() => setOpen(null)} />
     </View>
