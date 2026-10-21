@@ -1323,4 +1323,10 @@ export const PT: Record<string, string> = {
   "notes": "notas",
   "{0} got it · {1} again": "{0} acertos · {1} de novo",
   "{0} notes · {1} flashcards": "{0} notas · {1} flashcards",
+  "Edit or delete": "Editar ou apagar",
+  "Consults": "Consultas",
+  "Review this book’s flashcards ({0})": "Revisar os flashcards deste livro ({0})",
+  "Hold a passage while listening or reading → Make a flashcard.": "Segure um trecho ao ouvir ou ler → Criar flashcard.",
+  "Hold a passage while listening → Ask Claude.": "Segure um trecho ao ouvir → Perguntar ao Claude.",
+  "Hold a passage while listening → Add note.": "Segure um trecho ao ouvir → Adicionar nota.",
 };
