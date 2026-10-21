@@ -69,16 +69,16 @@ function More({ label, to }: { label: string; to: Href }) {
 
 function TarotPanel({ dob, onCard }: { dob?: string; onCard: (id: string, role: string) => void }) {
   const ROLE: Record<string, string> = {
-    Personality: 'Your personality card: how you show up in the world and the lessons you meet outwardly. The sum of the digits of your birth date.',
-    Essence: 'Your essence card: the inner core beneath the personality, reduced from it to a single digit.',
+    Personality: tr('Your personality card: how you show up in the world and the lessons you meet outwardly. The sum of the digits of your birth date.'),
+    Essence: tr('Your essence card: the inner core beneath the personality, reduced from it to a single digit.'),
   };
-  const roleOf = (label: string) => ROLE[label] ?? `Your card for ${new Date().getFullYear()}: the theme of the year, from your birth day and month plus the current year.`;
+  const roleOf = (label: string) => ROLE[label] ?? tr('Your card for {0}: the theme of the year, from your birth day and month plus the current year.', { 0: new Date().getFullYear() });
   const bc = birthCards(dob);
   if (!bc) return <Text style={s.user}>{tr("Add your birth date to see your personality cards.")}</Text>;
   const birth: [string, string | undefined][] = [
     ['Personality', bc.personality],
     ['Essence', bc.essence !== bc.personality ? bc.essence : undefined],
-    [`Year ${new Date().getFullYear()}`, bc.yearCard],
+    ['Year', bc.yearCard],
   ];
   return (
     <View style={s.cards}>
@@ -87,7 +87,7 @@ function TarotPanel({ dob, onCard }: { dob?: string; onCard: (id: string, role: 
         .map(([label, id]) => (
           <Pressable key={label} style={s.cardCol} onPress={() => onCard(id!, roleOf(label))}>
             <CardImage id={id!} width={54} />
-            <Text style={s.cardLabel}>{label}</Text>
+            <Text style={s.cardLabel}>{label === 'Year' ? tr('Year {0}', { 0: new Date().getFullYear() }) : tr(label)}</Text>
             <Text style={s.cardName} numberOfLines={2}>
               {cardName(id!).split(' · ').pop()}
             </Text>
@@ -101,9 +101,9 @@ function LenormandPanel({ onCard }: { onCard: (id: string, role: string) => void
   const readings = loadJournal().readings.filter((r) => r.system === 'lenormand');
   const top = mostDrawn(readings, 1)[0]?.[0];
   const list: [string, string | undefined, string][] = [
-    ['You', lenormandPrefs().significator, 'Your significator: the card that stands for you in a Grand Tableau. Change it in Settings → Lenormand.'],
-    ['Today', dailyCard('lenormand'), 'Today’s calculated Lenormand card.'],
-    ['Most drawn', top, 'The Lenormand card that appears most often in your journal.'],
+    ['You', lenormandPrefs().significator, tr('Your significator: the card that stands for you in a Grand Tableau. Change it in Settings → Lenormand.')],
+    ['Today', dailyCard('lenormand'), tr('Today’s calculated Lenormand card.')],
+    ['Most drawn', top, tr('The Lenormand card that appears most often in your journal.')],
   ];
   return (
     <>
@@ -113,7 +113,7 @@ function LenormandPanel({ onCard }: { onCard: (id: string, role: string) => void
           .map(([label, id, role]) => (
             <Pressable key={label} style={s.cardCol} onPress={() => onCard(id!, role)}>
               <CardImage id={id!} width={54} />
-              <Text style={s.cardLabel}>{label}</Text>
+              <Text style={s.cardLabel}>{tr(label)}</Text>
               <Text style={s.cardName} numberOfLines={2}>
                 {cardName(id!).split(' · ').pop()}
               </Text>
@@ -121,7 +121,7 @@ function LenormandPanel({ onCard }: { onCard: (id: string, role: string) => void
           ))}
       </View>
       <Text style={s.line}>
-        {readings.length}{' '}{tr("Lenormand")}{' '}{readings.length === 1 ? 'reading' : 'readings'}{' '}{tr("in your journal")}
+        {readings.length}{' '}{tr("Lenormand")}{' '}{tr(readings.length === 1 ? 'reading' : 'readings')}{' '}{tr("in your journal")}
       </Text>
     </>
   );
@@ -132,8 +132,8 @@ function SystemPanel({ id, onCard }: { id: string; onCard: (id: string, role: st
   const top = mostDrawn(readings, 1)[0]?.[0];
   const today = dailyCard(id);
   const list: [string, string | undefined, string][] = [
-    ['Today', today || undefined, 'Today’s calculated card.'],
-    ['Most drawn', top, 'The card that appears most often in your journal.'],
+    ['Today', today || undefined, tr('Today’s calculated card.')],
+    ['Most drawn', top, tr('The card that appears most often in your journal.')],
   ];
   return (
     <>
@@ -143,7 +143,7 @@ function SystemPanel({ id, onCard }: { id: string; onCard: (id: string, role: st
           .map(([label, x, role]) => (
             <Pressable key={label} style={s.cardCol} onPress={() => onCard(x!, role)}>
               <CardImage id={x!} width={54} />
-              <Text style={s.cardLabel}>{label}</Text>
+              <Text style={s.cardLabel}>{tr(label)}</Text>
               <Text style={s.cardName} numberOfLines={2}>
                 {cardName(x!).split(' · ').pop()}
               </Text>
@@ -151,7 +151,7 @@ function SystemPanel({ id, onCard }: { id: string; onCard: (id: string, role: st
           ))}
       </View>
       <Text style={s.line}>
-        {readings.length} {readings.length === 1 ? 'reading' : 'readings'}{' '}{tr("in your journal")}
+        {readings.length} {tr(readings.length === 1 ? 'reading' : 'readings')}{' '}{tr("in your journal")}
       </Text>
       <More label={tr("Edit this system")} to={`/settings/system/${id}`} />
     </>
@@ -219,7 +219,7 @@ export default function ProfileHeader() {
         <FamiliarArt familiar={currentGuide()} pose={playing ? 'reading' : nightNow() ? 'sleeping' : 'idle'} size={84} vial alive />
         <View style={{ flex: 1 }}>
           <Text style={s.name}>{p.name || tr("Set up your profile")}</Text>
-          <Text style={s.user}>{p.username ? `@${p.username}` : tr("Add a photo, name and username")}</Text>
+          <Text style={s.user}>{p.username ? `@${p.username}${p.pronouns ? ` · ${p.pronouns}` : ""}` : p.pronouns ?? tr("Add a photo, name and username")}</Text>
           {!!p.dob && <Text style={s.user}>{tr("Born")}{' '}{showDate(p.dob)}</Text>}
           {(() => {
             const st = streaks();

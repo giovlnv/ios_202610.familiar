@@ -1,4 +1,5 @@
-import { t as tr } from '../../../../i18n';
+import { PRONOUNS, setPronouns, t as tr } from '../../../../i18n';
+import { Chip } from '../../../../components/ui';
 import { useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -18,6 +19,7 @@ export default function EditProfile() {
   const [photo, setPhoto] = useState(p.photo);
   const [name, setName] = useState(p.name ?? '');
   const [username, setUsername] = useState(p.username ?? '');
+  const [pronouns, setPron] = useState(p.pronouns);
   const [dob, setDob] = useState(showDate(p.dob));
   const [time, setTime] = useState(ob.birthTime ?? '');
   const [place, setPlace] = useState<Place | undefined>(
@@ -36,7 +38,8 @@ export default function EditProfile() {
     const u = used.trim().replace(/\s+/g, ' ');
     if (u && u !== last?.name) list = [...names, { name: u, since: parseDate(since) }];
     else if (u && last) list = [...names.slice(0, -1), { ...last, since: parseDate(since) }];
-    setProfile({ name: name.trim(), username, dob: parseDate(dob), birthName: birthName.trim().replace(/\s+/g, ' ') || undefined, names: list });
+    setPronouns(pronouns);
+    setProfile({ name: name.trim(), username, pronouns, dob: parseDate(dob), birthName: birthName.trim().replace(/\s+/g, ' ') || undefined, names: list });
     setOnboarding({ birthTime: time, birthPlace: place?.label, birthLat: place?.lat, birthLon: place?.lon, birthTz: place?.timezone });
     router.back();
   };
@@ -63,6 +66,14 @@ export default function EditProfile() {
           autoCapitalize="none"
           autoCorrect={false}
         />
+        <Text style={ss.label}>{tr("Pronouns")}</Text>
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
+          <Chip label={tr("No pronouns shown")} on={!pronouns} onPress={() => setPron(undefined)} />
+          {PRONOUNS.map((x) => (
+            <Chip key={x} label={x} on={pronouns === x} onPress={() => setPron(x)} />
+          ))}
+        </View>
+        <Text style={ss.meta}>{tr("In Portuguese, the app also uses them for words about you (Nascida, Nascido, Nascide).")}</Text>
       </View>
       <View style={ss.card}>
         <Text style={ss.label}>{tr("Birth date")}</Text>
