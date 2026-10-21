@@ -1,6 +1,7 @@
 import AVFoundation
 import ExpoModulesCore
 import PDFKit
+import Vision
 
 func provisionedAppGroups() -> [String] {
   guard let url = Bundle.main.url(forResource: "embedded", withExtension: "mobileprovision"),
@@ -43,6 +44,19 @@ public class AudioEncoderModule: Module {
     Function("pdfPages") { (input: URL) -> [String] in
       guard let doc = PDFDocument(url: input) else { return [] }
       return (0..<doc.pageCount).map { doc.page(at: $0)?.string ?? "" }
+    }
+
+    AsyncFunction("ocrPage") { (input: URL, index: Int) -> String in
+      guard let doc = PDFDocument(url: input), let page = doc.page(at: index) else { return "" }
+      let box = page.bounds(for: .mediaBox)
+      let scale = 2200 / max(box.width, box.height, 1)
+      guard let cg = page.thumbnail(of: CGSize(width: box.width * scale, height: box.height * scale), for: .mediaBox).cgImage else { return "" }
+      let request = VNRecognizeTextRequest()
+      request.recognitionLevel = .accurate
+      request.usesLanguageCorrection = true
+      request.automaticallyDetectsLanguage = true
+      try VNImageRequestHandler(cgImage: cg, options: [:]).perform([request])
+      return (request.results ?? []).compactMap { $0.topCandidates(1).first?.string }.joined(separator: "\n")
     }
 
     Function("pdfOutline") { (input: URL) -> [[String: Any]] in

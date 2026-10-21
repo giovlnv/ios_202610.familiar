@@ -5,6 +5,7 @@ declare class AudioEncoderModule extends NativeModule<{}> {
   appGroups(): string[];
   systemVoices(language: string): { id: string; name: string; language: string }[];
   pdfPages(input: string): string[];
+  ocrPage(input: string, index: number): Promise<string>;
   pdfOutline(input: string): { title: string; page: number; depth: number }[];
   audioChapters(input: string): Promise<{ title: string; start: number; duration: number }[]>;
   cutAudio(input: string, output: string, start: number, duration: number): Promise<void>;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Alert, Pressable, Text, TextInput, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import * as DocumentPicker from 'expo-document-picker';
@@ -16,19 +16,21 @@ import { Btn, Page, ss } from '../../../components/settings-ui';
 
 type Audio = { uri: string; name: string };
 
-async function readBookFile(uri: string, name: string) {
+type Scan = (page: number, of: number) => boolean;
+
+async function readBookFile(uri: string, name: string, onScan?: Scan) {
   if (/\.pdf$/i.test(name)) {
-    const r = await readPdf(uri);
+    const r = await readPdf(uri, onScan);
     return { ...r, title: name.replace(/\.pdf$/i, '').replace(/[_-]+/g, ' '), uri, name };
   }
   if (!/\.epub$/i.test(name)) throw new Error(tr('Choose an EPUB or PDF file.'));
   return { ...readEpub(await new File(uri).bytes()), uri, name };
 }
 
-async function pickEpub() {
+async function pickEpub(onScan?: Scan) {
   const res = await DocumentPicker.getDocumentAsync({ type: ['application/epub+zip', 'application/pdf', '*/*'], copyToCacheDirectory: true });
   if (res.canceled) return null;
-  return readBookFile(res.assets[0].uri, res.assets[0].name);
+  return readBookFile(res.assets[0].uri, res.assets[0].name, onScan);
 }
 
 const AUDIO = /\.(mp3|m4a|m4b|aac|wav)$/i;
@@ -45,13 +47,22 @@ export default function ImportScreen() {
   const [drafts, setDrafts] = useState<Draft[] | null>(null);
   const [audio, setAudio] = useState<Audio[] | null>(null);
   const [epub, setEpub] = useState<Audio | null>(null);
+  const stop = useRef(false);
+  const [scanning, setScanning] = useState(false);
+  const onScan: Scan = (page, of) => {
+    if (stop.current) return false;
+    setScanning(true);
+    setBusy(tr('This PDF is a scan. Recognising text: page {0} of {1}…', { 0: page, 1: of }));
+    return true;
+  };
 
-  const fail = (e: unknown) => Alert.alert(e instanceof DrmError ? tr('This book is locked') : tr('Import failed'), e instanceof DrmError ? drmMessage() : String((e as Error).message ?? e));
+  const fail = (e: unknown) => Alert.alert(e instanceof DrmError ? tr('This book is locked') : tr('Import failed'), e instanceof DrmError ? drmMessage() : tr(String((e as Error).message ?? e)));
 
   const { file } = useLocalSearchParams<{ file?: string }>();
 
-  const startEpub = async (pick = pickEpub) => {
+  const startEpub = async (pick = () => pickEpub(onScan)) => {
     try {
+      stop.current = false;
       setBusy(tr('Reading the book…'));
       const r = await pick();
       if (!r) return;
@@ -63,13 +74,14 @@ export default function ImportScreen() {
       fail(e);
     } finally {
       setBusy(null);
+      setScanning(false);
     }
   };
 
   useEffect(() => {
     if (!file) return;
     const name = decodeURIComponent(file.split('/').pop() ?? 'file');
-    const t = setTimeout(() => (AUDIO.test(name) ? (setAudio([{ uri: file, name }]), setTitle(name.replace(/\.[^.]+$/, ''))) : startEpub(() => readBookFile(file, name))), 0);
+    const t = setTimeout(() => (AUDIO.test(name) ? (setAudio([{ uri: file, name }]), setTitle(name.replace(/\.[^.]+$/, ''))) : startEpub(() => readBookFile(file, name, onScan))), 0);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [file]);
@@ -85,13 +97,17 @@ export default function ImportScreen() {
 
   const addText = async () => {
     try {
-      const r = await pickEpub();
+      stop.current = false;
+      const r = await pickEpub(onScan);
       if (r) {
         setDrafts(r.drafts);
         setEpub({ uri: r.uri, name: r.name });
       }
     } catch (e) {
       fail(e);
+    } finally {
+      setBusy(null);
+      setScanning(false);
     }
   };
 
@@ -110,6 +126,7 @@ export default function ImportScreen() {
       fail(e);
     } finally {
       setBusy(null);
+      setScanning(false);
     }
   };
 
@@ -121,6 +138,7 @@ export default function ImportScreen() {
       <Page>
         <ActivityIndicator color={c.gold} />
         <Text style={[ss.p, { textAlign: 'center' }]}>{busy}</Text>
+        {scanning && <Btn label={tr('Stop')} onPress={() => (stop.current = true)} />}
       </Page>
     );
 

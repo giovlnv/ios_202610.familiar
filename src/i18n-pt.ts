@@ -1255,4 +1255,8 @@ export const PT: Record<string, string> = {
   "”. Send it to Claude in the TAROT chat to fix the split.": "”. Envie ao Claude no chat TAROT para corrigir a divisão.",
   "−30 days": "−30 dias",
   "−7 days": "−7 dias",
+  "This PDF is a scan. Recognising text: page {0} of {1}…": "Este PDF é digitalizado. Reconhecendo o texto: página {0} de {1}…",
+  "No text found in this PDF.": "Nenhum texto encontrado neste PDF.",
+  "Stop": "Parar",
+  "Stopped.": "Interrompido.",
 };

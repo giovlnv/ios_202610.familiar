@@ -232,10 +232,15 @@ function pdfParas(pages: string[]): Para[][] {
   });
 }
 
-export async function readPdf(uri: string): Promise<{ title: string; drafts: Draft[] }> {
+export async function readPdf(uri: string, onScan?: (page: number, of: number) => boolean): Promise<{ title: string; drafts: Draft[] }> {
   const { default: AudioEncoder } = await import('../modules/audio-encoder');
   const pages = AudioEncoder.pdfPages(uri);
-  if (!pages.join('').trim()) throw new Error('This PDF has no text layer (it is a scan). Text recognition for scans comes later.');
+  const scans = pages.flatMap((p, i) => (p.trim().length < 20 ? [i] : []));
+  for (const [n, i] of scans.entries()) {
+    if (onScan && !onScan(n + 1, scans.length)) throw new Error('Stopped.');
+    pages[i] = (await AudioEncoder.ocrPage(uri, i)) || pages[i];
+  }
+  if (!pages.join('').trim()) throw new Error('No text found in this PDF.');
   const per = pdfParas(pages);
   const outline = AudioEncoder.pdfOutline(uri).filter((o) => o.depth === 0);
   const cuts = outline.length > 1 ? outline : Array.from({ length: Math.ceil(pages.length / 10) }, (_, i) => ({ title: `Pages ${i * 10 + 1}–${Math.min(pages.length, i * 10 + 10)}`, page: i * 10, depth: 0 }));
