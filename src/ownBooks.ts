@@ -147,17 +147,26 @@ const fileTitle = (name: string) =>
 
 export async function saveAudioBook(title: string, files: { uri: string; name: string }[], drafts: Draft[] = [], onStep?: (i: number) => void) {
   const dir = newFolder(title);
-  const sorted = [...files].sort((a, b) => natural(a.name, b.name));
+  let sorted: { uri: string; name: string; title?: string }[] = [...files].sort((a, b) => natural(a.name, b.name));
+  let whole: File | null = null;
+  if (sorted.length === 1 && /\.(m4b|m4a)$/i.test(sorted[0].name)) {
+    whole = new File(dir, `whole${sorted[0].name.match(/\.[^.]+$/)![0]}`);
+    new File(sorted[0].uri).copySync(whole);
+    const parts = await splitChapters(whole, dir);
+    if (parts) sorted = parts;
+    else whole = null;
+  }
   const sections: Section[] = [];
   const text = drafts.filter((d) => d.keep);
   for (const [i, f] of sorted.entries()) {
     onStep?.(i);
     const ext = f.name.match(/\.[^.]+$/)?.[0]?.toLowerCase() ?? '.mp3';
     const dest = new File(dir, `${sid(i)}${ext}`);
-    new File(f.uri).copySync(dest);
+    if (whole) new File(f.uri).move(dest);
+    else new File(f.uri).copySync(dest);
     const duration = await durationOf(dest.uri);
     const d = text[i];
-    const name = d?.title ?? fileTitle(f.name);
+    const name = d?.title ?? f.title ?? fileTitle(f.name);
     const paras: Para[] = [{ kind: 'title', text: name, start: 0, end: d ? 0 : duration }];
     if (d) {
       const total = Math.max(1, d.words);
@@ -171,6 +180,7 @@ export async function saveAudioBook(title: string, files: { uri: string; name: s
     }
     sections.push({ id: sid(i), title: name, audio: dest.name, duration: +duration.toFixed(2), paras });
   }
+  whole?.delete();
   const book = { title, own: true, sections } as Book;
   new File(dir, 'book.json').write(JSON.stringify(book));
   return { folder: dir.name, unmatched: text.length && text.length !== sorted.length ? Math.abs(text.length - sorted.length) : 0 };
@@ -199,4 +209,55 @@ export async function exportBookZip(folder: string, book: Book) {
   out.write(zipSync(files));
   const Sharing = await import('expo-sharing');
   await Sharing.shareAsync(out.uri, { mimeType: 'application/zip', dialogTitle: book.title });
+}
+
+function pdfParas(pages: string[]): Para[][] {
+  const lines = pages.map((p) => p.split('\n').map((l) => l.trim()).filter(Boolean));
+  const edge = new Map<string, number>();
+  for (const ls of lines) for (const l of [ls[0], ls[ls.length - 1]]) if (l) edge.set(l.replace(/\d+/g, '#'), (edge.get(l.replace(/\d+/g, '#')) ?? 0) + 1);
+  const junk = (l: string) => /^\d+$/.test(l) || (pages.length > 4 && (edge.get(l.replace(/\d+/g, '#')) ?? 0) > pages.length * 0.4);
+  return lines.map((ls) => {
+    const kept = ls.filter((l, j) => !((j === 0 || j === ls.length - 1) && junk(l)));
+    const out: Para[] = [];
+    let cur = '';
+    for (const l of kept) {
+      cur = cur ? (cur.endsWith('-') ? cur.slice(0, -1) + l : `${cur} ${l}`) : l;
+      if (/[.!?:”"’)]$/.test(l) && l.length < 75) {
+        out.push({ kind: 'book', text: cur, start: 0, end: 0 });
+        cur = '';
+      }
+    }
+    if (cur) out.push({ kind: 'book', text: cur, start: 0, end: 0 });
+    return out;
+  });
+}
+
+export async function readPdf(uri: string): Promise<{ title: string; drafts: Draft[] }> {
+  const { default: AudioEncoder } = await import('../modules/audio-encoder');
+  const pages = AudioEncoder.pdfPages(uri);
+  if (!pages.join('').trim()) throw new Error('This PDF has no text layer (it is a scan). Text recognition for scans comes later.');
+  const per = pdfParas(pages);
+  const outline = AudioEncoder.pdfOutline(uri).filter((o) => o.depth === 0);
+  const cuts = outline.length > 1 ? outline : Array.from({ length: Math.ceil(pages.length / 10) }, (_, i) => ({ title: `Pages ${i * 10 + 1}–${Math.min(pages.length, i * 10 + 10)}`, page: i * 10, depth: 0 }));
+  const drafts: Draft[] = cuts.map((cut, i) => {
+    const end = cuts[i + 1]?.page ?? pages.length;
+    const text = per.slice(cut.page, Math.max(cut.page + 1, end)).flat();
+    const words = wordCount(text);
+    return { title: cut.title, text, words, keep: words >= 25 };
+  });
+  if (cuts[0].page > 0) drafts.unshift({ title: 'Front matter', text: per.slice(0, cuts[0].page).flat(), words: 0, keep: false });
+  return { title: '', drafts };
+}
+
+export async function splitChapters(file: File, dir: Directory) {
+  const { default: AudioEncoder } = await import('../modules/audio-encoder');
+  const chapters = await AudioEncoder.audioChapters(file.uri).catch(() => []);
+  if (chapters.length < 2) return null;
+  const out: { uri: string; name: string; title: string }[] = [];
+  for (const [i, ch] of chapters.entries()) {
+    const dest = new File(dir, `ch-${String(i + 1).padStart(3, '0')}.m4a`);
+    await AudioEncoder.cutAudio(file.uri, dest.uri, ch.start, ch.duration);
+    out.push({ uri: dest.uri, name: dest.name, title: ch.title });
+  }
+  return out;
 }

@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ActivityIndicator, Alert, Pressable, Text, TextInput, View } from 'react-native';
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import * as DocumentPicker from 'expo-document-picker';
 import { File } from 'expo-file-system';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { Draft, DrmError, readEpub, saveAudioBook, saveTextBook } from '../../../ownBooks';
+import { Draft, DrmError, readEpub, readPdf, saveAudioBook, saveTextBook } from '../../../ownBooks';
 import { bookLangChoices } from '../../../languages';
 import { keepSource } from '../../../reader';
 import { importBook } from '../../../storage';
@@ -16,13 +16,22 @@ import { Btn, Page, ss } from '../../../components/settings-ui';
 
 type Audio = { uri: string; name: string };
 
-async function pickEpub() {
-  const res = await DocumentPicker.getDocumentAsync({ type: ['application/epub+zip', '*/*'], copyToCacheDirectory: true });
-  if (res.canceled) return null;
-  const a = res.assets[0];
-  if (!/\.epub$/i.test(a.name)) throw new Error(tr('Choose an EPUB file.'));
-  return { ...readEpub(await new File(a.uri).bytes()), uri: a.uri, name: a.name };
+async function readBookFile(uri: string, name: string) {
+  if (/\.pdf$/i.test(name)) {
+    const r = await readPdf(uri);
+    return { ...r, title: name.replace(/\.pdf$/i, '').replace(/[_-]+/g, ' '), uri, name };
+  }
+  if (!/\.epub$/i.test(name)) throw new Error(tr('Choose an EPUB or PDF file.'));
+  return { ...readEpub(await new File(uri).bytes()), uri, name };
 }
+
+async function pickEpub() {
+  const res = await DocumentPicker.getDocumentAsync({ type: ['application/epub+zip', 'application/pdf', '*/*'], copyToCacheDirectory: true });
+  if (res.canceled) return null;
+  return readBookFile(res.assets[0].uri, res.assets[0].name);
+}
+
+const AUDIO = /\.(mp3|m4a|m4b|aac|wav)$/i;
 
 const drmMessage = () =>
   tr(
@@ -39,12 +48,14 @@ export default function ImportScreen() {
 
   const fail = (e: unknown) => Alert.alert(e instanceof DrmError ? tr('This book is locked') : tr('Import failed'), e instanceof DrmError ? drmMessage() : String((e as Error).message ?? e));
 
-  const startEpub = async () => {
+  const { file } = useLocalSearchParams<{ file?: string }>();
+
+  const startEpub = async (pick = pickEpub) => {
     try {
       setBusy(tr('Reading the book…'));
-      const r = await pickEpub();
+      const r = await pick();
       if (!r) return;
-      if (!r.drafts.length) throw new Error(tr('No text found in this EPUB.'));
+      if (!r.drafts.length) throw new Error(tr('No text found in this book.'));
       setTitle(r.title);
       setDrafts(r.drafts);
       setEpub({ uri: r.uri, name: r.name });
@@ -55,11 +66,19 @@ export default function ImportScreen() {
     }
   };
 
+  useEffect(() => {
+    if (!file) return;
+    const name = decodeURIComponent(file.split('/').pop() ?? 'file');
+    const t = setTimeout(() => (AUDIO.test(name) ? (setAudio([{ uri: file, name }]), setTitle(name.replace(/\.[^.]+$/, ''))) : startEpub(() => readBookFile(file, name))), 0);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [file]);
+
   const startAudio = async () => {
     const res = await DocumentPicker.getDocumentAsync({ type: 'audio/*', multiple: true, copyToCacheDirectory: true });
     if (res.canceled) return;
-    const files = res.assets.filter((a) => /\.(mp3|m4a|m4b|aac|wav)$/i.test(a.name)).map((a) => ({ uri: a.uri, name: a.name }));
-    if (!files.length) return Alert.alert(tr('Import failed'), tr('Choose MP3 or M4A files.'));
+    const files = res.assets.filter((a) => AUDIO.test(a.name)).map((a) => ({ uri: a.uri, name: a.name }));
+    if (!files.length) return Alert.alert(tr('Import failed'), tr('Choose MP3, M4A or M4B files.'));
     setAudio(files);
     if (!title) setTitle(files[0].name.replace(/\.[^.]+$/, '').replace(/^[\d\s._-]+/, '') || tr('Audiobook'));
   };
@@ -109,20 +128,16 @@ export default function ImportScreen() {
     return (
       <Page>
         <Text style={ss.p}>{tr('Bring a book you own. It stays on this iPhone and is read aloud by the voices you chose in Settings → Languages.')}</Text>
-        <Pressable style={ss.card} onPress={startEpub}>
+        <Pressable style={ss.card} onPress={() => startEpub()}>
           <Ionicons name="book-outline" size={22} color={c.gold} />
-          <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{tr('A book to read aloud (EPUB)')}</Text>
+          <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{tr('A book to read aloud (EPUB or PDF)')}</Text>
           <Text style={ss.meta}>{tr('Split into chapters from its table of contents. Voiced on this iPhone while you listen.')}</Text>
         </Pressable>
         <Pressable style={ss.card} onPress={startAudio}>
           <Ionicons name="headset-outline" size={22} color={c.gold} />
-          <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{tr('An audiobook (MP3, M4A)')}</Text>
-          <Text style={ss.meta}>{tr('One file per chapter. You can add the book’s EPUB to follow the text chapter by chapter.')}</Text>
+          <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{tr('An audiobook (MP3, M4A, M4B)')}</Text>
+          <Text style={ss.meta}>{tr('One file per chapter, or one M4B with chapters. You can add the book’s EPUB or PDF to follow the text chapter by chapter.')}</Text>
         </Pressable>
-        <View style={ss.card}>
-          <Text style={{ color: c.dim, fontSize: 16, fontWeight: '600' }}>{tr('PDF and M4B chapters')}</Text>
-          <Text style={ss.meta}>{tr('Coming with the next app install.')}</Text>
-        </View>
         <Btn
           label={tr('Import a Familiar export (book.json + audio)')}
           onPress={() =>
@@ -155,7 +170,7 @@ export default function ImportScreen() {
         <View style={ss.card}>
           <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{tr('{0} audio files', { 0: audio.length })}</Text>
           <Text style={ss.meta}>{tr('Sorted by file name: one section per file.')}</Text>
-          {!drafts && <Btn label={tr('Add the book’s text (EPUB, optional)')} onPress={addText} />}
+          {!drafts && <Btn label={tr('Add the book’s text (EPUB or PDF, optional)')} onPress={addText} />}
         </View>
       )}
       {drafts && (

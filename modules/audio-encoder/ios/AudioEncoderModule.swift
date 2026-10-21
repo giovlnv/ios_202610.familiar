@@ -1,5 +1,6 @@
 import AVFoundation
 import ExpoModulesCore
+import PDFKit
 
 func provisionedAppGroups() -> [String] {
   guard let url = Bundle.main.url(forResource: "embedded", withExtension: "mobileprovision"),
@@ -36,6 +37,57 @@ public class AudioEncoderModule: Module {
         try src.read(into: buf)
         if buf.frameLength == 0 { break }
         try dst.write(from: buf)
+      }
+    }
+
+    Function("pdfPages") { (input: URL) -> [String] in
+      guard let doc = PDFDocument(url: input) else { return [] }
+      return (0..<doc.pageCount).map { doc.page(at: $0)?.string ?? "" }
+    }
+
+    Function("pdfOutline") { (input: URL) -> [[String: Any]] in
+      guard let doc = PDFDocument(url: input), let root = doc.outlineRoot else { return [] }
+      var out: [[String: Any]] = []
+      func walk(_ node: PDFOutline, _ depth: Int) {
+        for i in 0..<node.numberOfChildren {
+          guard let child = node.child(at: i) else { continue }
+          if let page = child.destination?.page {
+            out.append(["title": child.label ?? "", "page": doc.index(for: page), "depth": depth])
+          }
+          if depth < 1 { walk(child, depth + 1) }
+        }
+      }
+      walk(root, 0)
+      return out
+    }
+
+    AsyncFunction("audioChapters") { (input: URL) -> [[String: Any]] in
+      let asset = AVURLAsset(url: input)
+      let locales = try await asset.load(.availableChapterLocales)
+      let groups = try await asset.loadChapterMetadataGroups(withTitleLocale: locales.first ?? Locale.current, containingItemsWithCommonKeys: [.commonKeyTitle])
+      var out: [[String: Any]] = []
+      for (i, g) in groups.enumerated() {
+        let title = try? await g.items.first(where: { $0.commonKey == .commonKeyTitle })?.load(.stringValue)
+        out.append(["title": title ?? "Chapter \(i + 1)", "start": g.timeRange.start.seconds, "duration": g.timeRange.duration.seconds])
+      }
+      return out
+    }
+
+    AsyncFunction("cutAudio") { (input: URL, output: URL, start: Double, duration: Double, promise: Promise) in
+      let asset = AVURLAsset(url: input)
+      if FileManager.default.fileExists(atPath: output.path) {
+        try? FileManager.default.removeItem(at: output)
+      }
+      guard let export = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetPassthrough) else {
+        promise.reject("ERR_CUT", "Cannot export this audio")
+        return
+      }
+      export.outputURL = output
+      export.outputFileType = .m4a
+      export.timeRange = CMTimeRange(start: CMTime(seconds: start, preferredTimescale: 600), duration: CMTime(seconds: duration, preferredTimescale: 600))
+      export.exportAsynchronously {
+        if export.status == .completed { promise.resolve(nil) }
+        else { promise.reject("ERR_CUT", export.error?.localizedDescription ?? "Export failed") }
       }
     }
 
