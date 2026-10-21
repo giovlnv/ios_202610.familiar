@@ -6,7 +6,7 @@
 
 *your familiar knows the way.*
 
-A study companion for tarot, Lenormand, astrology and numerology on iPhone: books become two-voice audiobooks, your notes and readings live next to them, and a small witch's familiar walks the path with you.
+A study companion on iPhone for tarot, Lenormand, astrology, numerology, systems of your own and any subject you study: books become audiobooks read on the phone, your notes, readings and flashcards live next to them, and a small witch's familiar walks the path with you.
 
 <img src="assets/hero.jpg" width="300" alt="Shadow, a black cat, walking a moonlit path lined with lanterns for each study path" />
 
@@ -21,12 +21,12 @@ A study companion for tarot, Lenormand, astrology and numerology on iPhone: book
 
 ## The idea
 
-Studying esoteric systems means reading dense books, connecting symbols, and practising readings. Familiar puts that into one app:
+Studying means reading dense books, connecting symbols and practising. Familiar puts that into one app:
 
-1. **Listen** to a book read word for word, with a short spoken explanation after every section (archetypes, card meanings, everyday examples) in a second voice.
-2. **Think out loud**: tie notes to the exact passage, or ask Claude about it and keep the answer as a numbered consult.
-3. **Practise**: log tarot readings in the Journal with the spread, the cards and your interpretation.
-4. **Keep track**: statuses, ratings, stats and a year in review for everything you listen to.
+1. **Listen and read**: a book is read aloud with the text following along, or read on real pages with "Listen from here".
+2. **Think out loud**: notes tied to the exact passage, highlights and bookmarks, explanations on demand.
+3. **Practise**: log readings in the Journal (tarot, Lenormand, your own decks), or keep notes and flashcards for a study subject.
+4. **Keep track**: statuses, ratings, stats, streaks and a year in review.
 
 The mascot is the point of view: *becoming familiar* is learning. Your familiar (Shadow, the black cat, by default) reads along, sleeps at night, and can be petted.
 
@@ -34,13 +34,16 @@ The mascot is the point of view: *becoming familiar* is learning. Your familiar 
 
 | | |
 |---|---|
-| 🎧 **Two-voice audiobooks** | Book text in one voice, explanations in another; follow-along text, tap to seek, background and lock-screen playback, speed up to 2.0×, sleep timer down to "end of this explanation" |
-| 📝 **Notes & consults** | Notes store the time *and* the passage. "Ask Claude" sends the passage, section and your notes as a numbered consult (#C1, #C2…); paste the answer back, follow up, export as Markdown |
-| 🃏 **Reading journal** | Question, area, person, spread and cards (upright/reversed) per position, your interpretation and open questions; personality, essence and year cards from your birth date; Rider-Waite-Smith 1909 deck or your own |
-| 📚 **Tracker** | Statuses, half-star ratings, relistens, diary, shelves, Top 4, ranked lists, genres, stats and a year in review |
-| 🐈‍⬛ **Familiars** | Cat (6 coats, 2 builds, stripe and mark colours), bat, crow, spider; poses for idle, reading, sleeping and walking; blinking, tail swish, petting reactions with haptics; link a familiar to a study path |
-| 🌗 **Themes** | Plum and gold plus four element themes (Water, Fire, Earth, Air), dark and light, switched live; six app icons |
-| ☁️ **Your data** | Everything stays on the phone, with automatic GitHub backup and manual backup files |
+| 🎧 **Audiobooks** | Voiced on the iPhone (Kokoro) while you listen, or on GitHub; follow-along text, card view, text style, speed, sleep timer, lock screen; own-key cloud voices (Gemini, ElevenLabs) |
+| 📖 **Your own books** | DRM-free EPUB, text or scanned PDF (text recognition on the phone), MP3/M4A/M4B audiobooks with chapters; "Open in Familiar" from other apps |
+| 📄 **Reader** | Real pages for EPUB (or scroll), PDF pages linked to the audio, Listen from here, follows the audio, search, bookmarks and highlights |
+| 🃏 **Paths** | Tarot, Lenormand (Grand Tableau, combinations), astrology (birth chart list, today's sky), numerology (Pythagorean, Chaldean, Cabalística), systems of your own |
+| 🗂️ **Study subjects** | Name any subject; notes and flashcards in the Journal; simple or spaced review; flashcards from passages, highlights and notes |
+| 📝 **Notes, consults, explanations** | Notes keep the time and the passage; Ask Claude consults and explanations on demand (personal build) |
+| 📚 **Tracker** | Statuses, half-star ratings, relistens, diary, shelves, Top 4, ranked lists, genres, stats, streaks, year in review, share images |
+| 🐈‍⬛ **Familiars** | Cat (6 coats, 2 builds, stripe and mark colours), bat, crow, spider; idle, reading, sleeping and walking poses; blinking, tail swish, petting with haptics; link a familiar to a path |
+| 🌗 **Look** | Plum and gold plus four element themes, dark and light; six app icons; home-screen widget; Siri shortcuts; English and Portuguese |
+| ☁️ **Your data** | Everything stays on the phone, with GitHub and file backups and a storage screen |
 
 <div align="center">
 <img src="assets/icons/classic.png" width="64" alt="Classic icon" />&nbsp;
@@ -54,31 +57,37 @@ The mascot is the point of view: *becoming familiar* is learning. Your familiar 
 
 ## How a book becomes an audiobook
 
+Two ways in:
+
+- **Your own file**, all on the phone: EPUB/PDF → chapters (text recognition for scans) → you check the sections → voiced on the iPhone while you listen.
+- **Through the library pipeline** (personal build):
+
 ```mermaid
 flowchart LR
     A[EPUB / PDF<br/>uploaded from the app] --> B[Split into sections<br/>GitHub Actions]
     B --> C{You check<br/>the split}
     C -->|fix note| B
-    C -->|confirm| D[Claude writes an<br/>explanation per section]
-    D --> E[Kokoro TTS<br/>6 parallel jobs]
-    E --> F[book.json + .m4a]
-    F --> G[Downloaded into<br/>the app]
+    C -->|confirm| D[book.json<br/>text + timings]
+    D --> E[Voices on the iPhone<br/>or Kokoro on GitHub]
+    E --> F[Plays in the app,<br/>streamed or downloaded]
 ```
 
 The pipeline lives in a separate **private** repository, because the books are copyrighted. `book.json` holds every section's paragraphs with start and end times, which is what makes the text follow along.
 
 ## Built with
 
-- **App**: Expo SDK 57 · React Native · TypeScript · Expo Router · expo-audio · react-native-svg (the familiars are SVG templates recoloured at runtime) · Playfair Display
+- **App**: Expo SDK 57 · React Native · TypeScript · Expo Router · expo-audio · react-native-svg (the familiars are SVG templates recoloured at runtime) · Kokoro on Core ML · a local Expo module (AVFoundation, PDFKit, Vision) · astronomy-engine · Playfair Display
 - **Pipeline**: Python · Kokoro text-to-speech · GitHub Actions
 - **Design**: Figma (design system, screens, brand) and a Claude design canvas for the mascot drawings
 - **Data**: local files on the device · GitHub API for backups and jobs · Open Library · Open-Meteo geocoding
 
 ## Installing (no App Store, no Mac)
 
-Every push to `main` runs [`build-ios.yml`](.github/workflows/build-ios.yml) on GitHub's macOS runners and publishes an **unsigned** `Familiar.ipa` under **Releases → latest**. It is installed with [Sideloadly](https://sideloadly.io) from Windows.
+[`build-ios.yml`](.github/workflows/build-ios.yml) builds the app on GitHub's macOS runners when it is run by hand on `main` (or on a `v*` tag) and publishes `Familiar.ipa` under **Releases → latest**. Runs on other branches keep the `.ipa` as a workflow artifact. Input `variant`: `personal` (default) or `public`.
 
-Every push also publishes an over-the-air update ([`ota.yml`](.github/workflows/ota.yml), EAS Update, runtime = app version). Only native changes need a new `.ipa`; bump `version` in `app.json` when that happens.
+Install with **AltStore Classic**: AltStore → My Apps → + (with the `.ipa` saved on the iPhone), or AltServer → Install AltStore → pick the `.ipa`. No cable is needed when AltServer runs on a computer on the same Wi-Fi.
+
+Every push to `main` runs [`checks.yml`](.github/workflows/checks.yml) (typecheck, lint with 0 warnings, iOS bundle) and then publishes an over-the-air update ([`ota.yml`](.github/workflows/ota.yml), EAS Update, runtime = app version). Only native changes need a new `.ipa`; they wait on a `reinstall` branch and bump `version` in `app.json`.
 
 ## Development
 
@@ -96,19 +105,23 @@ npx expo lint       # lint
 ```
 src/app/                    screens (Expo Router)
   (tabs)/                   Home · Library · Search · Journal · Profile
-  (tabs)/(home,…,profile)/  shared screens: settings/, familiars, den/[id], title/[id], add, jobs…
+  (tabs)/(home,…,profile)/  shared screens: settings/, book/, read/, import, study/review, familiars…
   onboarding.tsx            first-launch setup
   player/[id].tsx           player
-src/components/             Player, Familiar, Cards, Consults, ThemeSheet, PlaceField…
-src/familiar.ts             familiars: options, storage, SVG templating, closed eyes, tail swish
-src/playback.tsx            app-wide audio, sleep timer
-src/tracker.ts · journal.ts tracker and reading journal
-src/theme.ts                palettes and live theming
-src/sync.ts · jobs.ts       GitHub backups and book jobs
+src/components/             Player, PagedChapters, PdfBook, StudyJournal, Familiar, Cards, Tableau…
+src/familiar.ts             familiars and paths
+src/playback.tsx · voicer.ts  audio and voicing on the phone
+src/ownBooks.ts · reader.ts   imported books, reader
+src/tracker.ts · journal.ts · study.ts  tracker, reading journal, study subjects
+src/lenormand.ts · astrology.ts · numerology.ts · systems.ts  paths
+src/i18n.ts · i18n-pt.ts    English and Portuguese
+src/variant.ts              personal / public build
+modules/audio-encoder/      native module: m4a, PDF text and pages, OCR, audio chapters, iPhone voices
+targets/widget/             home-screen widget
 ```
 
 ## Status
 
-Personal build, used daily. A public App Store version (no Claude, on-device voices, bring your own books) is planned. See [ROADMAP.md](ROADMAP.md).
+Personal build (1.7.0), used daily. A public App Store version (no Claude, voices on the phone, bring your own books, paid extras) is being prepared. See [ROADMAP.md](ROADMAP.md).
 
 <div align="center"><sub>Made by <a href="https://github.com/giovlnv">@giovlnv</a> with Claude.</sub></div>

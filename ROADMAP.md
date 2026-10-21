@@ -1,84 +1,69 @@
 # Roadmap
 
-Personal-use app first; a public App Store version later. New books arrive occasionally, so automation can be slow (hours) as long as it needs no effort.
+What's done and what's pending, kept short. The detailed history of every decision and feature lives in the project docs (and in `git log`).
 
-Status: ✅ done · 🔨 next · 📋 planned · Last revised: 21 Oct 2026 (app 1.6.0)
-
----
-
-## Built
-
-### Listening & notes
-- ✅ Word-for-word reading + spoken explanation per section in a second voice, follow-along text, tap to seek
-- ✅ Background playback, lock-screen controls, saved progress, section list with summaries
-- ✅ Speed menu (1.0/1.3/1.5/2.0× + custom), 15 s skips, mini player with the passage being read
-- ✅ Sleep timer: 5–60 min, 1 hour, end of this section, end of the explanation; fades out
-- ✅ Notes tied to time + passage; Ask Claude consults (#C1…) with answers, follow-ups, export
-- ✅ A tarot card per section (auto from the title or picked by hand); card view instead of the text, with the passage being read in a fixed box
-- ✅ Text size, font, colour, line and paragraph spacing, alignment — for the follow-along text and the card view
-- ✅ Speed, sleep timer, text style, note and Ask grouped in one … menu
-- ✅ Explanations on/off (all books or per book); upload with or without explanations, with directions for how they should be
-- ✅ "About this card": choose which books/paths it draws from; each book collapsed
-
-### Adding books
-- ✅ Upload EPUB/PDF from the iPhone → split → you confirm → Claude writes explanations → Kokoro voices on GitHub → download in the app
-- ✅ Private `ios_202610.familiar_library` repo with the pipeline (6 parallel jobs)
-
-### Tracker & journal
-- ✅ Statuses, half-star ratings, relistens, diary, shelves, Top 4 (collapsible), ranked lists, genres, stats, Year in review
-- ✅ Reading journal: question, area, person, spread, cards per position, interpretation, open questions, Ask Claude; personality/essence/year cards
-- ✅ Decks: Rider-Waite-Smith 1909 + custom decks
-- ✅ Books tagged to study paths (tarot, Lenormand, astrology, numerology, custom)
-
-### Familiar
-- ✅ Onboarding (paths, familiar creator, about you, backups, first book)
-- ✅ Familiars: cat (6 coats × round/slim, colours, stripe colour, eyes, marks crescent/star/sun/eye/none + 7 mark colours), bat, crow, spider; unlimited, one "with you", linked to paths
-- ✅ Poses: idle, reading, sleeping, walking; element vial from the birth date
-- ✅ Familiar page: petting (purr, chirp, caw, spider drop) with haptics, sleep 23:00–07:00, Tuck in / Wake up
-- ✅ Idle animations: blinking, tail swish (off with Reduce Motion)
-
-### Look & feel
-- ✅ Name **Familiar**, icon A + five alternate icons (Plum, Water, Fire, Earth, Air), splash with zoom
-- ✅ Themes: Plum and gold, Water, Fire, Earth, Air — dark and light, switched live
-- ✅ Playfair Display headings; no full-screen modals (nothing under the status bar)
-- ✅ Settings menus: Edit profile, Appearance, Account, Backups, Configuration, Development
-
-### Infrastructure
-- ✅ GitHub Actions builds the `.ipa` (Sideloadly); over-the-air updates for everything that isn't native
-- ✅ Backups: automatic GitHub sync + manual file with a 7-day reminder
-- ✅ Figma design file; mascot source drawings on a Claude design canvas
+Last revised: 21 Oct 2026 · app 1.7.0 · two builds from one code base: **personal** (Claude, everything free) and **public** (App Store, no Claude, paid extras)
 
 ---
 
-## Next 🔨
+## Done ✅
 
-Revised 21 Oct (app 1.6.0). Items 1–7, 10, 12, 13 and 20 are done.
+**Listening**
+- Audiobook player: follow-along text, notes, speed menu, 15 s skips, mini player, sleep timer, lock screen, text style, card view per section
+- Voices made on the iPhone (Kokoro) or on GitHub; streaming or downloaded audio; own-key cloud voices (Gemini, ElevenLabs); Arabic with the iPhone voice
+- Explanations on demand, Listen off by default; saved explanations; Ask Claude consults (personal build)
 
-- ✅ 10. Lenormand path (21 Oct): 36-card deck (Brazilian names, Dondorf 1910 scans from the Etteilla Foundation), lines 3/5/7, box of 9, Grand Tableau 4×9 and 8×4+4 with houses and helpers, combinations from books, card of the day and journal
+**Books**
+- Add books through the library pipeline (split review, cancel), or import your own: DRM-free EPUB, text and scanned PDF, MP3/M4A/M4B audiobooks with chapters, "Open in Familiar"
+- Reader: EPUB with real pages (or scroll), PDF pages linked to the audio, Listen from here, follows the audio
+- Search in books and notes; bookmarks and highlights; export audio
+- Book overview: Sections, Notes, Consults and Flashcards
+- Tracker: statuses, ratings, diary, shelves, Top 4, lists, genres, stats, year in review
 
-## Later 📋
+**Paths**
+- Tarot, Lenormand, astrology, numerology (Pythagorean, Chaldean, Cabalística), systems of your own
+- Study subjects: notes and flashcards in the Journal, simple or spaced review, flashcards from passages, highlights and notes
+- Home and Profile pages per path; books tagged to paths
 
-11. Custom systems
-14. Numerology: Chaldean and Cabalística (NCT) — done 21 Oct (5ebb840). Western "Kabbalah 22" and gematria wait for a book that defines them.
+**Familiar and look**
+- Familiars (cat, bat, crow, spider), poses, petting, sleep, idle animations, onboarding, empty states
+- Themes, six app icons, widget, Siri shortcuts, share images and streaks
+- Portuguese app UI (French and Arabic for books and voices); pronouns
 
-## Follow up — design 🎨
+**Data and launch prep**
+- Local data, GitHub and file backups, storage screen
+- Public build switch; paid plans and prices decided; privacy policy and App Store labels drafted
 
-Waits until the illustrator starts. The briefing (#7) is written.
-- 8. Expressions (angry, silly, happy)
-- 9. Element vial redesign
-- 15. More poses and per-path props · 16. Wordmark fine-tuning
-- Public-later: petting sounds, paid familiars (owl, toad, snake), accessories
+---
 
-## Public version 📋
+## Pending 📋
 
-Variant flag (personal build keeps Claude and unlocks everything) → public onboarding → bring your own book or audiobook (viability check done) → own-key cloud voices → Portuguese UI (French and Arabic for books and voices only) → "Other" study path (notes, flashcards) → free/paid tiers → privacy → TestFlight → App Store. Then accounts + sync, Android, shareable cards with streaks.
+**Now**
+1. Test 1.7.0 on the iPhone
 
-## Parked 💤
+**Public version**
+2. AI provider + small server for on-demand explanations and credits
+3. Free and paid tiers with StoreKit
+4. Privacy policy online (English and Portuguese)
+5. TestFlight → App Store
+6. Accounts + sync, then Android
 
-Keep the book itself (an Apple Books/Kindle-style reader with a Listen option), search in books and notes, bookmarks and highlights — after we decide how books are kept.
+**Design (with the illustrator)**
+7. Expressions (angry, silly, happy)
+8. Element vial redesign
+9. More poses and per-path props
+10. Study subject emblem
+11. Wordmark fine-tuning
+12. Later for the public build: petting sounds, paid familiars (owl, toad, snake), accessories
+
+**Only when a book needs it**
+13. Western "Kabbalah 22" numerology, Hebrew gematria
+14. Meanings for Lenormand, astrology and numerology from books
+
+---
 
 ## Constraints
 
-- Copyrighted books and audio stay in the **private** repo; this repo is public so iOS builds are free
-- 2,000 free Actions minutes/month on the private repo ≈ 6–10 books/month
+- Copyrighted books and audio stay in the **private** library repo; this repo is public so iOS builds are free
+- 2,000 free Actions minutes/month on the private repo; voicing on the phone keeps that low
 - Native changes need a new `.ipa` + reinstall; everything else arrives over the air
