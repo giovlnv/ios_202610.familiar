@@ -1259,4 +1259,10 @@ export const PT: Record<string, string> = {
   "No text found in this PDF.": "Nenhum texto encontrado neste PDF.",
   "Stop": "Parar",
   "Stopped.": "Interrompido.",
+  "Size": "Tamanho",
+  "Line spacing": "Espaçamento entre linhas",
+  "Paragraph spacing": "Espaçamento entre parágrafos",
+  "Pages": "Páginas",
+  "Scroll": "Rolagem",
+  "Page {0} of {1}": "Página {0} de {1}",
 };
