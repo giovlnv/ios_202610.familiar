@@ -59,7 +59,7 @@ Revised 21 Oct (app 1.6.0). Items 1–7, 10, 12, 13 and 20 are done.
 ## Later 📋
 
 11. Custom systems
-14. Numerology: Chaldean and Kabbalistic systems
+14. Numerology: Chaldean and Cabalística (NCT) — done 21 Oct (5ebb840). Western "Kabbalah 22" and gematria wait for a book that defines them.
 
 ## Follow up — design 🎨
 
