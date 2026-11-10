@@ -16,6 +16,7 @@ import { explanationsOn } from '../explanations';
 import { c, themed } from '../theme';
 import { cardNumber } from '../numerology';
 import { cardAstro } from '../astrology';
+import { hasStudy } from '../cardStudy';
 
 const excerpt = (paras: { kind: string; text: string }[], kind: string, max: number) =>
   paras.filter((p) => p.kind === kind).slice(0, max).map((p) => p.text);
@@ -91,6 +92,12 @@ export default function CardSheet({
                 {!!role && <Text style={s.role}>{role}</Text>}
                 {num && <Text style={s.role}>{tr("Numerology:")}{' '}{num}</Text>}
                 {astro && <Text style={s.role}>{tr("Astrology:")}{' '}{astro}</Text>}
+                {hasStudy(id) && (
+                  <Pressable style={s.study} onPress={() => (onClose(), router.push({ pathname: '/card-study/[id]', params: { id } }))}>
+                    <Ionicons name="book-outline" size={15} color={c.bg} />
+                    <Text style={s.listenText}>{tr("Card study")}</Text>
+                  </Pressable>
+                )}
               </View>
             </View>
 
@@ -259,5 +266,6 @@ const s = themed(() => ({
   text: { color: c.text, fontSize: 15, lineHeight: 22 },
   listen: { flexDirection: 'row', gap: 8, alignItems: 'center', justifyContent: 'center', backgroundColor: c.gold, borderRadius: 10, padding: 11, marginTop: 10 },
   listenText: { color: c.bg, fontWeight: '700' },
+  study: { flexDirection: 'row', gap: 6, alignItems: 'center', alignSelf: 'flex-start', backgroundColor: c.gold, borderRadius: 10, paddingVertical: 8, paddingHorizontal: 12, marginTop: 4 },
   pair: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 4 },
 }));

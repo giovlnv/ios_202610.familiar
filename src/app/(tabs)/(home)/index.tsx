@@ -27,6 +27,8 @@ import { currentGuide, moonPhase } from '../../../guide';
 import MoonIcon from '../../../components/MoonIcon';
 import { ShareFrame, useShareCard } from '../../../components/ShareCard';
 import { streaks } from '../../../streaks';
+import { BookletCover } from '../../../components/CardStudy';
+import { intro, lx, studyCount } from '../../../cardStudy';
 
 export default function Home() {
   const pad = usePad();
@@ -50,6 +52,7 @@ export default function Home() {
   const [picking, setPicking] = useState(false);
   const [sysPick, setSysPick] = useState<string | null>(null);
   const lenOn = (getOnboarding().paths ?? []).includes('lenormand');
+  const tarotOn = !getOnboarding().paths?.length || getOnboarding().paths!.includes('tarot');
   const dayOf = (sys: string) => {
     const entry = todaysCotd(sys);
     return { daily: dailyCard(sys), entry, mine: entry?.cards[1]?.card ? entry.cards[1] : undefined };
@@ -290,6 +293,21 @@ export default function Home() {
         onPick={(id, rev) => sysPick && logSys(sysPick, id, rev)}
       />
 
+      {tarotOn && (
+        <>
+          <Text style={s.h2}>{tr("Booklet")}</Text>
+          <Pressable style={s.booklet} onPress={() => router.push('/card-study')}>
+            <BookletCover size={110} />
+            <View style={{ flex: 1, gap: 2 }}>
+              <Text style={s.bookletTitle}>{lx(intro.title)}</Text>
+              <Text style={s.bookletTag}>{lx(intro.tagline)}</Text>
+              <Text style={s.dim}>{tr("{0} of 78 cards", { 0: studyCount() })}</Text>
+            </View>
+            <Ionicons name="chevron-forward" size={18} color={c.dim} />
+          </Pressable>
+        </>
+      )}
+
       {listening.length > 0 && (
         <>
           <Text style={s.h2}>{tr("Continue listening")}</Text>
@@ -479,6 +497,9 @@ const s = themed(() => ({
   dots: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 6, marginTop: 6 },
   dotChip: { borderRadius: 12, paddingVertical: 3, paddingHorizontal: 10, borderWidth: 1, borderColor: 'transparent' },
   dotText: { fontSize: 12, fontWeight: '600' },
+  booklet: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 14, paddingRight: 14, overflow: 'hidden' },
+  bookletTitle: { color: c.text, fontFamily: F.heading, fontSize: 20 },
+  bookletTag: { color: c.gold, fontFamily: F.headingItalic, fontSize: 13 },
   h2: { color: c.text, fontSize: 19, marginTop: 24, marginBottom: 10, fontFamily: F.heading },
   listen: { flexDirection: 'row', gap: 12, alignItems: 'center', backgroundColor: c.panel, borderRadius: 12, padding: 10, marginBottom: 8 },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },

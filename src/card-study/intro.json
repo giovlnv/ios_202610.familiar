@@ -1,0 +1,86 @@
+{
+  "title": { "pt": "estudo das cartas", "en": "card study" },
+  "tagline": { "pt": "guia de bolso para os 78 arcanos", "en": "a pocket guide to the 78 arcana" },
+  "howTo": {
+    "title": { "pt": "como ler cada carta", "en": "how to read each card" },
+    "lead": {
+      "pt": "Cada carta ocupa duas páginas: a primeira mostra o que está na imagem, a segunda mostra o que ela diz numa leitura.",
+      "en": "Each card takes two pages: the first shows what is in the picture, the second shows what it says in a reading."
+    },
+    "parts": [
+      {
+        "title": { "pt": "Carta e introdução", "en": "Card and introduction" },
+        "text": { "pt": "A carta no baralho Rider-Waite-Smith de 1909 e a ideia central dela em poucas linhas.", "en": "The card in the 1909 Rider-Waite-Smith deck and its core idea in a few lines." }
+      },
+      {
+        "title": { "pt": "Símbolos", "en": "Symbols" },
+        "text": { "pt": "Os detalhes da imagem, cada um em um círculo recortado da carta, com as palavras-chave que os livros dão para ele.", "en": "The details of the picture, each in a circle cropped from the card, with the keywords the books give it." }
+      },
+      {
+        "title": { "pt": "Cores", "en": "Colours" },
+        "text": { "pt": "As cores principais da carta e o que cada uma sugere (veja a próxima página).", "en": "The card's main colours and what each one suggests (see the next page)." }
+      },
+      {
+        "title": { "pt": "Resumo", "en": "Summary" },
+        "text": { "pt": "Três linhas: do que a carta fala, o que ela representa e qual é o foco dela.", "en": "Three lines: what the card speaks of, what it stands for and what its focus is." }
+      },
+      {
+        "title": { "pt": "Os nove planos", "en": "The nine planes" },
+        "text": { "pt": "O que a carta diz em cada área da vida, com uma frase para lembrar (veja as páginas seguintes).", "en": "What the card says in each area of life, with a line to remember (see the following pages)." }
+      },
+      {
+        "title": { "pt": "Lado desafiador", "en": "Challenging side" },
+        "text": { "pt": "O que pede atenção: a sombra da carta, quando a mesma energia sai do eixo.", "en": "What needs attention: the card's shadow, when the same energy goes off balance." }
+      }
+    ],
+    "dash": {
+      "pt": "Um traço (–) num plano significa que os livros da biblioteca ainda não falam dele para essa carta. Ele é preenchido quando um livro novo trouxer o assunto.",
+      "en": "A dash (–) in a plane means the books in the library don't cover it for that card yet. It gets filled in when a new book covers it."
+    }
+  },
+  "colours": {
+    "title": { "pt": "as cores", "en": "the colours" },
+    "lead": {
+      "pt": "As cores sozinhas já dizem muito. Estes são os sentidos básicos na cultura ocidental, um bom ponto de partida para a interpretação.",
+      "en": "The colours alone say a great deal. These are their basic meanings in Western culture, a good starting point for interpretation."
+    },
+    "list": [
+      { "hex": "#F4F1EA", "name": { "pt": "Branco", "en": "White" }, "keywords": { "pt": "ponto de partida, folha em branco, completude e cura, vazio, território novo", "en": "starting point, blank page, completion and healing, emptiness, new territory" } },
+      { "hex": "#9C98A3", "name": { "pt": "Cinza", "en": "Grey" }, "keywords": { "pt": "o inconsciente, a sombra, indiferença ou imparcialidade", "en": "the unconscious, the shadow, indifference or impartiality" } },
+      { "hex": "#1E1B24", "name": { "pt": "Preto", "en": "Black" }, "keywords": { "pt": "o desconhecido, o sentido interior, escuridão mental ou emocional, território novo", "en": "the unknown, inner meaning, mental or emotional darkness, new territory" } },
+      { "hex": "#C8402F", "name": { "pt": "Vermelho", "en": "Red" }, "keywords": { "pt": "coração, disposição, vontade, amor, raiva, sangue e terra", "en": "heart, disposition, will, love, anger, blood and soil" } },
+      { "hex": "#E8C547", "name": { "pt": "Amarelo", "en": "Yellow" }, "keywords": { "pt": "consciência, alegria de viver; inveja, dissonância", "en": "consciousness, joy of life; envy, dissonance" } },
+      { "hex": "#D9B45B", "name": { "pt": "Dourado", "en": "Gold" }, "keywords": { "pt": "sol, consciência, eternidade; ganância, ostentação", "en": "sun, awareness, eternity; greed, pomp" } },
+      { "hex": "#E58A3A", "name": { "pt": "Laranja", "en": "Orange" }, "keywords": { "pt": "vitalidade, calor, mistura de vermelho e amarelo, arbitrariedade", "en": "vitality, warmth, the mix of red and yellow, arbitrariness" } },
+      { "hex": "#3E5FA8", "name": { "pt": "Azul", "en": "Blue" }, "keywords": { "pt": "frieza, saudade, melancolia, sentimentalismo", "en": "coolness, longing, melancholy, sentimentality" } },
+      { "hex": "#A9C8DE", "name": { "pt": "Azul-claro", "en": "Light blue" }, "keywords": { "pt": "ar, céu aberto, água clara, espiritualidade, idealização", "en": "air, open sky, clear water, spirituality, idealisation" } },
+      { "hex": "#6E9A55", "name": { "pt": "Verde", "en": "Green" }, "keywords": { "pt": "frescor, juventude, imaturidade", "en": "freshness, youth, immaturity" } },
+      { "hex": "#2F5A3A", "name": { "pt": "Verde-escuro", "en": "Dark green" }, "keywords": { "pt": "perto da natureza, crescimento, algo que dura", "en": "close to nature, growth, something long-lasting" } },
+      { "hex": "#E3D2B8", "name": { "pt": "Bege", "en": "Beige" }, "keywords": { "pt": "o corpo humano, a corporeidade", "en": "the human body, physicality" } },
+      { "hex": "#7A5230", "name": { "pt": "Marrom", "en": "Brown" }, "keywords": { "pt": "pé no chão, enraizamento, a criação", "en": "down to earth, rooted, creation" } },
+      { "hex": "#8A5BB0", "name": { "pt": "Violeta", "en": "Violet" }, "keywords": { "pt": "experiências-limite, mistura de vermelho e azul", "en": "borderline experiences, the mix of red and blue" } }
+    ],
+    "sky": {
+      "pt": "Olhe a cor do céu: ela é uma pista simples e importante para interpretar a carta.",
+      "en": "Look at the colour of the sky: it is a simple but important clue to the card."
+    }
+  },
+  "planes": {
+    "title": { "pt": "os nove planos", "en": "the nine planes" },
+    "lead": {
+      "pt": "Os planos mostram como a mesma carta fala em cada área da vida. Numa leitura, olhe o plano da pergunta.",
+      "en": "The planes show how the same card speaks in each area of life. In a reading, look at the plane of the question."
+    },
+    "list": [
+      { "id": "spiritual", "name": { "pt": "Espiritual", "en": "Spiritual" }, "text": { "pt": "Sentido, fé, a jornada interior.", "en": "Meaning, faith, the inner journey." } },
+      { "id": "material", "name": { "pt": "Material (Trabalho & Dinheiro)", "en": "Material (Work & Money)" }, "text": { "pt": "Carreira, projetos, finanças.", "en": "Career, projects, finances." } },
+      { "id": "mental", "name": { "pt": "Mental", "en": "Mental" }, "text": { "pt": "Pensamentos, decisões, o jeito de ver as coisas.", "en": "Thoughts, decisions, the way of seeing things." } },
+      { "id": "physical", "name": { "pt": "Físico / Saúde", "en": "Physical / Health" }, "text": { "pt": "Corpo, energia, rotina e cuidado.", "en": "Body, energy, routine and care." } },
+      { "id": "emotional", "name": { "pt": "Emocional", "en": "Emotional" }, "text": { "pt": "Sentimentos, humor, o que se carrega por dentro.", "en": "Feelings, mood, what is carried inside." } },
+      { "id": "timing", "name": { "pt": "Tempo (Timing)", "en": "Timing" }, "text": { "pt": "Em que fase o assunto está: começo, meio, fim, espera.", "en": "What phase the matter is in: start, middle, end, waiting." } },
+      { "id": "relational", "name": { "pt": "Relacional (Amor, Família, Parcerias)", "en": "Relationships (Love, Family, Partners)" }, "text": { "pt": "Amor, família, amizades e parcerias.", "en": "Love, family, friendships and partnerships." } },
+      { "id": "advice", "name": { "pt": "Conselho", "en": "Advice" }, "text": { "pt": "O que a carta sugere fazer.", "en": "What the card suggests doing." } },
+      { "id": "challenge", "name": { "pt": "Atenção (lado desafiador)", "en": "Watch out (challenging side)" }, "text": { "pt": "O que evitar: a sombra da carta.", "en": "What to avoid: the card's shadow." } }
+    ]
+  }
+}

@@ -1329,4 +1329,12 @@ export const PT: Record<string, string> = {
   "Hold a passage while listening or reading → Make a flashcard.": "Segure um trecho ao ouvir ou ler → Criar flashcard.",
   "Hold a passage while listening → Ask Claude.": "Segure um trecho ao ouvir → Perguntar ao Claude.",
   "Hold a passage while listening → Add note.": "Segure um trecho ao ouvir → Adicionar nota.",
+  "Card study": "Estudo da carta",
+  "Booklet": "Livreto",
+  "{0} of 78 cards": "{0} de 78 cartas",
+  "Start reading": "Começar a ler",
+  "Go to the cards": "Ir para as cartas",
+  "Introduction": "Introdução",
+  "soon": "em breve",
+  "This card has no study yet.": "Esta carta ainda não tem estudo.",
 };

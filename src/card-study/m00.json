@@ -1,0 +1,561 @@
+{
+  "id": "m00",
+  "number": "0",
+  "name": {
+    "pt": "O Louco",
+    "en": "The Fool"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta 0",
+    "en": "Major Arcana – Card 0"
+  },
+  "intro": {
+    "pt": "O Louco é o espírito em busca de experiência. Ele para na beira do abismo, olhando para o céu e não para baixo, pronto para saltar no desconhecido. É o começo e o fim da jornada: a abertura total diante de uma situação, antes de qualquer forma ou expectativa.",
+    "en": "The Fool is the spirit in search of experience. He pauses at the edge of the cliff, looking at the sky rather than down, ready to leap into the unknown. He is the beginning and the end of the journey: complete openness to a situation, before any form or expectation."
+  },
+  "symbols": [
+    {
+      "key": "pose",
+      "crop": {
+        "x": 0.48,
+        "y": 0.31,
+        "r": 0.27
+      },
+      "title": {
+        "pt": "Figura de queixo erguido",
+        "en": "Figure with chin raised"
+      },
+      "keywords": {
+        "pt": [
+          "Abertura",
+          "Prontidão para partir",
+          "Esperança",
+          "Risco de arrogância"
+        ],
+        "en": [
+          "Openness",
+          "Ready to set off",
+          "Hope",
+          "Risk of arrogance"
+        ]
+      }
+    },
+    {
+      "key": "cliff",
+      "crop": {
+        "x": 0.62,
+        "y": 0.745,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Precipício",
+        "en": "Cliff edge"
+      },
+      "keywords": {
+        "pt": [
+          "Salto no desconhecido",
+          "Fé",
+          "Foco no momento",
+          "Abismo ou só um degrau"
+        ],
+        "en": [
+          "Leap into the unknown",
+          "Faith",
+          "Focus on the moment",
+          "Abyss or just a step"
+        ]
+      }
+    },
+    {
+      "key": "bundle",
+      "crop": {
+        "x": 0.69,
+        "y": 0.19,
+        "r": 0.16
+      },
+      "title": {
+        "pt": "Trouxa e bastão negro",
+        "en": "Bundle and black staff"
+      },
+      "keywords": {
+        "pt": [
+          "Experiências que não o dominam",
+          "Espírito que voa (águia)",
+          "Potencial ainda inconsciente"
+        ],
+        "en": [
+          "Experiences that don't rule him",
+          "Soaring spirit (eagle)",
+          "Potential still unconscious"
+        ]
+      }
+    },
+    {
+      "key": "sun",
+      "crop": {
+        "x": 0.8,
+        "y": 0.085,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Sol branco",
+        "en": "White sun"
+      },
+      "keywords": {
+        "pt": [
+          "Mente livre de apegos",
+          "Completude",
+          "Liberdade",
+          "Ou: ingenuidade, mente vazia"
+        ],
+        "en": [
+          "Mind free of attachments",
+          "Completion",
+          "Freedom",
+          "Or: naivety, a blank mind"
+        ]
+      }
+    },
+    {
+      "key": "rose",
+      "crop": {
+        "x": 0.84,
+        "y": 0.29,
+        "r": 0.11
+      },
+      "title": {
+        "pt": "Rosa branca",
+        "en": "White rose"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão elevada",
+          "Pureza",
+          "Delicadeza"
+        ],
+        "en": [
+          "Passion raised higher",
+          "Purity",
+          "Delicacy"
+        ]
+      }
+    },
+    {
+      "key": "mountains",
+      "crop": {
+        "x": 0.2,
+        "y": 0.69,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Montanhas azul-brancas",
+        "en": "Blue-white mountains"
+      },
+      "keywords": {
+        "pt": [
+          "Paraíso já encontrado",
+          "Ou problemas congelados",
+          "Desejos e medos a levar a sério"
+        ],
+        "en": [
+          "Paradise already found",
+          "Or frozen problems",
+          "Wishes and fears to take seriously"
+        ]
+      }
+    },
+    {
+      "key": "dog",
+      "crop": {
+        "x": 0.8,
+        "y": 0.725,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Cão branco",
+        "en": "White dog"
+      },
+      "keywords": {
+        "pt": [
+          "Instinto",
+          "Alerta",
+          "O eu animal em harmonia"
+        ],
+        "en": [
+          "Instinct",
+          "Alertness",
+          "The animal self in harmony"
+        ]
+      }
+    },
+    {
+      "key": "feather",
+      "crop": {
+        "x": 0.6,
+        "y": 0.138,
+        "r": 0.085
+      },
+      "title": {
+        "pt": "Pena vermelha",
+        "en": "Red feather"
+      },
+      "keywords": {
+        "pt": [
+          "Chama da vida",
+          "Alegria",
+          "Vitalidade",
+          "Coração vivo"
+        ],
+        "en": [
+          "Flame of life",
+          "Joy",
+          "Vitality",
+          "A living heart"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver",
+          "Inspiração",
+          "Excesso, euforia"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life",
+          "Inspiration",
+          "Excess, mania"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Ponto de partida",
+          "Folha em branco",
+          "Completude",
+          "Território novo"
+        ],
+        "en": [
+          "Starting point",
+          "Blank page",
+          "Completion",
+          "New territory"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Coração",
+          "Vontade",
+          "Amor",
+          "Força vital"
+        ],
+        "en": [
+          "Heart",
+          "Will",
+          "Love",
+          "Life force"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "O desconhecido",
+          "Tudo ainda possível",
+          "Território novo"
+        ],
+        "en": [
+          "The unknown",
+          "Everything still possible",
+          "New territory"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Juventude",
+          "Imaturidade"
+        ],
+        "en": [
+          "Freshness",
+          "Youth",
+          "Immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Ar e céu aberto",
+          "Espiritualidade",
+          "Idealização"
+        ],
+        "en": [
+          "Air and open sky",
+          "Spirituality",
+          "Idealisation"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Louco fala de começo, liberdade e confiança na vida.",
+      "Ele representa o salto em algo novo guiado pelo instinto, não pelo plano.",
+      "O foco dele é: estar inteiro no agora, sem precisar de garantias."
+    ],
+    "en": [
+      "The Fool speaks of beginnings, freedom and trust in life.",
+      "He stands for the leap into something new, guided by instinct rather than a plan.",
+      "His focus: being fully in the now, without needing guarantees."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Espírito em busca de experiência",
+          "O poder do agora",
+          "Entrada no mundo dos arquétipos"
+        ],
+        "en": [
+          "Spirit in search of experience",
+          "The power of now",
+          "Entering the world of the archetypes"
+        ]
+      },
+      "line": {
+        "pt": "“A jornada começa quando você aceita não saber.”",
+        "en": "“The journey begins when you accept not knowing.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Nova fase começando por impulso",
+          "Aprender coisas novas no caminho",
+          "Pressão dos outros para ser prático"
+        ],
+        "en": [
+          "A new phase begun on impulse",
+          "Learning new things along the way",
+          "Pressure from others to be practical"
+        ]
+      },
+      "line": {
+        "pt": "“Não saber as respostas também é um privilégio.”",
+        "en": "“Not knowing the answers is a privilege too.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Mente aberta, sem modelos fixos",
+          "Intuição acima da lógica",
+          "Admitir que não sabe é o início do aprendizado"
+        ],
+        "en": [
+          "An open mind, without fixed models",
+          "Intuition over logic",
+          "Admitting you don't know is where learning starts"
+        ]
+      },
+      "line": {
+        "pt": "“Não se preocupe com o que ainda não dá para pesar.”",
+        "en": "“Don't worry about what can't be weighed yet.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Vitalidade e energia de vida",
+          "O corpo e o instinto guiam os passos",
+          "Cuidado com euforia e excessos"
+        ],
+        "en": [
+          "Vitality and life energy",
+          "Body and instinct guide the steps",
+          "Watch out for euphoria and excess"
+        ]
+      },
+      "line": {
+        "pt": "“O que a cabeça esquece, os pés vão buscar.”",
+        "en": "“What the head forgets, the feet go and fetch.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Alegria e otimismo",
+          "Paixão vivida com leveza",
+          "Memórias que não controlam a vida"
+        ],
+        "en": [
+          "Joy and optimism",
+          "Passion lived lightly",
+          "Memories that don't control life"
+        ]
+      },
+      "line": {
+        "pt": "“Carrego minha bagagem, mas ela não me carrega.”",
+        "en": "“I carry my baggage, but it doesn't carry me.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Começo de uma nova fase",
+          "Momentos de transição difícil",
+          "Grandes chances só na hora certa"
+        ],
+        "en": [
+          "The start of a new phase",
+          "Moments of difficult transition",
+          "Big chances only at the right time"
+        ]
+      },
+      "line": {
+        "pt": "“Agora é o ponto zero.”",
+        "en": "“Now is the zero point.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Dois Loucos juntos formam o infinito",
+          "Dizer verdades que ninguém diz",
+          "Rir da própria tolice desarma conflitos"
+        ],
+        "en": [
+          "Two Fools together make infinity",
+          "Saying truths no one else will",
+          "Laughing at your own folly disarms conflict"
+        ]
+      },
+      "line": {
+        "pt": "“Quem admite a própria tolice não precisa se defender.”",
+        "en": "“Whoever admits their folly has nothing to defend.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Tenha coragem e confie em si",
+          "Ouça o seu eu interior, não só os outros",
+          "Dê espaço ao seu Louco interior"
+        ],
+        "en": [
+          "Have courage and trust yourself",
+          "Listen to your inner self, not only to others",
+          "Make room for your inner Fool"
+        ]
+      },
+      "line": {
+        "pt": "“Quem não tem destino fixo não se perde.”",
+        "en": "“With no fixed goal, you can't lose your way.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Medo de arriscar, cautela demais",
+          "Imprudência e planos malucos",
+          "Ingenuidade e talentos desperdiçados"
+        ],
+        "en": [
+          "Fear of risk, too much caution",
+          "Recklessness and crazy schemes",
+          "Naivety and wasted talents"
+        ]
+      },
+      "line": {
+        "pt": "“Coragem sem o momento certo vira descuido.”",
+        "en": "“Courage without the right moment turns into carelessness.”"
+      }
+    }
+  ]
+}

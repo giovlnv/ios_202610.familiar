@@ -31,6 +31,7 @@ export default function TabStack({ segment }: { segment: string }) {
       <Stack.Screen name="settings/index" options={{ title: tr("Settings") }} />
       <Stack.Screen name="stats" options={{ title: tr("Stats") }} />
       <Stack.Screen name="journal-stats" options={{ title: tr("Journal stats") }} />
+      <Stack.Screen name="card-study/index" options={{ title: tr("Card study") }} />
       <Stack.Screen name="numerology" options={{ title: tr("Numerology") }} />
       <Stack.Screen name="astrology" options={{ title: tr("Birth chart") }} />
       <Stack.Screen name="settings/profile" options={{ title: tr("Edit profile") }} />
