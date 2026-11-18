@@ -1,0 +1,434 @@
+{
+  "id": "swords12",
+  "number": "12",
+  "name": {
+    "pt": "Cavaleiro de Espadas",
+    "en": "Knight of Swords"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Espadas",
+    "en": "Minor Arcana – Swords"
+  },
+  "intro": {
+    "pt": "Um cavaleiro de armadura dispara contra o vento num cavalo branco, de espada erguida, com árvores dobradas e nuvens rasgadas ao redor. É coragem, habilidade e ímpeto para enfrentar tudo de frente. Mas sem limite, essa energia vira fanatismo.",
+    "en": "An armoured knight charges into the wind on a white horse, sword raised, with bent trees and torn clouds around him. This is courage, skill and the drive to face everything head-on. But without limits, that energy turns into fanaticism."
+  },
+  "symbols": [
+    {
+      "key": "sword",
+      "crop": {
+        "x": 0.27,
+        "y": 0.18,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Espada erguida",
+        "en": "Raised sword"
+      },
+      "keywords": {
+        "pt": [
+          "Alcançar além",
+          "Habilidade e bravura",
+          "Ou: o que foi solto"
+        ],
+        "en": [
+          "Reaching beyond",
+          "Skill and bravery",
+          "Or: what's been set loose"
+        ]
+      }
+    },
+    {
+      "key": "knight",
+      "crop": {
+        "x": 0.65,
+        "y": 0.38,
+        "r": 0.3
+      },
+      "title": {
+        "pt": "Cavaleiro de armadura",
+        "en": "Armoured knight"
+      },
+      "keywords": {
+        "pt": [
+          "Radical: busca as raízes",
+          "Coragem",
+          "Ou: fanatismo"
+        ],
+        "en": [
+          "Radical: seeking roots",
+          "Courage",
+          "Or: fanaticism"
+        ]
+      }
+    },
+    {
+      "key": "horse",
+      "crop": {
+        "x": 0.35,
+        "y": 0.5,
+        "r": 0.3
+      },
+      "title": {
+        "pt": "Cavalo branco a galope",
+        "en": "White horse at a gallop"
+      },
+      "keywords": {
+        "pt": [
+          "Neutralidade consciente",
+          "Ou: indiferença ao corpo",
+          "Ímpeto"
+        ],
+        "en": [
+          "Conscious neutrality",
+          "Or: indifference to the body",
+          "Momentum"
+        ]
+      }
+    },
+    {
+      "key": "butterflies",
+      "crop": {
+        "x": 0.55,
+        "y": 0.57,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Borboletas e pássaros",
+        "en": "Butterflies and birds"
+      },
+      "keywords": {
+        "pt": [
+          "Metamorfose",
+          "Leveza, a alma",
+          "Ou: volubilidade"
+        ],
+        "en": [
+          "Metamorphosis",
+          "Lightness, the soul",
+          "Or: flightiness"
+        ]
+      }
+    },
+    {
+      "key": "trees",
+      "crop": {
+        "x": 0.13,
+        "y": 0.68,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Árvores dobradas pelo vento",
+        "en": "Trees bent by the wind"
+      },
+      "keywords": {
+        "pt": [
+          "Contra o vento",
+          "Desafiar velhos poderes",
+          "Criar o próprio ar"
+        ],
+        "en": [
+          "Against the wind",
+          "Defying old powers",
+          "Making your own fresh air"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Mente ágil",
+          "Céu"
+        ],
+        "en": [
+          "Agile mind",
+          "Sky"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Neutralidade",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Neutrality",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#8C2F2F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão profunda",
+          "Ou: cegueira da paixão"
+        ],
+        "en": [
+          "Deep passion",
+          "Or: blinding zeal"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Pureza",
+          "Território novo"
+        ],
+        "en": [
+          "Purity",
+          "New territory"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Entusiasmo"
+        ],
+        "en": [
+          "Consciousness",
+          "Enthusiasm"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Cavaleiro de Espadas fala de coragem, ímpeto e confronto.",
+      "Ele representa a mente que avança contra qualquer obstáculo.",
+      "O foco dele é: comprometer-se e persistir, sem virar fanático."
+    ],
+    "en": [
+      "The Knight of Swords speaks of courage, drive and confrontation.",
+      "He stands for the mind charging against any obstacle.",
+      "His focus: committing and persisting without turning fanatical."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "A radicalidade de quem ama de verdade",
+          "Buscar as raízes",
+          "Herói de coração limpo"
+        ],
+        "en": [
+          "The radicalness of true love",
+          "Seeking the roots",
+          "A hero pure of heart"
+        ]
+      },
+      "line": {
+        "pt": "“Minha espada é rápida porque meu coração é limpo.”",
+        "en": "“My sword is swift because my heart is clean.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Habilidade e capacidade",
+          "Metas que te acendem",
+          "Ou: resistência, oposição"
+        ],
+        "en": [
+          "Skill and capacity",
+          "Aims that turn you on",
+          "Or: resistance, opposition"
+        ]
+      },
+      "line": {
+        "pt": "“Foco minha força no que me anima.”",
+        "en": "“I focus my strength on what fires me.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Revise seus julgamentos",
+          "Pense fora da caixa",
+          "Agilidade mental"
+        ],
+        "en": [
+          "Clear out your value judgements",
+          "Think outside the box",
+          "Mental agility"
+        ]
+      },
+      "line": {
+        "pt": "“Pensar livre é meu cavalo.”",
+        "en": "“Free thinking is my horse.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Entusiasmo que ganha asas",
+          "Medo de ficar a sós consigo",
+          "Ou: raiva, emoções inconscientes"
+        ],
+        "en": [
+          "Enthusiasm taking wing",
+          "Fear of being alone with yourself",
+          "Or: wrath, unconscious emotions"
+        ]
+      },
+      "line": {
+        "pt": "“Também paro e me escuto.”",
+        "en": "“I also stop and listen to myself.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Rapidez, mais que a sombra",
+          "Ou: não sustentar uma luta longa"
+        ],
+        "en": [
+          "Quicker than the shadow",
+          "Or: unable to sustain a long struggle"
+        ]
+      },
+      "line": {
+        "pt": "“Rápido, mas com fôlego.”",
+        "en": "“Fast, but with stamina.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Mais amor, humor e alegria",
+          "Mais visão para os desejos do coração"
+        ],
+        "en": [
+          "More love, humour and joy",
+          "More vision for your heart's desires"
+        ]
+      },
+      "line": {
+        "pt": "“Escolho mais alegria.”",
+        "en": "“I choose more joy.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Comprometa-se e persista",
+          "Não se esconda atrás das regras",
+          "Realize seu potencial"
+        ],
+        "en": [
+          "Commit and persist",
+          "Don't hide behind conventions",
+          "Realise your potential"
+        ]
+      },
+      "line": {
+        "pt": "“Coragem com constância.”",
+        "en": "“Courage with constancy.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Fanatismo, radicalismo",
+          "Imprudência, extravagância",
+          "Atacar quando era hora de calma"
+        ],
+        "en": [
+          "Fanaticism, radicalism",
+          "Imprudence, extravagance",
+          "Charging when calm was needed"
+        ]
+      },
+      "line": {
+        "pt": "“Quem ataca tudo não vence nada.”",
+        "en": "“Charging at everything wins nothing.”"
+      }
+    }
+  ]
+}

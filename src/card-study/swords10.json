@@ -1,0 +1,446 @@
+{
+  "id": "swords10",
+  "number": "10",
+  "name": {
+    "pt": "Dez de Espadas",
+    "en": "Ten of Swords"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Espadas",
+    "en": "Minor Arcana – Swords"
+  },
+  "intro": {
+    "pt": "Um homem jaz de bruços à beira da água, com dez espadas cravadas nas costas, sob um céu negro que se abre em amarelo no horizonte. Parece o fim, e algo de fato acabou. Mas o exagero da cena sugere que não é tão grave quanto parece: o dia já está nascendo.",
+    "en": "A man lies face down by the water with ten swords in his back, under a black sky that opens to yellow on the horizon. It looks like the end, and something has indeed ended. But the scene's excess suggests it isn't as bad as it looks: day is already breaking."
+  },
+  "symbols": [
+    {
+      "key": "swords",
+      "crop": {
+        "x": 0.5,
+        "y": 0.45,
+        "r": 0.45
+      },
+      "title": {
+        "pt": "Dez espadas",
+        "en": "Ten swords"
+      },
+      "keywords": {
+        "pt": [
+          "Mente destrutiva no extremo",
+          "Ou: fim dos ídolos",
+          "Exagero da dor"
+        ],
+        "en": [
+          "The destructive mind at its peak",
+          "Or: the end of idols",
+          "Exaggerated pain"
+        ]
+      }
+    },
+    {
+      "key": "figure",
+      "crop": {
+        "x": 0.7,
+        "y": 0.78,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Homem de bruços",
+        "en": "Man lying face down"
+      },
+      "keywords": {
+        "pt": [
+          "Dor e aflição",
+          "Ou: entrega e amor",
+          "Pregado às próprias ideias"
+        ],
+        "en": [
+          "Pain and affliction",
+          "Or: devotion and love",
+          "Nailed down by your own ideas"
+        ]
+      }
+    },
+    {
+      "key": "hand",
+      "crop": {
+        "x": 0.43,
+        "y": 0.86,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Mão em bênção",
+        "en": "Hand in blessing"
+      },
+      "keywords": {
+        "pt": [
+          "Bênção poderosa",
+          "Poder espiritual",
+          "Ou: mal usado, destrói"
+        ],
+        "en": [
+          "A potent blessing",
+          "Spiritual power",
+          "Or: misused, it destroys"
+        ]
+      }
+    },
+    {
+      "key": "cloth",
+      "crop": {
+        "x": 0.15,
+        "y": 0.75,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Pano vermelho",
+        "en": "Red cloth"
+      },
+      "keywords": {
+        "pt": [
+          "Sangue que flui pelas gerações",
+          "Ou: apego a velhas teorias",
+          "Novas conclusões"
+        ],
+        "en": [
+          "Lifeblood across generations",
+          "Or: clinging to old theories",
+          "New conclusions"
+        ]
+      }
+    },
+    {
+      "key": "horizon",
+      "crop": {
+        "x": 0.5,
+        "y": 0.55,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Céu clareando",
+        "en": "Sky clearing"
+      },
+      "keywords": {
+        "pt": [
+          "Novo dia",
+          "Novo horizonte",
+          "Ou: tempestade passando"
+        ],
+        "en": [
+          "A new day",
+          "A new horizon",
+          "Or: a storm passing"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "Reprimido",
+          "O desconhecido"
+        ],
+        "en": [
+          "Repressed",
+          "The unknown"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Novo sol",
+          "Consciência"
+        ],
+        "en": [
+          "A new sun",
+          "Consciousness"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Sangue",
+          "Vida"
+        ],
+        "en": [
+          "Blood",
+          "Life"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Água da vida",
+          "Mente"
+        ],
+        "en": [
+          "Water of life",
+          "Mind"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Terra"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Earth"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Dez de Espadas fala de fim, dor e recomeço.",
+      "Ele representa o ponto mais baixo, de onde só se pode subir.",
+      "O foco dele é: deixar os velhos caminhos e ver o novo dia."
+    ],
+    "en": [
+      "The Ten of Swords speaks of endings, pain and new starts.",
+      "It stands for the lowest point, from which the only way is up.",
+      "Its focus: leaving the old ways and seeing the new day."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "É como é, diz o amor",
+          "Fim dos ídolos e modelos",
+          "Espiritualidade como fonte de juventude"
+        ],
+        "en": [
+          "It is what it is, says Love",
+          "The end of idols and models",
+          "Spirituality as a fountain of youth"
+        ]
+      },
+      "line": {
+        "pt": "“Nada do passado me prepara inteiro para o que vem.”",
+        "en": "“Nothing from the past fully prepares me for what's next.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Os métodos de antes não servem mais",
+          "Sucesso passageiro",
+          "Teste prático das ideias"
+        ],
+        "en": [
+          "The old methods no longer work",
+          "Success that doesn't last",
+          "Putting ideas to the test"
+        ]
+      },
+      "line": {
+        "pt": "“Uma decisão nova abre portas novas.”",
+        "en": "“A new decision opens new doors.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Ideias falsas dão xeque-mate",
+          "Pensamentos bons iluminam",
+          "Ou: preso a velhos julgamentos"
+        ],
+        "en": [
+          "False thoughts mean checkmate",
+          "Good thoughts shed light",
+          "Or: stuck to old judgements"
+        ]
+      },
+      "line": {
+        "pt": "“Largo a ideia que me prende.”",
+        "en": "“I let go of the idea that holds me.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Respire fundo algumas vezes",
+          "Paz e presença de espírito",
+          "Exaustão"
+        ],
+        "en": [
+          "Take a couple of deep breaths",
+          "Peace of mind and presence of mind",
+          "Exhaustion"
+        ]
+      },
+      "line": {
+        "pt": "“Respiro, e o corpo volta.”",
+        "en": "“I breathe, and my body returns.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Dor, lágrimas, desolação",
+          "Exagero: ninguém sofreu como eu",
+          "A situação não é tão ruim"
+        ],
+        "en": [
+          "Pain, tears, desolation",
+          "Excess: no one has suffered like me",
+          "It's not as bad as it looks"
+        ]
+      },
+      "line": {
+        "pt": "“A dor é real, mas não é o fim.”",
+        "en": "“The pain is real, but it's not the end.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Fim de um ciclo",
+          "Pôr do sol ou nascer do sol",
+          "O caminho segue além do horizonte"
+        ],
+        "en": [
+          "The end of a cycle",
+          "Sunset or sunrise",
+          "The road goes on beyond the horizon"
+        ]
+      },
+      "line": {
+        "pt": "“O dia já está nascendo.”",
+        "en": "“Day is already breaking.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Algo novo no amor",
+          "Cuidado com conclusões apressadas",
+          "Entrega"
+        ],
+        "en": [
+          "Something new in love",
+          "Beware of hasty conclusions",
+          "Devotion"
+        ]
+      },
+      "line": {
+        "pt": "“Não tiro conclusões no escuro.”",
+        "en": "“I don't draw conclusions in the dark.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Pare com os velhos caminhos",
+          "Use o alívio para mudar de verdade",
+          "Busque a água da vida"
+        ],
+        "en": [
+          "Call a halt to the old ways",
+          "Use the relief to truly change",
+          "Seek the water of life"
+        ]
+      },
+      "line": {
+        "pt": "“Levanto e mudo de verdade.”",
+        "en": "“I get up and truly change.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Sacrifício e destruição",
+          "Apegar-se a ilusões até o desastre",
+          "Histeria"
+        ],
+        "en": [
+          "Sacrifice and destruction",
+          "Clinging to illusions until disaster",
+          "Hysteria"
+        ]
+      },
+      "line": {
+        "pt": "“Insistir no erro só aumenta as espadas.”",
+        "en": "“Persisting in the mistake only adds swords.”"
+      }
+    }
+  ]
+}

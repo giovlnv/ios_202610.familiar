@@ -1,0 +1,444 @@
+{
+  "id": "swords04",
+  "number": "4",
+  "name": {
+    "pt": "Quatro de Espadas",
+    "en": "Four of Swords"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Espadas",
+    "en": "Minor Arcana – Swords"
+  },
+  "intro": {
+    "pt": "A efígie de um cavaleiro jaz sobre um túmulo, de mãos postas, numa igreja; três espadas pendem na parede e uma quarta está deitada sob ele. Um vitral mostra uma cena de cura. É o recolhimento: descanso, meditação e tempo para se recuperar, mas também o risco de se isolar demais.",
+    "en": "The effigy of a knight lies on a tomb in a church, hands joined in prayer; three swords hang on the wall and a fourth lies beneath him. A stained-glass window shows a scene of healing. This is retreat: rest, meditation and time to recover, but also the risk of withdrawing too far."
+  },
+  "symbols": [
+    {
+      "key": "knight",
+      "crop": {
+        "x": 0.55,
+        "y": 0.63,
+        "r": 0.4
+      },
+      "title": {
+        "pt": "Cavaleiro deitado",
+        "en": "Knight lying at rest"
+      },
+      "keywords": {
+        "pt": [
+          "Descanso profundo, meditação",
+          "Recuperar forças",
+          "Ou: paralisia, choque"
+        ],
+        "en": [
+          "Deep rest, meditation",
+          "Recovering strength",
+          "Or: paralysis, shock"
+        ]
+      }
+    },
+    {
+      "key": "hands",
+      "crop": {
+        "x": 0.6,
+        "y": 0.56,
+        "r": 0.06
+      },
+      "title": {
+        "pt": "Mãos em oração",
+        "en": "Hands in prayer"
+      },
+      "keywords": {
+        "pt": [
+          "Oração",
+          "Consciência tranquila",
+          "Ou: memorial"
+        ],
+        "en": [
+          "Prayer",
+          "A clear conscience",
+          "Or: a memorial"
+        ]
+      }
+    },
+    {
+      "key": "swords",
+      "crop": {
+        "x": 0.76,
+        "y": 0.3,
+        "r": 0.27
+      },
+      "title": {
+        "pt": "Três espadas na parede",
+        "en": "Three swords on the wall"
+      },
+      "keywords": {
+        "pt": [
+          "Pensamentos organizados",
+          "Armas da mente guardadas",
+          "Experiências elaboradas"
+        ],
+        "en": [
+          "Ordered thoughts",
+          "Weapons of the mind put away",
+          "Experiences worked through"
+        ]
+      }
+    },
+    {
+      "key": "window",
+      "crop": {
+        "x": 0.15,
+        "y": 0.18,
+        "r": 0.14
+      },
+      "title": {
+        "pt": "Vitral",
+        "en": "Stained-glass window"
+      },
+      "keywords": {
+        "pt": [
+          "Juntar os fragmentos",
+          "Cena de cura",
+          "Ou: o mundo fica lá fora"
+        ],
+        "en": [
+          "Putting the pieces together",
+          "A scene of healing",
+          "Or: the world stays outside"
+        ]
+      }
+    },
+    {
+      "key": "sword",
+      "crop": {
+        "x": 0.8,
+        "y": 0.86,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Espada sob o túmulo",
+        "en": "Sword below the tomb"
+      },
+      "keywords": {
+        "pt": [
+          "Uma arma em repouso",
+          "Esperar a hora de lutar"
+        ],
+        "en": [
+          "A weapon at rest",
+          "Waiting for the time to fight"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Neutro, calmo",
+          "Ou: hermeticamente fechado"
+        ],
+        "en": [
+          "Neutral, calm",
+          "Or: hermetically sealed"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência com sombra",
+          "Ou: febre, confusão"
+        ],
+        "en": [
+          "Consciousness with shadow",
+          "Or: fever, unclarity"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "Profundezas",
+          "O desconhecido"
+        ],
+        "en": [
+          "The depths",
+          "The unknown"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Coração",
+          "Vida"
+        ],
+        "en": [
+          "Heart",
+          "Life"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Espiritualidade",
+          "Mente"
+        ],
+        "en": [
+          "Spirituality",
+          "Mind"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Quatro de Espadas fala de descanso, retiro e recuperação.",
+      "Ele representa a mente em pausa para se curar.",
+      "O foco dele é: recolher-se para voltar mais forte."
+    ],
+    "en": [
+      "The Four of Swords speaks of rest, retreat and recovery.",
+      "It stands for the mind pausing to heal.",
+      "Its focus: withdrawing in order to come back stronger."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Viagem espiritual, sonho lúcido",
+          "Paz (PAX) e satisfação",
+          "Cura que vem de fora"
+        ],
+        "en": [
+          "Spiritual journey, lucid dream",
+          "Peace (PAX) and contentment",
+          "Healing that comes from outside"
+        ]
+      },
+      "line": {
+        "pt": "“Na quietude encontro paz.”",
+        "en": "“In stillness I find peace.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Paz para trabalhar",
+          "Administração sábia, economia",
+          "Esperar a melhor chance"
+        ],
+        "en": [
+          "Peace and quiet to work",
+          "Wise administration, economy",
+          "Waiting for a better chance"
+        ]
+      },
+      "line": {
+        "pt": "“Recuar também é estratégia.”",
+        "en": "“Stepping back is strategy too.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Concentração intensa",
+          "Juntar os pedaços num todo",
+          "Pensamento sem preconceito"
+        ],
+        "en": [
+          "Intense concentration",
+          "Putting fragments into a whole",
+          "Unbiased thinking"
+        ]
+      },
+      "line": {
+        "pt": "“A mente descansa para clarear.”",
+        "en": "“The mind rests in order to clear.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Descanso profundo",
+          "Recuperação, convalescença",
+          "Ou: esgotamento, rigidez"
+        ],
+        "en": [
+          "Deep relaxation",
+          "Recovery, convalescence",
+          "Or: exhaustion, rigidity"
+        ]
+      },
+      "line": {
+        "pt": "“O corpo para, a cura começa.”",
+        "en": "“The body stops, healing begins.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Consciência tranquila",
+          "Esconder-se das emoções",
+          "Ou: medo de conflito"
+        ],
+        "en": [
+          "A calm conscience",
+          "Hiding from emotions",
+          "Or: fear of conflict"
+        ]
+      },
+      "line": {
+        "pt": "“Retirar-se para sarar, não para fugir.”",
+        "en": "“Withdrawing to heal, not to flee.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Tempo de retiro",
+          "Pausa antes de voltar",
+          "Volta cautelosa ao mundo"
+        ],
+        "en": [
+          "A time of retreat",
+          "A pause before returning",
+          "A careful return to the world"
+        ]
+      },
+      "line": {
+        "pt": "“Ainda não; logo.”",
+        "en": "“Not yet; soon.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Largar inveja e ciúme",
+          "Acalmar-se",
+          "Alguém de fora quebra o encanto"
+        ],
+        "en": [
+          "Letting go of envy and jealousy",
+          "Calming down",
+          "Someone from outside breaks the spell"
+        ]
+      },
+      "line": {
+        "pt": "“Às vezes preciso que alguém me acorde.”",
+        "en": "“Sometimes I need someone to wake me.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Permita-se paz e silêncio",
+          "Relaxe para focar",
+          "Use recursos mentais parados"
+        ],
+        "en": [
+          "Allow yourself peace and quiet",
+          "Relax so you can focus",
+          "Activate unused mental resources"
+        ]
+      },
+      "line": {
+        "pt": "“Silêncio também é trabalho.”",
+        "en": "“Silence is work too.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Isolamento, paralisia",
+          "Fuga para a fantasia",
+          "Exílio, solidão"
+        ],
+        "en": [
+          "Isolation, paralysis",
+          "Escape into fantasy",
+          "Exile, solitude"
+        ]
+      },
+      "line": {
+        "pt": "“Recolhimento demais vira prisão.”",
+        "en": "“Too much retreat becomes a prison.”"
+      }
+    }
+  ]
+}

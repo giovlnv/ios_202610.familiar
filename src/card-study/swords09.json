@@ -1,0 +1,400 @@
+{
+  "id": "swords09",
+  "number": "9",
+  "name": {
+    "pt": "Nove de Espadas",
+    "en": "Nine of Swords"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Espadas",
+    "en": "Minor Arcana – Swords"
+  },
+  "intro": {
+    "pt": "No meio da noite, uma mulher senta na cama com o rosto entre as mãos; nove espadas pendem na escuridão acima dela, e a colcha está cheia de rosas. É a carta da angústia, dos pesadelos e da dor mental mais funda. Mas também pode ser um despertar brusco: a escuridão que de repente se enche de luzes novas.",
+    "en": "In the middle of the night a woman sits up in bed with her face in her hands; nine swords hang in the darkness above her, and her quilt is covered in roses. This is the card of anguish, nightmares and the deepest mental pain. But it can also be a sudden awakening: darkness suddenly filling with new lights."
+  },
+  "symbols": [
+    {
+      "key": "figure",
+      "crop": {
+        "x": 0.55,
+        "y": 0.55,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Rosto entre as mãos",
+        "en": "Face in her hands"
+      },
+      "keywords": {
+        "pt": [
+          "Choque ou despertar",
+          "Angústia",
+          "Não fechar os olhos para o novo"
+        ],
+        "en": [
+          "Shock or awakening",
+          "Anguish",
+          "Not closing your eyes to the new"
+        ]
+      }
+    },
+    {
+      "key": "swords",
+      "crop": {
+        "x": 0.3,
+        "y": 0.3,
+        "r": 0.35
+      },
+      "title": {
+        "pt": "Nove espadas na escuridão",
+        "en": "Nine swords in the dark"
+      },
+      "keywords": {
+        "pt": [
+          "Clarões da mente",
+          "Novos conhecimentos",
+          "Ou: grades, prisão"
+        ],
+        "en": [
+          "Flashes of the mind",
+          "New insights",
+          "Or: bars, a prison"
+        ]
+      }
+    },
+    {
+      "key": "quilt",
+      "crop": {
+        "x": 0.7,
+        "y": 0.8,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Colcha de rosas e signos",
+        "en": "Quilt of roses and signs"
+      },
+      "keywords": {
+        "pt": [
+          "Beleza do eu interior",
+          "Um cosmos inteiro",
+          "Amor que dá sentido"
+        ],
+        "en": [
+          "Beauty of the inner self",
+          "A whole cosmos",
+          "Love giving meaning"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "O desconhecido",
+          "O que foi reprimido",
+          "Escuridão"
+        ],
+        "en": [
+          "The unknown",
+          "What was repressed",
+          "Darkness"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Mente",
+          "Luz nova"
+        ],
+        "en": [
+          "Mind",
+          "New light"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Despertar",
+          "Clareza"
+        ],
+        "en": [
+          "Awakening",
+          "Clarity"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Amor",
+          "Coração"
+        ],
+        "en": [
+          "Love",
+          "Heart"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Iluminação"
+        ],
+        "en": [
+          "Consciousness",
+          "Illumination"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Nove de Espadas fala de angústia, pesadelos e despertar.",
+      "Ele representa a dor mental no meio da noite.",
+      "O foco dele é: encarar a escuridão até ela se encher de luz."
+    ],
+    "en": [
+      "The Nine of Swords speaks of anguish, nightmares and awakening.",
+      "It stands for mental pain in the middle of the night.",
+      "Its focus: facing the dark until it fills with light."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Despertar, experiência do divino",
+          "Pensar além do próprio horizonte",
+          "Abraçar a existência inteira"
+        ],
+        "en": [
+          "Awakening, experience of the divine",
+          "Thinking beyond your horizon",
+          "Embracing existence completely"
+        ]
+      },
+      "line": {
+        "pt": "“Tragédia é só meia verdade.”",
+        "en": "“Tragedy is only half the truth.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Fracasso, atraso, decepção",
+          "Não desanimar com bloqueios",
+          "Juntar as peças"
+        ],
+        "en": [
+          "Failure, delay, disappointment",
+          "Not losing heart at blockages",
+          "Putting two and two together"
+        ]
+      },
+      "line": {
+        "pt": "“Quem entendeu sua situação não se detém.”",
+        "en": "“Whoever grasps their situation can't be held back.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Pensamentos não digeridos",
+          "Achar palavras para o indizível",
+          "Separar preto e branco"
+        ],
+        "en": [
+          "Undigested thoughts",
+          "Finding words for the unspeakable",
+          "Sorting black from white"
+        ]
+      },
+      "line": {
+        "pt": "“Dar nome ao medo já o diminui.”",
+        "en": "“Naming the fear makes it smaller.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Insônia e pesadelos",
+          "Relaxar, dar tempo aos olhos",
+          "Tensão no rosto e nas mãos"
+        ],
+        "en": [
+          "Insomnia and nightmares",
+          "Relaxing, giving your eyes time",
+          "Tension in face and hands"
+        ]
+      },
+      "line": {
+        "pt": "“Respiro e deixo a noite passar.”",
+        "en": "“I breathe and let the night pass.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Dor mental profunda",
+          "Sofrer por alguém que se ama",
+          "Ou: medo razoável, vergonha"
+        ],
+        "en": [
+          "Deep mental pain",
+          "Suffering for someone you love",
+          "Or: reasonable fear, shame"
+        ]
+      },
+      "line": {
+        "pt": "“Raiva guardada vira tristeza.”",
+        "en": "“Anger held in turns to sorrow.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "O meio da noite",
+          "Horizontes velhos escurecem, novos clareiam",
+          "Ou: atraso"
+        ],
+        "en": [
+          "The middle of the night",
+          "Old horizons darken, new ones lighten",
+          "Or: delay"
+        ]
+      },
+      "line": {
+        "pt": "“A noite também passa.”",
+        "en": "“The night passes too.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Sua alma foi feita para florescer",
+          "Há gente esperando seu amor",
+          "Ou: desconfiança"
+        ],
+        "en": [
+          "Your soul is made to bloom",
+          "People are waiting for your love",
+          "Or: suspicion"
+        ]
+      },
+      "line": {
+        "pt": "“Há quem queira me amar.”",
+        "en": "“There are people who want to love me.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Fortaleça paciência e confiança",
+          "Levante-se e veja o que pode fazer",
+          "Acostume-se devagar ao novo"
+        ],
+        "en": [
+          "Strengthen your patience and trust",
+          "Get up and see what you can do",
+          "Get used to the new slowly"
+        ]
+      },
+      "line": {
+        "pt": "“Acendo uma luz e olho.”",
+        "en": "“I turn on a light and look.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Desespero, desolação",
+          "Suspeita e dúvida de si",
+          "Esconder-se e não agir"
+        ],
+        "en": [
+          "Despair, desolation",
+          "Suspicion and self-doubt",
+          "Hiding instead of acting"
+        ]
+      },
+      "line": {
+        "pt": "“Só no escuro os monstros crescem.”",
+        "en": "“Monsters only grow in the dark.”"
+      }
+    }
+  ]
+}

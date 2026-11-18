@@ -1,0 +1,458 @@
+{
+  "id": "swords07",
+  "number": "7",
+  "name": {
+    "pt": "Sete de Espadas",
+    "en": "Seven of Swords"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Espadas",
+    "en": "Minor Arcana – Swords"
+  },
+  "intro": {
+    "pt": "Um homem de chapéu vermelho sai na ponta dos pés de um acampamento carregando cinco espadas, olhando para trás com um sorriso; duas ficam fincadas no chão. É a carta da astúcia, da ação solitária e dos planos que não resolvem tudo. Também pode ser viver para a frente e entender olhando para trás.",
+    "en": "A man in a red hat tiptoes away from a camp carrying five swords, glancing back with a grin; two remain stuck in the ground. This is the card of cunning, acting alone and schemes that don't solve everything. It can also be living forward and understanding by looking back."
+  },
+  "symbols": [
+    {
+      "key": "figure",
+      "crop": {
+        "x": 0.55,
+        "y": 0.31,
+        "r": 0.11
+      },
+      "title": {
+        "pt": "Homem olhando para trás",
+        "en": "Man glancing back"
+      },
+      "keywords": {
+        "pt": [
+          "Correr à frente, olhar atrás",
+          "Contradição viva",
+          "Ou: esconder intenções"
+        ],
+        "en": [
+          "Running ahead, looking back",
+          "A living contradiction",
+          "Or: hiding intentions"
+        ]
+      }
+    },
+    {
+      "key": "swords",
+      "crop": {
+        "x": 0.35,
+        "y": 0.42,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Cinco espadas levadas",
+        "en": "Five swords carried off"
+      },
+      "keywords": {
+        "pt": [
+          "Agir com o que se consegue pegar",
+          "Ato ousado",
+          "Ou: plano que não resolve"
+        ],
+        "en": [
+          "Acting with what you can grasp",
+          "A daring act",
+          "Or: a scheme that solves nothing"
+        ]
+      }
+    },
+    {
+      "key": "left",
+      "crop": {
+        "x": 0.77,
+        "y": 0.55,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Duas espadas fincadas",
+        "en": "Two swords left standing"
+      },
+      "keywords": {
+        "pt": [
+          "Dúvidas deixadas para trás",
+          "Ou: algo importante esquecido"
+        ],
+        "en": [
+          "Doubts left behind",
+          "Or: something important forgotten"
+        ]
+      }
+    },
+    {
+      "key": "tents",
+      "crop": {
+        "x": 0.85,
+        "y": 0.65,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Tendas",
+        "en": "Tents"
+      },
+      "keywords": {
+        "pt": [
+          "Vida em movimento",
+          "Sentir-se em casa em qualquer lugar",
+          "Ou: sem lar"
+        ],
+        "en": [
+          "Life on the move",
+          "At home anywhere",
+          "Or: homelessness"
+        ]
+      }
+    },
+    {
+      "key": "feet",
+      "crop": {
+        "x": 0.15,
+        "y": 0.8,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Na ponta dos pés",
+        "en": "On tiptoe"
+      },
+      "keywords": {
+        "pt": [
+          "Cuidado, passo a passo",
+          "Ou: furtividade, surpresas"
+        ],
+        "en": [
+          "Care, step by step",
+          "Or: stealth, surprises"
+        ]
+      }
+    },
+    {
+      "key": "hat",
+      "crop": {
+        "x": 0.53,
+        "y": 0.25,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Chapéu vermelho",
+        "en": "Red hat"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade e paixão",
+          "Desejo do coração",
+          "Ou: teimosia"
+        ],
+        "en": [
+          "Will and passion",
+          "Heart's desire",
+          "Or: wilfulness"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Busca de sentido",
+          "Consciência forte",
+          "Ou: inveja"
+        ],
+        "en": [
+          "Search for meaning",
+          "Strong awareness",
+          "Or: envy"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Paixão"
+        ],
+        "en": [
+          "Will",
+          "Passion"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Mente",
+          "Clareza"
+        ],
+        "en": [
+          "Mind",
+          "Clarity"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Matéria"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Substance"
+        ]
+      }
+    },
+    {
+      "hex": "#E9C9A4",
+      "name": {
+        "pt": "Bege",
+        "en": "Beige"
+      },
+      "keywords": {
+        "pt": [
+          "O corpo"
+        ],
+        "en": [
+          "The body"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Sete de Espadas fala de astúcia, estratégia e solidão.",
+      "Ele representa a ação feita sozinho, às vezes às escondidas.",
+      "O foco dele é: agir com cuidado e pedir conselho quando precisar."
+    ],
+    "en": [
+      "The Seven of Swords speaks of cunning, strategy and solitude.",
+      "It stands for acting alone, sometimes in secret.",
+      "Its focus: acting with care and seeking advice when needed."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Deixar a autodúvida para trás",
+          "Entender os próprios enigmas",
+          "Achar uma solução importante"
+        ],
+        "en": [
+          "Leaving self-doubt behind",
+          "Understanding your personal riddles",
+          "Finding an important solution"
+        ]
+      },
+      "line": {
+        "pt": "“Vivo para a frente, entendo para trás.”",
+        "en": "“I live forward and understand backward.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Plano, tentativa, esperança",
+          "Ou: plano que pode falhar",
+          "Um golpe que desarma a oposição"
+        ],
+        "en": [
+          "Design, attempt, hope",
+          "Or: a plan that may fail",
+          "A coup that disarms the opposition"
+        ]
+      },
+      "line": {
+        "pt": "“Ousadia com plano.”",
+        "en": "“Daring with a plan.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Questionar o “sempre foi assim”",
+          "Estratégia",
+          "Ou: impulsividade sem plano"
+        ],
+        "en": [
+          "Questioning “we've always done it this way”",
+          "Strategy",
+          "Or: impulse without a plan"
+        ]
+      },
+      "line": {
+        "pt": "“Talvez estivesse errado há vinte anos.”",
+        "en": "“Maybe it's been wrong for twenty years.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Isolamento",
+          "Contradições internas",
+          "Coragem dos próprios sonhos"
+        ],
+        "en": [
+          "Isolation",
+          "Inner contradictions",
+          "Courage of your dreams"
+        ]
+      },
+      "line": {
+        "pt": "“Não preciso fazer tudo sozinho.”",
+        "en": "“I don't have to do it all alone.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Tempo para aprender",
+          "Curar feridas antigas com soluções novas",
+          "Mudança e progresso"
+        ],
+        "en": [
+          "Time to learn",
+          "Healing old wounds with new solutions",
+          "Change and progress"
+        ]
+      },
+      "line": {
+        "pt": "“Cada passo cuidadoso me leva adiante.”",
+        "en": "“Each careful step takes me forward.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Permita-se uma loucura",
+          "Ou: brigas por falta de coragem",
+          "Bons conselhos"
+        ],
+        "en": [
+          "Allow yourself something crazy",
+          "Or: quarrels from lack of courage",
+          "Good advice"
+        ]
+      },
+      "line": {
+        "pt": "“Um pouco de loucura faz bem.”",
+        "en": "“A little madness does you good.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Tenha coragem dos seus sonhos",
+          "Enfrente os enigmas da vida",
+          "Busque ajuda e conselho"
+        ],
+        "en": [
+          "Have the courage of your dreams",
+          "Face life's unsolved puzzles",
+          "Seek help and advice"
+        ]
+      },
+      "line": {
+        "pt": "“Pedir conselho também é estratégia.”",
+        "en": "“Asking for advice is strategy too.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Esconder as intenções sem motivo",
+          "Agir sozinho por orgulho",
+          "Calúnia, fofoca"
+        ],
+        "en": [
+          "Hiding intentions for no reason",
+          "Acting alone out of pride",
+          "Slander, babbling"
+        ]
+      },
+      "line": {
+        "pt": "“Quem esconde tudo acaba sozinho.”",
+        "en": "“Hiding everything leaves you alone.”"
+      }
+    }
+  ]
+}

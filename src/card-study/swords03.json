@@ -1,0 +1,375 @@
+{
+  "id": "swords03",
+  "number": "3",
+  "name": {
+    "pt": "Três de Espadas",
+    "en": "Three of Swords"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Espadas",
+    "en": "Minor Arcana – Swords"
+  },
+  "intro": {
+    "pt": "Três espadas atravessam um grande coração vermelho, sob nuvens e chuva. É a carta da dor e da tristeza, do coração partido. Mas é também o encontro do coração com a mente: entender o que o coração diz e, aceitando a dor, ir além dela.",
+    "en": "Three swords pierce a large red heart beneath clouds and rain. This is the card of pain and sorrow, of a broken heart. But it is also where heart and mind meet: understanding what the heart is saying and, by accepting the pain, moving beyond it."
+  },
+  "symbols": [
+    {
+      "key": "heart",
+      "crop": {
+        "x": 0.48,
+        "y": 0.45,
+        "r": 0.38
+      },
+      "title": {
+        "pt": "Coração grande",
+        "en": "Large heart"
+      },
+      "keywords": {
+        "pt": [
+          "Um grande coração",
+          "Herança e possibilidades",
+          "Sentimentos nem sempre positivos"
+        ],
+        "en": [
+          "A big heart",
+          "Inheritance and possibilities",
+          "Feelings not always positive"
+        ]
+      }
+    },
+    {
+      "key": "swords",
+      "crop": {
+        "x": 0.48,
+        "y": 0.28,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Três espadas",
+        "en": "Three swords"
+      },
+      "keywords": {
+        "pt": [
+          "Mente que entra no coração",
+          "Dar nome às coisas",
+          "Ou: alfinetadas"
+        ],
+        "en": [
+          "Mind entering the heart",
+          "Putting a name to things",
+          "Or: pinpricks"
+        ]
+      }
+    },
+    {
+      "key": "rain",
+      "crop": {
+        "x": 0.2,
+        "y": 0.72,
+        "r": 0.18
+      },
+      "title": {
+        "pt": "Chuva",
+        "en": "Rain"
+      },
+      "keywords": {
+        "pt": [
+          "Tristeza",
+          "Ou: espelho que clareia",
+          "Laço entre céu e terra"
+        ],
+        "en": [
+          "Sadness",
+          "Or: a clearing mirror",
+          "A bond between heaven and earth"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Coração",
+          "Sangue",
+          "Amor"
+        ],
+        "en": [
+          "Heart",
+          "Blood",
+          "Love"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Objetivo",
+          "Ou: pensamento nublado"
+        ],
+        "en": [
+          "Objective",
+          "Or: clouded thinking"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Mente lúcida",
+          "Espírito"
+        ],
+        "en": [
+          "Lucid mind",
+          "Spirit"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Cura",
+          "Completude"
+        ],
+        "en": [
+          "Healing",
+          "Completion"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Três de Espadas fala de dor, tristeza e verdade.",
+      "Ele representa o coração ferido que encontra a clareza.",
+      "O foco dele é: aceitar a dor para transformá-la."
+    ],
+    "en": [
+      "The Three of Swords speaks of pain, sorrow and truth.",
+      "It stands for a wounded heart finding clarity.",
+      "Its focus: accepting the pain in order to transform it."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Entender o que mantém o mundo unido",
+          "Coragem e amor transformam a dor",
+          "Coração e mente unidos"
+        ],
+        "en": [
+          "Understanding what holds the world together",
+          "Courage and love transform pain",
+          "Heart and mind united"
+        ]
+      },
+      "line": {
+        "pt": "“A dor aceita vira memória que abraça a vida.”",
+        "en": "“Pain accepted becomes a memory that embraces life.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Separação, atraso, ruptura",
+          "Cuidar em vez de se preocupar",
+          "Ir direto ao ponto"
+        ],
+        "en": [
+          "Separation, delay, rupture",
+          "Caring instead of careworn",
+          "Getting to the point"
+        ]
+      },
+      "line": {
+        "pt": "“Cuidado, não preocupação.”",
+        "en": "“Caring, not careworn.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Entender o que o coração diz",
+          "Dar nome aos sentimentos",
+          "Ou: confusão, desordem"
+        ],
+        "en": [
+          "Understanding what the heart says",
+          "Putting a name to feelings",
+          "Or: confusion, disorder"
+        ]
+      },
+      "line": {
+        "pt": "“Minha mente ilumina meu coração.”",
+        "en": "“My mind lights up my heart.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Coração partido, tristeza",
+          "Ou: apaixonar-se, flechado por Eros",
+          "Não empurrar a dor para longe"
+        ],
+        "en": [
+          "Heartbreak, sorrow",
+          "Or: love-struck by Eros",
+          "Not pushing the pain away"
+        ]
+      },
+      "line": {
+        "pt": "“Deixo a dor entrar para poder sair.”",
+        "en": "“I let the pain in so it can leave.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Feridas saram quando tratadas",
+          "Ausência, demora",
+          "Superar uma perda"
+        ],
+        "en": [
+          "Wounds heal when properly treated",
+          "Absence, delay",
+          "Getting over a loss"
+        ]
+      },
+      "line": {
+        "pt": "“Ferida bem cuidada cicatriza.”",
+        "en": "“A well-tended wound heals.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Dê uma chance ao amor",
+          "Amor à verdade e à honestidade",
+          "Separação"
+        ],
+        "en": [
+          "Give love a chance",
+          "Love of truth and honesty",
+          "Separation"
+        ]
+      },
+      "line": {
+        "pt": "“Verdade também é amor.”",
+        "en": "“Truth is love too.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Ilumine lembranças e expectativas",
+          "Acolha a dor no coração",
+          "Defenda-se das alfinetadas"
+        ],
+        "en": [
+          "Shine light on memories and expectations",
+          "Take the pain into your heart",
+          "Don't let pinpricks get to you"
+        ]
+      },
+      "line": {
+        "pt": "“Meu coração é grande o bastante.”",
+        "en": "“My heart is big enough.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Fugir da aceitação",
+          "Dor que vira poço amargo",
+          "Perda que não se elabora"
+        ],
+        "en": [
+          "Fighting acceptance",
+          "Pain that turns into a bitter pit",
+          "A loss never worked through"
+        ]
+      },
+      "line": {
+        "pt": "“Dor evitada fica para sempre.”",
+        "en": "“Pain avoided stays forever.”"
+      }
+    }
+  ]
+}

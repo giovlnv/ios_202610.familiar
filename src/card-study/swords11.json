@@ -1,0 +1,475 @@
+{
+  "id": "swords11",
+  "number": "11",
+  "name": {
+    "pt": "Pajem de Espadas",
+    "en": "Page of Swords"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Espadas",
+    "en": "Minor Arcana – Swords"
+  },
+  "intro": {
+    "pt": "Um jovem de pé numa colina segura uma espada erguida com as duas mãos, olhando para o vento; nuvens correm e um bando de pássaros voa ao longe. Ele é a mente curiosa e alerta, que observa tudo de cima. Pode ser inovação e clareza, ou só distanciamento e vigilância.",
+    "en": "A young man stands on a hill holding a sword upright with both hands, looking into the wind; clouds race and a flock of birds flies in the distance. He is the curious, alert mind watching everything from above. He can be innovation and clarity, or merely detachment and vigilance."
+  },
+  "symbols": [
+    {
+      "key": "sword",
+      "crop": {
+        "x": 0.65,
+        "y": 0.2,
+        "r": 0.22
+      },
+      "title": {
+        "pt": "Espada maior que a carta",
+        "en": "Sword larger than the card"
+      },
+      "keywords": {
+        "pt": [
+          "Alcançar além do horizonte",
+          "Ou: aprendiz de feiticeiro",
+          "Domínio da mente"
+        ],
+        "en": [
+          "Reaching beyond your horizon",
+          "Or: the sorcerer's apprentice",
+          "Mastery of the mind"
+        ]
+      }
+    },
+    {
+      "key": "face",
+      "crop": {
+        "x": 0.45,
+        "y": 0.18,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Olhar para o vento",
+        "en": "Looking into the wind"
+      },
+      "keywords": {
+        "pt": [
+          "Alerta e vigilante",
+          "Observar",
+          "Ar fresco"
+        ],
+        "en": [
+          "Alert and vigilant",
+          "Watching",
+          "A breath of fresh air"
+        ]
+      }
+    },
+    {
+      "key": "birds",
+      "crop": {
+        "x": 0.24,
+        "y": 0.07,
+        "r": 0.07
+      },
+      "title": {
+        "pt": "Bando de pássaros",
+        "en": "Flock of birds"
+      },
+      "keywords": {
+        "pt": [
+          "Pensamento criativo e variado",
+          "Ou: dispersão, falta de foco"
+        ],
+        "en": [
+          "Creative, multifaceted thinking",
+          "Or: absent-mindedness, lack of focus"
+        ]
+      }
+    },
+    {
+      "key": "clouds",
+      "crop": {
+        "x": 0.8,
+        "y": 0.38,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Nuvens indo embora",
+        "en": "Clouds blowing away"
+      },
+      "keywords": {
+        "pt": [
+          "Céu clareando",
+          "Esclarecimento",
+          "Vento de mudança"
+        ],
+        "en": [
+          "The sky clearing",
+          "Clarification",
+          "A wind of change"
+        ]
+      }
+    },
+    {
+      "key": "boots",
+      "crop": {
+        "x": 0.28,
+        "y": 0.72,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Botas vermelhas",
+        "en": "Red boots"
+      },
+      "keywords": {
+        "pt": [
+          "Força de vontade",
+          "Iniciativa",
+          "Ou: fanatismo"
+        ],
+        "en": [
+          "Willpower",
+          "Enterprise",
+          "Or: fanaticism"
+        ]
+      }
+    },
+    {
+      "key": "hill",
+      "crop": {
+        "x": 0.4,
+        "y": 0.75,
+        "r": 0.3
+      },
+      "title": {
+        "pt": "Colina e montanhas azuis",
+        "en": "Hill and blue mountains"
+      },
+      "keywords": {
+        "pt": [
+          "Ver do alto",
+          "Céu e terra casados",
+          "Distanciamento"
+        ],
+        "en": [
+          "Seeing from above",
+          "Heaven and earth married",
+          "Detachment"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Mente lúcida",
+          "Alegria espiritual"
+        ],
+        "en": [
+          "Lucid mind",
+          "Spiritual joy"
+        ]
+      }
+    },
+    {
+      "hex": "#9A86B8",
+      "name": {
+        "pt": "Violeta",
+        "en": "Violet"
+      },
+      "keywords": {
+        "pt": [
+          "Espírito de fronteira",
+          "Ou: desrespeitar limites"
+        ],
+        "en": [
+          "Frontier spirit",
+          "Or: overstepping limits"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Busca de sentido",
+          "Ou: inveja"
+        ],
+        "en": [
+          "Search for meaning",
+          "Or: envy"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Crescimento",
+          "Esperança"
+        ],
+        "en": [
+          "Growth",
+          "Hope"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Iniciativa"
+        ],
+        "en": [
+          "Will",
+          "Enterprise"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Neutralidade",
+          "Nuvens"
+        ],
+        "en": [
+          "Neutrality",
+          "Clouds"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Pajem de Espadas fala de curiosidade, vigilância e ideias.",
+      "Ele representa a mente jovem e alerta que observa do alto.",
+      "O foco dele é: buscar clareza sem perder o contato com a vida."
+    ],
+    "en": [
+      "The Page of Swords speaks of curiosity, vigilance and ideas.",
+      "He stands for the young, alert mind watching from above.",
+      "His focus: seeking clarity without losing touch with life."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Surpreenda a si mesmo",
+          "Pense além dos seus limites",
+          "Fique alerta"
+        ],
+        "en": [
+          "Surprise yourself",
+          "Think beyond your limits",
+          "Stay alert"
+        ]
+      },
+      "line": {
+        "pt": "“A clareza é o meu vento.”",
+        "en": "“Clarity is my wind.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Supervisão, exame, autoridade",
+          "Mostre suas ideias ao mundo",
+          "Amor como atitude no trabalho"
+        ],
+        "en": [
+          "Overseeing, examination, authority",
+          "Present your ideas to the world",
+          "Love as an attitude at work"
+        ]
+      },
+      "line": {
+        "pt": "“Mostro o que penso.”",
+        "en": "“I show what I think.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Pensamento inovador e experimental",
+          "O que está acontecendo? O que acho disso?",
+          "Ou: credulidade"
+        ],
+        "en": [
+          "Innovative, experimental thinking",
+          "What's happening? What do I think?",
+          "Or: gullibility"
+        ]
+      },
+      "line": {
+        "pt": "“Pergunto antes de concluir.”",
+        "en": "“I ask before I conclude.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Ágil e leve",
+          "Ou: doença inesperada"
+        ],
+        "en": [
+          "Lithe and active",
+          "Or: sickness intimated"
+        ]
+      },
+      "line": {
+        "pt": "“Corpo leve, mente desperta.”",
+        "en": "“A light body, an awake mind.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Distanciamento",
+          "Ironia e observação",
+          "Ou: paranoia, ver inimigos em tudo"
+        ],
+        "en": [
+          "Detachment",
+          "Irony and observation",
+          "Or: paranoia, seeing enemies everywhere"
+        ]
+      },
+      "line": {
+        "pt": "“Observar não é viver.”",
+        "en": "“Watching isn't living.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Amor de todas as formas",
+          "Confie em si",
+          "Mais caminhos do que você imagina"
+        ],
+        "en": [
+          "Love in every way",
+          "Trust yourself",
+          "More ways than you think"
+        ]
+      },
+      "line": {
+        "pt": "“Há mais caminhos do que penso.”",
+        "en": "“There are more ways than I think.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Tenha uma visão geral",
+          "Mostre iniciativa",
+          "Segure o que te dá clareza"
+        ],
+        "en": [
+          "Get an overview",
+          "Show initiative",
+          "Hold on to what brings clarity"
+        ]
+      },
+      "line": {
+        "pt": "“Fico com o que me clareia.”",
+        "en": "“I keep what makes me clear.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Espionar a vida de longe",
+          "Paranoia",
+          "Despreparo diante do imprevisto"
+        ],
+        "en": [
+          "Spying on life from afar",
+          "Paranoia",
+          "Unprepared for the unforeseen"
+        ]
+      },
+      "line": {
+        "pt": "“Vigiar demais cansa e isola.”",
+        "en": "“Too much vigilance tires and isolates.”"
+      }
+    }
+  ]
+}

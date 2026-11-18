@@ -1,0 +1,462 @@
+{
+  "id": "swords02",
+  "number": "2",
+  "name": {
+    "pt": "Dois de Espadas",
+    "en": "Two of Swords"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Espadas",
+    "en": "Minor Arcana – Swords"
+  },
+  "intro": {
+    "pt": "Uma mulher de olhos vendados está sentada de costas para o mar, com os braços cruzados sobre o peito segurando duas espadas; no céu, uma lua crescente. Ela fecha os olhos para não ter que escolher. É o equilíbrio tenso de quem se protege, mas também a mente que vê além dos olhos.",
+    "en": "A blindfolded woman sits with her back to the sea, arms crossed over her chest holding two swords; a crescent moon hangs in the sky. She closes her eyes so as not to have to choose. This is the tense balance of self-protection, but also the mind that sees beyond the eyes."
+  },
+  "symbols": [
+    {
+      "key": "blindfold",
+      "crop": {
+        "x": 0.5,
+        "y": 0.38,
+        "r": 0.11
+      },
+      "title": {
+        "pt": "Venda nos olhos",
+        "en": "Blindfold"
+      },
+      "keywords": {
+        "pt": [
+          "Ver com os olhos da mente",
+          "Ou: não querer ver",
+          "Imparcialidade"
+        ],
+        "en": [
+          "Seeing with the mind's eye",
+          "Or: refusing to see",
+          "Impartiality"
+        ]
+      }
+    },
+    {
+      "key": "swords",
+      "crop": {
+        "x": 0.5,
+        "y": 0.3,
+        "r": 0.42
+      },
+      "title": {
+        "pt": "Espadas em equilíbrio",
+        "en": "Swords in balance"
+      },
+      "keywords": {
+        "pt": [
+          "Raiva e medo equilibrados",
+          "Horizonte mental amplo",
+          "Defesa pronta"
+        ],
+        "en": [
+          "Anger and fear balanced",
+          "A broad mental horizon",
+          "Defence at the ready"
+        ]
+      }
+    },
+    {
+      "key": "arms",
+      "crop": {
+        "x": 0.5,
+        "y": 0.47,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Braços cruzados no peito",
+        "en": "Arms crossed over the chest"
+      },
+      "keywords": {
+        "pt": [
+          "Coração fechado",
+          "Bloqueio",
+          "Ou: pensamentos voltam ao centro"
+        ],
+        "en": [
+          "A closed heart",
+          "Blockage",
+          "Or: thoughts returning home"
+        ]
+      }
+    },
+    {
+      "key": "moon",
+      "crop": {
+        "x": 0.68,
+        "y": 0.15,
+        "r": 0.07
+      },
+      "title": {
+        "pt": "Lua crescente",
+        "en": "Crescent moon"
+      },
+      "keywords": {
+        "pt": [
+          "Intuições e humores",
+          "O que está às costas",
+          "Interpretar os sonhos"
+        ],
+        "en": [
+          "Intuitions and moods",
+          "What's behind your back",
+          "Interpreting dreams"
+        ]
+      }
+    },
+    {
+      "key": "sea",
+      "crop": {
+        "x": 0.2,
+        "y": 0.55,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Mar e rochas",
+        "en": "Sea and rocks"
+      },
+      "keywords": {
+        "pt": [
+          "Sentimentos às costas",
+          "Ilhas da consciência",
+          "A outra margem"
+        ],
+        "en": [
+          "Feelings behind your back",
+          "Islands of consciousness",
+          "The other shore"
+        ]
+      }
+    },
+    {
+      "key": "figure",
+      "crop": {
+        "x": 0.5,
+        "y": 0.6,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Vestido cinza no banco",
+        "en": "Grey gown on the bench"
+      },
+      "keywords": {
+        "pt": [
+          "Neutra e equilibrada",
+          "Ou: emoções bloqueadas",
+          "Rigidez"
+        ],
+        "en": [
+          "Neutral and balanced",
+          "Or: blocked emotions",
+          "Rigidity"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Neutralidade",
+          "Ou: pensamento nublado"
+        ],
+        "en": [
+          "Neutrality",
+          "Or: clouded thinking"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Sentimentos"
+        ],
+        "en": [
+          "Open sky",
+          "Feelings"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Terceiro olho",
+          "Pureza"
+        ],
+        "en": [
+          "Third eye",
+          "Purity"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Lua"
+        ],
+        "en": [
+          "Consciousness",
+          "Moon"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Rochas"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Rocks"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Dois de Espadas fala de defesa, impasse e intuição.",
+      "Ele representa o equilíbrio tenso de quem não quer escolher.",
+      "O foco dele é: olhar para dentro e baixar as espadas."
+    ],
+    "en": [
+      "The Two of Swords speaks of defence, stalemate and intuition.",
+      "It stands for the tense balance of someone avoiding a choice.",
+      "Its focus: looking within and lowering the swords."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Entre o dia e o sonho",
+          "Fronteira entre alma e intelecto",
+          "Só se vê bem com o coração"
+        ],
+        "en": [
+          "Between day and dream",
+          "The border between soul and intellect",
+          "One sees clearly only with the heart"
+        ]
+      },
+      "line": {
+        "pt": "“Vejo melhor quando fecho os olhos de fora.”",
+        "en": "“I see better with my outer eyes closed.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Ideias novas da fronteira consciente-inconsciente",
+          "Soluções que não são de mão única",
+          "Concórdia armada"
+        ],
+        "en": [
+          "New ideas from the conscious-unconscious border",
+          "Solutions that aren't one-way streets",
+          "Concord under arms"
+        ]
+      },
+      "line": {
+        "pt": "“Nunca me faltam ideias quando escuto as duas margens.”",
+        "en": "“Ideas never run dry when I listen to both shores.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Imparcialidade",
+          "Ou: preconceito, não entender",
+          "Olhar para dentro"
+        ],
+        "en": [
+          "Impartiality",
+          "Or: prejudice, not grasping",
+          "Looking inside"
+        ]
+      },
+      "line": {
+        "pt": "“Sem cortina de fumaça.”",
+        "en": "“No smoke screen.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Respiração curta, peito tenso",
+          "Corpo rígido",
+          "Bloqueio do peito para cima"
+        ],
+        "en": [
+          "Shallow breath, tight chest",
+          "A rigid body",
+          "Blocked from the chest up"
+        ]
+      },
+      "line": {
+        "pt": "“Respiro fundo e solto o peito.”",
+        "en": "“I breathe deep and loosen my chest.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Sentimentos atrás de uma cerca",
+          "Raiva e medo em tensão",
+          "Ou: ternura e intimidade"
+        ],
+        "en": [
+          "Feelings behind a fence",
+          "Anger and fear in tension",
+          "Or: tenderness and intimacy"
+        ]
+      },
+      "line": {
+        "pt": "“Proteger demais também machuca.”",
+        "en": "“Over-protecting hurts too.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Use mais a imaginação",
+          "Limpe as áreas cinzentas",
+          "Amizade e coragem"
+        ],
+        "en": [
+          "Use your imagination more",
+          "Clear up the grey areas",
+          "Friendship and courage"
+        ]
+      },
+      "line": {
+        "pt": "“Tirar a venda nos aproxima.”",
+        "en": "“Taking off the blindfold brings us closer.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Não brinque de cabra-cega",
+          "Olhe para dentro de si",
+          "Veja o outro lado"
+        ],
+        "en": [
+          "Don't play blind man's buff",
+          "Look inside yourself",
+          "See the other side"
+        ]
+      },
+      "line": {
+        "pt": "“Vejo a outra margem.”",
+        "en": "“I see the other shore.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Fechar-se a tudo",
+          "Não querer escolher",
+          "Falsidade, deslealdade"
+        ],
+        "en": [
+          "Shutting everything out",
+          "Refusing to choose",
+          "Falsehood, disloyalty"
+        ]
+      },
+      "line": {
+        "pt": "“Quem não escolhe também escolhe.”",
+        "en": "“Not choosing is also a choice.”"
+      }
+    }
+  ]
+}

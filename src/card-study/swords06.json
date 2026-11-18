@@ -1,0 +1,462 @@
+{
+  "id": "swords06",
+  "number": "6",
+  "name": {
+    "pt": "Seis de Espadas",
+    "en": "Six of Swords"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Espadas",
+    "en": "Minor Arcana – Swords"
+  },
+  "intro": {
+    "pt": "Um barqueiro conduz com uma vara preta um barco com uma mulher e uma criança encolhidas, rumo à outra margem; seis espadas estão de pé na proa. É a travessia silenciosa de um tempo difícil. Levamos os problemas conosco, mas eles já não afundam o barco.",
+    "en": "A ferryman poles a boat carrying a huddled woman and child toward the far shore; six swords stand upright in the bow. This is the quiet crossing of a hard time. We carry our troubles with us, but they no longer sink the boat."
+  },
+  "symbols": [
+    {
+      "key": "ferryman",
+      "crop": {
+        "x": 0.33,
+        "y": 0.5,
+        "r": 0.28
+      },
+      "title": {
+        "pt": "Barqueiro",
+        "en": "Ferryman"
+      },
+      "keywords": {
+        "pt": [
+          "Mediador entre mundos",
+          "Assumir responsabilidade",
+          "Ou: inquietude, sem lar"
+        ],
+        "en": [
+          "Mediator between worlds",
+          "Shouldering responsibility",
+          "Or: restlessness, homelessness"
+        ]
+      }
+    },
+    {
+      "key": "pole",
+      "crop": {
+        "x": 0.3,
+        "y": 0.2,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Vara preta",
+        "en": "Black pole"
+      },
+      "keywords": {
+        "pt": [
+          "Ir ao fundo das coisas",
+          "Voltar ao básico",
+          "Potencial"
+        ],
+        "en": [
+          "Getting to the bottom of things",
+          "Back to basics",
+          "Potential"
+        ]
+      }
+    },
+    {
+      "key": "passengers",
+      "crop": {
+        "x": 0.6,
+        "y": 0.72,
+        "r": 0.22
+      },
+      "title": {
+        "pt": "Mulher e criança",
+        "en": "Woman and child"
+      },
+      "keywords": {
+        "pt": [
+          "Lado feminino e criança interior",
+          "Paciência, abertura",
+          "Ou: dependência"
+        ],
+        "en": [
+          "The feminine side and inner child",
+          "Patience, openness",
+          "Or: dependency"
+        ]
+      }
+    },
+    {
+      "key": "swords",
+      "crop": {
+        "x": 0.75,
+        "y": 0.48,
+        "r": 0.27
+      },
+      "title": {
+        "pt": "Seis espadas na proa",
+        "en": "Six swords in the bow"
+      },
+      "keywords": {
+        "pt": [
+          "Bússola da mente",
+          "Ou: lastro de preconceitos",
+          "Tampam os furos do barco"
+        ],
+        "en": [
+          "The mind's compass",
+          "Or: ballast of old prejudice",
+          "Plugging the holes in the boat"
+        ]
+      }
+    },
+    {
+      "key": "water",
+      "crop": {
+        "x": 0.85,
+        "y": 0.88,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Águas diferentes",
+        "en": "Two kinds of water"
+      },
+      "keywords": {
+        "pt": [
+          "Agitadas e calmas",
+          "Velho e novo",
+          "Transição"
+        ],
+        "en": [
+          "Rough and still",
+          "Old and new",
+          "Transition"
+        ]
+      }
+    },
+    {
+      "key": "shore",
+      "crop": {
+        "x": 0.15,
+        "y": 0.36,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "A outra margem",
+        "en": "The far shore"
+      },
+      "keywords": {
+        "pt": [
+          "Chegada",
+          "Entender o diferente",
+          "Ligar mundos"
+        ],
+        "en": [
+          "Arrival",
+          "Understanding what's foreign",
+          "Linking worlds"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade clara",
+          "Mente lúcida"
+        ],
+        "en": [
+          "Clear will",
+          "Lucid mind"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Serenidade",
+          "Ou: apatia"
+        ],
+        "en": [
+          "Serenity",
+          "Or: apathy"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "Potencial",
+          "O desconhecido"
+        ],
+        "en": [
+          "Potential",
+          "The unknown"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Força"
+        ],
+        "en": [
+          "Will",
+          "Strength"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Calor",
+          "Vitalidade"
+        ],
+        "en": [
+          "Warmth",
+          "Vitality"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Seis de Espadas fala de travessia, transição e calma.",
+      "Ele representa a passagem tranquila por um tempo difícil.",
+      "O foco dele é: seguir em frente, mantendo contato com o essencial."
+    ],
+    "en": [
+      "The Six of Swords speaks of crossing, transition and calm.",
+      "It stands for a quiet passage through a hard time.",
+      "Its focus: moving on while keeping in touch with the essentials."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Experiências fundamentais: amor, morte",
+          "Um portal: silêncio e depois movimento",
+          "Travessia da alma"
+        ],
+        "en": [
+          "Fundamental experiences: love, death",
+          "A gate: silence, then movement",
+          "The soul's crossing"
+        ]
+      },
+      "line": {
+        "pt": "“Atravesso em silêncio, e algo se move em mim.”",
+        "en": "“I cross in silence, and something moves within me.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Viagem pela água",
+          "Rota, caminho, solução",
+          "Saber o que faz"
+        ],
+        "en": [
+          "A journey by water",
+          "Route, way, expedient",
+          "Knowing what you're doing"
+        ]
+      },
+      "line": {
+        "pt": "“Sei aonde vou.”",
+        "en": "“I know where I'm going.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Ir ao fundo das diferenças",
+          "Fazer-se entender",
+          "Ou: preconceitos que pesam"
+        ],
+        "en": [
+          "Getting to the bottom of differences",
+          "Getting your point across",
+          "Or: prejudices weighing you down"
+        ]
+      },
+      "line": {
+        "pt": "“Quem sabe o que faz pode fazer o que quiser.”",
+        "en": "“When you know what you're doing, you can do what you like.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Tristeza antiga que já não dói",
+          "Luto",
+          "Calma no meio da dificuldade"
+        ],
+        "en": [
+          "Old sorrow that no longer hurts",
+          "Mourning",
+          "Calm in the midst of difficulty"
+        ]
+      },
+      "line": {
+        "pt": "“A dor vem comigo, mas não me afunda.”",
+        "en": "“The pain comes with me, but doesn't sink me.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Passagem tranquila",
+          "Transição fácil",
+          "Ou: travessia tempestuosa"
+        ],
+        "en": [
+          "A quiet passage",
+          "An easy transition",
+          "Or: a stormy crossing"
+        ]
+      },
+      "line": {
+        "pt": "“Estou atravessando.”",
+        "en": "“I'm crossing over.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Todos no mesmo barco",
+          "Sentir o fluxo entre você e os outros",
+          "Conversar pode doer e curar"
+        ],
+        "en": [
+          "All in the same boat",
+          "Sensing the flow between you and others",
+          "Talking can hurt and heal"
+        ]
+      },
+      "line": {
+        "pt": "“Falar também é atravessar.”",
+        "en": "“Talking is a crossing too.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Traçe seu rumo no rio do tempo",
+          "Mantenha contato com o básico",
+          "Siga com calma"
+        ],
+        "en": [
+          "Chart your course in the river of time",
+          "Stay in touch with the basics",
+          "Move on calmly"
+        ]
+      },
+      "line": {
+        "pt": "“A vara toca o fundo, o barco anda.”",
+        "en": "“The pole touches bottom, the boat moves.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Carregar velhos preconceitos",
+          "Viver no automático",
+          "Mexer nas espadas e afundar"
+        ],
+        "en": [
+          "Hauling old prejudices along",
+          "Living on autopilot",
+          "Pulling out the swords and sinking"
+        ]
+      },
+      "line": {
+        "pt": "“Algumas cargas é melhor descarregar na margem.”",
+        "en": "“Some loads are better left on the shore.”"
+      }
+    }
+  ]
+}

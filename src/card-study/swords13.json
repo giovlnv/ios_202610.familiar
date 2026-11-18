@@ -1,0 +1,454 @@
+{
+  "id": "swords13",
+  "number": "13",
+  "name": {
+    "pt": "Rainha de Espadas",
+    "en": "Queen of Swords"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Espadas",
+    "en": "Minor Arcana – Swords"
+  },
+  "intro": {
+    "pt": "Uma rainha de perfil, coroada de borboletas, ergue a espada reta e estende a outra mão ao mundo; sua cabeça está acima das nuvens e um único pássaro voa alto. Ela conheceu a dor e, com coragem e honestidade, transformou-a em sabedoria. Firme, clara e justa.",
+    "en": "A queen in profile, crowned with butterflies, holds her sword upright and extends her other hand to the world; her head is above the clouds and a single bird flies high. She has known sorrow and, with courage and honesty, turned it into wisdom. Firm, clear and fair."
+  },
+  "symbols": [
+    {
+      "key": "crown",
+      "crop": {
+        "x": 0.33,
+        "y": 0.3,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Coroa de borboletas",
+        "en": "Crown of butterflies"
+      },
+      "keywords": {
+        "pt": [
+          "Leveza e resolução",
+          "Metamorfose",
+          "A alma"
+        ],
+        "en": [
+          "Lightness and resolve",
+          "Metamorphosis",
+          "The soul"
+        ]
+      }
+    },
+    {
+      "key": "sword",
+      "crop": {
+        "x": 0.55,
+        "y": 0.35,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Espada reta",
+        "en": "Upright sword"
+      },
+      "keywords": {
+        "pt": [
+          "Verdade pura",
+          "Mestria da mente",
+          "Como a Justiça"
+        ],
+        "en": [
+          "Pure truth",
+          "Mastery of the mind",
+          "Like Justice"
+        ]
+      }
+    },
+    {
+      "key": "hand",
+      "crop": {
+        "x": 0.7,
+        "y": 0.35,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Mão estendida e borla",
+        "en": "Open hand and tassel"
+      },
+      "keywords": {
+        "pt": [
+          "Abrir-se ao mundo",
+          "Correntes cortadas",
+          "Ou: vaidade"
+        ],
+        "en": [
+          "Opening to the world",
+          "Sundered shackles",
+          "Or: vanity"
+        ]
+      }
+    },
+    {
+      "key": "bird",
+      "crop": {
+        "x": 0.34,
+        "y": 0.18,
+        "r": 0.06
+      },
+      "title": {
+        "pt": "Um pássaro",
+        "en": "A single bird"
+      },
+      "keywords": {
+        "pt": [
+          "Pensamento elevado",
+          "Focar",
+          "Pureza da sabedoria"
+        ],
+        "en": [
+          "High-flying thought",
+          "Focusing",
+          "Purity of wisdom"
+        ]
+      }
+    },
+    {
+      "key": "throne",
+      "crop": {
+        "x": 0.38,
+        "y": 0.63,
+        "r": 0.14
+      },
+      "title": {
+        "pt": "Trono com rosto de criança",
+        "en": "Throne with a child's face"
+      },
+      "keywords": {
+        "pt": [
+          "Criança interior",
+          "Medos da infância",
+          "Ou: repressão"
+        ],
+        "en": [
+          "The inner child",
+          "Childhood fears",
+          "Or: repression"
+        ]
+      }
+    },
+    {
+      "key": "clouds",
+      "crop": {
+        "x": 0.8,
+        "y": 0.58,
+        "r": 0.16
+      },
+      "title": {
+        "pt": "Nuvens",
+        "en": "Clouds"
+      },
+      "keywords": {
+        "pt": [
+          "Vista de cima",
+          "Liberdade",
+          "Ou: distante da realidade"
+        ],
+        "en": [
+          "A bird's-eye view",
+          "Freedom",
+          "Or: out of touch with reality"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Mente lúcida",
+          "Céu aberto"
+        ],
+        "en": [
+          "Lucid mind",
+          "Open sky"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Sem preconceito",
+          "Ou: falta de consciência"
+        ],
+        "en": [
+          "Without prejudice",
+          "Or: lack of awareness"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Clareza",
+          "Pureza"
+        ],
+        "en": [
+          "Clarity",
+          "Purity"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Energia mental"
+        ],
+        "en": [
+          "Consciousness",
+          "Mental energy"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Coração"
+        ],
+        "en": [
+          "Will",
+          "Heart"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "A Rainha de Espadas fala de sabedoria, clareza e verdade.",
+      "Ela representa a dor enfrentada e transformada em lucidez.",
+      "O foco dela é: decidir com clareza e limites amorosos."
+    ],
+    "en": [
+      "The Queen of Swords speaks of wisdom, clarity and truth.",
+      "She stands for sorrow faced and turned into lucidity.",
+      "Her focus: deciding clearly, with loving limits."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Exame de consciência",
+          "Escolher o bem",
+          "Romper correntes"
+        ],
+        "en": [
+          "Test of conscience",
+          "Choosing the good",
+          "Bursting the chains"
+        ]
+      },
+      "line": {
+        "pt": "“A dor enfrentada vira sabedoria.”",
+        "en": "“Sorrow faced becomes wisdom.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Trabalho cuidadoso sem zelo exagerado",
+          "Sem raiva, sem buscar reconhecimento",
+          "Ou: privação, separação"
+        ],
+        "en": [
+          "Careful work without excess zeal",
+          "No anger, no seeking recognition",
+          "Or: privation, separation"
+        ]
+      },
+      "line": {
+        "pt": "“Relaxo e deixo meu talento aparecer.”",
+        "en": "“I relax and let my talent unfold.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "O que importa na vida?",
+          "Ponto de vista bem pensado",
+          "Espírito afiado e senhorio de si"
+        ],
+        "en": [
+          "What matters in life?",
+          "A well-thought-out view",
+          "Sharp wit and self-possession"
+        ]
+      },
+      "line": {
+        "pt": "“Penso, decido, sustento.”",
+        "en": "“I think, decide, and stand by it.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Coragem e honestidade diante da dor",
+          "Luto, viuvez",
+          "Reduzir medos"
+        ],
+        "en": [
+          "Courage and honesty in sorrow",
+          "Mourning, widowhood",
+          "Reducing fears"
+        ]
+      },
+      "line": {
+        "pt": "“Conheço a tristeza, e ela não me governa.”",
+        "en": "“I know sorrow, and it doesn't rule me.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Entender o que o coração quer",
+          "Amor com delicadeza e bondade",
+          "Novas aberturas no amor"
+        ],
+        "en": [
+          "Understanding what the heart wants",
+          "Love with finesse and kindness",
+          "New openings in love"
+        ]
+      },
+      "line": {
+        "pt": "“Limites claros também são amor.”",
+        "en": "“Clear limits are love too.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Seja clara nas decisões",
+          "Sustente sua posição",
+          "Mantenha a cabeça acima das nuvens"
+        ],
+        "en": [
+          "Be clear in your decisions",
+          "Stand by your view",
+          "Keep your head above the clouds"
+        ]
+      },
+      "line": {
+        "pt": "“Clareza com coração.”",
+        "en": "“Clarity with heart.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Malícia, intolerância",
+          "Exagerar a tristeza",
+          "Impor-se a todos"
+        ],
+        "en": [
+          "Malice, bigotry",
+          "Exaggerating sorrow",
+          "Forcing yourself on everyone"
+        ]
+      },
+      "line": {
+        "pt": "“Mente afiada sem amor corta tudo.”",
+        "en": "“A sharp mind without love cuts everything.”"
+      }
+    }
+  ]
+}

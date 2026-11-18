@@ -1,0 +1,444 @@
+{
+  "id": "swords08",
+  "number": "8",
+  "name": {
+    "pt": "Oito de Espadas",
+    "en": "Eight of Swords"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Espadas",
+    "en": "Minor Arcana – Swords"
+  },
+  "intro": {
+    "pt": "Uma mulher de olhos vendados e braços amarrados está de pé na lama, cercada por oito espadas, com um castelo ao fundo. Mas as espadas não a cercam por completo e suas pernas estão livres. É a prisão das ideias: acreditar que não há saída. O primeiro passo é tirar a venda.",
+    "en": "A blindfolded woman with bound arms stands in mud, surrounded by eight swords, a castle behind her. But the swords don't fully enclose her and her legs are free. This is the prison of ideas: believing there's no way out. The first step is to remove the blindfold."
+  },
+  "symbols": [
+    {
+      "key": "blindfold",
+      "crop": {
+        "x": 0.37,
+        "y": 0.29,
+        "r": 0.11
+      },
+      "title": {
+        "pt": "Venda nos olhos",
+        "en": "Blindfold"
+      },
+      "keywords": {
+        "pt": [
+          "Confusão, não ver",
+          "Ou: imparcialidade",
+          "Desconhecer a própria condição"
+        ],
+        "en": [
+          "Confusion, not seeing",
+          "Or: impartiality",
+          "Unaware of your own condition"
+        ]
+      }
+    },
+    {
+      "key": "bonds",
+      "crop": {
+        "x": 0.37,
+        "y": 0.45,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Amarras nos braços",
+        "en": "Bonds on the arms"
+      },
+      "keywords": {
+        "pt": [
+          "Laços de dever",
+          "Pensar e agir ligados",
+          "Ou: imobilidade"
+        ],
+        "en": [
+          "Bonds of duty",
+          "Thought and deed linked",
+          "Or: immobility"
+        ]
+      }
+    },
+    {
+      "key": "swords",
+      "crop": {
+        "x": 0.5,
+        "y": 0.5,
+        "r": 0.45
+      },
+      "title": {
+        "pt": "Espadas ao redor",
+        "en": "Swords around her"
+      },
+      "keywords": {
+        "pt": [
+          "Você tem como se libertar",
+          "Proteção da mente",
+          "Ou: prisão de ideias"
+        ],
+        "en": [
+          "You have the means to free yourself",
+          "The mind's fortress",
+          "Or: a prison of ideas"
+        ]
+      }
+    },
+    {
+      "key": "castle",
+      "crop": {
+        "x": 0.82,
+        "y": 0.5,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Castelo",
+        "en": "Castle"
+      },
+      "keywords": {
+        "pt": [
+          "Autoridade",
+          "Ou: isolamento",
+          "Segurança dentro de si"
+        ],
+        "en": [
+          "Authority",
+          "Or: isolation",
+          "Security within yourself"
+        ]
+      }
+    },
+    {
+      "key": "mud",
+      "crop": {
+        "x": 0.4,
+        "y": 0.88,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Lama e água",
+        "en": "Mud and water"
+      },
+      "keywords": {
+        "pt": [
+          "Humilhação",
+          "Sentimentos secos",
+          "Base de toda vida"
+        ],
+        "en": [
+          "Humiliation",
+          "Withered feelings",
+          "The basis of all life"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Foco",
+          "Ou: mau ambiente, apatia"
+        ],
+        "en": [
+          "Focus",
+          "Or: a bad atmosphere, apathy"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Força vital",
+          "Vontade"
+        ],
+        "en": [
+          "Lifeblood",
+          "Will"
+        ]
+      }
+    },
+    {
+      "hex": "#E9C9A4",
+      "name": {
+        "pt": "Bege",
+        "en": "Beige"
+      },
+      "keywords": {
+        "pt": [
+          "O corpo"
+        ],
+        "en": [
+          "The body"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Mente",
+          "Água"
+        ],
+        "en": [
+          "Mind",
+          "Water"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Lama"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Mud"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Oito de Espadas fala de prisão, confusão e libertação.",
+      "Ele representa a crença de que não há saída.",
+      "O foco dele é: tirar a venda e dar o primeiro passo."
+    ],
+    "en": [
+      "The Eight of Swords speaks of confinement, confusion and release.",
+      "It stands for the belief that there is no way out.",
+      "Its focus: removing the blindfold and taking the first step."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Aceitar os limites pessoais",
+          "Romper as prisões espirituais",
+          "Reconhecer a ignorância é o começo"
+        ],
+        "en": [
+          "Accepting personal limits",
+          "Breaking spiritual confines",
+          "Recognising ignorance is the start"
+        ]
+      },
+      "line": {
+        "pt": "“Saber que não sei já me liberta.”",
+        "en": "“Knowing I don't know already frees me.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Crise, censura, conflito",
+          "Poder amarrado",
+          "Livrar-se de obrigações que travam"
+        ],
+        "en": [
+          "Crisis, censure, conflict",
+          "Power in chains",
+          "Shedding obligations that hold you back"
+        ]
+      },
+      "line": {
+        "pt": "“O que me prende pode ser cortado.”",
+        "en": "“What binds me can be cut.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Crenças erradas são correntes",
+          "Crenças certas libertam",
+          "Confie na própria lógica"
+        ],
+        "en": [
+          "Wrong convictions are fetters",
+          "Right ones set you free",
+          "Trust your own logic"
+        ]
+      },
+      "line": {
+        "pt": "“Mudo o pensamento, mudo a vida.”",
+        "en": "“Change the thought, change the life.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Doença",
+          "Imobilidade, rigidez",
+          "Necessidades do corpo contidas"
+        ],
+        "en": [
+          "Sickness",
+          "Immobility, stiffness",
+          "The body's needs held captive"
+        ]
+      },
+      "line": {
+        "pt": "“Meu corpo pode se mover.”",
+        "en": "“My body can move.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Humilhação e vergonha",
+          "Sentir-se impotente",
+          "Ou: tempo de casulo"
+        ],
+        "en": [
+          "Humiliation and shame",
+          "Feeling helpless",
+          "Or: a time in the cocoon"
+        ]
+      },
+      "line": {
+        "pt": "“Sinto-me presa, mas não estou.”",
+        "en": "“I feel trapped, but I'm not.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Prisão temporária",
+          "Tempo de reflexão",
+          "Primeiro passo da libertação"
+        ],
+        "en": [
+          "Temporary confinement",
+          "A time for reflection",
+          "The first step to freedom"
+        ]
+      },
+      "line": {
+        "pt": "“Não é para sempre.”",
+        "en": "“It isn't forever.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Largar comportamentos infantis",
+          "Sair das nuvens",
+          "Ver quem amarrou e por quê"
+        ],
+        "en": [
+          "Dropping childish inhibitions",
+          "Coming down from the clouds",
+          "Seeing who tied you and why"
+        ]
+      },
+      "line": {
+        "pt": "“Vejo como cheguei aqui.”",
+        "en": "“I see how I got here.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Tire a venda",
+          "Seja coerente consigo e com os outros",
+          "Corte o que te prende"
+        ],
+        "en": [
+          "Take off the blindfold",
+          "Be consistent with yourself and others",
+          "Cut what binds you"
+        ]
+      },
+      "line": {
+        "pt": "“As pernas estão livres: posso sair.”",
+        "en": "“My legs are free: I can walk out.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Acreditar na própria impotência",
+          "Confusão e isolamento",
+          "Más notícias, calúnia"
+        ],
+        "en": [
+          "Believing in your own helplessness",
+          "Confusion and isolation",
+          "Bad news, slander"
+        ]
+      },
+      "line": {
+        "pt": "“A venda pesa mais que as cordas.”",
+        "en": "“The blindfold weighs more than the ropes.”"
+      }
+    }
+  ]
+}

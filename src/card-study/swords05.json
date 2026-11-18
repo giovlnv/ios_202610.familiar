@@ -1,0 +1,438 @@
+{
+  "id": "swords05",
+  "number": "5",
+  "name": {
+    "pt": "Cinco de Espadas",
+    "en": "Five of Swords"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Espadas",
+    "en": "Minor Arcana – Swords"
+  },
+  "intro": {
+    "pt": "Um homem de sorriso desdenhoso recolhe espadas, enquanto duas figuras derrotadas se afastam em direção à água, sob um céu de nuvens rasgadas. É a carta da derrota, da humilhação e da vitória vazia. Mas também pode ser o olhar para trás de quem cresceu e entende de onde vieram os problemas.",
+    "en": "A man with a disdainful smile gathers up swords while two defeated figures walk away toward the water beneath a sky of torn clouds. This is the card of defeat, humiliation and hollow victory. But it can also be the backward look of someone who has grown and now understands where the problems came from."
+  },
+  "symbols": [
+    {
+      "key": "victor",
+      "crop": {
+        "x": 0.65,
+        "y": 0.52,
+        "r": 0.32
+      },
+      "title": {
+        "pt": "Homem com as espadas",
+        "en": "Man holding the swords"
+      },
+      "keywords": {
+        "pt": [
+          "Senhor do campo",
+          "Ou: arrogância",
+          "Crescimento, saber acumulado"
+        ],
+        "en": [
+          "Master of the field",
+          "Or: arrogance",
+          "Growth, knowledge gathered"
+        ]
+      }
+    },
+    {
+      "key": "face",
+      "crop": {
+        "x": 0.6,
+        "y": 0.34,
+        "r": 0.11
+      },
+      "title": {
+        "pt": "Olhar para trás",
+        "en": "Backward glance"
+      },
+      "keywords": {
+        "pt": [
+          "Desdém ou consideração",
+          "Entender o passado",
+          "Satisfação com o crescimento"
+        ],
+        "en": [
+          "Disdain or consideration",
+          "Understanding the past",
+          "Satisfaction at growth"
+        ]
+      }
+    },
+    {
+      "key": "losers",
+      "crop": {
+        "x": 0.27,
+        "y": 0.75,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Figuras se afastando",
+        "en": "Figures walking away"
+      },
+      "keywords": {
+        "pt": [
+          "Derrota e humilhação",
+          "Cabeça entre as mãos",
+          "Começo difícil"
+        ],
+        "en": [
+          "Defeat and humiliation",
+          "Head in hands",
+          "A hard start"
+        ]
+      }
+    },
+    {
+      "key": "swords",
+      "crop": {
+        "x": 0.25,
+        "y": 0.88,
+        "r": 0.18
+      },
+      "title": {
+        "pt": "Espadas no chão",
+        "en": "Swords on the ground"
+      },
+      "keywords": {
+        "pt": [
+          "Promessas vazias",
+          "Suposições sem base",
+          "Dúvidas superadas"
+        ],
+        "en": [
+          "Empty promises",
+          "Unfounded assumptions",
+          "Doubts overcome"
+        ]
+      }
+    },
+    {
+      "key": "clouds",
+      "crop": {
+        "x": 0.35,
+        "y": 0.25,
+        "r": 0.3
+      },
+      "title": {
+        "pt": "Nuvens rasgadas",
+        "en": "Torn clouds"
+      },
+      "keywords": {
+        "pt": [
+          "Céu clareando",
+          "Ou: discórdia no ar",
+          "Objetivos nebulosos"
+        ],
+        "en": [
+          "The sky clearing",
+          "Or: discord in the air",
+          "Foggy aims"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Clareza",
+          "Mente lúcida"
+        ],
+        "en": [
+          "Clarity",
+          "Lucid mind"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Neutro",
+          "Ou: confusão"
+        ],
+        "en": [
+          "Neutral",
+          "Or: muddle"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Força vital",
+          "Ou: avidez"
+        ],
+        "en": [
+          "Lifeblood",
+          "Or: over-keenness"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Crescimento",
+          "Ou: inveja, imaturidade"
+        ],
+        "en": [
+          "Growth",
+          "Or: envy, immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Ou: inveja"
+        ],
+        "en": [
+          "Consciousness",
+          "Or: envy"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Cinco de Espadas fala de derrota, conflito e lição.",
+      "Ele representa a batalha perdida ou a vitória que não vale.",
+      "O foco dele é: aprender com a experiência sem repetir o padrão."
+    ],
+    "en": [
+      "The Five of Swords speaks of defeat, conflict and lessons.",
+      "It stands for a lost battle or a victory not worth having.",
+      "Its focus: learning from experience without repeating the pattern."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Largar hábitos e velhas emoções",
+          "A essência das Espadas: aprender",
+          "Voltar à fonte"
+        ],
+        "en": [
+          "Dropping habits and old emotions",
+          "The essence of Swords: learning",
+          "Going back to the source"
+        ]
+      },
+      "line": {
+        "pt": "“Aprendo com cada derrota.”",
+        "en": "“I learn from every defeat.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Perda, desonra",
+          "Faça o saber dar frutos",
+          "Cuidado com promessas vazias"
+        ],
+        "en": [
+          "Loss, dishonour",
+          "Let your knowledge bear fruit",
+          "Beware of empty promises"
+        ]
+      },
+      "line": {
+        "pt": "“Vencer assim não vale.”",
+        "en": "“Winning like this isn't worth it.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Ver o sentido de triunfo e desastre",
+          "Usar o intelecto para curar",
+          "Ou: meias verdades"
+        ],
+        "en": [
+          "Seeing the meaning of triumph and disaster",
+          "Using the intellect to heal",
+          "Or: half-truths"
+        ]
+      },
+      "line": {
+        "pt": "“Entendo de onde veio o problema.”",
+        "en": "“I understand where the problem came from.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Humilhação e fraqueza",
+          "Desânimo depois da derrota",
+          "Superar dúvidas de ontem"
+        ],
+        "en": [
+          "Humiliation and weakness",
+          "Despair after defeat",
+          "Overcoming yesterday's doubts"
+        ]
+      },
+      "line": {
+        "pt": "“Não deixo a derrota me definir.”",
+        "en": "“I don't let defeat define me.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Nunca é tarde para elaborar emoções",
+          "Momento de derrota",
+          "Depois, a recuperação"
+        ],
+        "en": [
+          "It's never too late to work through emotions",
+          "A moment of defeat",
+          "Then recovery"
+        ]
+      },
+      "line": {
+        "pt": "“Ainda dá tempo de aprender.”",
+        "en": "“There's still time to learn.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Não se deixe abater",
+          "Defenda clareza e retidão",
+          "Conflito com alguém vingativo"
+        ],
+        "en": [
+          "Don't let difficulties get you down",
+          "Stand up for clarity and honesty",
+          "Conflict with someone vengeful"
+        ]
+      },
+      "line": {
+        "pt": "“Prefiro clareza a vencer a briga.”",
+        "en": "“I'd rather be clear than win the fight.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Olhe para trás e entenda",
+          "Escolha suas batalhas",
+          "Equilibre com as outras forças"
+        ],
+        "en": [
+          "Look back and understand",
+          "Choose your battles",
+          "Balance it with other strengths"
+        ]
+      },
+      "line": {
+        "pt": "“Nem toda luta merece ser lutada.”",
+        "en": "“Not every fight is worth fighting.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Arrogância e crueldade",
+          "Prazer com o mal dos outros",
+          "Repetir o passado"
+        ],
+        "en": [
+          "Arrogance and cruelty",
+          "Taking pleasure in others' bad luck",
+          "Reliving the past"
+        ]
+      },
+      "line": {
+        "pt": "“Quem pisa nos outros fica sozinho.”",
+        "en": "“Those who trample others end up alone.”"
+      }
+    }
+  ]
+}

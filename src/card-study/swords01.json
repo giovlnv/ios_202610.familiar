@@ -1,0 +1,487 @@
+{
+  "id": "swords01",
+  "number": "1",
+  "name": {
+    "pt": "Ás de Espadas",
+    "en": "Ace of Swords"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Espadas",
+    "en": "Minor Arcana – Swords"
+  },
+  "intro": {
+    "pt": "Uma mão sai de uma nuvem segurando firme uma espada erguida, cuja ponta atravessa uma coroa enfeitada de ramos; gotas de ouro caem sobre montanhas. É o dom da mente: clareza, verdade e força para cortar a ilusão. Mas a espada tem dois gumes, para o amor e para o ódio.",
+    "en": "A hand reaches out of a cloud firmly gripping an upright sword whose point pierces a crown hung with branches; golden drops fall over mountains. This is the gift of the mind: clarity, truth and the power to cut through illusion. But the sword is double-edged, for love and for hate."
+  },
+  "symbols": [
+    {
+      "key": "crown",
+      "crop": {
+        "x": 0.5,
+        "y": 0.09,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Coroa na ponta",
+        "en": "Crown on the point"
+      },
+      "keywords": {
+        "pt": [
+          "A quintessência",
+          "Vitória",
+          "Ir além do mundo material"
+        ],
+        "en": [
+          "The quintessence",
+          "Triumph",
+          "Going beyond the material world"
+        ]
+      }
+    },
+    {
+      "key": "sword",
+      "crop": {
+        "x": 0.48,
+        "y": 0.4,
+        "r": 0.45
+      },
+      "title": {
+        "pt": "Espada azul e branca",
+        "en": "Blue-white sword"
+      },
+      "keywords": {
+        "pt": [
+          "Intelecto e espírito",
+          "Dois gumes",
+          "Clareza"
+        ],
+        "en": [
+          "Intellect and spirit",
+          "Double-edged",
+          "Clarity"
+        ]
+      }
+    },
+    {
+      "key": "hand",
+      "crop": {
+        "x": 0.4,
+        "y": 0.62,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Mão firme saindo da nuvem",
+        "en": "Firm hand from the cloud"
+      },
+      "keywords": {
+        "pt": [
+          "Um presente",
+          "Segurar com força",
+          "Emoção intensa"
+        ],
+        "en": [
+          "A gift",
+          "A tight grip",
+          "Intense emotion"
+        ]
+      }
+    },
+    {
+      "key": "drops",
+      "crop": {
+        "x": 0.5,
+        "y": 0.44,
+        "r": 0.18
+      },
+      "title": {
+        "pt": "Gotas de ouro",
+        "en": "Golden drops"
+      },
+      "keywords": {
+        "pt": [
+          "Centelha da consciência",
+          "O espírito",
+          "Paraíso reencontrado"
+        ],
+        "en": [
+          "The spark of consciousness",
+          "The spirit",
+          "Paradise regained"
+        ]
+      }
+    },
+    {
+      "key": "branches",
+      "crop": {
+        "x": 0.3,
+        "y": 0.18,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Ramos",
+        "en": "Branches"
+      },
+      "keywords": {
+        "pt": [
+          "Celebrar a natureza",
+          "Ou: saquear a natureza",
+          "Respeito aos recursos"
+        ],
+        "en": [
+          "Celebrating nature",
+          "Or: plundering nature",
+          "Respect for resources"
+        ]
+      }
+    },
+    {
+      "key": "mountains",
+      "crop": {
+        "x": 0.35,
+        "y": 0.82,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Montanhas",
+        "en": "Mountains"
+      },
+      "keywords": {
+        "pt": [
+          "Verdade abstrata",
+          "Visão de conjunto",
+          "Escolher o pico"
+        ],
+        "en": [
+          "Abstract truth",
+          "An overview",
+          "Choosing your peak"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Objetivo, justo",
+          "Ou: pensamento nublado"
+        ],
+        "en": [
+          "Objective, fair",
+          "Or: clouded thinking"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Espiritualidade",
+          "Mente lúcida"
+        ],
+        "en": [
+          "Spirituality",
+          "Lucid mind"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Clareza",
+          "Começo"
+        ],
+        "en": [
+          "Clarity",
+          "Beginning"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Eternidade"
+        ],
+        "en": [
+          "Consciousness",
+          "Eternity"
+        ]
+      }
+    },
+    {
+      "hex": "#9A86B8",
+      "name": {
+        "pt": "Violeta",
+        "en": "Violet"
+      },
+      "keywords": {
+        "pt": [
+          "Experiência-limite",
+          "Abstração"
+        ],
+        "en": [
+          "Borderline experience",
+          "Abstraction"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Natureza",
+          "Frescor"
+        ],
+        "en": [
+          "Nature",
+          "Freshness"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Ás de Espadas fala de clareza, verdade e força mental.",
+      "Ele representa a mente que atravessa a ilusão.",
+      "O foco dele é: ver com clareza e agir com consciência."
+    ],
+    "en": [
+      "The Ace of Swords speaks of clarity, truth and mental strength.",
+      "It stands for the mind that pierces illusion.",
+      "Its focus: seeing clearly and acting with awareness."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Curar velhas feridas com amor e consciência",
+          "A verdade espiritual dentro da vida",
+          "Intelecto unido à intuição"
+        ],
+        "en": [
+          "Healing old wounds with love and awareness",
+          "Spiritual truth within life",
+          "Intellect joined to intuition"
+        ]
+      },
+      "line": {
+        "pt": "“Bendito o que me faz forte e livre.”",
+        "en": "“Praise be to what makes me strong and free.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Triunfo, conquista",
+          "Boa capacidade de pensar e persistir",
+          "Clareza para decidir"
+        ],
+        "en": [
+          "Triumph, conquest",
+          "A good mind and staying power",
+          "Clarity to decide"
+        ]
+      },
+      "line": {
+        "pt": "“Penso claro, ajo firme.”",
+        "en": "“I think clearly, I act firmly.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Pensamento, palavras e opiniões",
+          "Entender e aprender",
+          "Separar fatos de emoções"
+        ],
+        "en": [
+          "Thoughts, words and opinions",
+          "Understanding and learning",
+          "Separating facts from emotions"
+        ]
+      },
+      "line": {
+        "pt": "“A clareza corta o nevoeiro.”",
+        "en": "“Clarity cuts through the fog.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Exercício físico e mental",
+          "Força",
+          "Postura ereta"
+        ],
+        "en": [
+          "Physical and mental exercise",
+          "Strength",
+          "Standing up straight"
+        ]
+      },
+      "line": {
+        "pt": "“Corpo e mente juntos ficam fortes.”",
+        "en": "“Body and mind together grow strong.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Força emocional extrema",
+          "Amor e ódio intensos",
+          "Trazer à tona a raiva reprimida"
+        ],
+        "en": [
+          "Extreme emotional force",
+          "Intense love and hate",
+          "Surfacing repressed anger"
+        ]
+      },
+      "line": {
+        "pt": "“Sentimento forte pede mão firme.”",
+        "en": "“Strong feeling needs a firm hand.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Uma nova clareza",
+          "Esclarecer desejos e medos",
+          "Ou: concepção, nascimento"
+        ],
+        "en": [
+          "A new clarity",
+          "Clarifying wishes and fears",
+          "Or: conception, birth"
+        ]
+      },
+      "line": {
+        "pt": "“Agora vejo.”",
+        "en": "“Now I see.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "O amor vê com a mente",
+          "Vida vivida com amor consciente",
+          "Força no amor e no ódio"
+        ],
+        "en": [
+          "Love looks with the mind",
+          "A life lived with conscious love",
+          "Force in love and in hate"
+        ]
+      },
+      "line": {
+        "pt": "“Amar também é ver claro.”",
+        "en": "“Loving is also seeing clearly.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Levante-se, fique de pé",
+          "Escolha o pico que quer alcançar",
+          "Use a mente para ver a verdade"
+        ],
+        "en": [
+          "Rise up, stand up straight",
+          "Choose the peak you want to reach",
+          "Use your mind to see the truth"
+        ]
+      },
+      "line": {
+        "pt": "“Escolho meu pico.”",
+        "en": "“I choose my peak.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Ilusão, ideias confusas",
+          "Emoções que dominam",
+          "Força que vira desastre"
+        ],
+        "en": [
+          "Illusion, confused ideas",
+          "Overpowering emotions",
+          "Force that becomes disaster"
+        ]
+      },
+      "line": {
+        "pt": "“Espada sem rumo fere quem a segura.”",
+        "en": "“A sword without aim wounds the one holding it.”"
+      }
+    }
+  ]
+}

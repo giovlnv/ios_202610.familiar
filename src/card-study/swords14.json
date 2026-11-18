@@ -1,0 +1,430 @@
+{
+  "id": "swords14",
+  "number": "14",
+  "name": {
+    "pt": "Rei de Espadas",
+    "en": "King of Swords"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Espadas",
+    "en": "Minor Arcana – Swords"
+  },
+  "intro": {
+    "pt": "Um rei sentado de frente, olhando direto para nós, segura uma espada levemente inclinada; atrás do trono há borboletas e luas, e dois pássaros voam no céu. Ele é a autoridade, o julgamento e o intelecto a serviço da ação. No melhor, justiça e honestidade; no pior, frieza e controle.",
+    "en": "A king sits facing us, looking straight at us, holding a sword tilted slightly; behind the throne are butterflies and moons, and two birds fly in the sky. He is authority, judgement and intellect in the service of action. At best, justice and honesty; at worst, coldness and control."
+  },
+  "symbols": [
+    {
+      "key": "king",
+      "crop": {
+        "x": 0.4,
+        "y": 0.25,
+        "r": 0.11
+      },
+      "title": {
+        "pt": "Rei de frente",
+        "en": "King facing us"
+      },
+      "keywords": {
+        "pt": [
+          "Encara a verdade",
+          "Autoridade",
+          "Ou: frieza, julgamento duro"
+        ],
+        "en": [
+          "Faces the truth",
+          "Authority",
+          "Or: coldness, harsh judgement"
+        ]
+      }
+    },
+    {
+      "key": "sword",
+      "crop": {
+        "x": 0.32,
+        "y": 0.32,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Espada inclinada",
+        "en": "Tilted sword"
+      },
+      "keywords": {
+        "pt": [
+          "Saber posto em prática",
+          "Julgamento",
+          "Ou: humores e anseios"
+        ],
+        "en": [
+          "Knowledge put into practice",
+          "Judgement",
+          "Or: moods and longings"
+        ]
+      }
+    },
+    {
+      "key": "throne",
+      "crop": {
+        "x": 0.5,
+        "y": 0.1,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Encosto com borboletas e luas",
+        "en": "Throne back with butterflies and moons"
+      },
+      "keywords": {
+        "pt": [
+          "Metamorfose",
+          "Sonhos e sentimentos",
+          "Ponte entre céu e terra"
+        ],
+        "en": [
+          "Metamorphosis",
+          "Dreams and feelings",
+          "Bridge between heaven and earth"
+        ]
+      }
+    },
+    {
+      "key": "birds",
+      "crop": {
+        "x": 0.83,
+        "y": 0.24,
+        "r": 0.06
+      },
+      "title": {
+        "pt": "Dois pássaros",
+        "en": "Two birds"
+      },
+      "keywords": {
+        "pt": [
+          "Ideias elevadas",
+          "Escolha",
+          "Ou: distância"
+        ],
+        "en": [
+          "High-flying ideas",
+          "Choice",
+          "Or: remoteness"
+        ]
+      }
+    },
+    {
+      "key": "robe",
+      "crop": {
+        "x": 0.48,
+        "y": 0.58,
+        "r": 0.3
+      },
+      "title": {
+        "pt": "Manto azul e capa roxa",
+        "en": "Blue robe and purple mantle"
+      },
+      "keywords": {
+        "pt": [
+          "Dimensão espiritual",
+          "Sabedoria",
+          "Ou: cinza que apaga a alegria"
+        ],
+        "en": [
+          "The spiritual dimension",
+          "Wisdom",
+          "Or: grey that dims joy"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Espiritualidade",
+          "Anseio"
+        ],
+        "en": [
+          "Spirituality",
+          "Yearning"
+        ]
+      }
+    },
+    {
+      "hex": "#9A86B8",
+      "name": {
+        "pt": "Violeta",
+        "en": "Violet"
+      },
+      "keywords": {
+        "pt": [
+          "Sabedoria",
+          "Experiência-limite"
+        ],
+        "en": [
+          "Wisdom",
+          "Borderline experience"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Ação",
+          "Vontade"
+        ],
+        "en": [
+          "Action",
+          "Will"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Energia mental",
+          "Consciência"
+        ],
+        "en": [
+          "Mental energy",
+          "Consciousness"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Perspicácia, justiça",
+          "Ou: frieza"
+        ],
+        "en": [
+          "Shrewdness, fairness",
+          "Or: coldness"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Rei de Espadas fala de autoridade, julgamento e verdade.",
+      "Ele representa o intelecto a serviço da justiça e da ação.",
+      "O foco dele é: questionar os próprios motivos e manter-se honesto."
+    ],
+    "en": [
+      "The King of Swords speaks of authority, judgement and truth.",
+      "He stands for intellect serving justice and action.",
+      "His focus: questioning his own motives and staying honest."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Captar conexões complexas",
+          "Simplificar o difícil",
+          "Honestidade intelectual"
+        ],
+        "en": [
+          "Grasping complex connections",
+          "Simplifying difficult matters",
+          "Intellectual honesty"
+        ]
+      },
+      "line": {
+        "pt": "“A verdade me olha de frente.”",
+        "en": "“Truth looks me in the eye.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Poder, comando, lei",
+          "Questionar os próprios motivos",
+          "Contribuir para a vida em comum"
+        ],
+        "en": [
+          "Power, command, law",
+          "Questioning your own motives",
+          "Contributing to life together"
+        ]
+      },
+      "line": {
+        "pt": "“Vejo-me como os outros me veem.”",
+        "en": "“I see myself as others see me.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Forças mentais fortes",
+          "Clareza e visão de longe",
+          "Ou: preconceito disfarçado de bom senso"
+        ],
+        "en": [
+          "Strong mental forces",
+          "Clarity and far-sightedness",
+          "Or: prejudice disguised as common sense"
+        ]
+      },
+      "line": {
+        "pt": "“Pensar claro inclui duvidar de mim.”",
+        "en": "“Clear thinking includes doubting myself.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Independência",
+          "Ou: frieza e distância",
+          "Amor e dança às costas"
+        ],
+        "en": [
+          "Independence",
+          "Or: coldness and distance",
+          "Love and dance behind his back"
+        ]
+      },
+      "line": {
+        "pt": "“Razão não precisa calar o coração.”",
+        "en": "“Reason needn't silence the heart.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Fique com o que te toca de verdade",
+          "Sem manipulação calculada",
+          "Ou: parceiro dominador"
+        ],
+        "en": [
+          "Stick to what genuinely moves you",
+          "No calculated manipulation",
+          "Or: a domineering partner"
+        ]
+      },
+      "line": {
+        "pt": "“Não me escondo atrás da inteligência.”",
+        "en": "“I don't hide behind cleverness.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Ponha o saber em prática",
+          "Julgue com justiça",
+          "Mantenha os pés no chão"
+        ],
+        "en": [
+          "Put knowledge into practice",
+          "Judge fairly",
+          "Keep your feet on the ground"
+        ]
+      },
+      "line": {
+        "pt": "“Cabeça no céu, pés na terra.”",
+        "en": "“Head in the sky, feet on the earth.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Autoridade corrompida",
+          "Crueldade, controle",
+          "Arrogância da mente"
+        ],
+        "en": [
+          "Corrupted authority",
+          "Cruelty, control",
+          "Arrogance of the mind"
+        ]
+      },
+      "line": {
+        "pt": "“Poder sem verdade vira tirania.”",
+        "en": "“Power without truth becomes tyranny.”"
+      }
+    }
+  ]
+}
