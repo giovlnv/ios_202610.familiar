@@ -21,7 +21,7 @@ export default function Account() {
   return (
     <Page>
       <Text style={ss.h2}>{tr("GitHub")}</Text>
-      <Text style={ss.p}>{tr("The key lets the app back up to your private ios_202610.familiar_library repo and send books to the audiobook pipeline.")}</Text>
+      <Text style={ss.p}>{tr("The key lets the app send books to the audiobook pipeline and stream them. Backups go to ares (settings → backups).")}</Text>
       <View style={ss.card}>
         <Text style={ss.meta}>{tr("Status:")}{' '}{hasToken ? 'connected' : tr("not connected")}</Text>
         <TextInput
