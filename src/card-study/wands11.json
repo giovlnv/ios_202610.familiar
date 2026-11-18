@@ -1,0 +1,450 @@
+{
+  "id": "wands11",
+  "number": "11",
+  "name": {
+    "pt": "Pajem de Paus",
+    "en": "Page of Wands"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Paus",
+    "en": "Minor Arcana – Wands"
+  },
+  "intro": {
+    "pt": "Um jovem com uma pluma vermelha no chapéu olha para o alto de um bastão maior que ele, num deserto com pirâmides ao fundo. O Pajem de Paus é o entusiasmo do começo: anunciar ao mundo, e a si mesmo, que está pronto para algo novo. O impulso ainda é maior do que a pessoa.",
+    "en": "A young man with a red plume in his hat gazes up at a wand taller than himself, in a desert with pyramids behind. The Page of Wands is the eagerness of a beginning: announcing to the world, and to yourself, that you're ready for something new. The impulse is still bigger than the person."
+  },
+  "symbols": [
+    {
+      "key": "plume",
+      "crop": {
+        "x": 0.38,
+        "y": 0.17,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Pluma vermelha",
+        "en": "Red plume"
+      },
+      "keywords": {
+        "pt": [
+          "Entusiasmo",
+          "Queimar por uma causa",
+          "Ou: zelo mal dirigido"
+        ],
+        "en": [
+          "Enthusiasm",
+          "Burning for a cause",
+          "Or: misguided zeal"
+        ]
+      }
+    },
+    {
+      "key": "wand",
+      "crop": {
+        "x": 0.7,
+        "y": 0.28,
+        "r": 0.16
+      },
+      "title": {
+        "pt": "Bastão maior que ele",
+        "en": "Wand taller than him"
+      },
+      "keywords": {
+        "pt": [
+          "Impulso maior que a pessoa",
+          "O futuro mais longo que o passado",
+          "Juventude"
+        ],
+        "en": [
+          "An impulse larger than the person",
+          "The future longer than the past",
+          "Youth"
+        ]
+      }
+    },
+    {
+      "key": "salamanders",
+      "crop": {
+        "x": 0.48,
+        "y": 0.42,
+        "r": 0.16
+      },
+      "title": {
+        "pt": "Salamandras na roupa",
+        "en": "Salamanders on his tunic"
+      },
+      "keywords": {
+        "pt": [
+          "Passar pelo fogo ileso",
+          "Inteireza simples",
+          "Ou: andar em círculos"
+        ],
+        "en": [
+          "Passing through fire unharmed",
+          "Simple wholeness",
+          "Or: walking in circles"
+        ]
+      }
+    },
+    {
+      "key": "pyramids",
+      "crop": {
+        "x": 0.8,
+        "y": 0.7,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Pirâmides",
+        "en": "Pyramids"
+      },
+      "keywords": {
+        "pt": [
+          "Sabedoria e mistério",
+          "Grandes metas",
+          "Momentos de pico"
+        ],
+        "en": [
+          "Wisdom and mystery",
+          "Great goals",
+          "Peak experiences"
+        ]
+      }
+    },
+    {
+      "key": "desert",
+      "crop": {
+        "x": 0.5,
+        "y": 0.75,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Deserto",
+        "en": "Desert"
+      },
+      "keywords": {
+        "pt": [
+          "Vazio de onde nasce o novo",
+          "Calor e secura",
+          "Fazer um jardim do deserto"
+        ],
+        "en": [
+          "Emptiness the new grows out of",
+          "Heat and drought",
+          "Making a garden of the desert"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Leveza",
+          "Vontade",
+          "Ou: idealizar"
+        ],
+        "en": [
+          "Lightness",
+          "Will",
+          "Or: idolising"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Entusiasmo",
+          "Vontade",
+          "Paixão"
+        ],
+        "en": [
+          "Enthusiasm",
+          "Will",
+          "Passion"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Vitalidade",
+          "Calor"
+        ],
+        "en": [
+          "Vitality",
+          "Warmth"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Da terra"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Of the earth"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Pajem de Paus fala de entusiasmo, começo e mensagens.",
+      "Ele representa o impulso jovem de quem está pronto para começar.",
+      "O foco dele é: guardar o que faz crescer e anunciar o novo."
+    ],
+    "en": [
+      "The Page of Wands speaks of eagerness, beginnings and messages.",
+      "He stands for the young impulse of someone ready to begin.",
+      "His focus: holding on to what makes you grow and announcing the new."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Maravilhar-se",
+          "Crescer para além de si",
+          "Lembrar momentos de alegria"
+        ],
+        "en": [
+          "Wonder",
+          "Growing beyond yourself",
+          "Remembering moments of joy"
+        ]
+      },
+      "line": {
+        "pt": "“Como viver para sentir o gosto da vida?”",
+        "en": "“How can I live so I really taste life?”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Início de projetos",
+          "Anúncio, mensagem, notícia",
+          "Sair da rotina"
+        ],
+        "en": [
+          "The start of projects",
+          "An announcement, a message, news",
+          "Leaving routine behind"
+        ]
+      },
+      "line": {
+        "pt": "“Estou pronto, e digo ao mundo.”",
+        "en": "“I'm ready, and I'm telling the world.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Estudo e reflexão",
+          "Decidir à luz das alegrias",
+          "Ou: indecisão diante do complexo"
+        ],
+        "en": [
+          "Study and reflection",
+          "Deciding in the light of joy",
+          "Or: indecision in the face of complexity"
+        ]
+      },
+      "line": {
+        "pt": "“O simples me fortalece.”",
+        "en": "“Simplicity makes me strong.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Energia de criança",
+          "Vigor que se renova",
+          "Ou: euforias vazias"
+        ],
+        "en": [
+          "A child's energy",
+          "Vigour renewed",
+          "Or: empty kicks"
+        ]
+      },
+      "line": {
+        "pt": "“Minha energia volta sempre.”",
+        "en": "“My energy keeps coming back.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Amigo ou amante fiel",
+          "Alegria de viver",
+          "Entusiasmo sincero"
+        ],
+        "en": [
+          "A faithful friend or lover",
+          "Joy of living",
+          "Sincere enthusiasm"
+        ]
+      },
+      "line": {
+        "pt": "“A alegria enche meu copo de novo.”",
+        "en": "“Joy fills my cup again.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Uma fase nova começando",
+          "Energias frescas",
+          "Notícias de família"
+        ],
+        "en": [
+          "A new phase beginning",
+          "Fresh energies",
+          "News of family"
+        ]
+      },
+      "line": {
+        "pt": "“Algo novo me inspira.”",
+        "en": "“Something new inspires me.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Fidelidade",
+          "Alegria que se partilha",
+          "Um mensageiro, alguém que fala bem de você"
+        ],
+        "en": [
+          "Faithfulness",
+          "Joy that is shared",
+          "A messenger, someone speaking well of you"
+        ]
+      },
+      "line": {
+        "pt": "“Fiel ao que me faz crescer.”",
+        "en": "“Faithful to what makes me grow.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Guarde o que te faz crescer",
+          "Lembre da alegria antes de decidir",
+          "Fuja de energias falsas"
+        ],
+        "en": [
+          "Keep hold of what makes you grow",
+          "Remember joy before deciding",
+          "Avoid false sources of energy"
+        ]
+      },
+      "line": {
+        "pt": "“Sigo o que me acende de verdade.”",
+        "en": "“I follow what truly lights me up.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Indecisão e instabilidade",
+          "Medo de se declarar",
+          "Más notícias, andar em círculos"
+        ],
+        "en": [
+          "Indecision and instability",
+          "Afraid to declare yourself",
+          "Bad news, going in circles"
+        ]
+      },
+      "line": {
+        "pt": "“Hesitar demais apaga a chama.”",
+        "en": "“Too much hesitation puts out the flame.”"
+      }
+    }
+  ]
+}

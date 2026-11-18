@@ -1,0 +1,468 @@
+{
+  "id": "wands12",
+  "number": "12",
+  "name": {
+    "pt": "Cavaleiro de Paus",
+    "en": "Knight of Wands"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Paus",
+    "en": "Minor Arcana – Wands"
+  },
+  "intro": {
+    "pt": "Um cavaleiro de armadura, com plumas vermelhas, monta um cavalo alazão que empina, passando por pirâmides no deserto. É o fogo em movimento: ação, aventura, viagem e muita energia. Sem rumo, essa energia se dispersa; com propósito, faz o deserto florescer.",
+    "en": "An armoured knight with red plumes rides a rearing sorrel horse past pyramids in the desert. This is fire in motion: action, adventure, travel and a great deal of energy. Without direction it scatters; with purpose, it makes the desert bloom."
+  },
+  "symbols": [
+    {
+      "key": "horse",
+      "crop": {
+        "x": 0.3,
+        "y": 0.48,
+        "r": 0.27
+      },
+      "title": {
+        "pt": "Cavalo que empina",
+        "en": "Rearing horse"
+      },
+      "keywords": {
+        "pt": [
+          "Impetuoso",
+          "Ímpeto e pressa",
+          "Ou: cavalo desembestado"
+        ],
+        "en": [
+          "Tempestuous",
+          "Momentum and haste",
+          "Or: a bolting horse"
+        ]
+      }
+    },
+    {
+      "key": "plumes",
+      "crop": {
+        "x": 0.8,
+        "y": 0.2,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Plumas vermelhas",
+        "en": "Red plumes"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade ardente",
+          "Assertividade",
+          "Ou: falta de limite"
+        ],
+        "en": [
+          "A burning will",
+          "Assertiveness",
+          "Or: ruthlessness"
+        ]
+      }
+    },
+    {
+      "key": "wand",
+      "crop": {
+        "x": 0.43,
+        "y": 0.25,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Bastão curto",
+        "en": "Short wand"
+      },
+      "keywords": {
+        "pt": [
+          "A caminho, não em guerra",
+          "Ação que mostra o rumo",
+          "Energia"
+        ],
+        "en": [
+          "On a journey, not at war",
+          "Action that shows the way",
+          "Energy"
+        ]
+      }
+    },
+    {
+      "key": "armour",
+      "crop": {
+        "x": 0.55,
+        "y": 0.32,
+        "r": 0.16
+      },
+      "title": {
+        "pt": "Armadura",
+        "en": "Armour"
+      },
+      "keywords": {
+        "pt": [
+          "Proteção",
+          "Lidar com cuidado com o fogo",
+          "Ou: rigidez"
+        ],
+        "en": [
+          "Protection",
+          "Handling fire with care",
+          "Or: rigidity"
+        ]
+      }
+    },
+    {
+      "key": "salamanders",
+      "crop": {
+        "x": 0.75,
+        "y": 0.52,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Salamandras incompletas",
+        "en": "Unfinished salamanders"
+      },
+      "keywords": {
+        "pt": [
+          "Ação inacabada",
+          "Planos ainda sem forma",
+          "Só começou"
+        ],
+        "en": [
+          "Incomplete action",
+          "Plans not yet formed",
+          "Only just begun"
+        ]
+      }
+    },
+    {
+      "key": "pyramids",
+      "crop": {
+        "x": 0.15,
+        "y": 0.8,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Pirâmides",
+        "en": "Pyramids"
+      },
+      "keywords": {
+        "pt": [
+          "Sabedoria e mistério",
+          "Grandes metas",
+          "Elevar a um novo nível"
+        ],
+        "en": [
+          "Wisdom and mystery",
+          "Great goals",
+          "Raising to a new level"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Mente lúcida",
+          "Ou: tristeza do nada"
+        ],
+        "en": [
+          "Will",
+          "Lucid mind",
+          "Or: the blues out of the blue"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Percepção",
+          "Ou: mania"
+        ],
+        "en": [
+          "Consciousness",
+          "Perception",
+          "Or: mania"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Paixão",
+          "Ou: impaciência"
+        ],
+        "en": [
+          "Will",
+          "Passion",
+          "Or: pushiness"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Proteção neutra",
+          "Ou: inflexível"
+        ],
+        "en": [
+          "Neutral protection",
+          "Or: inflexible"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Da terra"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Of the earth"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Cavaleiro de Paus fala de ação, aventura e movimento.",
+      "Ele representa a energia do fogo que parte para o mundo.",
+      "O foco dele é: agir com propósito para não se dispersar."
+    ],
+    "en": [
+      "The Knight of Wands speaks of action, adventure and movement.",
+      "He stands for fire energy setting out into the world.",
+      "His focus: acting with purpose so as not to scatter."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Partir em busca",
+          "Atravessar um tempo de seca",
+          "Manter-se fiel a si"
+        ],
+        "en": [
+          "Taking up the search",
+          "Getting through a lean time",
+          "Staying true to yourself"
+        ]
+      },
+      "line": {
+        "pt": "“Minha luz é necessária onde está mais escuro.”",
+        "en": "“My light is needed where it's darkest.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Ação que mostra o caminho",
+          "Grandes conquistas com propósito",
+          "Partida, mudança de casa"
+        ],
+        "en": [
+          "Action that shows the way",
+          "Great achievement with purpose",
+          "Departure, a change of home"
+        ]
+      },
+      "line": {
+        "pt": "“Agindo, descubro a estrada.”",
+        "en": "“By acting, I find the road.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "O que quero alcançar?",
+          "Até onde estou disposto a ir?",
+          "Planejar evita dispersão"
+        ],
+        "en": [
+          "What do I want to achieve?",
+          "How far am I willing to go?",
+          "Planning prevents scattering"
+        ]
+      },
+      "line": {
+        "pt": "“Fogo com plano vira conquista.”",
+        "en": "“Fire with a plan becomes achievement.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Autoconfiança",
+          "Ânimo de aventura",
+          "Ou: confusão diante de oposição"
+        ],
+        "en": [
+          "Self-confidence",
+          "A spirit of adventure",
+          "Or: confusion when opposed"
+        ]
+      },
+      "line": {
+        "pt": "“Coragem não é nunca cair do cavalo.”",
+        "en": "“Courage isn't never falling off the horse.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Agora é a hora",
+          "Viagem, ausência",
+          "Ou: interrupção"
+        ],
+        "en": [
+          "Now is the time",
+          "Travel, absence",
+          "Or: interruption"
+        ]
+      },
+      "line": {
+        "pt": "“Já estou a caminho.”",
+        "en": "“I'm already on my way.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Assumir responsabilidade no amor",
+          "Um jovem amigável",
+          "Ou: discórdia, ruptura"
+        ],
+        "en": [
+          "Taking full responsibility in love",
+          "A friendly young man",
+          "Or: discord, rupture"
+        ]
+      },
+      "line": {
+        "pt": "“Amor também pede rédea.”",
+        "en": "“Love needs reins too.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Refine sua observação",
+          "Saiba que limites ultrapassar",
+          "Una energia e propósito"
+        ],
+        "en": [
+          "Sharpen your observation",
+          "Know which limits to cross",
+          "Join energy and purpose"
+        ]
+      },
+      "line": {
+        "pt": "“Intuição me diz até onde ir.”",
+        "en": "“Intuition tells me how far to go.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Impetuosidade, cabeça quente",
+          "Projetos que desabam",
+          "Fugir ou perseguir às cegas"
+        ],
+        "en": [
+          "Hot-headedness",
+          "Projects collapsing",
+          "Fleeing or blind pursuit"
+        ]
+      },
+      "line": {
+        "pt": "“Correr para todo lado é não ir a lugar algum.”",
+        "en": "“Running everywhere is going nowhere.”"
+      }
+    }
+  ]
+}

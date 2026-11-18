@@ -1,0 +1,401 @@
+{
+  "id": "wands08",
+  "number": "8",
+  "name": {
+    "pt": "Oito de Paus",
+    "en": "Eight of Wands"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Paus",
+    "en": "Minor Arcana – Wands"
+  },
+  "intro": {
+    "pt": "Oito bastões voam em paralelo sobre um campo aberto e um rio, prestes a pousar. Não há ninguém na carta: só movimento, rapidez e coisas a caminho. O Oito de Paus anuncia que o que se espera está chegando.",
+    "en": "Eight wands fly in parallel over open country and a river, about to land. There is no one on the card: only movement, speed and things on their way. The Eight of Wands announces that what you're waiting for is arriving."
+  },
+  "symbols": [
+    {
+      "key": "wands",
+      "crop": {
+        "x": 0.45,
+        "y": 0.4,
+        "r": 0.35
+      },
+      "title": {
+        "pt": "Oito bastões no ar",
+        "en": "Eight wands in flight"
+      },
+      "keywords": {
+        "pt": [
+          "Movimento rápido",
+          "Escala de energias",
+          "Flechas do amor"
+        ],
+        "en": [
+          "Swift movement",
+          "A scale of energies",
+          "Arrows of love"
+        ]
+      }
+    },
+    {
+      "key": "tips",
+      "crop": {
+        "x": 0.85,
+        "y": 0.7,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Pontas que pousam",
+        "en": "Tips coming to land"
+      },
+      "keywords": {
+        "pt": [
+          "Algo vem até você",
+          "Chegando ao fim",
+          "Pés na terra"
+        ],
+        "en": [
+          "Something is heading your way",
+          "Reaching the end",
+          "Coming down to earth"
+        ]
+      }
+    },
+    {
+      "key": "house",
+      "crop": {
+        "x": 0.12,
+        "y": 0.82,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Casa na colina",
+        "en": "House on the hill"
+      },
+      "keywords": {
+        "pt": [
+          "Busca de lar",
+          "Onde seu potencial vive",
+          "A meta do esforço"
+        ],
+        "en": [
+          "Searching for home",
+          "Where your potential lives",
+          "The goal of the effort"
+        ]
+      }
+    },
+    {
+      "key": "river",
+      "crop": {
+        "x": 0.55,
+        "y": 0.9,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Rio",
+        "en": "River"
+      },
+      "keywords": {
+        "pt": [
+          "Continuidade na mudança",
+          "Estar no fluxo",
+          "Grandes tarefas"
+        ],
+        "en": [
+          "Continuity in change",
+          "Staying in the flow",
+          "Great tasks"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Leveza",
+          "Mente lúcida",
+          "Ou: embriaguez"
+        ],
+        "en": [
+          "Lightness",
+          "Lucid mind",
+          "Or: inebriation"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Da criação"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Of creation"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Crescimento",
+          "Fertilidade",
+          "Imaturidade"
+        ],
+        "en": [
+          "Growth",
+          "Fruitfulness",
+          "Immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Ou: inveja"
+        ],
+        "en": [
+          "Consciousness",
+          "Or: envy"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Oito de Paus fala de rapidez, movimento e chegada.",
+      "Ele representa as energias que finalmente encontram o alvo.",
+      "O foco dele é: deixar a energia fluir e acompanhar o voo."
+    ],
+    "en": [
+      "The Eight of Wands speaks of speed, movement and arrival.",
+      "It stands for energies finally finding their target.",
+      "Its focus: letting energy flow and keeping up with the flight."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Aceitar as asas quebradas e voar de novo",
+          "Escada de Jacó: céu e terra",
+          "Entrega sem ego"
+        ],
+        "en": [
+          "Accepting broken wings and flying again",
+          "Jacob's ladder: heaven and earth",
+          "Commitment without ego"
+        ]
+      },
+      "line": {
+        "pt": "“O tapete já decolou: fique nele.”",
+        "en": "“The carpet has taken off: stay on it.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Atividade nos empreendimentos",
+          "Pressa e esperança",
+          "Coordenar muitas tarefas"
+        ],
+        "en": [
+          "Activity in undertakings",
+          "Haste and great hope",
+          "Coordinating many tasks"
+        ]
+      },
+      "line": {
+        "pt": "“Muita coisa se resolve ao mesmo tempo.”",
+        "en": "“Many things get settled at once.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Ver as motivações reais",
+          "Mais intuição e atenção",
+          "Ou: projeções"
+        ],
+        "en": [
+          "Seeing the real motives",
+          "More intuition and awareness",
+          "Or: projections"
+        ]
+      },
+      "line": {
+        "pt": "“Sem manipular, tudo combina.”",
+        "en": "“Without manipulation, everything fits.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Grande esperança",
+          "Boas vibrações",
+          "Ou: ciúme, consciência pesada"
+        ],
+        "en": [
+          "Great hope",
+          "Good vibrations",
+          "Or: jealousy, stings of conscience"
+        ]
+      },
+      "line": {
+        "pt": "“Deixo a energia correr livre.”",
+        "en": "“I let the energy run free.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Rapidez, algo está no limiar",
+          "Fim de uma jornada",
+          "Ou: nada se conclui"
+        ],
+        "en": [
+          "Swiftness, something on the threshold",
+          "A journey reaching its end",
+          "Or: nothing comes to a close"
+        ]
+      },
+      "line": {
+        "pt": "“O que espero já está chegando.”",
+        "en": "“What I'm waiting for is arriving.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Flechas do amor",
+          "Sedução, propostas aceitas",
+          "Fluxo de energia sem bloqueio"
+        ],
+        "en": [
+          "Arrows of love",
+          "Seduction, proposals accepted",
+          "Energy flowing unhindered"
+        ]
+      },
+      "line": {
+        "pt": "“Quando o amor se move, é rápido.”",
+        "en": "“When love moves, it moves fast.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Grandes tarefas, grande esforço",
+          "Aperte o cinto antes de decolar",
+          "Use suas asas"
+        ],
+        "en": [
+          "Great tasks, great effort",
+          "Fasten your seatbelt before take-off",
+          "Use your wings"
+        ]
+      },
+      "line": {
+        "pt": "“Hora de voar.”",
+        "en": "“Time to fly.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Perder-se de si no meio de tanto",
+          "Muito barulho por nada",
+          "Brigas e ciúmes em casa"
+        ],
+        "en": [
+          "Losing yourself amid so much",
+          "Much ado about nothing",
+          "Quarrels and jealousy at home"
+        ]
+      },
+      "line": {
+        "pt": "“Correr muito não é chegar.”",
+        "en": "“Running a lot isn't arriving.”"
+      }
+    }
+  ]
+}

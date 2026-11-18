@@ -1,0 +1,507 @@
+{
+  "id": "wands14",
+  "number": "14",
+  "name": {
+    "pt": "Rei de Paus",
+    "en": "King of Wands"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Paus",
+    "en": "Minor Arcana – Wands"
+  },
+  "intro": {
+    "pt": "Um rei de manto laranja e verde está sentado num trono com leões e salamandras, inclinado para a frente como quem quer levantar e agir. Uma pequena salamandra está a seus pés. Ele é o fogo transformado em projetos e responsabilidade: firme, honesto, otimista, às vezes impaciente.",
+    "en": "A king in orange and green sits on a throne decorated with lions and salamanders, leaning forward as if eager to get up and act. A small salamander sits at his feet. He is fire turned into projects and responsibility: firm, honest, optimistic, sometimes impatient."
+  },
+  "symbols": [
+    {
+      "key": "king",
+      "crop": {
+        "x": 0.45,
+        "y": 0.42,
+        "r": 0.22
+      },
+      "title": {
+        "pt": "Rei inclinado para a frente",
+        "en": "King leaning forward"
+      },
+      "keywords": {
+        "pt": [
+          "Relaxado e concentrado",
+          "Pronto para agir",
+          "Ou: inquieto"
+        ],
+        "en": [
+          "Relaxed and focused",
+          "Ready to act",
+          "Or: restless"
+        ]
+      }
+    },
+    {
+      "key": "crown",
+      "crop": {
+        "x": 0.43,
+        "y": 0.17,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Coroa de chamas",
+        "en": "Crown of flames"
+      },
+      "keywords": {
+        "pt": [
+          "Zelo",
+          "Vontade forte",
+          "Ou: idealismo superaquecido"
+        ],
+        "en": [
+          "Zeal",
+          "Strong will",
+          "Or: overheated idealism"
+        ]
+      }
+    },
+    {
+      "key": "salamander",
+      "crop": {
+        "x": 0.72,
+        "y": 0.86,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Salamandra no chão",
+        "en": "Salamander on the ground"
+      },
+      "keywords": {
+        "pt": [
+          "Passar pelo fogo ileso",
+          "Prova de fogo",
+          "Transformação"
+        ],
+        "en": [
+          "Passing through fire unharmed",
+          "Trial by fire",
+          "Transformation"
+        ]
+      }
+    },
+    {
+      "key": "robe",
+      "crop": {
+        "x": 0.75,
+        "y": 0.6,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Manto com salamandras em círculo",
+        "en": "Mantle with salamanders in a circle"
+      },
+      "keywords": {
+        "pt": [
+          "Maturidade e conclusão",
+          "Luz e sombra",
+          "Ou: andar em círculos"
+        ],
+        "en": [
+          "Maturity and completion",
+          "Light and shadow",
+          "Or: going in circles"
+        ]
+      }
+    },
+    {
+      "key": "lion",
+      "crop": {
+        "x": 0.66,
+        "y": 0.17,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Leão negro no trono",
+        "en": "Black lion on the throne"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade e vitalidade",
+          "Leão, signo do fogo",
+          "Ou: medo reprimido"
+        ],
+        "en": [
+          "Will and vitality",
+          "Leo, the fire sign",
+          "Or: suppressed fear"
+        ]
+      }
+    },
+    {
+      "key": "wand",
+      "crop": {
+        "x": 0.15,
+        "y": 0.3,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Bastão florido",
+        "en": "Flowering wand"
+      },
+      "keywords": {
+        "pt": [
+          "Fogo útil",
+          "Projetos e carreira",
+          "Honestidade"
+        ],
+        "en": [
+          "Fire put to use",
+          "Projects and career",
+          "Honesty"
+        ]
+      }
+    },
+    {
+      "key": "shoes",
+      "crop": {
+        "x": 0.2,
+        "y": 0.75,
+        "r": 0.07
+      },
+      "title": {
+        "pt": "Sapatos verdes",
+        "en": "Green shoes"
+      },
+      "keywords": {
+        "pt": [
+          "Passos reais",
+          "Crescimento",
+          "Ou: inexperiência"
+        ],
+        "en": [
+          "Real steps",
+          "Growth",
+          "Or: greenness"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Paixão",
+          "Libido"
+        ],
+        "en": [
+          "Will",
+          "Passion",
+          "Libido"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Vitalidade",
+          "Calor"
+        ],
+        "en": [
+          "Vitality",
+          "Warmth"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Mente clara",
+          "Ou: mania"
+        ],
+        "en": [
+          "A clear mind",
+          "Or: mania"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Fertilidade",
+          "Naturalidade",
+          "Imaturidade"
+        ],
+        "en": [
+          "Fruitfulness",
+          "Naturalness",
+          "Immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "Sombra",
+          "Ou: repressão"
+        ],
+        "en": [
+          "Shadow",
+          "Or: suppression"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Céu aberto"
+        ],
+        "en": [
+          "Will",
+          "Open sky"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Rei de Paus fala de vontade, liderança e honestidade.",
+      "Ele representa o fogo transformado em projetos que duram.",
+      "O foco dele é: agir com metas que sejam de fato suas."
+    ],
+    "en": [
+      "The King of Wands speaks of will, leadership and honesty.",
+      "He stands for fire turned into projects that last.",
+      "His focus: acting on goals that are truly his own."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Passar pelo fogo como a salamandra",
+          "Prova de fogo e catarse",
+          "Dominar o fogo criativo"
+        ],
+        "en": [
+          "Going through fire like the salamander",
+          "Trial by fire and catharsis",
+          "Mastering creative fire"
+        ]
+      },
+      "line": {
+        "pt": "“O fogo me transforma, não me destrói.”",
+        "en": "“Fire transforms me, it doesn't destroy me.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Projetos e carreira duradouros",
+          "Responsabilidade social",
+          "Possível herança inesperada"
+        ],
+        "en": [
+          "Long-term projects and career",
+          "Social responsibility",
+          "A possible unexpected inheritance"
+        ]
+      },
+      "line": {
+        "pt": "“Ações falam mais que palavras.”",
+        "en": "“Actions speak louder than words.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Examine seus motivos",
+          "O que quero da vida?",
+          "Ou: certeza de estar sempre certo"
+        ],
+        "en": [
+          "Scrutinise your motives",
+          "What do I want from life?",
+          "Or: certain he is always right"
+        ]
+      },
+      "line": {
+        "pt": "“Metas minhas mobilizam minha força.”",
+        "en": "“Goals of my own call up my strength.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Otimismo e honestidade",
+          "Coragem e paixão",
+          "Ou: intolerância com a fraqueza"
+        ],
+        "en": [
+          "Optimism and honesty",
+          "Courage and passion",
+          "Or: intolerance of weakness"
+        ]
+      },
+      "line": {
+        "pt": "“Nem todos queimam como eu, e tudo bem.”",
+        "en": "“Not everyone burns like I do, and that's fine.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Desafios e tentações",
+          "Autodeterminação sem limite",
+          "Maturidade"
+        ],
+        "en": [
+          "Challenges and temptations",
+          "Limitless self-determination",
+          "Maturity"
+        ]
+      },
+      "line": {
+        "pt": "“Estou pronto para a prova.”",
+        "en": "“I'm ready for the test.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Ação independente",
+          "Enfrentar a Morte e o Diabo sem medo",
+          "Geralmente casado, honesto"
+        ],
+        "en": [
+          "Independent action",
+          "Facing Death and the Devil unafraid",
+          "Usually married, honest"
+        ]
+      },
+      "line": {
+        "pt": "“A coragem traz felicidade no amor.”",
+        "en": "“Courage brings happiness in love.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Atravesse o fogo sem medo",
+          "Aja com habilidade",
+          "Grande fogo, meta nobre"
+        ],
+        "en": [
+          "Go through the blaze unafraid",
+          "Act with skill",
+          "A great fire for a noble goal"
+        ]
+      },
+      "line": {
+        "pt": "“Fogo grande pede meta grande.”",
+        "en": "“A great fire calls for a great goal.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Intolerância e impaciência",
+          "Dominar os outros pela vontade",
+          "Severo e austero"
+        ],
+        "en": [
+          "Intolerance and impatience",
+          "Dominating others by will",
+          "Severe and austere"
+        ]
+      },
+      "line": {
+        "pt": "“Força sem compaixão endurece.”",
+        "en": "“Strength without compassion hardens.”"
+      }
+    }
+  ]
+}

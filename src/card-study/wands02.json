@@ -1,0 +1,464 @@
+{
+  "id": "wands02",
+  "number": "2",
+  "name": {
+    "pt": "Dois de Paus",
+    "en": "Two of Wands"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Paus",
+    "en": "Minor Arcana – Wands"
+  },
+  "intro": {
+    "pt": "Um homem no alto de um castelo segura um globo e olha o mar e a terra lá embaixo, entre dois bastões. Ele já conquistou muito, mas parece entediado, preso pelo próprio sucesso. O Dois de Paus fala de iniciativa, visão de mundo e da escolha entre duas forças.",
+    "en": "A man on a castle rampart holds a globe and looks out over sea and land, between two wands. He has achieved a great deal but seems bored, walled in by his own success. The Two of Wands speaks of initiative, a personal view of the world and the choice between two forces."
+  },
+  "symbols": [
+    {
+      "key": "globe",
+      "crop": {
+        "x": 0.36,
+        "y": 0.375,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Globo na mão",
+        "en": "Globe in hand"
+      },
+      "keywords": {
+        "pt": [
+          "A bola está com você",
+          "Entender como tudo se encaixa",
+          "Ou: mundo pequeno demais"
+        ],
+        "en": [
+          "The ball is in your court",
+          "Seeing how things fit",
+          "Or: too small a world"
+        ]
+      }
+    },
+    {
+      "key": "wands",
+      "crop": {
+        "x": 0.21,
+        "y": 0.3,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Dois bastões",
+        "en": "Two wands"
+      },
+      "keywords": {
+        "pt": [
+          "Duas energias básicas",
+          "Conciliar ou separar",
+          "Dever e prazer"
+        ],
+        "en": [
+          "Two basic energies",
+          "Reconcile or separate",
+          "Duty and pleasure"
+        ]
+      }
+    },
+    {
+      "key": "man",
+      "crop": {
+        "x": 0.54,
+        "y": 0.36,
+        "r": 0.14
+      },
+      "title": {
+        "pt": "Homem no alto",
+        "en": "Man on the heights"
+      },
+      "keywords": {
+        "pt": [
+          "Independência",
+          "Dono de si",
+          "Ou: tédio, solidão"
+        ],
+        "en": [
+          "Independence",
+          "Being your own boss",
+          "Or: boredom, loneliness"
+        ]
+      }
+    },
+    {
+      "key": "emblem",
+      "crop": {
+        "x": 0.12,
+        "y": 0.74,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Cruz, lírio e rosa",
+        "en": "Cross, lily and rose"
+      },
+      "keywords": {
+        "pt": [
+          "Transformar a energia",
+          "Dominar as tarefas",
+          "Alquimia"
+        ],
+        "en": [
+          "Transforming energy",
+          "Mastering tasks",
+          "Alchemy"
+        ]
+      }
+    },
+    {
+      "key": "sea",
+      "crop": {
+        "x": 0.1,
+        "y": 0.54,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Mar e baía",
+        "en": "Sea and bay"
+      },
+      "keywords": {
+        "pt": [
+          "Pensar global, agir local",
+          "Visão ampla",
+          "Usar bem a energia"
+        ],
+        "en": [
+          "Think global, act local",
+          "A wide view",
+          "Using energy well"
+        ]
+      }
+    },
+    {
+      "key": "battlements",
+      "crop": {
+        "x": 0.88,
+        "y": 0.66,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Ameias",
+        "en": "Battlements"
+      },
+      "keywords": {
+        "pt": [
+          "Vista do alto",
+          "Controle e calma",
+          "Ou: murado"
+        ],
+        "en": [
+          "A high vantage point",
+          "Control and calm",
+          "Or: walled in"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#8C2F2F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Domínio de si",
+          "Ou: monotonia"
+        ],
+        "en": [
+          "Will",
+          "Self-mastery",
+          "Or: monotony"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Neutro, objetivo",
+          "Ou: apatia"
+        ],
+        "en": [
+          "Neutral, objective",
+          "Or: apathy"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Água limpa",
+          "Céu aberto"
+        ],
+        "en": [
+          "Clear water",
+          "Open sky"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Crescimento"
+        ],
+        "en": [
+          "Freshness",
+          "Growth"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Da criação"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Of creation"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Dois de Paus fala de iniciativa, domínio e escolha.",
+      "Ele representa o sucesso que pode virar muralha.",
+      "O foco dele é: decidir o rumo e seguir com toda a força."
+    ],
+    "en": [
+      "The Two of Wands speaks of initiative, mastery and choice.",
+      "It stands for success that can turn into a wall.",
+      "Its focus: deciding the way and going at it with full strength."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Qual é a minha parte no mundo?",
+          "O que está ao meu alcance?",
+          "O que não está?"
+        ],
+        "en": [
+          "What is my part in the world?",
+          "What lies within my reach?",
+          "What doesn't?"
+        ]
+      },
+      "line": {
+        "pt": "“Conheço o tamanho da minha mão.”",
+        "en": "“I know the size of my hand.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Grandes tarefas, grandes metas",
+          "Riqueza e conquista",
+          "Ser o próprio chefe"
+        ],
+        "en": [
+          "Big tasks, big goals",
+          "Wealth and achievement",
+          "Being your own boss"
+        ]
+      },
+      "line": {
+        "pt": "“Tronco grande pede machado grande.”",
+        "en": "“A big stump needs a big axe.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Visão própria do mundo",
+          "Confundir o modelo com a realidade",
+          "Esperar a decisão amadurecer"
+        ],
+        "en": [
+          "Your own view of the world",
+          "Mistaking the model for reality",
+          "Letting the decision ripen"
+        ]
+      },
+      "line": {
+        "pt": "“Um mapa não é o território.”",
+        "en": "“The map isn't the territory.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Tédio no meio do sucesso",
+          "Tristeza de quem já conquistou tudo",
+          "Encanto e medo do novo"
+        ],
+        "en": [
+          "Boredom amid success",
+          "The sadness of having conquered it all",
+          "Wonder and fear at the new"
+        ]
+      },
+      "line": {
+        "pt": "“Conquistar não basta para me alegrar.”",
+        "en": "“Winning isn't enough to make me happy.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Algo novo se desenvolve",
+          "Esperar e então agir",
+          "Antes que o tempo acabe"
+        ],
+        "en": [
+          "Something new is developing",
+          "Wait, then act",
+          "Before time runs out"
+        ]
+      },
+      "line": {
+        "pt": "“Quando a decisão amadurece, eu vou.”",
+        "en": "“When the decision is ripe, I go.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Passos firmes para grandes metas",
+          "Duas pessoas que se ama",
+          "Pouco espaço para o outro"
+        ],
+        "en": [
+          "Steady steps to great goals",
+          "Two people you love",
+          "Little room for the other"
+        ]
+      },
+      "line": {
+        "pt": "“Ver os dois lados antes de escolher.”",
+        "en": "“Seeing both sides before choosing.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Não faça nada pela metade",
+          "Não fique entre a cruz e a espada",
+          "Ponha toda a força"
+        ],
+        "en": [
+          "Don't do things by halves",
+          "Don't get caught between two fires",
+          "Put all your muscle into it"
+        ]
+      },
+      "line": {
+        "pt": "“Meio passo não chega lá.”",
+        "en": "“Half a step won't get you there.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Arrogância e indecisão",
+          "Preso no próprio sucesso",
+          "Visão de um lado só"
+        ],
+        "en": [
+          "Arrogance and indecision",
+          "Trapped by your own success",
+          "A one-sided view"
+        ]
+      },
+      "line": {
+        "pt": "“Muralha alta também prende.”",
+        "en": "“High walls also hold you in.”"
+      }
+    }
+  ]
+}

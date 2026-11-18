@@ -1,0 +1,450 @@
+{
+  "id": "wands07",
+  "number": "7",
+  "name": {
+    "pt": "Sete de Paus",
+    "en": "Seven of Wands"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Paus",
+    "en": "Minor Arcana – Wands"
+  },
+  "intro": {
+    "pt": "Um jovem no alto de uma colina segura um bastão contra seis outros que sobem de baixo. Ele tem a posição de vantagem e a luta o anima. O Sete de Paus fala de coragem, de defender o que é seu e de chegar a um novo patamar.",
+    "en": "A young man on a hilltop holds a wand against six others rising from below. He has the high ground and the fight lifts his spirits. The Seven of Wands speaks of courage, defending what is yours and reaching a new level."
+  },
+  "symbols": [
+    {
+      "key": "figure",
+      "crop": {
+        "x": 0.5,
+        "y": 0.42,
+        "r": 0.22
+      },
+      "title": {
+        "pt": "Jovem no alto",
+        "en": "Young man on the height"
+      },
+      "keywords": {
+        "pt": [
+          "Coragem",
+          "Concentração numa tarefa",
+          "Ou: defensiva"
+        ],
+        "en": [
+          "Valour",
+          "Focus on one task",
+          "Or: on the defensive"
+        ]
+      }
+    },
+    {
+      "key": "wand",
+      "crop": {
+        "x": 0.3,
+        "y": 0.25,
+        "r": 0.11
+      },
+      "title": {
+        "pt": "Bastão erguido",
+        "en": "Raised wand"
+      },
+      "keywords": {
+        "pt": [
+          "Assim em cima, como embaixo",
+          "Energia direcionada",
+          "Ficar por cima"
+        ],
+        "en": [
+          "As above, so below",
+          "Directed energy",
+          "Staying on top"
+        ]
+      }
+    },
+    {
+      "key": "wands",
+      "crop": {
+        "x": 0.45,
+        "y": 0.76,
+        "r": 0.28
+      },
+      "title": {
+        "pt": "Seis bastões de baixo",
+        "en": "Six wands from below"
+      },
+      "keywords": {
+        "pt": [
+          "Escada da carreira",
+          "Tarefas que elevam",
+          "Ou: ataque"
+        ],
+        "en": [
+          "The ladder of a career",
+          "Tasks that raise you",
+          "Or: attack"
+        ]
+      }
+    },
+    {
+      "key": "shoes",
+      "crop": {
+        "x": 0.15,
+        "y": 0.83,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Bota e sapato diferentes",
+        "en": "Boot and shoe"
+      },
+      "keywords": {
+        "pt": [
+          "Selvagem e civilizado",
+          "Mais vivacidade",
+          "Proteção"
+        ],
+        "en": [
+          "Wild and cultivated",
+          "More liveliness",
+          "Protection"
+        ]
+      }
+    },
+    {
+      "key": "hill",
+      "crop": {
+        "x": 0.72,
+        "y": 0.88,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Colina",
+        "en": "Hillock"
+      },
+      "keywords": {
+        "pt": [
+          "Boa posição",
+          "Experiência de pico",
+          "Ou: arrogância"
+        ],
+        "en": [
+          "A good position",
+          "A peak experience",
+          "Or: haughtiness"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade clara",
+          "Mente lúcida",
+          "Ou: raio do nada"
+        ],
+        "en": [
+          "Clear will",
+          "Lucid mind",
+          "Or: a bolt from the blue"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Crescimento",
+          "Esperança",
+          "Imaturidade"
+        ],
+        "en": [
+          "Growth",
+          "Hope",
+          "Immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Ou: inveja, falsa ambição"
+        ],
+        "en": [
+          "Consciousness",
+          "Or: envy, false ambition"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Força vital"
+        ],
+        "en": [
+          "Will",
+          "Life force"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Enraizado"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Grounded"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Sete de Paus fala de coragem, luta e novo patamar.",
+      "Ele representa a energia que se ergue acima da dúvida.",
+      "O foco dele é: manter-se firme e decidido."
+    ],
+    "en": [
+      "The Seven of Wands speaks of courage, struggle and a new level.",
+      "It stands for energy rising above doubt.",
+      "Its focus: standing firm and decided."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Queime os barcos na outra margem",
+          "Crescer e mostrar sua luz",
+          "Deixar o passado para trás"
+        ],
+        "en": [
+          "Burn your boats on the far shore",
+          "Grow and let your light show",
+          "Leaving the past behind"
+        ]
+      },
+      "line": {
+        "pt": "“Já cheguei: não preciso do barco.”",
+        "en": "“I've arrived: I don't need the boat.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Negociação, concorrência",
+          "Sucesso: você está no alto",
+          "Tarefas maiores, novas energias"
+        ],
+        "en": [
+          "Negotiation, competition",
+          "Success: you're on top",
+          "Bigger tasks, new energies"
+        ]
+      },
+      "line": {
+        "pt": "“Cada degrau me prepara para o próximo.”",
+        "en": "“Each rung prepares me for the next.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Discussões, debates",
+          "Esforço calmo e bem dirigido",
+          "Ou: indecisão e perplexidade"
+        ],
+        "en": [
+          "Discussion, debate",
+          "Calm, well-directed effort",
+          "Or: indecision and perplexity"
+        ]
+      },
+      "line": {
+        "pt": "“Um rumo claro dissolve a ansiedade.”",
+        "en": "“A clear course dissolves anxiety.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Adrenalina da luta",
+          "Sentir-se vivo",
+          "Excesso de atividade não ajuda"
+        ],
+        "en": [
+          "The adrenaline of struggle",
+          "Feeling alive",
+          "Overactivity doesn't help"
+        ]
+      },
+      "line": {
+        "pt": "“Esforço sem pressa rende mais.”",
+        "en": "“Unhurried effort goes further.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Subir acima do desânimo",
+          "Exaltação",
+          "Ou: ansiedade, constrangimento"
+        ],
+        "en": [
+          "Rising above low spirits",
+          "Exhilaration",
+          "Or: anxiety, embarrassment"
+        ]
+      },
+      "line": {
+        "pt": "“Lutar me lembra que estou vivo.”",
+        "en": "“Fighting reminds me I'm alive.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Um novo nível",
+          "Esforço sem pressa",
+          "Crescimento por etapas"
+        ],
+        "en": [
+          "A new level",
+          "Unhurried effort",
+          "Growth in stages"
+        ]
+      },
+      "line": {
+        "pt": "“Tudo que vive cresce por etapas.”",
+        "en": "“Everything that lives grows in stages.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "No amor, crescer por etapas",
+          "Ou: a situação se inverteu",
+          "Cuidado com o controle"
+        ],
+        "en": [
+          "In love, growing in stages",
+          "Or: the tables have turned",
+          "Beware of control"
+        ]
+      },
+      "line": {
+        "pt": "“Amor que cresce passa por fases.”",
+        "en": "“Love that grows goes through phases.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Seus atos mudam os fatos",
+          "Você importa",
+          "Desça do pedestal quando precisar"
+        ],
+        "en": [
+          "Your actions change the facts",
+          "You matter",
+          "Get off your high horse when needed"
+        ]
+      },
+      "line": {
+        "pt": "“Eu importo, e isso é um fato.”",
+        "en": "“I matter, and that's a fact.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Bloqueios e resistência inútil",
+          "Arrogância, mania de controle",
+          "Indecisão"
+        ],
+        "en": [
+          "Blockages and needless resistance",
+          "Haughtiness, a control complex",
+          "Indecision"
+        ]
+      },
+      "line": {
+        "pt": "“Defender tudo é não avançar em nada.”",
+        "en": "“Defending everything means advancing nowhere.”"
+      }
+    }
+  ]
+}

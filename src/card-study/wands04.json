@@ -1,0 +1,489 @@
+{
+  "id": "wands04",
+  "number": "4",
+  "name": {
+    "pt": "Quatro de Paus",
+    "en": "Four of Wands"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Paus",
+    "en": "Minor Arcana – Wands"
+  },
+  "intro": {
+    "pt": "Quatro bastões altos sustentam uma guirlanda de flores e frutos; duas figuras erguem buquês e saem dançando de um castelo, seguidas por outras. É celebração, harmonia e alegria de viver em casa. Mas os bastões são enormes, e as pessoas, pequenas.",
+    "en": "Four tall wands hold up a garland of flowers and fruit; two figures raise bouquets and dance out of a castle, followed by others. This is celebration, harmony and the joy of living at home. But the wands are huge, and the people small."
+  },
+  "symbols": [
+    {
+      "key": "garland",
+      "crop": {
+        "x": 0.5,
+        "y": 0.3,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Guirlanda de flores e frutos",
+        "en": "Garland of flowers and fruit"
+      },
+      "keywords": {
+        "pt": [
+          "Sucesso e prazer",
+          "Fertilidade",
+          "Ou: frutos fora de alcance"
+        ],
+        "en": [
+          "Success and enjoyment",
+          "Fruitfulness",
+          "Or: fruit out of reach"
+        ]
+      }
+    },
+    {
+      "key": "figures",
+      "crop": {
+        "x": 0.47,
+        "y": 0.67,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Duas figuras com buquês",
+        "en": "Two figures with bouquets"
+      },
+      "keywords": {
+        "pt": [
+          "Boas-vindas ou despedida",
+          "Euforia",
+          "Ou: grito de ajuda"
+        ],
+        "en": [
+          "Welcome or farewell",
+          "Elation",
+          "Or: a cry for help"
+        ]
+      }
+    },
+    {
+      "key": "castle",
+      "crop": {
+        "x": 0.53,
+        "y": 0.52,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Castelo",
+        "en": "Castle"
+      },
+      "keywords": {
+        "pt": [
+          "Segurança e identidade",
+          "Lar",
+          "Ou: domínio alheio"
+        ],
+        "en": [
+          "Safety and identity",
+          "Home",
+          "Or: someone else's rule"
+        ]
+      }
+    },
+    {
+      "key": "group",
+      "crop": {
+        "x": 0.12,
+        "y": 0.78,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Pequeno grupo",
+        "en": "Small group"
+      },
+      "keywords": {
+        "pt": [
+          "Dança e festa",
+          "Vida e movimento",
+          "Ou: agitação demais"
+        ],
+        "en": [
+          "Dancing and merrymaking",
+          "Life and movement",
+          "Or: too much busyness"
+        ]
+      }
+    },
+    {
+      "key": "wands",
+      "crop": {
+        "x": 0.15,
+        "y": 0.4,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Bastões enormes",
+        "en": "Huge wands"
+      },
+      "keywords": {
+        "pt": [
+          "Energias altas",
+          "Raízes para ir alto",
+          "Ou: algo te deixa pequeno"
+        ],
+        "en": [
+          "High energies",
+          "Roots to climb high",
+          "Or: something keeps you small"
+        ]
+      }
+    },
+    {
+      "key": "bridge",
+      "crop": {
+        "x": 0.89,
+        "y": 0.73,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Ponte",
+        "en": "Bridge"
+      },
+      "keywords": {
+        "pt": [
+          "Unir opostos",
+          "Passagem",
+          "Sair dos muros"
+        ],
+        "en": [
+          "Bridging opposites",
+          "A threshold",
+          "Leaving the walls"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Alegria de viver",
+          "Consciência",
+          "Inspiração"
+        ],
+        "en": [
+          "Joy of life",
+          "Consciousness",
+          "Inspiration"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão",
+          "Coração"
+        ],
+        "en": [
+          "Passion",
+          "Heart"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Fertilidade"
+        ],
+        "en": [
+          "Freshness",
+          "Fruitfulness"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Imparcialidade",
+          "Ou: sem acesso à própria grandeza"
+        ],
+        "en": [
+          "Impartiality",
+          "Or: no access to your own greatness"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Leveza",
+          "Espiritualidade"
+        ],
+        "en": [
+          "Lightness",
+          "Spirituality"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Enraizado"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Grounded"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Quatro de Paus fala de festa, harmonia e prosperidade.",
+      "Ele representa a alegria que sai dos muros para celebrar.",
+      "O foco dele é: viver com mais vigor sem se perder no tamanho da festa."
+    ],
+    "en": [
+      "The Four of Wands speaks of celebration, harmony and prosperity.",
+      "It stands for joy that steps out of the walls to celebrate.",
+      "Its focus: living with more vigour without getting lost in the party."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Vá em frente",
+          "Viver com as contradições",
+          "Dançar a vida"
+        ],
+        "en": [
+          "Go for it",
+          "Living with life's contradictions",
+          "Dancing life"
+        ]
+      },
+      "line": {
+        "pt": "“Faço as contradições dançarem.”",
+        "en": "“I get the contradictions dancing.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Prosperidade e trabalho concluído",
+          "Coloque mais vigor na vida",
+          "Metas valiosas alcançadas"
+        ],
+        "en": [
+          "Prosperity and finished work",
+          "Put more vigour into life",
+          "Worthwhile goals reached"
+        ]
+      },
+      "line": {
+        "pt": "“Mais vida, mais colheita.”",
+        "en": "“More life, more harvest.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Reconhecer metas inatingíveis",
+          "Soltar expectativas altas demais",
+          "Manter o controle das coisas"
+        ],
+        "en": [
+          "Recognising unreachable goals",
+          "Letting go of expectations set too high",
+          "Keeping things in hand"
+        ]
+      },
+      "line": {
+        "pt": "“Sei quando é hora de soltar.”",
+        "en": "“I know when it's time to let go.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Energia alta",
+          "Vitalidade e animação",
+          "Raízes internas para crescer"
+        ],
+        "en": [
+          "High energy",
+          "Vitality and pep",
+          "Inner roots to grow tall"
+        ]
+      },
+      "line": {
+        "pt": "“Raiz funda, galho alto.”",
+        "en": "“Deep roots, high branches.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Alegria e otimismo",
+          "Sentir-se em casa",
+          "Felicidade que não se bloqueia"
+        ],
+        "en": [
+          "Joy and optimism",
+          "Feeling at home",
+          "Happiness that can't be blocked"
+        ]
+      },
+      "line": {
+        "pt": "“A alegria me leva junto.”",
+        "en": "“Joy sweeps me along.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Tempo de colheita doméstica",
+          "Paz e repouso",
+          "Um limiar: chegada ou partida"
+        ],
+        "en": [
+          "A time of home harvest",
+          "Peace and rest",
+          "A threshold: arrival or departure"
+        ]
+      },
+      "line": {
+        "pt": "“Hora de celebrar o que foi feito.”",
+        "en": "“Time to celebrate what's been done.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Paixão quente e cabeça fria",
+          "Espaço para cada um crescer",
+          "Lar, harmonia, concórdia"
+        ],
+        "en": [
+          "Hot passion and a cool head",
+          "Room for each to grow",
+          "Home, harmony, concord"
+        ]
+      },
+      "line": {
+        "pt": "“Juntos, mas cada um inteiro.”",
+        "en": "“Together, each one whole.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Crie raízes por dentro",
+          "Ouse viver com mais força",
+          "Aprecie o que você tem"
+        ],
+        "en": [
+          "Put down roots inside",
+          "Dare to live more vigorously",
+          "Appreciate what you have"
+        ]
+      },
+      "line": {
+        "pt": "“O que tenho já é motivo de festa.”",
+        "en": "“What I have is reason to celebrate.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Ser deixado de lado, sentir-se pequeno",
+          "Perder-se na multidão",
+          "Expectativas exageradas, obsessão"
+        ],
+        "en": [
+          "Being sold short, feeling small",
+          "Getting lost in the crowd",
+          "Exaggerated expectations, obsession"
+        ]
+      },
+      "line": {
+        "pt": "“Festa demais também cansa.”",
+        "en": "“Too much celebration wears you out too.”"
+      }
+    }
+  ]
+}

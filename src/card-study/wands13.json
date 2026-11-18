@@ -1,0 +1,481 @@
+{
+  "id": "wands13",
+  "number": "13",
+  "name": {
+    "pt": "Rainha de Paus",
+    "en": "Queen of Wands"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Paus",
+    "en": "Minor Arcana – Wands"
+  },
+  "intro": {
+    "pt": "Uma rainha vestida de amarelo está sentada de pernas abertas num trono com leões, segurando um bastão florido e um girassol; um gato preto guarda seus pés. Ela é o fogo vivido com calor e paixão, firme no mundo. Ama a vida e as pessoas, e a vida parece responder protegendo-a.",
+    "en": "A queen in yellow sits with her legs apart on a lion throne, holding a flowering wand and a sunflower; a black cat guards her feet. She is fire lived with warmth and passion, firmly in the world. She loves life and people, and life seems to answer by protecting her."
+  },
+  "symbols": [
+    {
+      "key": "crown",
+      "crop": {
+        "x": 0.43,
+        "y": 0.2,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Rainha de coroa florida",
+        "en": "Queen with a flowering crown"
+      },
+      "keywords": {
+        "pt": [
+          "Relaxada e alerta",
+          "Consciente das próprias forças",
+          "Dignidade"
+        ],
+        "en": [
+          "Relaxed and alert",
+          "Aware of her powers",
+          "Dignity"
+        ]
+      }
+    },
+    {
+      "key": "cat",
+      "crop": {
+        "x": 0.42,
+        "y": 0.8,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Gato preto",
+        "en": "Black cat"
+      },
+      "keywords": {
+        "pt": [
+          "Força do instinto",
+          "Sobrevivente, imprevisível",
+          "Ou: astúcia"
+        ],
+        "en": [
+          "The power of instinct",
+          "A survivor, unpredictable",
+          "Or: craftiness"
+        ]
+      }
+    },
+    {
+      "key": "sunflower",
+      "crop": {
+        "x": 0.76,
+        "y": 0.32,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Girassol",
+        "en": "Sunflower"
+      },
+      "keywords": {
+        "pt": [
+          "Vitalidade",
+          "Sempre voltada ao sol",
+          "Ou: ignorar o lado escuro"
+        ],
+        "en": [
+          "Vitality",
+          "Always facing the sun",
+          "Or: ignoring the dark side"
+        ]
+      }
+    },
+    {
+      "key": "lions",
+      "crop": {
+        "x": 0.13,
+        "y": 0.62,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Leões no trono",
+        "en": "Lions on the throne"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão e força",
+          "Vontade verdadeira",
+          "Ou: exibir-se"
+        ],
+        "en": [
+          "Passion and strength",
+          "True will",
+          "Or: showing off"
+        ]
+      }
+    },
+    {
+      "key": "banner",
+      "crop": {
+        "x": 0.4,
+        "y": 0.09,
+        "r": 0.11
+      },
+      "title": {
+        "pt": "Encosto com leões vermelhos",
+        "en": "Back with red lions"
+      },
+      "keywords": {
+        "pt": [
+          "Ligar céu e terra",
+          "Desejo e realidade",
+          "O que está às costas"
+        ],
+        "en": [
+          "Linking heaven and earth",
+          "Wish and reality",
+          "What's behind her"
+        ]
+      }
+    },
+    {
+      "key": "wand",
+      "crop": {
+        "x": 0.22,
+        "y": 0.4,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Bastão florido",
+        "en": "Flowering wand"
+      },
+      "keywords": {
+        "pt": [
+          "Vida e animação",
+          "Força criativa",
+          "Sexualidade"
+        ],
+        "en": [
+          "Life and animation",
+          "Creative power",
+          "Sexuality"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alerta",
+          "Ou: ilusão, inveja"
+        ],
+        "en": [
+          "Consciousness",
+          "Alertness",
+          "Or: delusion, envy"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Objetividade",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Objectivity",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Destino e vontade",
+          "Céu aberto"
+        ],
+        "en": [
+          "Fate and will",
+          "Open sky"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "O desconhecido",
+          "Ponto cego"
+        ],
+        "en": [
+          "The unknown",
+          "A blind spot"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão",
+          "Coração inteiro"
+        ],
+        "en": [
+          "Passion",
+          "Wholeheartedness"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Vitalidade",
+          "Calor"
+        ],
+        "en": [
+          "Vitality",
+          "Warmth"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "A Rainha de Paus fala de calor, paixão e amor pela vida.",
+      "Ela representa o fogo vivido com alegria e firmeza.",
+      "O foco dela é: ousar viver o entusiasmo e confiar na força criativa."
+    ],
+    "en": [
+      "The Queen of Wands speaks of warmth, passion and love of life.",
+      "She stands for fire lived with joy and steadiness.",
+      "Her focus: daring to live her enthusiasm and trusting her creative power."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Confiar no potencial criativo",
+          "Vida nova de onde parecia vazio",
+          "A vida responde a quem a ama"
+        ],
+        "en": [
+          "Trusting creative potential",
+          "New life from what seemed void",
+          "Life answers those who love it"
+        ]
+      },
+      "line": {
+        "pt": "“Até o vazio pode florescer.”",
+        "en": "“Even the void can bloom.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Sucesso nos negócios",
+          "Carreira e sobrevivência",
+          "Obstáculos como oportunidade"
+        ],
+        "en": [
+          "Success in business",
+          "Career and survival",
+          "Obstacles as opportunities"
+        ]
+      },
+      "line": {
+        "pt": "“Oposição me faz repensar e crescer.”",
+        "en": "“Opposition makes me rethink and grow.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Qual é a minha motivação?",
+          "O que me atrai?",
+          "Onde posso ser como sou?"
+        ],
+        "en": [
+          "What is my inner motivation?",
+          "What attracts me?",
+          "Where can I be as I am?"
+        ]
+      },
+      "line": {
+        "pt": "“Sei o que me move.”",
+        "en": "“I know what moves me.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Energia sexual",
+          "Vontade de viver",
+          "Sentada firme no mundo"
+        ],
+        "en": [
+          "Sexual energy",
+          "The will to live",
+          "Sitting firm in the world"
+        ]
+      },
+      "line": {
+        "pt": "“Meu corpo está do lado da vida.”",
+        "en": "“My body is on life's side.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Calor e paixão",
+          "Ama a vida e as pessoas",
+          "Ou: amargura se a vida parece injusta"
+        ],
+        "en": [
+          "Warmth and passion",
+          "Loves life and people",
+          "Or: bitterness if life seems unfair"
+        ]
+      },
+      "line": {
+        "pt": "“Amar a vida é a minha proteção.”",
+        "en": "“Loving life is my protection.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Brincadeira, ação e aventura",
+          "Afiar o instinto de caça",
+          "Apoio natural nas crises"
+        ],
+        "en": [
+          "Play, action and adventure",
+          "Sharpening the hunting instinct",
+          "Natural support in a crisis"
+        ]
+      },
+      "line": {
+        "pt": "“Ajudo porque quero, não por dever.”",
+        "en": "“I help because I want to, not out of duty.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Ouse viver seu entusiasmo",
+          "Mostre o que tem guardado",
+          "Una destino e vontade"
+        ],
+        "en": [
+          "Dare to live your enthusiasm",
+          "Let the cat out of the bag",
+          "Marry fate and your will"
+        ]
+      },
+      "line": {
+        "pt": "“Tenho força para cumprir minhas tarefas.”",
+        "en": "“I have the strength for my tasks.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Ciúme, engano, infidelidade",
+          "Exibir-se",
+          "Ignorar o lado escuro"
+        ],
+        "en": [
+          "Jealousy, deceit, infidelity",
+          "Showing off",
+          "Ignoring the dark side"
+        ]
+      },
+      "line": {
+        "pt": "“Sol sem raiz seca.”",
+        "en": "“Sun without roots dries out.”"
+      }
+    }
+  ]
+}

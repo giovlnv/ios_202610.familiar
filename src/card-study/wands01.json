@@ -1,0 +1,442 @@
+{
+  "id": "wands01",
+  "number": "1",
+  "name": {
+    "pt": "Ás de Paus",
+    "en": "Ace of Wands"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Paus",
+    "en": "Minor Arcana – Wands"
+  },
+  "intro": {
+    "pt": "Uma mão sai de uma nuvem segurando um bastão vivo, cheio de folhas brotando. É um presente da vida: força, vontade, vitalidade e vontade de viver. O Ás de Paus é a faísca do começo, o fogo que põe tudo em movimento.",
+    "en": "A hand reaches out of a cloud holding a living wand, its leaves sprouting. It is a gift from life: strength, will, vitality and love of living. The Ace of Wands is the spark of a beginning, the fire that sets everything moving."
+  },
+  "symbols": [
+    {
+      "key": "hand",
+      "crop": {
+        "x": 0.37,
+        "y": 0.58,
+        "r": 0.18
+      },
+      "title": {
+        "pt": "Mão saindo da nuvem",
+        "en": "Hand from the cloud"
+      },
+      "keywords": {
+        "pt": [
+          "Um presente",
+          "Você também é um presente",
+          "Pegue e faça algo"
+        ],
+        "en": [
+          "A gift",
+          "You are a gift too",
+          "Take hold and make something"
+        ]
+      }
+    },
+    {
+      "key": "wand",
+      "crop": {
+        "x": 0.4,
+        "y": 0.25,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Bastão vivo",
+        "en": "Living wand"
+      },
+      "keywords": {
+        "pt": [
+          "Madeira que alimenta o fogo",
+          "Vontade e ação",
+          "Crescimento"
+        ],
+        "en": [
+          "Wood that feeds the fire",
+          "Will and action",
+          "Growth"
+        ]
+      }
+    },
+    {
+      "key": "leaves",
+      "crop": {
+        "x": 0.28,
+        "y": 0.3,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Folhas que caem",
+        "en": "Falling leaves"
+      },
+      "keywords": {
+        "pt": [
+          "Vitalidade e esperança",
+          "Dons recebidos",
+          "Ou: imaturidade"
+        ],
+        "en": [
+          "Vitality and hope",
+          "Gifts received",
+          "Or: immaturity"
+        ]
+      }
+    },
+    {
+      "key": "castle",
+      "crop": {
+        "x": 0.18,
+        "y": 0.73,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Castelo no monte",
+        "en": "Castle on the hill"
+      },
+      "keywords": {
+        "pt": [
+          "Lar e segurança",
+          "Presença no mundo",
+          "Ou: muralhas, controle"
+        ],
+        "en": [
+          "Home and safety",
+          "Presence in the world",
+          "Or: walls, control"
+        ]
+      }
+    },
+    {
+      "key": "river",
+      "crop": {
+        "x": 0.55,
+        "y": 0.81,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Rio e paisagem",
+        "en": "River and landscape"
+      },
+      "keywords": {
+        "pt": [
+          "Continuidade na mudança",
+          "Grandes tarefas",
+          "Estar no fluxo"
+        ],
+        "en": [
+          "Continuity in change",
+          "Great tasks",
+          "Being in the flow"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Enraizado",
+          "Da criação"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Grounded",
+          "Of creation"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Juventude",
+          "Imaturidade"
+        ],
+        "en": [
+          "Freshness",
+          "Youth",
+          "Immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Imparcial",
+          "Ou: apatia, névoa"
+        ],
+        "en": [
+          "Impartial",
+          "Or: apathy, fog"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Ponto de partida",
+          "Novo começo"
+        ],
+        "en": [
+          "Starting point",
+          "New beginning"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Água limpa",
+          "Céu aberto"
+        ],
+        "en": [
+          "Clear water",
+          "Open sky"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Ás de Paus fala de energia, vontade e começo.",
+      "Ele representa a força de vida recebida como presente.",
+      "O foco dele é: agarrar o dia e acender o próprio fogo."
+    ],
+    "en": [
+      "The Ace of Wands speaks of energy, will and beginnings.",
+      "It stands for life force received as a gift.",
+      "Its focus: seizing the day and lighting your own fire."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Passar pelo fogo pelo que se ama",
+          "Fazer algo pela primeira vez",
+          "A força vem como presente"
+        ],
+        "en": [
+          "Going through fire for what you love",
+          "Achieving something for the first time",
+          "The power arrives as a gift"
+        ]
+      },
+      "line": {
+        "pt": "“Bendito o que me faz crescer.”",
+        "en": "“Praise be to what makes me grow.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Criação, invenção, empreendimento",
+          "O ponto de partida de um projeto",
+          "Mostre quem você é"
+        ],
+        "en": [
+          "Creation, invention, enterprise",
+          "The starting point of a project",
+          "Show who you are"
+        ]
+      },
+      "line": {
+        "pt": "“A resposta está no fazer.”",
+        "en": "“The answer lies in the doing.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Vitalidade e energia sexual",
+          "Sangue correndo mais rápido",
+          "Ou: secura, rigidez"
+        ],
+        "en": [
+          "Vitality and sexual energy",
+          "Blood running faster",
+          "Or: dryness, rigidity"
+        ]
+      },
+      "line": {
+        "pt": "“Sinto a seiva subindo.”",
+        "en": "“I feel the sap rising.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Amor pela vida",
+          "Entusiasmo e otimismo",
+          "Humildade diante do que recebeu"
+        ],
+        "en": [
+          "Love of living",
+          "Eagerness and optimism",
+          "Humility for what you received"
+        ]
+      },
+      "line": {
+        "pt": "“A alegria também é um presente.”",
+        "en": "“Joy is a gift too.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Começo de uma situação",
+          "Hora de agir",
+          "Melhor largada possível"
+        ],
+        "en": [
+          "The start of a situation",
+          "Time to act",
+          "The best possible start"
+        ]
+      },
+      "line": {
+        "pt": "“Agora.”",
+        "en": "“Now.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Ser você e crescer para além de si",
+          "Uma mistura explosiva",
+          "Combustível da relação"
+        ],
+        "en": [
+          "Being yourself and growing beyond",
+          "An explosive mix",
+          "Fuel for the relationship"
+        ]
+      },
+      "line": {
+        "pt": "“Duas vontades acesas aquecem a casa.”",
+        "en": "“Two lit wills warm the house.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Aproveite o dia",
+          "Pegue o presente e use-o",
+          "Faça algo ou deixe acontecer"
+        ],
+        "en": [
+          "Seize the day",
+          "Take the gift and use it",
+          "Do something or let it happen"
+        ]
+      },
+      "line": {
+        "pt": "“O fogo é meu: posso acendê-lo.”",
+        "en": "“The fire is mine: I can light it.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Caos e coisas desmoronando",
+          "Começos demais sem consolidar",
+          "Energia sem direção, arrogância"
+        ],
+        "en": [
+          "Chaos and things falling apart",
+          "Too many starts, nothing consolidated",
+          "Undirected energy, overbearing"
+        ]
+      },
+      "line": {
+        "pt": "“Fogo sem rumo queima o que toca.”",
+        "en": "“Aimless fire burns whatever it touches.”"
+      }
+    }
+  ]
+}

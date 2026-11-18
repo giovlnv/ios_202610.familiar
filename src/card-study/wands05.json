@@ -1,0 +1,444 @@
+{
+  "id": "wands05",
+  "number": "5",
+  "name": {
+    "pt": "Cinco de Paus",
+    "en": "Five of Wands"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Paus",
+    "en": "Minor Arcana – Wands"
+  },
+  "intro": {
+    "pt": "Cinco jovens batem seus bastões uns nos outros, como numa brincadeira de luta. Ninguém quer ferir ninguém: é competição, jogo e atrito que mantém a vontade viva. O Cinco de Paus é o canteiro de obras da vontade, onde forças diferentes se testam.",
+    "en": "Five young men clash their wands together, like a play fight. No one wants to hurt anyone: this is competition, play and the friction that keeps the will alive. The Five of Wands is the building site of the will, where different forces test each other."
+  },
+  "symbols": [
+    {
+      "key": "crossing",
+      "crop": {
+        "x": 0.6,
+        "y": 0.3,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Bastões cruzados",
+        "en": "Crossed wands"
+      },
+      "keywords": {
+        "pt": [
+          "Jogo e competição",
+          "Atrito que gera calor",
+          "Caos criativo"
+        ],
+        "en": [
+          "Play and competition",
+          "Friction that makes heat",
+          "Creative chaos"
+        ]
+      }
+    },
+    {
+      "key": "youths",
+      "crop": {
+        "x": 0.45,
+        "y": 0.55,
+        "r": 0.35
+      },
+      "title": {
+        "pt": "Jovens lutando",
+        "en": "Youths sparring"
+      },
+      "keywords": {
+        "pt": [
+          "Vontades em disputa",
+          "Cheios de vida",
+          "Ou: mal pensado"
+        ],
+        "en": [
+          "Wills in contest",
+          "Full of life",
+          "Or: half-baked"
+        ]
+      }
+    },
+    {
+      "key": "hat",
+      "crop": {
+        "x": 0.35,
+        "y": 0.41,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Chapéu vermelho",
+        "en": "Red hat"
+      },
+      "keywords": {
+        "pt": [
+          "Entenda o que quer",
+          "Faça o que espera ser feito",
+          "Guardar consigo"
+        ],
+        "en": [
+          "Understand what you want",
+          "Do what is waiting",
+          "Keep it under your hat"
+        ]
+      }
+    },
+    {
+      "key": "dots",
+      "crop": {
+        "x": 0.66,
+        "y": 0.55,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Roupas de cores diferentes",
+        "en": "Clothes of different colours"
+      },
+      "keywords": {
+        "pt": [
+          "Aspectos da vontade",
+          "Comparar e testar",
+          "Formar a vontade"
+        ],
+        "en": [
+          "Aspects of the will",
+          "Comparing and testing",
+          "Shaping the will"
+        ]
+      }
+    },
+    {
+      "key": "ground",
+      "crop": {
+        "x": 0.5,
+        "y": 0.82,
+        "r": 0.16
+      },
+      "title": {
+        "pt": "Chão verde-amarelado",
+        "en": "Yellow-green ground"
+      },
+      "keywords": {
+        "pt": [
+          "Lugar onde as coisas crescem",
+          "Fertilidade",
+          "Ou: imaturidade"
+        ],
+        "en": [
+          "A place where things grow",
+          "Fertility",
+          "Or: unripeness"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Leveza",
+          "Vontade clara",
+          "Ou: ingenuidade"
+        ],
+        "en": [
+          "Lightness",
+          "A clear will",
+          "Or: naivety"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Paixão",
+          "Ira"
+        ],
+        "en": [
+          "Will",
+          "Passion",
+          "Wrath"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Juventude",
+          "Imaturidade"
+        ],
+        "en": [
+          "Freshness",
+          "Youth",
+          "Immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Alegria de viver",
+          "Consciência"
+        ],
+        "en": [
+          "Joy of life",
+          "Consciousness"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Enraizado"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Grounded"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Cinco de Paus fala de competição, jogo e vontade.",
+      "Ele representa o atrito que mantém a energia viva.",
+      "O foco dele é: disputar pelo prazer da ação, sem querer ferir."
+    ],
+    "en": [
+      "The Five of Wands speaks of competition, play and will.",
+      "It stands for the friction that keeps energy alive.",
+      "Its focus: contesting for the joy of action, without meaning to hurt."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "O ser humano é inteiro ao brincar",
+          "O jogo da vida",
+          "A vontade em formação"
+        ],
+        "en": [
+          "Humans are whole at play",
+          "The game of life",
+          "The will taking shape"
+        ]
+      },
+      "line": {
+        "pt": "“Brincar também é levar a vida a sério.”",
+        "en": "“Playing is taking life seriously too.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Concorrência e luta por riqueza",
+          "Trabalho em equipe com atrito",
+          "Não forçar o que ainda não é hora"
+        ],
+        "en": [
+          "Competition and the scramble for riches",
+          "Teamwork with friction",
+          "Not forcing what isn't due yet"
+        ]
+      },
+      "line": {
+        "pt": "“Atrito bom faz a obra andar.”",
+        "en": "“Good friction moves the work along.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Que vontades são desejos de verdade?",
+          "Não definir hoje o que quero amanhã",
+          "Consciente e inconsciente em disputa"
+        ],
+        "en": [
+          "Which wills are truly held desires?",
+          "Not fixing today what I'll want tomorrow",
+          "Conscious and unconscious in contest"
+        ]
+      },
+      "line": {
+        "pt": "“Vontade testada é vontade fresca.”",
+        "en": "“A tested will is a fresh will.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Energia em movimento",
+          "Vitalidade jovem",
+          "Fonte de vitalidade"
+        ],
+        "en": [
+          "Energy in motion",
+          "Youthful vitality",
+          "A source of vitality"
+        ]
+      },
+      "line": {
+        "pt": "“Movimento mantém a chama acesa.”",
+        "en": "“Movement keeps the flame alight.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Novos caminhos a explorar",
+          "Disputa ainda sem vencedor",
+          "Em crescimento"
+        ],
+        "en": [
+          "New avenues to explore",
+          "A contest with no winner yet",
+          "Still growing"
+        ]
+      },
+      "line": {
+        "pt": "“O jogo ainda está em aberto.”",
+        "en": "“The game is still open.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Crie espaços de brincar no dia a dia",
+          "Um quarto só seu",
+          "Comunicar-se pela disputa"
+        ],
+        "en": [
+          "Make play areas in your daily routine",
+          "A room of your own",
+          "Communicating through contest"
+        ]
+      },
+      "line": {
+        "pt": "“Brincar junto aproxima.”",
+        "en": "“Playing together brings you closer.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Lute pelo prazer, não para ferir",
+          "Respeite as regras do jogo",
+          "Teste suas vontades"
+        ],
+        "en": [
+          "Contest for joy, not to hurt",
+          "Respect the rules of the game",
+          "Test your wishes"
+        ]
+      },
+      "line": {
+        "pt": "“Jogo limpo vale mais que vitória.”",
+        "en": "“Fair play is worth more than winning.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Disputas e trapaças",
+          "Regras abandonadas, luta para ferir",
+          "Mesquinhez, falta de rumo"
+        ],
+        "en": [
+          "Disputes and trickery",
+          "Rules dropped, fighting to hurt",
+          "Pettiness, lack of a plan"
+        ]
+      },
+      "line": {
+        "pt": "“Quando o jogo vira guerra, o fogo apaga.”",
+        "en": "“When the game turns into war, the fire goes out.”"
+      }
+    }
+  ]
+}

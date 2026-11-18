@@ -1,0 +1,446 @@
+{
+  "id": "wands06",
+  "number": "6",
+  "name": {
+    "pt": "Seis de Paus",
+    "en": "Six of Wands"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Paus",
+    "en": "Minor Arcana – Wands"
+  },
+  "intro": {
+    "pt": "Um cavaleiro coroado de louros desfila num cavalo branco, com uma coroa de vitória presa ao bastão, cercado por gente a pé com seus bastões. É a vitória e a boa notícia. A confiança em si inspira os outros e produz o próprio sucesso que espera.",
+    "en": "A horseman crowned with laurel rides a white horse, a victory wreath tied to his wand, surrounded by people on foot with their wands. This is victory and good news. Self-belief inspires others and produces the very success it expects."
+  },
+  "symbols": [
+    {
+      "key": "rider",
+      "crop": {
+        "x": 0.4,
+        "y": 0.45,
+        "r": 0.22
+      },
+      "title": {
+        "pt": "Cavaleiro com louros",
+        "en": "Laurelled rider"
+      },
+      "keywords": {
+        "pt": [
+          "Líder, vencedor",
+          "Vontade consciente",
+          "Ou: arrogância"
+        ],
+        "en": [
+          "Leader, victor",
+          "Conscious will",
+          "Or: arrogance"
+        ]
+      }
+    },
+    {
+      "key": "wreath",
+      "crop": {
+        "x": 0.62,
+        "y": 0.2,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Coroa de louros no bastão",
+        "en": "Laurel wreath on the wand"
+      },
+      "keywords": {
+        "pt": [
+          "Vitória e homenagem",
+          "Merecimento",
+          "O eu superior"
+        ],
+        "en": [
+          "Victory and remembrance",
+          "Just deserts",
+          "The higher self"
+        ]
+      }
+    },
+    {
+      "key": "horse",
+      "crop": {
+        "x": 0.82,
+        "y": 0.56,
+        "r": 0.18
+      },
+      "title": {
+        "pt": "Cavalo",
+        "en": "Horse"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade inconsciente",
+          "Vitalidade",
+          "Ou: impulso cego"
+        ],
+        "en": [
+          "Unconscious will",
+          "Vitality",
+          "Or: blind impulse"
+        ]
+      }
+    },
+    {
+      "key": "caparison",
+      "crop": {
+        "x": 0.75,
+        "y": 0.66,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Manta verde",
+        "en": "Green caparison"
+      },
+      "keywords": {
+        "pt": [
+          "Potencial de crescimento",
+          "Esperança",
+          "Ou: impulsos escondidos"
+        ],
+        "en": [
+          "Growth potential",
+          "Hope",
+          "Or: hidden drives"
+        ]
+      }
+    },
+    {
+      "key": "crowd",
+      "crop": {
+        "x": 0.1,
+        "y": 0.52,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Gente a pé",
+        "en": "People on foot"
+      },
+      "keywords": {
+        "pt": [
+          "Cooperar de boa vontade",
+          "Apoio",
+          "Ou: dependência"
+        ],
+        "en": [
+          "Willing cooperation",
+          "Support",
+          "Or: dependency"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Clareza",
+          "Leveza",
+          "Ou: ingenuidade"
+        ],
+        "en": [
+          "Clarity",
+          "Lightness",
+          "Or: naivety"
+        ]
+      }
+    },
+    {
+      "hex": "#8C2F2F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Força vital",
+          "Paixão",
+          "Vontade"
+        ],
+        "en": [
+          "Lifeblood",
+          "Passion",
+          "Will"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Sabedoria",
+          "Iluminação",
+          "Ou: inveja"
+        ],
+        "en": [
+          "Wisdom",
+          "Enlightenment",
+          "Or: envy"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Esperança",
+          "Frescor",
+          "Imaturidade"
+        ],
+        "en": [
+          "Hope",
+          "Freshness",
+          "Immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Inocência",
+          "Completude"
+        ],
+        "en": [
+          "Innocence",
+          "Completion"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Seis de Paus fala de vitória, liderança e confiança.",
+      "Ele representa o sucesso que nasce de acreditar em si.",
+      "O foco dele é: vencer junto, para que muitos ganhem."
+    ],
+    "en": [
+      "The Six of Wands speaks of victory, leadership and confidence.",
+      "It stands for success born of believing in yourself.",
+      "Its focus: winning together, so that many gain."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Fazer parte de algo maior",
+          "Avanço pessoal pelo progresso comum",
+          "Fé na vida que se partilha"
+        ],
+        "en": [
+          "Taking part in something greater",
+          "Personal progress through shared progress",
+          "Sharing your faith in life"
+        ]
+      },
+      "line": {
+        "pt": "“Juntos passamos por tudo.”",
+        "en": "“Together we get through anything.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Vitória e boas notícias",
+          "Trabalho em equipe",
+          "Assuma a liderança"
+        ],
+        "en": [
+          "Victory and good news",
+          "Teamwork",
+          "Take the lead"
+        ]
+      },
+      "line": {
+        "pt": "“Quando muitos ganham, eu ganho mais.”",
+        "en": "“When many win, I win more.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Formular a vontade com clareza",
+          "Otimismo que cria sucesso",
+          "Metas valiosas"
+        ],
+        "en": [
+          "Stating your will clearly",
+          "Optimism that creates success",
+          "Worthwhile aims"
+        ]
+      },
+      "line": {
+        "pt": "“Acreditar já é metade do caminho.”",
+        "en": "“Believing is half the journey.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Confiança em si",
+          "Expectativa realizada",
+          "Ou: medo, desconfiança"
+        ],
+        "en": [
+          "Self-confidence",
+          "Hope crowned",
+          "Or: fear, suspicion"
+        ]
+      },
+      "line": {
+        "pt": "“A coroa da esperança é minha.”",
+        "en": "“The crown of hope is mine.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Ocasião de crescer",
+          "Chega de meias medidas",
+          "Ou: atraso indefinido"
+        ],
+        "en": [
+          "A chance to grow",
+          "No more half measures",
+          "Or: indefinite delay"
+        ]
+      },
+      "line": {
+        "pt": "“É hora de ir com tudo.”",
+        "en": "“It's time to go all in.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Saia da concha",
+          "Mostre forças e fraquezas",
+          "Também no amor e no sexo"
+        ],
+        "en": [
+          "Come out of your shell",
+          "Show strengths and weaknesses",
+          "In love and sex too"
+        ]
+      },
+      "line": {
+        "pt": "“Me mostro inteiro.”",
+        "en": "“I show myself whole.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Lidere com responsabilidade",
+          "Respeite forças e fraquezas",
+          "Não se contente com menos"
+        ],
+        "en": [
+          "Lead responsibly",
+          "Respect strengths and weaknesses",
+          "Don't settle for less"
+        ]
+      },
+      "line": {
+        "pt": "“Liderar é coordenar, não mandar.”",
+        "en": "“Leading is coordinating, not commanding.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Pretensão e autoengano",
+          "Falso otimismo, bravata",
+          "Derrotismo e traição"
+        ],
+        "en": [
+          "Pretension and self-delusion",
+          "False optimism, bluster",
+          "Defeatism and betrayal"
+        ]
+      },
+      "line": {
+        "pt": "“Desconfiança pode criar a traição.”",
+        "en": "“Suspicion can breed betrayal.”"
+      }
+    }
+  ]
+}

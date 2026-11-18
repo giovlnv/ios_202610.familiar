@@ -1,0 +1,424 @@
+{
+  "id": "wands09",
+  "number": "9",
+  "name": {
+    "pt": "Nove de Paus",
+    "en": "Nine of Wands"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Paus",
+    "en": "Minor Arcana – Wands"
+  },
+  "intro": {
+    "pt": "Um homem de cabeça enfaixada segura firme um bastão e olha de lado, desconfiado, com oito bastões em pé atrás de si, como uma cerca. Ele já enfrentou muita coisa e está pronto para a próxima luta. O Nove de Paus é força na resistência, mas também a tensão de quem nunca baixa a guarda.",
+    "en": "A man with a bandaged head grips a wand and glances sideways, wary, with eight wands standing behind him like a fence. He has faced a lot and is ready for the next fight. The Nine of Wands is strength in resistance, but also the tension of someone who never lowers their guard."
+  },
+  "symbols": [
+    {
+      "key": "face",
+      "crop": {
+        "x": 0.6,
+        "y": 0.3,
+        "r": 0.11
+      },
+      "title": {
+        "pt": "Olhar atento e cabeça enfaixada",
+        "en": "Watchful look, bandaged head"
+      },
+      "keywords": {
+        "pt": [
+          "Medo ou alerta",
+          "Ferida da alma",
+          "Ver para entender"
+        ],
+        "en": [
+          "Fear or alertness",
+          "A wound of the soul",
+          "Seeing in order to understand"
+        ]
+      }
+    },
+    {
+      "key": "hands",
+      "crop": {
+        "x": 0.66,
+        "y": 0.43,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Mãos no bastão",
+        "en": "Hands on the wand"
+      },
+      "keywords": {
+        "pt": [
+          "Uma coisa de cada vez",
+          "Pegar com as duas mãos",
+          "Ou: não conseguir soltar"
+        ],
+        "en": [
+          "One thing at a time",
+          "Grasping with both hands",
+          "Or: unable to let go"
+        ]
+      }
+    },
+    {
+      "key": "palisade",
+      "crop": {
+        "x": 0.2,
+        "y": 0.4,
+        "r": 0.18
+      },
+      "title": {
+        "pt": "Bastões atrás, como cerca",
+        "en": "Wands behind like a fence"
+      },
+      "keywords": {
+        "pt": [
+          "Recursos ou problemas",
+          "O que está às costas",
+          "Graus de desenvolvimento"
+        ],
+        "en": [
+          "Resources or problems",
+          "What's behind your back",
+          "Degrees of development"
+        ]
+      }
+    },
+    {
+      "key": "country",
+      "crop": {
+        "x": 0.3,
+        "y": 0.71,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Campo verde",
+        "en": "Green countryside"
+      },
+      "keywords": {
+        "pt": [
+          "Crescimento",
+          "Esperança",
+          "Ou: mal acabado"
+        ],
+        "en": [
+          "Growth",
+          "Hope",
+          "Or: half-baked"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Vontade"
+        ],
+        "en": [
+          "Open sky",
+          "Will"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Neutralidade",
+          "Ou: apatia"
+        ],
+        "en": [
+          "Neutrality",
+          "Or: apathy"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Crescimento",
+          "Esperança",
+          "Imaturidade"
+        ],
+        "en": [
+          "Growth",
+          "Hope",
+          "Immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Ira"
+        ],
+        "en": [
+          "Will",
+          "Wrath"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Da terra"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Of the earth"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Nove de Paus fala de resistência, alerta e defesa.",
+      "Ele representa quem lutou muito e segue de guarda alta.",
+      "O foco dele é: usar a força sem ficar preso no hábito da luta."
+    ],
+    "en": [
+      "The Nine of Wands speaks of resilience, alertness and defence.",
+      "It stands for someone who has fought a lot and keeps their guard up.",
+      "Its focus: using strength without getting trapped in the habit of fighting."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Busque a sua própria visão",
+          "Atenção desperta",
+          "Vigiar como um batedor"
+        ],
+        "en": [
+          "Seek your own vision",
+          "Wakefulness",
+          "Watching like a scout"
+        ]
+      },
+      "line": {
+        "pt": "“Minha visão é o meu guia.”",
+        "en": "“My vision is my guide.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Força na oposição",
+          "Atraso, adiamento",
+          "Pôr em ordem muitos impulsos"
+        ],
+        "en": [
+          "Strength in opposition",
+          "Delay, adjournment",
+          "Putting many impulses in order"
+        ]
+      },
+      "line": {
+        "pt": "“Sei aguentar, mas também sei avançar.”",
+        "en": "“I can hold out, but I can also move forward.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Perceber o que se passa às costas",
+          "Largar suposições antigas",
+          "Ou: indecisão"
+        ],
+        "en": [
+          "Noticing what's behind your back",
+          "Dropping old assumptions",
+          "Or: indecision"
+        ]
+      },
+      "line": {
+        "pt": "“Ver o que acontece me liberta do medo.”",
+        "en": "“Seeing what happens frees me from fear.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Força física e olhos atentos",
+          "Corpo rígido, ombros tensos",
+          "Energia gasta em ficar de guarda"
+        ],
+        "en": [
+          "Physical strength and sharp eyes",
+          "A stiff body, tense shoulders",
+          "Energy spent staying on guard"
+        ]
+      },
+      "line": {
+        "pt": "“Descansar também é força.”",
+        "en": "“Resting is strength too.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Ferida emocional",
+          "Medo intuitivo",
+          "Coragem dos próprios sentimentos"
+        ],
+        "en": [
+          "An emotional wound",
+          "Intuitive fear",
+          "Courage of your own feelings"
+        ]
+      },
+      "line": {
+        "pt": "“A ferida não precisa ser escudo.”",
+        "en": "“The wound doesn't have to be a shield.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Mudança e transformação",
+          "Tempo de pausa",
+          "Novos impulsos a acolher"
+        ],
+        "en": [
+          "Growth and transformation",
+          "A pause",
+          "New impulses to welcome"
+        ]
+      },
+      "line": {
+        "pt": "“O próximo passo pode ser outro.”",
+        "en": "“The next step can be a different one.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Deixe velhos hábitos",
+          "Vá além dos seus limites",
+          "Ou: ver só inimigos"
+        ],
+        "en": [
+          "Drop old habits",
+          "Go beyond your limits",
+          "Or: seeing only enemies"
+        ]
+      },
+      "line": {
+        "pt": "“Nem todo mundo vem para lutar.”",
+        "en": "“Not everyone comes to fight.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Dê um passo à frente",
+          "Domine seus medos",
+          "Procure outra abordagem"
+        ],
+        "en": [
+          "Step forward",
+          "Master your fears",
+          "Look for another approach"
+        ]
+      },
+      "line": {
+        "pt": "“Baixar a guarda também é coragem.”",
+        "en": "“Lowering your guard takes courage too.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Preso em padrões de conflito",
+          "Obstáculos e adversidade",
+          "Só observar, nunca agir"
+        ],
+        "en": [
+          "Trapped in patterns of conflict",
+          "Obstacles and adversity",
+          "Only watching, never acting"
+        ]
+      },
+      "line": {
+        "pt": "“Quem só espera o inimigo esquece de viver.”",
+        "en": "“Waiting only for the enemy, you forget to live.”"
+      }
+    }
+  ]
+}

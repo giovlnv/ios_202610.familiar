@@ -1,0 +1,466 @@
+{
+  "id": "wands03",
+  "number": "3",
+  "name": {
+    "pt": "Três de Paus",
+    "en": "Three of Wands"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Paus",
+    "en": "Minor Arcana – Wands"
+  },
+  "intro": {
+    "pt": "Um homem de costas, firme sobre uma rocha, apoiado num bastão, olha os navios passando num mar dourado. É a carta do espírito empreendedor: o que já foi conquistado serve de base para explorar o novo. Mas ele não vê os dois bastões atrás de si.",
+    "en": "A man with his back to us stands firm on a rock, leaning on a wand and watching ships cross a golden sea. This is the card of the enterprising spirit: what has been achieved becomes the base for exploring the new. But he can't see the two wands behind him."
+  },
+  "symbols": [
+    {
+      "key": "figure",
+      "crop": {
+        "x": 0.4,
+        "y": 0.5,
+        "r": 0.27
+      },
+      "title": {
+        "pt": "Figura de costas",
+        "en": "Figure seen from behind"
+      },
+      "keywords": {
+        "pt": [
+          "Olhar para frente",
+          "Ou: dar as costas a si mesmo",
+          "Força estabelecida"
+        ],
+        "en": [
+          "Eyes front",
+          "Or: turning your back on yourself",
+          "Established strength"
+        ]
+      }
+    },
+    {
+      "key": "ships",
+      "crop": {
+        "x": 0.76,
+        "y": 0.8,
+        "r": 0.07
+      },
+      "title": {
+        "pt": "Navios",
+        "en": "Ships"
+      },
+      "keywords": {
+        "pt": [
+          "Mercadorias e comércio",
+          "Explorar o desconhecido",
+          "Partindo ou voltando"
+        ],
+        "en": [
+          "Goods and trade",
+          "Exploring the unknown",
+          "Leaving or returning"
+        ]
+      }
+    },
+    {
+      "key": "sea",
+      "crop": {
+        "x": 0.15,
+        "y": 0.82,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Mar dourado",
+        "en": "Golden sea"
+      },
+      "keywords": {
+        "pt": [
+          "Perspectivas ensolaradas",
+          "Momento mágico",
+          "Ou: miragem"
+        ],
+        "en": [
+          "Sunny prospects",
+          "A magic moment",
+          "Or: a mirage"
+        ]
+      }
+    },
+    {
+      "key": "wands",
+      "crop": {
+        "x": 0.2,
+        "y": 0.3,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Bastões atrás dele",
+        "en": "Wands behind him"
+      },
+      "keywords": {
+        "pt": [
+          "Impulsos inconscientes",
+          "Obstáculos ignorados",
+          "Desejos que você carrega"
+        ],
+        "en": [
+          "Unconscious drives",
+          "Ignored obstacles",
+          "Wishes you carry"
+        ]
+      }
+    },
+    {
+      "key": "headband",
+      "crop": {
+        "x": 0.42,
+        "y": 0.36,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Faixa na cabeça",
+        "en": "Headband"
+      },
+      "keywords": {
+        "pt": [
+          "Atenção em volta",
+          "Radar ligado",
+          "Ver também a si mesmo"
+        ],
+        "en": [
+          "All-round awareness",
+          "Radar on",
+          "Seeing yourself too"
+        ]
+      }
+    },
+    {
+      "key": "rock",
+      "crop": {
+        "x": 0.4,
+        "y": 0.9,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Rocha firme",
+        "en": "Firm rock"
+      },
+      "keywords": {
+        "pt": [
+          "Base sólida",
+          "Raízes no que já fez",
+          "Antes de partir"
+        ],
+        "en": [
+          "Solid ground",
+          "Rooted in what you've done",
+          "Before setting off"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver",
+          "Ou: inveja"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life",
+          "Or: envy"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Sol, consciência",
+          "Ou: deslumbramento"
+        ],
+        "en": [
+          "Sun, consciousness",
+          "Or: dazzle"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Desejo do coração",
+          "Vontade"
+        ],
+        "en": [
+          "Heart's desire",
+          "Will"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Fertilidade",
+          "Naturalidade",
+          "Imaturidade"
+        ],
+        "en": [
+          "Fruitfulness",
+          "Naturalness",
+          "Immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "O desconhecido",
+          "Inconsciente"
+        ],
+        "en": [
+          "The unknown",
+          "Unconscious"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Três de Paus fala de visão, empreendimento e horizontes.",
+      "Ele representa a base firme de onde se parte para o novo.",
+      "O foco dele é: ampliar o alcance sem perder contato consigo."
+    ],
+    "en": [
+      "The Three of Wands speaks of vision, enterprise and horizons.",
+      "It stands for firm ground from which to set out for the new.",
+      "Its focus: widening your reach without losing touch with yourself."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "O que está acontecendo ali?",
+          "O que isso tem a ver comigo?",
+          "O mar como mistério do universo"
+        ],
+        "en": [
+          "What's happening there?",
+          "What does it have to do with me?",
+          "The sea as the mystery of the universe"
+        ]
+      },
+      "line": {
+        "pt": "“Antes de navegar, me enraízo.”",
+        "en": "“Before I sail, I put down roots.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Comércio, empresa, descoberta",
+          "Cooperação em negócios",
+          "Amplie seus horizontes"
+        ],
+        "en": [
+          "Trade, enterprise, discovery",
+          "Cooperation in business",
+          "Widen your horizons"
+        ]
+      },
+      "line": {
+        "pt": "“Meus navios já estão no mar.”",
+        "en": "“My ships are already at sea.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Saber o que faz e por quê",
+          "Olhar-se de frente",
+          "Integrar contradições"
+        ],
+        "en": [
+          "Knowing what you do and why",
+          "Looking yourself in the face",
+          "Integrating contradictions"
+        ]
+      },
+      "line": {
+        "pt": "“Entender os próprios motivos me orienta.”",
+        "en": "“Understanding my motives guides me.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Maturidade emocional",
+          "Fazer as pazes com as lembranças",
+          "Ou: perturbado por memórias"
+        ],
+        "en": [
+          "Emotional maturity",
+          "Making peace with memories",
+          "Or: troubled by memories"
+        ]
+      },
+      "line": {
+        "pt": "“As lembranças passam como barcos no rio.”",
+        "en": "“Memories drift past like boats on a river.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Um pouco de paciência",
+          "Fim dos problemas",
+          "Novo espaço de ação"
+        ],
+        "en": [
+          "A little patience",
+          "The end of troubles",
+          "More room to manoeuvre"
+        ]
+      },
+      "line": {
+        "pt": "“A solução vem, e alarga o caminho.”",
+        "en": "“The solution comes, and widens the road.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Dê o primeiro passo",
+          "Tempo para si e para o essencial",
+          "Novos amigos sem largar os antigos"
+        ],
+        "en": [
+          "Make the first move",
+          "Time for yourself and what matters",
+          "New friends without dropping old ones"
+        ]
+      },
+      "line": {
+        "pt": "“Não espero ser buscado.”",
+        "en": "“I don't wait to be fetched.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Ponha em ordem o que quer",
+          "Veja quem te espera",
+          "E para onde você vai"
+        ],
+        "en": [
+          "Sort out what you want",
+          "See who is waiting for you",
+          "And where you are heading"
+        ]
+      },
+      "line": {
+        "pt": "“Clareza antes da viagem.”",
+        "en": "“Clarity before the voyage.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Fuga para a frente",
+          "Ignorar o que está atrás",
+          "Projeto naufragado pela tempestade"
+        ],
+        "en": [
+          "Fleeing forward",
+          "Ignoring what's behind you",
+          "A project wrecked by storms"
+        ]
+      },
+      "line": {
+        "pt": "“Quem foge para a frente leva o problema junto.”",
+        "en": "“Fleeing forward takes the problem along.”"
+      }
+    }
+  ]
+}

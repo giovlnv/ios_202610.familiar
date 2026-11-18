@@ -1,0 +1,424 @@
+{
+  "id": "wands10",
+  "number": "10",
+  "name": {
+    "pt": "Dez de Paus",
+    "en": "Ten of Wands"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Paus",
+    "en": "Minor Arcana – Wands"
+  },
+  "intro": {
+    "pt": "Um homem curvado carrega dez bastões nos braços, a caminho de uma casa ao longe, com o rosto escondido pelo próprio fardo. É o peso de responsabilidades que foram se acumulando. Mas também pode ser entrega total: dar tudo de si por algo maior.",
+    "en": "A bent man carries ten wands in his arms toward a house in the distance, his face hidden by his own load. This is the weight of responsibilities that have piled up. But it can also be total commitment: giving your all to something greater."
+  },
+  "symbols": [
+    {
+      "key": "bundle",
+      "crop": {
+        "x": 0.5,
+        "y": 0.28,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Feixe de dez bastões",
+        "en": "Bundle of ten wands"
+      },
+      "keywords": {
+        "pt": [
+          "Esforço máximo",
+          "Todas as energias juntas",
+          "Ou: sobrecarga"
+        ],
+        "en": [
+          "Maximum effort",
+          "All energies together",
+          "Or: overload"
+        ]
+      }
+    },
+    {
+      "key": "figure",
+      "crop": {
+        "x": 0.4,
+        "y": 0.62,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Figura curvada",
+        "en": "Bent figure"
+      },
+      "keywords": {
+        "pt": [
+          "Seguir a inclinação",
+          "Dar tudo de si",
+          "Ou: sobrecarregado"
+        ],
+        "en": [
+          "Following your inclination",
+          "Giving your all",
+          "Or: overburdened"
+        ]
+      }
+    },
+    {
+      "key": "head",
+      "crop": {
+        "x": 0.6,
+        "y": 0.38,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Cabeça escondida",
+        "en": "Hidden head"
+      },
+      "keywords": {
+        "pt": [
+          "Não ver a floresta pelas árvores",
+          "Ou: foco total na tarefa",
+          "Impulso e intelecto juntos"
+        ],
+        "en": [
+          "Can't see the wood for the trees",
+          "Or: full focus on the task",
+          "Drive and intellect together"
+        ]
+      }
+    },
+    {
+      "key": "house",
+      "crop": {
+        "x": 0.85,
+        "y": 0.75,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Casa ao longe",
+        "en": "House in the distance"
+      },
+      "keywords": {
+        "pt": [
+          "Meta do esforço",
+          "Lar e identidade",
+          "Onde já estamos em casa"
+        ],
+        "en": [
+          "Goal of the effort",
+          "Home and identity",
+          "Where we are already at home"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Alegria espiritual",
+          "Vontade",
+          "Ou: ingenuidade"
+        ],
+        "en": [
+          "Spiritual joy",
+          "Will",
+          "Or: naivety"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Força vital"
+        ],
+        "en": [
+          "Will",
+          "Life force"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Da criação"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Of creation"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Ou: estridência"
+        ],
+        "en": [
+          "Consciousness",
+          "Or: shrillness"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Crescimento",
+          "Esperança"
+        ],
+        "en": [
+          "Growth",
+          "Hope"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Dez de Paus fala de fardo, responsabilidade e esforço total.",
+      "Ele representa o peso que cresce com cada desafio aceito.",
+      "O foco dele é: escolher o que carregar e soltar o resto."
+    ],
+    "en": [
+      "The Ten of Wands speaks of burden, responsibility and total effort.",
+      "It stands for the weight that grows with every challenge taken on.",
+      "Its focus: choosing what to carry and letting go of the rest."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Tomar a própria cruz",
+          "Unir todas as forças",
+          "Onde investimos, criamos raiz"
+        ],
+        "en": [
+          "Taking up one's cross",
+          "Bringing all forces together",
+          "Where we invest, we take root"
+        ]
+      },
+      "line": {
+        "pt": "“Meu lar está onde ponho minha energia.”",
+        "en": "“Home is where I put my energy.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Sucesso e ganho, mas com peso",
+          "Responsabilidades que cresceram",
+          "Hora de agir com tudo"
+        ],
+        "en": [
+          "Success and gain, but heavy",
+          "Responsibilities that grew",
+          "Time to act with everything"
+        ]
+      },
+      "line": {
+        "pt": "“Fardo escolhido pesa menos.”",
+        "en": "“A chosen load weighs less.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Não ver a floresta pelas árvores",
+          "Atenção total traz compreensão",
+          "Distinguir e unir os impulsos"
+        ],
+        "en": [
+          "Can't see the wood for the trees",
+          "Full attention brings understanding",
+          "Distinguishing and uniting impulses"
+        ]
+      },
+      "line": {
+        "pt": "“Ver o todo alivia a carga.”",
+        "en": "“Seeing the whole lightens the load.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Esforço físico total",
+          "Risco de esgotar",
+          "Postura curvada"
+        ],
+        "en": [
+          "Total physical effort",
+          "Risk of burnout",
+          "A bent posture"
+        ]
+      },
+      "line": {
+        "pt": "“O corpo avisa quando é demais.”",
+        "en": "“The body tells you when it's too much.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Carregar sozinho a relação",
+          "Ou: largar o fardo",
+          "Satisfação de dar tudo"
+        ],
+        "en": [
+          "Carrying the relationship alone",
+          "Or: dropping the load",
+          "The satisfaction of giving your all"
+        ]
+      },
+      "line": {
+        "pt": "“Não preciso carregar tudo sozinho.”",
+        "en": "“I don't have to carry it all alone.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Agora é hora de agir",
+          "Perto do objetivo",
+          "Ou: tudo pesa mais"
+        ],
+        "en": [
+          "Now is the time to act",
+          "Close to the goal",
+          "Or: everything grows heavier"
+        ]
+      },
+      "line": {
+        "pt": "“A casa está à vista.”",
+        "en": "“The house is in sight.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Jogue o lastro fora",
+          "Reencontre a motivação",
+          "Dividir o peso"
+        ],
+        "en": [
+          "Throw the ballast overboard",
+          "Regain your motivation",
+          "Sharing the weight"
+        ]
+      },
+      "line": {
+        "pt": "“Dois braços a mais fazem diferença.”",
+        "en": "“Two more arms make a difference.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Siga sua inclinação",
+          "Dê tudo pelo que deseja",
+          "Largue o que não é seu"
+        ],
+        "en": [
+          "Follow your inclination",
+          "Give your all for what you desire",
+          "Put down what isn't yours"
+        ]
+      },
+      "line": {
+        "pt": "“Escolho jogar os bastões para trás e mudar de rumo.”",
+        "en": "“I choose to throw the sticks behind me and change course.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Opressão e sobrecarga",
+          "Dificuldade de soltar",
+          "Fardos como desculpa para não mudar"
+        ],
+        "en": [
+          "Oppression and overload",
+          "Trouble letting go",
+          "Burdens as an excuse not to change"
+        ]
+      },
+      "line": {
+        "pt": "“Às vezes o peso é a desculpa.”",
+        "en": "“Sometimes the weight is the excuse.”"
+      }
+    }
+  ]
+}
