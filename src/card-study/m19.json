@@ -1,0 +1,519 @@
+{
+  "id": "m19",
+  "number": "XIX",
+  "name": {
+    "pt": "O Sol",
+    "en": "The Sun"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta XIX",
+    "en": "Major Arcana – Card XIX"
+  },
+  "intro": {
+    "pt": "Um grande sol de rosto humano brilha sobre girassóis e um muro; uma criança nua, com uma pena vermelha, cavalga um cavalo branco segurando um estandarte enorme. Depois da noite da Lua, tudo fica simples, claro e alegre. O Sol é renascer a cada dia e ver a vida inteira cheia de luz.",
+    "en": "A great sun with a human face shines over sunflowers and a wall; a naked child with a red feather rides a white horse, holding a huge banner. After the Moon's night, everything turns simple, clear and joyful. The Sun is being reborn every day and seeing all of life filled with light."
+  },
+  "symbols": [
+    {
+      "key": "sun",
+      "crop": {
+        "x": 0.48,
+        "y": 0.19,
+        "r": 0.3
+      },
+      "title": {
+        "pt": "Sol com rosto",
+        "en": "Sun with a face"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência coletiva",
+          "O centro que organiza a vida",
+          "Luz direta, não refletida"
+        ],
+        "en": [
+          "Collective consciousness",
+          "The centre that orders life",
+          "Direct light, not reflected"
+        ]
+      }
+    },
+    {
+      "key": "child",
+      "crop": {
+        "x": 0.33,
+        "y": 0.6,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Criança nua",
+        "en": "Naked child"
+      },
+      "keywords": {
+        "pt": [
+          "Abertura e entrega",
+          "Ser criança de novo, já adulto",
+          "Inocência sábia"
+        ],
+        "en": [
+          "Openness and abandon",
+          "Becoming childlike again as an adult",
+          "Wise innocence"
+        ]
+      }
+    },
+    {
+      "key": "feather",
+      "crop": {
+        "x": 0.35,
+        "y": 0.435,
+        "r": 0.06
+      },
+      "title": {
+        "pt": "Pena vermelha",
+        "en": "Red feather"
+      },
+      "keywords": {
+        "pt": [
+          "Chama da vida",
+          "Alegria",
+          "Alma viva"
+        ],
+        "en": [
+          "Flame of life",
+          "Joy",
+          "A living soul"
+        ]
+      }
+    },
+    {
+      "key": "banner",
+      "crop": {
+        "x": 0.8,
+        "y": 0.4,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Estandarte vermelho",
+        "en": "Red banner"
+      },
+      "keywords": {
+        "pt": [
+          "Energia vital",
+          "Liga o alto e o baixo",
+          "Carregado com leveza"
+        ],
+        "en": [
+          "Vital energy",
+          "Linking high and low",
+          "Carried with ease"
+        ]
+      }
+    },
+    {
+      "key": "horse",
+      "crop": {
+        "x": 0.6,
+        "y": 0.68,
+        "r": 0.17
+      },
+      "title": {
+        "pt": "Cavalo branco",
+        "en": "White horse"
+      },
+      "keywords": {
+        "pt": [
+          "Força que nos carrega",
+          "Inocência e sabedoria",
+          "Natureza animal em harmonia"
+        ],
+        "en": [
+          "The strength that carries us",
+          "Innocence and wisdom",
+          "Animal nature in harmony"
+        ]
+      }
+    },
+    {
+      "key": "sunflowers",
+      "crop": {
+        "x": 0.13,
+        "y": 0.44,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Girassóis",
+        "en": "Sunflowers"
+      },
+      "keywords": {
+        "pt": [
+          "Sol e sombra juntos",
+          "Ver o que existe",
+          "Ou: ofuscar o lado escuro"
+        ],
+        "en": [
+          "Sun and shadow together",
+          "Seeing what is there",
+          "Or: blinding to the dark side"
+        ]
+      }
+    },
+    {
+      "key": "wall",
+      "crop": {
+        "x": 0.13,
+        "y": 0.65,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Muro de pedra",
+        "en": "Stone wall"
+      },
+      "keywords": {
+        "pt": [
+          "Limites sábios",
+          "A vida passada deixada para trás",
+          "Sair do jardim"
+        ],
+        "en": [
+          "Wise limits",
+          "Past life left behind",
+          "Riding out of the garden"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver",
+          "Inspiração"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life",
+          "Inspiration"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Força vital",
+          "Coração",
+          "Vontade"
+        ],
+        "en": [
+          "Life force",
+          "Heart",
+          "Will"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Inocência",
+          "Completude",
+          "Novo começo"
+        ],
+        "en": [
+          "Innocence",
+          "Completion",
+          "New beginning"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Leveza",
+          "Mente lúcida",
+          "Ou: idealizar"
+        ],
+        "en": [
+          "Lightness",
+          "Lucid mind",
+          "Or: idolising"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Sem preconceito",
+          "Ou: o que passa despercebido"
+        ],
+        "en": [
+          "Free of prejudice",
+          "Or: what goes unnoticed"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Vitalidade",
+          "Calor"
+        ],
+        "en": [
+          "Vitality",
+          "Warmth"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Sol fala de alegria, clareza e renascimento.",
+      "Ele representa a vida vista de um jeito novo, cheia de luz.",
+      "O foco dele é: viver de forma livre e própria, como quem nasce todo dia."
+    ],
+    "en": [
+      "The Sun speaks of joy, clarity and rebirth.",
+      "It stands for life seen in a new way, full of light.",
+      "Its focus: living freely and in your own way, as if born each day."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Iluminação como experiência",
+          "Tudo vivo, sagrado e unido",
+          "Ama a Deus e faz o que quiseres"
+        ],
+        "en": [
+          "Enlightenment as an experience",
+          "Everything alive, holy and united",
+          "Love God and do as you will"
+        ]
+      },
+      "line": {
+        "pt": "“Todo dia é um aniversário.”",
+        "en": "“Every day is a birthday.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Energia, otimismo e sucesso",
+          "Contorne o que bloqueia",
+          "Cuidado com o superficial"
+        ],
+        "en": [
+          "Energy, optimism and success",
+          "Get round whatever blocks you",
+          "Beware of the superficial"
+        ]
+      },
+      "line": {
+        "pt": "“Se algo atrapalha, tiro ou contorno.”",
+        "en": "“If something's in the way, I move it or go round.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Lucidez e clareza",
+          "Escolha livre, não rotina",
+          "Pensamento próprio, não convencional"
+        ],
+        "en": [
+          "Lucidity and clarity",
+          "Free choice, not routine",
+          "Thinking of your own, not conventional"
+        ]
+      },
+      "line": {
+        "pt": "“Pensar por mim é renascer.”",
+        "en": "“Thinking for myself is being reborn.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Força e vitalidade",
+          "Prazer de simplesmente existir",
+          "Energia que se espalha"
+        ],
+        "en": [
+          "Strength and vitality",
+          "Pleasure in sheer existence",
+          "Energy that radiates out"
+        ]
+      },
+      "line": {
+        "pt": "“O sol me dá força.”",
+        "en": "“The sun gives me strength.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Alegria e felicidade",
+          "Simplicidade de criança",
+          "Medo do escuro superado"
+        ],
+        "en": [
+          "Joy and happiness",
+          "Childlike simplicity",
+          "Fear of the dark overcome"
+        ]
+      },
+      "line": {
+        "pt": "“A alegria veio depois da noite.”",
+        "en": "“Joy came after the night.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Renovação diária",
+          "Maturidade que abre",
+          "Um tempo de felicidade simples"
+        ],
+        "en": [
+          "Daily renewal",
+          "Maturity that opens up",
+          "A time of simple happiness"
+        ]
+      },
+      "line": {
+        "pt": "“Nascer é um processo, não um instante.”",
+        "en": "“Birth is a process, not an instant.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Bom sinal para parcerias",
+          "Cada um com sua parte de sol",
+          "Brincar juntos"
+        ],
+        "en": [
+          "A good sign for partnerships",
+          "Each with their share of sun",
+          "Playing together"
+        ]
+      },
+      "line": {
+        "pt": "“Há sol para os dois.”",
+        "en": "“There's sun enough for both.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Não se deixe abater",
+          "Ponha limites sábios e cumpra-os",
+          "Viva do seu próprio jeito"
+        ],
+        "en": [
+          "Don't let things get you down",
+          "Set wise limits and keep them",
+          "Live in your own way"
+        ]
+      },
+      "line": {
+        "pt": "“Este é o meu lugar ao sol.”",
+        "en": "“This is my place in the sun.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Ilusão e superficialidade",
+          "Alegria nublada, sem clareza",
+          "Ignorar as sombras"
+        ],
+        "en": [
+          "Illusion and superficiality",
+          "Clouded joy, without clarity",
+          "Ignoring the shadows"
+        ]
+      },
+      "line": {
+        "pt": "“Sol demais também cega.”",
+        "en": "“Too much sun blinds too.”"
+      }
+    }
+  ]
+}

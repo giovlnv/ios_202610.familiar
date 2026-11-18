@@ -1,0 +1,517 @@
+{
+  "id": "m16",
+  "number": "XVI",
+  "name": {
+    "pt": "A Torre",
+    "en": "The Tower"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta XVI",
+    "en": "Major Arcana – Card XVI"
+  },
+  "intro": {
+    "pt": "Um raio atinge uma torre alta, derruba a coroa do topo e acende chamas nas janelas; duas pessoas caem no céu escuro. A Torre é a queda do que foi construído sobre ilusão ou orgulho. Assusta, mas liberta: a pressão guardada explode e abre caminho para um novo começo.",
+    "en": "Lightning strikes a tall tower, knocks off the crown at its top and sets the windows ablaze; two people fall through the dark sky. The Tower is the collapse of whatever was built on illusion or pride. It frightens, but it frees: pent-up pressure bursts open and clears the way for a new start."
+  },
+  "symbols": [
+    {
+      "key": "lightning",
+      "crop": {
+        "x": 0.75,
+        "y": 0.1,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Raio",
+        "en": "Lightning"
+      },
+      "keywords": {
+        "pt": [
+          "Revelação súbita",
+          "Um W: o nós",
+          "Energia máxima"
+        ],
+        "en": [
+          "Sudden revelation",
+          "A W: the we",
+          "Highest energy"
+        ]
+      }
+    },
+    {
+      "key": "crown",
+      "crop": {
+        "x": 0.3,
+        "y": 0.1,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Coroa derrubada",
+        "en": "Toppled crown"
+      },
+      "keywords": {
+        "pt": [
+          "Perda de controle",
+          "Menos importância de si",
+          "Ou: falta de proteção"
+        ],
+        "en": [
+          "Loss of control",
+          "Less self-importance",
+          "Or: lack of self-protection"
+        ]
+      }
+    },
+    {
+      "key": "flames",
+      "crop": {
+        "x": 0.66,
+        "y": 0.21,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Chamas nas janelas",
+        "en": "Flames in the windows"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão",
+          "Entusiasmo",
+          "Ou: destruição, agressão"
+        ],
+        "en": [
+          "Passion",
+          "Enthusiasm",
+          "Or: destruction, aggression"
+        ]
+      }
+    },
+    {
+      "key": "tower",
+      "crop": {
+        "x": 0.5,
+        "y": 0.3,
+        "r": 0.22
+      },
+      "title": {
+        "pt": "Torre sobre a rocha",
+        "en": "Tower on the rock"
+      },
+      "keywords": {
+        "pt": [
+          "Proteção e vista ampla",
+          "Torre de marfim",
+          "Isolamento, prisão"
+        ],
+        "en": [
+          "Protection and a wide view",
+          "Ivory tower",
+          "Isolation, confinement"
+        ]
+      }
+    },
+    {
+      "key": "drops",
+      "crop": {
+        "x": 0.85,
+        "y": 0.25,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Gotas de ouro",
+        "en": "Golden drops"
+      },
+      "keywords": {
+        "pt": [
+          "Graça",
+          "Línguas de fogo",
+          "Ou: tempestade de fogo"
+        ],
+        "en": [
+          "Grace",
+          "Tongues of fire",
+          "Or: a firestorm"
+        ]
+      }
+    },
+    {
+      "key": "falling",
+      "crop": {
+        "x": 0.2,
+        "y": 0.55,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Figura caindo",
+        "en": "Falling figure"
+      },
+      "keywords": {
+        "pt": [
+          "Cair ou voar",
+          "Entre céu e terra",
+          "Medo de voar"
+        ],
+        "en": [
+          "Falling or flying",
+          "Between heaven and earth",
+          "Fear of flying"
+        ]
+      }
+    },
+    {
+      "key": "crowned",
+      "crop": {
+        "x": 0.79,
+        "y": 0.6,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Figura coroada caindo",
+        "en": "Crowned figure falling"
+      },
+      "keywords": {
+        "pt": [
+          "Fim de uma doutrina",
+          "Orgulho derrubado",
+          "Pouso ainda incerto"
+        ],
+        "en": [
+          "End of a doctrine",
+          "Pride brought down",
+          "Landing still unknown"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "Perda de horizonte",
+          "Luz na escuridão",
+          "O desconhecido"
+        ],
+        "en": [
+          "Loss of horizon",
+          "A light in the dark",
+          "The unknown"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Inconsciente",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Unconscious",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Inspiração",
+          "Ou: estridência"
+        ],
+        "en": [
+          "Consciousness",
+          "Inspiration",
+          "Or: shrillness"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão",
+          "Ira",
+          "Força vital"
+        ],
+        "en": [
+          "Passion",
+          "Wrath",
+          "Life force"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Ar e céu aberto",
+          "Espiritualidade"
+        ],
+        "en": [
+          "Air and open sky",
+          "Spirituality"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Ponto de partida",
+          "Novo começo"
+        ],
+        "en": [
+          "Starting point",
+          "New beginning"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "A Torre fala de ruptura, queda e libertação.",
+      "Ela representa o desmoronar do que foi erguido sobre ilusão.",
+      "O foco dela é: deixar cair o que prende e recomeçar."
+    ],
+    "en": [
+      "The Tower speaks of upheaval, collapse and release.",
+      "It stands for the fall of whatever was built on illusion.",
+      "Its focus: letting what confines you fall, and starting again."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Pentecostes: de coração a coração",
+          "Um clarão de iluminação",
+          "A graça que derruba a falsidade"
+        ],
+        "en": [
+          "Pentecost: heart to heart",
+          "A flash of enlightenment",
+          "Grace that topples falsehood"
+        ]
+      },
+      "line": {
+        "pt": "“O que é verdadeiro não cai.”",
+        "en": "“What is true doesn't fall.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Reviravolta, estruturas antigas caem",
+          "Coloque toda a sua energia",
+          "Viva o crescimento como experimento"
+        ],
+        "en": [
+          "Upheaval, old structures fall",
+          "Put in all your energy",
+          "Live your growth as an experiment"
+        ]
+      },
+      "line": {
+        "pt": "“O que desaba abre espaço.”",
+        "en": "“What collapses makes room.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Fim das ilusões de grandeza",
+          "Visão limitada que se rompe",
+          "Perder o rumo por um tempo"
+        ],
+        "en": [
+          "The end of delusions of grandeur",
+          "A narrow view breaking open",
+          "Losing your bearings for a while"
+        ]
+      },
+      "line": {
+        "pt": "“Às vezes só o raio tira a venda.”",
+        "en": "“Sometimes only lightning removes the blindfold.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Respire de forma consciente",
+          "Energia intensa liberada",
+          "Pressão interna que explode"
+        ],
+        "en": [
+          "Breathe consciously",
+          "Intense energy released",
+          "Inner pressure that bursts"
+        ]
+      },
+      "line": {
+        "pt": "“O que fica preso dentro, um dia explode.”",
+        "en": "“What stays locked inside will burst one day.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Emoções reprimidas que explodem",
+          "Brigas e abatimento",
+          "Entusiasmo inflamado"
+        ],
+        "en": [
+          "Repressed emotions breaking out",
+          "Quarrels and low spirits",
+          "Fiery enthusiasm"
+        ]
+      },
+      "line": {
+        "pt": "“Deixar a tempestade passar inteira.”",
+        "en": "“Letting the storm pass all the way through.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Súbito, sem aviso",
+          "A hora de sair da torre de marfim",
+          "Entre a queda e o pouso"
+        ],
+        "en": [
+          "Sudden, without warning",
+          "Time to leave the ivory tower",
+          "Between the fall and the landing"
+        ]
+      },
+      "line": {
+        "pt": "“O pouso vem depois; agora é o voo.”",
+        "en": "“The landing comes later; now is the flight.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Agir de forma direta e consciente",
+          "Rupturas com raiva",
+          "Mal-entendidos que se desfazem"
+        ],
+        "en": [
+          "Acting directly and consciously",
+          "Break-ups in anger",
+          "Misunderstandings coming apart"
+        ]
+      },
+      "line": {
+        "pt": "“Falar de coração dissolve a confusão.”",
+        "en": "“Speaking from the heart dissolves confusion.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Deixe a torre de marfim",
+          "Mantenha os olhos abertos",
+          "Deixe a experiência seguir até o fim"
+        ],
+        "en": [
+          "Leave the ivory tower",
+          "Keep your eyes open",
+          "Let the experience run its course"
+        ]
+      },
+      "line": {
+        "pt": "“Melhor cair livre do que viver preso.”",
+        "en": "“Better to fall free than to live confined.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Megalomania e arrogância",
+          "Isolamento",
+          "Segurar demais e continuar preso"
+        ],
+        "en": [
+          "Megalomania and arrogance",
+          "Isolation",
+          "Holding back and staying imprisoned"
+        ]
+      },
+      "line": {
+        "pt": "“Proteger a torre do raio é virar seu prisioneiro.”",
+        "en": "“Shielding the tower from lightning makes you its prisoner.”"
+      }
+    }
+  ]
+}

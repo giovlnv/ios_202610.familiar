@@ -1,0 +1,517 @@
+{
+  "id": "m21",
+  "number": "XXI",
+  "name": {
+    "pt": "O Mundo",
+    "en": "The World"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta XXI",
+    "en": "Major Arcana – Card XXI"
+  },
+  "intro": {
+    "pt": "Uma figura dança no centro de uma grande guirlanda verde, com um bastão em cada mão e um manto violeta em espiral. Nos cantos, o anjo, a águia, o touro e o leão. O Mundo é a conclusão da jornada: o eu interior unido à vida lá fora, em movimento, num centro calmo que está em toda parte.",
+    "en": "A figure dances in the middle of a great green wreath, a wand in each hand and a violet sash spiralling around her. In the corners are the angel, the eagle, the bull and the lion. The World is the journey's completion: the inner self united with life outside, in motion, around a calm centre that is everywhere."
+  },
+  "symbols": [
+    {
+      "key": "dancer",
+      "crop": {
+        "x": 0.5,
+        "y": 0.38,
+        "r": 0.22
+      },
+      "title": {
+        "pt": "Figura dançando",
+        "en": "Dancing figure"
+      },
+      "keywords": {
+        "pt": [
+          "Equilibrar contradições",
+          "Seguir o fluxo",
+          "Masculino e feminino unidos"
+        ],
+        "en": [
+          "Balancing contradictions",
+          "Going with the flow",
+          "Masculine and feminine united"
+        ]
+      }
+    },
+    {
+      "key": "wands",
+      "crop": {
+        "x": 0.26,
+        "y": 0.45,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Dois bastões",
+        "en": "Two wands"
+      },
+      "keywords": {
+        "pt": [
+          "O eu e o tu",
+          "Unir os quatro elementos",
+          "Ou: incoerências"
+        ],
+        "en": [
+          "The I and the you",
+          "Uniting the four elements",
+          "Or: inconsistencies"
+        ]
+      }
+    },
+    {
+      "key": "wreath",
+      "crop": {
+        "x": 0.14,
+        "y": 0.5,
+        "r": 0.14
+      },
+      "title": {
+        "pt": "Guirlanda verde",
+        "en": "Green wreath"
+      },
+      "keywords": {
+        "pt": [
+          "Louros do sucesso",
+          "Limites da existência",
+          "Ou: rotina que prende"
+        ],
+        "en": [
+          "Laurels of success",
+          "Limits of existence",
+          "Or: a treadmill that walls in"
+        ]
+      }
+    },
+    {
+      "key": "bands",
+      "crop": {
+        "x": 0.48,
+        "y": 0.1,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Fitas vermelhas",
+        "en": "Red ribbons"
+      },
+      "keywords": {
+        "pt": [
+          "Infinito",
+          "Equilíbrio e vitalidade",
+          "Ou: repetição sem crescer"
+        ],
+        "en": [
+          "Infinity",
+          "Balance and vitality",
+          "Or: repetition without growth"
+        ]
+      }
+    },
+    {
+      "key": "sash",
+      "crop": {
+        "x": 0.5,
+        "y": 0.65,
+        "r": 0.16
+      },
+      "title": {
+        "pt": "Manto violeta em espiral",
+        "en": "Spiralling violet sash"
+      },
+      "keywords": {
+        "pt": [
+          "Toda subida é em espiral",
+          "Desenvolvimento pessoal",
+          "Evolução"
+        ],
+        "en": [
+          "Every ascent is a spiral",
+          "Personal development",
+          "Evolution"
+        ]
+      }
+    },
+    {
+      "key": "eagle",
+      "crop": {
+        "x": 0.86,
+        "y": 0.09,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Águia e anjo",
+        "en": "Eagle and angel"
+      },
+      "keywords": {
+        "pt": [
+          "Os quatro elementos",
+          "Os quatro evangelistas",
+          "Ar e água"
+        ],
+        "en": [
+          "The four elements",
+          "The four evangelists",
+          "Air and water"
+        ]
+      }
+    },
+    {
+      "key": "lion",
+      "crop": {
+        "x": 0.84,
+        "y": 0.79,
+        "r": 0.14
+      },
+      "title": {
+        "pt": "Leão e touro",
+        "en": "Lion and bull"
+      },
+      "keywords": {
+        "pt": [
+          "Fogo e terra",
+          "Tudo que cada um recebeu",
+          "A quintessência no centro"
+        ],
+        "en": [
+          "Fire and earth",
+          "All each person is given",
+          "The quintessence at the centre"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Espiritualidade",
+          "Leveza"
+        ],
+        "en": [
+          "Open sky",
+          "Spirituality",
+          "Lightness"
+        ]
+      }
+    },
+    {
+      "hex": "#3F6B3A",
+      "name": {
+        "pt": "Verde-escuro",
+        "en": "Dark green"
+      },
+      "keywords": {
+        "pt": [
+          "Perto da natureza",
+          "Duradouro",
+          "Vegetativo"
+        ],
+        "en": [
+          "Close to nature",
+          "Long-lasting",
+          "Vegetative"
+        ]
+      }
+    },
+    {
+      "hex": "#9A86B8",
+      "name": {
+        "pt": "Violeta",
+        "en": "Violet"
+      },
+      "keywords": {
+        "pt": [
+          "Experiência-limite",
+          "Mistura de vermelho e azul"
+        ],
+        "en": [
+          "Borderline experience",
+          "The mix of red and blue"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Força vital",
+          "Coração",
+          "Vontade"
+        ],
+        "en": [
+          "Life force",
+          "Heart",
+          "Will"
+        ]
+      }
+    },
+    {
+      "hex": "#E9C9A4",
+      "name": {
+        "pt": "Bege",
+        "en": "Beige"
+      },
+      "keywords": {
+        "pt": [
+          "O corpo humano",
+          "Corporeidade"
+        ],
+        "en": [
+          "The human body",
+          "Corporeality"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Completude",
+          "Território novo"
+        ],
+        "en": [
+          "Completion",
+          "New territory"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Mundo fala de conclusão, integração e plenitude.",
+      "Ele representa o eu interior unido à vida lá fora, em dança.",
+      "O foco dele é: participar do mundo e fazer a sua parte nele."
+    ],
+    "en": [
+      "The World speaks of completion, integration and fullness.",
+      "It stands for the inner self joined with life outside, in a dance.",
+      "Its focus: taking part in the world and doing your share in it."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "O universo se entendendo em Deus",
+          "Consciente e inconsciente como um só",
+          "O centro está em toda parte"
+        ],
+        "en": [
+          "The universe understanding itself in God",
+          "Conscious and unconscious as one",
+          "The centre is everywhere"
+        ]
+      },
+      "line": {
+        "pt": "“Danço, e a dança é o centro.”",
+        "en": "“I dance, and the dance is the centre.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Sucesso, conquista, satisfação",
+          "Hora de ocupar o centro do palco",
+          "O que o universo pede de você?"
+        ],
+        "en": [
+          "Success, achievement, satisfaction",
+          "Time to step onto centre stage",
+          "What is the universe asking of you?"
+        ]
+      },
+      "line": {
+        "pt": "“Minha parte no mundo é a minha contribuição.”",
+        "en": "“My share in the world is my contribution.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Consciência dos próprios limites e chances",
+          "Equilibrar contradições",
+          "Às vezes, sair da linha"
+        ],
+        "en": [
+          "Awareness of your limits and chances",
+          "Balancing contradictions",
+          "Sometimes stepping out of line"
+        ]
+      },
+      "line": {
+        "pt": "“Conheço meu limite e meu alcance.”",
+        "en": "“I know my limits and my reach.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Raiz no corpo e na matéria",
+          "Movimento e dança",
+          "Nascer, casar, morrer: o ciclo"
+        ],
+        "en": [
+          "Rooted in body and matter",
+          "Movement and dance",
+          "Birth, marriage, death: the cycle"
+        ]
+      },
+      "line": {
+        "pt": "“O corpo também dança a vida.”",
+        "en": "“The body dances life too.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Sentir-se amplo e bem",
+          "Inocência unida à sabedoria",
+          "Êxtase calmo"
+        ],
+        "en": [
+          "Feeling wide and well",
+          "Innocence joined with wisdom",
+          "Calm rapture"
+        ]
+      },
+      "line": {
+        "pt": "“Inteiro por dentro, aberto por fora.”",
+        "en": "“Whole inside, open outside.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Já era hora",
+          "Fim de um ciclo e começo de outro",
+          "Ou: estagnação passageira"
+        ],
+        "en": [
+          "High time",
+          "One cycle ending, another beginning",
+          "Or: a passing standstill"
+        ]
+      },
+      "line": {
+        "pt": "“Toda chegada é uma nova partida.”",
+        "en": "“Every arrival is a new departure.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Ver-se no outro para entender o mundo",
+          "O eu e o tu juntos",
+          "Viver duas vidas ao mesmo tempo"
+        ],
+        "en": [
+          "Seeing yourself in the other to understand the world",
+          "The I and the you together",
+          "Living two lives at once"
+        ]
+      },
+      "line": {
+        "pt": "“Participo do mundo, e o mundo me nota.”",
+        "en": "“I take part in the world, and the world notices me.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Participe do mundo",
+          "Agradeça o que o universo te deu",
+          "Rompa a rotina de vez em quando"
+        ],
+        "en": [
+          "Take part in the world",
+          "Be grateful for what the universe has given",
+          "Break the routine now and then"
+        ]
+      },
+      "line": {
+        "pt": "“A dança recomeça sempre que eu quiser.”",
+        "en": "“The dance starts again whenever I'm ready.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Estagnação, crescimento parado",
+          "Rotina que mura",
+          "Incoerências não resolvidas"
+        ],
+        "en": [
+          "Stagnation, growth halted",
+          "A routine that walls you in",
+          "Unresolved inconsistencies"
+        ]
+      },
+      "line": {
+        "pt": "“Moldura demais vira prisão.”",
+        "en": "“Too much frame becomes a cage.”"
+      }
+    }
+  ]
+}

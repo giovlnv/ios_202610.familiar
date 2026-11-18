@@ -1,0 +1,524 @@
+{
+  "id": "m15",
+  "number": "XV",
+  "name": {
+    "pt": "O Diabo",
+    "en": "The Devil"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta XV",
+    "en": "Major Arcana – Card XV"
+  },
+  "intro": {
+    "pt": "Uma figura de chifres e asas de morcego está sobre um bloco escuro, com uma tocha voltada para baixo. Um homem e uma mulher estão presos por correntes largas, que poderiam tirar sozinhos. O Diabo é o que estava escondido no porão vindo à luz: medos, desejos e dependências, mas também tesouros esquecidos.",
+    "en": "A horned figure with bat wings sits on a dark block, holding a torch pointed downward. A man and a woman are bound by loose chains they could slip off themselves. The Devil is what was hidden in the cellar coming into the light: fears, desires and dependencies, but also forgotten treasures."
+  },
+  "symbols": [
+    {
+      "key": "horns",
+      "crop": {
+        "x": 0.48,
+        "y": 0.13,
+        "r": 0.19
+      },
+      "title": {
+        "pt": "Chifres e pentagrama invertido",
+        "en": "Horns and inverted pentagram"
+      },
+      "keywords": {
+        "pt": [
+          "O que é bruto e original",
+          "Energia que puxa para baixo",
+          "Ou: um tesouro bruto"
+        ],
+        "en": [
+          "What is raw and original",
+          "Energy that drags down",
+          "Or: an unpolished treasure"
+        ]
+      }
+    },
+    {
+      "key": "hand",
+      "crop": {
+        "x": 0.13,
+        "y": 0.17,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Mão aberta erguida",
+        "en": "Raised open hand"
+      },
+      "keywords": {
+        "pt": [
+          "Tudo à vista",
+          "Bênção ao contrário",
+          "Saudades escondidas ou lixo"
+        ],
+        "en": [
+          "Everything in view",
+          "A blessing reversed",
+          "Hidden longings or junk"
+        ]
+      }
+    },
+    {
+      "key": "wings",
+      "crop": {
+        "x": 0.8,
+        "y": 0.2,
+        "r": 0.18
+      },
+      "title": {
+        "pt": "Asas de morcego",
+        "en": "Bat wings"
+      },
+      "keywords": {
+        "pt": [
+          "Orientar-se no escuro",
+          "Sensibilidade",
+          "Espírito da terra"
+        ],
+        "en": [
+          "Finding your way in the dark",
+          "Sensitivity",
+          "Earth spirit"
+        ]
+      }
+    },
+    {
+      "key": "torch",
+      "crop": {
+        "x": 0.86,
+        "y": 0.6,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Tocha virada para baixo",
+        "en": "Torch pointing down"
+      },
+      "keywords": {
+        "pt": [
+          "Levar luz ao escuro",
+          "Separar o bom do ruim",
+          "Ou: só o material existe"
+        ],
+        "en": [
+          "Bringing light into darkness",
+          "Telling good from bad",
+          "Or: only matter exists"
+        ]
+      }
+    },
+    {
+      "key": "block",
+      "crop": {
+        "x": 0.48,
+        "y": 0.64,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Garras e bloco escuro",
+        "en": "Talons and dark block"
+      },
+      "keywords": {
+        "pt": [
+          "Matéria bruta",
+          "O eu inexplorado",
+          "Saber incompleto"
+        ],
+        "en": [
+          "Raw matter",
+          "The unexplored self",
+          "Incomplete knowledge"
+        ]
+      }
+    },
+    {
+      "key": "chains",
+      "crop": {
+        "x": 0.47,
+        "y": 0.72,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Correntes frouxas",
+        "en": "Loose chains"
+      },
+      "keywords": {
+        "pt": [
+          "Dependência, círculo vicioso",
+          "Dá para tirar",
+          "Aceitar os laços"
+        ],
+        "en": [
+          "Dependency, a vicious circle",
+          "They can come off",
+          "Accepting the bonds"
+        ]
+      }
+    },
+    {
+      "key": "captive",
+      "crop": {
+        "x": 0.22,
+        "y": 0.5,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Cabeça com chifres pequenos",
+        "en": "Head with small horns"
+      },
+      "keywords": {
+        "pt": [
+          "Os Enamorados acorrentados",
+          "Calma diante da prisão",
+          "Natureza animal"
+        ],
+        "en": [
+          "The Lovers in chains",
+          "Calm in captivity",
+          "Animal nature"
+        ]
+      }
+    },
+    {
+      "key": "tail",
+      "crop": {
+        "x": 0.86,
+        "y": 0.74,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Cauda de fogo",
+        "en": "Tail of fire"
+      },
+      "keywords": {
+        "pt": [
+          "Natureza primitiva",
+          "Instintos",
+          "Moldar o que resta"
+        ],
+        "en": [
+          "Primal nature",
+          "Instincts",
+          "Shaping what remains"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "O desconhecido",
+          "Escuridão",
+          "Caixa-preta"
+        ],
+        "en": [
+          "The unknown",
+          "Darkness",
+          "Black box"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Da terra",
+          "Enraizado"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Of the earth",
+          "Grounded"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Inconsciente, a sombra",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Unconscious, the shadow",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Território novo",
+          "Ponto de partida"
+        ],
+        "en": [
+          "New territory",
+          "Starting point"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Vitalidade",
+          "Calor",
+          "Ou: arbitrariedade"
+        ],
+        "en": [
+          "Vitality",
+          "Warmth",
+          "Or: arbitrariness"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Diabo fala de sombra, dependência e desejos escondidos.",
+      "Ele representa o que estava no escuro vindo à luz.",
+      "O foco dele é: ver as correntes para poder soltá-las."
+    ],
+    "en": [
+      "The Devil speaks of shadow, dependency and hidden desires.",
+      "He stands for what was in the dark coming into the light.",
+      "His focus: seeing the chains so you can slip them off."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Levar luz à escuridão",
+          "O caminho passa pelo inferno",
+          "Ilusão de que só existe o material"
+        ],
+        "en": [
+          "Bringing light into the darkness",
+          "The road leads through hell",
+          "The illusion that only matter exists"
+        ]
+      },
+      "line": {
+        "pt": "“No escuro há lixo velho e tesouros novos.”",
+        "en": "“In the dark there's old junk and new treasure.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Materialismo",
+          "Sentir-se preso sem saída",
+          "Tempo para encarar o desconhecido"
+        ],
+        "en": [
+          "Materialism",
+          "Feeling trapped with no way out",
+          "Time to face the unknown"
+        ]
+      },
+      "line": {
+        "pt": "“Ver a corrente já é o começo da saída.”",
+        "en": "“Seeing the chain is the start of getting out.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Ilusão de que não há alternativa",
+          "Olhar dentro da caixa-preta",
+          "Separar atração de repulsa"
+        ],
+        "en": [
+          "The illusion that there's no alternative",
+          "Looking into the black box",
+          "Telling attraction from repulsion"
+        ]
+      },
+      "line": {
+        "pt": "“Só me prende o que eu não vejo.”",
+        "en": "“Only what I don't see can hold me.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Instintos e impulsos",
+          "Obsessões, inclusive sexuais",
+          "Aceitar os laços do corpo"
+        ],
+        "en": [
+          "Instincts and drives",
+          "Obsessions, sexual ones included",
+          "Accepting the body's bonds"
+        ]
+      },
+      "line": {
+        "pt": "“Instinto reconhecido vira aliado.”",
+        "en": "“An acknowledged instinct becomes an ally.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Sentir-se acorrentado, deprimido",
+          "Vergonha e impotência",
+          "A criança esquecida no porão"
+        ],
+        "en": [
+          "Feeling chained, depressed",
+          "Shame and helplessness",
+          "The neglected child in the cellar"
+        ]
+      },
+      "line": {
+        "pt": "“A parte que eu escondi também quer cuidado.”",
+        "en": "“The part I hid wants care too.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Um limite foi cruzado",
+          "Libertar-se dói antes de aliviar",
+          "Demônios do passado ainda pesam"
+        ],
+        "en": [
+          "A threshold has been crossed",
+          "Breaking free hurts before it helps",
+          "Old devils still weigh in"
+        ]
+      },
+      "line": {
+        "pt": "“O que vem à tona agora pode ser curado.”",
+        "en": "“What surfaces now can be healed.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Problemas à vista são sinal de qualidade",
+          "Amor que virou armadilha",
+          "Não fazer ninguém de bode expiatório"
+        ],
+        "en": [
+          "Problems in the open are a sign of quality",
+          "Love that became a trap",
+          "Don't make anyone a scapegoat"
+        ]
+      },
+      "line": {
+        "pt": "“Falar do difícil fortalece a relação.”",
+        "en": "“Talking about the hard parts makes a relationship stronger.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Derrube um par de chifres velhos",
+          "Siga os seus instintos",
+          "Solte as correntes frouxas"
+        ],
+        "en": [
+          "Knock off an old pair of horns",
+          "Follow your own instincts",
+          "Slip off the loose chains"
+        ]
+      },
+      "line": {
+        "pt": "“A corrente é larga: eu posso sair.”",
+        "en": "“The chain is loose: I can step out.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Dependência e círculo vicioso",
+          "Ser escravo dos desejos",
+          "Aceitar a miséria como normal"
+        ],
+        "en": [
+          "Dependency and vicious circles",
+          "Being a slave to your desires",
+          "Accepting misery as normal"
+        ]
+      },
+      "line": {
+        "pt": "“O conforto da prisão também prende.”",
+        "en": "“The comfort of a prison binds too.”"
+      }
+    }
+  ]
+}

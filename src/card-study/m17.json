@@ -1,0 +1,541 @@
+{
+  "id": "m17",
+  "number": "XVII",
+  "name": {
+    "pt": "A Estrela",
+    "en": "The Star"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta XVII",
+    "en": "Major Arcana – Card XVII"
+  },
+  "intro": {
+    "pt": "Sob uma grande estrela e sete menores, uma moça nua derrama a água da vida de dois jarros, sobre a terra e de volta ao lago. Depois da tempestade da Torre, vem a calma. A Estrela é esperança, cura e a verdade de cada um brilhando sem máscara.",
+    "en": "Beneath a great star and seven smaller ones, a naked maiden pours the water of life from two jugs, onto the land and back into the pool. After the Tower's storm comes calm. The Star is hope, healing and each person's own truth shining without a mask."
+  },
+  "symbols": [
+    {
+      "key": "star",
+      "crop": {
+        "x": 0.5,
+        "y": 0.17,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Grande estrela de oito pontas",
+        "en": "Great eight-pointed star"
+      },
+      "keywords": {
+        "pt": [
+          "Núcleo puro da alma",
+          "A própria verdade",
+          "Luz interior"
+        ],
+        "en": [
+          "The pure core of the soul",
+          "One's own truth",
+          "Inner light"
+        ]
+      }
+    },
+    {
+      "key": "stars",
+      "crop": {
+        "x": 0.15,
+        "y": 0.13,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Sete estrelas menores",
+        "en": "Seven lesser stars"
+      },
+      "keywords": {
+        "pt": [
+          "Parte de uma Via Láctea maior",
+          "O lugar no cosmos",
+          "Esperança"
+        ],
+        "en": [
+          "Part of a greater Milky Way",
+          "Your place in the cosmos",
+          "Hope"
+        ]
+      }
+    },
+    {
+      "key": "face",
+      "crop": {
+        "x": 0.36,
+        "y": 0.38,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Olhar voltado à água",
+        "en": "Gaze toward the water"
+      },
+      "keywords": {
+        "pt": [
+          "Dedicação e contemplação",
+          "Ou: Narciso e seu reflexo"
+        ],
+        "en": [
+          "Dedication and contemplation",
+          "Or: Narcissus and his reflection"
+        ]
+      }
+    },
+    {
+      "key": "jug",
+      "crop": {
+        "x": 0.24,
+        "y": 0.61,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Jarro que volta ao lago",
+        "en": "Jug pouring into the pool"
+      },
+      "keywords": {
+        "pt": [
+          "O ciclo da vida",
+          "Nada se esgota",
+          "Renovar a fonte"
+        ],
+        "en": [
+          "The cycle of life",
+          "Nothing runs dry",
+          "Replenishing the source"
+        ]
+      }
+    },
+    {
+      "key": "foot",
+      "crop": {
+        "x": 0.42,
+        "y": 0.68,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Pé sobre a água",
+        "en": "Foot on the water"
+      },
+      "keywords": {
+        "pt": [
+          "A alma sustenta",
+          "Fé como base",
+          "Ou: medo de mergulhar"
+        ],
+        "en": [
+          "The soul holds you up",
+          "Faith as a footing",
+          "Or: fear of diving in"
+        ]
+      }
+    },
+    {
+      "key": "streams",
+      "crop": {
+        "x": 0.83,
+        "y": 0.55,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Cinco riachos na terra",
+        "en": "Five streams on the land"
+      },
+      "keywords": {
+        "pt": [
+          "Fertilizar a terra",
+          "A quintessência de cada um",
+          "Criar algo"
+        ],
+        "en": [
+          "Making the earth fruitful",
+          "Each person's quintessence",
+          "Creating something"
+        ]
+      }
+    },
+    {
+      "key": "ibis",
+      "crop": {
+        "x": 0.85,
+        "y": 0.31,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Íbis na árvore",
+        "en": "Ibis in the tree"
+      },
+      "keywords": {
+        "pt": [
+          "Thoth, deus das artes",
+          "Guia depois do dilúvio",
+          "Céu e terra ligados"
+        ],
+        "en": [
+          "Thoth, god of the arts",
+          "Guide after the flood",
+          "Heaven and earth linked"
+        ]
+      }
+    },
+    {
+      "key": "pool",
+      "crop": {
+        "x": 0.27,
+        "y": 0.75,
+        "r": 0.16
+      },
+      "title": {
+        "pt": "Lago agitado",
+        "en": "Stirred pool"
+      },
+      "keywords": {
+        "pt": [
+          "Inconsciente desperto",
+          "Fonte que não seca",
+          "Sentimentos em movimento"
+        ],
+        "en": [
+          "The unconscious stirred",
+          "A spring that never runs dry",
+          "Feelings in motion"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Mente lúcida",
+          "Ou: confusão"
+        ],
+        "en": [
+          "Open sky",
+          "Lucid mind",
+          "Or: confusion"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver",
+          "Inspiração"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life",
+          "Inspiration"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Completude",
+          "Cura",
+          "Novo começo"
+        ],
+        "en": [
+          "Completion",
+          "Healing",
+          "New beginning"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Juventude",
+          "Crescimento"
+        ],
+        "en": [
+          "Freshness",
+          "Youth",
+          "Growth"
+        ]
+      }
+    },
+    {
+      "hex": "#E9C9A4",
+      "name": {
+        "pt": "Bege",
+        "en": "Beige"
+      },
+      "keywords": {
+        "pt": [
+          "O corpo humano",
+          "Corporeidade"
+        ],
+        "en": [
+          "The human body",
+          "Corporeality"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Vitalidade",
+          "Calor"
+        ],
+        "en": [
+          "Vitality",
+          "Warmth"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "A Estrela fala de esperança, cura e verdade interior.",
+      "Ela representa a calma depois da tempestade e a fonte que não seca.",
+      "O foco dela é: seguir a própria estrela e partilhar sua luz."
+    ],
+    "en": [
+      "The Star speaks of hope, healing and inner truth.",
+      "She stands for calm after the storm and a spring that never runs dry.",
+      "Her focus: following her own star and sharing its light."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Reconhecer seu lugar no cosmos",
+          "A verdade revelada",
+          "Luz que nasce da escuridão"
+        ],
+        "en": [
+          "Recognising your place in the cosmos",
+          "Truth unveiled",
+          "Light born out of darkness"
+        ]
+      },
+      "line": {
+        "pt": "“Estrelas não caem do céu: nascem.”",
+        "en": "“Stars don't fall from the sky: they're born.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Faça a sua contribuição",
+          "Não esconda a sua luz",
+          "Energia criativa, artes"
+        ],
+        "en": [
+          "Make your contribution",
+          "Don't hide your light",
+          "Creative energy, the arts"
+        ]
+      },
+      "line": {
+        "pt": "“Sou uma parte de algo maior.”",
+        "en": "“I am part of something greater.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "A própria verdade como fonte dos sonhos",
+          "Clarear e realizar o seu sonho",
+          "Ou: sonhos sem chão"
+        ],
+        "en": [
+          "Your truth as the source of dreams",
+          "Clarifying and realising your dream",
+          "Or: dreams with no footing"
+        ]
+      },
+      "line": {
+        "pt": "“Meu sonho tem raiz em mim.”",
+        "en": "“My dream has its roots in me.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Cura e inteireza",
+          "Calma depois da tempestade",
+          "Juventude e beleza"
+        ],
+        "en": [
+          "Healing and wholeness",
+          "Calm after the storm",
+          "Youth and beauty"
+        ]
+      },
+      "line": {
+        "pt": "“Depois do raio, o corpo descansa.”",
+        "en": "“After the lightning, the body rests.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Esperança",
+          "Sentimentos que degelam",
+          "Coragem de entrar na água"
+        ],
+        "en": [
+          "Hope",
+          "Feelings thawing out",
+          "Courage to step into the water"
+        ]
+      },
+      "line": {
+        "pt": "“O que estava congelado volta a correr.”",
+        "en": "“What was frozen starts to flow again.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Depois da tempestade, a paz",
+          "A jornada pode esperar",
+          "Elaborar o que doeu e seguir"
+        ],
+        "en": [
+          "After the storm, peace",
+          "The journey can wait",
+          "Working through the pain, then moving on"
+        ]
+      },
+      "line": {
+        "pt": "“Agora é tempo de respirar.”",
+        "en": "“Now is the time to breathe.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Hora dos sentimentos degelarem",
+          "Abertura e sinceridade",
+          "Ou: exposição demais"
+        ],
+        "en": [
+          "Time for feelings to thaw",
+          "Openness and sincerity",
+          "Or: too much exposure"
+        ]
+      },
+      "line": {
+        "pt": "“Sem máscara, o amor encontra quem eu sou.”",
+        "en": "“Without a mask, love finds who I am.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Siga a sua estrela",
+          "Abra-se, sem falsa modéstia",
+          "Deixe a água correr"
+        ],
+        "en": [
+          "Follow your own star",
+          "Open up, without false modesty",
+          "Let the water flow"
+        ]
+      },
+      "line": {
+        "pt": "“Minha luz não diminui ao ser partilhada.”",
+        "en": "“My light doesn't dim when it's shared.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Cabeça nas nuvens",
+          "Egocentrismo, imodéstia",
+          "Canais fechados: medo e cansaço"
+        ],
+        "en": [
+          "Head in the clouds",
+          "Self-centredness, immodesty",
+          "Channels closed: fear and fatigue"
+        ]
+      },
+      "line": {
+        "pt": "“Água represada adoece.”",
+        "en": "“Dammed-up water turns stagnant.”"
+      }
+    }
+  ]
+}

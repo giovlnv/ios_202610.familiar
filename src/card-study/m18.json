@@ -1,0 +1,519 @@
+{
+  "id": "m18",
+  "number": "XVIII",
+  "name": {
+    "pt": "A Lua",
+    "en": "The Moon"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta XVIII",
+    "en": "Major Arcana – Card XVIII"
+  },
+  "intro": {
+    "pt": "Uma lua com rosto brilha entre duas torres; um cão e um lobo uivam para ela, e um lagostim sai da água para a terra. Um caminho longo serpenteia até as montanhas. A Lua desperta sentimentos, sonhos e medos antigos do inconsciente: assusta, mas abre as portas do céu.",
+    "en": "A moon with a face shines between two towers; a dog and a wolf howl at it, and a crayfish crawls out of the water onto land. A long path winds toward the mountains. The Moon stirs feelings, dreams and old fears from the unconscious: it unsettles, but it opens the gates of heaven."
+  },
+  "symbols": [
+    {
+      "key": "moon",
+      "crop": {
+        "x": 0.5,
+        "y": 0.2,
+        "r": 0.24
+      },
+      "title": {
+        "pt": "Lua com rosto",
+        "en": "Moon with a face"
+      },
+      "keywords": {
+        "pt": [
+          "Sol e lua unidos",
+          "Sentimentos oceânicos",
+          "Histórias pessoais"
+        ],
+        "en": [
+          "Sun and moon merged",
+          "Oceanic feelings",
+          "Personal stories"
+        ]
+      }
+    },
+    {
+      "key": "drops",
+      "crop": {
+        "x": 0.35,
+        "y": 0.42,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Gotas de ouro",
+        "en": "Golden drops"
+      },
+      "keywords": {
+        "pt": [
+          "Centelha divina",
+          "Orvalho do pensamento",
+          "Passagem entre céu e terra"
+        ],
+        "en": [
+          "The divine spark",
+          "Dew of thought",
+          "Passage between heaven and earth"
+        ]
+      }
+    },
+    {
+      "key": "towers",
+      "crop": {
+        "x": 0.12,
+        "y": 0.4,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Torres",
+        "en": "Towers"
+      },
+      "keywords": {
+        "pt": [
+          "Portões do céu abertos",
+          "Ou: rigidez",
+          "Consciência vista por trás"
+        ],
+        "en": [
+          "Gates of heaven open",
+          "Or: rigidity",
+          "Consciousness seen from behind"
+        ]
+      }
+    },
+    {
+      "key": "dog",
+      "crop": {
+        "x": 0.36,
+        "y": 0.56,
+        "r": 0.14
+      },
+      "title": {
+        "pt": "Cão",
+        "en": "Dog"
+      },
+      "keywords": {
+        "pt": [
+          "O instinto domado",
+          "O eu animal desperto",
+          "Medos da mente natural"
+        ],
+        "en": [
+          "Tamed instinct",
+          "The animal self awakened",
+          "Fears of the natural mind"
+        ]
+      }
+    },
+    {
+      "key": "wolf",
+      "crop": {
+        "x": 0.68,
+        "y": 0.56,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Lobo",
+        "en": "Wolf"
+      },
+      "keywords": {
+        "pt": [
+          "O instinto selvagem",
+          "Impulsos ancestrais",
+          "Uivar para a lua"
+        ],
+        "en": [
+          "Wild instinct",
+          "Ancestral urges",
+          "Howling at the moon"
+        ]
+      }
+    },
+    {
+      "key": "crayfish",
+      "crop": {
+        "x": 0.44,
+        "y": 0.8,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Lagostim saindo da água",
+        "en": "Crayfish leaving the water"
+      },
+      "keywords": {
+        "pt": [
+          "Instintos antigos",
+          "Querem vir à tona",
+          "Ou voltam a se esconder"
+        ],
+        "en": [
+          "Age-old instincts",
+          "Wanting to surface",
+          "Or slipping back into hiding"
+        ]
+      }
+    },
+    {
+      "key": "path",
+      "crop": {
+        "x": 0.52,
+        "y": 0.66,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Caminho até as montanhas",
+        "en": "Path to the mountains"
+      },
+      "keywords": {
+        "pt": [
+          "O caminho de toda a vida",
+          "Fé e grandes sonhos",
+          "Saída para o desconhecido"
+        ],
+        "en": [
+          "The path of a whole life",
+          "Faith and great dreams",
+          "Exit into the unknown"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Mente lúcida",
+          "Ou: confusão"
+        ],
+        "en": [
+          "Open sky",
+          "Lucid mind",
+          "Or: confusion"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver",
+          "Ou: estridência"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life",
+          "Or: shrillness"
+        ]
+      }
+    },
+    {
+      "hex": "#5E7FA8",
+      "name": {
+        "pt": "Azul",
+        "en": "Blue"
+      },
+      "keywords": {
+        "pt": [
+          "Saudade",
+          "Sentimentalismo",
+          "Embriaguez"
+        ],
+        "en": [
+          "Longing",
+          "Sentimentality",
+          "Inebriation"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Vida comum",
+          "Imaturidade"
+        ],
+        "en": [
+          "Freshness",
+          "Everyday life",
+          "Immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Inconsciente, a sombra",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Unconscious, the shadow",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Da terra"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Of the earth"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "A Lua fala de sonhos, medos e instintos antigos.",
+      "Ela representa o inconsciente que vem à tona com força.",
+      "O foco dela é: atravessar a noite sem se perder nela."
+    ],
+    "en": [
+      "The Moon speaks of dreams, fears and age-old instincts.",
+      "She stands for the unconscious rising powerfully to the surface.",
+      "Her focus: crossing the night without getting lost in it."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Empatia com todas as criaturas",
+          "Ver o divino em tudo",
+          "Portões do céu escancarados"
+        ],
+        "en": [
+          "Empathy with all creatures",
+          "Seeing the divine in everything",
+          "Gates of heaven thrown open"
+        ]
+      },
+      "line": {
+        "pt": "“Sinto tudo, mas sei quem sou.”",
+        "en": "“I feel everything, but I know who I am.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Recolher-se de alguma atividade",
+          "Imaginação que enriquece",
+          "Do desejo à satisfação"
+        ],
+        "en": [
+          "Withdrawing from some activity",
+          "Imagination that enriches",
+          "From craving to satisfaction"
+        ]
+      },
+      "line": {
+        "pt": "“Nem tudo se resolve à luz do dia.”",
+        "en": "“Not everything gets solved by daylight.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Imaginação que dá forma ao invisível",
+          "Luz refletida, imagens distorcidas",
+          "Sonhos e visões estranhas"
+        ],
+        "en": [
+          "Imagination shaping the invisible",
+          "Reflected light, distorted images",
+          "Strange dreams and visions"
+        ]
+      },
+      "line": {
+        "pt": "“Nem toda sombra é o que parece.”",
+        "en": "“Not every shadow is what it seems.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Ciclos lunares e menstruais",
+          "Lua cheia que agita",
+          "Instintos antigos à flor da pele"
+        ],
+        "en": [
+          "Lunar and menstrual cycles",
+          "A full moon that stirs",
+          "Old instincts close to the skin"
+        ]
+      },
+      "line": {
+        "pt": "“O corpo também segue as marés da lua.”",
+        "en": "“The body follows the moon's tides too.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Humores difíceis de entender",
+          "Empatia, não identificação",
+          "Medos que viram maravilhas"
+        ],
+        "en": [
+          "Moods hard to understand",
+          "Empathy, not identification",
+          "Fears that turn into wonders"
+        ]
+      },
+      "line": {
+        "pt": "“Coragem para os sentimentos mais fortes.”",
+        "en": "“Courage for the strongest feelings.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "A noite, a lua cheia",
+          "O caminho de uma vida inteira",
+          "Um tempo de introspecção"
+        ],
+        "en": [
+          "Night, the full moon",
+          "The road of a whole lifetime",
+          "A time of introspection"
+        ]
+      },
+      "line": {
+        "pt": "“A noite também é parte do caminho.”",
+        "en": "“The night is part of the road too.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Dar espaço ao seu lado noturno",
+          "Levar o parceiro junto",
+          "Abrir o coração, largar a timidez"
+        ],
+        "en": [
+          "Making room for your night side",
+          "Taking your partner along",
+          "Opening your heart, dropping awkwardness"
+        ]
+      },
+      "line": {
+        "pt": "“Partilhar a noite aproxima.”",
+        "en": "“Sharing the night brings us closer.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Tenha coragem de sentir",
+          "Deixe a imaginação agir",
+          "Faça as pazes com Deus e o mundo"
+        ],
+        "en": [
+          "Have the courage to feel",
+          "Let the imagination work",
+          "Make peace with your God and world"
+        ]
+      },
+      "line": {
+        "pt": "“Deixar vir é melhor que lutar contra.”",
+        "en": "“Letting it come beats fighting it.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Ser arrastado pelos humores",
+          "Viver como num sonho",
+          "Lutar contra a lua e aumentar o medo"
+        ],
+        "en": [
+          "Being swept away by moods",
+          "Living as if in a dream",
+          "Fighting the moon and feeding the fear"
+        ]
+      },
+      "line": {
+        "pt": "“O medo cresce quando eu fujo dele.”",
+        "en": "“Fear grows when I run from it.”"
+      }
+    }
+  ]
+}

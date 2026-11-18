@@ -1,0 +1,509 @@
+{
+  "id": "m20",
+  "number": "XX",
+  "name": {
+    "pt": "O Julgamento",
+    "en": "Judgement"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta XX",
+    "en": "Major Arcana – Card XX"
+  },
+  "intro": {
+    "pt": "Um grande anjo toca uma trombeta com bandeira de cruz; lá embaixo, homens, mulheres e crianças nus se levantam de caixões abertos, de braços erguidos. É o chamado que vem de dentro e de fora para despertar e mudar. O Julgamento é hoje: enterrar o que morreu e renascer para algo novo.",
+    "en": "A great angel blows a trumpet hung with a cross banner; below, naked men, women and children rise from open coffins, arms raised. This is the call, from inside and outside, to wake up and change. Judgement is today: burying what has died and being reborn into something new."
+  },
+  "symbols": [
+    {
+      "key": "angel",
+      "crop": {
+        "x": 0.47,
+        "y": 0.17,
+        "r": 0.22
+      },
+      "title": {
+        "pt": "Anjo",
+        "en": "Angel"
+      },
+      "keywords": {
+        "pt": [
+          "Força que desperta",
+          "Transformação",
+          "Ou: crenças sem chão"
+        ],
+        "en": [
+          "The power that awakens",
+          "Transformation",
+          "Or: groundless beliefs"
+        ]
+      }
+    },
+    {
+      "key": "trumpet",
+      "crop": {
+        "x": 0.6,
+        "y": 0.45,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Trombeta",
+        "en": "Trumpet"
+      },
+      "keywords": {
+        "pt": [
+          "Desperta energias adormecidas",
+          "O chamado interior",
+          "Traz os mortos de volta"
+        ],
+        "en": [
+          "Awakens sleeping energies",
+          "The inner call",
+          "Brings the dead back"
+        ]
+      }
+    },
+    {
+      "key": "cross",
+      "crop": {
+        "x": 0.36,
+        "y": 0.4,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Bandeira com a cruz",
+        "en": "Banner with the cross"
+      },
+      "keywords": {
+        "pt": [
+          "Separar e unir",
+          "Despedida ou reconciliação",
+          "Encruzilhada"
+        ],
+        "en": [
+          "Separating and joining",
+          "Farewell or reconciliation",
+          "A crossroads"
+        ]
+      }
+    },
+    {
+      "key": "coffins",
+      "crop": {
+        "x": 0.5,
+        "y": 0.78,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Caixões abertos",
+        "en": "Open coffins"
+      },
+      "keywords": {
+        "pt": [
+          "Fim das caixas-pretas",
+          "O reprimido volta",
+          "Libertação, perdão"
+        ],
+        "en": [
+          "No more black boxes",
+          "The repressed returns",
+          "Release, mercy"
+        ]
+      }
+    },
+    {
+      "key": "people",
+      "crop": {
+        "x": 0.48,
+        "y": 0.64,
+        "r": 0.24
+      },
+      "title": {
+        "pt": "Os ressuscitados",
+        "en": "The risen"
+      },
+      "keywords": {
+        "pt": [
+          "Família ou clã",
+          "Partes masculinas, femininas e infantis",
+          "Não há libertação só pessoal"
+        ],
+        "en": [
+          "Family or clan",
+          "Masculine, feminine and childlike parts",
+          "No liberation is only personal"
+        ]
+      }
+    },
+    {
+      "key": "mountains",
+      "crop": {
+        "x": 0.3,
+        "y": 0.54,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Montanhas branco-azuladas",
+        "en": "Blue-white mountains"
+      },
+      "keywords": {
+        "pt": [
+          "Pensamento abstrato",
+          "Verdade eterna",
+          "Velhos medos resolvidos"
+        ],
+        "en": [
+          "Abstract thought",
+          "Eternal truth",
+          "Old fears resolved"
+        ]
+      }
+    },
+    {
+      "key": "woman",
+      "crop": {
+        "x": 0.83,
+        "y": 0.62,
+        "r": 0.18
+      },
+      "title": {
+        "pt": "Figura de braços abertos",
+        "en": "Figure with open arms"
+      },
+      "keywords": {
+        "pt": [
+          "Verdade nua",
+          "Abertura e honestidade",
+          "Êxtase e adoração"
+        ],
+        "en": [
+          "The naked truth",
+          "Openness and honesty",
+          "Ecstasy and adoration"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Leveza",
+          "Ou: ingenuidade"
+        ],
+        "en": [
+          "Open sky",
+          "Lightness",
+          "Or: naivety"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Coração",
+          "Força vital",
+          "Vontade"
+        ],
+        "en": [
+          "Heart",
+          "Life force",
+          "Will"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Vitalidade",
+          "Calor"
+        ],
+        "en": [
+          "Vitality",
+          "Warmth"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Completude",
+          "Cura",
+          "Novo território"
+        ],
+        "en": [
+          "Completion",
+          "Healing",
+          "New territory"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Inconsciente",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Unconscious",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Julgamento fala de despertar, chamado e renascimento.",
+      "Ele representa a mudança que, por dentro, já aconteceu.",
+      "O foco dele é: atender o chamado e deixar o passado em paz."
+    ],
+    "en": [
+      "Judgement speaks of awakening, calling and rebirth.",
+      "It stands for a change that has already happened inside.",
+      "Its focus: answering the call and letting the past rest."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Ressurreição para uma vida nova",
+          "O chamado do alto ouvido por dentro",
+          "Ninguém se liberta sozinho"
+        ],
+        "en": [
+          "Rising to a new life",
+          "A summons from above heard within",
+          "No one is freed alone"
+        ]
+      },
+      "line": {
+        "pt": "“Quem salva uma vida salva o mundo inteiro.”",
+        "en": "“Whoever saves one life saves the whole world.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Uma grande mudança pede passagem",
+          "Uma pausa na rotina faz milagres",
+          "Escolher princípios que te sirvam"
+        ],
+        "en": [
+          "A big change wants to come through",
+          "A break in the routine works wonders",
+          "Choosing principles that suit you"
+        ]
+      },
+      "line": {
+        "pt": "“Tenho reservas enormes de energia.”",
+        "en": "“I have huge reserves of energy.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Livre para escolher de novo",
+          "Crenças antigas já morreram",
+          "Verdade além do saber parcial"
+        ],
+        "en": [
+          "Free to choose anew",
+          "Old beliefs have already died",
+          "Truth beyond partial knowledge"
+        ]
+      },
+      "line": {
+        "pt": "“Fiz escolhas antes; posso fazer outras agora.”",
+        "en": "“I chose before; I can choose again now.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Alívio depois de confessar",
+          "Trabalhar culpas e medos de novo",
+          "Encarar a verdade nua"
+        ],
+        "en": [
+          "Relief after confessing",
+          "Working through guilt and fear again",
+          "Facing the naked truth"
+        ]
+      },
+      "line": {
+        "pt": "“Falar liberta o que estava enterrado.”",
+        "en": "“Speaking frees what was buried.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "O Dia do Juízo é hoje",
+          "Por dentro, a mudança já aconteceu",
+          "Encruzilhada"
+        ],
+        "en": [
+          "Judgement Day is today",
+          "Inside, the change has already happened",
+          "A crossroads"
+        ]
+      },
+      "line": {
+        "pt": "“Já mudei; só falta reconhecer.”",
+        "en": "“I've already changed; I just need to see it.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Perdoar sem esquecer e sem rancor",
+          "Reconciliar-se ou partir",
+          "Família e amigos a esclarecer"
+        ],
+        "en": [
+          "Forgiving without forgetting or grudges",
+          "Reconciling or leaving",
+          "Family and friends to clear things up with"
+        ]
+      },
+      "line": {
+        "pt": "“Perdoar não é apagar a memória.”",
+        "en": "“Forgiving isn't erasing the memory.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Ponha um ponto final",
+          "Enterre o que morreu",
+          "Atenda o chamado"
+        ],
+        "en": [
+          "Draw the line",
+          "Bury what has died",
+          "Answer the call"
+        ]
+      },
+      "line": {
+        "pt": "“O que ficou para trás descansa em paz.”",
+        "en": "“What's behind me can rest in peace.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Negar o chamado por medo",
+          "Desculpas para não mudar",
+          "Repetir o passado sem fim"
+        ],
+        "en": [
+          "Denying the call out of fear",
+          "Excuses not to change",
+          "Endlessly repeating the past"
+        ]
+      },
+      "line": {
+        "pt": "“Quem fica no túmulo não renasce.”",
+        "en": "“Whoever stays in the grave is not reborn.”"
+      }
+    }
+  ]
+}

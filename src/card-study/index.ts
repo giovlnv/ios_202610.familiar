@@ -15,6 +15,13 @@ import m11 from './m11.json';
 import m12 from './m12.json';
 import m13 from './m13.json';
 import m14 from './m14.json';
+import m15 from './m15.json';
+import m16 from './m16.json';
+import m17 from './m17.json';
+import m18 from './m18.json';
+import m19 from './m19.json';
+import m20 from './m20.json';
+import m21 from './m21.json';
 
 export const INTRO = intro;
-export const CARDS: Record<string, unknown> = { m00, m01, m02, m03, m04, m05, m06, m07, m08, m09, m10, m11, m12, m13, m14 };
+export const CARDS: Record<string, unknown> = { m00, m01, m02, m03, m04, m05, m06, m07, m08, m09, m10, m11, m12, m13, m14, m15, m16, m17, m18, m19, m20, m21 };
