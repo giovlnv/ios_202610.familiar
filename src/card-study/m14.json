@@ -1,0 +1,521 @@
+{
+  "id": "m14",
+  "number": "XIV",
+  "name": {
+    "pt": "A Temperança",
+    "en": "Temperance"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta XIV",
+    "en": "Major Arcana – Card XIV"
+  },
+  "intro": {
+    "pt": "Um anjo de asas vermelhas, com um pé na terra e outro na água, derrama a água da vida de um cálice para o outro. Ao fundo, um caminho leva até as montanhas e a uma luz. Temperança é encontrar a medida certa: misturar os opostos até a vida fluir em harmonia.",
+    "en": "A red-winged angel, one foot on land and one in the water, pours the water of life from one cup into another. Behind, a path leads up to the mountains and a light. Temperance is finding the right measure: blending opposites until life flows in harmony."
+  },
+  "symbols": [
+    {
+      "key": "angel",
+      "crop": {
+        "x": 0.43,
+        "y": 0.16,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Anjo com sol na testa",
+        "en": "Angel with a sun on the brow"
+      },
+      "keywords": {
+        "pt": [
+          "O eu superior",
+          "Terceiro olho",
+          "Vontade e destino juntos"
+        ],
+        "en": [
+          "The higher self",
+          "Third eye",
+          "Will and fate together"
+        ]
+      }
+    },
+    {
+      "key": "emblem",
+      "crop": {
+        "x": 0.465,
+        "y": 0.31,
+        "r": 0.07
+      },
+      "title": {
+        "pt": "Triângulo no quadrado",
+        "en": "Triangle in a square"
+      },
+      "keywords": {
+        "pt": [
+          "Espírito dentro da matéria",
+          "Feminino e masculino",
+          "Tensão produtiva"
+        ],
+        "en": [
+          "Spirit within matter",
+          "Feminine and masculine",
+          "Productive tension"
+        ]
+      }
+    },
+    {
+      "key": "cups",
+      "crop": {
+        "x": 0.48,
+        "y": 0.42,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Água entre os cálices",
+        "en": "Water between the cups"
+      },
+      "keywords": {
+        "pt": [
+          "Misturar na medida",
+          "Os opostos fluem",
+          "Um pouco de magia"
+        ],
+        "en": [
+          "Blending in measure",
+          "Opposites flow",
+          "A touch of magic"
+        ]
+      }
+    },
+    {
+      "key": "wings",
+      "crop": {
+        "x": 0.85,
+        "y": 0.24,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Asas de fogo",
+        "en": "Wings of fire"
+      },
+      "keywords": {
+        "pt": [
+          "Novas possibilidades",
+          "Purificação",
+          "Ou: perfeccionismo"
+        ],
+        "en": [
+          "New possibilities",
+          "Purification",
+          "Or: perfectionism"
+        ]
+      }
+    },
+    {
+      "key": "feet",
+      "crop": {
+        "x": 0.56,
+        "y": 0.79,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Um pé na terra, outro na água",
+        "en": "One foot on land, one in water"
+      },
+      "keywords": {
+        "pt": [
+          "Matéria e alma",
+          "Equilíbrio",
+          "Ligar os dois mundos"
+        ],
+        "en": [
+          "Matter and soul",
+          "Balance",
+          "Linking the two worlds"
+        ]
+      }
+    },
+    {
+      "key": "path",
+      "crop": {
+        "x": 0.15,
+        "y": 0.56,
+        "r": 0.14
+      },
+      "title": {
+        "pt": "Caminho até as montanhas",
+        "en": "Path to the mountains"
+      },
+      "keywords": {
+        "pt": [
+          "Tarefa de uma vida",
+          "Céu e terra casados",
+          "Ou: caminhos complicados"
+        ],
+        "en": [
+          "A lifelong task",
+          "Heaven and earth married",
+          "Or: overcomplicated routes"
+        ]
+      }
+    },
+    {
+      "key": "irises",
+      "crop": {
+        "x": 0.8,
+        "y": 0.57,
+        "r": 0.11
+      },
+      "title": {
+        "pt": "Íris amarelas",
+        "en": "Yellow irises"
+      },
+      "keywords": {
+        "pt": [
+          "Íris, a mensageira",
+          "Descida e renovação",
+          "Vida que brota"
+        ],
+        "en": [
+          "Iris, the messenger",
+          "Descent and renewal",
+          "Life springing up"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Completude",
+          "Cura",
+          "Ponto de partida"
+        ],
+        "en": [
+          "Completion",
+          "Healing",
+          "Starting point"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Coração",
+          "Força vital"
+        ],
+        "en": [
+          "Will",
+          "Heart",
+          "Life force"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Espiritualidade",
+          "Água limpa",
+          "Ou: ingenuidade"
+        ],
+        "en": [
+          "Spirituality",
+          "Clear water",
+          "Or: naivety"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Neutralidade",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Neutrality",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver",
+          "Inspiração"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life",
+          "Inspiration"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Juventude",
+          "Crescimento"
+        ],
+        "en": [
+          "Freshness",
+          "Youth",
+          "Growth"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "A Temperança fala de equilíbrio, medida e harmonia.",
+      "Ela representa a mistura dos opostos até a vida fluir.",
+      "O foco dela é: agir na medida certa, momento a momento."
+    ],
+    "en": [
+      "Temperance speaks of balance, measure and harmony.",
+      "She stands for blending opposites until life flows.",
+      "Her focus: acting in the right measure, moment by moment."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "União do céu e da terra",
+          "Purificação até achar a medida",
+          "O espírito sobe de dentro do corpo"
+        ],
+        "en": [
+          "The union of heaven and earth",
+          "Refinement until the measure is found",
+          "Spirit rising from within the body"
+        ]
+      },
+      "line": {
+        "pt": "“Não preciso de milagres, só de ser eu.”",
+        "en": "“I don't need miracles, only to be myself.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Grandes obras de uma vida inteira",
+          "Uma oficina criativa no dia a dia",
+          "Agir certo, às vezes esperar"
+        ],
+        "en": [
+          "Great works that take a lifetime",
+          "A creative workshop in your daily routine",
+          "Right action, sometimes waiting"
+        ]
+      },
+      "line": {
+        "pt": "“O grande se faz aos poucos.”",
+        "en": "“Great things are made a little at a time.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Encarar as contradições",
+          "Espontaneidade com conhecimento",
+          "Ver as coisas como são"
+        ],
+        "en": [
+          "Facing contradictions",
+          "Spontaneity with knowledge",
+          "Seeing things as they are"
+        ]
+      },
+      "line": {
+        "pt": "“Contradições seguradas com as duas mãos viram força.”",
+        "en": "“Contradictions held in both hands become strength.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Moderação, sem extremos",
+          "Circulação e fluxo",
+          "Calma em vez de agitação"
+        ],
+        "en": [
+          "Moderation, no extremes",
+          "Circulation and flow",
+          "Calm instead of agitation"
+        ]
+      },
+      "line": {
+        "pt": "“O corpo agradece a medida.”",
+        "en": "“The body thanks you for measure.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Harmonia e paz",
+          "Lidar com a vida com alegria",
+          "Equilíbrio entre os opostos"
+        ],
+        "en": [
+          "Harmony and peace",
+          "Meeting life with joy",
+          "Balance between opposites"
+        ]
+      },
+      "line": {
+        "pt": "“Sentir tudo, na medida.”",
+        "en": "“Feeling everything, in measure.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Um caminho longo",
+          "Às vezes é hora de esperar",
+          "Não esquecer as intenções"
+        ],
+        "en": [
+          "A long road",
+          "Sometimes it's time to wait",
+          "Not forgetting your intentions"
+        ]
+      },
+      "line": {
+        "pt": "“Cada coisa no seu tempo.”",
+        "en": "“Everything in its own time.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Deixar o parceiro participar",
+          "Amor e desejo na mesma pessoa",
+          "Seus atos te recriam"
+        ],
+        "en": [
+          "Letting your partner take part",
+          "Love and desire in the same person",
+          "Your deeds remake you"
+        ]
+      },
+      "line": {
+        "pt": "“Crescemos juntos quando partilhamos o caminho.”",
+        "en": "“We grow together when we share the way.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Busque a medida certa",
+          "Siga o caminho do meio",
+          "Una os lados da sua vida"
+        ],
+        "en": [
+          "Seek the right measure",
+          "Take the middle path",
+          "Bring the sides of your life together"
+        ]
+      },
+      "line": {
+        "pt": "“A medida certa transforma o mundo.”",
+        "en": "“The right measure changes the world.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Extremos, vida fragmentada",
+          "Perfeccionismo e fuga da realidade",
+          "Ideais irreais, complicação"
+        ],
+        "en": [
+          "Extremes, a fragmented life",
+          "Perfectionism and escape from reality",
+          "Unrealistic ideals, overcomplication"
+        ]
+      },
+      "line": {
+        "pt": "“Excesso também é fuga.”",
+        "en": "“Excess is a kind of escape too.”"
+      }
+    }
+  ]
+}

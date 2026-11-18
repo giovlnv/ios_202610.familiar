@@ -1,0 +1,515 @@
+{
+  "id": "m10",
+  "number": "X",
+  "name": {
+    "pt": "A Roda da Fortuna",
+    "en": "Wheel of Fortune"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta X",
+    "en": "Major Arcana – Card X"
+  },
+  "intro": {
+    "pt": "Uma grande roda gira no céu, com uma esfinge no topo, uma serpente descendo e Anúbis subindo, cercada pelos quatro seres alados com seus livros. É a carta do destino e das mudanças que não dependem de nós. O que importa é como recebemos a volta da roda.",
+    "en": "A great wheel turns in the sky, with a sphinx on top, a serpent going down and Anubis rising, surrounded by the four winged creatures with their books. This is the card of fate and of changes that don't depend on us. What matters is how we meet the turn of the wheel."
+  },
+  "symbols": [
+    {
+      "key": "sphinx",
+      "crop": {
+        "x": 0.48,
+        "y": 0.2,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Esfinge com espada",
+        "en": "Sphinx with a sword"
+      },
+      "keywords": {
+        "pt": [
+          "Unidade na diversidade",
+          "Os quatro elementos",
+          "Estabilidade no movimento"
+        ],
+        "en": [
+          "Unity in diversity",
+          "The four elements",
+          "Stability amid motion"
+        ]
+      }
+    },
+    {
+      "key": "wheel",
+      "crop": {
+        "x": 0.48,
+        "y": 0.49,
+        "r": 0.32
+      },
+      "title": {
+        "pt": "Roda com TARO e YHVH",
+        "en": "Wheel with TARO and YHVH"
+      },
+      "keywords": {
+        "pt": [
+          "O fluxo da vida",
+          "A Providência em tudo",
+          "A roda proclama a lei"
+        ],
+        "en": [
+          "The flow of life",
+          "Providence in everything",
+          "The wheel proclaims the law"
+        ]
+      }
+    },
+    {
+      "key": "hub",
+      "crop": {
+        "x": 0.48,
+        "y": 0.48,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Centro e raios",
+        "en": "Hub and spokes"
+      },
+      "keywords": {
+        "pt": [
+          "Crescer para fora",
+          "Recolher-se para dentro",
+          "Centro sem ego"
+        ],
+        "en": [
+          "Growing outward",
+          "Withdrawing inward",
+          "A centre without ego"
+        ]
+      }
+    },
+    {
+      "key": "typhon",
+      "crop": {
+        "x": 0.1,
+        "y": 0.53,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Serpente Tífon",
+        "en": "Typhon serpent"
+      },
+      "keywords": {
+        "pt": [
+          "O que desce",
+          "Destruição",
+          "Mergulho no escuro"
+        ],
+        "en": [
+          "What goes down",
+          "Destruction",
+          "Descent into the dark"
+        ]
+      }
+    },
+    {
+      "key": "anubis",
+      "crop": {
+        "x": 0.84,
+        "y": 0.52,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Anúbis",
+        "en": "Anubis"
+      },
+      "keywords": {
+        "pt": [
+          "O que sobe",
+          "Princípio construtivo",
+          "Guia das almas"
+        ],
+        "en": [
+          "What rises",
+          "The constructive principle",
+          "Guide of souls"
+        ]
+      }
+    },
+    {
+      "key": "angel",
+      "crop": {
+        "x": 0.17,
+        "y": 0.11,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Quatro seres alados",
+        "en": "Four winged creatures"
+      },
+      "keywords": {
+        "pt": [
+          "Os quatro evangelistas",
+          "Terra, fogo, água, ar",
+          "A ordem de fora"
+        ],
+        "en": [
+          "The four evangelists",
+          "Earth, fire, water, air",
+          "Order from outside"
+        ]
+      }
+    },
+    {
+      "key": "lion",
+      "crop": {
+        "x": 0.7,
+        "y": 0.8,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Livros e asas",
+        "en": "Books and wings"
+      },
+      "keywords": {
+        "pt": [
+          "Aprender com a experiência",
+          "O próprio olhar sobre o mundo",
+          "Asas feitas de saber"
+        ],
+        "en": [
+          "Learning from experience",
+          "Your own view of the world",
+          "Wings made of knowledge"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Espiritualidade",
+          "Ou: idealização"
+        ],
+        "en": [
+          "Open sky",
+          "Spirituality",
+          "Or: idealisation"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Vitalidade",
+          "Calor",
+          "Ou: arbitrariedade"
+        ],
+        "en": [
+          "Vitality",
+          "Warmth",
+          "Or: arbitrariness"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver",
+          "Inspiração"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life",
+          "Inspiration"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Coração",
+          "Força vital"
+        ],
+        "en": [
+          "Will",
+          "Heart",
+          "Life force"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Inconsciente",
+          "Equivalência",
+          "Sem preconceito"
+        ],
+        "en": [
+          "Unconscious",
+          "Equivalence",
+          "Free of prejudice"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Ponto de partida",
+          "Território novo",
+          "Completude"
+        ],
+        "en": [
+          "Starting point",
+          "New territory",
+          "Completion"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "A Roda da Fortuna fala de destino, ciclos e mudança.",
+      "Ela representa as voltas da vida que não controlamos.",
+      "O foco dela é: aceitar a mudança e achar sentido nela."
+    ],
+    "en": [
+      "The Wheel of Fortune speaks of fate, cycles and change.",
+      "It stands for the turns of life we don't control.",
+      "Its focus: accepting change and finding meaning in it."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "A felicidade espera para ser achada",
+          "Nada é puro acaso",
+          "O centro calmo, sem ego"
+        ],
+        "en": [
+          "Happiness is waiting to be found",
+          "Nothing is pure chance",
+          "The still centre, without ego"
+        ]
+      },
+      "line": {
+        "pt": "“Felicidade é ter talento para o destino.”",
+        "en": "“Happiness is a talent for fate.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Hora de pensar maior",
+          "Mudanças que não foram culpa sua",
+          "Sorte, sucesso, ascensão"
+        ],
+        "en": [
+          "Time to think bigger",
+          "Changes that weren't your doing",
+          "Luck, success, rising"
+        ]
+      },
+      "line": {
+        "pt": "“Quando a roda gira, eu giro junto.”",
+        "en": "“When the wheel turns, I turn with it.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Ver ligações entre as áreas da vida",
+          "Entender o todo",
+          "Aprender com a experiência dos outros"
+        ],
+        "en": [
+          "Seeing links between areas of life",
+          "Understanding the whole",
+          "Learning from others' experience"
+        ]
+      },
+      "line": {
+        "pt": "“Tudo está ligado a tudo.”",
+        "en": "“Everything is connected.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Aceitar e se adaptar",
+          "O fim também traz autoconhecimento",
+          "Encarar os medos do escuro"
+        ],
+        "en": [
+          "Accepting and adapting",
+          "Endings also bring self-knowledge",
+          "Facing the fears of the dark"
+        ]
+      },
+      "line": {
+        "pt": "“A dor de uma volta também ensina.”",
+        "en": "“The pain of a turn also teaches.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Um grande momento começa",
+          "A roda sobe e desce",
+          "Ciclos: depois do inverno, a primavera"
+        ],
+        "en": [
+          "A great time is beginning",
+          "The wheel goes up and down",
+          "Cycles: after winter, spring"
+        ]
+      },
+      "line": {
+        "pt": "“Nenhuma fase dura para sempre.”",
+        "en": "“No phase lasts forever.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Olhar além da própria cerca",
+          "Tolerância com o parceiro",
+          "Amores que acabam porque a vida segue"
+        ],
+        "en": [
+          "Looking beyond your own fence",
+          "Tolerance for your partner",
+          "Loves that end because life moves on"
+        ]
+      },
+      "line": {
+        "pt": "“Nem todo fim é culpa de alguém.”",
+        "en": "“Not every ending is someone's fault.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Acolha as coincidências, com cuidado",
+          "Use a mudança como oportunidade",
+          "Assuma a sua parte no rumo"
+        ],
+        "en": [
+          "Welcome coincidences, with care",
+          "Use change as an opportunity",
+          "Take your share of the steering"
+        ]
+      },
+      "line": {
+        "pt": "“Cooperar com o destino começa por acolhê-lo.”",
+        "en": "“Cooperating with fate starts with welcoming it.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Lutar contra o que já mudou",
+          "Passividade diante da vida",
+          "Orgulho antes da queda"
+        ],
+        "en": [
+          "Fighting what has already changed",
+          "Passivity in the face of life",
+          "Pride before the fall"
+        ]
+      },
+      "line": {
+        "pt": "“A vida sempre vence quem resiste a ela.”",
+        "en": "“Life always wins against those who resist it.”"
+      }
+    }
+  ]
+}

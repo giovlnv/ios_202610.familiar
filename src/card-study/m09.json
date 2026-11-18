@@ -1,0 +1,448 @@
+{
+  "id": "m09",
+  "number": "IX",
+  "name": {
+    "pt": "O Eremita",
+    "en": "The Hermit"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta IX",
+    "en": "Major Arcana – Card IX"
+  },
+  "intro": {
+    "pt": "Um velho de manto cinza está no alto de uma colina nevada, segurando uma lanterna com uma estrela dentro. O Eremita se afasta do barulho do mundo para despertar a luz interior, e essa mesma luz serve de guia para quem vem atrás. Não é solidão triste: é a busca do essencial.",
+    "en": "An old man in a grey cloak stands on a snowy rise, holding up a lantern with a star inside. The Hermit steps back from the world's noise to awaken the inner light, and that same light guides those who follow. This isn't sad loneliness: it's the search for what matters."
+  },
+  "symbols": [
+    {
+      "key": "lantern",
+      "crop": {
+        "x": 0.15,
+        "y": 0.21,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Lanterna com estrela",
+        "en": "Lantern with a star"
+      },
+      "keywords": {
+        "pt": [
+          "Luz interior divina",
+          "Vigilância no escuro",
+          "Céu e terra unidos"
+        ],
+        "en": [
+          "Divine inner light",
+          "Watchfulness in the dark",
+          "Heaven and earth joined"
+        ]
+      }
+    },
+    {
+      "key": "beard",
+      "crop": {
+        "x": 0.46,
+        "y": 0.19,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Barba branca",
+        "en": "White beard"
+      },
+      "keywords": {
+        "pt": [
+          "Sabedoria da idade",
+          "Realização",
+          "Recomeço"
+        ],
+        "en": [
+          "Wisdom of age",
+          "Fulfilment",
+          "A fresh start"
+        ]
+      }
+    },
+    {
+      "key": "staff",
+      "crop": {
+        "x": 0.37,
+        "y": 0.15,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Cajado dourado",
+        "en": "Golden staff"
+      },
+      "keywords": {
+        "pt": [
+          "O próprio caminho",
+          "A centelha divina",
+          "Força pessoal"
+        ],
+        "en": [
+          "One's own path",
+          "The divine spark",
+          "Personal strength"
+        ]
+      }
+    },
+    {
+      "key": "cloak",
+      "crop": {
+        "x": 0.5,
+        "y": 0.5,
+        "r": 0.24
+      },
+      "title": {
+        "pt": "Manto cinza",
+        "en": "Grey cloak"
+      },
+      "keywords": {
+        "pt": [
+          "Recolhimento",
+          "Objetividade",
+          "Ou: falta de desenvolvimento"
+        ],
+        "en": [
+          "Withdrawal",
+          "Objectivity",
+          "Or: lack of growth"
+        ]
+      }
+    },
+    {
+      "key": "snow",
+      "crop": {
+        "x": 0.75,
+        "y": 0.84,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Neve no alto",
+        "en": "Snow on the height"
+      },
+      "keywords": {
+        "pt": [
+          "Problema superado",
+          "Rever a vida do alto",
+          "Ou: parte de si congelada"
+        ],
+        "en": [
+          "A problem dealt with",
+          "Reviewing life from above",
+          "Or: a frozen part of yourself"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Inconsciente",
+          "Objetividade",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Unconscious",
+          "Objectivity",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Completude",
+          "Cura",
+          "Novo começo"
+        ],
+        "en": [
+          "Completion",
+          "Healing",
+          "A new beginning"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Inspiração",
+          "Alegria de viver"
+        ],
+        "en": [
+          "Consciousness",
+          "Inspiration",
+          "Joy of life"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Sol, consciência",
+          "Eternidade",
+          "Ou: deslumbramento"
+        ],
+        "en": [
+          "Sun, consciousness",
+          "Eternity",
+          "Or: dazzle"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "O desconhecido",
+          "Significado interior",
+          "Escuridão"
+        ],
+        "en": [
+          "The unknown",
+          "Inner meaning",
+          "Darkness"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Eremita fala de recolhimento, sabedoria e luz interior.",
+      "Ele representa o afastamento do mundo para encontrar o essencial.",
+      "O foco dele é: iluminar o próprio caminho e guiar quem vem depois."
+    ],
+    "en": [
+      "The Hermit speaks of solitude, wisdom and inner light.",
+      "He stands for stepping back from the world to find what matters.",
+      "His focus: lighting his own way and guiding those who follow."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Um caminho próprio até Deus",
+          "Viver na presença do divino",
+          "A luz interior que guia"
+        ],
+        "en": [
+          "Your own path to God",
+          "Living in the presence of the divine",
+          "The inner light that guides"
+        ]
+      },
+      "line": {
+        "pt": "“Onde estou, você também pode estar.”",
+        "en": "“Where I am, you can be too.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Resolver hoje, não amanhã",
+          "Soluções que duram",
+          "Pagar dívidas, de dinheiro e morais"
+        ],
+        "en": [
+          "Tackle it today, not tomorrow",
+          "Solutions that last",
+          "Paying off debts, money and moral"
+        ]
+      },
+      "line": {
+        "pt": "“Largar o peso inútil me deixa leve.”",
+        "en": "“Dropping useless ballast makes me light.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Atenção voltada para dentro",
+          "Saber o que realmente importa",
+          "Sabedoria que não vem dos livros"
+        ],
+        "en": [
+          "Attention turned inward",
+          "Knowing what really matters",
+          "Wisdom not found in books"
+        ]
+      },
+      "line": {
+        "pt": "“Quem olha para dentro desperta.”",
+        "en": "“Who looks inside awakes.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Afastar-se do que já não importa",
+          "Fazer as pazes consigo",
+          "Aquecer corações sem esperança"
+        ],
+        "en": [
+          "Stepping away from what no longer matters",
+          "Making peace with yourself",
+          "Warming hearts without hope"
+        ]
+      },
+      "line": {
+        "pt": "“Sozinho, mas não perdido.”",
+        "en": "“Alone, but not lost.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Lidar com os problemas na hora certa",
+          "Tempo de se recolher",
+          "Maturidade"
+        ],
+        "en": [
+          "Dealing with problems when the time is ripe",
+          "Time to withdraw",
+          "Maturity"
+        ]
+      },
+      "line": {
+        "pt": "“Tudo tem a sua hora de luz.”",
+        "en": "“Everything has its hour of light.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Bom para resolver problemas antigos",
+          "Um guia ou mestre por perto",
+          "Você como guia de alguém"
+        ],
+        "en": [
+          "Good for sorting out old problems",
+          "A guide or teacher nearby",
+          "You as someone's guide"
+        ]
+      },
+      "line": {
+        "pt": "“Às vezes o mestre está bem ao lado.”",
+        "en": "“Sometimes the teacher is right beside you.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Foque no essencial",
+          "Mantenha a lanterna pronta",
+          "Olhe quem está à sua volta"
+        ],
+        "en": [
+          "Focus on the essentials",
+          "Keep your lamp ready",
+          "Look at who is around you"
+        ]
+      },
+      "line": {
+        "pt": "“Uma luz pequena basta para o próximo passo.”",
+        "en": "“A small light is enough for the next step.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Medo das pessoas, isolamento",
+          "Fugir das responsabilidades (Peter Pan)",
+          "Deixar parte de si congelar"
+        ],
+        "en": [
+          "Fear of people, isolation",
+          "Dodging responsibility (Peter Pan)",
+          "Letting part of yourself freeze"
+        ]
+      },
+      "line": {
+        "pt": "“Recolher-se não é se esconder.”",
+        "en": "“Withdrawing isn't hiding.”"
+      }
+    }
+  ]
+}

@@ -1,0 +1,527 @@
+{
+  "id": "m08",
+  "number": "VIII",
+  "name": {
+    "pt": "A Força",
+    "en": "Strength"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta VIII",
+    "en": "Major Arcana – Card VIII"
+  },
+  "intro": {
+    "pt": "Uma mulher vestida de branco fecha com calma a boca de um leão vermelho, preso a ela por uma corrente de flores. É a força que não vem do controle, e sim da coragem de encarar os próprios instintos com amor. A fera não é morta: é acolhida e vira energia de vida.",
+    "en": "A woman in white calmly closes the jaws of a red lion, bound to her by a chain of flowers. This is strength that comes not from control but from the courage to face your own instincts with love. The beast isn't killed: it is welcomed and becomes life energy."
+  },
+  "symbols": [
+    {
+      "key": "lemniscate",
+      "crop": {
+        "x": 0.17,
+        "y": 0.2,
+        "r": 0.11
+      },
+      "title": {
+        "pt": "Oito deitado",
+        "en": "Sideways eight"
+      },
+      "keywords": {
+        "pt": [
+          "Infinito",
+          "Equilíbrio",
+          "Vitalidade",
+          "Ou: correr atrás do rabo"
+        ],
+        "en": [
+          "Infinity",
+          "Balance",
+          "Vitality",
+          "Or: chasing one's tail"
+        ]
+      }
+    },
+    {
+      "key": "crown",
+      "crop": {
+        "x": 0.32,
+        "y": 0.26,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Coroa de flores",
+        "en": "Crown of flowers"
+      },
+      "keywords": {
+        "pt": [
+          "Beleza de cada alma",
+          "Florescer",
+          "A carta flower power"
+        ],
+        "en": [
+          "Beauty of every soul",
+          "Blooming",
+          "The flower-power card"
+        ]
+      }
+    },
+    {
+      "key": "woman",
+      "crop": {
+        "x": 0.4,
+        "y": 0.33,
+        "r": 0.17
+      },
+      "title": {
+        "pt": "Mulher de branco",
+        "en": "Woman in white"
+      },
+      "keywords": {
+        "pt": [
+          "Sabedoria da natureza",
+          "Inocência que doma",
+          "Cuidar"
+        ],
+        "en": [
+          "Nature's wisdom",
+          "Innocence that tames",
+          "Caring"
+        ]
+      }
+    },
+    {
+      "key": "mouth",
+      "crop": {
+        "x": 0.37,
+        "y": 0.54,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Mãos na boca do leão",
+        "en": "Hands on the lion's mouth"
+      },
+      "keywords": {
+        "pt": [
+          "Instinto e intelecto unidos",
+          "Vitalidade e desejo",
+          "Ou: dependência"
+        ],
+        "en": [
+          "Instinct and intellect joined",
+          "Vitality and desire",
+          "Or: dependency"
+        ]
+      }
+    },
+    {
+      "key": "lion",
+      "crop": {
+        "x": 0.74,
+        "y": 0.65,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Leão vermelho",
+        "en": "Red lion"
+      },
+      "keywords": {
+        "pt": [
+          "Impulso e fogo",
+          "Vontade verdadeira",
+          "Paixões reprimidas"
+        ],
+        "en": [
+          "Impulse and fire",
+          "True will",
+          "Suppressed passions"
+        ]
+      }
+    },
+    {
+      "key": "garland",
+      "crop": {
+        "x": 0.55,
+        "y": 0.44,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Corrente de flores",
+        "en": "Chain of flowers"
+      },
+      "keywords": {
+        "pt": [
+          "Jugo leve",
+          "Ligação, não prisão",
+          "Amor que guia"
+        ],
+        "en": [
+          "A light yoke",
+          "Bond, not prison",
+          "Love that guides"
+        ]
+      }
+    },
+    {
+      "key": "mountain",
+      "crop": {
+        "x": 0.12,
+        "y": 0.69,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Montanha azul",
+        "en": "Blue mountain"
+      },
+      "keywords": {
+        "pt": [
+          "Céu na terra",
+          "Experiências de pico",
+          "Ou: olhe ao redor"
+        ],
+        "en": [
+          "Heaven on earth",
+          "Peak experiences",
+          "Or: look around you"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Busca de sentido",
+          "Ou: inveja"
+        ],
+        "en": [
+          "Consciousness",
+          "Search for meaning",
+          "Or: envy"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Paixão",
+          "Ira",
+          "Força vital"
+        ],
+        "en": [
+          "Will",
+          "Passion",
+          "Wrath",
+          "Life force"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Inocência",
+          "Completude",
+          "Cura"
+        ],
+        "en": [
+          "Innocence",
+          "Completion",
+          "Healing"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Juventude",
+          "Imaturidade"
+        ],
+        "en": [
+          "Freshness",
+          "Youth",
+          "Immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#3F6B3A",
+      "name": {
+        "pt": "Verde-escuro",
+        "en": "Dark green"
+      },
+      "keywords": {
+        "pt": [
+          "Perto da natureza",
+          "Vegetativo",
+          "Duradouro"
+        ],
+        "en": [
+          "Close to nature",
+          "Vegetative",
+          "Long-lasting"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Espiritualidade",
+          "Ou: idealização"
+        ],
+        "en": [
+          "Open sky",
+          "Spirituality",
+          "Or: idealisation"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "A Força fala de coragem, paixão e paz interior.",
+      "Ela representa os instintos acolhidos e guiados com amor.",
+      "O foco dela é: estar inteira no momento, sem ser dominada."
+    ],
+    "en": [
+      "Strength speaks of courage, passion and inner peace.",
+      "She stands for instincts welcomed and guided with love.",
+      "Her focus: being fully present without being overpowered."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Força de quem confia em Deus",
+          "O instinto como força de luz",
+          "Calma para encarar a si mesmo"
+        ],
+        "en": [
+          "The strength of those who trust in God",
+          "Instinct as a force for light",
+          "Calm enough to face yourself"
+        ]
+      },
+      "line": {
+        "pt": "“A fera também é sagrada.”",
+        "en": "“The beast is sacred too.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Força para seguir num projeto difícil",
+          "Energia, ação e coragem",
+          "Sucesso e reconhecimento"
+        ],
+        "en": [
+          "Strength to keep at a hard project",
+          "Energy, action and courage",
+          "Success and recognition"
+        ]
+      },
+      "line": {
+        "pt": "“Medo não me impede de continuar.”",
+        "en": "“Fear doesn't stop me from going on.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Reconhecer forças e fraquezas",
+          "A consciência guia o inconsciente",
+          "Pensamentos selvagens sob a superfície"
+        ],
+        "en": [
+          "Knowing your strengths and weaknesses",
+          "Awareness guiding the unconscious",
+          "Wild thoughts under the surface"
+        ]
+      },
+      "line": {
+        "pt": "“Entender a fera é o primeiro passo para guiá-la.”",
+        "en": "“Understanding the beast is the first step to guiding it.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Vitalidade e alegria de viver",
+          "Desejo e sexualidade",
+          "Paixão vivida com calma"
+        ],
+        "en": [
+          "Vitality and joy of life",
+          "Desire and sexuality",
+          "Passion lived calmly"
+        ]
+      },
+      "line": {
+        "pt": "“A energia do corpo é minha aliada.”",
+        "en": "“My body's energy is on my side.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Deixar vir o que foi reprimido",
+          "Encarar a vida com esperança",
+          "Amor e fé na vida"
+        ],
+        "en": [
+          "Letting the suppressed come out",
+          "Facing life with hope",
+          "Love and faith in life"
+        ]
+      },
+      "line": {
+        "pt": "“Sentir tudo não me destrói.”",
+        "en": "“Feeling everything doesn't destroy me.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Viver plenamente o momento",
+          "Tempo de mudança encarado com ânimo",
+          "Começo de uma busca interior"
+        ],
+        "en": [
+          "Living the moment fully",
+          "A time of change met with eagerness",
+          "The start of an inner search"
+        ]
+      },
+      "line": {
+        "pt": "“A força está inteira no agora.”",
+        "en": "“Strength lives whole in the now.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Fora ideais inúteis e meias medidas",
+          "Cuidar do outro sem prender",
+          "A libertação de um depende do outro"
+        ],
+        "en": [
+          "Drop useless ideals and half measures",
+          "Caring without holding captive",
+          "Each one's release depends on the other"
+        ]
+      },
+      "line": {
+        "pt": "“A bela e a fera se salvam juntas.”",
+        "en": "“Beauty and the beast save each other.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Esteja inteiro no momento",
+          "Una forças e fraquezas",
+          "Guie com amor, não com força bruta"
+        ],
+        "en": [
+          "Be fully present",
+          "Bring strengths and weaknesses together",
+          "Guide with love, not brute force"
+        ]
+      },
+      "line": {
+        "pt": "“Doçura também é força.”",
+        "en": "“Gentleness is strength too.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Fraqueza e pessimismo",
+          "Paixões que viram inimigas",
+          "Abuso de poder, dependência"
+        ],
+        "en": [
+          "Weakness and pessimism",
+          "Passions turned into enemies",
+          "Abuse of power, dependency"
+        ]
+      },
+      "line": {
+        "pt": "“Fera negada vira tormento.”",
+        "en": "“A denied beast becomes a torment.”"
+      }
+    }
+  ]
+}

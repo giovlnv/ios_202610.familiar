@@ -1,0 +1,521 @@
+{
+  "id": "m13",
+  "number": "XIII",
+  "name": {
+    "pt": "A Morte",
+    "en": "Death"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta XIII",
+    "en": "Major Arcana – Card XIII"
+  },
+  "intro": {
+    "pt": "Um cavaleiro de armadura negra, com rosto de caveira, avança num cavalo branco levando um estandarte com uma rosa. Rei, menina e criança caem ou se viram diante dele; só o sacerdote e a criança o encaram. A Morte é fim, mas é também colheita e passagem: algo precisa morrer para o novo nascer.",
+    "en": "A rider in black armour with a skull for a face advances on a white horse, carrying a banner with a rose. King, maiden and child fall or turn before him; only the priest and the child face him. Death is an ending, but also a harvest and a passage: something has to die for the new to be born."
+  },
+  "symbols": [
+    {
+      "key": "rider",
+      "crop": {
+        "x": 0.2,
+        "y": 0.2,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Cavaleiro negro",
+        "en": "Black rider"
+      },
+      "keywords": {
+        "pt": [
+          "Concluir de forma ativa",
+          "Fim inevitável",
+          "Ou: dureza, agressão"
+        ],
+        "en": [
+          "Bringing to a close",
+          "An unavoidable end",
+          "Or: harshness, aggression"
+        ]
+      }
+    },
+    {
+      "key": "banner",
+      "crop": {
+        "x": 0.6,
+        "y": 0.15,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Estandarte com a rosa",
+        "en": "Banner with the rose"
+      },
+      "keywords": {
+        "pt": [
+          "Colheita",
+          "A rosa mística: vida",
+          "Não destrói, recolhe"
+        ],
+        "en": [
+          "Harvest",
+          "The mystic rose: life",
+          "Gathers, doesn't destroy"
+        ]
+      }
+    },
+    {
+      "key": "horse",
+      "crop": {
+        "x": 0.55,
+        "y": 0.42,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Cavalo branco",
+        "en": "White horse"
+      },
+      "keywords": {
+        "pt": [
+          "Força e vitalidade",
+          "Impulsos inconscientes",
+          "Fim e recomeço"
+        ],
+        "en": [
+          "Strength and vitality",
+          "Unconscious drives",
+          "Ending and new start"
+        ]
+      }
+    },
+    {
+      "key": "sun",
+      "crop": {
+        "x": 0.86,
+        "y": 0.4,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Sol entre as torres",
+        "en": "Sun between the towers"
+      },
+      "keywords": {
+        "pt": [
+          "Imortalidade",
+          "Portão do céu",
+          "Nasce ou se põe"
+        ],
+        "en": [
+          "Immortality",
+          "The gate of heaven",
+          "Rising or setting"
+        ]
+      }
+    },
+    {
+      "key": "bishop",
+      "crop": {
+        "x": 0.78,
+        "y": 0.5,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Bispo de mãos postas",
+        "en": "Bishop with clasped hands"
+      },
+      "keywords": {
+        "pt": [
+          "Aceitar a morte",
+          "Encarar o fim",
+          "Conclusão"
+        ],
+        "en": [
+          "Accepting death",
+          "Facing the end",
+          "Conclusion"
+        ]
+      }
+    },
+    {
+      "key": "children",
+      "crop": {
+        "x": 0.76,
+        "y": 0.77,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Moça e criança",
+        "en": "Maiden and child"
+      },
+      "keywords": {
+        "pt": [
+          "Uma se vira, outra encara",
+          "Aceitar como criança",
+          "Fases da vida"
+        ],
+        "en": [
+          "One turns away, one faces him",
+          "Accepting like a child",
+          "Phases of life"
+        ]
+      }
+    },
+    {
+      "key": "king",
+      "crop": {
+        "x": 0.2,
+        "y": 0.8,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Rei caído sem coroa",
+        "en": "Fallen king without a crown"
+      },
+      "keywords": {
+        "pt": [
+          "Morte do ego",
+          "Fim do poder mundano",
+          "Ou: perda de controle"
+        ],
+        "en": [
+          "Death of the ego",
+          "End of worldly power",
+          "Or: loss of control"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "O desconhecido",
+          "Significado interior",
+          "Escuridão"
+        ],
+        "en": [
+          "The unknown",
+          "Inner meaning",
+          "Darkness"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Completude",
+          "Novo começo",
+          "Cura"
+        ],
+        "en": [
+          "Completion",
+          "A new beginning",
+          "Healing"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Calma",
+          "Ou: indiferença, apatia"
+        ],
+        "en": [
+          "Calm",
+          "Or: indifference, apathy"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Sol",
+          "Busca de sentido"
+        ],
+        "en": [
+          "Consciousness",
+          "Sun",
+          "Search for meaning"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Água",
+          "Espiritualidade",
+          "Céu aberto"
+        ],
+        "en": [
+          "Water",
+          "Spirituality",
+          "Open sky"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Força vital",
+          "Vontade",
+          "Sangue"
+        ],
+        "en": [
+          "Life force",
+          "Will",
+          "Blood"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "A Morte fala de fim, colheita e transformação.",
+      "Ela representa a passagem que abre espaço para o novo.",
+      "O foco dela é: soltar o que já acabou e colher o que amadureceu."
+    ],
+    "en": [
+      "Death speaks of endings, harvest and transformation.",
+      "It stands for the passage that makes room for the new.",
+      "Its focus: letting go of what is over and gathering what has ripened."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Morrer e renascer",
+          "Morte mística: nova consciência",
+          "Depois da morte, ressurreição"
+        ],
+        "en": [
+          "Die and be reborn",
+          "Mystical death: a new consciousness",
+          "After death, resurrection"
+        ]
+      },
+      "line": {
+        "pt": "“Quem nunca morreu por dentro é só visitante na terra.”",
+        "en": "“Whoever has never died inside is just a guest on earth.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Algo chega ao fim",
+          "Preparar a colheita em ordem",
+          "Coragem para mudanças radicais"
+        ],
+        "en": [
+          "Something comes to an end",
+          "Preparing the harvest in order",
+          "Courage for radical change"
+        ]
+      },
+      "line": {
+        "pt": "“Nunca é tarde para começar.”",
+        "en": "“It's never too late to begin.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "O que já não combina com você?",
+          "Largar velhos hábitos e rigidez",
+          "Morte do ego"
+        ],
+        "en": [
+          "What no longer fits you?",
+          "Dropping old habits and rigidity",
+          "Death of the ego"
+        ]
+      },
+      "line": {
+        "pt": "“Velhas formas precisam sair para o novo entrar.”",
+        "en": "“Old forms must go so the new can come in.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Medo da morte do corpo",
+          "O corpo que volta à natureza",
+          "Vitalidade e impulsos"
+        ],
+        "en": [
+          "Fear of the body's death",
+          "The body returning to nature",
+          "Vitality and drives"
+        ]
+      },
+      "line": {
+        "pt": "“O que morre alimenta outra vida.”",
+        "en": "“What dies feeds another life.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Tristeza diante da perda",
+          "Não reprimir o medo da morte",
+          "Tédio e apatia escondem medos"
+        ],
+        "en": [
+          "Sadness at loss",
+          "Not suppressing the fear of death",
+          "Boredom and apathy hide fears"
+        ]
+      },
+      "line": {
+        "pt": "“Sentir o luto também é viver.”",
+        "en": "“Grieving is part of living.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Tempo de mudança",
+          "Hora da colheita",
+          "O dia é hoje"
+        ],
+        "en": [
+          "A time of change",
+          "Harvest time",
+          "The day is today"
+        ]
+      },
+      "line": {
+        "pt": "“Chegou a hora de deixar ir.”",
+        "en": "“The time has come to let go.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Abrir espaço para um novo amanhecer",
+          "Diante da morte, todos são iguais",
+          "Aceitar como criança ou sacerdote"
+        ],
+        "en": [
+          "Making room for a new sunrise",
+          "Before death, all are equal",
+          "Accepting like a child or a priest"
+        ]
+      },
+      "line": {
+        "pt": "“Todo fim deixa um lugar livre.”",
+        "en": "“Every ending leaves a space free.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Que frutos já estão maduros?",
+          "Solte o que acabou",
+          "Aja com firmeza e coerência"
+        ],
+        "en": [
+          "Which fruits are ripe?",
+          "Let go of what is over",
+          "Act firmly and consistently"
+        ]
+      },
+      "line": {
+        "pt": "“Soltar é parte da colheita.”",
+        "en": "“Letting go is part of the harvest.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Preso em velhos hábitos, inércia",
+          "Medo paralisante da mudança",
+          "Dureza e agressão sem motivo"
+        ],
+        "en": [
+          "Stuck in old habits, inertia",
+          "Paralysing fear of change",
+          "Needless harshness and aggression"
+        ]
+      },
+      "line": {
+        "pt": "“Resistir ao fim não impede o fim.”",
+        "en": "“Resisting the end doesn't stop it.”"
+      }
+    }
+  ]
+}

@@ -1,0 +1,491 @@
+{
+  "id": "m12",
+  "number": "XII",
+  "name": {
+    "pt": "O Enforcado",
+    "en": "The Hanged Man"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta XII",
+    "en": "Major Arcana – Card XII"
+  },
+  "intro": {
+    "pt": "Um homem pende de cabeça para baixo de uma árvore viva em forma de T, preso por um pé, com o rosto calmo e uma auréola de luz. Não é castigo nem morte: é a vida em suspensão. Ao virar tudo de cabeça para baixo, ele enxerga o mundo de um ponto de vista que não é o da terra.",
+    "en": "A man hangs upside down from a living T-shaped tree, tied by one foot, his face calm and ringed with light. This isn't punishment or death: it's life in suspension. By turning everything upside down, he sees the world from a point of view that isn't earthly."
+  },
+  "symbols": [
+    {
+      "key": "halo",
+      "crop": {
+        "x": 0.48,
+        "y": 0.74,
+        "r": 0.17
+      },
+      "title": {
+        "pt": "Rosto calmo e auréola",
+        "en": "Calm face and halo"
+      },
+      "keywords": {
+        "pt": [
+          "Êxtase, não sofrimento",
+          "Força espiritual",
+          "Iluminação"
+        ],
+        "en": [
+          "Rapture, not suffering",
+          "Spiritual strength",
+          "Enlightenment"
+        ]
+      }
+    },
+    {
+      "key": "tau",
+      "crop": {
+        "x": 0.3,
+        "y": 0.11,
+        "r": 0.16
+      },
+      "title": {
+        "pt": "Cruz em T de madeira viva",
+        "en": "T-cross of living wood"
+      },
+      "keywords": {
+        "pt": [
+          "Árvore da vida",
+          "Conclusão",
+          "Ou: beco sem saída"
+        ],
+        "en": [
+          "Tree of life",
+          "Completion",
+          "Or: a dead end"
+        ]
+      }
+    },
+    {
+      "key": "cord",
+      "crop": {
+        "x": 0.53,
+        "y": 0.15,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Corda no pé direito",
+        "en": "Cord on the right foot"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão a que se entrega",
+          "Depender do que se crê",
+          "Ou: obsessão, martírio"
+        ],
+        "en": [
+          "A passion you give yourself to",
+          "Depending on what you believe",
+          "Or: obsession, martyrdom"
+        ]
+      }
+    },
+    {
+      "key": "legs",
+      "crop": {
+        "x": 0.5,
+        "y": 0.36,
+        "r": 0.18
+      },
+      "title": {
+        "pt": "Pernas cruzadas",
+        "en": "Crossed legs"
+      },
+      "keywords": {
+        "pt": [
+          "Um quatro invertido",
+          "O mundo de cabeça para baixo",
+          "Valores revistos"
+        ],
+        "en": [
+          "An upside-down four",
+          "The world turned over",
+          "Values re-examined"
+        ]
+      }
+    },
+    {
+      "key": "arms",
+      "crop": {
+        "x": 0.48,
+        "y": 0.58,
+        "r": 0.22
+      },
+      "title": {
+        "pt": "Braços atrás das costas",
+        "en": "Arms behind the back"
+      },
+      "keywords": {
+        "pt": [
+          "Rendição",
+          "Triângulo da água",
+          "Recolhimento"
+        ],
+        "en": [
+          "Surrender",
+          "The water triangle",
+          "Withdrawal"
+        ]
+      }
+    },
+    {
+      "key": "leaves",
+      "crop": {
+        "x": 0.1,
+        "y": 0.17,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Folhas na árvore",
+        "en": "Leaves on the tree"
+      },
+      "keywords": {
+        "pt": [
+          "Vida, não morte",
+          "Madeira viva",
+          "Crescimento oculto"
+        ],
+        "en": [
+          "Life, not death",
+          "Living wood",
+          "Hidden growth"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão",
+          "Vontade",
+          "Coração"
+        ],
+        "en": [
+          "Passion",
+          "Will",
+          "Heart"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Espiritualidade",
+          "Água limpa",
+          "Ou: idealização"
+        ],
+        "en": [
+          "Spirituality",
+          "Clear water",
+          "Or: idealisation"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Iluminação",
+          "Inspiração"
+        ],
+        "en": [
+          "Consciousness",
+          "Enlightenment",
+          "Inspiration"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Inconsciente",
+          "Equanimidade",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Unconscious",
+          "Equanimity",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Enraizado",
+          "Da criação"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Grounded",
+          "Of creation"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Juventude",
+          "Crescimento"
+        ],
+        "en": [
+          "Freshness",
+          "Youth",
+          "Growth"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Enforcado fala de entrega, pausa e nova perspectiva.",
+      "Ele representa a virada de valores que vem do despertar interior.",
+      "O foco dele é: aceitar a suspensão e ver o mundo de outro ângulo."
+    ],
+    "en": [
+      "The Hanged Man speaks of surrender, pause and a new perspective.",
+      "He stands for the reversal of values that comes with inner awakening.",
+      "His focus: accepting the suspension and seeing the world from another angle."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Mudar a mente por inteiro",
+          "A relação entre o divino e o universo",
+          "Depois da morte, a ressurreição"
+        ],
+        "en": [
+          "A complete change of mind",
+          "The bond between the divine and the universe",
+          "After death, resurrection"
+        ]
+      },
+      "line": {
+        "pt": "“O que você busca é o que busca você.”",
+        "en": "“What you seek is what is seeking you.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Uma nova perspectiva sobre tudo",
+          "Pausa antes de seguir",
+          "Ser quem você é, mesmo do avesso"
+        ],
+        "en": [
+          "A whole new perspective",
+          "A pause before moving on",
+          "Being yourself, even upside down"
+        ]
+      },
+      "line": {
+        "pt": "“Parar também é parte do trabalho.”",
+        "en": "“Stopping is part of the work too.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Examine suas crenças",
+          "Em que se apoiam suas suposições",
+          "Virar os valores de cabeça para baixo"
+        ],
+        "en": [
+          "Examine your beliefs",
+          "What your assumptions rest on",
+          "Turning values upside down"
+        ]
+      },
+      "line": {
+        "pt": "“Às vezes é preciso plantar bananeira para ver claro.”",
+        "en": "“Sometimes you have to stand on your head to see clearly.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Paz depois de uma provação",
+          "Sabedoria que vem da entrega",
+          "Da revolta à aceitação"
+        ],
+        "en": [
+          "Peace after a trial",
+          "Wisdom that comes from surrender",
+          "From resentment to acceptance"
+        ]
+      },
+      "line": {
+        "pt": "“Quando paro de lutar, encontro calma.”",
+        "en": "“When I stop fighting, I find calm.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Vida em suspensão",
+          "Fim de um caminho",
+          "Espera em que algo cresce por baixo"
+        ],
+        "en": [
+          "Life in suspension",
+          "The end of a road",
+          "A wait in which something grows below"
+        ]
+      },
+      "line": {
+        "pt": "“A espera também tem raízes.”",
+        "en": "“Waiting has roots too.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Entregar-se ao outro",
+          "Não viver pelo que os outros esperam",
+          "Ser fiel a si mesmo"
+        ],
+        "en": [
+          "Giving yourself to the other",
+          "Not living by what others expect",
+          "Staying true to yourself"
+        ]
+      },
+      "line": {
+        "pt": "“Do avesso para eles, inteiro para mim.”",
+        "en": "“Upside down to them, whole to myself.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Olhe de outro ângulo",
+          "Aceite o que não controla",
+          "Dependa só do que você crê"
+        ],
+        "en": [
+          "Look from another angle",
+          "Accept what you can't control",
+          "Depend only on what you believe"
+        ]
+      },
+      "line": {
+        "pt": "“Quem se entrega encontra outra força.”",
+        "en": "“Surrender finds another kind of strength.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Passividade, ficar só pendurado",
+          "Dependências e martírio",
+          "Viver de segunda mão, pela pressão social"
+        ],
+        "en": [
+          "Passivity, just hanging around",
+          "Dependencies and martyrdom",
+          "Living second-hand, by social pressure"
+        ]
+      },
+      "line": {
+        "pt": "“Entrega não é desistência.”",
+        "en": "“Surrender isn't giving up.”"
+      }
+    }
+  ]
+}

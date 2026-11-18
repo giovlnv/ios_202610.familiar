@@ -8,6 +8,13 @@ import m04 from './m04.json';
 import m05 from './m05.json';
 import m06 from './m06.json';
 import m07 from './m07.json';
+import m08 from './m08.json';
+import m09 from './m09.json';
+import m10 from './m10.json';
+import m11 from './m11.json';
+import m12 from './m12.json';
+import m13 from './m13.json';
+import m14 from './m14.json';
 
 export const INTRO = intro;
-export const CARDS: Record<string, unknown> = { m00, m01, m02, m03, m04, m05, m06, m07 };
+export const CARDS: Record<string, unknown> = { m00, m01, m02, m03, m04, m05, m06, m07, m08, m09, m10, m11, m12, m13, m14 };

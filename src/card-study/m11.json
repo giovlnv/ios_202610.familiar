@@ -1,0 +1,535 @@
+{
+  "id": "m11",
+  "number": "XI",
+  "name": {
+    "pt": "A Justiça",
+    "en": "Justice"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta XI",
+    "en": "Major Arcana – Card XI"
+  },
+  "intro": {
+    "pt": "A Justiça está sentada entre duas colunas, de olhos abertos, com a espada erguida numa mão e a balança na outra. Ela não é uma regra abstrata: é a pergunta prática de como equilibrar as necessidades de todos, inclusive as suas. Fala de verdade, honestidade e das consequências do que já fizemos.",
+    "en": "Justice sits between two pillars, eyes open, sword raised in one hand and scales in the other. She isn't an abstract rule: she is the practical question of how to balance everyone's needs, your own included. She speaks of truth, honesty and the consequences of what we have already done."
+  },
+  "symbols": [
+    {
+      "key": "sword",
+      "crop": {
+        "x": 0.15,
+        "y": 0.28,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Espada erguida",
+        "en": "Raised sword"
+      },
+      "keywords": {
+        "pt": [
+          "Decidir e agir",
+          "Cortar a ilusão",
+          "Dois gumes: escolha"
+        ],
+        "en": [
+          "Deciding and acting",
+          "Cutting through illusion",
+          "Two edges: choice"
+        ]
+      }
+    },
+    {
+      "key": "scales",
+      "crop": {
+        "x": 0.86,
+        "y": 0.55,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Balança",
+        "en": "Scales"
+      },
+      "keywords": {
+        "pt": [
+          "Pesar e avaliar",
+          "Equilíbrio entre passado e futuro",
+          "Medida para o incerto"
+        ],
+        "en": [
+          "Weighing and assessing",
+          "Balance of past and future",
+          "A measure for the uncertain"
+        ]
+      }
+    },
+    {
+      "key": "crown",
+      "crop": {
+        "x": 0.48,
+        "y": 0.25,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Coroa com joia",
+        "en": "Crown with a jewel"
+      },
+      "keywords": {
+        "pt": [
+          "Terceiro olho",
+          "Intuição superior",
+          "Resolver contradições"
+        ],
+        "en": [
+          "Third eye",
+          "Higher intuition",
+          "Resolving contradictions"
+        ]
+      }
+    },
+    {
+      "key": "mantle",
+      "crop": {
+        "x": 0.47,
+        "y": 0.38,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Manto verde e broche branco",
+        "en": "Green mantle and white brooch"
+      },
+      "keywords": {
+        "pt": [
+          "Naturalidade e crescimento",
+          "Um pouco de abertura",
+          "Ou: imaturidade"
+        ],
+        "en": [
+          "Naturalness and growth",
+          "A little openness",
+          "Or: immaturity"
+        ]
+      }
+    },
+    {
+      "key": "robe",
+      "crop": {
+        "x": 0.45,
+        "y": 0.62,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Veste vermelha",
+        "en": "Red robe"
+      },
+      "keywords": {
+        "pt": [
+          "Impulsos e emoções",
+          "Paixões pesadas com consciência",
+          "Amor ou raiva"
+        ],
+        "en": [
+          "Drives and emotions",
+          "Passions weighed consciously",
+          "Love or anger"
+        ]
+      }
+    },
+    {
+      "key": "curtain",
+      "crop": {
+        "x": 0.7,
+        "y": 0.15,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Cortina violeta",
+        "en": "Violet curtain"
+      },
+      "keywords": {
+        "pt": [
+          "Sensibilidade",
+          "Algo maior que nós",
+          "Ou: regras que escondem o sol"
+        ],
+        "en": [
+          "Sensitivity",
+          "Something greater than us",
+          "Or: rules hiding the sun"
+        ]
+      }
+    },
+    {
+      "key": "pillar",
+      "crop": {
+        "x": 0.1,
+        "y": 0.72,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Colunas cinzentas",
+        "en": "Grey pillars"
+      },
+      "keywords": {
+        "pt": [
+          "Neutralidade",
+          "Tolerância",
+          "Ou: petrificação"
+        ],
+        "en": [
+          "Neutrality",
+          "Tolerance",
+          "Or: fossilisation"
+        ]
+      }
+    },
+    {
+      "key": "foot",
+      "crop": {
+        "x": 0.43,
+        "y": 0.81,
+        "r": 0.06
+      },
+      "title": {
+        "pt": "Pé que aparece",
+        "en": "Foot stepping out"
+      },
+      "keywords": {
+        "pt": [
+          "Pronta para se levantar",
+          "Entre compreender e agir"
+        ],
+        "en": [
+          "Ready to stand up",
+          "Between understanding and acting"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Força vital",
+          "Amor",
+          "Vontade",
+          "Raiva"
+        ],
+        "en": [
+          "Life force",
+          "Love",
+          "Will",
+          "Anger"
+        ]
+      }
+    },
+    {
+      "hex": "#9A86B8",
+      "name": {
+        "pt": "Violeta",
+        "en": "Violet"
+      },
+      "keywords": {
+        "pt": [
+          "Experiência-limite",
+          "Mistura de vermelho e azul"
+        ],
+        "en": [
+          "Borderline experience",
+          "The mix of red and blue"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Neutralidade",
+          "Tolerância",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Neutrality",
+          "Tolerance",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência clara",
+          "Ou: inveja, ganância"
+        ],
+        "en": [
+          "Clear consciousness",
+          "Or: envy, greed"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Crescimento",
+          "Imaturidade"
+        ],
+        "en": [
+          "Freshness",
+          "Growth",
+          "Immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Abertura",
+          "Ponto de partida",
+          "Completude"
+        ],
+        "en": [
+          "Openness",
+          "Starting point",
+          "Completion"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "A Justiça fala de verdade, equilíbrio e responsabilidade.",
+      "Ela representa o olhar honesto sobre as próprias escolhas.",
+      "O foco dela é: entender o passado para agir melhor agora."
+    ],
+    "en": [
+      "Justice speaks of truth, balance and responsibility.",
+      "She stands for an honest look at your own choices.",
+      "Her focus: understanding the past to act better now."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Algo maior que nós",
+          "Juízo sábio nasce de um coração reto",
+          "Ver a verdade sobre si mesmo"
+        ],
+        "en": [
+          "Something greater than ourselves",
+          "Wise judgement comes from an upright heart",
+          "Seeing the truth about yourself"
+        ]
+      },
+      "line": {
+        "pt": "“Só a verdade me liberta.”",
+        "en": "“Only the truth sets me free.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Coragem de criticar e de elogiar",
+          "Decisão justa, nem sempre a desejada",
+          "Ação que nasce da compreensão"
+        ],
+        "en": [
+          "Courage to criticise and to praise",
+          "A fair decision, not always the one you want",
+          "Action born of understanding"
+        ]
+      },
+      "line": {
+        "pt": "“Agir certo vale mais que agir rápido.”",
+        "en": "“Acting right matters more than acting fast.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Pesar com cuidado",
+          "Manter as experiências frescas, não só os julgamentos",
+          "Decisões que não se desfazem"
+        ],
+        "en": [
+          "Weighing carefully",
+          "Keeping experiences fresh, not just judgements",
+          "Decisions that can't be undone"
+        ]
+      },
+      "line": {
+        "pt": "“Quanto mais precisa a pergunta, mais justa a resposta.”",
+        "en": "“The more precise the question, the fairer the answer.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Lidar com as paixões de forma consciente",
+          "Conciliar desejos e medos",
+          "Julgamento com compaixão"
+        ],
+        "en": [
+          "Handling passions consciously",
+          "Reconciling wishes and fears",
+          "Judgement with compassion"
+        ]
+      },
+      "line": {
+        "pt": "“Ser justo comigo também é amor.”",
+        "en": "“Being fair to myself is love too.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "O presente vem de escolhas passadas",
+          "Você colhe o que plantou",
+          "A lição de agora muda o futuro"
+        ],
+        "en": [
+          "The present comes from past choices",
+          "You reap what you sowed",
+          "Today's lesson changes the future"
+        ]
+      },
+      "line": {
+        "pt": "“O que fiz ontem me forma hoje.”",
+        "en": "“What I did yesterday shapes me today.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Justiça em toda relação",
+          "Descobrir o que cada um precisa",
+          "Honestidade com os outros"
+        ],
+        "en": [
+          "Fairness in every relationship",
+          "Finding out what each one needs",
+          "Honesty with others"
+        ]
+      },
+      "line": {
+        "pt": "“Equilíbrio é cuidar dos dois lados.”",
+        "en": "“Balance means caring for both sides.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Seja honesto, sobretudo consigo",
+          "Assuma sua responsabilidade",
+          "Ninguém te salva além de você"
+        ],
+        "en": [
+          "Be honest, above all with yourself",
+          "Own your responsibility",
+          "No one can save you but yourself"
+        ]
+      },
+      "line": {
+        "pt": "“Eu respondo pelo meu caminho.”",
+        "en": "“I answer for my own path.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Mentir para si e para os outros",
+          "“É injusto, todos me tratam mal”",
+          "Rigidez, preconceito, severidade"
+        ],
+        "en": [
+          "Lying to yourself and others",
+          "“It's unfair, everyone treats me badly”",
+          "Rigidity, bias, severity"
+        ]
+      },
+      "line": {
+        "pt": "“Culpar o mundo não muda o meu caminho.”",
+        "en": "“Blaming the world doesn't change my path.”"
+      }
+    }
+  ]
+}
