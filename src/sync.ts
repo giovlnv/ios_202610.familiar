@@ -123,8 +123,32 @@ const timed = (ms: number) => {
 };
 
 let pushing: Promise<boolean> | null = null;
+let again = false;
 /** sends the backup to ares; when ares can't be reached it stays pending until the next try */
-export const pushToAres = () => (pushing ??= push().finally(() => (pushing = null)));
+export function pushToAres(): Promise<boolean> {
+  if (pushing) {
+    again = true;
+    return pushing;
+  }
+  pushing = push().finally(() => {
+    pushing = null;
+    if (again) {
+      again = false;
+      void pushToAres();
+    }
+  });
+  return pushing;
+}
+
+let soon: ReturnType<typeof setTimeout> | undefined;
+/** a push a few seconds after the last edit, so typing an interpretation sends one backup, not one per key */
+export function pushSoon() {
+  if (soon) clearTimeout(soon);
+  soon = setTimeout(() => {
+    soon = undefined;
+    void pushToAres();
+  }, 3000);
+}
 
 async function push(): Promise<boolean> {
   const ares = await getAres();
@@ -136,6 +160,10 @@ async function push(): Promise<boolean> {
       body: JSON.stringify(collect()),
       signal: timed(20000),
     });
+    if (res.status === 409) {
+      setState({ pending: false, lastError: 'ares has a bigger backup: restore from ares first' });
+      return false;
+    }
     if (!res.ok) throw new Error(res.status === 401 ? 'ares refused the token' : `ares ${res.status}`);
     setState({ lastAres: Date.now(), pending: false, lastError: undefined });
     return true;

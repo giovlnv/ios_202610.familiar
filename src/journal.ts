@@ -5,7 +5,7 @@ import { Layout, lenormandInTitle, lenormandOfTheDay, LENORMAND, lenormandPrefs,
 import { listBooks } from './storage';
 import { loadLinks, loadSources, sectionCard, Sources, usesBook } from './sectionCards';
 import { load, save, Tracker, uid } from './tracker';
-import { pushToAres } from './sync';
+import { pushSoon } from './sync';
 
 export const bookPaths = (folder: string) => load().books.find((b) => b.audio === folder)?.paths ?? [];
 
@@ -137,7 +137,7 @@ export const todaysDraw = () => loadJournal().readings.filter((r) => r.daily ===
 
 export const saveReading = (r: Reading) => {
   const j = updateJournal((x) => x.readings.push(r));
-  if (r.daily === 'cotd') void pushToAres();
+  if (r.daily === 'cotd') pushSoon();
   return j;
 };
 
@@ -165,7 +165,7 @@ export const patchReading = (id: string, fn: (r: Reading) => void) => {
     if (r) fn(r);
     cotd = r?.daily === 'cotd';
   });
-  if (cotd) void pushToAres();
+  if (cotd) pushSoon();
   return j;
 };
 
