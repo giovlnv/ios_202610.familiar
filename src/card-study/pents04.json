@@ -1,0 +1,422 @@
+{
+  "id": "pents04",
+  "number": "4",
+  "name": {
+    "pt": "Quatro de Ouros",
+    "en": "Four of Pentacles"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Ouros",
+    "en": "Minor Arcana – Pentacles"
+  },
+  "intro": {
+    "pt": "Um homem coroado está sentado diante de uma cidade, com um pentáculo sobre a coroa, outro apertado contra o peito e dois sob os pés. Ele segura firme o que tem. Pode ser avareza e medo de perder, ou a estrutura necessária quando tudo virou caos.",
+    "en": "A crowned man sits in front of a city with one pentacle on his crown, another clutched to his chest and two beneath his feet. He holds tight to what he has. It can be greed and fear of loss, or the structure you need when everything has turned to chaos."
+  },
+  "symbols": [
+    {
+      "key": "crown",
+      "crop": {
+        "x": 0.43,
+        "y": 0.38,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Pentáculo sobre a coroa",
+        "en": "Pentacle on the crown"
+      },
+      "keywords": {
+        "pt": [
+          "Coroar-se com os próprios talentos",
+          "Mestre do ofício",
+          "Ou: egoísmo"
+        ],
+        "en": [
+          "Crowning yourself with your talents",
+          "Master of your trade",
+          "Or: egoism"
+        ]
+      }
+    },
+    {
+      "key": "heart",
+      "crop": {
+        "x": 0.43,
+        "y": 0.52,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Pentáculo no peito",
+        "en": "Pentacle at his chest"
+      },
+      "keywords": {
+        "pt": [
+          "Segurar o que tem",
+          "Proteger o coração",
+          "Ou: avareza"
+        ],
+        "en": [
+          "Holding what he has",
+          "Protecting the heart",
+          "Or: greed"
+        ]
+      }
+    },
+    {
+      "key": "feet",
+      "crop": {
+        "x": 0.43,
+        "y": 0.82,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Pentáculos sob os pés",
+        "en": "Pentacles under his feet"
+      },
+      "keywords": {
+        "pt": [
+          "Vida com chão",
+          "Mas achatada",
+          "Isolado do mundo"
+        ],
+        "en": [
+          "A grounded life",
+          "But a flat one",
+          "Cut off from the world"
+        ]
+      }
+    },
+    {
+      "key": "city",
+      "crop": {
+        "x": 0.15,
+        "y": 0.72,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Cidade às costas",
+        "en": "City behind him"
+      },
+      "keywords": {
+        "pt": [
+          "Afastar-se da multidão",
+          "Ou: quem se beneficia?",
+          "Torres: proteção ou isolamento"
+        ],
+        "en": [
+          "Stepping away from the crowd",
+          "Or: who benefits?",
+          "Towers: protection or isolation"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Neutralidade",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Neutrality",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Valor",
+          "Ou: ganância"
+        ],
+        "en": [
+          "Value",
+          "Or: greed"
+        ]
+      }
+    },
+    {
+      "hex": "#8C2F2F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Posse"
+        ],
+        "en": [
+          "Will",
+          "Possession"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "Talentos ocultos",
+          "O desconhecido"
+        ],
+        "en": [
+          "Hidden talents",
+          "The unknown"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Espírito",
+          "Abertura"
+        ],
+        "en": [
+          "Spirit",
+          "Openness"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Quatro de Ouros fala de posse, segurança e controle.",
+      "Ele representa quem segura firme o que conquistou.",
+      "O foco dele é: ter estrutura sem se fechar para o mundo."
+    ],
+    "en": [
+      "The Four of Pentacles speaks of possession, security and control.",
+      "It stands for someone holding tight to what they've gained.",
+      "Its focus: having structure without shutting out the world."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Relação íntima com o mundo material",
+          "A mente dá forma ao caos",
+          "Selar a própria energia"
+        ],
+        "en": [
+          "An intimate bond with the material world",
+          "The mind giving shape to chaos",
+          "Sealing your own energy"
+        ]
+      },
+      "line": {
+        "pt": "“Dou forma ao que tenho.”",
+        "en": "“I give shape to what I have.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Segurança das posses",
+          "Herança, legado",
+          "Cultivar com paciência os melhores talentos"
+        ],
+        "en": [
+          "Surety of possessions",
+          "Inheritance, legacy",
+          "Patiently cultivating your best talents"
+        ]
+      },
+      "line": {
+        "pt": "“Nem bravata, nem bajulação: talento.”",
+        "en": "“Neither bragging nor fawning: talent.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Descobrir o novo em velhos padrões",
+          "Achar seu lugar no mundo",
+          "Ou: rigidez"
+        ],
+        "en": [
+          "Discovering the new in old patterns",
+          "Finding your place in the world",
+          "Or: rigidity"
+        ]
+      },
+      "line": {
+        "pt": "“Conheço meu ofício por inteiro.”",
+        "en": "“I know my trade through and through.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Postura curvada",
+          "Pontos vitais fechados",
+          "Coração e garganta protegidos"
+        ],
+        "en": [
+          "A stooped posture",
+          "Vital points sealed",
+          "Heart and throat protected"
+        ]
+      },
+      "line": {
+        "pt": "“Endireito as costas.”",
+        "en": "“I straighten my back.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Medo de perder",
+          "Fechar-se para os outros",
+          "Ou: generosidade quando solta"
+        ],
+        "en": [
+          "Fear of losing",
+          "Closing yourself off from others",
+          "Or: generosity when released"
+        ]
+      },
+      "line": {
+        "pt": "“Segurar demais é ter medo.”",
+        "en": "“Holding too tight is being afraid.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Hora de se recolher",
+          "Ou hora de se abrir",
+          "Atraso, suspensão"
+        ],
+        "en": [
+          "Time to withdraw",
+          "Or time to open up",
+          "Suspense, delay"
+        ]
+      },
+      "line": {
+        "pt": "“Sei quando fechar e quando abrir.”",
+        "en": "“I know when to close and when to open.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Ajudar o outro a ter seu espaço",
+          "Cada um soberano no seu canto",
+          "Ou: excluir os outros"
+        ],
+        "en": [
+          "Helping each other claim their sphere",
+          "Each sovereign in their own space",
+          "Or: shutting others out"
+        ]
+      },
+      "line": {
+        "pt": "“Amar é deixar o outro reinar no que é dele.”",
+        "en": "“Loving is letting the other reign over what is theirs.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Desenvolva o que importa para você",
+          "Veja o que está aos seus pés",
+          "Contribua com o que sabe"
+        ],
+        "en": [
+          "Develop what matters to you",
+          "See what's waiting at your feet",
+          "Contribute what you know"
+        ]
+      },
+      "line": {
+        "pt": "“Meu dom serve também aos outros.”",
+        "en": "“My gift serves others too.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Avareza e egoísmo",
+          "Isolamento",
+          "Falsa humildade, mesquinhez"
+        ],
+        "en": [
+          "Greed and selfishness",
+          "Isolation",
+          "False humility, pettiness"
+        ]
+      },
+      "line": {
+        "pt": "“O que não circula apodrece.”",
+        "en": "“What doesn't circulate goes stale.”"
+      }
+    }
+  ]
+}

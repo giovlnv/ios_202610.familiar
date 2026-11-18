@@ -1,0 +1,446 @@
+{
+  "id": "pents12",
+  "number": "12",
+  "name": {
+    "pt": "Cavaleiro de Ouros",
+    "en": "Knight of Pentacles"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Ouros",
+    "en": "Minor Arcana – Pentacles"
+  },
+  "intro": {
+    "pt": "Um cavaleiro de armadura, com ramos verdes no elmo, monta um pesado cavalo preto parado diante de um campo arado, segurando um pentáculo. Ele é o trabalhador responsável, paciente e confiável. Mas olha por cima do pentáculo: pode ter perdido de vista a fonte da própria força.",
+    "en": "An armoured knight with green sprigs on his helmet sits on a heavy black horse standing still before a ploughed field, holding a pentacle. He is the responsible, patient, reliable worker. But he looks past his pentacle: he may have lost sight of the source of his strength."
+  },
+  "symbols": [
+    {
+      "key": "pentacle",
+      "crop": {
+        "x": 0.62,
+        "y": 0.27,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Pentáculo na mão",
+        "en": "Pentacle in hand"
+      },
+      "keywords": {
+        "pt": [
+          "Talento a distinguir",
+          "Olhar por cima dele",
+          "Pôr os próprios limites"
+        ],
+        "en": [
+          "A talent to recognise",
+          "Looking past it",
+          "Setting your own limits"
+        ]
+      }
+    },
+    {
+      "key": "knight",
+      "crop": {
+        "x": 0.42,
+        "y": 0.22,
+        "r": 0.14
+      },
+      "title": {
+        "pt": "Elmo com ramos verdes",
+        "en": "Helmet with green sprigs"
+      },
+      "keywords": {
+        "pt": [
+          "Lavrar o próprio campo",
+          "De volta à natureza",
+          "Ou: imaturidade"
+        ],
+        "en": [
+          "Tilling your own field",
+          "Back to nature",
+          "Or: immaturity"
+        ]
+      }
+    },
+    {
+      "key": "horse",
+      "crop": {
+        "x": 0.82,
+        "y": 0.4,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Cavalo preto parado",
+        "en": "Black horse standing still"
+      },
+      "keywords": {
+        "pt": [
+          "Natureza instintiva",
+          "Lixo do passado ou futuro desconhecido",
+          "Firme no chão"
+        ],
+        "en": [
+          "Instinctive nature",
+          "Past waste or unknown future",
+          "Firmly on the ground"
+        ]
+      }
+    },
+    {
+      "key": "armour",
+      "crop": {
+        "x": 0.45,
+        "y": 0.45,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Armadura e luvas",
+        "en": "Armour and gauntlets"
+      },
+      "keywords": {
+        "pt": [
+          "Preparado para o trabalho",
+          "Proteção",
+          "Ou: inflexível"
+        ],
+        "en": [
+          "Prepared for work",
+          "Protection",
+          "Or: inflexible"
+        ]
+      }
+    },
+    {
+      "key": "field",
+      "crop": {
+        "x": 0.88,
+        "y": 0.77,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Campo arado",
+        "en": "Ploughed field"
+      },
+      "keywords": {
+        "pt": [
+          "O campo da experiência",
+          "Fertilidade",
+          "Trabalhar em si"
+        ],
+        "en": [
+          "The field of experience",
+          "Fruitfulness",
+          "Working on yourself"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência comum",
+          "Ou: inveja"
+        ],
+        "en": [
+          "Common consciousness",
+          "Or: envy"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "O desconhecido",
+          "Ou: lixo do passado"
+        ],
+        "en": [
+          "The unknown",
+          "Or: waste of the past"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Alegria de viver"
+        ],
+        "en": [
+          "Will",
+          "Joy of life"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Natureza",
+          "Crescimento"
+        ],
+        "en": [
+          "Nature",
+          "Growth"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Terra arada"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Ploughed earth"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Cavaleiro de Ouros fala de trabalho, responsabilidade e paciência.",
+      "Ele representa quem avança devagar e com firmeza.",
+      "O foco dele é: trabalhar com constância sem esquecer por quê."
+    ],
+    "en": [
+      "The Knight of Pentacles speaks of work, responsibility and patience.",
+      "He stands for someone who moves slowly and steadily.",
+      "His focus: working steadily without forgetting why."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Amadurecer e colher",
+          "Os muitos passos até a colheita",
+          "Redescobrir a fonte da força"
+        ],
+        "en": [
+          "Ripening and harvesting",
+          "The many steps to the harvest",
+          "Rediscovering the source of strength"
+        ]
+      },
+      "line": {
+        "pt": "“Até o esterco vira trigo.”",
+        "en": "“Even dung grows wheat.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Utilidade, responsabilidade",
+          "Retidão",
+          "Experiência pelo trabalho constante"
+        ],
+        "en": [
+          "Utility, responsibility",
+          "Rectitude",
+          "Experience through steady work"
+        ]
+      },
+      "line": {
+        "pt": "“Passo a passo, chego lá.”",
+        "en": "“Step by step, I get there.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "O que trago? O que faço bem?",
+          "Ordem nos próprios assuntos",
+          "Ou: preso às próprias convicções"
+        ],
+        "en": [
+          "What do I bring? What can I do well?",
+          "Order in your own affairs",
+          "Or: prisoner of your convictions"
+        ]
+      },
+      "line": {
+        "pt": "“Sei o que sei fazer.”",
+        "en": "“I know what I'm good at.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Firme, enraizado",
+          "O que me faz bem?",
+          "Ou: inércia"
+        ],
+        "en": [
+          "Firm, rooted",
+          "What does me good?",
+          "Or: inertia"
+        ]
+      },
+      "line": {
+        "pt": "“Corpo firme, passo seguro.”",
+        "en": "“A firm body, a sure step.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Simples e calmo",
+          "Ou: desânimo se perde a função",
+          "Placidez que esconde desejos"
+        ],
+        "en": [
+          "Simple and calm",
+          "Or: discouragement if the role is lost",
+          "Placidity hiding desires"
+        ]
+      },
+      "line": {
+        "pt": "“Sou mais do que o que faço.”",
+        "en": "“I'm more than what I do.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Ritmo lento e constante",
+          "Ciclos: nada se perde",
+          "Ou: estagnação"
+        ],
+        "en": [
+          "A slow, steady rhythm",
+          "Cycles: nothing is wasted",
+          "Or: stagnation"
+        ]
+      },
+      "line": {
+        "pt": "“Devagar também se chega.”",
+        "en": "“Slow gets there too.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Não fuja dos conflitos",
+          "Aceite os outros como são",
+          "Deixe os talentos deles brilharem"
+        ],
+        "en": [
+          "Don't avoid conflict",
+          "Accept others as they are",
+          "Let their talents shine"
+        ]
+      },
+      "line": {
+        "pt": "“Aceito você do jeito que é.”",
+        "en": "“I accept you as you are.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Perdoe a si e aos outros",
+          "Trabalhe com constância",
+          "Lembre por que trabalha"
+        ],
+        "en": [
+          "Forgive yourself and others",
+          "Work steadily",
+          "Remember why you work"
+        ]
+      },
+      "line": {
+        "pt": "“Ninguém precisa ser perfeito.”",
+        "en": "“No one has to be perfect.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Inércia, preguiça",
+          "Identificar-se só com a função",
+          "Rigidez"
+        ],
+        "en": [
+          "Inertia, idleness",
+          "Identifying only with your role",
+          "Rigidity"
+        ]
+      },
+      "line": {
+        "pt": "“Função não é identidade.”",
+        "en": "“A role isn't an identity.”"
+      }
+    }
+  ]
+}

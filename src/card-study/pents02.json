@@ -1,0 +1,442 @@
+{
+  "id": "pents02",
+  "number": "2",
+  "name": {
+    "pt": "Dois de Ouros",
+    "en": "Two of Pentacles"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Ouros",
+    "en": "Minor Arcana – Pentacles"
+  },
+  "intro": {
+    "pt": "Um jovem de chapéu alto dança fazendo malabarismo com dois pentáculos ligados por uma fita em forma de oito deitado; atrás, navios sobem e descem nas ondas. É a arte de equilibrar as contradições e os altos e baixos da vida, com leveza e um pouco de magia.",
+    "en": "A young man in a tall hat dances, juggling two pentacles joined by a ribbon shaped like a sideways eight; behind him, ships rise and fall on the waves. This is the art of balancing life's contradictions and ups and downs, lightly and with a touch of magic."
+  },
+  "symbols": [
+    {
+      "key": "pentacles",
+      "crop": {
+        "x": 0.5,
+        "y": 0.45,
+        "r": 0.42
+      },
+      "title": {
+        "pt": "Dois pentáculos",
+        "en": "Two pentacles"
+      },
+      "keywords": {
+        "pt": [
+          "As duas faces da moeda",
+          "Forças e fraquezas",
+          "Juntas fazem a pessoa"
+        ],
+        "en": [
+          "The two sides of the coin",
+          "Strengths and weaknesses",
+          "Together they make the person"
+        ]
+      }
+    },
+    {
+      "key": "ribbon",
+      "crop": {
+        "x": 0.63,
+        "y": 0.48,
+        "r": 0.17
+      },
+      "title": {
+        "pt": "Fita em oito",
+        "en": "Figure-eight ribbon"
+      },
+      "keywords": {
+        "pt": [
+          "Possibilidades sem fim",
+          "Inteireza",
+          "Ou: rotina, andar em círculos"
+        ],
+        "en": [
+          "Endless possibilities",
+          "Wholeness",
+          "Or: humdrum routine, going in circles"
+        ]
+      }
+    },
+    {
+      "key": "hat",
+      "crop": {
+        "x": 0.48,
+        "y": 0.25,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Chapéu vermelho alto",
+        "en": "Tall red hat"
+      },
+      "keywords": {
+        "pt": [
+          "Ou: ego, zelo demais",
+          "Uma coroa",
+          "Crescer além de si"
+        ],
+        "en": [
+          "Or: ego, too much zeal",
+          "A crown",
+          "Growing beyond yourself"
+        ]
+      }
+    },
+    {
+      "key": "ships",
+      "crop": {
+        "x": 0.8,
+        "y": 0.72,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Navios nas ondas",
+        "en": "Ships on the waves"
+      },
+      "keywords": {
+        "pt": [
+          "Altos e baixos",
+          "Lidar com os ventos",
+          "Lastro necessário"
+        ],
+        "en": [
+          "Highs and lows",
+          "Handling the winds of fortune",
+          "Needed ballast"
+        ]
+      }
+    },
+    {
+      "key": "feet",
+      "crop": {
+        "x": 0.5,
+        "y": 0.85,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Passo de dança",
+        "en": "Dance step"
+      },
+      "keywords": {
+        "pt": [
+          "Diversão e leveza",
+          "Ritmo",
+          "Sapatos verdes: crescimento"
+        ],
+        "en": [
+          "Fun and lightness",
+          "Rhythm",
+          "Green shoes: growth"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Leveza"
+        ],
+        "en": [
+          "Open sky",
+          "Lightness"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Paixão",
+          "Ou: avidez"
+        ],
+        "en": [
+          "Will",
+          "Passion",
+          "Or: over-eagerness"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade e sol",
+          "Ou: avidez e inveja"
+        ],
+        "en": [
+          "Will and sun",
+          "Or: eagerness and envy"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Vitalidade",
+          "Esperança",
+          "Ou: imaturidade"
+        ],
+        "en": [
+          "Vitality",
+          "Hope",
+          "Or: immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Valor",
+          "Consciência"
+        ],
+        "en": [
+          "Value",
+          "Consciousness"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Dois de Ouros fala de equilíbrio, mudança e leveza.",
+      "Ele representa a dança entre dois lados da vida.",
+      "O foco dele é: lidar com as contradições sem perder a graça."
+    ],
+    "en": [
+      "The Two of Pentacles speaks of balance, change and lightness.",
+      "It stands for the dance between two sides of life.",
+      "Its focus: handling contradictions without losing grace."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Trazer fatos novos ao mundo",
+          "Ajudar a formar a face da terra",
+          "Magia nos prazeres simples"
+        ],
+        "en": [
+          "Bringing new facts into the world",
+          "Helping shape the face of the earth",
+          "Magic in simple pleasures"
+        ]
+      },
+      "line": {
+        "pt": "“Até brincando aprendo.”",
+        "en": "“Even playing, I learn.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Novos resultados",
+          "Mudança de foco na vida",
+          "Notícias, mensagens escritas"
+        ],
+        "en": [
+          "New results",
+          "A shift in life's focus",
+          "News, written messages"
+        ]
+      },
+      "line": {
+        "pt": "“Já tenho nas mãos o que preciso.”",
+        "en": "“I already hold what I need.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Lidar com contradições",
+          "Nova perspectiva",
+          "Ou: agitação, embaraço"
+        ],
+        "en": [
+          "Coming to grips with contradictions",
+          "A new perspective",
+          "Or: agitation, embroilment"
+        ]
+      },
+      "line": {
+        "pt": "“Contradição também enfeita.”",
+        "en": "“Contradictions can be decoration too.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Diversão e alegria",
+          "Instabilidade passageira",
+          "Ou: alegria fingida"
+        ],
+        "en": [
+          "Fun and gaiety",
+          "Temporary insecurity",
+          "Or: simulated enjoyment"
+        ]
+      },
+      "line": {
+        "pt": "“Danço com o que vem.”",
+        "en": "“I dance with what comes.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Uma virada de maré",
+          "Fase de mudança",
+          "Abandonar velhos hábitos"
+        ],
+        "en": [
+          "A sea change",
+          "A phase of change",
+          "Casting off old habits"
+        ]
+      },
+      "line": {
+        "pt": "“A maré muda, e eu me ajusto.”",
+        "en": "“The tide changes, and I adjust.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Até o melhor tem qualidades contrárias",
+          "Como lastro de um navio",
+          "Aceitar os dois lados do outro"
+        ],
+        "en": [
+          "Even the best have opposing qualities",
+          "Like a ship's ballast",
+          "Accepting both sides of the other"
+        ]
+      },
+      "line": {
+        "pt": "“Seu peso também te mantém no rumo.”",
+        "en": "“Your weight also keeps you on course.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Não brinque de dados com o destino",
+          "Nem finque o pé",
+          "Equilibre os elementos"
+        ],
+        "en": [
+          "Don't play dice with fate",
+          "Nor dig your heels in",
+          "Juggle the elements"
+        ]
+      },
+      "line": {
+        "pt": "“Nem rígido, nem solto demais.”",
+        "en": "“Neither rigid nor too loose.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Fingir que está tudo leve",
+          "Rotina sem fim",
+          "Velejar perto demais do vento"
+        ],
+        "en": [
+          "Pretending everything's light",
+          "An endless treadmill",
+          "Sailing too close to the wind"
+        ]
+      },
+      "line": {
+        "pt": "“Malabarismo forçado cai.”",
+        "en": "“A forced juggle drops.”"
+      }
+    }
+  ]
+}

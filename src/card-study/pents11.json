@@ -1,0 +1,414 @@
+{
+  "id": "pents11",
+  "number": "11",
+  "name": {
+    "pt": "Pajem de Ouros",
+    "en": "Page of Pentacles"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Ouros",
+    "en": "Minor Arcana – Pentacles"
+  },
+  "intro": {
+    "pt": "Um jovem de chapéu vermelho, de pé num campo florido, segura no alto um pentáculo com as pontas dos dedos e o contempla, absorto. É o estudante fascinado pelo que faz, mais interessado no trabalho em si do que na recompensa. Os talentos, às vezes, são tão discretos quanto ouro sobre fundo amarelo.",
+    "en": "A young man in a red hat, standing in a flowering field, holds a pentacle aloft on his fingertips and gazes at it, absorbed. He is the student fascinated by what he does, more interested in the work itself than the reward. Talents are sometimes as inconspicuous as gold against a yellow sky."
+  },
+  "symbols": [
+    {
+      "key": "pentacle",
+      "crop": {
+        "x": 0.55,
+        "y": 0.2,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Pentáculo erguido",
+        "en": "Pentacle held aloft"
+      },
+      "keywords": {
+        "pt": [
+          "Verificar se é verdadeiro",
+          "Maravilha frágil",
+          "Talento quase invisível"
+        ],
+        "en": [
+          "Checking if it's genuine",
+          "A fragile wonder",
+          "Talent almost invisible"
+        ]
+      }
+    },
+    {
+      "key": "hat",
+      "crop": {
+        "x": 0.35,
+        "y": 0.15,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Chapéu vermelho",
+        "en": "Red hat"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão, curiosidade",
+          "Autoconfiança",
+          "Ou: cabeça quente"
+        ],
+        "en": [
+          "Passion, curiosity",
+          "Self-confidence",
+          "Or: hot-headedness"
+        ]
+      }
+    },
+    {
+      "key": "trees",
+      "crop": {
+        "x": 0.15,
+        "y": 0.7,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Arvoredo",
+        "en": "Clump of trees"
+      },
+      "keywords": {
+        "pt": [
+          "Comunidade",
+          "Ficar junto",
+          "Ou: necessidade demais de pertencer"
+        ],
+        "en": [
+          "Community",
+          "Keeping together",
+          "Or: too great a need to belong"
+        ]
+      }
+    },
+    {
+      "key": "field",
+      "crop": {
+        "x": 0.6,
+        "y": 0.75,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Campo e montanha azul",
+        "en": "Field and blue mountain"
+      },
+      "keywords": {
+        "pt": [
+          "O campo da vida",
+          "Tesouros a descobrir",
+          "O que quer colher?"
+        ],
+        "en": [
+          "The field of life",
+          "Treasures to discover",
+          "What do you want to reap?"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Sol, consciência",
+          "Ou: inveja, ganância"
+        ],
+        "en": [
+          "Sun, consciousness",
+          "Or: envy, greed"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Crescimento",
+          "Esperança",
+          "Ou: imaturidade"
+        ],
+        "en": [
+          "Growth",
+          "Hope",
+          "Or: immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão",
+          "Curiosidade"
+        ],
+        "en": [
+          "Passion",
+          "Curiosity"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Montanha",
+          "Céu"
+        ],
+        "en": [
+          "Mountain",
+          "Sky"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Terra"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Earth"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Pajem de Ouros fala de estudo, descoberta e talento.",
+      "Ele representa o aprendiz fascinado pelo próprio trabalho.",
+      "O foco dele é: descobrir os próprios dons e cuidar deles."
+    ],
+    "en": [
+      "The Page of Pentacles speaks of study, discovery and talent.",
+      "He stands for the apprentice fascinated by his own work.",
+      "His focus: discovering his gifts and looking after them."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Ser produtivo",
+          "Achar, plantar",
+          "Ter efeito além de si"
+        ],
+        "en": [
+          "Being productive",
+          "Finding, planting",
+          "Having an effect beyond yourself"
+        ]
+      },
+      "line": {
+        "pt": "“Planto algo que vai além de mim.”",
+        "en": "“I plant something that reaches beyond me.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Estudo, aplicação, gestão",
+          "Notícias e mensagens",
+          "Talentos discretos como ouro na rua"
+        ],
+        "en": [
+          "Study, application, management",
+          "News and messages",
+          "Talents as quiet as gold in the street"
+        ]
+      },
+      "line": {
+        "pt": "“Meu talento está mais perto do que penso.”",
+        "en": "“My talent is closer than I think.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Reflexão e estudo",
+          "O que existe? O que fazer com isso?",
+          "Testar os próprios limites"
+        ],
+        "en": [
+          "Reflection and scholarship",
+          "What's available? What can be made of it?",
+          "Testing your own limits"
+        ]
+      },
+      "line": {
+        "pt": "“Estudo pelo prazer de entender.”",
+        "en": "“I study for the joy of understanding.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Fascínio",
+          "Autoestima cuidada",
+          "Ou: excessos depois do esforço"
+        ],
+        "en": [
+          "Fascination",
+          "Self-esteem looked after",
+          "Or: excess after the effort"
+        ]
+      },
+      "line": {
+        "pt": "“Me encanto com o que descubro.”",
+        "en": "“I'm enchanted by what I find.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Um dia de aventura",
+          "Descobertas novas",
+          "Ou: notícias ruins"
+        ],
+        "en": [
+          "A day of adventure",
+          "New discoveries",
+          "Or: unfavourable news"
+        ]
+      },
+      "line": {
+        "pt": "“Hoje é dia de descobrir.”",
+        "en": "“Today is a day for discovery.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Amar também é exigir dos talentos do outro",
+          "Fidelidade ao que vale"
+        ],
+        "en": [
+          "Loving also means asking of the other's talents",
+          "Faithfulness to what's valuable"
+        ]
+      },
+      "line": {
+        "pt": "“Acredito no que você pode.”",
+        "en": "“I believe in what you can do.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Faça do dia uma aventura",
+          "Guarde o que é fértil",
+          "Cuide dos seus dons"
+        ],
+        "en": [
+          "Make today an adventure",
+          "Hold on to what's fruitful",
+          "Look after your gifts"
+        ]
+      },
+      "line": {
+        "pt": "“Cuido do que tem valor.”",
+        "en": "“I take care of what has value.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Desperdício, dissipação",
+          "Cuidado demais, sem pegar o essencial",
+          "Imaturidade, falsas esperanças"
+        ],
+        "en": [
+          "Prodigality, dissipation",
+          "Over-careful, missing the essentials",
+          "Immaturity, false hopes"
+        ]
+      },
+      "line": {
+        "pt": "“Tesouro guardado demais não rende.”",
+        "en": "“Treasure kept too close yields nothing.”"
+      }
+    }
+  ]
+}

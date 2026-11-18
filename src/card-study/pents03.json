@@ -1,0 +1,402 @@
+{
+  "id": "pents03",
+  "number": "3",
+  "name": {
+    "pt": "Três de Ouros",
+    "en": "Three of Pentacles"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Ouros",
+    "en": "Minor Arcana – Pentacles"
+  },
+  "intro": {
+    "pt": "Numa igreja, um escultor em pé num banco trabalha a pedra, enquanto um monge e uma figura de manto seguram os planos da obra; três pentáculos estão gravados no arco. É a carta do ofício, da vocação e do trabalho bem feito em conjunto. O trabalho consciente também é caminho de crescimento interior.",
+    "en": "In a church, a sculptor standing on a bench works the stone while a monk and a cloaked figure hold the plans; three pentacles are carved in the arch. This is the card of craft, vocation and good work done together. Conscious work is also a path of inner growth."
+  },
+  "symbols": [
+    {
+      "key": "pentacles",
+      "crop": {
+        "x": 0.48,
+        "y": 0.2,
+        "r": 0.17
+      },
+      "title": {
+        "pt": "Três pentáculos no arco",
+        "en": "Three pentacles in the arch"
+      },
+      "keywords": {
+        "pt": [
+          "Triângulo de fogo: trabalho que eleva",
+          "Talentos ainda latentes",
+          "Vocação"
+        ],
+        "en": [
+          "Fire triangle: work that raises you",
+          "Talents still latent",
+          "Vocation"
+        ]
+      }
+    },
+    {
+      "key": "sculptor",
+      "crop": {
+        "x": 0.18,
+        "y": 0.5,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Escultor",
+        "en": "Sculptor"
+      },
+      "keywords": {
+        "pt": [
+          "Libertar a forma da pedra",
+          "Mestria",
+          "Trabalhar em si mesmo"
+        ],
+        "en": [
+          "Freeing the form from the stone",
+          "Mastery",
+          "Working on yourself"
+        ]
+      }
+    },
+    {
+      "key": "monk",
+      "crop": {
+        "x": 0.72,
+        "y": 0.55,
+        "r": 0.22
+      },
+      "title": {
+        "pt": "Monge e figura de manto",
+        "en": "Monk and cloaked figure"
+      },
+      "keywords": {
+        "pt": [
+          "Valores e espiritualidade",
+          "Viver a vocação",
+          "Trabalhar com os outros"
+        ],
+        "en": [
+          "Values and spirituality",
+          "Living your calling",
+          "Working with others"
+        ]
+      }
+    },
+    {
+      "key": "flower",
+      "crop": {
+        "x": 0.46,
+        "y": 0.38,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Triângulo da água com flor",
+        "en": "Water triangle with a flower"
+      },
+      "keywords": {
+        "pt": [
+          "Raízes na comunidade",
+          "Trabalho que serve"
+        ],
+        "en": [
+          "Rooted in the community",
+          "Work that serves"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "Talentos ainda ocultos",
+          "O desconhecido"
+        ],
+        "en": [
+          "Talents still hidden",
+          "The unknown"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Pedra",
+          "Neutralidade"
+        ],
+        "en": [
+          "Stone",
+          "Neutrality"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Paixão"
+        ],
+        "en": [
+          "Will",
+          "Passion"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Inspiração"
+        ],
+        "en": [
+          "Consciousness",
+          "Inspiration"
+        ]
+      }
+    },
+    {
+      "hex": "#9A86B8",
+      "name": {
+        "pt": "Violeta",
+        "en": "Violet"
+      },
+      "keywords": {
+        "pt": [
+          "Experiência-limite"
+        ],
+        "en": [
+          "Borderline experience"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Três de Ouros fala de ofício, vocação e colaboração.",
+      "Ele representa o trabalho que une técnica, espírito e vontade.",
+      "O foco dele é: achar a tarefa que desenvolve seus dons."
+    ],
+    "en": [
+      "The Three of Pentacles speaks of craft, vocation and collaboration.",
+      "It stands for work that unites skill, spirit and will.",
+      "Its focus: finding the task that develops your gifts."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Vocação como paixão alegre",
+          "Trabalho consciente como crescimento",
+          "O lado espiritual de todo chamado"
+        ],
+        "en": [
+          "A calling as a joyful passion",
+          "Conscious work as growth",
+          "The spiritual side of every calling"
+        ]
+      },
+      "line": {
+        "pt": "“Trabalhar bem também é rezar.”",
+        "en": "“Working well is a kind of prayer.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Ofício, trabalho qualificado",
+          "Renome e glória",
+          "Contribuição para a obra maior"
+        ],
+        "en": [
+          "Craft, skilled labour",
+          "Renown and glory",
+          "Contributing to the greater work"
+        ]
+      },
+      "line": {
+        "pt": "“Meu trabalho é parte de algo maior.”",
+        "en": "“My work is part of something greater.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Descobrir talentos ocultos",
+          "Ir mais fundo",
+          "Ou: mediocridade"
+        ],
+        "en": [
+          "Uncovering hidden talents",
+          "Going deeper",
+          "Or: mediocrity"
+        ]
+      },
+      "line": {
+        "pt": "“Tiro da pedra o que já estava nela.”",
+        "en": "“I free from the stone what was already in it.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Cada um tem seu pico",
+          "Chegar lá é a questão",
+          "Ou: tudo muito devagar"
+        ],
+        "en": [
+          "Everyone has their own summit",
+          "The question is reaching it",
+          "Or: everything moving slowly"
+        ]
+      },
+      "line": {
+        "pt": "“Meu pico me espera.”",
+        "en": "“My summit is waiting.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Pergunte o que o mundo quer de você",
+          "Trabalhar com e para os outros",
+          "Parceria em projetos"
+        ],
+        "en": [
+          "Ask what the world wants from you",
+          "Working with and for others",
+          "Partnership in projects"
+        ]
+      },
+      "line": {
+        "pt": "“Juntos construímos melhor.”",
+        "en": "“Together we build better.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Ache a tarefa que te esculpe",
+          "Use seus talentos",
+          "Una técnica, espírito e vontade"
+        ],
+        "en": [
+          "Find the task that sculpts you",
+          "Use your talents",
+          "Unite skill, spirit and will"
+        ]
+      },
+      "line": {
+        "pt": "“Talento parado é talento desperdiçado.”",
+        "en": "“An unused talent is a wasted talent.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Ignorar os próprios talentos",
+          "Viver como toupeira",
+          "Mediocridade, preguiça"
+        ],
+        "en": [
+          "Ignoring your own talents",
+          "Living like a mole",
+          "Mediocrity, laziness"
+        ]
+      },
+      "line": {
+        "pt": "“Ter um dom e não usar é desperdiçá-lo.”",
+        "en": "“Having a gift and not using it is wasting it.”"
+      }
+    }
+  ]
+}

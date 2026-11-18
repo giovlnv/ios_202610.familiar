@@ -1,0 +1,441 @@
+{
+  "id": "pents05",
+  "number": "5",
+  "name": {
+    "pt": "Cinco de Ouros",
+    "en": "Five of Pentacles"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Ouros",
+    "en": "Minor Arcana – Pentacles"
+  },
+  "intro": {
+    "pt": "Duas figuras pobres, uma de muletas, passam pela neve diante de um vitral iluminado de igreja, sem olhar para ele. É a carta da dificuldade material, da doença e da exclusão. Mas também da força de quem atravessa junto: unindo o que cada um tem, a necessidade fica menor.",
+    "en": "Two poor figures, one on crutches, pass through the snow beneath a lit church window without looking at it. This is the card of material hardship, illness and exclusion. But also of the strength of those who get through it together: by pooling what each has, the need grows smaller."
+  },
+  "symbols": [
+    {
+      "key": "window",
+      "crop": {
+        "x": 0.48,
+        "y": 0.2,
+        "r": 0.3
+      },
+      "title": {
+        "pt": "Vitral iluminado",
+        "en": "Lit window"
+      },
+      "keywords": {
+        "pt": [
+          "Luz na escuridão",
+          "Abrigo que não se vê",
+          "Ou: porta fechada"
+        ],
+        "en": [
+          "Light in the darkness",
+          "Shelter unseen",
+          "Or: a closed door"
+        ]
+      }
+    },
+    {
+      "key": "cripple",
+      "crop": {
+        "x": 0.25,
+        "y": 0.65,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Figura de muletas",
+        "en": "Figure on crutches"
+      },
+      "keywords": {
+        "pt": [
+          "Necessidade e doença",
+          "Apoio disponível",
+          "Sobreviver"
+        ],
+        "en": [
+          "Need and illness",
+          "Support available",
+          "Surviving"
+        ]
+      }
+    },
+    {
+      "key": "woman",
+      "crop": {
+        "x": 0.68,
+        "y": 0.6,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Figura de xale",
+        "en": "Figure in a shawl"
+      },
+      "keywords": {
+        "pt": [
+          "Cego e coxo unidos",
+          "Orgulho e independência",
+          "Amor nas dificuldades"
+        ],
+        "en": [
+          "The blind and the lame together",
+          "Pride and independence",
+          "Love in hard times"
+        ]
+      }
+    },
+    {
+      "key": "snow",
+      "crop": {
+        "x": 0.5,
+        "y": 0.85,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Neve",
+        "en": "Snow"
+      },
+      "keywords": {
+        "pt": [
+          "Frio e carência",
+          "Clarificar e curar",
+          "Muros que ficam permeáveis"
+        ],
+        "en": [
+          "Cold and lack",
+          "Clearing and healing",
+          "Walls becoming permeable"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "Escuridão",
+          "O desconhecido"
+        ],
+        "en": [
+          "Darkness",
+          "The unknown"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Frio",
+          "Clarificar, curar"
+        ],
+        "en": [
+          "Cold",
+          "Clearing, healing"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Luz",
+          "Calor",
+          "Riqueza"
+        ],
+        "en": [
+          "Light",
+          "Warmth",
+          "Wealth"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Espiritualidade",
+          "Frio"
+        ],
+        "en": [
+          "Spirituality",
+          "Cold"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Esperança",
+          "Vida"
+        ],
+        "en": [
+          "Hope",
+          "Life"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Calor",
+          "Vitalidade"
+        ],
+        "en": [
+          "Warmth",
+          "Vitality"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Cinco de Ouros fala de carência, dificuldade e solidariedade.",
+      "Ele representa quem atravessa a neve sem ver a luz ao lado.",
+      "O foco dele é: pedir e aceitar ajuda, e unir forças."
+    ],
+    "en": [
+      "The Five of Pentacles speaks of lack, hardship and solidarity.",
+      "It stands for those crossing the snow without seeing the light beside them.",
+      "Its focus: asking for and accepting help, and joining forces."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Deixe Deus partilhar sua falta",
+          "Quando as instituições não ajudam",
+          "Caminho próprio, sem doutrina"
+        ],
+        "en": [
+          "Let God share in your lack",
+          "When institutions can't help",
+          "Your own path, without doctrine"
+        ]
+      },
+      "line": {
+        "pt": "“Até na falta há algo a partilhar.”",
+        "en": "“Even in lack there's something to share.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Problemas materiais, pobreza",
+          "Talentos valem onde a necessidade é maior",
+          "Cumprir deveres com leveza"
+        ],
+        "en": [
+          "Material trouble, poverty",
+          "Talents count most where need is greatest",
+          "Fulfilling duties lightly"
+        ]
+      },
+      "line": {
+        "pt": "“Ajudar e ser ajudado se completam.”",
+        "en": "“Helping and being helped go together.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Às vezes, aceitar a derrota",
+          "Ver a oportunidade que passa",
+          "Ou: caos, desordem"
+        ],
+        "en": [
+          "Sometimes accepting defeat",
+          "Seeing the opportunity passing by",
+          "Or: chaos, disorder"
+        ]
+      },
+      "line": {
+        "pt": "“Olho para cima e vejo a janela.”",
+        "en": "“I look up and see the window.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Doença, deficiência",
+          "Frio e cansaço",
+          "Cuidar das necessidades"
+        ],
+        "en": [
+          "Illness, disability",
+          "Cold and fatigue",
+          "Taking care of your needs"
+        ]
+      },
+      "line": {
+        "pt": "“Cuidar de mim não é fraqueza.”",
+        "en": "“Looking after myself isn't weakness.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Sentir-se excluído",
+          "Orgulho que recusa ajuda",
+          "Amor que resiste"
+        ],
+        "en": [
+          "Feeling shut out",
+          "Pride that refuses help",
+          "Love that holds"
+        ]
+      },
+      "line": {
+        "pt": "“Aceitar ajuda também é força.”",
+        "en": "“Accepting help is strength too.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Dificuldade prolongada",
+          "Uma crise é também uma chance",
+          "Ou: colapso que liberta"
+        ],
+        "en": [
+          "Long-standing hardship",
+          "Every crisis is also a chance",
+          "Or: a collapse that frees"
+        ]
+      },
+      "line": {
+        "pt": "“O inverno também passa.”",
+        "en": "“Winter passes too.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Unidos na dificuldade",
+          "Recusar sacrifícios inúteis",
+          "Medo de que a mudança afaste"
+        ],
+        "en": [
+          "United in hardship",
+          "Refusing pointless sacrifice",
+          "Fear that change will drive you apart"
+        ]
+      },
+      "line": {
+        "pt": "“Juntos, a neve pesa menos.”",
+        "en": "“Together, the snow weighs less.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Coopere: as forças se multiplicam",
+          "Cuide do que você precisa",
+          "Faça algo contra a falta"
+        ],
+        "en": [
+          "Cooperate: strengths multiply",
+          "Attend to what you need",
+          "Do something about the lack"
+        ]
+      },
+      "line": {
+        "pt": "“Sozinho somo; junto multiplico.”",
+        "en": "“Alone I add; together I multiply.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Acostumar-se ao sofrimento",
+          "Não ver a ajuda",
+          "Ruína, discórdia"
+        ],
+        "en": [
+          "Getting used to suffering",
+          "Not seeing the help",
+          "Ruin, discord"
+        ]
+      },
+      "line": {
+        "pt": "“Quem se acostuma com o frio esquece a janela.”",
+        "en": "“Used to the cold, you forget the window.”"
+      }
+    }
+  ]
+}

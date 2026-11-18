@@ -1,0 +1,420 @@
+{
+  "id": "pents01",
+  "number": "1",
+  "name": {
+    "pt": "Ás de Ouros",
+    "en": "Ace of Pentacles"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Ouros",
+    "en": "Minor Arcana – Pentacles"
+  },
+  "intro": {
+    "pt": "Uma mão sai de uma nuvem segurando um grande pentáculo de ouro sobre um jardim de lírios; ao fundo, um arco de folhagem se abre para montanhas azuis. É o presente da terra: talentos, riqueza, segurança e o prazer de uma vida concreta. Cada um tem um talento único para fazer render.",
+    "en": "A hand reaches out of a cloud holding a large golden pentacle above a garden of lilies; behind, an arch of greenery opens onto blue mountains. This is the gift of the earth: talent, wealth, security and the pleasure of a tangible life. Everyone has a unique talent to make the most of."
+  },
+  "symbols": [
+    {
+      "key": "pentacle",
+      "crop": {
+        "x": 0.47,
+        "y": 0.31,
+        "r": 0.19
+      },
+      "title": {
+        "pt": "Pentáculo de ouro",
+        "en": "Golden pentacle"
+      },
+      "keywords": {
+        "pt": [
+          "Talentos e riqueza",
+          "Os quatro elementos e a quintessência",
+          "Duas faces da moeda"
+        ],
+        "en": [
+          "Talents and wealth",
+          "The four elements and the quintessence",
+          "Two sides of the coin"
+        ]
+      }
+    },
+    {
+      "key": "hand",
+      "crop": {
+        "x": 0.45,
+        "y": 0.48,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Mão saindo da nuvem",
+        "en": "Hand from the cloud"
+      },
+      "keywords": {
+        "pt": [
+          "Um presente",
+          "Você é um presente",
+          "Deixe multiplicar"
+        ],
+        "en": [
+          "A gift",
+          "You are a gift",
+          "Let it multiply"
+        ]
+      }
+    },
+    {
+      "key": "garden",
+      "crop": {
+        "x": 0.2,
+        "y": 0.8,
+        "r": 0.18
+      },
+      "title": {
+        "pt": "Jardim de lírios",
+        "en": "Garden of lilies"
+      },
+      "keywords": {
+        "pt": [
+          "Terra cultivada",
+          "Começo e conclusão",
+          "O paraíso da infância"
+        ],
+        "en": [
+          "Cultivated earth",
+          "Beginning and completion",
+          "The garden of childhood"
+        ]
+      }
+    },
+    {
+      "key": "gate",
+      "crop": {
+        "x": 0.67,
+        "y": 0.78,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Arco do jardim",
+        "en": "Garden gate"
+      },
+      "keywords": {
+        "pt": [
+          "Limiar",
+          "Sair para chegar",
+          "Portal para a sabedoria"
+        ],
+        "en": [
+          "A threshold",
+          "Leaving in order to arrive",
+          "A gate to wisdom"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Eternidade",
+          "Ou: ganância"
+        ],
+        "en": [
+          "Consciousness",
+          "Eternity",
+          "Or: greed"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Paciência, neutralidade",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Patience, neutrality",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Começo",
+          "Completude"
+        ],
+        "en": [
+          "Beginning",
+          "Completion"
+        ]
+      }
+    },
+    {
+      "hex": "#3F6B3A",
+      "name": {
+        "pt": "Verde-escuro",
+        "en": "Dark green"
+      },
+      "keywords": {
+        "pt": [
+          "Perto da natureza",
+          "Duradouro"
+        ],
+        "en": [
+          "Close to nature",
+          "Long-lasting"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu",
+          "Espiritualidade"
+        ],
+        "en": [
+          "Sky",
+          "Spirituality"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Ás de Ouros fala de talento, riqueza e segurança.",
+      "Ele representa o presente concreto da terra e da vida.",
+      "O foco dele é: pôr os talentos para render e ousar."
+    ],
+    "en": [
+      "The Ace of Pentacles speaks of talent, wealth and security.",
+      "It stands for the tangible gift of earth and life.",
+      "Its focus: putting your talents to work and daring."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Reconhecer sua tarefa e vocação",
+          "A magia das coisas comuns",
+          "Paraíso perdido e reencontrado"
+        ],
+        "en": [
+          "Recognising your calling and gifts",
+          "The magic in ordinary things",
+          "Paradise lost and regained"
+        ]
+      },
+      "line": {
+        "pt": "“Bendito o que me ajuda a apreciar a vida.”",
+        "en": "“Praise be to what helps me enjoy life.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Prosperidade, ouro",
+          "Talentos postos para render",
+          "Definir as circunstâncias da vida"
+        ],
+        "en": [
+          "Prosperity, gold",
+          "Talents put to work",
+          "Defining the circumstances of your life"
+        ]
+      },
+      "line": {
+        "pt": "“Cada um é bom em algo único.”",
+        "en": "“Everyone is uniquely good at something.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Inteligência rápida",
+          "Pesar o sentido da existência"
+        ],
+        "en": [
+          "Speedy intelligence",
+          "Weighing the meaning of existence"
+        ]
+      },
+      "line": {
+        "pt": "“Penso no que fazer com o que tenho.”",
+        "en": "“I think about what to do with what I have.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Corpo e matéria",
+          "Conforto e segurança",
+          "Vida alegre e concreta"
+        ],
+        "en": [
+          "Body and matter",
+          "Comfort and security",
+          "A joyful, tangible life"
+        ]
+      },
+      "line": {
+        "pt": "“Meu corpo também é um tesouro.”",
+        "en": "“My body is a treasure too.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Contentamento perfeito",
+          "Êxtase",
+          "Gosto de viver"
+        ],
+        "en": [
+          "Perfect contentment",
+          "Ecstasy",
+          "Enjoyment of life"
+        ]
+      },
+      "line": {
+        "pt": "“Estou contente com a vida.”",
+        "en": "“I'm content with life.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Um limiar, nova etapa",
+          "Hora de começar",
+          "Ou: hora de sair do abrigo"
+        ],
+        "en": [
+          "A threshold, a new stage",
+          "Time to begin",
+          "Or: time to leave the shelter"
+        ]
+      },
+      "line": {
+        "pt": "“Atravesso o portão.”",
+        "en": "“I walk through the gate.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Amar é dizer sim ao outro inteiro",
+          "Com todo o seu potencial"
+        ],
+        "en": [
+          "Loving means saying yes to someone whole",
+          "With all their potential"
+        ]
+      },
+      "line": {
+        "pt": "“Digo sim a quem você é.”",
+        "en": "“I say yes to who you are.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Ponha seus talentos para rodar",
+          "Faça o seu",
+          "Ouse"
+        ],
+        "en": [
+          "Get your talents rolling",
+          "Do your own thing",
+          "Dare"
+        ]
+      },
+      "line": {
+        "pt": "“O talento é meu: uso.”",
+        "en": "“The talent is mine: I use it.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Riqueza que corrompe",
+          "Egoísmo, desconfiança",
+          "Apego ao conforto, não crescer"
+        ],
+        "en": [
+          "Wealth that corrupts",
+          "Selfishness, mistrust",
+          "Clinging to comfort, not growing up"
+        ]
+      },
+      "line": {
+        "pt": "“Segurança demais também prende.”",
+        "en": "“Too much security holds you back too.”"
+      }
+    }
+  ]
+}

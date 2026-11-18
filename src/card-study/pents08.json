@@ -1,0 +1,410 @@
+{
+  "id": "pents08",
+  "number": "8",
+  "name": {
+    "pt": "Oito de Ouros",
+    "en": "Eight of Pentacles"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Ouros",
+    "en": "Minor Arcana – Pentacles"
+  },
+  "intro": {
+    "pt": "Um artesão sentado num banco grava um pentáculo com martelo e cinzel; outros pentáculos prontos estão pendurados num poste, e uma cidade aparece ao longe. É o aprendiz absorvido no ofício, o treino que traz disciplina e habilidade. Trabalhar no pentáculo é também trabalhar em si mesmo.",
+    "en": "A craftsman sitting on a bench engraves a pentacle with hammer and chisel; finished pentacles hang on a post, and a town appears in the distance. This is the apprentice absorbed in the craft, the training that brings discipline and skill. Working on the pentacle is also working on yourself."
+  },
+  "symbols": [
+    {
+      "key": "craftsman",
+      "crop": {
+        "x": 0.48,
+        "y": 0.68,
+        "r": 0.28
+      },
+      "title": {
+        "pt": "Artesão trabalhando",
+        "en": "Craftsman at work"
+      },
+      "keywords": {
+        "pt": [
+          "Absorto na tarefa",
+          "Trabalhar em si mesmo",
+          "Aprendiz ou mestre"
+        ],
+        "en": [
+          "Absorbed in the task",
+          "Working on yourself",
+          "Apprentice or master"
+        ]
+      }
+    },
+    {
+      "key": "tools",
+      "crop": {
+        "x": 0.6,
+        "y": 0.68,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Martelo e cinzel",
+        "en": "Hammer and chisel"
+      },
+      "keywords": {
+        "pt": [
+          "Deixar uma marca",
+          "Criar valor duradouro",
+          "Ou: carimbar tudo"
+        ],
+        "en": [
+          "Making an impression",
+          "Creating lasting value",
+          "Or: stamping everything"
+        ]
+      }
+    },
+    {
+      "key": "post",
+      "crop": {
+        "x": 0.82,
+        "y": 0.42,
+        "r": 0.28
+      },
+      "title": {
+        "pt": "Pentáculos no poste",
+        "en": "Pentacles on the post"
+      },
+      "keywords": {
+        "pt": [
+          "Trabalho acumulado",
+          "Paciência, crescimento",
+          "Ou: monotonia"
+        ],
+        "en": [
+          "Accumulated work",
+          "Patience, growth",
+          "Or: monotony"
+        ]
+      }
+    },
+    {
+      "key": "ground",
+      "crop": {
+        "x": 0.3,
+        "y": 0.89,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Pentáculo no chão",
+        "en": "Pentacle on the ground"
+      },
+      "keywords": {
+        "pt": [
+          "Um novo jeito",
+          "Ou: talento deixado de lado"
+        ],
+        "en": [
+          "A new approach",
+          "Or: a talent left by the wayside"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Neutralidade",
+          "Foco"
+        ],
+        "en": [
+          "Neutrality",
+          "Focus"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Zelo",
+          "Paixão"
+        ],
+        "en": [
+          "Zeal",
+          "Passion"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Dedicação",
+          "Espírito"
+        ],
+        "en": [
+          "Dedication",
+          "Spirit"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Ação mental",
+          "Consciência"
+        ],
+        "en": [
+          "Mental action",
+          "Consciousness"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Ofício"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Craft"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Oito de Ouros fala de ofício, disciplina e aprendizado.",
+      "Ele representa o trabalho feito com cuidado, peça por peça.",
+      "O foco dele é: amar o trabalho em si, não só o resultado."
+    ],
+    "en": [
+      "The Eight of Pentacles speaks of craft, discipline and learning.",
+      "It stands for careful work, piece by piece.",
+      "Its focus: loving the work itself, not just the result."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Só a prática faz o mestre",
+          "O mestre é o verdadeiro iniciante",
+          "Trabalho como caminho espiritual"
+        ],
+        "en": [
+          "Only practice makes the master",
+          "The master is the true beginner",
+          "Work as a spiritual path"
+        ]
+      },
+      "line": {
+        "pt": "“Cada peça me forma.”",
+        "en": "“Every piece shapes me.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Trabalho, emprego, encomenda",
+          "Habilidade no ofício e nos negócios",
+          "Achar seu próprio estilo"
+        ],
+        "en": [
+          "Work, employment, commission",
+          "Skill in craft and business",
+          "Finding your own style"
+        ]
+      },
+      "line": {
+        "pt": "“Sou o mestre da obra da minha vida.”",
+        "en": "“I'm the master of my life's work.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Concentração no detalhe",
+          "Ordem no seu mundo",
+          "Ou: excesso de minúcia"
+        ],
+        "en": [
+          "Focus on detail",
+          "Order in your world",
+          "Or: too much attention to detail"
+        ]
+      },
+      "line": {
+        "pt": "“Uma coisa por vez, bem feita.”",
+        "en": "“One thing at a time, done well.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Prazer de trabalhar",
+          "Orgulho do próprio ofício",
+          "Ou: impaciência, inveja"
+        ],
+        "en": [
+          "The joy of working",
+          "Pride in your craft",
+          "Or: impatience, envy"
+        ]
+      },
+      "line": {
+        "pt": "“Gosto do trabalho em si.”",
+        "en": "“I love the work itself.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Fase de preparação",
+          "Aprendizado gradual",
+          "Anéis de crescimento"
+        ],
+        "en": [
+          "A preparatory stage",
+          "Gradual learning",
+          "Annual rings of growth"
+        ]
+      },
+      "line": {
+        "pt": "“Cresço anel por anel.”",
+        "en": "“I grow ring by ring.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Apoiar a obra de vida do outro",
+          "Amor é também apoio mútuo"
+        ],
+        "en": [
+          "Supporting each other's life's work",
+          "Love is mutual support too"
+        ]
+      },
+      "line": {
+        "pt": "“Te ajudo a construir o que é seu.”",
+        "en": "“I help you build what is yours.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Não se deixe usar",
+          "Busque o que importa para você",
+          "Seja sua própria medida"
+        ],
+        "en": [
+          "Don't let yourself be used up",
+          "Seek what matters to you",
+          "Be your own benchmark"
+        ]
+      },
+      "line": {
+        "pt": "“Trabalho para o que é meu.”",
+        "en": "“I work for what's mine.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Ambição vazia, vaidade",
+          "Só pensar no sucesso",
+          "Rotina sem imaginação"
+        ],
+        "en": [
+          "Empty ambition, vanity",
+          "Thinking only of success",
+          "Routine without imagination"
+        ]
+      },
+      "line": {
+        "pt": "“Pressa estraga a peça.”",
+        "en": "“Haste spoils the piece.”"
+      }
+    }
+  ]
+}

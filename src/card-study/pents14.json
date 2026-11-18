@@ -1,0 +1,457 @@
+{
+  "id": "pents14",
+  "number": "14",
+  "name": {
+    "pt": "Rei de Ouros",
+    "en": "King of Pentacles"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Ouros",
+    "en": "Minor Arcana – Pentacles"
+  },
+  "intro": {
+    "pt": "Um rei de manto bordado de uvas está sentado num trono com cabeças de touro, num jardim de videiras, com um castelo atrás; segura um cetro e um pentáculo. É o sucesso realizado e desfrutado: prosperidade, generosidade e prazer de viver. Ele construiu algo que dura.",
+    "en": "A king in a robe embroidered with grapes sits on a bull-headed throne in a vineyard, a castle behind him; he holds a sceptre and a pentacle. This is success achieved and enjoyed: prosperity, generosity and pleasure in life. He has built something that lasts."
+  },
+  "symbols": [
+    {
+      "key": "pentacle",
+      "crop": {
+        "x": 0.63,
+        "y": 0.5,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Pentáculo",
+        "en": "Pentacle"
+      },
+      "keywords": {
+        "pt": [
+          "Capacidades e conquistas",
+          "Valor duradouro",
+          "Satisfação"
+        ],
+        "en": [
+          "Capabilities and achievements",
+          "Lasting value",
+          "Satisfaction"
+        ]
+      }
+    },
+    {
+      "key": "king",
+      "crop": {
+        "x": 0.48,
+        "y": 0.3,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Rei sereno",
+        "en": "Serene king"
+      },
+      "keywords": {
+        "pt": [
+          "Pensativo ou sonolento",
+          "Um com sua missão",
+          "Ou: letárgico"
+        ],
+        "en": [
+          "Thoughtful or drowsy",
+          "At one with his mission",
+          "Or: lethargic"
+        ]
+      }
+    },
+    {
+      "key": "bulls",
+      "crop": {
+        "x": 0.25,
+        "y": 0.23,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Cabeças de touro",
+        "en": "Bulls' heads"
+      },
+      "keywords": {
+        "pt": [
+          "A terra fértil",
+          "Força da natureza",
+          "Renovação em maio"
+        ],
+        "en": [
+          "The fertile earth",
+          "Nature's power",
+          "Renewal in May"
+        ]
+      }
+    },
+    {
+      "key": "grapes",
+      "crop": {
+        "x": 0.5,
+        "y": 0.68,
+        "r": 0.17
+      },
+      "title": {
+        "pt": "Manto de uvas",
+        "en": "Robe of grapes"
+      },
+      "keywords": {
+        "pt": [
+          "Prazer sublime",
+          "Trabalho duro",
+          "Vida doce"
+        ],
+        "en": [
+          "Sublime enjoyment",
+          "Hard work",
+          "Life's sweetness"
+        ]
+      }
+    },
+    {
+      "key": "castle",
+      "crop": {
+        "x": 0.85,
+        "y": 0.37,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Castelo",
+        "en": "Castle"
+      },
+      "keywords": {
+        "pt": [
+          "Proteção e segurança",
+          "Valor duradouro",
+          "Ou: fechado"
+        ],
+        "en": [
+          "Protection and security",
+          "Lasting values",
+          "Or: locked away"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "Força da matéria",
+          "Tesouros da terra",
+          "Assuntos não resolvidos"
+        ],
+        "en": [
+          "The power of matter",
+          "Earth's treasures",
+          "Unresolved matters"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Prosperidade"
+        ],
+        "en": [
+          "Consciousness",
+          "Prosperity"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Natureza",
+          "Crescimento"
+        ],
+        "en": [
+          "Nature",
+          "Growth"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Vida"
+        ],
+        "en": [
+          "Will",
+          "Life"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Céu"
+        ],
+        "en": [
+          "Will",
+          "Sky"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Riqueza",
+          "Eternidade"
+        ],
+        "en": [
+          "Wealth",
+          "Eternity"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Rei de Ouros fala de sucesso, prosperidade e prazer de viver.",
+      "Ele representa quem construiu algo duradouro e sabe desfrutá-lo.",
+      "O foco dele é: valorizar-se sem depender do dinheiro."
+    ],
+    "en": [
+      "The King of Pentacles speaks of success, prosperity and enjoyment of life.",
+      "He stands for someone who built something lasting and knows how to enjoy it.",
+      "His focus: valuing himself without depending on money."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Construir algo que dure",
+          "Liberdade interior no sucesso",
+          "Ligação viva com a natureza"
+        ],
+        "en": [
+          "Building something that lasts",
+          "Inner freedom within success",
+          "A living bond with nature"
+        ]
+      },
+      "line": {
+        "pt": "“Sou meu próprio capital.”",
+        "en": "“I am my own capital.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Negócios, sucesso, valor",
+          "Organize suas finanças",
+          "Talento para números"
+        ],
+        "en": [
+          "Business, success, value",
+          "Sort out your finances",
+          "A gift for numbers"
+        ]
+      },
+      "line": {
+        "pt": "“O que construí dá frutos.”",
+        "en": "“What I've built bears fruit.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Inteligência prática",
+          "O que tem valor permanente?",
+          "Ou: perder-se nos detalhes"
+        ],
+        "en": [
+          "Practical intelligence",
+          "What is of lasting value?",
+          "Or: lost in details"
+        ]
+      },
+      "line": {
+        "pt": "“Sei o que vale a pena.”",
+        "en": "“I know what's worth it.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Prazer dos sentidos",
+          "Vida doce",
+          "Ou: lentidão, letargia"
+        ],
+        "en": [
+          "Pleasures of the senses",
+          "Life's sweetness",
+          "Or: sluggishness, lethargy"
+        ]
+      },
+      "line": {
+        "pt": "“Desfruto o que colhi.”",
+        "en": "“I enjoy what I've harvested.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Satisfação com a vida",
+          "Generosidade",
+          "Ou: insatisfação, dúvida"
+        ],
+        "en": [
+          "Satisfaction with life",
+          "Generosity",
+          "Or: dissatisfaction, doubt"
+        ]
+      },
+      "line": {
+        "pt": "“Estou em paz com o que sou.”",
+        "en": "“I'm at peace with who I am.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Não se feche",
+          "Saiba o seu valor",
+          "Expresse o que precisa"
+        ],
+        "en": [
+          "Don't get bottled up",
+          "Know your priceless value",
+          "Say what you need"
+        ]
+      },
+      "line": {
+        "pt": "“Peço o que preciso.”",
+        "en": "“I ask for what I need.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Não meça seu valor pelo dinheiro",
+          "Nem pela opinião dos outros",
+          "Veja o potencial às suas costas"
+        ],
+        "en": [
+          "Don't measure your worth by money",
+          "Nor by others' opinion",
+          "See the potential behind you"
+        ]
+      },
+      "line": {
+        "pt": "“Meu valor não está à venda.”",
+        "en": "“My worth isn't for sale.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Sucesso a qualquer custo",
+          "Corrupção",
+          "Isolar-se da vida"
+        ],
+        "en": [
+          "Success at any cost",
+          "Corruption",
+          "Cutting yourself off from life"
+        ]
+      },
+      "line": {
+        "pt": "“Riqueza sem raiz seca.”",
+        "en": "“Wealth without roots dries up.”"
+      }
+    }
+  ]
+}

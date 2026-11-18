@@ -1,0 +1,455 @@
+{
+  "id": "pents10",
+  "number": "10",
+  "name": {
+    "pt": "Dez de Ouros",
+    "en": "Ten of Pentacles"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Ouros",
+    "en": "Minor Arcana – Pentacles"
+  },
+  "intro": {
+    "pt": "Sob um arco que leva a uma casa e a um castelo, um casal conversa e uma criança brinca com dois cães que farejam um velho sentado de manto colorido; dez pentáculos formam a Árvore da Vida. É a riqueza da família e das gerações. A magia está em toda parte, mas quase ninguém a vê.",
+    "en": "Beneath an archway leading to a house and castle, a couple talk and a child plays with two dogs sniffing at an old man seated in a colourful cloak; ten pentacles form the Tree of Life. This is the wealth of family and generations. Magic is everywhere, but almost no one sees it."
+  },
+  "symbols": [
+    {
+      "key": "oldman",
+      "crop": {
+        "x": 0.25,
+        "y": 0.62,
+        "r": 0.18
+      },
+      "title": {
+        "pt": "Velho de manto colorido",
+        "en": "Old man in a colourful cloak"
+      },
+      "keywords": {
+        "pt": [
+          "O visitante disfarçado",
+          "Velhice madura",
+          "Odisseu de volta"
+        ],
+        "en": [
+          "The visitor in disguise",
+          "A ripe old age",
+          "Odysseus come home"
+        ]
+      }
+    },
+    {
+      "key": "dogs",
+      "crop": {
+        "x": 0.75,
+        "y": 0.8,
+        "r": 0.18
+      },
+      "title": {
+        "pt": "Cães",
+        "en": "Dogs"
+      },
+      "keywords": {
+        "pt": [
+          "Só eles reconhecem o mágico",
+          "Instinto",
+          "O animal em nós"
+        ],
+        "en": [
+          "Only they recognise the magic",
+          "Instinct",
+          "The animal in us"
+        ]
+      }
+    },
+    {
+      "key": "couple",
+      "crop": {
+        "x": 0.7,
+        "y": 0.5,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Casal e criança",
+        "en": "Couple and child"
+      },
+      "keywords": {
+        "pt": [
+          "Três gerações",
+          "Lar e família",
+          "Ou: cada um no seu mundo"
+        ],
+        "en": [
+          "Three generations",
+          "Home and family",
+          "Or: each in their own world"
+        ]
+      }
+    },
+    {
+      "key": "arch",
+      "crop": {
+        "x": 0.65,
+        "y": 0.3,
+        "r": 0.3
+      },
+      "title": {
+        "pt": "Arco e castelo",
+        "en": "Arch and castle"
+      },
+      "keywords": {
+        "pt": [
+          "Lar, segurança",
+          "O palco da vida comum",
+          "Ou: torre de marfim"
+        ],
+        "en": [
+          "Home, security",
+          "The stage of ordinary life",
+          "Or: ivory tower"
+        ]
+      }
+    },
+    {
+      "key": "pentacles",
+      "crop": {
+        "x": 0.5,
+        "y": 0.45,
+        "r": 0.48
+      },
+      "title": {
+        "pt": "Árvore da Vida",
+        "en": "Tree of Life"
+      },
+      "keywords": {
+        "pt": [
+          "Tudo está aí",
+          "Mas faltam as ligações",
+          "Magia no cotidiano"
+        ],
+        "en": [
+          "Everything is there",
+          "But the connections are missing",
+          "Magic in the everyday"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Riqueza",
+          "Eternidade"
+        ],
+        "en": [
+          "Wealth",
+          "Eternity"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu",
+          "Espírito"
+        ],
+        "en": [
+          "Sky",
+          "Spirit"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Coração",
+          "Vida"
+        ],
+        "en": [
+          "Heart",
+          "Life"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Pedra",
+          "Ou: tédio"
+        ],
+        "en": [
+          "Stone",
+          "Or: boredom"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Natureza",
+          "Crescimento"
+        ],
+        "en": [
+          "Nature",
+          "Growth"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Calor",
+          "Vitalidade"
+        ],
+        "en": [
+          "Warmth",
+          "Vitality"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Dez de Ouros fala de família, herança e tradição.",
+      "Ele representa a riqueza das gerações e a magia escondida no comum.",
+      "O foco dele é: perceber os laços e a magia que já estão aqui."
+    ],
+    "en": [
+      "The Ten of Pentacles speaks of family, inheritance and tradition.",
+      "It stands for the wealth of generations and the magic hidden in the ordinary.",
+      "Its focus: noticing the bonds and magic already here."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "O tempo é relativo",
+          "Fazer parte da criação",
+          "Magia no centro do ordinário"
+        ],
+        "en": [
+          "Time is relative",
+          "Being part of creation",
+          "Magic at the heart of the ordinary"
+        ]
+      },
+      "line": {
+        "pt": "“Nada se perde.”",
+        "en": "“Nothing is wasted.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Ganho, riqueza",
+          "Casa e assuntos de família",
+          "Herança, arquivos"
+        ],
+        "en": [
+          "Gain, riches",
+          "Home and family matters",
+          "Inheritance, archives"
+        ]
+      },
+      "line": {
+        "pt": "“Construo sobre o que veio antes.”",
+        "en": "“I build on what came before.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Consciência da própria parte no mundo",
+          "Somos fruto do nosso condicionamento",
+          "Reconhecer é libertar-se"
+        ],
+        "en": [
+          "Awareness of your part in the world",
+          "We are products of our conditioning",
+          "Recognising it is freeing yourself"
+        ]
+      },
+      "line": {
+        "pt": "“Vejo o palco em que vivo.”",
+        "en": "“I see the stage I live on.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Tédio no conforto",
+          "Não perceber o que se tem",
+          "Aceitar com amor as pessoas da vida"
+        ],
+        "en": [
+          "Boredom in comfort",
+          "Not noticing what you have",
+          "Accepting the people in your life with love"
+        ]
+      },
+      "line": {
+        "pt": "“Olho e vejo o que já tenho.”",
+        "en": "“I look and see what I already have.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Infância, maturidade e velhice",
+          "O fim da odisseia",
+          "O que espera ser resolvido?"
+        ],
+        "en": [
+          "Childhood, midlife and age",
+          "The end of the odyssey",
+          "What is waiting to be sorted out?"
+        ]
+      },
+      "line": {
+        "pt": "“Voltei para casa com outros olhos.”",
+        "en": "“I've come home with new eyes.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Ninguém é uma ilha",
+          "Seja pró-comunidade",
+          "Uma ponte de amor e respeito"
+        ],
+        "en": [
+          "No man is an island",
+          "Be pro-community",
+          "A bridge of love and respect"
+        ]
+      },
+      "line": {
+        "pt": "“A ponte me liga aos outros.”",
+        "en": "“The bridge links me to others.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Aceite com amor as pessoas e fatos",
+          "Trabalhe por uma convivência boa",
+          "Ache a ponte"
+        ],
+        "en": [
+          "Accept people and events with love",
+          "Work for a good coexistence",
+          "Find the bridge"
+        ]
+      },
+      "line": {
+        "pt": "“Cada um com seu caminho, todos juntos.”",
+        "en": "“Each on their path, all together.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Riscos por tédio",
+          "Perda, jogo de azar",
+          "Cada um no seu mundo, sem laço"
+        ],
+        "en": [
+          "Risks taken out of boredom",
+          "Loss, games of chance",
+          "Each in their own world, no bond"
+        ]
+      },
+      "line": {
+        "pt": "“Quem não vê a magia arrisca tudo por emoção.”",
+        "en": "“Not seeing the magic, you gamble for a thrill.”"
+      }
+    }
+  ]
+}

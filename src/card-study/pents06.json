@@ -1,0 +1,460 @@
+{
+  "id": "pents06",
+  "number": "6",
+  "name": {
+    "pt": "Seis de Ouros",
+    "en": "Six of Pentacles"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Ouros",
+    "en": "Minor Arcana – Pentacles"
+  },
+  "intro": {
+    "pt": "Um homem rico segura uma balança equilibrada e dá moedas a um de dois pedintes ajoelhados; seis pentáculos flutuam acima. É a carta do dar e receber, da generosidade e da troca. Pode ser uma situação em que todos ganham, ou uma hierarquia em que um sempre está por cima.",
+    "en": "A wealthy man holds a balanced pair of scales and gives coins to one of two kneeling beggars; six pentacles float above. This is the card of giving and receiving, generosity and exchange. It can be a win-win, or a hierarchy where one person is always on top."
+  },
+  "symbols": [
+    {
+      "key": "giver",
+      "crop": {
+        "x": 0.55,
+        "y": 0.4,
+        "r": 0.28
+      },
+      "title": {
+        "pt": "Homem rico",
+        "en": "Wealthy man"
+      },
+      "keywords": {
+        "pt": [
+          "Suas forças e talentos",
+          "Generosidade",
+          "Ou: superioridade"
+        ],
+        "en": [
+          "Your strengths and talents",
+          "Generosity",
+          "Or: superiority"
+        ]
+      }
+    },
+    {
+      "key": "scales",
+      "crop": {
+        "x": 0.82,
+        "y": 0.46,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Balança equilibrada",
+        "en": "Balanced scales"
+      },
+      "keywords": {
+        "pt": [
+          "Pesar o que é pedido",
+          "Justiça",
+          "Dar o que o outro pode receber"
+        ],
+        "en": [
+          "Weighing what's asked",
+          "Justice",
+          "Giving what the other can receive"
+        ]
+      }
+    },
+    {
+      "key": "coins",
+      "crop": {
+        "x": 0.27,
+        "y": 0.53,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Moedas caindo",
+        "en": "Coins falling"
+      },
+      "keywords": {
+        "pt": [
+          "Valor a mais para os dois",
+          "Bênção",
+          "Troca que enriquece"
+        ],
+        "en": [
+          "Added value for both",
+          "A blessing",
+          "An exchange that enriches"
+        ]
+      }
+    },
+    {
+      "key": "beggars",
+      "crop": {
+        "x": 0.2,
+        "y": 0.65,
+        "r": 0.18
+      },
+      "title": {
+        "pt": "Pedinte que recebe",
+        "en": "Beggar receiving"
+      },
+      "keywords": {
+        "pt": [
+          "Suas fraquezas",
+          "Experiência valiosa",
+          "Ou: dependência"
+        ],
+        "en": [
+          "Your weaknesses",
+          "Valuable experience",
+          "Or: dependency"
+        ]
+      }
+    },
+    {
+      "key": "other",
+      "crop": {
+        "x": 0.8,
+        "y": 0.67,
+        "r": 0.18
+      },
+      "title": {
+        "pt": "Pedinte que espera",
+        "en": "Beggar waiting"
+      },
+      "keywords": {
+        "pt": [
+          "Quem não recebe",
+          "Pedidos a recusar",
+          "Ou: ressentimento"
+        ],
+        "en": [
+          "The one who receives nothing",
+          "Requests to refuse",
+          "Or: resentment"
+        ]
+      }
+    },
+    {
+      "key": "pentacles",
+      "crop": {
+        "x": 0.5,
+        "y": 0.17,
+        "r": 0.32
+      },
+      "title": {
+        "pt": "Pentáculos no céu",
+        "en": "Pentacles in the sky"
+      },
+      "keywords": {
+        "pt": [
+          "Um pedaço do céu na terra",
+          "Ou: riqueza que não chega embaixo"
+        ],
+        "en": [
+          "A piece of heaven on earth",
+          "Or: wealth that never trickles down"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Coração"
+        ],
+        "en": [
+          "Will",
+          "Heart"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Valor",
+          "Consciência"
+        ],
+        "en": [
+          "Value",
+          "Consciousness"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Espiritualidade",
+          "Abertura"
+        ],
+        "en": [
+          "Spirituality",
+          "Openness"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Ou: inveja"
+        ],
+        "en": [
+          "Consciousness",
+          "Or: envy"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Neutralidade",
+          "Equilíbrio"
+        ],
+        "en": [
+          "Neutrality",
+          "Balance"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Seis de Ouros fala de generosidade, troca e equilíbrio.",
+      "Ele representa o dar e receber em que todos ganham.",
+      "O foco dele é: dar o que o outro pode receber, e saber receber."
+    ],
+    "en": [
+      "The Six of Pentacles speaks of generosity, exchange and balance.",
+      "It stands for giving and receiving in which everyone gains.",
+      "Its focus: giving what the other can receive, and knowing how to receive."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Só se possui o que se dá",
+          "A vida dá o que podemos receber",
+          "Pôr-se em posição de receber"
+        ],
+        "en": [
+          "You only own what you give away",
+          "Life gives what we can receive",
+          "Putting yourself in a position to receive"
+        ]
+      },
+      "line": {
+        "pt": "“Recebo quando me abro.”",
+        "en": "“I receive when I open up.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Presentes, gratificação",
+          "Prosperidade presente",
+          "Criar valor para todos"
+        ],
+        "en": [
+          "Gifts, gratification",
+          "Present prosperity",
+          "Creating added value for all"
+        ]
+      },
+      "line": {
+        "pt": "“Quando todos ganham, eu ganho mais.”",
+        "en": "“When everyone wins, I win more.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Pesar prós e contras",
+          "Que pedidos atender?",
+          "Conhecer as próprias necessidades"
+        ],
+        "en": [
+          "Weighing pros and cons",
+          "Which requests to grant?",
+          "Knowing your own needs"
+        ]
+      },
+      "line": {
+        "pt": "“Sei o que dar e o que recusar.”",
+        "en": "“I know what to give and what to refuse.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Dar sem perder, receber sem vergonha",
+          "Ou: guardar o sentimento mais fundo",
+          "Ou: piedade, ressentimento"
+        ],
+        "en": [
+          "Giving without loss, receiving without shame",
+          "Or: holding back the deepest feelings",
+          "Or: pity, resentment"
+        ]
+      },
+      "line": {
+        "pt": "“Posso ser fraco sem ser humilhado.”",
+        "en": "“I can be weak without being humiliated.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Agora é a hora",
+          "Prosperidade presente",
+          "Situação estável que pode mudar"
+        ],
+        "en": [
+          "Now is the time",
+          "Present prosperity",
+          "A stable situation that may shift"
+        ]
+      },
+      "line": {
+        "pt": "“É tempo de partilhar.”",
+        "en": "“It's a time to share.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Dar e receber",
+          "Ousar ser fraco sem hostilidade",
+          "Ou: um sempre por cima"
+        ],
+        "en": [
+          "Give and take",
+          "Daring to be weak without hostility",
+          "Or: one always on top"
+        ]
+      },
+      "line": {
+        "pt": "“Aqui posso receber sem dívida.”",
+        "en": "“Here I can receive without owing.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Crie valor para todos",
+          "Novas formas de realizar desejos",
+          "Abra-se para receber"
+        ],
+        "en": [
+          "Create added value for everyone",
+          "New ways to fulfil wishes",
+          "Open yourself to receive"
+        ]
+      },
+      "line": {
+        "pt": "“Dou e recebo na mesma medida.”",
+        "en": "“I give and receive in equal measure.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Inveja, cobiça",
+          "Dar só o que não faz falta",
+          "Arrogância, moralismo"
+        ],
+        "en": [
+          "Envy, cupidity",
+          "Giving only what you won't miss",
+          "Arrogance, moralising"
+        ]
+      },
+      "line": {
+        "pt": "“Caridade com orgulho não é dom.”",
+        "en": "“Charity with pride isn't a gift.”"
+      }
+    }
+  ]
+}

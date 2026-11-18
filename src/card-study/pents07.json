@@ -1,0 +1,398 @@
+{
+  "id": "pents07",
+  "number": "7",
+  "name": {
+    "pt": "Sete de Ouros",
+    "en": "Seven of Pentacles"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Ouros",
+    "en": "Minor Arcana – Pentacles"
+  },
+  "intro": {
+    "pt": "Um jovem apoiado na enxada contempla sete pentáculos que cresceram num arbusto, com um oitavo aos seus pés. É a pausa para avaliar o trabalho feito: o que cresceu, o que falta, o que plantar a seguir. O que foi construído já pode crescer sozinho.",
+    "en": "A young man leaning on his hoe gazes at seven pentacles grown on a bush, with an eighth at his feet. This is the pause to assess the work done: what has grown, what's missing, what to plant next. What has been built can now grow on its own."
+  },
+  "symbols": [
+    {
+      "key": "figure",
+      "crop": {
+        "x": 0.58,
+        "y": 0.42,
+        "r": 0.3
+      },
+      "title": {
+        "pt": "Jovem pensativo",
+        "en": "Pensive young man"
+      },
+      "keywords": {
+        "pt": [
+          "Pausa criativa",
+          "Avaliar com cuidado",
+          "Ou: perplexidade, cansaço"
+        ],
+        "en": [
+          "A creative pause",
+          "Careful appraisal",
+          "Or: perplexity, tiredness"
+        ]
+      }
+    },
+    {
+      "key": "bush",
+      "crop": {
+        "x": 0.25,
+        "y": 0.6,
+        "r": 0.28
+      },
+      "title": {
+        "pt": "Pentáculos no arbusto",
+        "en": "Pentacles on the bush"
+      },
+      "keywords": {
+        "pt": [
+          "Fruto do trabalho",
+          "Como sempre foi feito",
+          "Crescimento próprio"
+        ],
+        "en": [
+          "Fruit of the work",
+          "The way it's always been done",
+          "Growth on its own"
+        ]
+      }
+    },
+    {
+      "key": "single",
+      "crop": {
+        "x": 0.68,
+        "y": 0.86,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Pentáculo aos pés",
+        "en": "Pentacle at his feet"
+      },
+      "keywords": {
+        "pt": [
+          "O próprio ponto de vista",
+          "A inovação",
+          "Algo novo a plantar"
+        ],
+        "en": [
+          "Your own standpoint",
+          "Innovation",
+          "Something new to plant"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Crescimento",
+          "Esperança",
+          "Natureza"
+        ],
+        "en": [
+          "Growth",
+          "Hope",
+          "Nature"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Vitalidade",
+          "Calor"
+        ],
+        "en": [
+          "Vitality",
+          "Warmth"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Espírito",
+          "Mente"
+        ],
+        "en": [
+          "Spirit",
+          "Mind"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Valor",
+          "Colheita"
+        ],
+        "en": [
+          "Value",
+          "Harvest"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Neutralidade",
+          "Pausa"
+        ],
+        "en": [
+          "Neutrality",
+          "Pause"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Sete de Ouros fala de avaliação, paciência e crescimento.",
+      "Ele representa a pausa para ver o que o trabalho rendeu.",
+      "O foco dele é: fazer o balanço e escolher o que plantar."
+    ],
+    "en": [
+      "The Seven of Pentacles speaks of appraisal, patience and growth.",
+      "It stands for pausing to see what the work has yielded.",
+      "Its focus: taking stock and choosing what to plant."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Fazer o balanço sempre de novo",
+          "Religião como reconsideração atenta",
+          "O trabalho que nos faz crescer"
+        ],
+        "en": [
+          "Taking stock again and again",
+          "Religion as careful reconsideration",
+          "Work that makes us grow"
+        ]
+      },
+      "line": {
+        "pt": "“Paro para ver onde estou.”",
+        "en": "“I stop to see where I stand.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Dinheiro, negócios, troca",
+          "Avaliar resultados e novas metas",
+          "Algo que já cresce sozinho"
+        ],
+        "en": [
+          "Money, business, barter",
+          "Assessing results and new targets",
+          "Something that grows on its own now"
+        ]
+      },
+      "line": {
+        "pt": "“O que plantei já cresce.”",
+        "en": "“What I planted is growing.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "O que significa tudo isso?",
+          "Questionar o próprio ponto de vista",
+          "Achar ligações escondidas"
+        ],
+        "en": [
+          "What's the meaning of all this?",
+          "Questioning your own standpoint",
+          "Finding hidden connections"
+        ]
+      },
+      "line": {
+        "pt": "“Ler de novo é entender melhor.”",
+        "en": "“Re-reading is understanding better.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Pausa no trabalho",
+          "Cansaço depois do esforço",
+          "Descanso merecido"
+        ],
+        "en": [
+          "A break from work",
+          "Tiredness after effort",
+          "Well-earned rest"
+        ]
+      },
+      "line": {
+        "pt": "“Descansar também faz crescer.”",
+        "en": "“Rest makes things grow too.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Satisfação com o que foi feito",
+          "Orgulho e incômodo",
+          "Ou: insatisfação, sentir-se preso"
+        ],
+        "en": [
+          "Satisfaction with what's been done",
+          "Pride and irritation",
+          "Or: dissatisfaction, feeling trapped"
+        ]
+      },
+      "line": {
+        "pt": "“Me reconheço no que fiz.”",
+        "en": "“I recognise myself in what I've done.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Tempo de fazer balanço",
+          "O momento de olhar para trás",
+          "Paciência"
+        ],
+        "en": [
+          "Time to take stock",
+          "The moment to look back",
+          "Patience"
+        ]
+      },
+      "line": {
+        "pt": "“Agora, olhar; depois, plantar.”",
+        "en": "“Now look; then plant.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "O que quer cultivar e dar aos seus?",
+          "Relações que crescem sozinhas"
+        ],
+        "en": [
+          "What do you want to grow and give to your dearest?",
+          "Relationships that grow on their own"
+        ]
+      },
+      "line": {
+        "pt": "“Cultivo o que quero oferecer.”",
+        "en": "“I cultivate what I want to offer.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Fique com o que é genuíno",
+          "Procure sinais e pistas",
+          "Até as pedras no caminho ensinam"
+        ],
+        "en": [
+          "Stick to what's genuine",
+          "Search for signs and traces",
+          "Even stumbling blocks teach"
+        ]
+      },
+      "line": {
+        "pt": "“O genuíno dá fruto.”",
+        "en": "“What's genuine bears fruit.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Trabalho sem sentido",
+          "Ansiedade por dinheiro emprestado",
+          "Não saber para onde ir"
+        ],
+        "en": [
+          "Meaningless work",
+          "Worry over money lent",
+          "Not knowing which way to turn"
+        ]
+      },
+      "line": {
+        "pt": "“Trabalho sem sentido cansa em dobro.”",
+        "en": "“Meaningless work tires you twice over.”"
+      }
+    }
+  ]
+}

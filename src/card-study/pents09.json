@@ -1,0 +1,438 @@
+{
+  "id": "pents09",
+  "number": "9",
+  "name": {
+    "pt": "Nove de Ouros",
+    "en": "Nine of Pentacles"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Ouros",
+    "en": "Minor Arcana – Pentacles"
+  },
+  "intro": {
+    "pt": "Uma mulher de manto florido está sozinha num jardim de videiras carregadas de uvas, com um falcão encapuzado na mão e nove pentáculos ao redor. É o florescer pessoal: prosperidade, consciência de si e a disciplina que torna isso possível. Para chegar aqui, ela abriu mão de algumas coisas.",
+    "en": "A woman in a flowered robe stands alone in a garden of laden grapevines, a hooded falcon on her hand and nine pentacles around her. This is personal blossoming: prosperity, self-awareness and the discipline that makes it possible. To get here, she has given some things up."
+  },
+  "symbols": [
+    {
+      "key": "falcon",
+      "crop": {
+        "x": 0.66,
+        "y": 0.26,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Falcão encapuzado",
+        "en": "Hooded falcon"
+      },
+      "keywords": {
+        "pt": [
+          "Mente disciplinada",
+          "Pronto para agir",
+          "Ou: instinto cego"
+        ],
+        "en": [
+          "A disciplined mind",
+          "Ready for action",
+          "Or: blind instinct"
+        ]
+      }
+    },
+    {
+      "key": "woman",
+      "crop": {
+        "x": 0.45,
+        "y": 0.4,
+        "r": 0.3
+      },
+      "title": {
+        "pt": "Mulher de manto florido",
+        "en": "Woman in a flowered robe"
+      },
+      "keywords": {
+        "pt": [
+          "Personalidade em flor",
+          "Usar bem os talentos",
+          "Ou: narcisismo"
+        ],
+        "en": [
+          "A blooming personality",
+          "Using talents well",
+          "Or: narcissism"
+        ]
+      }
+    },
+    {
+      "key": "grapes",
+      "crop": {
+        "x": 0.85,
+        "y": 0.48,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Uvas",
+        "en": "Grapes"
+      },
+      "keywords": {
+        "pt": [
+          "Prazer sublime",
+          "Trabalho duro",
+          "Maturidade, sucesso"
+        ],
+        "en": [
+          "Sublime enjoyment",
+          "Hard work",
+          "Maturity, success"
+        ]
+      }
+    },
+    {
+      "key": "pentacles",
+      "crop": {
+        "x": 0.2,
+        "y": 0.7,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Pentáculos no jardim",
+        "en": "Pentacles in the garden"
+      },
+      "keywords": {
+        "pt": [
+          "Muitos talentos",
+          "Vida produtiva",
+          "Dar e receber"
+        ],
+        "en": [
+          "Manifold talents",
+          "A productive life",
+          "Give and take"
+        ]
+      }
+    },
+    {
+      "key": "snail",
+      "crop": {
+        "x": 0.2,
+        "y": 0.92,
+        "r": 0.06
+      },
+      "title": {
+        "pt": "Caracol",
+        "en": "Snail"
+      },
+      "keywords": {
+        "pt": [
+          "Sentir-se em casa onde estiver",
+          "Ritmo próprio",
+          "Ou: lentidão, fuga"
+        ],
+        "en": [
+          "At home anywhere",
+          "Its own rhythm",
+          "Or: slowness, escape"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão",
+          "Vida"
+        ],
+        "en": [
+          "Passion",
+          "Life"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Completude",
+          "Pureza"
+        ],
+        "en": [
+          "Completion",
+          "Purity"
+        ]
+      }
+    },
+    {
+      "hex": "#3F6B3A",
+      "name": {
+        "pt": "Verde-escuro",
+        "en": "Dark green"
+      },
+      "keywords": {
+        "pt": [
+          "Perto da natureza",
+          "Duradouro"
+        ],
+        "en": [
+          "Close to nature",
+          "Long-lasting"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Valor",
+          "Colheita"
+        ],
+        "en": [
+          "Value",
+          "Harvest"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Nove de Ouros fala de prosperidade, disciplina e autoconsciência.",
+      "Ele representa o florescer de quem se construiu com cuidado.",
+      "O foco dele é: saber o que importa e colher com gratidão."
+    ],
+    "en": [
+      "The Nine of Pentacles speaks of prosperity, discipline and self-awareness.",
+      "It stands for the blossoming of someone who built herself with care.",
+      "Its focus: knowing what matters and harvesting with gratitude."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "A roseira só floresce com a poda",
+          "Criar-se a partir do que a vida deu",
+          "Certeza de quem se conhece"
+        ],
+        "en": [
+          "The rose bush only blooms when pruned",
+          "Creating yourself from what life gave",
+          "The certainty of self-knowledge"
+        ]
+      },
+      "line": {
+        "pt": "“Corto o que não é meu para florescer.”",
+        "en": "“I cut away what isn't mine so I can bloom.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Prosperidade e segurança",
+          "Sucesso, realização",
+          "Não esconda os talentos"
+        ],
+        "en": [
+          "Prosperity and safety",
+          "Success, accomplishment",
+          "Don't hide your talents"
+        ]
+      },
+      "line": {
+        "pt": "“O mundo fica mais rico comigo nele.”",
+        "en": "“The world is richer with me in it.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Discernimento",
+          "Saber o que realmente importa",
+          "Criar regras próprias e segui-las"
+        ],
+        "en": [
+          "Discernment",
+          "Knowing what really matters",
+          "Making your own rules and keeping them"
+        ]
+      },
+      "line": {
+        "pt": "“Sei o que vale meu esforço.”",
+        "en": "“I know what's worth my effort.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Contentamento consigo",
+          "Solidão escolhida",
+          "Generosidade com os outros"
+        ],
+        "en": [
+          "Contentment with yourself",
+          "Chosen solitude",
+          "Generosity towards others"
+        ]
+      },
+      "line": {
+        "pt": "“Sou preciosa, e me alegro com isso.”",
+        "en": "“I'm priceless, and I'm glad of it.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Amadurecer devagar, como as uvas",
+          "Colher dia a dia",
+          "Em qualquer idade"
+        ],
+        "en": [
+          "Ripening slowly, like grapes",
+          "Harvesting day by day",
+          "At any age"
+        ]
+      },
+      "line": {
+        "pt": "“As uvas amadurecem por último.”",
+        "en": "“Grapes are the last to ripen.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Supere mesquinhez e ciúme",
+          "Ou: abrir mão de companhia",
+          "Autossuficiência"
+        ],
+        "en": [
+          "Rise above pettiness and jealousy",
+          "Or: giving up companionship",
+          "Self-reliance"
+        ]
+      },
+      "line": {
+        "pt": "“Estar só não é estar vazia.”",
+        "en": "“Being alone isn't being empty.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Nem falcão inquieto, nem casca fechada",
+          "Largue hábitos inúteis",
+          "Mostre seus tesouros"
+        ],
+        "en": [
+          "Neither a restless falcon nor a closed shell",
+          "Drop pointless habits",
+          "Show your treasures"
+        ]
+      },
+      "line": {
+        "pt": "“Disciplina que liberta, não que prende.”",
+        "en": "“Discipline that frees, not binds.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Falta de disciplina",
+          "Projetos abandonados",
+          "Má-fé, engano"
+        ],
+        "en": [
+          "Lack of discipline",
+          "Abandoned projects",
+          "Bad faith, deception"
+        ]
+      },
+      "line": {
+        "pt": "“Sem rumo, o jardim vira mato.”",
+        "en": "“Without direction, the garden runs wild.”"
+      }
+    }
+  ]
+}

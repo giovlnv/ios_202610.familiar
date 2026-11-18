@@ -1,0 +1,457 @@
+{
+  "id": "pents13",
+  "number": "13",
+  "name": {
+    "pt": "Rainha de Ouros",
+    "en": "Queen of Pentacles"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Ouros",
+    "en": "Minor Arcana – Pentacles"
+  },
+  "intro": {
+    "pt": "Uma rainha está sentada num trono no meio da natureza, emoldurada por rosas, segurando com as duas mãos um pentáculo no colo; um coelho aparece no canto. Ela ama o mundo e se sente unida a ele. Prática, generosa e confiante, faz do cotidiano um jardim de rosas.",
+    "en": "A queen sits on a throne in the open countryside, framed by roses, holding a pentacle in her lap with both hands; a rabbit appears in the corner. She loves the world and feels at one with it. Practical, generous and self-assured, she turns everyday life into a rose garden."
+  },
+  "symbols": [
+    {
+      "key": "pentacle",
+      "crop": {
+        "x": 0.33,
+        "y": 0.45,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Pentáculo no colo",
+        "en": "Pentacle in her lap"
+      },
+      "keywords": {
+        "pt": [
+          "Cuidar dos talentos e necessidades",
+          "A magia da natureza",
+          "Ou: superficialidade"
+        ],
+        "en": [
+          "Caring for talents and needs",
+          "The magic of nature",
+          "Or: superficiality"
+        ]
+      }
+    },
+    {
+      "key": "queen",
+      "crop": {
+        "x": 0.4,
+        "y": 0.3,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Rainha inclinada",
+        "en": "Queen leaning forward"
+      },
+      "keywords": {
+        "pt": [
+          "Atenta e cuidadosa",
+          "Grandeza de alma",
+          "Confiança em si"
+        ],
+        "en": [
+          "Attentive and caring",
+          "Greatness of soul",
+          "Self-trust"
+        ]
+      }
+    },
+    {
+      "key": "roses",
+      "crop": {
+        "x": 0.2,
+        "y": 0.1,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Arco de rosas",
+        "en": "Arch of roses"
+      },
+      "keywords": {
+        "pt": [
+          "Fertilidade",
+          "Situação auspiciosa",
+          "Como no Mago"
+        ],
+        "en": [
+          "Fruitfulness",
+          "An auspicious situation",
+          "As with the Magician"
+        ]
+      }
+    },
+    {
+      "key": "throne",
+      "crop": {
+        "x": 0.68,
+        "y": 0.3,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Trono com cabras e frutos",
+        "en": "Throne with goats and fruit"
+      },
+      "keywords": {
+        "pt": [
+          "Sobreviver em terra árida",
+          "Equanimidade",
+          "Abundância"
+        ],
+        "en": [
+          "Surviving in arid land",
+          "Equanimity",
+          "Abundance"
+        ]
+      }
+    },
+    {
+      "key": "mountains",
+      "crop": {
+        "x": 0.1,
+        "y": 0.46,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Montanhas azuis e vale",
+        "en": "Blue mountains and valley"
+      },
+      "keywords": {
+        "pt": [
+          "Céu na terra",
+          "O que está às costas",
+          "Ou: distância demais"
+        ],
+        "en": [
+          "Heaven on earth",
+          "What's behind her",
+          "Or: too much distance"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Paixão"
+        ],
+        "en": [
+          "Will",
+          "Passion"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Pureza",
+          "Começo"
+        ],
+        "en": [
+          "Purity",
+          "Beginning"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Naturalidade",
+          "Frescor",
+          "Crescimento"
+        ],
+        "en": [
+          "Naturalness",
+          "Freshness",
+          "Growth"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Equanimidade",
+          "Neutralidade"
+        ],
+        "en": [
+          "Equanimity",
+          "Neutrality"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu",
+          "Espiritualidade"
+        ],
+        "en": [
+          "Sky",
+          "Spirituality"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "A Rainha de Ouros fala de cuidado, abundância e confiança.",
+      "Ela representa a união amorosa com a natureza e a vida diária.",
+      "O foco dela é: cuidar do essencial e confiar em si."
+    ],
+    "en": [
+      "The Queen of Pentacles speaks of care, abundance and confidence.",
+      "She stands for a loving bond with nature and daily life.",
+      "Her focus: tending to the essentials and trusting herself."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "A maravilha da vida no cotidiano",
+          "Unida às forças da natureza",
+          "Ver mundos no próprio símbolo"
+        ],
+        "en": [
+          "The wonder of life in everyday things",
+          "At one with nature's forces",
+          "Seeing worlds in her symbol"
+        ]
+      },
+      "line": {
+        "pt": "“A magia está nas coisas simples.”",
+        "en": "“Magic lives in simple things.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Opulência, segurança",
+          "Do necessário ao impossível",
+          "Esforço para chegar a outro nível"
+        ],
+        "en": [
+          "Opulence, security",
+          "From the necessary to the impossible",
+          "Effort to reach a higher level"
+        ]
+      },
+      "line": {
+        "pt": "“Primeiro o necessário, depois o possível.”",
+        "en": "“First the necessary, then the possible.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Inteligência séria",
+          "Realismo",
+          "Do que eu preciso?"
+        ],
+        "en": [
+          "A serious intelligence",
+          "Realism",
+          "What do I need?"
+        ]
+      },
+      "line": {
+        "pt": "“Sei do que preciso.”",
+        "en": "“I know what I need.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Fertilidade",
+          "Ritmo diário em harmonia",
+          "Prazeres simples"
+        ],
+        "en": [
+          "Fertility",
+          "A daily rhythm in harmony",
+          "Ordinary pleasures"
+        ]
+      },
+      "line": {
+        "pt": "“Meu corpo tem seu ritmo.”",
+        "en": "“My body has its rhythm.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Confiança em si",
+          "Amor pelo que é vivo",
+          "Ou: medo, desconfiança"
+        ],
+        "en": [
+          "Self-trust",
+          "Love of all that lives",
+          "Or: fear, mistrust"
+        ]
+      },
+      "line": {
+        "pt": "“Acredito em mim.”",
+        "en": "“I believe in myself.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Amor e respeito pelo essencial",
+          "A rotina vira jardim de rosas",
+          "Generosidade"
+        ],
+        "en": [
+          "Love and respect for the essentials",
+          "Routine turns into a rose garden",
+          "Generosity"
+        ]
+      },
+      "line": {
+        "pt": "“Cuidar do dia a dia também é amor.”",
+        "en": "“Tending the everyday is love too.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Faça o necessário primeiro",
+          "Desça do pedestal se precisar",
+          "Enraíze as emoções no simples"
+        ],
+        "en": [
+          "Do what's necessary first",
+          "Climb down from your pedestal if needed",
+          "Ground your feelings in simple things"
+        ]
+      },
+      "line": {
+        "pt": "“O simples me sustenta.”",
+        "en": "“Simple things hold me up.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Desconfiar de si",
+          "Nervosismo, perder o ritmo",
+          "Falsa ambição ou falsa modéstia"
+        ],
+        "en": [
+          "Distrusting yourself",
+          "Nervousness, losing your rhythm",
+          "False ambition or false modesty"
+        ]
+      },
+      "line": {
+        "pt": "“Longe da terra, me perco.”",
+        "en": "“Far from the earth, I lose myself.”"
+      }
+    }
+  ]
+}
