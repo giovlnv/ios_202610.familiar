@@ -43,7 +43,7 @@ The mascot is the point of view: *becoming familiar* is learning. Your familiar 
 | 📚 **Tracker** | Statuses, half-star ratings, relistens, diary, shelves, Top 4, ranked lists, genres, stats, streaks, year in review, share images |
 | 🐈‍⬛ **Familiars** | Cat (6 coats, 2 builds, stripe and mark colours), bat, crow, spider; idle, reading, sleeping and walking poses; blinking, tail swish, petting with haptics; link a familiar to a path |
 | 🌗 **Look** | Plum and gold plus four element themes, dark and light; six app icons; home-screen widget; Siri shortcuts; English and Portuguese |
-| ☁️ **Your data** | Everything stays on the phone, with GitHub and file backups and a storage screen |
+| ☁️ **Your data** | Everything stays on the phone, with file backups, automatic backups to your home server (ares, personal build) and a storage screen |
 
 <div align="center">
 <img src="assets/icons/classic.png" width="64" alt="Classic icon" />&nbsp;
@@ -79,7 +79,7 @@ The pipeline lives in a separate **private** repository, because the books are c
 - **App**: Expo SDK 57 · React Native · TypeScript · Expo Router · expo-audio · react-native-svg (the familiars are SVG templates recoloured at runtime) · Kokoro on Core ML · a local Expo module (AVFoundation, PDFKit, Vision) · astronomy-engine · Playfair Display
 - **Pipeline**: Python · Kokoro text-to-speech · GitHub Actions
 - **Design**: Figma (design system, screens, brand) and a Claude design canvas for the mascot drawings
-- **Data**: local files on the device · GitHub API for backups and jobs · Open Library · Open-Meteo geocoding
+- **Data**: local files on the device · backups to ares (the calliope api, `PUT/GET /familiar/backup`, 30 daily copies) · GitHub API for jobs and streaming · Open Library · Open-Meteo geocoding
 
 ## Installing (no App Store, no Mac)
 

@@ -31,7 +31,7 @@ Last revised: 21 Oct 2026 · app 1.7.0 · two builds from one code base: **perso
 - Portuguese app UI (French and Arabic for books and voices); pronouns
 
 **Data and launch prep**
-- Local data, GitHub and file backups, storage screen
+- Local data, file backups and automatic backups to ares (since 2026-11-18; GitHub backups stopped), storage screen
 - Public build switch; paid plans and prices decided; privacy policy and App Store labels drafted
 
 ---
