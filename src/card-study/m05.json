@@ -1,0 +1,498 @@
+{
+  "id": "m05",
+  "number": "V",
+  "name": {
+    "pt": "O Hierofante",
+    "en": "The Hierophant"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta V",
+    "en": "Major Arcana – Card V"
+  },
+  "intro": {
+    "pt": "O Hierofante, “aquele que revela o sagrado”, está entre duas colunas cinzentas e abençoa dois discípulos ajoelhados. Ele é a ponte entre o humano e o divino: a tradição, o ensino e a fé partilhada que dão chão para crescer. Mas também lembra que a chave do sentido está nas suas mãos.",
+    "en": "The Hierophant, “the one who reveals the sacred”, sits between two grey pillars and blesses two kneeling disciples. He is the bridge between the human and the divine: tradition, teaching and shared faith that give you ground to grow from. But he also reminds you that the key to meaning is in your own hands."
+  },
+  "symbols": [
+    {
+      "key": "tiara",
+      "crop": {
+        "x": 0.49,
+        "y": 0.185,
+        "r": 0.11
+      },
+      "title": {
+        "pt": "Tiara tríplice",
+        "en": "Triple crown"
+      },
+      "keywords": {
+        "pt": [
+          "Ponte com o divino",
+          "Três mundos",
+          "Céu, terra e submundo"
+        ],
+        "en": [
+          "Bridge to the divine",
+          "Three worlds",
+          "Heaven, earth and underworld"
+        ]
+      }
+    },
+    {
+      "key": "blessing",
+      "crop": {
+        "x": 0.22,
+        "y": 0.24,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Mão que abençoa",
+        "en": "Blessing hand"
+      },
+      "keywords": {
+        "pt": [
+          "Assim em cima, como embaixo",
+          "O visível e o oculto",
+          "Todo ato digno abençoa"
+        ],
+        "en": [
+          "As above, so below",
+          "The seen and the hidden",
+          "Every worthwhile act is a blessing"
+        ]
+      }
+    },
+    {
+      "key": "staff",
+      "crop": {
+        "x": 0.76,
+        "y": 0.25,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Cajado de cruz tripla",
+        "en": "Triple-cross staff"
+      },
+      "keywords": {
+        "pt": [
+          "Pastor, não ovelha",
+          "Guia espiritual",
+          "Autoridade da doutrina"
+        ],
+        "en": [
+          "Shepherd, not sheep",
+          "Spiritual guide",
+          "Authority of doctrine"
+        ]
+      }
+    },
+    {
+      "key": "keys",
+      "crop": {
+        "x": 0.5,
+        "y": 0.845,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Chaves cruzadas",
+        "en": "Crossed keys"
+      },
+      "keywords": {
+        "pt": [
+          "Ligar e desligar",
+          "A chave está com você",
+          "Caminho de fora"
+        ],
+        "en": [
+          "Binding and loosing",
+          "The key is in your hands",
+          "The outer way"
+        ]
+      }
+    },
+    {
+      "key": "pillars",
+      "crop": {
+        "x": 0.13,
+        "y": 0.15,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Colunas cinzentas",
+        "en": "Grey pillars"
+      },
+      "keywords": {
+        "pt": [
+          "Comunidade, escola",
+          "Sustentar o que dura",
+          "Ou: petrificação"
+        ],
+        "en": [
+          "Community, school",
+          "Sustaining what lasts",
+          "Or: petrification"
+        ]
+      }
+    },
+    {
+      "key": "acolyte",
+      "crop": {
+        "x": 0.16,
+        "y": 0.73,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Discípulo de tonsura",
+        "en": "Tonsured disciple"
+      },
+      "keywords": {
+        "pt": [
+          "Abertura ao espírito",
+          "Aprender uma tradição",
+          "Iniciação"
+        ],
+        "en": [
+          "Openness to spirit",
+          "Learning a tradition",
+          "Initiation"
+        ]
+      }
+    },
+    {
+      "key": "flowers",
+      "crop": {
+        "x": 0.83,
+        "y": 0.83,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Rosas e lírios",
+        "en": "Roses and lilies"
+      },
+      "keywords": {
+        "pt": [
+          "Pureza",
+          "Amor",
+          "Base de toda fé verdadeira"
+        ],
+        "en": [
+          "Purity",
+          "Love",
+          "The root of all true faith"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Coração",
+          "Vontade",
+          "Amor"
+        ],
+        "en": [
+          "Heart",
+          "Will",
+          "Love"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Inconsciente",
+          "Neutralidade",
+          "Tolerância",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Unconscious",
+          "Neutrality",
+          "Tolerance",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Ponto de partida",
+          "Pureza",
+          "Completude"
+        ],
+        "en": [
+          "Starting point",
+          "Purity",
+          "Completion"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Eternidade",
+          "Ou: pompa"
+        ],
+        "en": [
+          "Consciousness",
+          "Eternity",
+          "Or: pomp"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "O desconhecido",
+          "Significado interior",
+          "Sombra visível"
+        ],
+        "en": [
+          "The unknown",
+          "Inner meaning",
+          "Visible shadow"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Hierofante fala de tradição, ensino e do sagrado.",
+      "Ele representa a ponte entre a fé partilhada e a experiência de cada um.",
+      "O foco dele é: encontrar sentido e assumir a própria responsabilidade."
+    ],
+    "en": [
+      "The Hierophant speaks of tradition, teaching and the sacred.",
+      "He stands for the bridge between shared faith and each person's own experience.",
+      "His focus: finding meaning and taking responsibility for it."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "A centelha divina em cada pessoa",
+          "Ponte entre o humano e Deus",
+          "A tradição como ponto de partida"
+        ],
+        "en": [
+          "The divine spark in every person",
+          "A bridge between human and God",
+          "Tradition as a starting point"
+        ]
+      },
+      "line": {
+        "pt": "“Quem revela o sagrado ensina a todos.”",
+        "en": "“Whoever reveals the sacred teaches everyone.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "A chave é a sua competência",
+          "Educação e tradição",
+          "Instituições e alianças"
+        ],
+        "en": [
+          "The key is your own competence",
+          "Education and tradition",
+          "Institutions and alliances"
+        ]
+      },
+      "line": {
+        "pt": "“O que eu sei fazer é minha chave.”",
+        "en": "“What I know how to do is my key.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Respostas próprias aos mistérios",
+          "Tradição como medida para o novo",
+          "Ideias originais"
+        ],
+        "en": [
+          "Your own answers to life's mysteries",
+          "Tradition as a yardstick for the new",
+          "Original ideas"
+        ]
+      },
+      "line": {
+        "pt": "“Conhecer a regra me deixa livre para pensar.”",
+        "en": "“Knowing the rule leaves me free to think.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Reverência pelo que importa",
+          "Necessidade de orientação e conselho",
+          "Harmonia e entendimento"
+        ],
+        "en": [
+          "Reverence for what matters",
+          "A need for guidance and counsel",
+          "Harmony and understanding"
+        ]
+      },
+      "line": {
+        "pt": "“O que tem sentido desperta os sentidos.”",
+        "en": "“What makes sense awakens the senses.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Datas e rituais que marcam a vida",
+          "Momentos de virada",
+          "Iniciação numa nova fase"
+        ],
+        "en": [
+          "Days and rituals that mark a life",
+          "Turning points",
+          "Initiation into a new phase"
+        ]
+      },
+      "line": {
+        "pt": "“Celebrar também é dar sentido ao tempo.”",
+        "en": "“Celebrating gives meaning to time.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Casamento e alianças",
+          "Abrir-se às necessidades do outro",
+          "Um mestre ou conselheiro"
+        ],
+        "en": [
+          "Marriage and alliances",
+          "Opening to the other's needs",
+          "A teacher or counsellor"
+        ]
+      },
+      "line": {
+        "pt": "“Partilhar meus segredos aproxima.”",
+        "en": "“Sharing my secrets brings us closer.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "A chave está nas suas mãos",
+          "Seja pastor, não ovelha",
+          "Santifique os seus dias"
+        ],
+        "en": [
+          "The key is in your hands",
+          "Be a shepherd, not a sheep",
+          "Make your days holy"
+        ]
+      },
+      "line": {
+        "pt": "“Ninguém encontra o meu sentido por mim.”",
+        "en": "“No one can find my meaning for me.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Conformismo, entregar a responsabilidade",
+          "Dogma rígido, petrificação",
+          "Credulidade, trocar um dogma por outro"
+        ],
+        "en": [
+          "Conformity, handing over responsibility",
+          "Rigid dogma, petrification",
+          "Gullibility, swapping one dogma for another"
+        ]
+      },
+      "line": {
+        "pt": "“Obedecer não é o mesmo que crer.”",
+        "en": "“Obeying is not the same as believing.”"
+      }
+    }
+  ]
+}

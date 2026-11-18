@@ -1,0 +1,551 @@
+{
+  "id": "m04",
+  "number": "IV",
+  "name": {
+    "pt": "O Imperador",
+    "en": "The Emperor"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta IV",
+    "en": "Major Arcana – Card IV"
+  },
+  "intro": {
+    "pt": "O Imperador está sentado num trono de pedra, de armadura, com o cetro da vida numa mão e o globo na outra. Ele é o pai e a lei: a ordem que dá forma ao jardim da Imperatriz e o pioneiro que faz o deserto florescer. Fala de autoridade, estrutura e de ser senhor da própria vida.",
+    "en": "The Emperor sits on a stone throne in armour, the sceptre of life in one hand and the globe in the other. He is the father and the law: the order that gives shape to the Empress's garden and the pioneer who makes the desert bloom. He speaks of authority, structure and being master of your own life."
+  },
+  "symbols": [
+    {
+      "key": "ankh",
+      "crop": {
+        "x": 0.17,
+        "y": 0.34,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Cetro em forma de ankh",
+        "en": "Ankh sceptre"
+      },
+      "keywords": {
+        "pt": [
+          "Chave da vida",
+          "Renovação",
+          "Poder sobre vida e morte",
+          "Ou: ganância"
+        ],
+        "en": [
+          "Key of life",
+          "Renewal",
+          "Power over life and death",
+          "Or: greed"
+        ]
+      }
+    },
+    {
+      "key": "orb",
+      "crop": {
+        "x": 0.79,
+        "y": 0.48,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Globo dourado",
+        "en": "Golden orb"
+      },
+      "keywords": {
+        "pt": [
+          "Poder",
+          "Vida eterna e fertilidade",
+          "Ou: o toque de Midas"
+        ],
+        "en": [
+          "Power",
+          "Eternal life and fertility",
+          "Or: the Midas touch"
+        ]
+      }
+    },
+    {
+      "key": "crown",
+      "crop": {
+        "x": 0.48,
+        "y": 0.18,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Coroa fechada",
+        "en": "Closed crown"
+      },
+      "keywords": {
+        "pt": [
+          "Autoridade própria",
+          "Consciência",
+          "Ou: ganância"
+        ],
+        "en": [
+          "One's own authority",
+          "Consciousness",
+          "Or: greed"
+        ]
+      }
+    },
+    {
+      "key": "beard",
+      "crop": {
+        "x": 0.47,
+        "y": 0.28,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Barba e cabelos brancos",
+        "en": "White beard and hair"
+      },
+      "keywords": {
+        "pt": [
+          "Sabedoria do mundo",
+          "Experiência",
+          "O mestre que recomeça"
+        ],
+        "en": [
+          "Worldly wisdom",
+          "Experience",
+          "The master as beginner"
+        ]
+      }
+    },
+    {
+      "key": "rams",
+      "crop": {
+        "x": 0.21,
+        "y": 0.13,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Cabeças de carneiro",
+        "en": "Rams' heads"
+      },
+      "keywords": {
+        "pt": [
+          "Áries, o pioneiro",
+          "Primavera",
+          "Força e agressão"
+        ],
+        "en": [
+          "Aries, the pioneer",
+          "Springtime",
+          "Force and aggression"
+        ]
+      }
+    },
+    {
+      "key": "armour",
+      "crop": {
+        "x": 0.53,
+        "y": 0.74,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Armadura",
+        "en": "Armour"
+      },
+      "keywords": {
+        "pt": [
+          "Bem preparado",
+          "Proteção",
+          "Ou: arrogância do poder"
+        ],
+        "en": [
+          "Well prepared",
+          "Protection",
+          "Or: arrogance of power"
+        ]
+      }
+    },
+    {
+      "key": "mountains",
+      "crop": {
+        "x": 0.9,
+        "y": 0.4,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Montanhas áridas",
+        "en": "Barren mountains"
+      },
+      "keywords": {
+        "pt": [
+          "Terra nova a conquistar",
+          "Deserto a florescer",
+          "Ou: fertilidade que seca"
+        ],
+        "en": [
+          "New land to conquer",
+          "A desert to bring to bloom",
+          "Or: fertility wilting"
+        ]
+      }
+    },
+    {
+      "key": "river",
+      "crop": {
+        "x": 0.1,
+        "y": 0.79,
+        "r": 0.055
+      },
+      "title": {
+        "pt": "Fio de rio",
+        "en": "Thin river"
+      },
+      "keywords": {
+        "pt": [
+          "Seguir no fluxo da vida",
+          "Mudar para ser fiel a si",
+          "Paixão quase seca"
+        ],
+        "en": [
+          "Staying in life's flow",
+          "Changing to stay true to yourself",
+          "Passion almost dried up"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Paixão",
+          "Nova solução",
+          "Ira"
+        ],
+        "en": [
+          "Will",
+          "Passion",
+          "New solution",
+          "Wrath"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Vitalidade",
+          "Calor",
+          "Ou: arbitrariedade"
+        ],
+        "en": [
+          "Vitality",
+          "Warmth",
+          "Or: arbitrariness"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Mundo material",
+          "Imparcialidade",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "The material world",
+          "Impartiality",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Pureza",
+          "Sabedoria",
+          "Novo começo"
+        ],
+        "en": [
+          "Purity",
+          "Wisdom",
+          "A new beginning"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "Problemas não resolvidos",
+          "Chances não usadas",
+          "O desconhecido"
+        ],
+        "en": [
+          "Unsolved problems",
+          "Unused chances",
+          "The unknown"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Sol, consciência",
+          "Eternidade",
+          "Ou: ganância, pompa"
+        ],
+        "en": [
+          "Sun, consciousness",
+          "Eternity",
+          "Or: greed, pomp"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Imperador fala de ordem, autoridade e estrutura.",
+      "Ele representa a força que organiza a vida e defende o seu território.",
+      "O foco dele é: ser senhor da própria vida, sem endurecer."
+    ],
+    "en": [
+      "The Emperor speaks of order, authority and structure.",
+      "He stands for the strength that organises life and defends its ground.",
+      "His focus: being master of your own life without turning to stone."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Suportar a si mesmo",
+          "Estabilidade que permite crescer",
+          "O espírito que ordena a natureza"
+        ],
+        "en": [
+          "Being able to stand yourself",
+          "Stability that allows growth",
+          "Spirit bringing order to nature"
+        ]
+      },
+      "line": {
+        "pt": "“Quem governa a si mesmo não precisa de trono.”",
+        "en": "“Whoever rules themselves needs no throne.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Espírito pioneiro",
+          "Estabilidade, poder e realização",
+          "Ordem que abre espaço para criar"
+        ],
+        "en": [
+          "Pioneering spirit",
+          "Stability, power and realisation",
+          "Order that makes room to create"
+        ]
+      },
+      "line": {
+        "pt": "“Do deserto, eu faço um jardim.”",
+        "en": "“Out of the desert, I make a garden.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Razão, análise e medida",
+          "Organizar ideias e energias",
+          "Absorver as regras e criar as suas"
+        ],
+        "en": [
+          "Reason, analysis and measure",
+          "Organising thoughts and energies",
+          "Learning the rules, then making your own"
+        ]
+      },
+      "line": {
+        "pt": "“Primeiro entendo a regra, depois escolho a minha.”",
+        "en": "“First I understand the rule, then I choose my own.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Virilidade e vigor",
+          "Renovação, como na primavera",
+          "Rigidez: um corpo de ferro"
+        ],
+        "en": [
+          "Virility and vigour",
+          "Renewal, as in spring",
+          "Stiffness: a body of iron"
+        ]
+      },
+      "line": {
+        "pt": "“Força também precisa de movimento.”",
+        "en": "“Strength needs movement too.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Controle sobre os sentimentos",
+          "Risco de frieza e aridez",
+          "Do outro lado: compaixão"
+        ],
+        "en": [
+          "Control over feelings",
+          "Risk of coldness and barrenness",
+          "On the other side: compassion"
+        ]
+      },
+      "line": {
+        "pt": "“Proteger não é se fechar.”",
+        "en": "“Protecting isn't shutting down.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Primavera, recomeço",
+          "Fase de estabilidade e ordem",
+          "O mestre volta a ser iniciante"
+        ],
+        "en": [
+          "Spring, a fresh start",
+          "A phase of stability and order",
+          "The master becomes a beginner again"
+        ]
+      },
+      "line": {
+        "pt": "“Toda ordem nova começa num primeiro passo.”",
+        "en": "“Every new order starts with a first step.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Relação pede trabalho",
+          "Herança do pai e dos ancestrais",
+          "Alguém com poder sobre você"
+        ],
+        "en": [
+          "Relationships take work",
+          "Inheritance from father and ancestors",
+          "Someone with power over you"
+        ]
+      },
+      "line": {
+        "pt": "“Amor também se constrói.”",
+        "en": "“Love is built, too.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Seja dono da sua vida",
+          "Defina limites firmes",
+          "Continue no fluxo e aceite mudar"
+        ],
+        "en": [
+          "Be the ruler of your own life",
+          "Set firm boundaries",
+          "Stay in the flow and accept change"
+        ]
+      },
+      "line": {
+        "pt": "“Firmeza com movimento, não com pedra.”",
+        "en": "“Firmness that moves, not firmness of stone.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Arrogância e rigidez sem sentido",
+          "Regras que sufocam a vida",
+          "Imaturidade, fugir de decisões duras"
+        ],
+        "en": [
+          "Arrogance and pointless severity",
+          "Rules that stifle life",
+          "Immaturity, dodging hard decisions"
+        ]
+      },
+      "line": {
+        "pt": "“Poder sem coração vira prisão.”",
+        "en": "“Power without heart becomes a prison.”"
+      }
+    }
+  ]
+}

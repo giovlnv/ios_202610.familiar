@@ -1,0 +1,533 @@
+{
+  "id": "m01",
+  "number": "I",
+  "name": {
+    "pt": "O Mago",
+    "en": "The Magician"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta I",
+    "en": "Major Arcana – Card I"
+  },
+  "intro": {
+    "pt": "O Mago é a primeira carta da jornada que de fato age. Com uma mão erguida para o céu e a outra apontando para a terra, ele é um canal: puxa a força do alto e a transforma em algo real. Representa a consciência, a vontade e o poder de criar com o que se tem à mão.",
+    "en": "The Magician is the first card of the journey that truly acts. With one hand raised to the sky and the other pointing to the earth, he is a channel: he draws power from above and turns it into something real. He stands for consciousness, will and the power to create with what is at hand."
+  },
+  "symbols": [
+    {
+      "key": "wand",
+      "crop": {
+        "x": 0.18,
+        "y": 0.13,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Bastão erguido",
+        "en": "Raised wand"
+      },
+      "keywords": {
+        "pt": [
+          "Força vinda do alto",
+          "Vontade",
+          "Separar e recombinar",
+          "Individualidade"
+        ],
+        "en": [
+          "Power from above",
+          "Will",
+          "Separating and recombining",
+          "Individuality"
+        ]
+      }
+    },
+    {
+      "key": "hand",
+      "crop": {
+        "x": 0.765,
+        "y": 0.53,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Mão apontando para a terra",
+        "en": "Hand pointing to the earth"
+      },
+      "keywords": {
+        "pt": [
+          "Assim em cima, como embaixo",
+          "Aterrar a energia",
+          "Ideia virando ação"
+        ],
+        "en": [
+          "As above, so below",
+          "Grounding the energy",
+          "Thought becoming deed"
+        ]
+      }
+    },
+    {
+      "key": "lemniscate",
+      "crop": {
+        "x": 0.435,
+        "y": 0.2,
+        "r": 0.075
+      },
+      "title": {
+        "pt": "Oito deitado",
+        "en": "Sideways eight"
+      },
+      "keywords": {
+        "pt": [
+          "Infinito",
+          "Equilíbrio",
+          "Vitalidade",
+          "Ou: correr atrás do rabo"
+        ],
+        "en": [
+          "Infinity",
+          "Balance",
+          "Vitality",
+          "Or: chasing one's tail"
+        ]
+      }
+    },
+    {
+      "key": "serpent",
+      "crop": {
+        "x": 0.47,
+        "y": 0.5,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Cinto de serpente",
+        "en": "Serpent belt"
+      },
+      "keywords": {
+        "pt": [
+          "Eternidade",
+          "Renovação constante",
+          "Trocar de pele",
+          "Ou: tentação, manipulação"
+        ],
+        "en": [
+          "Eternity",
+          "Constant renewal",
+          "Shedding the old",
+          "Or: temptation, manipulation"
+        ]
+      }
+    },
+    {
+      "key": "table",
+      "crop": {
+        "x": 0.24,
+        "y": 0.56,
+        "r": 0.21
+      },
+      "title": {
+        "pt": "Mesa com os quatro naipes",
+        "en": "Table with the four suits"
+      },
+      "keywords": {
+        "pt": [
+          "Ferramentas da vida",
+          "Vontade, intelecto, sentimento, corpo",
+          "Tarefas a cumprir"
+        ],
+        "en": [
+          "Life's tools",
+          "Will, intellect, feeling, body",
+          "Tasks to accomplish"
+        ]
+      }
+    },
+    {
+      "key": "robes",
+      "crop": {
+        "x": 0.48,
+        "y": 0.37,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Manto vermelho e túnica branca",
+        "en": "Red mantle and white robe"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão e vontade",
+          "Recomeço e realização",
+          "Ou: egoísmo, ingenuidade"
+        ],
+        "en": [
+          "Passion and will",
+          "New start and achievement",
+          "Or: egoism, gullibility"
+        ]
+      }
+    },
+    {
+      "key": "garden",
+      "crop": {
+        "x": 0.5,
+        "y": 0.78,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Rosas e lírios",
+        "en": "Roses and lilies"
+      },
+      "keywords": {
+        "pt": [
+          "Aspiração cultivada",
+          "Promessa de sucesso",
+          "Terra virando jardim"
+        ],
+        "en": [
+          "Cultivated aspiration",
+          "Promise of success",
+          "Earth turned into a garden"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver",
+          "Ou: inveja, estridência"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life",
+          "Or: envy, shrillness"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Coração",
+          "Vontade",
+          "Amor",
+          "Ira"
+        ],
+        "en": [
+          "Heart",
+          "Will",
+          "Love",
+          "Wrath"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Ponto de partida",
+          "Completude",
+          "Cura",
+          "Território novo"
+        ],
+        "en": [
+          "Starting point",
+          "Completion",
+          "Healing",
+          "New territory"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Juventude",
+          "Imaturidade"
+        ],
+        "en": [
+          "Freshness",
+          "Youth",
+          "Immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Enraizado",
+          "Da criação"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Grounded",
+          "Of creation"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Ar e céu aberto",
+          "Água limpa",
+          "Espiritualidade"
+        ],
+        "en": [
+          "Air and open sky",
+          "Clear water",
+          "Spirituality"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Mago fala de vontade, criação e consciência do próprio poder.",
+      "Ele representa a energia que desce do alto e vira algo concreto.",
+      "O foco dele é: agir em vez de só reagir."
+    ],
+    "en": [
+      "The Magician speaks of will, creation and awareness of one's own power.",
+      "He stands for energy that comes down from above and becomes something real.",
+      "His focus: acting instead of only reacting."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Ser canal entre céu e terra",
+          "Unidade consigo, com Deus e o mundo",
+          "O mago interior guia a jornada"
+        ],
+        "en": [
+          "Being a channel between heaven and earth",
+          "Oneness with self, God and the world",
+          "The inner magician guides the journey"
+        ]
+      },
+      "line": {
+        "pt": "“A força não é minha, mas passa por mim.”",
+        "en": "“The power isn't mine, but it flows through me.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Inspiração para um projeto novo",
+          "Primeiros passos concretos",
+          "Suas ideias são sua semente"
+        ],
+        "en": [
+          "Inspiration for a new project",
+          "The first concrete steps",
+          "Your ideas are your seed corn"
+        ]
+      },
+      "line": {
+        "pt": "“Potencial só existe quando vira algo.”",
+        "en": "“Potential only exists once it becomes something.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Vontade focada num objetivo",
+          "Imaginação que cria realidade",
+          "Separar as partes para ver o todo"
+        ],
+        "en": [
+          "Will focused on one goal",
+          "Imagination that creates reality",
+          "Separating the parts to see the whole"
+        ]
+      },
+      "line": {
+        "pt": "“Saber o que quer já é metade da magia.”",
+        "en": "“Knowing what you want is half the magic.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Energia que precisa de saída",
+          "Excitação sentida no corpo",
+          "Ansiedade quando a força fica presa"
+        ],
+        "en": [
+          "Energy that needs an outlet",
+          "Excitement felt in the body",
+          "Anxiety when the power gets trapped"
+        ]
+      },
+      "line": {
+        "pt": "“Para-raio sem chão queima a casa.”",
+        "en": "“A lightning rod with no ground burns the house down.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Entusiasmo de um começo",
+          "Paixão pelo que se deseja",
+          "Viver o desejo do coração"
+        ],
+        "en": [
+          "The thrill of a beginning",
+          "Passion for what you want",
+          "Living out the heart's desire"
+        ]
+      },
+      "line": {
+        "pt": "“O coração também precisa de direção.”",
+        "en": "“The heart needs direction too.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Primeiros passos de algo novo",
+          "Travado até seguir o próprio caminho",
+          "Processos que podem acelerar"
+        ],
+        "en": [
+          "First steps of something new",
+          "Stuck until you walk your own path",
+          "Processes that can speed up"
+        ]
+      },
+      "line": {
+        "pt": "“O tempo anda quando eu ando.”",
+        "en": "“Time moves when I move.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Com perseverança, o amor floresce",
+          "O poder de alguém afetando você",
+          "Magia pede a participação do outro"
+        ],
+        "en": [
+          "With perseverance, love blooms",
+          "Someone else's power affecting you",
+          "Magic needs the other's part"
+        ]
+      },
+      "line": {
+        "pt": "“Ninguém faz mágica sozinho.”",
+        "en": "“No one works magic alone.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Faça diferença",
+          "Use todas as oportunidades",
+          "Descarregue a força para receber mais"
+        ],
+        "en": [
+          "Make a difference",
+          "Use every opportunity",
+          "Release power to receive more"
+        ]
+      },
+      "line": {
+        "pt": "“Quem segura a força perde a força.”",
+        "en": "“Hold on to power and you lose it.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Energia bloqueada, apatia",
+          "Poder usado para manipular",
+          "Truque a serviço do ego"
+        ],
+        "en": [
+          "Blocked energy, apathy",
+          "Power used to manipulate",
+          "A trick serving the ego"
+        ]
+      },
+      "line": {
+        "pt": "“Magia sem propósito vira só truque.”",
+        "en": "“Magic without purpose is just a trick.”"
+      }
+    }
+  ]
+}

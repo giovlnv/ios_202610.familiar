@@ -1,0 +1,525 @@
+{
+  "id": "m02",
+  "number": "II",
+  "name": {
+    "pt": "A Sacerdotisa",
+    "en": "The High Priestess"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta II",
+    "en": "Major Arcana – Card II"
+  },
+  "intro": {
+    "pt": "A Sacerdotisa guarda a entrada de um templo, sentada entre duas colunas, com um véu atrás de si. Ela é o lado silencioso e receptivo da alma: a sabedoria interior que se sente antes de saber explicar. Fala de mistério, intuição e da força que nasce do recolhimento.",
+    "en": "The High Priestess guards the entrance to a temple, seated between two pillars with a veil behind her. She is the quiet, receptive side of the soul: inner wisdom you feel before you can explain it. She speaks of mystery, intuition and the power that grows out of stillness."
+  },
+  "symbols": [
+    {
+      "key": "pillars",
+      "crop": {
+        "x": 0.13,
+        "y": 0.4,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Colunas B e J",
+        "en": "Pillars B and J"
+      },
+      "keywords": {
+        "pt": [
+          "Opostos que se completam",
+          "Passivo e ativo",
+          "Dualidade é ilusão"
+        ],
+        "en": [
+          "Opposites that complete each other",
+          "Passive and active",
+          "Duality is an illusion"
+        ]
+      }
+    },
+    {
+      "key": "veil",
+      "crop": {
+        "x": 0.32,
+        "y": 0.16,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Véu de palmas e romãs",
+        "en": "Veil of palms and pomegranates"
+      },
+      "keywords": {
+        "pt": [
+          "Tela interior das imagens",
+          "Fertilidade da vida espiritual",
+          "Limite que ainda deixa passar"
+        ],
+        "en": [
+          "Inner screen for images",
+          "Fruitful spiritual life",
+          "A boundary you can still cross"
+        ]
+      }
+    },
+    {
+      "key": "crown",
+      "crop": {
+        "x": 0.5,
+        "y": 0.25,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Coroa da lua tríplice",
+        "en": "Triple moon crown"
+      },
+      "keywords": {
+        "pt": [
+          "Fases da lua",
+          "Ísis, a grande mãe",
+          "Donzela, mulher e anciã"
+        ],
+        "en": [
+          "Phases of the moon",
+          "Isis, the great mother",
+          "Maiden, woman and elder"
+        ]
+      }
+    },
+    {
+      "key": "cross",
+      "crop": {
+        "x": 0.48,
+        "y": 0.43,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Cruz no peito",
+        "en": "Cross on the breast"
+      },
+      "keywords": {
+        "pt": [
+          "Espiritualidade",
+          "O coração que separa e avalia",
+          "Valores próprios"
+        ],
+        "en": [
+          "Spirituality",
+          "The heart that sorts and weighs",
+          "Values of one's own"
+        ]
+      }
+    },
+    {
+      "key": "scroll",
+      "crop": {
+        "x": 0.42,
+        "y": 0.565,
+        "r": 0.11
+      },
+      "title": {
+        "pt": "Pergaminho Tora",
+        "en": "Tora scroll"
+      },
+      "keywords": {
+        "pt": [
+          "Lei secreta",
+          "Saber meio oculto",
+          "O roteiro da própria vida"
+        ],
+        "en": [
+          "Secret law",
+          "Knowledge half hidden",
+          "The script of one's own life"
+        ]
+      }
+    },
+    {
+      "key": "robe",
+      "crop": {
+        "x": 0.4,
+        "y": 0.71,
+        "r": 0.14
+      },
+      "title": {
+        "pt": "Manto que flui como água",
+        "en": "Robe flowing like water"
+      },
+      "keywords": {
+        "pt": [
+          "Ritmo das marés",
+          "Inconsciente",
+          "Ou: se afogar em emoções"
+        ],
+        "en": [
+          "Rhythm of the tides",
+          "The unconscious",
+          "Or: drowning in emotion"
+        ]
+      }
+    },
+    {
+      "key": "moon",
+      "crop": {
+        "x": 0.6,
+        "y": 0.785,
+        "r": 0.18
+      },
+      "title": {
+        "pt": "Lua crescente aos pés",
+        "en": "Crescent moon at her feet"
+      },
+      "keywords": {
+        "pt": [
+          "Noite e intuição",
+          "O subconsciente",
+          "O que é só seu"
+        ],
+        "en": [
+          "Night and intuition",
+          "The subconscious",
+          "What is yours alone"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Água limpa",
+          "Mente lúcida",
+          "Ou: ingenuidade"
+        ],
+        "en": [
+          "Open sky",
+          "Clear water",
+          "Lucid mind",
+          "Or: naivety"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "O desconhecido",
+          "Significado interior",
+          "Caixa-preta"
+        ],
+        "en": [
+          "The unknown",
+          "Inner meaning",
+          "Black box"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Ponto de partida",
+          "Completude",
+          "Cura"
+        ],
+        "en": [
+          "Starting point",
+          "Completion",
+          "Healing"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Inconsciente, a sombra",
+          "Equivalência",
+          "Sem preconceito"
+        ],
+        "en": [
+          "Unconscious, the shadow",
+          "Equivalence",
+          "Free of prejudice"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver",
+          "Ou: inveja"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life",
+          "Or: envy"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Coração",
+          "Amor",
+          "Vontade"
+        ],
+        "en": [
+          "Heart",
+          "Love",
+          "Will"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "A Sacerdotisa fala de mistério, intuição e sabedoria interior.",
+      "Ela representa o recolhimento que deixa a voz de dentro falar.",
+      "O foco dela é: ouvir antes de agir, sem perder o próprio centro."
+    ],
+    "en": [
+      "The High Priestess speaks of mystery, intuition and inner wisdom.",
+      "She stands for the stillness that lets the inner voice speak.",
+      "Her focus: listening before acting, without losing her centre."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Sabedoria interior mais profunda",
+          "Meditação e contemplação",
+          "Ser o vaso onde o espírito vira vida"
+        ],
+        "en": [
+          "The deepest inner wisdom",
+          "Meditation and contemplation",
+          "Being the vessel where spirit becomes life"
+        ]
+      },
+      "line": {
+        "pt": "“O que é mais fundo não cabe em palavras.”",
+        "en": "“What runs deepest doesn't fit into words.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Ouça sua voz interior",
+          "Conselho alheio não ajuda agora",
+          "Potencial que pede ação"
+        ],
+        "en": [
+          "Listen to your inner voice",
+          "Others' advice won't help now",
+          "Potential that calls for action"
+        ]
+      },
+      "line": {
+        "pt": "“A resposta já está comigo.”",
+        "en": "“The answer is already with me.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Entender algo sem saber explicar",
+          "Pausa que deixa a mente refletir",
+          "Formar e manter a própria opinião"
+        ],
+        "en": [
+          "Understanding without being able to explain",
+          "A pause that lets the mind reflect",
+          "Forming and keeping your own opinion"
+        ]
+      },
+      "line": {
+        "pt": "“Nem todo saber vem pela lógica.”",
+        "en": "“Not all knowing comes through logic.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Ritmo da lua e das marés",
+          "O corpo como vaso que gera vida",
+          "Recolhimento que restaura"
+        ],
+        "en": [
+          "Rhythm of the moon and tides",
+          "The body as a vessel for life",
+          "Withdrawal that restores"
+        ]
+      },
+      "line": {
+        "pt": "“O corpo também tem suas marés.”",
+        "en": "“The body has its tides too.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Perceber e dar nome aos sentimentos",
+          "Escuridão que dá medo e beleza",
+          "Não se afogar nas emoções"
+        ],
+        "en": [
+          "Sensing and naming feelings",
+          "Darkness that holds fear and beauty",
+          "Not drowning in emotion"
+        ]
+      },
+      "line": {
+        "pt": "“Sentir fundo não é se perder.”",
+        "en": "“Feeling deeply isn't getting lost.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Futuro ainda não revelado",
+          "Período de recolhimento",
+          "Paciência lenta e persistente"
+        ],
+        "en": [
+          "A future not yet revealed",
+          "A period of withdrawal",
+          "Slow, steady patience"
+        ]
+      },
+      "line": {
+        "pt": "“Algumas coisas amadurecem no escuro.”",
+        "en": "“Some things ripen in the dark.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Guardar o que é íntimo",
+          "Deixar o outro descobrir quem é",
+          "Medo de se abrir às pessoas"
+        ],
+        "en": [
+          "Keeping what is private",
+          "Letting others discover who they are",
+          "Fear of opening up to people"
+        ]
+      },
+      "line": {
+        "pt": "“Ter um mundo interior não é se fechar.”",
+        "en": "“Having an inner world isn't shutting others out.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Confie na sua intuição",
+          "Sustente sua opinião",
+          "Depois de ouvir, aja"
+        ],
+        "en": [
+          "Trust your intuition",
+          "Stand by your own view",
+          "Once you've listened, act"
+        ]
+      },
+      "line": {
+        "pt": "“Intuição pede um passo.”",
+        "en": "“Intuition asks for a step.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Passividade demais, por tempo demais",
+          "Medo da vida e dos outros",
+          "Ficar na visão sem fazer o trabalho"
+        ],
+        "en": [
+          "Too much passivity, for too long",
+          "Fear of life and of others",
+          "Staying with visions, skipping the work"
+        ]
+      },
+      "line": {
+        "pt": "“Silêncio sem coragem vira esconderijo.”",
+        "en": "“Silence without courage becomes a hiding place.”"
+      }
+    }
+  ]
+}

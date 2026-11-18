@@ -1,0 +1,543 @@
+{
+  "id": "m06",
+  "number": "VI",
+  "name": {
+    "pt": "Os Enamorados",
+    "en": "The Lovers"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta VI",
+    "en": "Major Arcana – Card VI"
+  },
+  "intro": {
+    "pt": "Um homem e uma mulher estão nus num novo paraíso, sob um anjo e um grande sol, entre a Árvore da Vida e a Árvore do Conhecimento. É a carta do amor humano como caminho: a união que nos tira do isolamento e mostra algo maior. Fala também de escolha, desejo e de se tornar alguém próprio.",
+    "en": "A man and a woman stand naked in a new paradise, beneath an angel and a great sun, between the Tree of Life and the Tree of Knowledge. This is the card of human love as a path: the union that pulls us out of isolation and shows us something greater. It also speaks of choice, desire and becoming your own person."
+  },
+  "symbols": [
+    {
+      "key": "sun",
+      "crop": {
+        "x": 0.7,
+        "y": 0.07,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Sol no alto",
+        "en": "Sun at its height"
+      },
+      "keywords": {
+        "pt": [
+          "Luz que dissipa a sombra",
+          "O mais alto",
+          "Clareza"
+        ],
+        "en": [
+          "Light that clears the shadow",
+          "The highest",
+          "Clarity"
+        ]
+      }
+    },
+    {
+      "key": "angel",
+      "crop": {
+        "x": 0.5,
+        "y": 0.21,
+        "r": 0.19
+      },
+      "title": {
+        "pt": "Anjo",
+        "en": "Angel"
+      },
+      "keywords": {
+        "pt": [
+          "Ponte entre os opostos",
+          "Potencial maior",
+          "Ou: idealismo sem chão"
+        ],
+        "en": [
+          "Bridge between opposites",
+          "Greater potential",
+          "Or: ungrounded idealism"
+        ]
+      }
+    },
+    {
+      "key": "gaze",
+      "crop": {
+        "x": 0.22,
+        "y": 0.45,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Ela olha para o anjo",
+        "en": "She looks to the angel"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão que leva além",
+          "Razão que precisa do sentir",
+          "Visão a dois"
+        ],
+        "en": [
+          "Passion that leads beyond",
+          "Reason that needs feeling",
+          "A vision shared by two"
+        ]
+      }
+    },
+    {
+      "key": "knowledge",
+      "crop": {
+        "x": 0.1,
+        "y": 0.48,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Árvore do Conhecimento e serpente",
+        "en": "Tree of Knowledge and serpent"
+      },
+      "keywords": {
+        "pt": [
+          "Feminino, natureza, terra",
+          "Sabedoria inconsciente",
+          "Ou: instintos baixos"
+        ],
+        "en": [
+          "Feminine, nature, earth",
+          "Unconscious wisdom",
+          "Or: low instincts"
+        ]
+      }
+    },
+    {
+      "key": "life",
+      "crop": {
+        "x": 0.88,
+        "y": 0.42,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Árvore da Vida em chamas",
+        "en": "Tree of Life in flames"
+      },
+      "keywords": {
+        "pt": [
+          "Masculino, vontade, fogo",
+          "Vida eterna",
+          "Doze frutos"
+        ],
+        "en": [
+          "Masculine, will, fire",
+          "Eternal life",
+          "Twelve fruits"
+        ]
+      }
+    },
+    {
+      "key": "cloud",
+      "crop": {
+        "x": 0.5,
+        "y": 0.53,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Nuvem",
+        "en": "Cloud"
+      },
+      "keywords": {
+        "pt": [
+          "Entre o sol e o casal",
+          "Ideais pouco claros",
+          "Sombra sobre os dois"
+        ],
+        "en": [
+          "Between sun and couple",
+          "Unclear ideals",
+          "Shadow over the two"
+        ]
+      }
+    },
+    {
+      "key": "mountain",
+      "crop": {
+        "x": 0.5,
+        "y": 0.73,
+        "r": 0.14
+      },
+      "title": {
+        "pt": "Montanha",
+        "en": "Mountain"
+      },
+      "keywords": {
+        "pt": [
+          "Momentos no topo juntos",
+          "Corpo e razão unidos",
+          "Ou: montanha de problemas"
+        ],
+        "en": [
+          "Peak moments together",
+          "Body and reason united",
+          "Or: a mountain of problems"
+        ]
+      }
+    },
+    {
+      "key": "distance",
+      "crop": {
+        "x": 0.5,
+        "y": 0.62,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Espaço entre os dois",
+        "en": "Space between them"
+      },
+      "keywords": {
+        "pt": [
+          "Ver o outro por inteiro",
+          "Distância que une",
+          "Nudez: abertura e honestidade"
+        ],
+        "en": [
+          "Seeing the other whole",
+          "Distance that joins",
+          "Nakedness: openness and honesty"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver",
+          "Inspiração"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life",
+          "Inspiration"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Coração",
+          "Amor",
+          "Paixão"
+        ],
+        "en": [
+          "Heart",
+          "Love",
+          "Passion"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Espiritualidade",
+          "Ou: idealização"
+        ],
+        "en": [
+          "Open sky",
+          "Spirituality",
+          "Or: idealisation"
+        ]
+      }
+    },
+    {
+      "hex": "#9A86B8",
+      "name": {
+        "pt": "Violeta",
+        "en": "Violet"
+      },
+      "keywords": {
+        "pt": [
+          "Experiência-limite",
+          "Mistura de vermelho e azul"
+        ],
+        "en": [
+          "Borderline experience",
+          "The mix of red and blue"
+        ]
+      }
+    },
+    {
+      "hex": "#E9C9A4",
+      "name": {
+        "pt": "Bege",
+        "en": "Beige"
+      },
+      "keywords": {
+        "pt": [
+          "O corpo humano",
+          "Corporeidade"
+        ],
+        "en": [
+          "The human body",
+          "Corporeality"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Juventude",
+          "Imaturidade"
+        ],
+        "en": [
+          "Freshness",
+          "Youth",
+          "Immaturity"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "Os Enamorados falam de amor, desejo e escolha.",
+      "Eles representam a união que tira o ego do isolamento.",
+      "O foco deles é: amar por escolha, unindo corpo e consciência."
+    ],
+    "en": [
+      "The Lovers speak of love, desire and choice.",
+      "They stand for the union that frees the ego from isolation.",
+      "Their focus: loving by choice, uniting body and awareness."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "O amor como caminho",
+          "Um vislumbre de algo maior",
+          "Unir os opostos dentro de si"
+        ],
+        "en": [
+          "Love as a path",
+          "A glimpse of something greater",
+          "Uniting the opposites within"
+        ]
+      },
+      "line": {
+        "pt": "“A dois, vejo o que sozinho não via.”",
+        "en": "“Together, I see what I couldn't see alone.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Criar algo em comum",
+          "Ajuda prática de quem ama",
+          "Uma escolha importante"
+        ],
+        "en": [
+          "Creating something together",
+          "Practical help from a loved one",
+          "An important choice"
+        ]
+      },
+      "line": {
+        "pt": "“O amor dura no que se constrói junto.”",
+        "en": "“Love lasts in what you build together.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Razão e paixão juntas",
+          "Escolher por si, não pelos pais",
+          "Sustentar a tensão até decidir"
+        ],
+        "en": [
+          "Reason and passion together",
+          "Choosing for yourself, not your parents",
+          "Holding the tension until you decide"
+        ]
+      },
+      "line": {
+        "pt": "“Escolher é se tornar alguém.”",
+        "en": "“To choose is to become someone.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Sexualidade e desejo",
+          "Corpo e mente unidos",
+          "Negar o desejo pesa"
+        ],
+        "en": [
+          "Sexuality and desire",
+          "Body and mind united",
+          "Denying desire weighs you down"
+        ]
+      },
+      "line": {
+        "pt": "“O corpo também sabe o caminho.”",
+        "en": "“The body knows the way too.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Sede de amor e medo de amar",
+          "Amar a si primeiro",
+          "Soltar o controle do ego"
+        ],
+        "en": [
+          "Thirst for love and fear of it",
+          "Loving yourself first",
+          "Letting go of ego control"
+        ]
+      },
+      "line": {
+        "pt": "“Quem se ama pode amar qualquer pessoa.”",
+        "en": "“Love yourself and you can love anyone.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Hora de uma escolha própria",
+          "O paraíso é hoje",
+          "Cuidado com a saudade de um amor antigo"
+        ],
+        "en": [
+          "Time for a choice of your own",
+          "Paradise is today",
+          "Beware of longing for an old love"
+        ]
+      },
+      "line": {
+        "pt": "“O dia de voltar ao paraíso é hoje.”",
+        "en": "“The day to return to paradise is today.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Casamento ou relação longa",
+          "Não esperar do outro o que só você dá",
+          "Respeitar a distância entre os dois"
+        ],
+        "en": [
+          "Marriage or a long relationship",
+          "Not expecting from the other what only you can give",
+          "Respecting the distance between you"
+        ]
+      },
+      "line": {
+        "pt": "“Ninguém é a minha metade.”",
+        "en": "“No one is my other half.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Ame a si mesmo",
+          "O amor é uma escolha",
+          "Criem algo juntos"
+        ],
+        "en": [
+          "Love yourself",
+          "Love is a choice",
+          "Create something together"
+        ]
+      },
+      "line": {
+        "pt": "“Quem ama recebe mais da vida.”",
+        "en": "“Whoever loves gets more out of life.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Amor destrutivo",
+          "Imaturidade romântica",
+          "A sombra que surge do nada"
+        ],
+        "en": [
+          "Destructive love",
+          "Romantic immaturity",
+          "The shadow that strikes out of the blue"
+        ]
+      },
+      "line": {
+        "pt": "“Fantasia não sustenta um amor.”",
+        "en": "“Fantasy can't hold up a love.”"
+      }
+    }
+  ]
+}

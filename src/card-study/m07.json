@@ -1,0 +1,547 @@
+{
+  "id": "m07",
+  "number": "VII",
+  "name": {
+    "pt": "O Carro",
+    "en": "The Chariot"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta VII",
+    "en": "Major Arcana – Card VII"
+  },
+  "intro": {
+    "pt": "Um jovem de armadura conduz um carro de pedra sem rédeas, puxado por duas esfinges, uma preta e uma branca. É a vitória da vontade: a personalidade que amadureceu e consegue manter os opostos sob controle. O carro é também o veículo da jornada que nos leva de volta a nós mesmos.",
+    "en": "A young man in armour drives a stone chariot without reins, drawn by two sphinxes, one black and one white. This is the victory of will: a personality that has matured and can hold opposites in check. The chariot is also the vehicle of the journey that carries us back home to ourselves."
+  },
+  "symbols": [
+    {
+      "key": "sphinxes",
+      "crop": {
+        "x": 0.48,
+        "y": 0.7,
+        "r": 0.3
+      },
+      "title": {
+        "pt": "Esfinge preta e esfinge branca",
+        "en": "Black sphinx and white sphinx"
+      },
+      "keywords": {
+        "pt": [
+          "Mistérios da vida",
+          "Opostos não reconciliados",
+          "Enigmas de hoje, caminho de amanhã"
+        ],
+        "en": [
+          "Life's mysteries",
+          "Opposites not yet reconciled",
+          "Today's riddles, tomorrow's path"
+        ]
+      }
+    },
+    {
+      "key": "crown",
+      "crop": {
+        "x": 0.45,
+        "y": 0.13,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Coroa e dossel de estrelas",
+        "en": "Crown and starry canopy"
+      },
+      "keywords": {
+        "pt": [
+          "Ordem do cosmos",
+          "Liberdade e independência",
+          "Mente que guia a paixão"
+        ],
+        "en": [
+          "Order of the cosmos",
+          "Freedom and independence",
+          "Mind guiding passion"
+        ]
+      }
+    },
+    {
+      "key": "moons",
+      "crop": {
+        "x": 0.33,
+        "y": 0.27,
+        "r": 0.085
+      },
+      "title": {
+        "pt": "Luas nos ombros",
+        "en": "Moons on the shoulders"
+      },
+      "keywords": {
+        "pt": [
+          "Rir e chorar",
+          "Polaridade da alma",
+          "Experiências do caminho"
+        ],
+        "en": [
+          "Laughing and crying",
+          "The soul's polarity",
+          "Experiences along the way"
+        ]
+      }
+    },
+    {
+      "key": "armour",
+      "crop": {
+        "x": 0.48,
+        "y": 0.33,
+        "r": 0.11
+      },
+      "title": {
+        "pt": "Armadura",
+        "en": "Armour"
+      },
+      "keywords": {
+        "pt": [
+          "Duro por fora, mole por dentro",
+          "Preparo",
+          "Persona, fachada"
+        ],
+        "en": [
+          "Hard outside, soft inside",
+          "Readiness",
+          "Persona, façade"
+        ]
+      }
+    },
+    {
+      "key": "wand",
+      "crop": {
+        "x": 0.235,
+        "y": 0.44,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Bastão",
+        "en": "Wand"
+      },
+      "keywords": {
+        "pt": [
+          "Bem equipado",
+          "Confiar no próprio esforço",
+          "Poder sob a vontade"
+        ],
+        "en": [
+          "Well equipped",
+          "Relying on your own effort",
+          "Power under the will"
+        ]
+      }
+    },
+    {
+      "key": "chariot",
+      "crop": {
+        "x": 0.27,
+        "y": 0.52,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Carro de pedra",
+        "en": "Stone chariot"
+      },
+      "keywords": {
+        "pt": [
+          "Carma, o próprio destino",
+          "Não dá para descer",
+          "Ou: endurecer como pedra"
+        ],
+        "en": [
+          "Karma, one's own destiny",
+          "You can't get off",
+          "Or: hardening into stone"
+        ]
+      }
+    },
+    {
+      "key": "wingedsun",
+      "crop": {
+        "x": 0.49,
+        "y": 0.6,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Sol alado e lingam-yoni",
+        "en": "Winged sun and lingam-yoni"
+      },
+      "keywords": {
+        "pt": [
+          "Centro interior",
+          "Equilíbrio dos opostos",
+          "Sexualidade madura"
+        ],
+        "en": [
+          "Inner centre",
+          "Balancing opposites",
+          "Mature sexuality"
+        ]
+      }
+    },
+    {
+      "key": "city",
+      "crop": {
+        "x": 0.88,
+        "y": 0.42,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Cidade atrás",
+        "en": "City behind"
+      },
+      "keywords": {
+        "pt": [
+          "Pai cidade e mãe natureza",
+          "Regras da sociedade",
+          "Ou: esquecer as origens"
+        ],
+        "en": [
+          "Father city and mother nature",
+          "Society's rules",
+          "Or: forgetting one's roots"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver",
+          "Inspiração"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life",
+          "Inspiration"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Espiritualidade",
+          "Vontade"
+        ],
+        "en": [
+          "Open sky",
+          "Spirituality",
+          "Will"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Inconsciente",
+          "Equivalência",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Unconscious",
+          "Equivalence",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "O desconhecido",
+          "Sombra visível",
+          "Território novo"
+        ],
+        "en": [
+          "The unknown",
+          "Visible shadow",
+          "New territory"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Ponto de partida",
+          "Completude",
+          "Território novo"
+        ],
+        "en": [
+          "Starting point",
+          "Completion",
+          "New territory"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Coração",
+          "Força vital"
+        ],
+        "en": [
+          "Will",
+          "Heart",
+          "Life force"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Carro fala de vontade, vitória e direção.",
+      "Ele representa o ego maduro que segura os opostos e segue em frente.",
+      "O foco dele é: saber o que quer e conduzir o próprio caminho."
+    ],
+    "en": [
+      "The Chariot speaks of will, victory and direction.",
+      "It stands for the mature ego that holds opposites together and moves on.",
+      "Its focus: knowing what you want and steering your own course."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "O caminho é o próprio objetivo",
+          "A jornada que nos leva para casa",
+          "Toda a natureza focada pela vontade"
+        ],
+        "en": [
+          "The path is its own goal",
+          "The journey that carries us home",
+          "All of nature focused through the will"
+        ]
+      },
+      "line": {
+        "pt": "“Cada trecho da estrada já é chegada.”",
+        "en": "“Every stretch of road is already arrival.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Sucesso, vitória",
+          "Quem não arrisca não ganha",
+          "Siga o próprio julgamento"
+        ],
+        "en": [
+          "Success, victory",
+          "Nothing ventured, nothing gained",
+          "Trust your own judgement"
+        ]
+      },
+      "line": {
+        "pt": "“Eu escolho a direção.”",
+        "en": "“I choose the direction.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Triunfo da mente",
+          "Formular desejos com clareza",
+          "Palavras dão nome, mas também limitam"
+        ],
+        "en": [
+          "Triumph of the mind",
+          "Stating wishes clearly",
+          "Words name things, but they also limit"
+        ]
+      },
+      "line": {
+        "pt": "“Desejo claro, caminho claro.”",
+        "en": "“A clear wish makes a clear path.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Instintos sob controle",
+          "Sexualidade madura",
+          "Preparado e protegido"
+        ],
+        "en": [
+          "Instincts under control",
+          "Mature sexuality",
+          "Prepared and protected"
+        ]
+      },
+      "line": {
+        "pt": "“Força guiada não se perde.”",
+        "en": "“Guided strength doesn't run wild.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Domínio sobre os sentimentos",
+          "Rir e chorar fazem parte",
+          "Duro por fora, mole por dentro"
+        ],
+        "en": [
+          "Command over feelings",
+          "Laughing and crying both belong",
+          "Hard outside, soft inside"
+        ]
+      },
+      "line": {
+        "pt": "“Segurar não é o mesmo que resolver.”",
+        "en": "“Holding things together isn't the same as resolving them.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Já a caminho, em movimento",
+          "Coroamento de uma fase",
+          "Enigmas de hoje, caminho de amanhã"
+        ],
+        "en": [
+          "Already on the way, in motion",
+          "The crowning of a phase",
+          "Today's riddles, tomorrow's path"
+        ]
+      },
+      "line": {
+        "pt": "“Agora é seguir.”",
+        "en": "“Now it's time to move on.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Ar novo na relação",
+          "Um desejo livre para cada um",
+          "Conhecer-se no encontro com o outro"
+        ],
+        "en": [
+          "Fresh air for the relationship",
+          "A free wish for each of you",
+          "Knowing yourself through others"
+        ]
+      },
+      "line": {
+        "pt": "“Cada um com seu desejo, os dois no mesmo carro.”",
+        "en": "“Each with a wish, both in the same chariot.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Saiba o que quer",
+          "Ouse conduzir seu próprio rumo",
+          "Mude a direção, não o carro"
+        ],
+        "en": [
+          "Know what you want",
+          "Dare to steer your own course",
+          "Change the direction, not the chariot"
+        ]
+      },
+      "line": {
+        "pt": "“Não desço do meu destino, mas posso virá-lo.”",
+        "en": "“I can't get off my destiny, but I can turn it.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Rigidez, virar pedra",
+          "Confundir a máscara com quem você é",
+          "Vontade que falha e perde o controle"
+        ],
+        "en": [
+          "Rigidity, turning to stone",
+          "Mistaking the mask for who you are",
+          "Will that fails and loses control"
+        ]
+      },
+      "line": {
+        "pt": "“Às vezes é preciso ceder aos deuses.”",
+        "en": "“Sometimes you have to give way to the gods.”"
+      }
+    }
+  ]
+}

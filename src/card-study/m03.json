@@ -1,0 +1,549 @@
+{
+  "id": "m03",
+  "number": "III",
+  "name": {
+    "pt": "A Imperatriz",
+    "en": "The Empress"
+  },
+  "subtitle": {
+    "pt": "Arcano Maior – Carta III",
+    "en": "Major Arcana – Card III"
+  },
+  "intro": {
+    "pt": "A Imperatriz reina sentada no meio da natureza em flor, entre trigo maduro, árvores e um rio que corre. Ela é a grande mãe e a deusa do amor: paixão, sensualidade e fertilidade de todos os tipos. Onde a Sacerdotisa guarda o potencial, ela o traz ao mundo.",
+    "en": "The Empress reigns seated in blooming nature, among ripe wheat, trees and a flowing river. She is the great mother and the goddess of love: passion, sensuality and fruitfulness of every kind. Where the High Priestess holds the potential, she brings it into the world."
+  },
+  "symbols": [
+    {
+      "key": "crown",
+      "crop": {
+        "x": 0.46,
+        "y": 0.165,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Coroa de doze estrelas",
+        "en": "Crown of twelve stars"
+      },
+      "keywords": {
+        "pt": [
+          "Trazer as estrelas à terra",
+          "O zodíaco",
+          "Realizar o que se sonha"
+        ],
+        "en": [
+          "Bringing the stars down to earth",
+          "The zodiac",
+          "Making dreams real"
+        ]
+      }
+    },
+    {
+      "key": "sceptre",
+      "crop": {
+        "x": 0.28,
+        "y": 0.17,
+        "r": 0.11
+      },
+      "title": {
+        "pt": "Cetro com o globo",
+        "en": "Sceptre with the globe"
+      },
+      "keywords": {
+        "pt": [
+          "Domínio sobre este mundo",
+          "Corpo e alma unidos",
+          "Reinar pelo amor"
+        ],
+        "en": [
+          "Rule over this world",
+          "Body and soul united",
+          "Ruling through love"
+        ]
+      }
+    },
+    {
+      "key": "shield",
+      "crop": {
+        "x": 0.25,
+        "y": 0.67,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Coração com o símbolo de Vênus",
+        "en": "Heart with the sign of Venus"
+      },
+      "keywords": {
+        "pt": [
+          "Amor",
+          "Sentidos e sentimento juntos",
+          "Ou: coração de pedra"
+        ],
+        "en": [
+          "Love",
+          "Senses and feeling together",
+          "Or: a heart of stone"
+        ]
+      }
+    },
+    {
+      "key": "robe",
+      "crop": {
+        "x": 0.6,
+        "y": 0.55,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Vestido florido",
+        "en": "Flowered robe"
+      },
+      "keywords": {
+        "pt": [
+          "Florescer",
+          "Beleza da natureza",
+          "Pão e rosas"
+        ],
+        "en": [
+          "Coming into bloom",
+          "Nature's beauty",
+          "Bread and roses"
+        ]
+      }
+    },
+    {
+      "key": "grain",
+      "crop": {
+        "x": 0.5,
+        "y": 0.81,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Trigo maduro",
+        "en": "Ripe wheat"
+      },
+      "keywords": {
+        "pt": [
+          "Fertilidade",
+          "Colheita da vida",
+          "Nutrir corpo e alma"
+        ],
+        "en": [
+          "Fruitfulness",
+          "Life's harvest",
+          "Feeding body and soul"
+        ]
+      }
+    },
+    {
+      "key": "forest",
+      "crop": {
+        "x": 0.8,
+        "y": 0.28,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Árvores e floresta",
+        "en": "Trees and forest"
+      },
+      "keywords": {
+        "pt": [
+          "Natureza no seu lugar",
+          "Cada um com espaço para crescer",
+          "Livre e fraterno"
+        ],
+        "en": [
+          "Nature coming into its own",
+          "Room for each to grow",
+          "Free and brotherly"
+        ]
+      }
+    },
+    {
+      "key": "waterfall",
+      "crop": {
+        "x": 0.89,
+        "y": 0.48,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Cachoeira",
+        "en": "Waterfall"
+      },
+      "keywords": {
+        "pt": [
+          "Força da vida que corre",
+          "Mudança e permanência",
+          "Ligação com a fonte"
+        ],
+        "en": [
+          "Life force flowing",
+          "Change and constancy",
+          "Bond with the source"
+        ]
+      }
+    },
+    {
+      "key": "throne",
+      "crop": {
+        "x": 0.15,
+        "y": 0.45,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Trono vermelho",
+        "en": "Red throne"
+      },
+      "keywords": {
+        "pt": [
+          "Sangue e paixão",
+          "Emoção",
+          "Ou: dureza ao redor"
+        ],
+        "en": [
+          "Lifeblood and passion",
+          "Emotion",
+          "Or: hardness around it"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Busca de sentido",
+          "Alegria de viver"
+        ],
+        "en": [
+          "Consciousness",
+          "Search for meaning",
+          "Joy of life"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Coração",
+          "Amor",
+          "Paixão",
+          "Sangue"
+        ],
+        "en": [
+          "Heart",
+          "Love",
+          "Passion",
+          "Blood"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Vitalidade",
+          "Calor",
+          "Ou: arbitrariedade"
+        ],
+        "en": [
+          "Vitality",
+          "Warmth",
+          "Or: arbitrariness"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Começo",
+          "Completude",
+          "Cura"
+        ],
+        "en": [
+          "Beginning",
+          "Completion",
+          "Healing"
+        ]
+      }
+    },
+    {
+      "hex": "#3F6B3A",
+      "name": {
+        "pt": "Verde-escuro",
+        "en": "Dark green"
+      },
+      "keywords": {
+        "pt": [
+          "Perto da natureza",
+          "Vegetativo",
+          "Duradouro"
+        ],
+        "en": [
+          "Close to nature",
+          "Vegetative",
+          "Long-lasting"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Imparcialidade",
+          "Coração sem preconceito",
+          "Ou: frieza"
+        ],
+        "en": [
+          "Impartiality",
+          "An unprejudiced heart",
+          "Or: coldness"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "A Imperatriz fala de amor, natureza e fertilidade.",
+      "Ela representa a vida vivida pelos sentidos e pelo sentimento.",
+      "O foco dela é: cuidar, nutrir e deixar florescer."
+    ],
+    "en": [
+      "The Empress speaks of love, nature and fruitfulness.",
+      "She stands for life lived through the senses and feeling.",
+      "Her focus: caring, nourishing and letting things bloom."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Prazer dos sentidos como caminho",
+          "Corpo e natureza são sagrados",
+          "O espírito renasce na carne"
+        ],
+        "en": [
+          "The pleasure of the senses as a path",
+          "Body and nature are sacred",
+          "Spirit reborn in the flesh"
+        ]
+      },
+      "line": {
+        "pt": "“Para transcender o mundo, primeiro é preciso vivê-lo.”",
+        "en": "“To go beyond the world, you first have to live it.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Fertilidade, ação e iniciativa",
+          "Colher o que foi cultivado",
+          "Clareza, naturalidade, satisfação"
+        ],
+        "en": [
+          "Fruitfulness, action and initiative",
+          "Reaping what was grown",
+          "Clarity, naturalness, satisfaction"
+        ]
+      },
+      "line": {
+        "pt": "“Tudo que é bem cuidado dá fruto.”",
+        "en": "“Whatever is well tended bears fruit.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Sentir antes de analisar",
+          "Regras próprias que fazem bem",
+          "Às vezes, pensar com calma resolve"
+        ],
+        "en": [
+          "Feeling before analysing",
+          "Rules of your own that do you good",
+          "Sometimes calm thinking solves it"
+        ]
+      },
+      "line": {
+        "pt": "“O coração tem razões que a mente não alcança.”",
+        "en": "“The heart has reasons the mind can't reach.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Cuidar do próprio bem-estar",
+          "Nutrir corpo e alma",
+          "Muitos tipos de fertilidade"
+        ],
+        "en": [
+          "Looking after your own well-being",
+          "Nourishing body and soul",
+          "Many kinds of fruitfulness"
+        ]
+      },
+      "line": {
+        "pt": "“Meu corpo é meu jardim.”",
+        "en": "“My body is my garden.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Paixão vivida de verdade",
+          "Amor de mãe, sem condição",
+          "Sensualidade e prazer"
+        ],
+        "en": [
+          "Passion truly lived",
+          "A mother's love, unconditional",
+          "Sensuality and pleasure"
+        ]
+      },
+      "line": {
+        "pt": "“Quem ama e é amado floresce.”",
+        "en": "“Whoever loves and is loved blossoms.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Tempo de paixão e prazer",
+          "Fase de ação e conclusão",
+          "Vida longa"
+        ],
+        "en": [
+          "A time of passion and pleasure",
+          "A phase of action and completion",
+          "Length of days"
+        ]
+      },
+      "line": {
+        "pt": "“É tempo de colher.”",
+        "en": "“It's harvest time.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "O amor faz florescer quem somos",
+          "Herança da mãe e das ancestrais",
+          "O poder do amor acima do amor ao poder"
+        ],
+        "en": [
+          "Love makes our nature bloom",
+          "Inheritance from mother and ancestors",
+          "The power of love over the love of power"
+        ]
+      },
+      "line": {
+        "pt": "“Onde há cuidado, o amor cresce.”",
+        "en": "“Where there is care, love grows.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Cuide de si",
+          "Afaste as falsas deusas",
+          "Crie regras boas e siga-as"
+        ],
+        "en": [
+          "Take care of yourself",
+          "Ban false goddesses",
+          "Make good rules and keep them"
+        ]
+      },
+      "line": {
+        "pt": "“Meu bem-estar é responsabilidade minha.”",
+        "en": "“My well-being is my responsibility.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Teimosia emocional, ignorar os fatos",
+          "Prazer sem limite",
+          "Reprimir sentimentos e desejos"
+        ],
+        "en": [
+          "Emotional stubbornness, ignoring facts",
+          "Pleasure without restraint",
+          "Suppressing feelings and desires"
+        ]
+      },
+      "line": {
+        "pt": "“Sentir não dispensa enxergar.”",
+        "en": "“Feeling doesn't excuse not seeing.”"
+      }
+    }
+  ]
+}
