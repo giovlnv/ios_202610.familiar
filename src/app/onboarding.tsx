@@ -232,7 +232,7 @@ export default function Onboarding() {
         return (
           <>
             <Head title={tr("Backups are on")} sub={tr("Your library syncs to your private GitHub repo whenever you leave the app.")} />
-            <Status icon="logo-github" title={tr("GitHub sync")} text={sync.lastGithub ? tr("Last sync {0}", { 0: new Date(sync.lastGithub).toLocaleString() }) : hasKey ? tr("Runs when you leave the app") : tr("Add your GitHub key to turn it on")} />
+            <Status icon="server-outline" title={tr("Backup on ares")} text={sync.lastAres ? tr("Last backup {0}", { 0: new Date(sync.lastAres).toLocaleString() }) : tr("Add the ares address in settings → backups")} />
             <Status icon="document-outline" title={tr("Backup file")} text={tr("Saved to Files or iCloud Drive; you get a reminder every 7 days.")} />
             <Pressable style={st.secondary} onPress={() => backupToFile().catch((e) => Alert.alert(tr("Backup failed"), String(e?.message ?? e)))}>
               <Text style={st.secondaryText}>{tr("Save a backup file now")}</Text>

@@ -5,6 +5,7 @@ import { Layout, lenormandInTitle, lenormandOfTheDay, LENORMAND, lenormandPrefs,
 import { listBooks } from './storage';
 import { loadLinks, loadSources, sectionCard, Sources, usesBook } from './sectionCards';
 import { load, save, Tracker, uid } from './tracker';
+import { pushToAres } from './sync';
 
 export const bookPaths = (folder: string) => load().books.find((b) => b.audio === folder)?.paths ?? [];
 
@@ -134,7 +135,11 @@ export const todaysCotd = (system: System = 'tarot') =>
   loadJournal().readings.filter((r) => r.spreadId === cotdSpreadId(system) && isToday(r)).pop();
 export const todaysDraw = () => loadJournal().readings.filter((r) => r.daily === 'drawn' && isToday(r)).pop();
 
-export const saveReading = (r: Reading) => updateJournal((j) => j.readings.push(r));
+export const saveReading = (r: Reading) => {
+  const j = updateJournal((x) => x.readings.push(r));
+  if (r.daily === 'cotd') void pushToAres();
+  return j;
+};
 
 export function cardOfTheDay(date = new Date()) {
   const key = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
@@ -153,11 +158,16 @@ export function newReading(system: System = 'tarot'): Reading {
   return r;
 }
 
-export const patchReading = (id: string, fn: (r: Reading) => void) =>
-  updateJournal((j) => {
-    const r = j.readings.find((x) => x.id === id);
+export const patchReading = (id: string, fn: (r: Reading) => void) => {
+  let cotd = false;
+  const j = updateJournal((x) => {
+    const r = x.readings.find((y) => y.id === id);
     if (r) fn(r);
+    cotd = r?.daily === 'cotd';
   });
+  if (cotd) void pushToAres();
+  return j;
+};
 
 export const removeReading = (id: string) => updateJournal((j) => (j.readings = j.readings.filter((r) => r.id !== id)));
 

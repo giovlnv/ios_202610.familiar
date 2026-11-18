@@ -1,11 +1,8 @@
-import { t as tr } from './i18n';
 import { Directory, File, Paths } from 'expo-file-system';
 import * as DocumentPicker from 'expo-document-picker';
 import * as SecureStore from 'expo-secure-store';
 import * as Sharing from 'expo-sharing';
 
-const REPO = 'giovlnv/ios_202610.familiar_library';
-const PATH = 'userdata/backup.json';
 const DATA_FILES = ['notes.json', 'consults.json', 'progress.json', 'cards.json', 'marks.json'];
 
 type Backup = {
@@ -18,7 +15,7 @@ type Backup = {
 
 const EXTRA_FILES = ['familiars.json', 'onboarding.json', 'card-sources.json', 'text-style.json', 'explanations.json', 'lenormand.json', 'systems.json', 'cloud-voices.json', 'study.json'];
 
-export type SyncState = { lastFile?: number; lastGithub?: number; lastError?: string };
+export type SyncState = { lastFile?: number; lastAres?: number; pending?: boolean; lastError?: string };
 
 const booksDir = () => new Directory(Paths.document, 'books');
 const stateFile = () => new File(Paths.document, '.sync-state.json');
@@ -106,63 +103,58 @@ export const getToken = () => SecureStore.getItemAsync('github-token');
 export const setToken = (t: string) =>
   t ? SecureStore.setItemAsync('github-token', t.trim()) : SecureStore.deleteItemAsync('github-token');
 
-const api = (token: string, init?: RequestInit) => ({
-  ...init,
-  headers: {
-    Authorization: `Bearer ${token}`,
-    Accept: 'application/vnd.github+json',
-    'X-GitHub-Api-Version': '2022-11-28',
-    ...(init?.headers ?? {}),
-  },
-});
-const url = `https://api.github.com/repos/${REPO}/contents/${PATH}`;
+export async function getAres(): Promise<{ url: string; token: string } | null> {
+  const [url, token] = await Promise.all([SecureStore.getItemAsync('ares-url'), SecureStore.getItemAsync('ares-token')]);
+  return url && token ? { url, token } : null;
+}
 
-let pushing: Promise<boolean> | null = null;
-export const pushToGithub = () => (pushing ??= push().finally(() => (pushing = null)));
+export async function setAres(url: string, token: string) {
+  const u = url.trim().replace(/\/+$/, '');
+  if (u) await SecureStore.setItemAsync('ares-url', u);
+  else await SecureStore.deleteItemAsync('ares-url');
+  if (token.trim()) await SecureStore.setItemAsync('ares-token', token.trim());
+  else await SecureStore.deleteItemAsync('ares-token');
+}
 
-const currentSha = async (token: string) => {
-  const head = await fetch(`${url}?t=${Date.now()}`, { ...api(token), cache: 'no-store' });
-  return head.ok ? ((await head.json()) as { sha: string }).sha : undefined;
+const timed = (ms: number) => {
+  const ctl = new AbortController();
+  setTimeout(() => ctl.abort(), ms);
+  return ctl.signal;
 };
 
+let pushing: Promise<boolean> | null = null;
+/** sends the backup to ares; when ares can't be reached it stays pending until the next try */
+export const pushToAres = () => (pushing ??= push().finally(() => (pushing = null)));
+
 async function push(): Promise<boolean> {
-  const token = await getToken();
-  if (!token) return false;
+  const ares = await getAres();
+  if (!ares) return false;
   try {
-    const tmp = new File(Paths.cache, 'sync-upload.json');
-    if (tmp.exists) tmp.delete();
-    tmp.create();
-    tmp.write(JSON.stringify(collect(), null, 1));
-    const content = tmp.base64Sync();
-    const put = async () =>
-      fetch(
-        url,
-        api(token, {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: tr("Familiar backup"), content, sha: await currentSha(token) }),
-        })
-      );
-    let res = await put();
-    if (res.status === 409 || res.status === 422) res = await put();
-    if (!res.ok) throw new Error(`GitHub ${res.status}`);
-    setState({ lastGithub: Date.now(), lastError: undefined });
+    const res = await fetch(`${ares.url}/familiar/backup`, {
+      method: 'PUT',
+      headers: { Authorization: `Bearer ${ares.token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(collect()),
+      signal: timed(20000),
+    });
+    if (!res.ok) throw new Error(res.status === 401 ? 'ares refused the token' : `ares ${res.status}`);
+    setState({ lastAres: Date.now(), pending: false, lastError: undefined });
     return true;
   } catch (e) {
-    setState({ lastError: String((e as Error).message ?? e) });
+    const err = e as Error;
+    setState({ pending: true, lastError: err.name === 'AbortError' || err.message === 'Network request failed' ? "can't reach ares" : String(err.message ?? e) });
     return false;
   }
 }
 
-export async function pullFromGithub() {
-  const token = await getToken();
-  if (!token) throw new Error('Add your GitHub key first.');
-  const res = await fetch(`${url}?t=${Date.now()}`, { ...api(token, { headers: { Accept: 'application/vnd.github.raw+json' } }), cache: 'no-store' });
-  if (!res.ok) throw new Error(res.status === 404 ? 'No backup on GitHub yet.' : `GitHub ${res.status}`);
+export async function restoreFromAres(): Promise<number | null> {
+  const ares = await getAres();
+  if (!ares) throw new Error('Add the ares address and token first.');
+  const res = await fetch(`${ares.url}/familiar/backup`, { headers: { Authorization: `Bearer ${ares.token}` }, cache: 'no-store', signal: timed(30000) });
+  if (!res.ok) throw new Error(res.status === 404 ? 'No backup on ares yet.' : res.status === 401 ? 'ares refused the token' : `ares ${res.status}`);
   return apply(JSON.parse(await res.text()));
 }
 
 export function lastBackup() {
   const s = getState();
-  return Math.max(s.lastFile ?? 0, s.lastGithub ?? 0);
+  return Math.max(s.lastFile ?? 0, s.lastAres ?? 0);
 }

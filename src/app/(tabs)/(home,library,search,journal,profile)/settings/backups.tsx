@@ -3,7 +3,7 @@ import { t as tr } from '../../../../i18n';
 import { useCallback, useState } from 'react';
 import { Alert, Text, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
-import { backupToFile, getState, getToken, pullFromGithub, pushToGithub, restoreFromFile, SyncState } from '../../../../sync';
+import { backupToFile, getState, getToken, pushToAres, restoreFromAres, restoreFromFile, SyncState } from '../../../../sync';
 import { c } from '../../../../theme';
 import { Btn, confirmRestore, Page, ss, when } from '../../../../components/settings-ui';
 import { refreshStreamingBooks } from '../../../../storage';
@@ -39,7 +39,7 @@ export default function Backups() {
       <Text style={ss.h2}>{tr("Automatic · GitHub")}</Text>
       <Text style={ss.p}>{tr("Notes, Claude consults, progress and your familiars are saved to your private ios_202610.familiar_library repo whenever you leave the app.")}</Text>
       <View style={ss.card}>
-        <Text style={ss.meta}>{tr("Last sync:")}{' '}{when(state.lastGithub)}</Text>
+        <Text style={ss.meta}>{tr("Last sync:")}{' '}{when(state.lastAres)}</Text>
         {state.lastError && <Text style={[ss.meta, { color: c.claude }]}>{tr("Last error:")}{' '}{state.lastError}</Text>}
         {hasToken ? (
           <View style={ss.row}>
@@ -48,11 +48,11 @@ export default function Backups() {
               primary
               onPress={() =>
                 run(async () => {
-                  if (!(await pushToGithub())) throw new Error(getState().lastError ?? 'Sync failed');
+                  if (!(await pushToAres())) throw new Error(getState().lastError ?? 'Sync failed');
                 }, 'Synced')
               }
             />
-            <Btn label={tr("Restore from GitHub")} onPress={() => confirmRestore(() => run(pullFromGithub, 'Restored'))} />
+            <Btn label={tr("Restore from GitHub")} onPress={() => confirmRestore(() => run(restoreFromAres, 'Restored'))} />
           </View>
         ) : (
           <View style={ss.row}>

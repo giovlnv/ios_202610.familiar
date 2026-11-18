@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Appearance, AppState, View } from "react-native";
 import { router, Stack, usePathname } from "expo-router";
 import * as Updates from "expo-updates";
-import { pushToGithub } from "../sync";
+import { pushToAres } from "../sync";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { PlaybackProvider } from "../playback";
@@ -54,7 +54,7 @@ export default function RootLayout() {
         if (mode === "system" && now !== scheme) applyTheme();
       }
       if (st === "background") {
-        pushToGithub().finally(
+        pushToAres().finally(
           () => pending && Updates.reloadAsync().catch(() => {}),
         );
       }
