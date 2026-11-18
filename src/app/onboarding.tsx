@@ -174,7 +174,7 @@ export default function Onboarding() {
       case 'claude':
         return (
           <>
-            <Head title={tr("Your study helpers")} sub={tr("Claude writes the explanations; GitHub makes the voices and keeps your backups.")} />
+            <Head title={tr("Your study helpers")} sub={tr("Claude writes the explanations; GitHub makes the voices; ares keeps your backups.")} />
             <Label>{tr("GITHUB KEY")}</Label>
             <TextInput
               style={fs.input}
@@ -231,7 +231,7 @@ export default function Onboarding() {
         const sync = getState();
         return (
           <>
-            <Head title={tr("Backups are on")} sub={tr("Your library syncs to your private GitHub repo whenever you leave the app.")} />
+            <Head title={tr("Backups are on")} sub={tr("Your library is saved on ares whenever you leave the app, once ares is set in settings → backups.")} />
             <Status icon="server-outline" title={tr("Backup on ares")} text={sync.lastAres ? tr("Last backup {0}", { 0: new Date(sync.lastAres).toLocaleString() }) : tr("Add the ares address in settings → backups")} />
             <Status icon="document-outline" title={tr("Backup file")} text={tr("Saved to Files or iCloud Drive; you get a reminder every 7 days.")} />
             <Pressable style={st.secondary} onPress={() => backupToFile().catch((e) => Alert.alert(tr("Backup failed"), String(e?.message ?? e)))}>
