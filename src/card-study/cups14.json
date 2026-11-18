@@ -1,0 +1,455 @@
+{
+  "id": "cups14",
+  "number": "14",
+  "name": {
+    "pt": "Rei de Copas",
+    "en": "King of Cups"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Copas",
+    "en": "Minor Arcana – Cups"
+  },
+  "intro": {
+    "pt": "Um rei calmo, num trono de pedra que flutua sobre o mar agitado, segura uma taça e um cetro; atrás, um navio navega e um peixe salta. Ele domina as emoções com responsabilidade e equilíbrio. Mas pode ter represado a própria imaginação para cumprir seu papel.",
+    "en": "A calm king on a stone throne floating on a choppy sea holds a cup and a sceptre; behind him a ship sails and a fish leaps. He masters his emotions with responsibility and balance. But he may have dammed up his own imagination to fill his role."
+  },
+  "symbols": [
+    {
+      "key": "king",
+      "crop": {
+        "x": 0.5,
+        "y": 0.3,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Rei de olhar claro",
+        "en": "King with a clear gaze"
+      },
+      "keywords": {
+        "pt": [
+          "Dignidade",
+          "Calma por fora",
+          "Ou: emoções contidas"
+        ],
+        "en": [
+          "Dignity",
+          "Calm on the outside",
+          "Or: emotions held back"
+        ]
+      }
+    },
+    {
+      "key": "cup",
+      "crop": {
+        "x": 0.33,
+        "y": 0.44,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Taça na mão direita",
+        "en": "Cup in his right hand"
+      },
+      "keywords": {
+        "pt": [
+          "Atenção ao momento",
+          "Honestidade",
+          "Integridade"
+        ],
+        "en": [
+          "Alertness to the moment",
+          "Honesty",
+          "Integrity"
+        ]
+      }
+    },
+    {
+      "key": "fish",
+      "crop": {
+        "x": 0.53,
+        "y": 0.34,
+        "r": 0.07
+      },
+      "title": {
+        "pt": "Peixe no colar",
+        "en": "Fish pendant"
+      },
+      "keywords": {
+        "pt": [
+          "Expressar sentimentos",
+          "Criatividade como enfeite",
+          "Ou: voz presa"
+        ],
+        "en": [
+          "Expressing feelings",
+          "Creativity as an ornament",
+          "Or: a stifled voice"
+        ]
+      }
+    },
+    {
+      "key": "sea",
+      "crop": {
+        "x": 0.1,
+        "y": 0.68,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Peixe que salta",
+        "en": "Leaping fish"
+      },
+      "keywords": {
+        "pt": [
+          "Imaginação viva no fundo",
+          "O que vem à tona",
+          "Sentimentos que sustentam"
+        ],
+        "en": [
+          "Imagination alive below",
+          "What surfaces",
+          "Feelings that hold you up"
+        ]
+      }
+    },
+    {
+      "key": "throne",
+      "crop": {
+        "x": 0.35,
+        "y": 0.76,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Trono sobre a água",
+        "en": "Throne on the water"
+      },
+      "keywords": {
+        "pt": [
+          "Desejos que sustentam",
+          "Espírito que dá leveza",
+          "Ou: isolamento"
+        ],
+        "en": [
+          "Longings that hold you up",
+          "Spirit giving buoyancy",
+          "Or: isolation"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Equanimidade, sangue-frio",
+          "Ou: isolamento"
+        ],
+        "en": [
+          "Equanimity, composure",
+          "Or: isolation"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Água",
+          "Espiritualidade"
+        ],
+        "en": [
+          "Water",
+          "Spirituality"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Crescimento"
+        ],
+        "en": [
+          "Freshness",
+          "Growth"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Coração",
+          "Vontade"
+        ],
+        "en": [
+          "Heart",
+          "Will"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Sol"
+        ],
+        "en": [
+          "Consciousness",
+          "Sun"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Eternidade"
+        ],
+        "en": [
+          "Consciousness",
+          "Eternity"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Rei de Copas fala de equilíbrio emocional, responsabilidade e maturidade.",
+      "Ele representa os sentimentos que sustentam sem afundar.",
+      "O foco dele é: entender os próprios desejos e expressá-los."
+    ],
+    "en": [
+      "The King of Cups speaks of emotional balance, responsibility and maturity.",
+      "He stands for feelings that hold you up without sinking you.",
+      "His focus: understanding his own longings and voicing them."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Caminhos sem limites nem margens",
+          "Os anseios nos sustentam",
+          "Viver os desejos até não precisar deles"
+        ],
+        "en": [
+          "Paths without bounds or banks",
+          "Longings carry us",
+          "Living out wishes until wishless"
+        ]
+      },
+      "line": {
+        "pt": "“O que desejo me sustenta.”",
+        "en": "“What I long for holds me up.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Negócios, direito, religião",
+          "Maestria nas artes",
+          "Inteligência criativa"
+        ],
+        "en": [
+          "Business, law, divinity",
+          "Mastery in the arts",
+          "Creative intelligence"
+        ]
+      },
+      "line": {
+        "pt": "“Minha criatividade serve aos outros.”",
+        "en": "“My creativity serves others.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Que desejos valem a pena?",
+          "Que medos aceitar?",
+          "Investigar intuições"
+        ],
+        "en": [
+          "Which wishes are worthwhile?",
+          "Which fears to accept?",
+          "Investigating hunches"
+        ]
+      },
+      "line": {
+        "pt": "“Consciência torna as decisões leves.”",
+        "en": "“Awareness makes decisions light.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Sentimentos sem saída sufocam",
+          "Rouquidão, falta de ar",
+          "Expressar o que se sente"
+        ],
+        "en": [
+          "Feelings with no outlet stifle",
+          "Hoarseness, breathlessness",
+          "Voicing what you feel"
+        ]
+      },
+      "line": {
+        "pt": "“O que sinto precisa de voz.”",
+        "en": "“What I feel needs a voice.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Calma e equilíbrio",
+          "Emoções reprimidas por baixo",
+          "Sem prender-se a acusações"
+        ],
+        "en": [
+          "Calm and balance",
+          "Suppressed emotions below",
+          "Not dwelling on reproaches"
+        ]
+      },
+      "line": {
+        "pt": "“Calma não é represa.”",
+        "en": "“Calm isn't a dam.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Não se apegar a cobranças",
+          "Aproveitar a vida juntos",
+          "Ou: amante dominador e desonesto"
+        ],
+        "en": [
+          "Not worrying at accusations",
+          "Enjoying life together",
+          "Or: a domineering, dishonest lover"
+        ]
+      },
+      "line": {
+        "pt": "“Melhor aproveitar do que discutir.”",
+        "en": "“Better to enjoy than to argue.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Descubra o que você e os seus querem",
+          "Aguce os instintos",
+          "Seja fiel às metas de origem"
+        ],
+        "en": [
+          "Find out what you and those around you want",
+          "Sharpen your instincts",
+          "Stay true to your original aims"
+        ]
+      },
+      "line": {
+        "pt": "“Pergunto: o que mais queremos?”",
+        "en": "“I ask: what do we want most?”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Desonestidade, golpe",
+          "Emoções violentas por baixo da calma",
+          "Obra que não amadureceu"
+        ],
+        "en": [
+          "Dishonesty, roguery",
+          "Violent emotions under the calm",
+          "Work that never matured"
+        ]
+      },
+      "line": {
+        "pt": "“Água represada um dia transborda.”",
+        "en": "“Dammed water overflows one day.”"
+      }
+    }
+  ]
+}

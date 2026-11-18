@@ -1,0 +1,416 @@
+{
+  "id": "cups09",
+  "number": "9",
+  "name": {
+    "pt": "Nove de Copas",
+    "en": "Nine of Cups"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Copas",
+    "en": "Minor Arcana – Cups"
+  },
+  "intro": {
+    "pt": "Um homem satisfeito, de braços cruzados e chapéu vermelho, está sentado diante de uma bancada coberta onde nove taças se alinham em arco atrás dele. É a carta do desejo realizado, do prazer simples e do contentamento. Mas as taças estão às suas costas: ele já percebeu tudo o que tem?",
+    "en": "A contented man in a red hat sits with folded arms before a draped counter where nine cups stand in an arc behind him. This is the card of wishes fulfilled, simple pleasure and contentment. But the cups are behind his back: has he noticed everything he has?"
+  },
+  "symbols": [
+    {
+      "key": "man",
+      "crop": {
+        "x": 0.45,
+        "y": 0.55,
+        "r": 0.3
+      },
+      "title": {
+        "pt": "Homem satisfeito",
+        "en": "Contented man"
+      },
+      "keywords": {
+        "pt": [
+          "Contentamento",
+          "Aberto e fechado ao mesmo tempo",
+          "Bem-estar físico"
+        ],
+        "en": [
+          "Contentment",
+          "Open and closed at once",
+          "Physical well-being"
+        ]
+      }
+    },
+    {
+      "key": "cups",
+      "crop": {
+        "x": 0.5,
+        "y": 0.25,
+        "r": 0.35
+      },
+      "title": {
+        "pt": "Nove taças em arco",
+        "en": "Nine cups in an arc"
+      },
+      "keywords": {
+        "pt": [
+          "Riquezas emocionais",
+          "Às suas costas, no inconsciente",
+          "Elevar a um novo nível"
+        ],
+        "en": [
+          "Emotional riches",
+          "Behind his back, in the unconscious",
+          "Raising to a new level"
+        ]
+      }
+    },
+    {
+      "key": "arms",
+      "crop": {
+        "x": 0.45,
+        "y": 0.55,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Braços cruzados",
+        "en": "Folded arms"
+      },
+      "keywords": {
+        "pt": [
+          "Expectativa e paciência",
+          "Ou: só um espectador",
+          "Um oito deitado"
+        ],
+        "en": [
+          "Anticipation and patience",
+          "Or: a mere onlooker",
+          "A sideways eight"
+        ]
+      }
+    },
+    {
+      "key": "hat",
+      "crop": {
+        "x": 0.47,
+        "y": 0.39,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Chapéu e meias vermelhas",
+        "en": "Red hat and stockings"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade e paixão",
+          "Amor ou ciúme"
+        ],
+        "en": [
+          "Will and passion",
+          "Love or jealousy"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Sol e luz",
+          "Satisfação",
+          "Ou: inveja"
+        ],
+        "en": [
+          "Sun and light",
+          "Satisfaction",
+          "Or: envy"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Maturidade e sabedoria",
+          "Completude"
+        ],
+        "en": [
+          "Maturity and wisdom",
+          "Completion"
+        ]
+      }
+    },
+    {
+      "hex": "#5E7FA8",
+      "name": {
+        "pt": "Azul",
+        "en": "Blue"
+      },
+      "keywords": {
+        "pt": [
+          "Alma",
+          "Sentimento"
+        ],
+        "en": [
+          "Soul",
+          "Sentiment"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão",
+          "Amor",
+          "Ciúme"
+        ],
+        "en": [
+          "Passion",
+          "Love",
+          "Jealousy"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Ou: pompa"
+        ],
+        "en": [
+          "Consciousness",
+          "Or: pomp"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Nove de Copas fala de satisfação, prazer e desejo realizado.",
+      "Ele representa a alegria simples de quem diz sim a si.",
+      "O foco dele é: olhar para trás e reconhecer cada taça que possui."
+    ],
+    "en": [
+      "The Nine of Cups speaks of satisfaction, pleasure and wishes come true.",
+      "It stands for the simple joy of saying yes to yourself.",
+      "Its focus: turning round to recognise every cup he owns."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Tudo em você tem valor se for assumido",
+          "Necessidades espirituais atendidas",
+          "Verdade, lealdade, liberdade"
+        ],
+        "en": [
+          "Everything about you is valuable once you claim it",
+          "Spiritual needs met",
+          "Truth, loyalty, liberty"
+        ]
+      },
+      "line": {
+        "pt": "“Tomo posse do que é meu.”",
+        "en": "“I take possession of what is mine.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Vitória, sucesso, vantagem",
+          "Futuro garantido",
+          "Ordem num conjunto grande"
+        ],
+        "en": [
+          "Victory, success, advantage",
+          "A secure future",
+          "Ordering a large whole"
+        ]
+      },
+      "line": {
+        "pt": "“Tenho o bastante, e sei disso.”",
+        "en": "“I have enough, and I know it.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Olhar o que se passa por dentro",
+          "Não precisa mostrar tudo",
+          "Ou: erros e imperfeições"
+        ],
+        "en": [
+          "Looking at what's going on inside",
+          "You don't have to show everything",
+          "Or: mistakes and imperfections"
+        ]
+      },
+      "line": {
+        "pt": "“Conheço minhas taças.”",
+        "en": "“I know my cups.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Bem-estar físico",
+          "Banquete e prazer",
+          "Um bom descanso merecido"
+        ],
+        "en": [
+          "Physical well-being",
+          "Feasting and pleasure",
+          "A well-earned good time"
+        ]
+      },
+      "line": {
+        "pt": "“Depois do trabalho, o prazer.”",
+        "en": "“After work, pleasure.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Satisfação, paz e harmonia",
+          "Dizer sim a si mesmo",
+          "Ou: evitar preocupações"
+        ],
+        "en": [
+          "Satisfaction, peace and harmony",
+          "Saying yes to yourself",
+          "Or: avoiding worry"
+        ]
+      },
+      "line": {
+        "pt": "“A alegria vem de dentro.”",
+        "en": "“Joy comes from within.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Deixe fluir",
+          "Fique fiel ao amor",
+          "Façam algo gostoso juntos"
+        ],
+        "en": [
+          "Let it flow",
+          "Stay true to love",
+          "Do something enjoyable together"
+        ]
+      },
+      "line": {
+        "pt": "“Prazer partilhado vale o dobro.”",
+        "en": "“Shared pleasure counts double.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Confie em si",
+          "Olhe o que está às suas costas",
+          "Aproveite seus recursos"
+        ],
+        "en": [
+          "Trust yourself",
+          "Look at what's behind you",
+          "Make use of your resources"
+        ]
+      },
+      "line": {
+        "pt": "“Sou filha da sorte: confio em mim.”",
+        "en": "“I'm a lucky child: I trust myself.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Superficialidade",
+          "Preguiça, só olhar",
+          "Travar, preocupar-se sem fim"
+        ],
+        "en": [
+          "Superficiality",
+          "Laziness, only watching",
+          "Getting stuck, endless worry"
+        ]
+      },
+      "line": {
+        "pt": "“Satisfação demais adormece.”",
+        "en": "“Too much satisfaction lulls you to sleep.”"
+      }
+    }
+  ]
+}

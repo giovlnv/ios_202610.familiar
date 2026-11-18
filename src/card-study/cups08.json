@@ -1,0 +1,414 @@
+{
+  "id": "cups08",
+  "number": "8",
+  "name": {
+    "pt": "Oito de Copas",
+    "en": "Eight of Cups"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Copas",
+    "en": "Minor Arcana – Cups"
+  },
+  "intro": {
+    "pt": "Uma figura de manto vermelho, com um cajado, deixa para trás oito taças ainda de pé e sobe a montanha, sob um eclipse da lua sobre o sol. Nada caiu: ela simplesmente sabe que é hora de partir. O Oito de Copas é seguir o coração rumo a algo mais significativo.",
+    "en": "A figure in a red cloak, with a staff, leaves eight still-standing cups behind and climbs the mountain under an eclipse of the moon across the sun. Nothing has fallen: they simply know it's time to go. The Eight of Cups is following your heart toward something more meaningful."
+  },
+  "symbols": [
+    {
+      "key": "figure",
+      "crop": {
+        "x": 0.62,
+        "y": 0.55,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Figura partindo",
+        "en": "Figure walking away"
+      },
+      "keywords": {
+        "pt": [
+          "Saber a hora de partir",
+          "Seguir o fluxo interior",
+          "Ou: fugir de si"
+        ],
+        "en": [
+          "Knowing when to leave",
+          "Following the inner flow",
+          "Or: running from yourself"
+        ]
+      }
+    },
+    {
+      "key": "moon",
+      "crop": {
+        "x": 0.25,
+        "y": 0.25,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Lua sobre o sol",
+        "en": "Moon over the sun"
+      },
+      "keywords": {
+        "pt": [
+          "Eclipse",
+          "Consciência e inconsciente",
+          "Tempo de olhar para dentro"
+        ],
+        "en": [
+          "Eclipse",
+          "Conscious and unconscious",
+          "A time to look inward"
+        ]
+      }
+    },
+    {
+      "key": "cups",
+      "crop": {
+        "x": 0.45,
+        "y": 0.78,
+        "r": 0.3
+      },
+      "title": {
+        "pt": "Oito taças de pé",
+        "en": "Eight standing cups"
+      },
+      "keywords": {
+        "pt": [
+          "Situação que ainda dá alegria",
+          "Nada derrubado",
+          "Sentimentos que nos prendem"
+        ],
+        "en": [
+          "A situation still giving joy",
+          "Nothing knocked over",
+          "Feelings that hold us"
+        ]
+      }
+    },
+    {
+      "key": "mountain",
+      "crop": {
+        "x": 0.15,
+        "y": 0.5,
+        "r": 0.14
+      },
+      "title": {
+        "pt": "Montanha",
+        "en": "Mountain"
+      },
+      "keywords": {
+        "pt": [
+          "Terreno mais alto",
+          "Obstáculos ou picos",
+          "O caminho do Eremita"
+        ],
+        "en": [
+          "Higher ground",
+          "Obstacles or peaks",
+          "The Hermit's road"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#5E7FA8",
+      "name": {
+        "pt": "Azul",
+        "en": "Blue"
+      },
+      "keywords": {
+        "pt": [
+          "Saudade",
+          "Sentimento"
+        ],
+        "en": [
+          "Longing",
+          "Sentiment"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Vontade",
+          "Paixão"
+        ],
+        "en": [
+          "Will",
+          "Passion"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Sol"
+        ],
+        "en": [
+          "Consciousness",
+          "Sun"
+        ]
+      }
+    },
+    {
+      "hex": "#3F6B3A",
+      "name": {
+        "pt": "Verde-escuro",
+        "en": "Dark green"
+      },
+      "keywords": {
+        "pt": [
+          "Perto da natureza",
+          "Duradouro"
+        ],
+        "en": [
+          "Close to nature",
+          "Long-lasting"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "O desconhecido",
+          "Escuridão"
+        ],
+        "en": [
+          "The unknown",
+          "Darkness"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Oito de Copas fala de partida, busca e sentido.",
+      "Ele representa saber a hora de deixar algo bom para trás.",
+      "O foco dele é: seguir para onde o coração leva."
+    ],
+    "en": [
+      "The Eight of Cups speaks of leaving, searching and meaning.",
+      "It stands for knowing when to leave something good behind.",
+      "Its focus: going where the heart leads."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Entender o próprio destino",
+          "Subir a montanha do Eremita",
+          "Conhecer-se também é ação"
+        ],
+        "en": [
+          "Understanding your destiny",
+          "Climbing the Hermit's mountain",
+          "Self-knowledge is action too"
+        ]
+      },
+      "line": {
+        "pt": "“Vou aonde o coração me leva.”",
+        "en": "“I go where my heart takes me.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Declínio de um assunto",
+          "Ou: algo que parecia importante e não era",
+          "Ir com o fluxo de energia"
+        ],
+        "en": [
+          "The decline of a matter",
+          "Or: something less important than it seemed",
+          "Going with the flow of energy"
+        ]
+      },
+      "line": {
+        "pt": "“Seguir o fluxo dá menos esforço e mais resultado.”",
+        "en": "“Following the flow takes less effort and gets more done.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Sonhos e visões que fazem crescer",
+          "Discernimento",
+          "Ver os prós e contras"
+        ],
+        "en": [
+          "Dreams and visions that help you grow",
+          "Discernment",
+          "Seeing the pros and cons"
+        ]
+      },
+      "line": {
+        "pt": "“Sei a hora de mudar.”",
+        "en": "“I know when it's time to change.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Desânimo ou busca",
+          "Lidar com obsessão e solidão",
+          "Timidez, fugir do compromisso"
+        ],
+        "en": [
+          "Dejection or search",
+          "Handling obsession and loneliness",
+          "Timidity, fleeing commitment"
+        ]
+      },
+      "line": {
+        "pt": "“Partir também pode ser coragem.”",
+        "en": "“Leaving can be courage too.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Há um tempo para tudo",
+          "Paciência",
+          "Ou: ainda não é hora"
+        ],
+        "en": [
+          "There's a time for everything",
+          "Patience",
+          "Or: the time hasn't come"
+        ]
+      },
+      "line": {
+        "pt": "“Os moinhos de Deus moem devagar.”",
+        "en": "“The mills of God grind slowly.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Cada um no seu caminho",
+          "Bom para o amor",
+          "Ou: ficar demais numa relação"
+        ],
+        "en": [
+          "Each on their own way",
+          "Very good for love",
+          "Or: staying too long in a relationship"
+        ]
+      },
+      "line": {
+        "pt": "“Amor também é deixar o outro seguir.”",
+        "en": "“Love also means letting the other go their way.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Siga o seu coração",
+          "Comece a buscar",
+          "Abra-se para o fluxo interior"
+        ],
+        "en": [
+          "Follow your heart",
+          "Start searching",
+          "Open up to your inner flow"
+        ]
+      },
+      "line": {
+        "pt": "“Busco o que me dá mais sentido.”",
+        "en": "“I seek what gives me more meaning.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Inquietude que passa do ponto",
+          "Fugir de si",
+          "Recusar sair quando já acabou"
+        ],
+        "en": [
+          "Restlessness that overshoots",
+          "Running away from yourself",
+          "Refusing to leave when it's over"
+        ]
+      },
+      "line": {
+        "pt": "“Nem toda partida é avanço.”",
+        "en": "“Not every departure is progress.”"
+      }
+    }
+  ]
+}

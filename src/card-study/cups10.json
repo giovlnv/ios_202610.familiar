@@ -1,0 +1,455 @@
+{
+  "id": "cups10",
+  "number": "10",
+  "name": {
+    "pt": "Dez de Copas",
+    "en": "Ten of Cups"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Copas",
+    "en": "Minor Arcana – Cups"
+  },
+  "intro": {
+    "pt": "Um casal abraçado ergue os braços para um arco-íris de dez taças no céu, enquanto duas crianças dançam ao lado; ao longe, uma casa entre árvores e um rio. É a felicidade em família, o amor que transborda e a realização de sonhos antigos. A vida traz alegria, não só ausência de dor.",
+    "en": "A couple, arm in arm, raise their arms to a rainbow of ten cups in the sky while two children dance beside them; in the distance, a house among trees and a river. This is family happiness, overflowing love and the fulfilment of lifelong dreams. Life brings joy, not just the absence of pain."
+  },
+  "symbols": [
+    {
+      "key": "rainbow",
+      "crop": {
+        "x": 0.5,
+        "y": 0.25,
+        "r": 0.45
+      },
+      "title": {
+        "pt": "Arco-íris de taças",
+        "en": "Rainbow of cups"
+      },
+      "keywords": {
+        "pt": [
+          "Ligação com Deus e a criação",
+          "Promessa de alegria",
+          "Ou: emoções infladas"
+        ],
+        "en": [
+          "Bond with God and creation",
+          "A promise of joy",
+          "Or: blown-up emotions"
+        ]
+      }
+    },
+    {
+      "key": "couple",
+      "crop": {
+        "x": 0.35,
+        "y": 0.67,
+        "r": 0.22
+      },
+      "title": {
+        "pt": "Casal de braços erguidos",
+        "en": "Couple with arms raised"
+      },
+      "keywords": {
+        "pt": [
+          "Casamento, parceria",
+          "Masculino e feminino",
+          "Gratidão e encanto"
+        ],
+        "en": [
+          "Marriage, partnership",
+          "Masculine and feminine",
+          "Gratitude and wonder"
+        ]
+      }
+    },
+    {
+      "key": "children",
+      "crop": {
+        "x": 0.75,
+        "y": 0.75,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Crianças dançando",
+        "en": "Children dancing"
+      },
+      "keywords": {
+        "pt": [
+          "Inocência",
+          "Felicidade natural",
+          "Adultos e crianças juntos"
+        ],
+        "en": [
+          "Innocence",
+          "Happiness as natural",
+          "Adults and children together"
+        ]
+      }
+    },
+    {
+      "key": "house",
+      "crop": {
+        "x": 0.68,
+        "y": 0.63,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Casa ao longe",
+        "en": "House in the distance"
+      },
+      "keywords": {
+        "pt": [
+          "Lar e identidade",
+          "Muitas necessidades atendidas",
+          "Ou: situação pouco clara"
+        ],
+        "en": [
+          "Home and identity",
+          "A wide range of needs met",
+          "Or: an unclear situation"
+        ]
+      }
+    },
+    {
+      "key": "river",
+      "crop": {
+        "x": 0.15,
+        "y": 0.72,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Rio e campo",
+        "en": "River and countryside"
+      },
+      "keywords": {
+        "pt": [
+          "Paixões cultivadas",
+          "Natureza e cultura",
+          "Paisagem da alma"
+        ],
+        "en": [
+          "Cultivated passions",
+          "Nature and culture",
+          "The soul's landscape"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Espiritualidade"
+        ],
+        "en": [
+          "Open sky",
+          "Spirituality"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Amor",
+          "Coração"
+        ],
+        "en": [
+          "Love",
+          "Heart"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Alegria de viver",
+          "Consciência"
+        ],
+        "en": [
+          "Joy of life",
+          "Consciousness"
+        ]
+      }
+    },
+    {
+      "hex": "#5E7FA8",
+      "name": {
+        "pt": "Azul",
+        "en": "Blue"
+      },
+      "keywords": {
+        "pt": [
+          "Sentimento",
+          "Saudade"
+        ],
+        "en": [
+          "Sentiment",
+          "Longing"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Crescimento"
+        ],
+        "en": [
+          "Freshness",
+          "Growth"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Eternidade",
+          "Consciência"
+        ],
+        "en": [
+          "Eternity",
+          "Consciousness"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Dez de Copas fala de família, amor e plenitude.",
+      "Ele representa a alegria da vida espalhada pelo céu.",
+      "O foco dele é: reconhecer e celebrar a felicidade que está aqui."
+    ],
+    "en": [
+      "The Ten of Cups speaks of family, love and fullness.",
+      "It stands for the joy of life spread across the sky.",
+      "Its focus: recognising and celebrating the happiness that's here."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Ligação com Deus e a criação",
+          "Amor e alegria como presentes",
+          "Milagres do dia a dia"
+        ],
+        "en": [
+          "Connection with God and creation",
+          "Love and joy as gifts",
+          "Everyday miracles"
+        ]
+      },
+      "line": {
+        "pt": "“Estou no céu.”",
+        "en": "“I'm in heaven.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Realizar sonhos de uma vida",
+          "Criatividade",
+          "Alguém que cuida dos seus interesses"
+        ],
+        "en": [
+          "Fulfilling lifelong dreams",
+          "Creativity",
+          "Someone looking after your interests"
+        ]
+      },
+      "line": {
+        "pt": "“O sonho de longa data se cumpre.”",
+        "en": "“The long-held dream comes true.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Ordenar desejos e medos",
+          "Medos justos e injustos",
+          "Unir desejo e realidade"
+        ],
+        "en": [
+          "Sorting out wishes and fears",
+          "Justified and unjustified fears",
+          "Joining wish and reality"
+        ]
+      },
+      "line": {
+        "pt": "“Céu e terra conversam em mim.”",
+        "en": "“Heaven and earth talk inside me.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Repouso do coração",
+          "Alegria que transborda",
+          "Medo de emoções fortes?"
+        ],
+        "en": [
+          "Repose of the whole heart",
+          "Overflowing joy",
+          "Afraid of strong emotions?"
+        ]
+      },
+      "line": {
+        "pt": "“Posso sentir alegria sem medo.”",
+        "en": "“I can feel joy without fear.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Dias de festa, casamento",
+          "Plenitude",
+          "Ou: emoção que vira contra si"
+        ],
+        "en": [
+          "High days, a wedding",
+          "Fullness",
+          "Or: emotion turning against itself"
+        ]
+      },
+      "line": {
+        "pt": "“Este é um tempo de alegria.”",
+        "en": "“This is a time of joy.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Felicidade doméstica",
+          "Perfeição do amor e da amizade",
+          "Cidade ou lugar onde se vive"
+        ],
+        "en": [
+          "Domestic happiness",
+          "Perfection of love and friendship",
+          "The town or place you live"
+        ]
+      },
+      "line": {
+        "pt": "“Lar é onde o amor transborda.”",
+        "en": "“Home is where love overflows.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Realize desejos que valem a pena",
+          "Jogue fora os inúteis",
+          "Valorize o que tem"
+        ],
+        "en": [
+          "Fulfil worthwhile wishes",
+          "Throw useless ones overboard",
+          "Value what you have"
+        ]
+      },
+      "line": {
+        "pt": "“Reconheço a felicidade que já está aqui.”",
+        "en": "“I recognise the happiness already here.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Perder-se na harmonia exagerada",
+          "Romantismo de faz de conta",
+          "Raiva, violência, engano"
+        ],
+        "en": [
+          "Losing yourself in excessive harmony",
+          "Let's-pretend romanticism",
+          "Anger, violence, deceit"
+        ]
+      },
+      "line": {
+        "pt": "“Fingir felicidade não é ser feliz.”",
+        "en": "“Pretending to be happy isn't being happy.”"
+      }
+    }
+  ]
+}

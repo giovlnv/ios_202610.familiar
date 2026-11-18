@@ -1,0 +1,479 @@
+{
+  "id": "cups06",
+  "number": "6",
+  "name": {
+    "pt": "Seis de Copas",
+    "en": "Six of Cups"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Copas",
+    "en": "Minor Arcana – Cups"
+  },
+  "intro": {
+    "pt": "Num jardim antigo, uma figura maior entrega a uma criança uma taça cheia de flores; outras taças floridas enchem o chão. É a carta das memórias e da infância, do dar e receber com ternura. Voltar a ser criança pode curar, mas o passado também pode prender.",
+    "en": "In an old garden, a larger figure hands a small child a cup full of flowers; other flowering cups fill the ground. This is the card of memory and childhood, of giving and receiving tenderly. Becoming a child again can heal, but the past can also hold you back."
+  },
+  "symbols": [
+    {
+      "key": "gift",
+      "crop": {
+        "x": 0.6,
+        "y": 0.5,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Taça de flores oferecida",
+        "en": "Cup of flowers offered"
+      },
+      "keywords": {
+        "pt": [
+          "Dar e receber",
+          "Presente de memórias",
+          "Ensinar e proteger"
+        ],
+        "en": [
+          "Giving and receiving",
+          "A gift of memories",
+          "Teaching and protecting"
+        ]
+      }
+    },
+    {
+      "key": "child",
+      "crop": {
+        "x": 0.8,
+        "y": 0.58,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "A pequena de duplo rosto",
+        "en": "Small woman with a double face"
+      },
+      "keywords": {
+        "pt": [
+          "Sim e não",
+          "Fazer contato e pôr limites",
+          "Ou: vaidade"
+        ],
+        "en": [
+          "Yes and no",
+          "Making contact and setting limits",
+          "Or: vanity"
+        ]
+      }
+    },
+    {
+      "key": "flowers",
+      "crop": {
+        "x": 0.4,
+        "y": 0.77,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Taças com flores",
+        "en": "Cups with flowers"
+      },
+      "keywords": {
+        "pt": [
+          "Vida emocional florescendo",
+          "Infância, juventude",
+          "Ou: veneno ou remédio"
+        ],
+        "en": [
+          "Emotional life in bloom",
+          "Childhood, youth",
+          "Or: poison or medicine"
+        ]
+      }
+    },
+    {
+      "key": "cross",
+      "crop": {
+        "x": 0.21,
+        "y": 0.68,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Cruz em X",
+        "en": "X cross"
+      },
+      "keywords": {
+        "pt": [
+          "Mudar a rota",
+          "Revisar a infância",
+          "Achar o que faltou"
+        ],
+        "en": [
+          "Resetting the points",
+          "Revisiting childhood",
+          "Finding what was missing"
+        ]
+      }
+    },
+    {
+      "key": "watchman",
+      "crop": {
+        "x": 0.07,
+        "y": 0.46,
+        "r": 0.07
+      },
+      "title": {
+        "pt": "Guarda com lança",
+        "en": "Watchman with a lance"
+      },
+      "keywords": {
+        "pt": [
+          "Proteção",
+          "Ou: controle",
+          "Memórias difíceis de acessar"
+        ],
+        "en": [
+          "Protection",
+          "Or: control",
+          "Memories hard to reach"
+        ]
+      }
+    },
+    {
+      "key": "house",
+      "crop": {
+        "x": 0.4,
+        "y": 0.3,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Casa antiga",
+        "en": "Old house"
+      },
+      "keywords": {
+        "pt": [
+          "O passado",
+          "Lar da infância",
+          "Segurança"
+        ],
+        "en": [
+          "The past",
+          "Childhood home",
+          "Security"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria de viver"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy of life"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Coração",
+          "Afeto"
+        ],
+        "en": [
+          "Heart",
+          "Affection"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Leveza"
+        ],
+        "en": [
+          "Open sky",
+          "Lightness"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Inocência",
+          "Começo"
+        ],
+        "en": [
+          "Innocence",
+          "Beginning"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Juventude",
+          "Frescor"
+        ],
+        "en": [
+          "Youth",
+          "Freshness"
+        ]
+      }
+    },
+    {
+      "hex": "#E07B39",
+      "name": {
+        "pt": "Laranja",
+        "en": "Orange"
+      },
+      "keywords": {
+        "pt": [
+          "Calor",
+          "Vitalidade"
+        ],
+        "en": [
+          "Warmth",
+          "Vitality"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Seis de Copas fala de memória, infância e ternura.",
+      "Ele representa o passado que pode nutrir ou prender.",
+      "O foco dele é: voltar a ser criança sem ficar presa no ontem."
+    ],
+    "en": [
+      "The Six of Cups speaks of memory, childhood and tenderness.",
+      "It stands for a past that can nourish or hold you back.",
+      "Its focus: becoming a child again without getting stuck in yesterday."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Banho na fonte da juventude",
+          "Ser criança de novo, já adulto",
+          "Abertura e alegria da infância"
+        ],
+        "en": [
+          "Bathing in the fountain of youth",
+          "Becoming a child again as an adult",
+          "Childlike openness and joy"
+        ]
+      },
+      "line": {
+        "pt": "“A criança em mim ainda sabe brincar.”",
+        "en": "“The child in me still knows how to play.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Novos ambientes e conhecimentos",
+          "Um mestre ou protetor",
+          "Cumprir desejos antigos"
+        ],
+        "en": [
+          "New surroundings and knowledge",
+          "A teacher or protector",
+          "Fulfilling old wishes"
+        ]
+      },
+      "line": {
+        "pt": "“Hoje tenho mais escolhas do que na infância.”",
+        "en": "“Today I have more choices than I did as a child.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Ampliar a compreensão",
+          "Rever experiências da infância",
+          "Ilusão e verdade"
+        ],
+        "en": [
+          "Widening your understanding",
+          "Revisiting childhood experiences",
+          "Illusion and truth"
+        ]
+      },
+      "line": {
+        "pt": "“Revisitar o passado amplia o presente.”",
+        "en": "“Revisiting the past widens the present.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Lembranças doces",
+          "Mostrar-se vulnerável",
+          "Apaixonar-se"
+        ],
+        "en": [
+          "Sweet memories",
+          "Showing your vulnerability",
+          "Falling in love"
+        ]
+      },
+      "line": {
+        "pt": "“Posso ser frágil num lugar seguro.”",
+        "en": "“I can be fragile in a safe place.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "O passado e as memórias",
+          "Ou: o futuro, renovação",
+          "Fim de uma terapia"
+        ],
+        "en": [
+          "The past and memories",
+          "Or: the future, renewal",
+          "Completing a therapy"
+        ]
+      },
+      "line": {
+        "pt": "“O ontem me dá raízes, não correntes.”",
+        "en": "“Yesterday gives me roots, not chains.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Largar reações infantis",
+          "Dizer sim e dizer não",
+          "Relação de proteção ou ensino"
+        ],
+        "en": [
+          "Dropping childish reactions",
+          "Saying yes and saying no",
+          "A relationship of protection or teaching"
+        ]
+      },
+      "line": {
+        "pt": "“Adulto, escolho como amar.”",
+        "en": "“As an adult, I choose how to love.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Largue velhos medos",
+          "Olhe as emoções sem se cobrar demais",
+          "Aproveite a oportunidade"
+        ],
+        "en": [
+          "Cast off old fears",
+          "Look at your emotions without demanding too much",
+          "Take the opportunity"
+        ]
+      },
+      "line": {
+        "pt": "“Cuido da criança que fui.”",
+        "en": "“I look after the child I was.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Fixação no passado",
+          "Idealizar a infância",
+          "Medo de verdades sobre a origem"
+        ],
+        "en": [
+          "Fixation on the past",
+          "Idealising childhood",
+          "Fear of truths about your origins"
+        ]
+      },
+      "line": {
+        "pt": "“Saudade demais rouba o agora.”",
+        "en": "“Too much nostalgia steals the now.”"
+      }
+    }
+  ]
+}

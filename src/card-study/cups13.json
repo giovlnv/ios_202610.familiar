@@ -1,0 +1,408 @@
+{
+  "id": "cups13",
+  "number": "13",
+  "name": {
+    "pt": "Rainha de Copas",
+    "en": "Queen of Cups"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Copas",
+    "en": "Minor Arcana – Cups"
+  },
+  "intro": {
+    "pt": "Uma rainha sentada num trono em forma de concha, à beira da água, contempla uma taça fechada e muito ornamentada, criação sua. A água corre sobre seus pés e se mistura ao vestido. Ela une imaginação e ação, sentimento e consciência: inteligência amorosa e o dom da visão.",
+    "en": "A queen on a shell-shaped throne at the water's edge gazes at an ornate, closed cup of her own making. The water runs over her feet and merges with her gown. She unites imagination and action, feeling and awareness: loving intelligence and the gift of vision."
+  },
+  "symbols": [
+    {
+      "key": "chalice",
+      "crop": {
+        "x": 0.3,
+        "y": 0.37,
+        "r": 0.14
+      },
+      "title": {
+        "pt": "Taça sagrada fechada",
+        "en": "Closed sacred chalice"
+      },
+      "keywords": {
+        "pt": [
+          "O valor da alma",
+          "Criação própria",
+          "Ou: autoimportância"
+        ],
+        "en": [
+          "The soul's worth",
+          "Her own creation",
+          "Or: self-importance"
+        ]
+      }
+    },
+    {
+      "key": "queen",
+      "crop": {
+        "x": 0.55,
+        "y": 0.32,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Rainha contemplando",
+        "en": "Queen gazing"
+      },
+      "keywords": {
+        "pt": [
+          "Respeito pela beleza da alma",
+          "Vontade que molda o criativo",
+          "Visão"
+        ],
+        "en": [
+          "Respect for the soul's beauty",
+          "Will shaping creativity",
+          "Vision"
+        ]
+      }
+    },
+    {
+      "key": "throne",
+      "crop": {
+        "x": 0.7,
+        "y": 0.22,
+        "r": 0.22
+      },
+      "title": {
+        "pt": "Trono de concha",
+        "en": "Shell throne"
+      },
+      "keywords": {
+        "pt": [
+          "Abertura e escuta",
+          "Paciência sem preconceito",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Openness and listening",
+          "Patience without prejudice",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "key": "stones",
+      "crop": {
+        "x": 0.35,
+        "y": 0.8,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Pedras coloridas e água",
+        "en": "Coloured stones and water"
+      },
+      "keywords": {
+        "pt": [
+          "Água mole molda pedra dura",
+          "Aceitar o que vem",
+          "Altos e baixos"
+        ],
+        "en": [
+          "Soft water shapes hard stone",
+          "Accepting what lies ahead",
+          "Highs and lows"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Água limpa",
+          "Espiritualidade",
+          "Mente lúcida"
+        ],
+        "en": [
+          "Clear water",
+          "Spirituality",
+          "Lucid mind"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Pureza",
+          "Completude"
+        ],
+        "en": [
+          "Purity",
+          "Completion"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Equanimidade",
+          "Ou: falta de envolvimento"
+        ],
+        "en": [
+          "Equanimity",
+          "Or: lack of involvement"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Eternidade"
+        ],
+        "en": [
+          "Consciousness",
+          "Eternity"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Coração",
+          "Amor"
+        ],
+        "en": [
+          "Heart",
+          "Love"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "A Rainha de Copas fala de amor, intuição e criação.",
+      "Ela representa a imaginação guiada com consciência e amor.",
+      "O foco dela é: confiar na voz interior e dar forma aos sonhos."
+    ],
+    "en": [
+      "The Queen of Cups speaks of love, intuition and creation.",
+      "She stands for imagination guided by awareness and love.",
+      "Her focus: trusting her inner voice and giving dreams a form."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Confie na voz interior",
+          "O que é próprio é sagrado",
+          "Visão como presente"
+        ],
+        "en": [
+          "Trust your inner voice",
+          "What is your own is holy",
+          "Vision as a gift"
+        ]
+      },
+      "line": {
+        "pt": "“Inteligência com amor vira visão.”",
+        "en": "“Intelligence with love becomes vision.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Unir imaginação e ação",
+          "Criar algo inteiro e vivo",
+          "Sucesso e felicidade"
+        ],
+        "en": [
+          "Joining imagination and action",
+          "Creating something whole and alive",
+          "Success and happiness"
+        ]
+      },
+      "line": {
+        "pt": "“Meu sonho ganha forma pelas minhas mãos.”",
+        "en": "“My dream takes shape through my hands.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Confiar na intuição",
+          "Separar o joio do trigo nos gostos",
+          "Consciência dos sentimentos"
+        ],
+        "en": [
+          "Relying on gut feeling",
+          "Sorting wheat from chaff in taste",
+          "Awareness of feelings"
+        ]
+      },
+      "line": {
+        "pt": "“Sinto e sei o que sinto.”",
+        "en": "“I feel, and I know what I feel.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Riqueza de sentimentos",
+          "Inteligência emocional",
+          "Respeitar e ser respeitada"
+        ],
+        "en": [
+          "A wealth of feelings",
+          "Emotional intelligence",
+          "Giving and receiving respect"
+        ]
+      },
+      "line": {
+        "pt": "“Minha alma não tem preço.”",
+        "en": "“My soul is priceless.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Esposa e mãe dedicada",
+          "Família e lar",
+          "Não ir só até a metade"
+        ],
+        "en": [
+          "A devoted spouse and good mother",
+          "Family and home",
+          "Not going only halfway"
+        ]
+      },
+      "line": {
+        "pt": "“Amo por inteiro.”",
+        "en": "“I love wholeheartedly.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Medite perto da água",
+          "Abra o coração a todos",
+          "Deixe fluir"
+        ],
+        "en": [
+          "Meditate by the water",
+          "Open your heart to all",
+          "Let it flow"
+        ]
+      },
+      "line": {
+        "pt": "“Coração aberto, taça guardada.”",
+        "en": "“An open heart, a cup kept safe.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Ambição sem amor",
+          "Não confiável",
+          "Força criativa fora de controle"
+        ],
+        "en": [
+          "Ambition without love",
+          "Not to be trusted",
+          "Creative force out of control"
+        ]
+      },
+      "line": {
+        "pt": "“Sem amor, a taça esvazia.”",
+        "en": "“Without love, the cup empties.”"
+      }
+    }
+  ]
+}

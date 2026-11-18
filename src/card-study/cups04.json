@@ -1,0 +1,422 @@
+{
+  "id": "cups04",
+  "number": "4",
+  "name": {
+    "pt": "Quatro de Copas",
+    "en": "Four of Cups"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Copas",
+    "en": "Minor Arcana – Cups"
+  },
+  "intro": {
+    "pt": "Um jovem sentado sob uma árvore, de braços cruzados, olha para três taças à sua frente sem interesse; uma mão sai de uma nuvem oferecendo uma quarta. Pode ser tédio e apatia, ou uma pausa para voltar às raízes e refletir. A pergunta é se ele vai ver a nova taça.",
+    "en": "A young man sits under a tree, arms folded, looking at three cups in front of him without interest; a hand from a cloud offers him a fourth. It can be boredom and apathy, or a pause to go back to your roots and reflect. The question is whether he'll see the new cup."
+  },
+  "symbols": [
+    {
+      "key": "figure",
+      "crop": {
+        "x": 0.7,
+        "y": 0.6,
+        "r": 0.22
+      },
+      "title": {
+        "pt": "Jovem de braços cruzados",
+        "en": "Young man with arms folded"
+      },
+      "keywords": {
+        "pt": [
+          "Recolhido ou emburrado",
+          "Meditação",
+          "Esperando algo"
+        ],
+        "en": [
+          "Withdrawn or sulking",
+          "Meditation",
+          "Waiting for something"
+        ]
+      }
+    },
+    {
+      "key": "offer",
+      "crop": {
+        "x": 0.3,
+        "y": 0.5,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Taça oferecida da nuvem",
+        "en": "Cup offered from the cloud"
+      },
+      "keywords": {
+        "pt": [
+          "Nova experiência",
+          "Mão do destino",
+          "Ou: fantasma criado por nós"
+        ],
+        "en": [
+          "A new experience",
+          "The hand of fate",
+          "Or: a self-made ghost"
+        ]
+      }
+    },
+    {
+      "key": "cups",
+      "crop": {
+        "x": 0.33,
+        "y": 0.86,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Três taças no chão",
+        "en": "Three cups on the ground"
+      },
+      "keywords": {
+        "pt": [
+          "Experiências passadas",
+          "Tudo parece igual",
+          "Saciedade"
+        ],
+        "en": [
+          "Past experience",
+          "Everything seems the same",
+          "Satiety"
+        ]
+      }
+    },
+    {
+      "key": "tree",
+      "crop": {
+        "x": 0.62,
+        "y": 0.22,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Árvore",
+        "en": "Tree"
+      },
+      "keywords": {
+        "pt": [
+          "Raízes e copa",
+          "Vitalidade",
+          "Entre dois mundos"
+        ],
+        "en": [
+          "Roots and crown",
+          "Vitality",
+          "Between two worlds"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Espiritualidade",
+          "Céu aberto"
+        ],
+        "en": [
+          "Spirituality",
+          "Open sky"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Crescimento",
+          "Ou: imaturidade"
+        ],
+        "en": [
+          "Growth",
+          "Or: immaturity"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Precisa ser esclarecido",
+          "Desejos vagos"
+        ],
+        "en": [
+          "Needs clarifying",
+          "Vague desires"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Coração",
+          "Vontade"
+        ],
+        "en": [
+          "Heart",
+          "Will"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Eternidade"
+        ],
+        "en": [
+          "Consciousness",
+          "Eternity"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Quatro de Copas fala de apatia, pausa e oportunidades.",
+      "Ele representa o tédio que não vê o que é oferecido.",
+      "O foco dele é: refletir e depois se levantar para o novo."
+    ],
+    "en": [
+      "The Four of Cups speaks of apathy, pause and opportunity.",
+      "It stands for boredom that can't see what's being offered.",
+      "Its focus: reflecting, then getting up to meet the new."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Graça e gratidão",
+          "Tirar força da natureza",
+          "Converse com uma árvore"
+        ],
+        "en": [
+          "Grace and thankfulness",
+          "Drawing strength from nature",
+          "Talk to a tree"
+        ]
+      },
+      "line": {
+        "pt": "“Para alcançar o céu, primeiro mergulho em mim.”",
+        "en": "“To reach the sky, I first go deep inside.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Às vezes só motivos pessoais bastam",
+          "Ou: ambiente sem estímulo",
+          "Novas relações e ideias"
+        ],
+        "en": [
+          "Sometimes personal reasons are enough",
+          "Or: an unstimulating environment",
+          "New relations and ideas"
+        ]
+      },
+      "line": {
+        "pt": "“Meus motivos já são bons o bastante.”",
+        "en": "“My own reasons are good enough.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Meditar ajuda a achar palavras",
+          "Olhar para os sentimentos e concluir",
+          "Imaginação negativa"
+        ],
+        "en": [
+          "Meditation helps you find words",
+          "Looking at feelings and drawing conclusions",
+          "Negative imagination"
+        ]
+      },
+      "line": {
+        "pt": "“Sem pressa, mas com conclusão.”",
+        "en": "“Unhurried, but reaching a conclusion.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Pausa da rotina",
+          "Descanso e sonho",
+          "Sentar junto às raízes"
+        ],
+        "en": [
+          "A break from routine",
+          "Rest and dreaming",
+          "Sitting by the roots"
+        ]
+      },
+      "line": {
+        "pt": "“O corpo pede pausa.”",
+        "en": "“The body asks for a pause.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Tédio e desgosto",
+          "Aborrecimentos imaginários",
+          "Ou: apatia que esconde algo"
+        ],
+        "en": [
+          "Weariness and disgust",
+          "Imaginary vexations",
+          "Or: apathy hiding something"
+        ]
+      },
+      "line": {
+        "pt": "“Nem tudo perdeu o sabor; eu é que parei de provar.”",
+        "en": "“Not everything lost its taste; I stopped tasting.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Uma pausa, depois agir",
+          "Fim de um tempo de remoer",
+          "Algo novo está a caminho"
+        ],
+        "en": [
+          "A pause, then action",
+          "The end of a time of brooding",
+          "Something new is on its way"
+        ]
+      },
+      "line": {
+        "pt": "“Depois da pausa, me levanto como a árvore.”",
+        "en": "“After the pause, I rise like the tree.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Altos e baixos no amor",
+          "Olhar para dentro antes",
+          "Ver o que está sendo oferecido"
+        ],
+        "en": [
+          "Ups and downs in love",
+          "Looking inward first",
+          "Seeing what's being offered"
+        ]
+      },
+      "line": {
+        "pt": "“Olho em volta: o que me oferecem?”",
+        "en": "“I look around: what's being offered?”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Volte às raízes",
+          "Faça uma pausa sem se apressar",
+          "Depois, aceite ou recuse a taça"
+        ],
+        "en": [
+          "Go back to your roots",
+          "Take a break without rushing",
+          "Then accept or refuse the cup"
+        ]
+      },
+      "line": {
+        "pt": "“Posso dizer sim ou não à taça.”",
+        "en": "“I can say yes or no to the cup.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Apatia",
+          "Não ver novas chances",
+          "Ficar remoendo"
+        ],
+        "en": [
+          "Apathy",
+          "Missing new chances",
+          "Endless brooding"
+        ]
+      },
+      "line": {
+        "pt": "“Quem não olha não vê a taça nova.”",
+        "en": "“If you don't look, you won't see the new cup.”"
+      }
+    }
+  ]
+}

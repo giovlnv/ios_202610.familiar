@@ -1,0 +1,457 @@
+{
+  "id": "cups03",
+  "number": "3",
+  "name": {
+    "pt": "Três de Copas",
+    "en": "Three of Cups"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Copas",
+    "en": "Minor Arcana – Cups"
+  },
+  "intro": {
+    "pt": "Três mulheres dançam num jardim, erguendo as taças num brinde, com frutos maduros aos pés. É a celebração, a colheita, a amizade e a alegria partilhada. Mas os braços se misturam tanto que mal se sabe quem segura qual taça.",
+    "en": "Three women dance in a garden, raising their cups in a toast, ripe fruit at their feet. This is celebration, harvest, friendship and shared joy. But their arms are so intertwined you can hardly tell who is holding which cup."
+  },
+  "symbols": [
+    {
+      "key": "cups",
+      "crop": {
+        "x": 0.48,
+        "y": 0.17,
+        "r": 0.25
+      },
+      "title": {
+        "pt": "Taças erguidas",
+        "en": "Raised cups"
+      },
+      "keywords": {
+        "pt": [
+          "Brinde",
+          "A alma que se eleva",
+          "Ou: nariz empinado"
+        ],
+        "en": [
+          "A toast",
+          "The soul rising above itself",
+          "Or: nose in the air"
+        ]
+      }
+    },
+    {
+      "key": "dancers",
+      "crop": {
+        "x": 0.48,
+        "y": 0.42,
+        "r": 0.38
+      },
+      "title": {
+        "pt": "Três mulheres dançando",
+        "en": "Three women dancing"
+      },
+      "keywords": {
+        "pt": [
+          "Roda de amigas",
+          "As três Graças",
+          "Ou: o nós que engole o eu"
+        ],
+        "en": [
+          "A circle of friends",
+          "The three Graces",
+          "Or: a we that swallows the I"
+        ]
+      }
+    },
+    {
+      "key": "faces",
+      "crop": {
+        "x": 0.3,
+        "y": 0.27,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Olhares de lado",
+        "en": "Sidelong looks"
+      },
+      "keywords": {
+        "pt": [
+          "Emoção em movimento",
+          "Ninguém fala direto",
+          "Ou: fachada"
+        ],
+        "en": [
+          "Emotion in motion",
+          "No one speaks directly",
+          "Or: a façade"
+        ]
+      }
+    },
+    {
+      "key": "fruit",
+      "crop": {
+        "x": 0.13,
+        "y": 0.75,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Frutos e colheita",
+        "en": "Fruit and harvest"
+      },
+      "keywords": {
+        "pt": [
+          "Colheita farta",
+          "Gratidão",
+          "Pertencimento"
+        ],
+        "en": [
+          "A rich harvest",
+          "Gratitude",
+          "Belonging"
+        ]
+      }
+    },
+    {
+      "key": "feet",
+      "crop": {
+        "x": 0.55,
+        "y": 0.83,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Na ponta dos pés",
+        "en": "On tiptoe"
+      },
+      "keywords": {
+        "pt": [
+          "Dança e leveza",
+          "Vida como festa",
+          "Ou: artificialidade"
+        ],
+        "en": [
+          "Dance and lightness",
+          "Life as a festival",
+          "Or: artificiality"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Alegria espiritual",
+          "Ou: admiração excessiva"
+        ],
+        "en": [
+          "Spiritual joy",
+          "Or: over-admiring"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "A alma",
+          "Coração",
+          "Amor"
+        ],
+        "en": [
+          "The soul",
+          "Heart",
+          "Love"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "A mente",
+          "Pureza"
+        ],
+        "en": [
+          "The mind",
+          "Purity"
+        ]
+      }
+    },
+    {
+      "hex": "#E9C9A4",
+      "name": {
+        "pt": "Bege",
+        "en": "Beige"
+      },
+      "keywords": {
+        "pt": [
+          "O corpo",
+          "Corporeidade"
+        ],
+        "en": [
+          "The body",
+          "Corporeality"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Alegria de viver",
+          "Consciência"
+        ],
+        "en": [
+          "Joy of life",
+          "Consciousness"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Fertilidade",
+          "Frescor"
+        ],
+        "en": [
+          "Fruitfulness",
+          "Freshness"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Três de Copas fala de festa, amizade e colheita.",
+      "Ele representa a alegria partilhada em grupo.",
+      "O foco dele é: celebrar junto sem perder a si mesma."
+    ],
+    "en": [
+      "The Three of Cups speaks of celebration, friendship and harvest.",
+      "It stands for joy shared in a group.",
+      "Its focus: celebrating together without losing yourself."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Corpo, mente e alma unidos",
+          "Fazer festa do dia a dia",
+          "Agradecer o que foi dado"
+        ],
+        "en": [
+          "Body, mind and soul united",
+          "Making a fiesta of the everyday",
+          "Being thankful for what's been given"
+        ]
+      },
+      "line": {
+        "pt": "“O melhor da vida vem em três.”",
+        "en": "“The best things in life come in threes.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Conclusão feliz de um assunto",
+          "Colheita e resultados",
+          "Inteligência emocional"
+        ],
+        "en": [
+          "A happy end to a matter",
+          "Harvest and results",
+          "Emotional intelligence"
+        ]
+      },
+      "line": {
+        "pt": "“O trabalho deu fruto: hora de brindar.”",
+        "en": "“The work bore fruit: time for a toast.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Prazer dos sentidos",
+          "Cura e consolo",
+          "Ou: excessos"
+        ],
+        "en": [
+          "Pleasure of the senses",
+          "Healing and solace",
+          "Or: excess"
+        ]
+      },
+      "line": {
+        "pt": "“Celebrar também cura.”",
+        "en": "“Celebration heals too.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Não ter medo das reações",
+          "Alegria partilhada",
+          "Ou: decepção com amigos"
+        ],
+        "en": [
+          "Not fearing emotional reactions",
+          "Shared joy",
+          "Or: disappointment with friends"
+        ]
+      },
+      "line": {
+        "pt": "“Sentimentos conscientes valem a pena.”",
+        "en": "“Feelings you're aware of are worth it.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Fim de uma crise",
+          "Tempo de colheita",
+          "A vida vira festa"
+        ],
+        "en": [
+          "The end of a crisis",
+          "Harvest time",
+          "Life becomes a festival"
+        ]
+      },
+      "line": {
+        "pt": "“Passou: agora é festa.”",
+        "en": "“It's over: now we celebrate.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Uma palavra certa faz milagres",
+          "Abrir-se ou mostrar limites",
+          "Pertencer a um grupo"
+        ],
+        "en": [
+          "A well-timed word works wonders",
+          "Opening up or showing your limits",
+          "Belonging to a group"
+        ]
+      },
+      "line": {
+        "pt": "“Diga o que pensa: vale a pena.”",
+        "en": "“Say what you think: it's worth it.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Diga o que sente",
+          "Celebre com os seus",
+          "Agradeça"
+        ],
+        "en": [
+          "Say what you feel",
+          "Celebrate with your people",
+          "Be thankful"
+        ]
+      },
+      "line": {
+        "pt": "“Juntos, mas cada um com sua taça.”",
+        "en": "“Together, each with their own cup.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Pressão do grupo, perder-se",
+          "Arrogância emocional, fachada",
+          "Algo esperado que não veio"
+        ],
+        "en": [
+          "Group pressure, losing yourself",
+          "Emotional arrogance, a façade",
+          "Something hoped for that didn't come"
+        ]
+      },
+      "line": {
+        "pt": "“Festa demais esconde o vazio.”",
+        "en": "“Too much party hides the emptiness.”"
+      }
+    }
+  ]
+}

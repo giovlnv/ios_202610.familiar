@@ -1,0 +1,489 @@
+{
+  "id": "cups02",
+  "number": "2",
+  "name": {
+    "pt": "Dois de Copas",
+    "en": "Two of Cups"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Copas",
+    "en": "Minor Arcana – Cups"
+  },
+  "intro": {
+    "pt": "Um jovem e uma moça trocam taças, prometendo-se um ao outro; acima deles, o bastão de Hermes e uma cabeça de leão alada. É o começo de uma amizade ou de um amor. Duas pessoas que, unidas, criam algo maior do que cada uma sozinha.",
+    "en": "A young man and a woman exchange cups, pledging themselves to each other; above them rise the staff of Hermes and a winged lion's head. This is the beginning of a friendship or a love. Two people who, together, create something greater than either alone."
+  },
+  "symbols": [
+    {
+      "key": "lion",
+      "crop": {
+        "x": 0.5,
+        "y": 0.17,
+        "r": 0.26
+      },
+      "title": {
+        "pt": "Cabeça de leão alada",
+        "en": "Winged lion's head"
+      },
+      "keywords": {
+        "pt": [
+          "Emoções poderosas",
+          "Sexualidade com espírito",
+          "Ou: feitiço, enredo"
+        ],
+        "en": [
+          "Mighty emotions",
+          "Sexuality with spirit",
+          "Or: a spell, entanglement"
+        ]
+      }
+    },
+    {
+      "key": "caduceus",
+      "crop": {
+        "x": 0.5,
+        "y": 0.28,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Bastão de Hermes",
+        "en": "Staff of Hermes"
+      },
+      "keywords": {
+        "pt": [
+          "Cura e sabedoria",
+          "Impulso e intelecto ligados",
+          "Voltar às raízes"
+        ],
+        "en": [
+          "Healing and wisdom",
+          "Drive and intellect linked",
+          "Going back to the roots"
+        ]
+      }
+    },
+    {
+      "key": "cups",
+      "crop": {
+        "x": 0.5,
+        "y": 0.43,
+        "r": 0.13
+      },
+      "title": {
+        "pt": "Taças trocadas",
+        "en": "Cups exchanged"
+      },
+      "keywords": {
+        "pt": [
+          "Promessa",
+          "União e afinidade",
+          "Alegria partilhada"
+        ],
+        "en": [
+          "A pledge",
+          "Union and affinity",
+          "Shared joy"
+        ]
+      }
+    },
+    {
+      "key": "woman",
+      "crop": {
+        "x": 0.25,
+        "y": 0.4,
+        "r": 0.17
+      },
+      "title": {
+        "pt": "Moça de azul e branco",
+        "en": "Woman in blue and white"
+      },
+      "keywords": {
+        "pt": [
+          "Lado feminino",
+          "Sensibilidade",
+          "Apreciar a experiência"
+        ],
+        "en": [
+          "The feminine side",
+          "Sensitivity",
+          "Appreciating experience"
+        ]
+      }
+    },
+    {
+      "key": "man",
+      "crop": {
+        "x": 0.72,
+        "y": 0.35,
+        "r": 0.17
+      },
+      "title": {
+        "pt": "Jovem de amarelo e preto",
+        "en": "Young man in yellow and black"
+      },
+      "keywords": {
+        "pt": [
+          "Lado masculino",
+          "Ação e movimento",
+          "Parecido com o Louco"
+        ],
+        "en": [
+          "The masculine side",
+          "Action and movement",
+          "Like the Fool"
+        ]
+      }
+    },
+    {
+      "key": "house",
+      "crop": {
+        "x": 0.55,
+        "y": 0.72,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Casa na colina",
+        "en": "House on the hill"
+      },
+      "keywords": {
+        "pt": [
+          "Altos e baixos da vida",
+          "Achar a metade dentro de si",
+          "O caminho de casa"
+        ],
+        "en": [
+          "Life's ups and downs",
+          "Finding your other half within",
+          "The way home"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Espiritualidade"
+        ],
+        "en": [
+          "Open sky",
+          "Spirituality"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão",
+          "Coração",
+          "Vivacidade"
+        ],
+        "en": [
+          "Passion",
+          "Heart",
+          "Liveliness"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Pureza",
+          "Começo"
+        ],
+        "en": [
+          "Purity",
+          "Beginning"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "O desconhecido",
+          "Sombra"
+        ],
+        "en": [
+          "The unknown",
+          "Shadow"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Juventude"
+        ],
+        "en": [
+          "Freshness",
+          "Youth"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Dois de Copas fala de amor, amizade e união.",
+      "Ele representa o encontro de duas almas que se completam.",
+      "O foco dele é: unir sem se reduzir à metade de alguém."
+    ],
+    "en": [
+      "The Two of Cups speaks of love, friendship and union.",
+      "It stands for two souls meeting and completing each other.",
+      "Its focus: joining without shrinking into someone's other half."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "O primeiro grande amor",
+          "Amor que santifica a natureza",
+          "Unir ação e sentimento"
+        ],
+        "en": [
+          "The first great love",
+          "Love that sanctifies nature",
+          "Uniting action and feeling"
+        ]
+      },
+      "line": {
+        "pt": "“Juntos vamos além do que cada um iria.”",
+        "en": "“Together we go further than either would alone.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Parcerias e sociedades",
+          "Técnica com raiz espiritual",
+          "Concórdia"
+        ],
+        "en": [
+          "Partnerships",
+          "Skill grounded in spirit",
+          "Concord"
+        ]
+      },
+      "line": {
+        "pt": "“Meu trabalho ganha alma quando tem raiz.”",
+        "en": "“My work gains soul when it has roots.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Levar em conta sentimentos e necessidades",
+          "Conflitos internos da alma",
+          "Ou: separar o que se faz do que se sente"
+        ],
+        "en": [
+          "Taking feelings and needs into account",
+          "Inner conflicts of the soul",
+          "Or: splitting what you do from what you feel"
+        ]
+      },
+      "line": {
+        "pt": "“Sentir é parte de pensar bem.”",
+        "en": "“Feeling is part of thinking well.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Energia sexual e do coração",
+          "Simpatia e atração",
+          "Vivacidade"
+        ],
+        "en": [
+          "Sexual and heart energy",
+          "Sympathy and attraction",
+          "Liveliness"
+        ]
+      },
+      "line": {
+        "pt": "“A atração também é energia de vida.”",
+        "en": "“Attraction is life energy too.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Lidar com emoções fortes",
+          "Simpatia e antipatia",
+          "Alegria dobrada, tristeza pela metade"
+        ],
+        "en": [
+          "Handling strong emotions",
+          "Sympathy and antipathy",
+          "Joy doubled, sorrow halved"
+        ]
+      },
+      "line": {
+        "pt": "“Partilhada, a alegria cresce.”",
+        "en": "“Shared, joy grows.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Começo de um amor ou amizade",
+          "Reconciliação",
+          "Tarefa de uma vida inteira"
+        ],
+        "en": [
+          "Start of a love or friendship",
+          "Reconciliation",
+          "A lifelong task"
+        ]
+      },
+      "line": {
+        "pt": "“Cada dia recomeça o pacto.”",
+        "en": "“Each day the pledge begins again.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Promessa de amor ou amizade",
+          "Duas metades fazem um inteiro?",
+          "Deixe a alma abrir as asas"
+        ],
+        "en": [
+          "A pledge of love or friendship",
+          "Do two halves make a whole?",
+          "Let your soul spread its wings"
+        ]
+      },
+      "line": {
+        "pt": "“Não sou metade de ninguém.”",
+        "en": "“I'm nobody's other half.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Conversar e soltar",
+          "Fazer algo por si ou a dois",
+          "Procure a outra metade em você"
+        ],
+        "en": [
+          "Talk things through and let go",
+          "Do something for yourself or together",
+          "Look for your other half within"
+        ]
+      },
+      "line": {
+        "pt": "“Inteiro, eu encontro o outro.”",
+        "en": "“Whole, I meet the other.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Ciúme e quebra de confiança",
+          "Paixão fingida, fim da relação",
+          "Laço duplo, enredo"
+        ],
+        "en": [
+          "Jealousy and broken trust",
+          "Feigned infatuation, a relationship ending",
+          "A double bind, entanglement"
+        ]
+      },
+      "line": {
+        "pt": "“Amor pela metade é só meio amor.”",
+        "en": "“Half-hearted love is only half a love.”"
+      }
+    }
+  ]
+}

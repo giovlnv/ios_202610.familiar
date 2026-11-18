@@ -1,0 +1,489 @@
+{
+  "id": "cups05",
+  "number": "5",
+  "name": {
+    "pt": "Cinco de Copas",
+    "en": "Five of Cups"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Copas",
+    "en": "Minor Arcana – Cups"
+  },
+  "intro": {
+    "pt": "Uma figura de manto negro olha para três taças derramadas, sem ver as duas que ainda estão de pé atrás dela; ao fundo, uma ponte cruza o rio até um castelo. É a tristeza de uma perda, mas também o túnel que leva a algo novo. Algo se foi, mas algo ficou.",
+    "en": "A figure in a black cloak stares at three spilled cups, not seeing the two still standing behind; in the background a bridge crosses the river to a castle. This is the grief of a loss, but also the tunnel that leads to something new. Something has gone, but something remains."
+  },
+  "symbols": [
+    {
+      "key": "figure",
+      "crop": {
+        "x": 0.53,
+        "y": 0.45,
+        "r": 0.3
+      },
+      "title": {
+        "pt": "Figura de manto negro",
+        "en": "Figure in a black cloak"
+      },
+      "keywords": {
+        "pt": [
+          "Luto",
+          "A noite escura da alma",
+          "Passagem para o novo"
+        ],
+        "en": [
+          "Grief",
+          "The dark night of the soul",
+          "A passage to the new"
+        ]
+      }
+    },
+    {
+      "key": "spilled",
+      "crop": {
+        "x": 0.2,
+        "y": 0.82,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Taças derramadas",
+        "en": "Spilled cups"
+      },
+      "keywords": {
+        "pt": [
+          "Experiências do coração perdidas",
+          "Perdoar sem esquecer",
+          "Deixar ir"
+        ],
+        "en": [
+          "Lost experiences of the heart",
+          "Forgiving without forgetting",
+          "Letting go"
+        ]
+      }
+    },
+    {
+      "key": "standing",
+      "crop": {
+        "x": 0.82,
+        "y": 0.82,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Duas taças de pé",
+        "en": "Two standing cups"
+      },
+      "keywords": {
+        "pt": [
+          "O que ainda resta",
+          "Novas possibilidades",
+          "Apoio de alguém"
+        ],
+        "en": [
+          "What still remains",
+          "New possibilities",
+          "Support from someone"
+        ]
+      }
+    },
+    {
+      "key": "bridge",
+      "crop": {
+        "x": 0.8,
+        "y": 0.67,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Ponte",
+        "en": "Bridge"
+      },
+      "keywords": {
+        "pt": [
+          "Do passado ao futuro",
+          "Consciência e decisão",
+          "Fé no futuro"
+        ],
+        "en": [
+          "From past to future",
+          "Awareness and resolve",
+          "Faith in the future"
+        ]
+      }
+    },
+    {
+      "key": "castle",
+      "crop": {
+        "x": 0.15,
+        "y": 0.6,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Castelo",
+        "en": "Castle"
+      },
+      "keywords": {
+        "pt": [
+          "Meta, proteção, lar",
+          "Estabilidade",
+          "Ou: ruína do tempo"
+        ],
+        "en": [
+          "Goal, protection, home",
+          "Stability",
+          "Or: a ruin of time"
+        ]
+      }
+    },
+    {
+      "key": "river",
+      "crop": {
+        "x": 0.3,
+        "y": 0.7,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Rio",
+        "en": "River"
+      },
+      "keywords": {
+        "pt": [
+          "Fluxo da tristeza",
+          "Mudança constante",
+          "Continuidade"
+        ],
+        "en": [
+          "The flow of sorrow",
+          "Constant change",
+          "Continuity"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "Luto",
+          "O desconhecido",
+          "Território novo"
+        ],
+        "en": [
+          "Grief",
+          "The unknown",
+          "New territory"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Inconsciente",
+          "Ou: indiferença"
+        ],
+        "en": [
+          "Unconscious",
+          "Or: indifference"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Coração",
+          "Sentimentos derramados"
+        ],
+        "en": [
+          "Heart",
+          "Spilled feelings"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Eternidade"
+        ],
+        "en": [
+          "Consciousness",
+          "Eternity"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Água limpa",
+          "Espiritualidade"
+        ],
+        "en": [
+          "Clear water",
+          "Spirituality"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Crescimento"
+        ],
+        "en": [
+          "Freshness",
+          "Growth"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Cinco de Copas fala de perda, luto e recomeço.",
+      "Ele representa a tristeza que ainda não vê o que restou.",
+      "O foco dele é: aceitar a perda e atravessar a ponte."
+    ],
+    "en": [
+      "The Five of Cups speaks of loss, grief and new beginnings.",
+      "It stands for sorrow that can't yet see what remains.",
+      "Its focus: accepting the loss and crossing the bridge."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Metamorfose, um túnel da vida",
+          "Encontro com a sombra",
+          "Saudade do paraíso perdido"
+        ],
+        "en": [
+          "Metamorphosis, one of life's tunnels",
+          "Meeting the shadow",
+          "Longing for a lost paradise"
+        ]
+      },
+      "line": {
+        "pt": "“Todo túnel tem saída.”",
+        "en": "“Every tunnel has an exit.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Herança abaixo do esperado",
+          "Perda, mas algo fica",
+          "Desilusão que libera energia"
+        ],
+        "en": [
+          "An inheritance below expectations",
+          "Loss, but something remains",
+          "Disillusion that frees energy"
+        ]
+      },
+      "line": {
+        "pt": "“O que sobrou ainda é meu.”",
+        "en": "“What's left is still mine.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Reconhecer uma ilusão",
+          "Aprender a lição",
+          "Assumir a própria parte na perda"
+        ],
+        "en": [
+          "Recognising an illusion",
+          "Learning a new lesson",
+          "Owning your part in the loss"
+        ]
+      },
+      "line": {
+        "pt": "“Ver a ilusão me liberta.”",
+        "en": "“Seeing the illusion frees me.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Exaustão, esgotamento",
+          "Deixar as lágrimas correrem",
+          "Corpo rígido de tristeza"
+        ],
+        "en": [
+          "Exhaustion, burnout",
+          "Letting the tears flow",
+          "A body stiff with sorrow"
+        ]
+      },
+      "line": {
+        "pt": "“Chorar também cansa e alivia.”",
+        "en": "“Crying tires and relieves at once.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Tristeza e ansiedade",
+          "Raiva e mágoa que vêm à tona",
+          "Aceitar a dor antes de seguir"
+        ],
+        "en": [
+          "Sadness and anxiety",
+          "Anger and resentment surfacing",
+          "Accepting the pain before moving on"
+        ]
+      },
+      "line": {
+        "pt": "“Primeiro aceito; depois me viro.”",
+        "en": "“First I accept; then I turn around.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Início de uma nova fase",
+          "Algo que você esperava há tempo",
+          "Notícias, retorno"
+        ],
+        "en": [
+          "The start of a new phase",
+          "Something you've long waited for",
+          "News, a return"
+        ]
+      },
+      "line": {
+        "pt": "“O novo começa no escuro.”",
+        "en": "“The new begins in the dark.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Resolver brigas pendentes",
+          "Casamento com amargura",
+          "Amigos e família como apoio"
+        ],
+        "en": [
+          "Sorting out pending disputes",
+          "A marriage with bitterness",
+          "Friends and family as support"
+        ]
+      },
+      "line": {
+        "pt": "“As duas taças de pé são quem ficou comigo.”",
+        "en": "“The two standing cups are who stayed with me.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Não fuja dos sentimentos",
+          "Escolha o que levar e o que deixar",
+          "Atravesse a ponte"
+        ],
+        "en": [
+          "Don't run from your feelings",
+          "Choose what to take and what to leave",
+          "Cross the bridge"
+        ]
+      },
+      "line": {
+        "pt": "“Levo comigo o que ainda está de pé.”",
+        "en": "“I take with me what is still standing.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Não aceitar a perda",
+          "Ficar preso no passado",
+          "Dar as costas a si mesmo"
+        ],
+        "en": [
+          "Not accepting the loss",
+          "Getting stuck in the past",
+          "Turning away from yourself"
+        ]
+      },
+      "line": {
+        "pt": "“Olhar só o que caiu esconde o que restou.”",
+        "en": "“Looking only at what fell hides what remains.”"
+      }
+    }
+  ]
+}

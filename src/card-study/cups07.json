@@ -1,0 +1,510 @@
+{
+  "id": "cups07",
+  "number": "7",
+  "name": {
+    "pt": "Sete de Copas",
+    "en": "Seven of Cups"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Copas",
+    "en": "Minor Arcana – Cups"
+  },
+  "intro": {
+    "pt": "Uma figura escura, de costas, olha para sete taças flutuando nas nuvens, cada uma com uma visão: um rosto, uma figura velada, uma serpente, um castelo, joias, uma coroa de louros e um dragão. É a carta da imaginação e dos sonhos. Sem chão, as visões ficam só fantasia; com escolha, viram projeto.",
+    "en": "A dark figure, seen from behind, looks at seven cups floating in the clouds, each holding a vision: a face, a veiled figure, a serpent, a castle, jewels, a laurel wreath and a dragon. This is the card of imagination and dreams. Without grounding the visions stay fantasy; with a choice, they become a plan."
+  },
+  "symbols": [
+    {
+      "key": "figure",
+      "crop": {
+        "x": 0.3,
+        "y": 0.72,
+        "r": 0.28
+      },
+      "title": {
+        "pt": "Figura escura",
+        "en": "Dark figure"
+      },
+      "keywords": {
+        "pt": [
+          "Você diante dos desejos",
+          "Sombra do passado",
+          "Ou: cabeça nas nuvens"
+        ],
+        "en": [
+          "You facing your wishes",
+          "Shadow of the past",
+          "Or: head in the clouds"
+        ]
+      }
+    },
+    {
+      "key": "veiled",
+      "crop": {
+        "x": 0.48,
+        "y": 0.17,
+        "r": 0.16
+      },
+      "title": {
+        "pt": "Figura velada",
+        "en": "Shrouded figure"
+      },
+      "keywords": {
+        "pt": [
+          "O mistério de cada um",
+          "Só se revela crescendo",
+          "Enigma"
+        ],
+        "en": [
+          "The mystery in each person",
+          "Revealed only through growth",
+          "An enigma"
+        ]
+      }
+    },
+    {
+      "key": "head",
+      "crop": {
+        "x": 0.2,
+        "y": 0.1,
+        "r": 0.09
+      },
+      "title": {
+        "pt": "Cabeça de cachos",
+        "en": "Curly-haired head"
+      },
+      "keywords": {
+        "pt": [
+          "Beleza e juventude",
+          "Aceitar-se como é",
+          "Ou: narcisismo"
+        ],
+        "en": [
+          "Beauty and youth",
+          "Accepting yourself as you are",
+          "Or: narcissism"
+        ]
+      }
+    },
+    {
+      "key": "snake",
+      "crop": {
+        "x": 0.76,
+        "y": 0.07,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Serpente",
+        "en": "Snake"
+      },
+      "keywords": {
+        "pt": [
+          "Sabedoria e transformação",
+          "Trocar de pele",
+          "Ou: instintos baixos"
+        ],
+        "en": [
+          "Wisdom and transformation",
+          "Shedding skin",
+          "Or: low instincts"
+        ]
+      }
+    },
+    {
+      "key": "castle",
+      "crop": {
+        "x": 0.1,
+        "y": 0.38,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Castelo",
+        "en": "Castle"
+      },
+      "keywords": {
+        "pt": [
+          "Proteção e lar",
+          "Aventura",
+          "Ou: torre de marfim"
+        ],
+        "en": [
+          "Protection and home",
+          "Adventure",
+          "Or: ivory tower"
+        ]
+      }
+    },
+    {
+      "key": "jewels",
+      "crop": {
+        "x": 0.39,
+        "y": 0.45,
+        "r": 0.08
+      },
+      "title": {
+        "pt": "Joias",
+        "en": "Jewels"
+      },
+      "keywords": {
+        "pt": [
+          "Riquezas interiores e exteriores",
+          "Valor próprio",
+          "Ou: dinheiro como compensação"
+        ],
+        "en": [
+          "Inner and outer riches",
+          "Self-worth",
+          "Or: money as compensation"
+        ]
+      }
+    },
+    {
+      "key": "wreath",
+      "crop": {
+        "x": 0.6,
+        "y": 0.48,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Coroa de louros e caveira",
+        "en": "Laurel wreath and skull"
+      },
+      "keywords": {
+        "pt": [
+          "Vitória",
+          "Ou: morte",
+          "Tornar a vida útil"
+        ],
+        "en": [
+          "Victory",
+          "Or: death",
+          "Making life useful"
+        ]
+      }
+    },
+    {
+      "key": "dragon",
+      "crop": {
+        "x": 0.82,
+        "y": 0.45,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Dragão",
+        "en": "Dragon"
+      },
+      "keywords": {
+        "pt": [
+          "Medo",
+          "Forças extraordinárias",
+          "Sorte, na tradição chinesa"
+        ],
+        "en": [
+          "Fear",
+          "Extraordinary powers",
+          "Luck, in Chinese tradition"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Ou: ilusão"
+        ],
+        "en": [
+          "Open sky",
+          "Or: wishful thinking"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Nuvens, inconsciente",
+          "Ou: névoa"
+        ],
+        "en": [
+          "Clouds, the unconscious",
+          "Or: fog"
+        ]
+      }
+    },
+    {
+      "hex": "#1E1B24",
+      "name": {
+        "pt": "Preto",
+        "en": "Black"
+      },
+      "keywords": {
+        "pt": [
+          "Sombra",
+          "O desconhecido"
+        ],
+        "en": [
+          "Shadow",
+          "The unknown"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Ou: ganância, deslumbramento"
+        ],
+        "en": [
+          "Consciousness",
+          "Or: greed, dazzle"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Desejo",
+          "Paixão"
+        ],
+        "en": [
+          "Desire",
+          "Passion"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Sete de Copas fala de sonhos, desejos e ilusões.",
+      "Ele representa a imaginação que ainda não tocou o chão.",
+      "O foco dele é: separar o joio do trigo e escolher."
+    ],
+    "en": [
+      "The Seven of Cups speaks of dreams, wishes and illusions.",
+      "It stands for imagination that hasn't touched the ground yet.",
+      "Its focus: separating wheat from chaff, and choosing."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Aprender a distinguir",
+          "Não se perder na própria fumaça",
+          "Sonhos nascem de imagens profundas"
+        ],
+        "en": [
+          "Learning to discern",
+          "Not getting lost in your own smoke screen",
+          "Dreams spring from deep images"
+        ]
+      },
+      "line": {
+        "pt": "“Nem tudo que brilha na nuvem é meu caminho.”",
+        "en": "“Not everything shining in the clouds is my path.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Muitas possibilidades",
+          "Nada sólido por enquanto",
+          "Fazer algo dos sonhos"
+        ],
+        "en": [
+          "Many possibilities",
+          "Nothing substantial yet",
+          "Making something of dreams"
+        ]
+      },
+      "line": {
+        "pt": "“Escolho um sonho e o ponho no chão.”",
+        "en": "“I pick one dream and ground it.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Avaliar experiências com calma",
+          "Conhecer melhor desejos e medos",
+          "Imaginação fértil"
+        ],
+        "en": [
+          "Weighing experiences calmly",
+          "Knowing your wishes and fears better",
+          "A fertile imagination"
+        ]
+      },
+      "line": {
+        "pt": "“Cabeça fria para desejos quentes.”",
+        "en": "“A cool head for hot wishes.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Fantasias e devaneios",
+          "Desejo e realidade como noite e dia",
+          "Desejos que servem a você"
+        ],
+        "en": [
+          "Fantasies and daydreams",
+          "Wish and reality like night and day",
+          "Wishes that serve you"
+        ]
+      },
+      "line": {
+        "pt": "“Meus desejos servem a mim, não o contrário.”",
+        "en": "“My wishes serve me, not the other way round.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Quem viver, verá",
+          "Nada é óbvio ainda",
+          "A prova vem com o tempo"
+        ],
+        "en": [
+          "Who lives will see",
+          "Nothing is obvious yet",
+          "Proof comes with time"
+        ]
+      },
+      "line": {
+        "pt": "“O tempo mostra o que é real.”",
+        "en": "“Time shows what's real.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Investigue suas experiências",
+          "Siga os desejos com mais energia",
+          "Ou: amor só na fantasia"
+        ],
+        "en": [
+          "Investigate your experiences",
+          "Follow the wishes with most energy",
+          "Or: love only in fantasy"
+        ]
+      },
+      "line": {
+        "pt": "“Amor imaginado não abraça.”",
+        "en": "“Imagined love can't hold you.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Separe o joio do trigo",
+          "Ponha limites",
+          "Descubra o que te faz bem"
+        ],
+        "en": [
+          "Separate the wheat from the chaff",
+          "Draw your limits",
+          "Find out what does you good"
+        ]
+      },
+      "line": {
+        "pt": "“Escolher é dar corpo ao sonho.”",
+        "en": "“Choosing gives the dream a body.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Viver na sombra enquanto sonha",
+          "Ilusão e superstição",
+          "Ganância e insatisfação"
+        ],
+        "en": [
+          "Living in the shadow while dreaming",
+          "Illusion and superstition",
+          "Greed and dissatisfaction"
+        ]
+      },
+      "line": {
+        "pt": "“Quem quer tudo não escolhe nada.”",
+        "en": "“Wanting everything means choosing nothing.”"
+      }
+    }
+  ]
+}

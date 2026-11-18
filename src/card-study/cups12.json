@@ -1,0 +1,438 @@
+{
+  "id": "cups12",
+  "number": "12",
+  "name": {
+    "pt": "Cavaleiro de Copas",
+    "en": "Knight of Cups"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Copas",
+    "en": "Minor Arcana – Cups"
+  },
+  "intro": {
+    "pt": "Um cavaleiro de elmo alado avança devagar num cavalo cinza, segurando uma taça diante de si, atravessando uma terra seca com um rio estreito. Ele é o sonhador, o romântico em busca do Graal. A imaginação dele é bela, mas precisa de ação para dar fruto.",
+    "en": "A knight in a winged helmet rides slowly on a grey horse, holding a cup before him, crossing dry land with a narrow river. He is the dreamer, the romantic in search of the Grail. His imagination is beautiful, but it needs action to bear fruit."
+  },
+  "symbols": [
+    {
+      "key": "cup",
+      "crop": {
+        "x": 0.6,
+        "y": 0.28,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Taça na mão",
+        "en": "Cup in hand"
+      },
+      "keywords": {
+        "pt": [
+          "Busca e anseio",
+          "Partilhar o que sente",
+          "Convite"
+        ],
+        "en": [
+          "Searching and longing",
+          "Sharing what you feel",
+          "An invitation"
+        ]
+      }
+    },
+    {
+      "key": "helmet",
+      "crop": {
+        "x": 0.3,
+        "y": 0.17,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Elmo alado",
+        "en": "Winged helmet"
+      },
+      "keywords": {
+        "pt": [
+          "Mente ligada aos sentimentos",
+          "Imaginação elevada",
+          "Ou: dogmatismo"
+        ],
+        "en": [
+          "Mind joined to feeling",
+          "Higher imagination",
+          "Or: dogmatism"
+        ]
+      }
+    },
+    {
+      "key": "horse",
+      "crop": {
+        "x": 0.68,
+        "y": 0.55,
+        "r": 0.27
+      },
+      "title": {
+        "pt": "Cavalo cinza",
+        "en": "Grey horse"
+      },
+      "keywords": {
+        "pt": [
+          "Estabilidade emocional",
+          "Instintos nobres",
+          "Ou: falta de espontaneidade"
+        ],
+        "en": [
+          "Emotional stability",
+          "Ennobled instincts",
+          "Or: lack of spontaneity"
+        ]
+      }
+    },
+    {
+      "key": "armour",
+      "crop": {
+        "x": 0.4,
+        "y": 0.45,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Armadura com peixes",
+        "en": "Armour with fish"
+      },
+      "keywords": {
+        "pt": [
+          "Riqueza de sentimentos",
+          "Proteção",
+          "Ou: preso na própria casca"
+        ],
+        "en": [
+          "A wealth of feeling",
+          "Protection",
+          "Or: trapped in your own shell"
+        ]
+      }
+    },
+    {
+      "key": "river",
+      "crop": {
+        "x": 0.62,
+        "y": 0.81,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Rio estreito",
+        "en": "Narrow river"
+      },
+      "keywords": {
+        "pt": [
+          "Deixar os sentimentos fluírem",
+          "Ou: pouca força criativa",
+          "Fonte e foz"
+        ],
+        "en": [
+          "Letting feelings flow",
+          "Or: little creative force",
+          "Source and mouth"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Céu aberto",
+          "Espiritualidade"
+        ],
+        "en": [
+          "Open sky",
+          "Spirituality"
+        ]
+      }
+    },
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Estabilidade emocional",
+          "Ou: apatia interna"
+        ],
+        "en": [
+          "Emotional stability",
+          "Or: inner listlessness"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Ou: deslumbramento"
+        ],
+        "en": [
+          "Consciousness",
+          "Or: dazzle"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Paixão",
+          "Coração"
+        ],
+        "en": [
+          "Passion",
+          "Heart"
+        ]
+      }
+    },
+    {
+      "hex": "#8A4B2A",
+      "name": {
+        "pt": "Marrom",
+        "en": "Brown"
+      },
+      "keywords": {
+        "pt": [
+          "Pé no chão",
+          "Terra seca"
+        ],
+        "en": [
+          "Down-to-earth",
+          "Dry land"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Cavaleiro de Copas fala de romance, sonhos e propostas.",
+      "Ele representa a busca guiada pelo coração e pela imaginação.",
+      "O foco dele é: transformar o sonho em ação."
+    ],
+    "en": [
+      "The Knight of Cups speaks of romance, dreams and proposals.",
+      "He stands for a quest guided by heart and imagination.",
+      "His focus: turning the dream into action."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "A busca do Santo Graal",
+          "Ir fundo no próprio mundo interior",
+          "Imaginação que leva à verdade"
+        ],
+        "en": [
+          "The quest for the Holy Grail",
+          "Going deep into your inner world",
+          "Imagination that leads to truth"
+        ]
+      },
+      "line": {
+        "pt": "“Sigo uma visão, não uma fuga.”",
+        "en": "“I follow a vision, not an escape.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Chegada, proposta, convite",
+          "Grandes visões de futuro",
+          "Emoções como motor"
+        ],
+        "en": [
+          "Arrival, proposal, invitation",
+          "Great visions of the future",
+          "Emotions as your motor"
+        ]
+      },
+      "line": {
+        "pt": "“As grandes emoções me movem.”",
+        "en": "“Great emotions move me.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Examinar as próprias crenças",
+          "Imaginação ou fantasia?",
+          "Mente aberta e desperta"
+        ],
+        "en": [
+          "Examining your beliefs",
+          "Imagination or fancy?",
+          "An open, awake mind"
+        ]
+      },
+      "line": {
+        "pt": "“Testo o que acredito.”",
+        "en": "“I test what I believe.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Paixões profundas e sublimes",
+          "Sonhador e romântico",
+          "Ou: narcisismo, passividade"
+        ],
+        "en": [
+          "Deep and sublime passions",
+          "Dreamer and romantic",
+          "Or: narcissism, passivity"
+        ]
+      },
+      "line": {
+        "pt": "“Sinto fundo, mas não me perco.”",
+        "en": "“I feel deeply, but I don't get lost.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Algo se aproxima",
+          "Um mensageiro",
+          "Visões de longo prazo"
+        ],
+        "en": [
+          "Something approaching",
+          "A messenger",
+          "Long-range visions"
+        ]
+      },
+      "line": {
+        "pt": "“O que sonhei vem chegando.”",
+        "en": "“What I dreamed is drawing near.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Coração e mente juntos no amor",
+          "Proposta amorosa",
+          "Ou: amante que não se compromete"
+        ],
+        "en": [
+          "Heart and mind together in love",
+          "A romantic proposal",
+          "Or: a lover who won't commit"
+        ]
+      },
+      "line": {
+        "pt": "“Amar é também se comprometer.”",
+        "en": "“Loving also means committing.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Evite credulidade e superstição",
+          "Investigue com abertura",
+          "Faça algo com seus sonhos"
+        ],
+        "en": [
+          "Avoid gullibility and superstition",
+          "Investigate with open eyes",
+          "Do something with your dreams"
+        ]
+      },
+      "line": {
+        "pt": "“Sonho que não age seca.”",
+        "en": "“A dream that never acts dries up.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Fuga para a fantasia",
+          "Engano, manipulação",
+          "Ressentir-se das responsabilidades"
+        ],
+        "en": [
+          "Escape into fantasy",
+          "Trickery, manipulation",
+          "Resenting responsibilities"
+        ]
+      },
+      "line": {
+        "pt": "“Quem foge do mundo leva o sonho junto.”",
+        "en": "“Fleeing the world, you take the dream with you.”"
+      }
+    }
+  ]
+}

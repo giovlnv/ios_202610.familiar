@@ -1,0 +1,448 @@
+{
+  "id": "cups01",
+  "number": "1",
+  "name": {
+    "pt": "Ás de Copas",
+    "en": "Ace of Cups"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Copas",
+    "en": "Minor Arcana – Cups"
+  },
+  "intro": {
+    "pt": "Uma mão sai de uma nuvem segurando uma taça da qual jorram cinco fios de água sobre um lago de lírios; uma pomba desce trazendo uma hóstia. É o presente da vida emocional: amor, alegria e a alma que se abre. Amor não se conquista, se recebe.",
+    "en": "A hand reaches out of a cloud holding a cup from which five streams pour into a pond of water lilies; a dove descends carrying a wafer. This is the gift of emotional life: love, joy and the soul opening. Love can't be seized, only received."
+  },
+  "symbols": [
+    {
+      "key": "dove",
+      "crop": {
+        "x": 0.47,
+        "y": 0.12,
+        "r": 0.15
+      },
+      "title": {
+        "pt": "Pomba com hóstia",
+        "en": "Dove with wafer"
+      },
+      "keywords": {
+        "pt": [
+          "O divino",
+          "Paz",
+          "Sabedoria e amor"
+        ],
+        "en": [
+          "The divine",
+          "Peace",
+          "Wisdom and love"
+        ]
+      }
+    },
+    {
+      "key": "cup",
+      "crop": {
+        "x": 0.47,
+        "y": 0.3,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Taça",
+        "en": "Cup"
+      },
+      "keywords": {
+        "pt": [
+          "O vaso da alma",
+          "Desejos, medos, sentimentos",
+          "Dar forma ao que se sente"
+        ],
+        "en": [
+          "The soul's vessel",
+          "Wishes, fears, feelings",
+          "Giving shape to feelings"
+        ]
+      }
+    },
+    {
+      "key": "streams",
+      "crop": {
+        "x": 0.48,
+        "y": 0.68,
+        "r": 0.22
+      },
+      "title": {
+        "pt": "Cinco jorros e gotas",
+        "en": "Five streams and drops"
+      },
+      "keywords": {
+        "pt": [
+          "Ligação com o rio da vida",
+          "Graça divina",
+          "Lágrimas humanas"
+        ],
+        "en": [
+          "Bond with the river of life",
+          "Divine grace",
+          "Human tears"
+        ]
+      }
+    },
+    {
+      "key": "hand",
+      "crop": {
+        "x": 0.42,
+        "y": 0.5,
+        "r": 0.24
+      },
+      "title": {
+        "pt": "Mão saindo da nuvem",
+        "en": "Hand from the cloud"
+      },
+      "keywords": {
+        "pt": [
+          "Um presente",
+          "Você é um presente",
+          "Ouça a língua dos sentimentos"
+        ],
+        "en": [
+          "A gift",
+          "You are a gift",
+          "Listen to the language of feeling"
+        ]
+      }
+    },
+    {
+      "key": "lilies",
+      "crop": {
+        "x": 0.25,
+        "y": 0.83,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Lírios d'água",
+        "en": "Water lilies"
+      },
+      "keywords": {
+        "pt": [
+          "Beleza que nasce do pântano",
+          "Pureza",
+          "Iluminação"
+        ],
+        "en": [
+          "Beauty rising from the swamp",
+          "Purity",
+          "Enlightenment"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Neutralidade",
+          "Ou: inconsciente"
+        ],
+        "en": [
+          "Neutrality",
+          "Or: unconscious"
+        ]
+      }
+    },
+    {
+      "hex": "#D4A93A",
+      "name": {
+        "pt": "Dourado",
+        "en": "Gold"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Eternidade"
+        ],
+        "en": [
+          "Consciousness",
+          "Eternity"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Água limpa",
+          "Espiritualidade"
+        ],
+        "en": [
+          "Clear water",
+          "Spirituality"
+        ]
+      }
+    },
+    {
+      "hex": "#F4F1EA",
+      "name": {
+        "pt": "Branco",
+        "en": "White"
+      },
+      "keywords": {
+        "pt": [
+          "Ponto de partida",
+          "Cura",
+          "Completude"
+        ],
+        "en": [
+          "Starting point",
+          "Healing",
+          "Completion"
+        ]
+      }
+    },
+    {
+      "hex": "#6E9A55",
+      "name": {
+        "pt": "Verde",
+        "en": "Green"
+      },
+      "keywords": {
+        "pt": [
+          "Frescor",
+          "Juventude"
+        ],
+        "en": [
+          "Freshness",
+          "Youth"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Ás de Copas fala de amor, alegria e vida interior.",
+      "Ele representa o presente da emoção que transborda.",
+      "O foco dele é: receber o amor e deixar os sentimentos fluírem."
+    ],
+    "en": [
+      "The Ace of Cups speaks of love, joy and inner life.",
+      "It stands for the gift of emotion overflowing.",
+      "Its focus: receiving love and letting feelings flow."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Batismo, nova vida",
+          "O Graal presente no mundo",
+          "O amor dá sentido a tudo"
+        ],
+        "en": [
+          "Baptism, a new life",
+          "The Grail present in the world",
+          "Love gives everything its value"
+        ]
+      },
+      "line": {
+        "pt": "“Bendito o que me faz sentir e fluir.”",
+        "en": "“Praise be to what makes me feel and flow.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Abundância e fertilidade",
+          "Integridade pessoal, não promessas",
+          "Ou: instabilidade"
+        ],
+        "en": [
+          "Abundance and fertility",
+          "Personal integrity, not promises",
+          "Or: instability"
+        ]
+      },
+      "line": {
+        "pt": "“Antes de prometer, sou inteiro.”",
+        "en": "“Before promising, I am whole.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Limpar o que turva os sentimentos",
+          "Separar o bom do ruim",
+          "Clarear as emoções"
+        ],
+        "en": [
+          "Clearing what muddies your feelings",
+          "Sorting good from bad",
+          "Clarifying emotions"
+        ]
+      },
+      "line": {
+        "pt": "“Sentimento claro, mente leve.”",
+        "en": "“Clear feelings, a light mind.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [
+          "Nutrição",
+          "Fluir",
+          "Purificação pela água"
+        ],
+        "en": [
+          "Nourishment",
+          "Flow",
+          "Cleansing by water"
+        ]
+      },
+      "line": {
+        "pt": "“A água me limpa.”",
+        "en": "“Water cleanses me.”"
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Tempo de felicidade e amor",
+          "Alegria e contentamento",
+          "Casa do coração verdadeiro"
+        ],
+        "en": [
+          "A time of happiness and love",
+          "Joy and contentment",
+          "House of the true heart"
+        ]
+      },
+      "line": {
+        "pt": "“Recebo o que a vida me dá.”",
+        "en": "“I receive what life gives me.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Começo de uma nova vida",
+          "Quando flui, a resposta vem",
+          "Ou: tempos que viram contra nós"
+        ],
+        "en": [
+          "Start of a new life",
+          "When it flows, the answer comes",
+          "Or: times turning against us"
+        ]
+      },
+      "line": {
+        "pt": "“A resposta vem quando eu deixo fluir.”",
+        "en": "“The answer comes when I let it flow.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Ligados a tudo e livres",
+          "Tensão e alívio na relação",
+          "Amor que não se força"
+        ],
+        "en": [
+          "Connected to everything, yet free",
+          "Tension and release in a relationship",
+          "Love that can't be forced"
+        ]
+      },
+      "line": {
+        "pt": "“Sou o mar e a taça.”",
+        "en": "“I am the ocean and the cup.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Receba, não agarre",
+          "Ouça seus sentimentos",
+          "Aceite o presente"
+        ],
+        "en": [
+          "Receive, don't grab",
+          "Listen to your feelings",
+          "Accept the gift"
+        ]
+      },
+      "line": {
+        "pt": "“Amor não se conquista, se acolhe.”",
+        "en": "“Love isn't conquered, it's welcomed.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Coração falso",
+          "Infelicidade por não ver o que se tem",
+          "Reagir com violência quando é preciso calma"
+        ],
+        "en": [
+          "A false heart",
+          "Unhappiness from not seeing what you have",
+          "Reacting violently when calm is needed"
+        ]
+      },
+      "line": {
+        "pt": "“A taça vazia às vezes é só não olhar.”",
+        "en": "“An empty cup is sometimes just not looking.”"
+      }
+    }
+  ]
+}

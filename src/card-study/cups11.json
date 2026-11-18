@@ -1,0 +1,416 @@
+{
+  "id": "cups11",
+  "number": "11",
+  "name": {
+    "pt": "Pajem de Copas",
+    "en": "Page of Cups"
+  },
+  "subtitle": {
+    "pt": "Arcano Menor – Copas",
+    "en": "Minor Arcana – Cups"
+  },
+  "intro": {
+    "pt": "Um jovem de roupa florida, com turbante azul, olha divertido para um peixe que sai da taça que ele segura; atrás dele, o mar. É a imaginação que ganha forma, a sensibilidade e os pequenos dons psíquicos. Um tempo em que sonhar e contemplar basta.",
+    "en": "A young man in a flowered tunic and blue turban looks amused at a fish rising from the cup he holds; behind him, the sea. This is imagination taking shape, sensitivity and budding psychic gifts. A time when dreaming and contemplating are enough."
+  },
+  "symbols": [
+    {
+      "key": "fish",
+      "crop": {
+        "x": 0.25,
+        "y": 0.3,
+        "r": 0.12
+      },
+      "title": {
+        "pt": "Peixe na taça",
+        "en": "Fish in the cup"
+      },
+      "keywords": {
+        "pt": [
+          "Imaginação que ganha forma",
+          "Acesso aos sonhos e visões",
+          "Ou: peixe fora d'água"
+        ],
+        "en": [
+          "Imagination taking form",
+          "Access to dreams and visions",
+          "Or: a fish out of water"
+        ]
+      }
+    },
+    {
+      "key": "face",
+      "crop": {
+        "x": 0.5,
+        "y": 0.22,
+        "r": 0.1
+      },
+      "title": {
+        "pt": "Turbante azul",
+        "en": "Blue turban"
+      },
+      "keywords": {
+        "pt": [
+          "Espiritualidade e sentimento",
+          "Cabeça fria",
+          "Ou: ilusão"
+        ],
+        "en": [
+          "Spirituality and feeling",
+          "A cool head",
+          "Or: wishful thinking"
+        ]
+      }
+    },
+    {
+      "key": "tunic",
+      "crop": {
+        "x": 0.55,
+        "y": 0.45,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Túnica de lírios",
+        "en": "Tunic of lilies"
+      },
+      "keywords": {
+        "pt": [
+          "Beleza e pureza",
+          "Valor da vida da alma",
+          "Ou: sem raízes"
+        ],
+        "en": [
+          "Beauty and purity",
+          "The worth of the soul's life",
+          "Or: rootless"
+        ]
+      }
+    },
+    {
+      "key": "legs",
+      "crop": {
+        "x": 0.5,
+        "y": 0.7,
+        "r": 0.2
+      },
+      "title": {
+        "pt": "Pernas e passo",
+        "en": "Stance and step"
+      },
+      "keywords": {
+        "pt": [
+          "Cortesia, um passo de cada vez",
+          "Ou: indecisão",
+          "Flexibilidade"
+        ],
+        "en": [
+          "Courtesy, one step at a time",
+          "Or: indecision",
+          "Flexibility"
+        ]
+      }
+    }
+  ],
+  "colours": [
+    {
+      "hex": "#B9B3AA",
+      "name": {
+        "pt": "Cinza",
+        "en": "Gray"
+      },
+      "keywords": {
+        "pt": [
+          "Neutralidade",
+          "Ou: inconsciente"
+        ],
+        "en": [
+          "Neutrality",
+          "Or: unconscious"
+        ]
+      }
+    },
+    {
+      "hex": "#A9C8DE",
+      "name": {
+        "pt": "Azul-claro",
+        "en": "Light blue"
+      },
+      "keywords": {
+        "pt": [
+          "Leveza",
+          "Sentimento",
+          "Ou: admiração demais"
+        ],
+        "en": [
+          "Cheer, lightness",
+          "Feeling",
+          "Or: too much admiration"
+        ]
+      }
+    },
+    {
+      "hex": "#C8402F",
+      "name": {
+        "pt": "Vermelho",
+        "en": "Red"
+      },
+      "keywords": {
+        "pt": [
+          "Desejo do coração",
+          "Paixão"
+        ],
+        "en": [
+          "Heart's desire",
+          "Passion"
+        ]
+      }
+    },
+    {
+      "hex": "#E8C547",
+      "name": {
+        "pt": "Amarelo",
+        "en": "Yellow"
+      },
+      "keywords": {
+        "pt": [
+          "Consciência",
+          "Alegria"
+        ],
+        "en": [
+          "Consciousness",
+          "Joy"
+        ]
+      }
+    },
+    {
+      "hex": "#5E7FA8",
+      "name": {
+        "pt": "Azul",
+        "en": "Blue"
+      },
+      "keywords": {
+        "pt": [
+          "Saudade",
+          "Sentimento"
+        ],
+        "en": [
+          "Longing",
+          "Sentiment"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pt": [
+      "O Pajem de Copas fala de imaginação, sensibilidade e mensagens.",
+      "Ele representa a fantasia leve que ainda não precisa agir.",
+      "O foco dele é: dizer o que o coração quer, sem deixar o peixe secar."
+    ],
+    "en": [
+      "The Page of Cups speaks of imagination, sensitivity and messages.",
+      "He stands for light fantasy that doesn't need to act yet.",
+      "His focus: saying what the heart wants, without letting the fish dry out."
+    ]
+  },
+  "planes": [
+    {
+      "id": "spiritual",
+      "title": {
+        "pt": "Plano Espiritual",
+        "en": "Spiritual"
+      },
+      "bullets": {
+        "pt": [
+          "Desejar com sucesso",
+          "Dons psíquicos que despertam",
+          "Meditação"
+        ],
+        "en": [
+          "Successful wishing",
+          "Psychic gifts awakening",
+          "Meditation"
+        ]
+      },
+      "line": {
+        "pt": "“Olho em paz para o peixe que sobe da minha taça.”",
+        "en": "“I look calmly at the fish rising from my cup.”"
+      }
+    },
+    {
+      "id": "material",
+      "title": {
+        "pt": "Plano Material (Trabalho & Dinheiro)",
+        "en": "Material (Work & Money)"
+      },
+      "bullets": {
+        "pt": [
+          "Notícia, mensagem",
+          "Estudo e reflexão a serviço do trabalho",
+          "Alguém disposto a servir"
+        ],
+        "en": [
+          "News, a message",
+          "Study and reflection applied to business",
+          "Someone keen to be of service"
+        ]
+      },
+      "line": {
+        "pt": "“Uma boa notícia está a caminho.”",
+        "en": "“Good news is on its way.”"
+      }
+    },
+    {
+      "id": "mental",
+      "title": {
+        "pt": "Plano Mental",
+        "en": "Mental"
+      },
+      "bullets": {
+        "pt": [
+          "Imagens da mente tomando forma",
+          "Entender sonhos e pressentimentos",
+          "Novas percepções"
+        ],
+        "en": [
+          "Pictures of the mind taking form",
+          "Understanding dreams and hunches",
+          "New insights"
+        ]
+      },
+      "line": {
+        "pt": "“Minha imaginação me ensina.”",
+        "en": "“My imagination teaches me.”"
+      }
+    },
+    {
+      "id": "physical",
+      "title": {
+        "pt": "Plano Físico / Saúde",
+        "en": "Physical / Health"
+      },
+      "bullets": {
+        "pt": [],
+        "en": []
+      },
+      "line": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "emotional",
+      "title": {
+        "pt": "Plano Emocional",
+        "en": "Emotional"
+      },
+      "bullets": {
+        "pt": [
+          "Fantasia leve",
+          "Empatia e compreensão",
+          "Ou: seduzir-se pelos desejos"
+        ],
+        "en": [
+          "Light fantasy",
+          "Empathy and understanding",
+          "Or: seduced by your desires"
+        ]
+      },
+      "line": {
+        "pt": "“Sinto, e não preciso explicar.”",
+        "en": "“I feel, and I don't need to explain.”"
+      }
+    },
+    {
+      "id": "timing",
+      "title": {
+        "pt": "Plano do Tempo (Timing)",
+        "en": "Timing"
+      },
+      "bullets": {
+        "pt": [
+          "Tempo de contemplar",
+          "Nada externo perturba",
+          "Novas percepções chegando"
+        ],
+        "en": [
+          "A time to contemplate",
+          "Nothing outside disturbs",
+          "New insights arriving"
+        ]
+      },
+      "line": {
+        "pt": "“Agora posso só sonhar.”",
+        "en": "“For now, I can just dream.”"
+      }
+    },
+    {
+      "id": "relational",
+      "title": {
+        "pt": "Plano Relacional (Amor, Família, Parcerias)",
+        "en": "Relationships (Love, Family, Partners)"
+      },
+      "bullets": {
+        "pt": [
+          "Pegue o coração pela mão",
+          "Defenda seus desejos",
+          "Ou: promessas que não se cumprem"
+        ],
+        "en": [
+          "Take your heart by the hand",
+          "Stand up for your desires",
+          "Or: promises you can't keep"
+        ]
+      },
+      "line": {
+        "pt": "“Falo o que meu coração quer.”",
+        "en": "“I say what my heart wants.”"
+      }
+    },
+    {
+      "id": "advice",
+      "title": {
+        "pt": "Plano do Conselho",
+        "en": "Advice"
+      },
+      "bullets": {
+        "pt": [
+          "Diga desejos e medos com clareza",
+          "Aja de acordo",
+          "Não deixe o peixe secar"
+        ],
+        "en": [
+          "State wishes and fears clearly",
+          "Act accordingly",
+          "Don't let the fish dry out"
+        ]
+      },
+      "line": {
+        "pt": "“O que fica só na taça seca.”",
+        "en": "“What stays only in the cup dries out.”"
+      }
+    },
+    {
+      "id": "challenge",
+      "title": {
+        "pt": "Atenção (lado desafiador da carta)",
+        "en": "Watch out (the card's challenging side)"
+      },
+      "bullets": {
+        "pt": [
+          "Agir sem pensar",
+          "Engano, sedução, artifício",
+          "Medo das próprias visões"
+        ],
+        "en": [
+          "Acting without thinking",
+          "Deception, seduction, artifice",
+          "Fear of your own visions"
+        ]
+      },
+      "line": {
+        "pt": "“Desejo do momento nem sempre é desejo meu.”",
+        "en": "“A passing whim isn't always my wish.”"
+      }
+    }
+  ]
+}
