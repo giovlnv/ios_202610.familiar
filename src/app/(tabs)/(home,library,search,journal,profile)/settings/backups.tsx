@@ -28,7 +28,7 @@ export default function Backups() {
     try {
       const r = await fn();
       if (typeof r === 'number') await refreshStreamingBooks().catch(() => 0);
-      if (ok) Alert.alert(ok, typeof r === 'number' ? tr("{0} book(s) restored.", { 0: r }) : undefined);
+      if (ok) Alert.alert(ok, typeof r === 'number' ? (r === 1 ? tr("1 book restored.") : tr("{0} books restored.", { 0: r })) : undefined);
     } catch (e) {
       Alert.alert(tr("Something went wrong"), String((e as Error).message ?? e));
     } finally {

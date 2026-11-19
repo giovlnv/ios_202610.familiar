@@ -33,13 +33,13 @@ export default function MiniPlayer() {
           </Text>
           <Text style={s.kind}>{explain ? tr("Explanation") : tr("Reading")}</Text>
         </Pressable>
-        <Pressable onPress={() => skip(-15)} hitSlop={8}>
+        <Pressable accessibilityRole="button" accessibilityLabel={tr("Back 15 seconds")} onPress={() => skip(-15)} hitSlop={8}>
           <Ionicons name="arrow-undo" size={22} color={c.text} />
         </Pressable>
-        <Pressable onPress={toggle} hitSlop={8}>
+        <Pressable accessibilityRole="button" accessibilityLabel={status.playing ? tr("Pause") : tr("Play")} onPress={toggle} hitSlop={8}>
           {preparing ? <ActivityIndicator color={c.gold} /> : <Ionicons name={status.playing ? 'pause' : 'play'} size={28} color={c.gold} />}
         </Pressable>
-        <Pressable onPress={stop} hitSlop={8}>
+        <Pressable accessibilityRole="button" accessibilityLabel={tr("Stop")} onPress={stop} hitSlop={8}>
           <Ionicons name="close" size={22} color={c.dim} />
         </Pressable>
       </View>

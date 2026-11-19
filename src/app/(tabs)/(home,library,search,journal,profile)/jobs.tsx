@@ -46,7 +46,7 @@ export default function Jobs() {
           <Stack.Screen
             options={{
               headerRight: () => (
-                <Pressable hitSlop={10} onPress={() => router.push('/add')}>
+                <Pressable accessibilityRole="button" accessibilityLabel={tr("Add")} hitSlop={10} onPress={() => router.push('/add')}>
                   <Ionicons name="add" size={26} color={c.gold} />
                 </Pressable>
               ),

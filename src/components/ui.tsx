@@ -1,4 +1,4 @@
-import { loc } from '../i18n';
+import { loc, t as tr } from '../i18n';
 import { useState } from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -33,11 +33,11 @@ export function Stars({
             {icon}
             <View style={StyleSheet.absoluteFill}>
               <View style={{ flexDirection: "row", flex: 1 }}>
-                <Pressable
+                <Pressable accessibilityRole="button" accessibilityLabel={tr("{n} stars", { n: i - 0.5 })}
                   style={{ flex: 1 }}
                   onPress={() => onChange(v === i - 0.5 ? undefined : i - 0.5)}
                 />
-                <Pressable
+                <Pressable accessibilityRole="button" accessibilityLabel={tr("{n} stars", { n: i })}
                   style={{ flex: 1 }}
                   onPress={() => onChange(v === i ? undefined : i)}
                 />
@@ -219,21 +219,21 @@ export function DateStepper({
   };
   return (
     <View style={s.stepper}>
-      <Pressable onPress={() => shift(-30)} hitSlop={6}>
+      <Pressable accessibilityRole="button" accessibilityLabel={tr("Back 30 days")} onPress={() => shift(-30)} hitSlop={6}>
         <Ionicons name="play-back-outline" size={18} color={c.dim} />
       </Pressable>
-      <Pressable onPress={() => shift(-1)} hitSlop={10}>
+      <Pressable accessibilityRole="button" accessibilityLabel={tr("Previous day")} onPress={() => shift(-1)} hitSlop={10}>
         <Ionicons name="chevron-back" size={22} color={c.gold} />
       </Pressable>
       <Text style={s.stepDate}>{fmtDate(value)}</Text>
-      <Pressable onPress={() => shift(1)} hitSlop={10}>
+      <Pressable accessibilityRole="button" accessibilityLabel={tr("Next day")} onPress={() => shift(1)} hitSlop={10}>
         <Ionicons
           name="chevron-forward"
           size={22}
           color={!max || value < max ? c.gold : c.line}
         />
       </Pressable>
-      <Pressable onPress={() => shift(30)} hitSlop={6}>
+      <Pressable accessibilityRole="button" accessibilityLabel={tr("Forward 30 days")} onPress={() => shift(30)} hitSlop={6}>
         <Ionicons name="play-forward-outline" size={18} color={c.dim} />
       </Pressable>
     </View>

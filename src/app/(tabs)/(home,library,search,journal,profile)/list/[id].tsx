@@ -68,10 +68,10 @@ export default function ListScreen() {
           title: list.name,
           headerRight: () => (
             <View style={{ flexDirection: 'row', gap: 18 }}>
-              <Pressable hitSlop={10} onPress={share}>
+              <Pressable accessibilityRole="button" accessibilityLabel={tr("Share list")} hitSlop={10} onPress={share}>
                 <Ionicons name="share-outline" size={22} color={c.gold} />
               </Pressable>
-              <Pressable
+              <Pressable accessibilityRole="button" accessibilityLabel={tr("List options")}
                 hitSlop={10}
                 onPress={() =>
                   Alert.alert(list.name, undefined, [
@@ -109,7 +109,7 @@ export default function ListScreen() {
               {!!x.b.authors[0] && <Text style={s.author}>{x.b.authors[0]}</Text>}
               {!!x.note && <Text style={s.note}>{x.note}</Text>}
             </View>
-            <Pressable hitSlop={8} onPress={() => menu(index)}>
+            <Pressable accessibilityRole="button" accessibilityLabel={tr("Move or remove")} hitSlop={8} onPress={() => menu(index)}>
               <Ionicons name="reorder-three-outline" size={22} color={c.dim} />
             </Pressable>
           </Pressable>
