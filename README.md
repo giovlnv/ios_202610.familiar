@@ -85,7 +85,7 @@ The pipeline lives in a separate **private** repository, because the books are c
 
 [`build-ios.yml`](.github/workflows/build-ios.yml) builds the app on GitHub's macOS runners when it is run by hand on `main` (or on a `v*` tag) and publishes `Familiar.ipa` under **Releases → latest**. Runs on other branches keep the `.ipa` as a workflow artifact. Input `variant`: `personal` (default) or `public`.
 
-Install with **AltStore Classic**: AltStore → My Apps → + (with the `.ipa` saved on the iPhone), or AltServer → Install AltStore → pick the `.ipa`. No cable is needed when AltServer runs on a computer on the same Wi-Fi.
+Install with **marsign** on ares (`giovlnv/linux_202610.marsign`): it signs the `.ipa` with the free Apple ID, installs it over Wi-Fi and re-signs it every week (`marsign-refresh.timer`). AltStore is no longer used.
 
 Every push to `main` runs [`checks.yml`](.github/workflows/checks.yml) (typecheck, lint with 0 warnings, iOS bundle) and then publishes an over-the-air update ([`ota.yml`](.github/workflows/ota.yml), EAS Update, runtime = app version). Only native changes need a new `.ipa`; they wait on a `reinstall` branch and bump `version` in `app.json`.
 
