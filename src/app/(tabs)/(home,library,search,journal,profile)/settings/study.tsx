@@ -46,7 +46,7 @@ export default function StudySettings() {
           </View>
           <View style={{ flexDirection: 'row', gap: 10 }}>
             {SUBJECT_COLORS.map((col) => (
-              <Pressable key={col} onPress={() => patchSubject(x.id, { color: col })} style={{ width: 26, height: 26, borderRadius: 13, backgroundColor: col, borderWidth: 2, borderColor: x.color === col ? c.text : 'transparent' }} />
+              <Pressable accessibilityRole="button" accessibilityLabel={col} key={col} onPress={() => patchSubject(x.id, { color: col })} style={{ width: 26, height: 26, borderRadius: 13, backgroundColor: col, borderWidth: 2, borderColor: x.color === col ? c.text : 'transparent' }} />
             ))}
           </View>
         </View>

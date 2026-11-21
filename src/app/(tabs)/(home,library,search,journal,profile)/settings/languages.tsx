@@ -148,7 +148,7 @@ export default function Languages() {
                           <Text style={ss.meta}>{busy.pct}%</Text>
                         ) : have ? (
                           !only && (
-                            <Pressable hitSlop={10} onPress={() => (removeVoice(l, x), refresh())}>
+                            <Pressable accessibilityRole="button" accessibilityLabel={tr("Remove voice")} hitSlop={10} onPress={() => (removeVoice(l, x), refresh())}>
                               <Ionicons name="trash-outline" size={17} color={c.dim} />
                             </Pressable>
                           )

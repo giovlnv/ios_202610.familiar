@@ -337,7 +337,7 @@ export default function Player({
   return (
     <SafeAreaView style={s.wrap} edges={["top", "bottom"]}>
       <View style={s.top}>
-        <Pressable onPress={onClose} hitSlop={12}>
+        <Pressable accessibilityRole="button" accessibilityLabel={tr("Close player")} onPress={onClose} hitSlop={12}>
           <Ionicons name="chevron-down" size={26} color={c.gold} />
         </Pressable>
         <View style={s.topRight}>
@@ -493,7 +493,7 @@ export default function Player({
             onPress={() => (t > 5 ? goTo(sec, 0) : sec > 0 && goTo(sec - 1, 0))}
           />
           <Btn icon="arrow-undo" label="15" onPress={() => skip(-15)} />
-          <Pressable style={s.play} onPress={toggle}>
+          <Pressable accessibilityRole="button" accessibilityLabel={status.playing ? tr("Pause") : tr("Play")} style={s.play} onPress={toggle}>
             {preparing ? (
               <ActivityIndicator color={c.bg} />
             ) : (

@@ -203,11 +203,11 @@ function Calendar({
   return (
     <View style={s.cal}>
       <View style={s.calHead}>
-        <Pressable hitSlop={10} onPress={() => shift(-1)}>
+        <Pressable accessibilityRole="button" accessibilityLabel={tr("Previous")} hitSlop={10} onPress={() => shift(-1)}>
           <Ionicons name="chevron-back" size={20} color={c.gold} />
         </Pressable>
         <Text style={s.calTitle}>{fmtDate(`${month}-15`, { month: 'long', year: 'numeric' })}</Text>
-        <Pressable hitSlop={10} onPress={() => shift(1)}>
+        <Pressable accessibilityRole="button" accessibilityLabel={tr("Next")} hitSlop={10} onPress={() => shift(1)}>
           <Ionicons name="chevron-forward" size={20} color={c.gold} />
         </Pressable>
       </View>

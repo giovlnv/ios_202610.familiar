@@ -193,7 +193,7 @@ export default function ReadingScreen() {
               <Text style={{ color: c.gold, fontSize: 16, fontWeight: '700' }}>{tr("Save")}</Text>
             </Pressable>
           ) : (
-            <Pressable
+            <Pressable accessibilityRole="button" accessibilityLabel={tr("Delete this reading?").replace("?", "")}
               hitSlop={10}
               onPress={() =>
                 Alert.alert(tr("Delete this reading?"), undefined, [
@@ -455,7 +455,7 @@ function PersonSheet({
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose} onShow={() => (setName(''), setDob(''), setBg(''))}>
       <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
-      <Pressable style={s.dimBg} onPress={onClose} />
+      <Pressable accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={onClose} />
       <View style={s.sheet}>
         <Text style={s.h2}>{tr("Reading for someone")}</Text>
         <TextInput style={s.input} value={name} onChangeText={setName} placeholder={tr("Name")} placeholderTextColor={c.dim} />

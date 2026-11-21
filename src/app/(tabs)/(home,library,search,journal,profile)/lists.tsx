@@ -29,7 +29,7 @@ export default function Lists() {
         <Stack.Screen
           options={{
             headerRight: () => (
-              <Pressable hitSlop={10} onPress={() => newList(open)}>
+              <Pressable accessibilityRole="button" accessibilityLabel={tr("New list")} hitSlop={10} onPress={() => newList(open)}>
                 <Ionicons name="add" size={26} color={c.gold} />
               </Pressable>
             ),

@@ -98,7 +98,7 @@ export default function EditProfile() {
                 {n.name}
                 {n.since ? tr("  ·  since {0}", { 0: showDate(n.since) }) : ''}
               </Text>
-              <Pressable hitSlop={8} onPress={() => setNames(names.filter((_, j) => j !== i))}>
+              <Pressable accessibilityRole="button" accessibilityLabel={tr("Remove name")} hitSlop={8} onPress={() => setNames(names.filter((_, j) => j !== i))}>
                 <Ionicons name="close-circle-outline" size={20} color={c.dim} />
               </Pressable>
             </View>
