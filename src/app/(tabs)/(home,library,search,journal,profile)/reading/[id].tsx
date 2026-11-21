@@ -487,7 +487,7 @@ const s = themed(() => ({
   dateRow: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 12, padding: 10 },
   time: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   timeText: { color: c.text, fontSize: 17, fontWeight: '600' },
-  label: { color: c.dim, fontSize: 13, textTransform: 'uppercase', letterSpacing: 1, marginTop: 18, marginBottom: 8 },
+  label: { color: c.dim, fontSize: 13, marginTop: 18, marginBottom: 8 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   dim: { color: c.dim, marginTop: 8 },
   slots: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 18 },

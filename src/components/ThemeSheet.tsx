@@ -101,7 +101,7 @@ const s = themed(() => ({
   swatch: { flexDirection: 'row', gap: 4, padding: 6, borderRadius: 10, borderWidth: 1 },
   dot: { width: 12, height: 12, borderRadius: 6 },
   name: { flex: 1, color: c.text, fontSize: 15 },
-  sub: { color: c.dim, fontSize: 13, fontWeight: '700', letterSpacing: 1, textTransform: 'uppercase', marginTop: 12 },
+  sub: { color: c.dim, fontSize: 13, fontWeight: '700', marginTop: 12 },
   icons: { gap: 12, paddingVertical: 8 },
   iconCell: { alignItems: 'center', gap: 6 },
   icon: { width: 58, height: 58, borderRadius: 13, borderWidth: 2, borderColor: 'transparent' },

@@ -164,7 +164,7 @@ export function ShapeCoatStep({ f, set }: StepProps) {
       )}
       {cat && (
         <>
-          <Label>{tr("COAT")}</Label>
+          <Label>{tr("Coat")}</Label>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8 }}>
             {COATS.map((co) => (
               <Card key={co.id} on={f.coat === co.id} style={s.coat} onPress={() => set({ coat: co.id })}>
@@ -175,11 +175,11 @@ export function ShapeCoatStep({ f, set }: StepProps) {
           </ScrollView>
         </>
       )}
-      <Label>{cat && f.coat === 'colourpoint' ? tr("POINTS COLOUR") : tr("COLOUR")}</Label>
+      <Label>{cat && f.coat === 'colourpoint' ? tr("Points colour") : tr("Colour")}</Label>
       <Swatches list={COLORS[f.species]} value={f.color} onPick={(hex) => set({ color: hex })} />
       {cat && f.coat === 'tabby' && (
         <>
-          <Label>{tr("STRIPES")}</Label>
+          <Label>{tr("Stripes")}</Label>
           <View style={s.swatches}>
             {STRIPES.map((x) => (
               <Pressable key={x.name} onPress={() => set({ stripe: x.hex || undefined })} style={{ alignItems: 'center', gap: 4 }} accessibilityLabel={`${x.name} stripes`}>
@@ -194,7 +194,7 @@ export function ShapeCoatStep({ f, set }: StepProps) {
       )}
       {cat && f.coat === 'colourpoint' && (
         <>
-          <Label>{tr("BODY COLOUR")}</Label>
+          <Label>{tr("Body colour")}</Label>
           <Swatches list={LIGHTS.map((hex) => ({ hex, name: hex }))} value={f.light ?? LIGHTS[0]} onPick={(hex) => set({ light: hex })} />
         </>
       )}
@@ -223,7 +223,7 @@ export function EyesMarkStep({ f, set }: StepProps) {
   return (
     <View style={{ gap: 14 }}>
       <Preview f={f} />
-      <Label>{tr("EYES")}</Label>
+      <Label>{tr("Eyes")}</Label>
       <View style={s.swatches}>
         {EYES.map((e) => (
           <Pressable key={e.hex} onPress={() => set({ eyes: e.hex })} style={{ alignItems: 'center', gap: 4 }}>
@@ -232,7 +232,7 @@ export function EyesMarkStep({ f, set }: StepProps) {
           </Pressable>
         ))}
       </View>
-      <Label>{tr("MARK")}</Label>
+      <Label>{tr("Mark")}</Label>
       <View style={s.row}>
         {MARKS.map((m) => (
           <Card key={m.id} on={f.mark === m.id} style={{ flex: 1, paddingVertical: 10 }} onPress={() => set({ mark: m.id })}>
@@ -243,7 +243,7 @@ export function EyesMarkStep({ f, set }: StepProps) {
       </View>
       {f.mark !== 'none' && (
         <>
-          <Label>{tr("MARK COLOUR")}</Label>
+          <Label>{tr("Mark colour")}</Label>
           <View style={s.swatches}>
             {MARK_COLORS.map((m) => (
               <Pressable key={m.hex} onPress={() => set({ markColor: m.hex })} style={{ alignItems: 'center', gap: 4 }} accessibilityLabel={m.name}>
@@ -266,7 +266,7 @@ export function NameStep({ f, set }: StepProps) {
       <View style={{ alignItems: 'center' }}>
         <FamiliarArt familiar={f} size={190} vial />
       </View>
-      <Label>{tr("NAME")}</Label>
+      <Label>{tr("Name")}</Label>
       <TextInput
         style={s.input}
         value={f.name}
@@ -289,7 +289,7 @@ export function NameStep({ f, set }: StepProps) {
 }
 
 export const s = themed(() => ({
-  label: { color: c.dim, fontSize: 11, fontWeight: '700', letterSpacing: 1 },
+  label: { color: c.dim, fontSize: 13, fontWeight: '700' },
   card: { backgroundColor: c.panel, borderRadius: 14, padding: 12, alignItems: 'center', gap: 4, borderWidth: 2, borderColor: 'transparent' },
   cardOn: { borderColor: c.gold },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },

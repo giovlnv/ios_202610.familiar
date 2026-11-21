@@ -69,7 +69,7 @@ export default function DiaryList({ header }: { header?: ReactElement }) {
 
 const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg },
-  month: { color: c.gold, fontWeight: '700', fontSize: 13, letterSpacing: 1, textTransform: 'uppercase', marginTop: 18, marginBottom: 6 },
+  month: { color: c.gold, fontWeight: '700', fontSize: 13, marginTop: 18, marginBottom: 6 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 8, borderBottomWidth: StyleSheet.hairlineWidth, borderColor: c.line },
   day: { color: c.text, fontSize: 22, fontWeight: '700', width: 28, textAlign: 'center' },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },

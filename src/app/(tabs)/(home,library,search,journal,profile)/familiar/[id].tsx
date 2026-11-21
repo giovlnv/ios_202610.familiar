@@ -89,7 +89,7 @@ function BasicEyes({ f, set }: { f: Familiar; set: (p: Partial<Familiar>) => voi
   return (
     <View style={{ gap: 14 }}>
       <ShapeCoatStep f={f} set={set} />
-      <Label>{tr("EYES")}</Label>
+      <Label>{tr("Eyes")}</Label>
       <View style={{ flexDirection: 'row', gap: 14 }}>
         {EYES.map((e) => (
           <Pressable

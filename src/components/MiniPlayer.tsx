@@ -65,6 +65,6 @@ const s = themed(() => ({
   fill: { height: 2, backgroundColor: c.gold },
   row: { flexDirection: 'row', alignItems: 'center', gap: 18, paddingHorizontal: 14, paddingTop: 10 },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },
-  kind: { color: c.gold, fontSize: 11, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1, marginTop: 2 },
+  kind: { color: c.gold, fontSize: 11, fontWeight: '700', marginTop: 2 },
   text: { color: c.text, fontSize: 15, lineHeight: 21, paddingHorizontal: 14, paddingTop: 8, paddingBottom: 12 },
 }));

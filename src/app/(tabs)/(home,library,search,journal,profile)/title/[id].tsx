@@ -656,8 +656,6 @@ const s = themed(() => ({
   label: {
     color: c.dim,
     fontSize: 13,
-    textTransform: "uppercase",
-    letterSpacing: 1,
     marginTop: 6,
   },
   dateRow: {

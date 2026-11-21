@@ -122,7 +122,7 @@ const s = themed(() => ({
   toggle: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 },
   used: { color: c.dim, fontSize: 15 },
   row: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between' },
-  big: { color: c.text, fontSize: 40, fontFamily: F.heading },
+  big: { color: c.text, fontSize: 40, fontFamily: F.heading, fontVariant: ['lining-nums'] },
   free: { color: c.dim, fontSize: 17 },
   bar: { flexDirection: 'row', height: 14, borderRadius: 7, overflow: 'hidden', borderWidth: 1, borderColor: c.line, backgroundColor: c.raised, gap: 1 },
   legend: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },

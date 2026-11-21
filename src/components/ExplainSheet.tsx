@@ -151,7 +151,7 @@ const s = themed(() => ({
   meta: { color: c.gold, fontSize: 13 },
   passage: { color: c.text, fontSize: 17, lineHeight: 26, backgroundColor: c.panel, borderRadius: 12, padding: 12 },
   hint: { color: c.dim, fontSize: 13 },
-  label: { color: c.dim, fontSize: 13, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1 },
+  label: { color: c.dim, fontSize: 13, fontWeight: '700' },
   card: { backgroundColor: c.panel, borderRadius: 12, padding: 12, gap: 8 },
   text: { color: c.explain, fontSize: 17, lineHeight: 25 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },

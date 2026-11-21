@@ -131,7 +131,7 @@ const s = themed(() => ({
   drop: { alignItems: 'center', gap: 8, paddingVertical: 28, borderRadius: 14, borderWidth: 1, borderStyle: 'dashed', borderColor: c.line },
   dropTitle: { color: c.text, fontSize: 15, fontWeight: '600', textAlign: 'center', paddingHorizontal: 12 },
   dim: { color: c.dim, fontSize: 13 },
-  label: { color: c.dim, fontSize: 13, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1, marginTop: 4 },
+  label: { color: c.dim, fontSize: 13, fontWeight: '700', marginTop: 4 },
   input: { backgroundColor: c.panel, color: c.text, borderRadius: 10, padding: 12, fontSize: 15 },
   row: { flexDirection: 'row', gap: 8 },
   small: { color: c.dim, fontSize: 13, lineHeight: 18 },

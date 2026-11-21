@@ -96,7 +96,7 @@ const s = themed(() => ({
   sheet: { backgroundColor: c.panel, padding: 16, paddingBottom: 36, borderTopLeftRadius: 18, borderTopRightRadius: 18, gap: 12 },
   h2: { color: c.text, fontSize: 22, fontFamily: F.heading },
   dim: { color: c.dim, fontSize: 13 },
-  label: { color: c.dim, fontSize: 13, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1 },
+  label: { color: c.dim, fontSize: 13, fontWeight: '700' },
   wrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   chip: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingVertical: 6, paddingHorizontal: 12, borderRadius: 16, backgroundColor: c.raised },
   chipText: { color: c.text, fontSize: 13 },

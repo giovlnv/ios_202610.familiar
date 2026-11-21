@@ -107,7 +107,7 @@ const s = themed(() => ({
   emptyNum: { color: c.dim, fontSize: 11 },
   num: { color: c.dim, fontSize: 11, marginTop: 1 },
   info: { backgroundColor: c.panel, borderRadius: 12, padding: 12, gap: 4 },
-  infoHead: { color: c.gold, fontSize: 13, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1 },
+  infoHead: { color: c.gold, fontSize: 13, fontWeight: '700' },
   infoText: { color: c.text, fontSize: 15, lineHeight: 21 },
   more: { flexDirection: 'row', alignItems: 'center', gap: 2, alignSelf: 'flex-end' },
   moreText: { color: c.gold, fontWeight: '600', fontSize: 13 },

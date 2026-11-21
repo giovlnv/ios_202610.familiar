@@ -175,7 +175,7 @@ export default function Onboarding() {
         return (
           <>
             <Head title={tr("Your study helpers")} sub={tr("Claude writes the explanations; GitHub makes the voices; ares keeps your backups.")} />
-            <Label>{tr("GITHUB KEY")}</Label>
+            <Label>{tr("GitHub key")}</Label>
             <TextInput
               style={fs.input}
               value={key}
@@ -186,7 +186,7 @@ export default function Onboarding() {
               autoCorrect={false}
               secureTextEntry
             />
-            <Label>{tr("CLAUDE CHAT FOR QUESTIONS")}</Label>
+            <Label>{tr("Claude chat for questions")}</Label>
             <TextInput
               style={fs.input}
               value={link}
@@ -204,13 +204,13 @@ export default function Onboarding() {
         return (
           <>
             <Head title={tr("A little about you")} sub={tr("Optional. Used for astrology and numerology, never shared.")} />
-            <Label>{tr("BIRTH DATE")}</Label>
+            <Label>{tr("Birth date")}</Label>
             <DateInput style={fs.input} value={dob} onChange={setDob} />
-            <Label>{tr("BIRTH TIME")}</Label>
+            <Label>{tr("Birth time")}</Label>
             <TimeInput style={[fs.input, { maxWidth: 160 }]} value={birthTime} onChange={setBirthTime} />
-            <Label>{tr("BIRTH PLACE")}</Label>
+            <Label>{tr("Birth place")}</Label>
             <PlaceField value={place?.label ?? ''} onPick={setPlace} language={language} />
-            <Label>{tr("LANGUAGE")}</Label>
+            <Label>{tr("Language")}</Label>
             <View style={fs.row}>
               {[
                 ['en', 'English'],
@@ -219,7 +219,7 @@ export default function Onboarding() {
                 <Pill key={id} label={name} on={language === id} onPress={() => setLanguage(id)} />
               ))}
             </View>
-            <Label>{tr("WHAT ARE YOU HOPING FOR?")}</Label>
+            <Label>{tr("What are you hoping for?")}</Label>
             <View style={[fs.row, { flexWrap: 'wrap' }]}>
               {GOALS.map((g) => (
                 <Pill key={g} label={g} on={goals.includes(g)} onPress={() => setGoals(toggle(goals, g))} />
@@ -300,7 +300,7 @@ export default function Onboarding() {
 function EyesOnly({ f, set }: { f: Familiar; set: (p: Partial<Familiar>) => void }) {
   return (
     <>
-      <Label>{tr("EYES")}</Label>
+      <Label>{tr("Eyes")}</Label>
       <View style={fs.swatches}>
         {EYES.map((e) => (
           <Pressable key={e.hex} accessibilityLabel={e.name} onPress={() => set({ eyes: e.hex })} style={[fs.swatch, { backgroundColor: e.hex }, f.eyes === e.hex && fs.swatchOn]} />

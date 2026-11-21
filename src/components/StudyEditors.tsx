@@ -134,7 +134,7 @@ const s = themed(() => ({
   title: { color: c.text, fontFamily: F.heading, fontSize: 22 },
   link: { color: c.gold, fontSize: 17, fontWeight: '600' },
   dim: { color: c.dim, fontSize: 17 },
-  label: { color: c.dim, fontSize: 13, fontWeight: '700', letterSpacing: 1, textTransform: 'uppercase', marginTop: 6 },
+  label: { color: c.dim, fontSize: 13, fontWeight: '700', marginTop: 6 },
   meta: { color: c.dim, fontSize: 13 },
   input: { backgroundColor: c.panel, color: c.text, borderRadius: 10, padding: 12, fontSize: 17, textAlignVertical: 'top' },
   noteTitle: { fontFamily: F.heading, fontSize: 17 },

@@ -55,7 +55,7 @@ export const ss = themed(() => ({
   p: { color: c.dim, lineHeight: 20, marginBottom: 10 },
   card: { backgroundColor: c.panel, borderRadius: 12, padding: 14, gap: 10, marginBottom: 12 },
   meta: { color: c.dim, fontSize: 15 },
-  label: { color: c.dim, fontSize: 13, fontWeight: '700', letterSpacing: 1, textTransform: 'uppercase', marginTop: 4 },
+  label: { color: c.dim, fontSize: 13, fontWeight: '700', marginTop: 4 },
   input: { backgroundColor: c.bg, color: c.text, borderRadius: 10, padding: 12, fontSize: 15 },
   row: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   modes: { flexDirection: 'row', backgroundColor: c.panel, borderRadius: 10, padding: 3, marginBottom: 10 },

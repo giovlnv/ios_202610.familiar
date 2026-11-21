@@ -173,7 +173,7 @@ const s = themed(() => ({
   dim: { color: c.dim, fontSize: 13, marginBottom: 8 },
   h2: { color: c.text, fontSize: 22, fontFamily: F.heading },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 10, borderBottomWidth: StyleSheet.hairlineWidth, borderColor: c.line },
-  rank: { color: c.gold, fontSize: 28, fontFamily: F.heading, width: 32, textAlign: 'center' },
+  rank: { color: c.gold, fontSize: 28, fontFamily: F.heading, fontVariant: ['lining-nums'], width: 32, textAlign: 'center' },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },
   author: { color: c.gold, fontSize: 13 },
   note: { color: c.dim, fontSize: 13, fontStyle: 'italic' },
@@ -182,6 +182,6 @@ const s = themed(() => ({
   shareCard: { width: 390, backgroundColor: c.bg, padding: 24, gap: 14 },
   shareTitle: { color: c.gold, fontSize: 28, fontFamily: F.heading },
   shareRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  shareRank: { color: c.gold, fontSize: 22, fontFamily: F.heading, width: 28, textAlign: 'center' },
+  shareRank: { color: c.gold, fontSize: 22, fontFamily: F.heading, fontVariant: ['lining-nums'], width: 28, textAlign: 'center' },
   brand: { color: c.dim, fontSize: 13, textAlign: 'right', marginTop: 6 },
 }));

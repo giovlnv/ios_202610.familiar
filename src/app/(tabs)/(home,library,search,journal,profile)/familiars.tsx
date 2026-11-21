@@ -30,7 +30,7 @@ export default function Familiars() {
                   <Text style={s.title}>{f.name}</Text>
                   {on && (
                     <View style={s.badge}>
-                      <Text style={s.badgeText}>{tr("WITH YOU")}</Text>
+                      <Text style={s.badgeText}>{tr("With you")}</Text>
                     </View>
                   )}
                 </View>

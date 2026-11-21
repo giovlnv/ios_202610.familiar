@@ -220,7 +220,7 @@ const s = themed(() => ({
   h1: { color: c.text, fontSize: 22, fontFamily: F.heading },
   dim: { color: c.dim, fontSize: 13 },
   p: { color: c.text, fontSize: 15, lineHeight: 21 },
-  label: { color: c.dim, fontSize: 13, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1, marginTop: 8 },
+  label: { color: c.dim, fontSize: 13, fontWeight: '700', marginTop: 8 },
   card: { backgroundColor: c.panel, borderRadius: 12, padding: 14, gap: 10 },
   stepRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
   step: { color: c.text, fontSize: 15 },

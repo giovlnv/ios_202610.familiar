@@ -196,7 +196,7 @@ export function StudyDay({ id }: { id: string }) {
   if (!sub) return null;
   return (
     <View style={{ gap: 10, paddingVertical: 6 }}>
-      <Text style={[s.small, { color: sub.color, fontWeight: '700', letterSpacing: 1, textTransform: 'uppercase' }]}>{sub.name}</Text>
+      <Text style={[s.small, { color: sub.color, fontWeight: '700' }]}>{sub.name}</Text>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
         <View style={{ flex: 1 }}>
           <Text style={s.big}>{due}</Text>
