@@ -99,5 +99,5 @@ const s = themed(() => ({
   input: { backgroundColor: c.panel, color: c.text, borderRadius: 12, padding: 14, fontSize: 17, marginBottom: 8 },
   row: { flexDirection: 'row', gap: 12, alignItems: 'center', paddingVertical: 8, borderBottomWidth: StyleSheet.hairlineWidth, borderColor: c.line },
   title: { color: c.text, fontSize: 17, fontWeight: '600' },
-  dim: { color: c.dim, marginTop: 2 },
+  dim: { fontSize: 15, color: c.dim, marginTop: 2 },
 }));

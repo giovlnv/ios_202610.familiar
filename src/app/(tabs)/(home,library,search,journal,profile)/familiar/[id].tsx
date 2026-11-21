@@ -110,7 +110,7 @@ const s = themed(() => ({
   save: { color: c.gold, fontSize: 17, fontWeight: '600' },
   tab: { backgroundColor: c.panel, borderRadius: 999, paddingHorizontal: 14, paddingVertical: 8 },
   tabOn: { backgroundColor: c.gold },
-  tabText: { color: c.text, fontWeight: '600' },
+  tabText: { fontSize: 15, color: c.text, fontWeight: '600' },
   p: { color: c.dim, fontSize: 15, lineHeight: 21 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 14, padding: 14 },
   dot: { width: 14, height: 14, borderRadius: 7 },

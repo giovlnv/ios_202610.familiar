@@ -159,7 +159,7 @@ export default function SystemScreen() {
 
 const s = themed(() => ({
   row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10 },
-  link: { color: c.gold, fontWeight: '600' },
+  link: { fontSize: 15, color: c.gold, fontWeight: '600' },
   swatch: { width: 30, height: 30, borderRadius: 15, borderWidth: 2, borderColor: 'transparent' },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
   name: { color: c.dim, fontSize: 13, marginTop: 4 },

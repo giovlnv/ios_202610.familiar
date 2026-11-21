@@ -490,7 +490,7 @@ const s = themed(() => ({
   timeText: { color: c.text, fontSize: 17, fontWeight: '600' },
   label: { color: c.dim, fontSize: 13, marginTop: 18, marginBottom: 8 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  dim: { color: c.dim, marginTop: 8 },
+  dim: { fontSize: 15, color: c.dim, marginTop: 8 },
   slots: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 18 },
   empty: { borderWidth: 1, borderStyle: 'dashed', borderColor: c.line, borderRadius: 6, alignItems: 'center', justifyContent: 'center' },
   pos: { color: c.dim, fontSize: 13 },

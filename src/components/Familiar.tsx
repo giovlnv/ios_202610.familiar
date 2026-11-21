@@ -303,7 +303,7 @@ export const s = themed(() => ({
   seg: { flexDirection: 'row', backgroundColor: c.panel, borderRadius: 12, padding: 4, gap: 4 },
   segItem: { flex: 1, paddingVertical: 9, borderRadius: 9, alignItems: 'center' },
   segOn: { backgroundColor: c.gold },
-  segText: { color: c.text, fontWeight: '600' },
+  segText: { fontSize: 15, color: c.text, fontWeight: '600' },
   segTextOn: { color: c.bg },
   coat: { width: 76, paddingVertical: 6 },
   swatches: { flexDirection: 'row', gap: 14, flexWrap: 'wrap' },

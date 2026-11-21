@@ -251,7 +251,7 @@ const s = themed(() => ({
   views: { flexDirection: 'row', backgroundColor: c.panel, borderRadius: 10, padding: 3 },
   view: { flex: 1, flexDirection: 'row', gap: 6, alignItems: 'center', justifyContent: 'center', paddingVertical: 7, borderRadius: 8 },
   viewOn: { backgroundColor: c.gold },
-  viewText: { color: c.dim, fontWeight: '600' },
+  viewText: { fontSize: 15, color: c.dim, fontWeight: '600' },
   chips: { gap: 8, paddingTop: 12 },
   day: { color: c.gold, fontWeight: '700', fontSize: 13, marginTop: 18, marginBottom: 8 },
   cal: { backgroundColor: c.panel, borderRadius: 12, padding: 12, marginTop: 12 },

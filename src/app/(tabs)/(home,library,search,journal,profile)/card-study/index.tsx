@@ -72,7 +72,7 @@ const s = themed(() => ({
   count: { color: c.dim, fontSize: 13, marginTop: 4 },
   start: { backgroundColor: c.gold, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 28, marginTop: 12 },
   startText: { color: c.bg, fontWeight: '700', fontSize: 17 },
-  link: { color: c.gold, fontWeight: '600', marginTop: 12 },
+  link: { fontSize: 15, color: c.gold, fontWeight: '600', marginTop: 12 },
   h2: { color: c.text, fontSize: 22, marginTop: 24, marginBottom: 8, fontFamily: F.heading },
   small: { color: c.dim, fontSize: 13 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 12, padding: 12, marginBottom: 6 },

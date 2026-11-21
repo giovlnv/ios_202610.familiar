@@ -307,5 +307,5 @@ const s = themed(() => ({
   empty: { backgroundColor: c.raised, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: c.line },
   initial: { color: c.gold, fontWeight: '700' },
   name: { color: c.text, fontSize: 22, fontFamily: F.heading },
-  user: { color: c.dim, marginTop: 2 },
+  user: { fontSize: 15, color: c.dim, marginTop: 2 },
 }));

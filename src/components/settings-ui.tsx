@@ -53,7 +53,7 @@ export function MenuRow({ icon, title, sub, to }: { icon: keyof typeof Ionicons.
 export const ss = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg },
   h2: { color: c.text, fontSize: 17, marginTop: 12, marginBottom: 6, fontFamily: F.heading },
-  p: { color: c.dim, lineHeight: 20, marginBottom: 10 },
+  p: { fontSize: 15, color: c.dim, lineHeight: 21, marginBottom: 10 },
   card: { backgroundColor: c.panel, borderRadius: 12, padding: 14, gap: 10, marginBottom: 12 },
   meta: { color: c.dim, fontSize: 15 },
   label: { color: c.dim, fontSize: 13, fontWeight: '700', marginTop: 4 },
@@ -69,7 +69,7 @@ export const ss = themed(() => ({
   paletteName: { color: c.text, fontSize: 15, flex: 1 },
   btn: { backgroundColor: c.raised, paddingVertical: 11, paddingHorizontal: 14, borderRadius: 10 },
   btnPrimary: { backgroundColor: c.gold },
-  btnText: { color: c.text },
+  btnText: { fontSize: 15, color: c.text },
   btnTextPrimary: { color: c.bg, fontWeight: '700' },
   menu: { backgroundColor: c.panel, borderRadius: 14, overflow: 'hidden', marginBottom: 14 },
   menuRow: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 14, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: c.line + '66' },

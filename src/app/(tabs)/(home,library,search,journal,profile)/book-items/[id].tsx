@@ -141,7 +141,7 @@ const s = themed(() => ({
   title: { color: c.text, fontSize: 17, fontFamily: F.heading },
   text: { color: c.dim, fontSize: 15, lineHeight: 20 },
   quote: { color: c.text, fontSize: 15, fontStyle: 'italic', lineHeight: 20 },
-  meta: { color: c.dim, padding: 16 },
+  meta: { fontSize: 15, color: c.dim, padding: 16 },
   go: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, backgroundColor: c.gold, borderRadius: 12, paddingVertical: 12, marginBottom: 6 },
   goText: { color: c.bg, fontWeight: '700', fontSize: 15 },
 }));

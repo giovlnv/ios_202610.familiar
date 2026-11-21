@@ -97,7 +97,7 @@ const s = themed(() => ({
   modes: { flexDirection: 'row', gap: 6, backgroundColor: c.bg, borderRadius: 12, padding: 4, marginBottom: 8 },
   mode: { flex: 1, flexDirection: 'row', gap: 6, alignItems: 'center', justifyContent: 'center', paddingVertical: 9, borderRadius: 9 },
   modeOn: { backgroundColor: c.gold },
-  modeText: { color: c.dim, fontWeight: '600' },
+  modeText: { fontSize: 15, color: c.dim, fontWeight: '600' },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 10 },
   swatch: { flexDirection: 'row', gap: 4, padding: 6, borderRadius: 10, borderWidth: 1 },
   dot: { width: 12, height: 12, borderRadius: 6 },

@@ -47,8 +47,8 @@ export default function StudyPage() {
 }
 
 const s = themed(() => ({
-  dim: { color: c.dim, lineHeight: 20 },
+  dim: { fontSize: 15, color: c.dim, lineHeight: 21 },
   nav: { flexDirection: 'row', justifyContent: 'space-between', gap: 10, marginTop: 24 },
   btn: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: c.panel, borderRadius: 12, padding: 12, maxWidth: '50%' },
-  btnText: { color: c.gold, fontWeight: '600', flexShrink: 1 },
+  btnText: { fontSize: 15, color: c.gold, fontWeight: '600', flexShrink: 1 },
 }));

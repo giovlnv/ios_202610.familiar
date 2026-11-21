@@ -98,5 +98,5 @@ const s = themed(() => ({
   card: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 12, padding: 14 },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },
   dim: { color: c.dim, fontSize: 13 },
-  err: { color: c.claude, marginBottom: 10 },
+  err: { fontSize: 15, color: c.claude, marginBottom: 10 },
 }));

@@ -166,5 +166,5 @@ const s = themed(() => ({
   answer: { minHeight: 140, color: c.text, fontSize: 17, lineHeight: 25, backgroundColor: c.panel, borderRadius: 12, padding: 12, textAlignVertical: 'top' },
   btn: { borderRadius: 12, padding: 12, alignItems: 'center', backgroundColor: c.panel },
   btnOn: { backgroundColor: c.gold },
-  btnText: { color: c.text, fontWeight: '700' },
+  btnText: { fontSize: 15, color: c.text, fontWeight: '700' },
 }));

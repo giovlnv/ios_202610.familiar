@@ -359,7 +359,7 @@ const s = themed(() => ({
   badgeOk: { backgroundColor: c.claude, color: c.bg },
   badgeWait: { backgroundColor: c.line, color: c.text },
   question: { color: c.text, fontSize: 17, marginTop: 6 },
-  quote: { color: c.dim, fontStyle: 'italic' },
+  quote: { fontSize: 15, color: c.dim, fontStyle: 'italic' },
   answer: { color: c.text, fontSize: 17, lineHeight: 26 },
   actions: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   btn: { backgroundColor: c.raised, paddingVertical: 10, paddingHorizontal: 12, borderRadius: 10 },

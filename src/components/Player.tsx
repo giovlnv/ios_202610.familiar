@@ -1002,7 +1002,7 @@ const s = themed(() => ({
     paddingVertical: 10,
     borderRadius: 20,
   },
-  followText: { color: c.bg, fontWeight: "700" },
+  followText: { fontSize: 15, color: c.bg, fontWeight: "700" },
   controls: {
     borderTopWidth: 1,
     borderColor: c.line,
@@ -1063,7 +1063,7 @@ const s = themed(() => ({
     marginBottom: 10,
   },
   noteMeta: { color: c.gold, fontSize: 13, marginBottom: 6 },
-  quote: { color: c.dim, fontStyle: "italic", marginBottom: 8 },
+  quote: { fontSize: 15, color: c.dim, fontStyle: "italic", marginBottom: 8 },
   dim: { flex: 1, backgroundColor: "#000a", justifyContent: "flex-end" },
   sheet: {
     backgroundColor: c.panel,

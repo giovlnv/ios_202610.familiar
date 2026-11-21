@@ -64,7 +64,7 @@ export default function BookSearch() {
 const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
   input: { backgroundColor: c.panel, color: c.text, borderRadius: 10, padding: 12, fontSize: 17, marginTop: 12 },
-  count: { color: c.dim, marginTop: 12 },
+  count: { fontSize: 15, color: c.dim, marginTop: 12 },
   row: { flexDirection: 'row', gap: 12, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: c.line + '66' },
   book: { color: c.dim, fontSize: 13, marginBottom: 2 },
   text: { color: c.text, fontSize: 15, lineHeight: 21 },

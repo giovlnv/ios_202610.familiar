@@ -204,12 +204,12 @@ const s = themed(() => ({
     padding: 12,
     marginTop: 10,
   },
-  bannerText: { color: c.gold, textAlign: "center" },
+  bannerText: { fontSize: 15, color: c.gold, textAlign: "center" },
   filters: { gap: 8, paddingVertical: 12 },
   views: { flexDirection: "row", backgroundColor: c.panel, borderRadius: 10, padding: 3, marginTop: 10 },
   view: { flex: 1, flexDirection: "row", gap: 6, alignItems: "center", justifyContent: "center", paddingVertical: 7, borderRadius: 8 },
   viewOn: { backgroundColor: c.gold },
-  viewText: { color: c.dim, fontWeight: "600" },
+  viewText: { fontSize: 15, color: c.dim, fontWeight: "600" },
   empty: { color: c.dim, fontSize: 17, lineHeight: 23, marginTop: 20 },
   title: { color: c.text, fontSize: 13, marginTop: 6, marginBottom: 3 },
   import: {
@@ -223,5 +223,5 @@ const s = themed(() => ({
     borderWidth: 1,
     borderColor: c.line,
   },
-  importText: { color: c.gold, fontWeight: "600" },
+  importText: { fontSize: 15, color: c.gold, fontWeight: "600" },
 }));

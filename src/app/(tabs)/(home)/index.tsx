@@ -505,7 +505,7 @@ const s = themed(() => ({
   listen: { flexDirection: 'row', gap: 12, alignItems: 'center', backgroundColor: c.panel, borderRadius: 12, padding: 10, marginBottom: 8 },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },
   small: { color: c.text, fontSize: 13, marginTop: 5 },
-  dim: { color: c.dim, marginTop: 2 },
+  dim: { fontSize: 15, color: c.dim, marginTop: 2 },
   bar: { height: 3, backgroundColor: c.line, borderRadius: 2, marginTop: 8, overflow: 'hidden' },
   barFill: { height: 3, backgroundColor: c.gold },
   log: { flexDirection: 'row', gap: 12, alignItems: 'center', paddingVertical: 8, borderBottomWidth: StyleSheet.hairlineWidth, borderColor: c.line },
