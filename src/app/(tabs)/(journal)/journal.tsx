@@ -11,7 +11,7 @@ import ReadingRow from '../../../components/ReadingRow';
 import CardSheet from '../../../components/CardSheet';
 import { Chip, fmtDate } from '../../../components/ui';
 import { usePad } from '../../../playback';
-import { c, themed } from '../../../theme';
+import { c, F, themed } from '../../../theme';
 import EmptyState from '../../../components/EmptyState';
 import StudyJournal, { JournalTabs } from '../../../components/StudyJournal';
 import { isSubject, useStudy } from '../../../study';
@@ -246,7 +246,7 @@ const s = themed(() => ({
   searchInput: { flex: 1, color: c.text, fontSize: 15, paddingVertical: 10 },
   tileLabel: { color: c.dim, fontSize: 13 },
   tileCard: { color: c.text, fontSize: 13, fontWeight: '600', textAlign: 'center', paddingHorizontal: 4 },
-  big: { color: c.gold, fontSize: 40, fontWeight: '700' },
+  big: { color: c.gold, fontSize: 40, fontFamily: F.heading },
   views: { flexDirection: 'row', backgroundColor: c.panel, borderRadius: 10, padding: 3 },
   view: { flex: 1, flexDirection: 'row', gap: 6, alignItems: 'center', justifyContent: 'center', paddingVertical: 7, borderRadius: 8 },
   viewOn: { backgroundColor: c.gold },

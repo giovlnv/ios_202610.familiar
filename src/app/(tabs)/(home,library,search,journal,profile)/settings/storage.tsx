@@ -4,7 +4,7 @@ import { Alert, Switch, Text, View } from 'react-native';
 import { bookSizes, clearCache, freeSpace, listBooks, mb, storageBreakdown, totalSpace } from '../../../../storage';
 import { removeUnusedVoices, unusedVoices } from '../../../../languages';
 import { Btn, Page, ss } from '../../../../components/settings-ui';
-import { c, read, themed, write } from '../../../../theme';
+import { c, F, read, themed, write } from '../../../../theme';
 
 const gb = (b: number) => (b >= 1e9 ? `${(b / 1e9).toFixed(2)} GB` : mb(b));
 
@@ -122,7 +122,7 @@ const s = themed(() => ({
   toggle: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 },
   used: { color: c.dim, fontSize: 15 },
   row: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between' },
-  big: { color: c.text, fontSize: 40, fontWeight: '700' },
+  big: { color: c.text, fontSize: 40, fontFamily: F.heading },
   free: { color: c.dim, fontSize: 17 },
   bar: { flexDirection: 'row', height: 14, borderRadius: 7, overflow: 'hidden', borderWidth: 1, borderColor: c.line, backgroundColor: c.raised, gap: 1 },
   legend: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },

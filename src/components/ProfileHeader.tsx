@@ -305,6 +305,6 @@ const s = themed(() => ({
   cardName: { color: c.text, fontSize: 13, fontFamily: F.heading, textAlign: 'center' },
   empty: { backgroundColor: c.raised, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: c.line },
   initial: { color: c.gold, fontWeight: '700' },
-  name: { color: c.text, fontSize: 22, fontWeight: '700' },
+  name: { color: c.text, fontSize: 22, fontFamily: F.heading },
   user: { color: c.dim, marginTop: 2 },
 }));

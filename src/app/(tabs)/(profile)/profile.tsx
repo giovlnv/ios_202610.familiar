@@ -380,7 +380,7 @@ const s = themed(() => ({
     borderRadius: 12,
     padding: 12,
   },
-  tileNum: { color: c.gold, fontSize: 22, fontWeight: "800" },
+  tileNum: { color: c.gold, fontSize: 22, fontFamily: F.heading },
   tileLabel: { color: c.dim, fontSize: 13, marginTop: 2 },
   headRow: {
     flexDirection: "row",

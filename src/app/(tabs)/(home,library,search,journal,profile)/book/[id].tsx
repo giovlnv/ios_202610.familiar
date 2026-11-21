@@ -110,7 +110,7 @@ const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
   empty: { color: c.dim, padding: 16 },
   head: { paddingBottom: 8 },
-  title: { color: c.gold, fontSize: 28, fontWeight: '700' },
+  title: { color: c.gold, fontSize: 28, fontFamily: F.heading },
   meta: { color: c.dim, marginTop: 6 },
   btn: { backgroundColor: c.gold, borderRadius: 12, padding: 14, alignItems: 'center', marginTop: 16 },
   btnText: { color: c.bg, fontWeight: '700', fontSize: 17 },
