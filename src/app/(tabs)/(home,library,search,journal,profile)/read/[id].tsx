@@ -15,7 +15,7 @@ import PagedChapters, { Look, markKey } from '../../../../components/PagedChapte
 import { bodyText, useTextStyle } from '../../../../textStyle';
 import TextStyleSheet from '../../../../components/TextStyleSheet';
 import { usePlayback } from '../../../../playback';
-import { t as tr } from '../../../../i18n';
+import { t as tr, errorText } from '../../../../i18n';
 import { c, F, themed } from '../../../../theme';
 import { Btn } from '../../../../components/settings-ui';
 
@@ -108,7 +108,7 @@ export default function Reader() {
       setBusy(tr('Preparing the book…'));
       setRb(await buildReader(id, item.book, (m) => setBusy(tr('Preparing pictures · {0}', { 0: m }))));
     } catch (e) {
-      Alert.alert(tr('Could not open the book'), String((e as Error).message ?? e));
+      Alert.alert(tr('Couldn’t open the book'), errorText(e));
     } finally {
       setBusy(null);
     }
@@ -154,7 +154,7 @@ export default function Reader() {
       await fetchSource(id);
       setSrc(sourceFile(id));
     } catch (e) {
-      Alert.alert(tr('Download failed'), String((e as Error).message ?? e));
+      Alert.alert(tr('Couldn’t download the book'), errorText(e));
     } finally {
       setBusy(null);
     }

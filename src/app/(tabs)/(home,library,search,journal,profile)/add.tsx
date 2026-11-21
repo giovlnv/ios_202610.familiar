@@ -1,4 +1,4 @@
-import { t as tr } from '../../../i18n';
+import { t as tr, errorText } from '../../../i18n';
 import { useState } from 'react';
 import { Alert, ScrollView, Switch, Text, TextInput, View } from 'react-native';
 import { Pressable } from '../../../components/Pressable';
@@ -51,7 +51,7 @@ export default function AddBook() {
       const slug = await uploadBook({ ...file, title: title.trim(), instructions: explain ? instructions.trim() : '', lang, explanations: explain, split: epub ? split : 'toc' });
       router.replace({ pathname: '/jobs', params: { fresh: slug } });
     } catch (e) {
-      Alert.alert(tr("Upload failed"), String((e as Error).message ?? e));
+      Alert.alert(tr("Upload failed"), errorText(e));
     } finally {
       setBusy(false);
     }

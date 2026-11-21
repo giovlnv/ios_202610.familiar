@@ -1,4 +1,4 @@
-import { t as tr } from '../../../../i18n';
+import { t as tr, errorText } from '../../../../i18n';
 import { useCallback, useState } from 'react';
 import { ActivityIndicator, Alert, Text, TextInput, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
@@ -68,7 +68,7 @@ export default function CloudVoices() {
     setBusy('eleven');
     elevenVoices(k)
       .then(setEleven)
-      .catch((e) => Alert.alert(tr("Could not load voices"), String(e.message ?? e)))
+      .catch((e) => Alert.alert(tr("Couldn’t load the voices"), errorText(e)))
       .finally(() => setBusy(null));
   };
 
@@ -90,7 +90,7 @@ export default function CloudVoices() {
     setBusy(lang);
     testVoice(ch, k)
       .then((ok) => Alert.alert(ok ? tr("It works") : tr("No audio came back")))
-      .catch((e) => Alert.alert(tr("It did not work"), String(e.message ?? e)))
+      .catch((e) => Alert.alert(tr("The voice didn’t work"), errorText(e)))
       .finally(() => setBusy(null));
   };
 

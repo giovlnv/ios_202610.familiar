@@ -1,5 +1,6 @@
 import { File, Paths } from 'expo-file-system';
 import { PT } from './i18n-pt';
+import { describeError } from './errors';
 
 const json = <T,>(name: string, fallback: T): T => {
   try {
@@ -30,4 +31,10 @@ export function t(s: string, vars?: Record<string, unknown>) {
   out = out.replace(/\{(\w*)\|(\w*)\|(\w*)\}/g, (_, a: string, b: string, c: string) => [a, b, c][gender]);
   if (vars) for (const [k, v] of Object.entries(vars)) out = out.split(`{${k}}`).join(String(v));
   return out;
+}
+
+/** A thrown error as a translated sentence that says what happened and what to do; never a bare code. */
+export function errorText(e: unknown) {
+  const d = describeError(e);
+  return t(d.text, d.vars);
 }

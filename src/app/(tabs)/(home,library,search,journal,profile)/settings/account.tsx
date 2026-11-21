@@ -1,4 +1,4 @@
-import { t as tr } from '../../../../i18n';
+import { t as tr, errorText } from '../../../../i18n';
 import { useCallback, useState } from 'react';
 import { Alert, Text, TextInput, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
@@ -16,7 +16,7 @@ export default function Account() {
   const save = (t: string) =>
     setToken(t)
       .then(() => (setDraft(''), refresh()))
-      .catch((e) => Alert.alert(tr("Something went wrong"), String(e?.message ?? e)));
+      .catch((e) => Alert.alert(tr("Couldn’t save the key"), errorText(e)));
 
   return (
     <Page>

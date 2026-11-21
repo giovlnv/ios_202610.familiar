@@ -1,5 +1,5 @@
-import { t as tr } from '../../../../i18n';
-import { useState } from 'react';
+import { t as tr, errorText } from '../../../../i18n';
+import { useRef, useState } from 'react';
 import { Alert, Text, View } from 'react-native';
 import { Pressable } from '../../../../components/Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -13,17 +13,20 @@ export default function Configuration() {
   const decks = listDecks();
   const [deckMsg, setDeckMsg] = useState('');
   const [browse, setBrowse] = useState<string | null>(null);
+  const downloading = useRef(false);
+  const progress = (m: string) => ((downloading.current = true), setDeckMsg(m));
   const deckRun = async (fn: () => Promise<unknown>) => {
     try {
       await fn();
     } catch (e) {
-      Alert.alert(tr("Deck"), String((e as Error).message ?? e));
+      Alert.alert(tr("Couldn’t add the deck"), errorText(e));
     } finally {
-      setDeckMsg((m) => (m.startsWith('Downloading') ? '' : m));
+      setDeckMsg((m) => (downloading.current ? '' : m));
+      downloading.current = false;
     }
   };
   const report = (r: { matched: number; skipped: string[] } | null) =>
-    r && setDeckMsg(`${r.matched} of 78 cards found${r.skipped.length ? ` · ${r.skipped.length} files not recognised` : ''}`);
+    r && ((downloading.current = false), setDeckMsg(`${tr('{0} of {1} cards found', { 0: r.matched, 1: 78 })}${r.skipped.length ? ` · ${r.skipped.length === 1 ? tr('1 file not recognised') : tr('{0} files not recognised', { 0: r.skipped.length })}` : ''}`));
   const askName = (then: (name: string) => void) => Alert.prompt(tr("Deck name"), undefined, (n) => n?.trim() && then(n.trim()), 'plain-text', '');
 
   return (
@@ -56,7 +59,7 @@ export default function Configuration() {
         {!!deckMsg && <Text style={ss.meta}>{deckMsg}</Text>}
         <View style={[ss.row, { marginTop: 8 }]}>
           {!decks.some((d) => d.id === 'rws' && d.cards.length === 78) && (
-            <Btn label={tr("Get Rider-Waite-Smith")} primary onPress={() => deckRun(() => downloadRws((n, t) => setDeckMsg(`Downloading ${n}/${t}`)))} />
+            <Btn label={tr("Get Rider-Waite-Smith")} primary onPress={() => deckRun(() => downloadRws((n, t) => progress(tr('Downloading {0} of {1}…', { 0: n, 1: t }))))} />
           )}
           <Btn label={tr("Import from Files")} onPress={() => askName((n) => deckRun(async () => report(await importDeckFromFiles(n))))} />
           <Btn
@@ -64,7 +67,7 @@ export default function Configuration() {
             onPress={() =>
               askName((n) =>
                 Alert.prompt(tr("Zip link"), tr("A direct link to a .zip of card images"), (url) =>
-                  url?.trim() && deckRun(async () => (setDeckMsg('Downloading…'), report(await importDeckFromUrl(n, url.trim())))),
+                  url?.trim() && deckRun(async () => (progress(tr('Downloading…')), report(await importDeckFromUrl(n, url.trim())))),
                 ),
               )
             }

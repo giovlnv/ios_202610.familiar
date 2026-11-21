@@ -1,4 +1,4 @@
-import { loc, t as tr } from '../../../../i18n';
+import { loc, t as tr, errorText } from '../../../../i18n';
 import { useCallback, useState } from 'react';
 import { Alert, RefreshControl, ScrollView, Text, View } from 'react-native';
 import { Pressable } from '../../../../components/Pressable';
@@ -25,7 +25,7 @@ export default function JobScreen() {
     setBusy(true);
     getJob(slug)
       .then((j) => setJob(j ?? { slug, title: slug, stage: 'splitting' }))
-      .catch((e) => Alert.alert(tr("Could not load"), String(e.message ?? e)))
+      .catch((e) => Alert.alert(tr("Couldn’t load the book"), errorText(e)))
       .finally(() => setBusy(false));
   }, [slug]);
   useFocusEffect(load);
@@ -36,7 +36,7 @@ export default function JobScreen() {
       const j = await fn();
       if (j) setJob(j);
     } catch (e) {
-      Alert.alert(tr("Something went wrong"), String((e as Error).message ?? e));
+      Alert.alert(tr("Something went wrong"), errorText(e));
     } finally {
       setBusy(false);
       setProgress('');

@@ -1,5 +1,5 @@
 import { exportAudio, exportBookZip } from '../../../../ownBooks';
-import { t as tr } from '../../../../i18n';
+import { t as tr, errorText } from '../../../../i18n';
 import { usePad } from '../../../../playback';
 import { useCallback, useState } from "react";
 import {
@@ -137,7 +137,7 @@ export default function Title() {
                                   const s = item.book.sections[loadProgress(folder).section] ?? item.book.sections[0];
                                   Alert.alert(tr("Export audio"), tr("For your own use. Choose what to export."), [
                                     { text: tr("This section: {0}", { 0: s.title }), onPress: () => void exportAudio(folder, s) },
-                                    { text: tr("Whole book (.zip)"), onPress: () => void exportBookZip(folder, item.book).catch((e) => Alert.alert(tr("Export failed"), String(e?.message ?? e))) },
+                                    { text: tr("Whole book (.zip)"), onPress: () => void exportBookZip(folder, item.book).catch((e) => Alert.alert(tr("Couldn’t export the audio"), errorText(e))) },
                                     { text: tr("Cancel"), style: "cancel" },
                                   ]);
                                 },
@@ -163,7 +163,7 @@ export default function Title() {
                                   const go = () =>
                                     downloadAudio(folder, item.book, () => {})
                                       .then(() => Alert.alert(tr("Downloaded"), tr("{0} on this iPhone.", { 0: mb(bookSizes(folder).audio) })))
-                                      .catch((e) => Alert.alert(tr("Download failed"), String(e?.message ?? e)));
+                                      .catch((e) => Alert.alert(tr("Couldn’t download the audio"), errorText(e)));
                                   if (free && need > free * 0.8)
                                     return Alert.alert(tr("Not much space left"), tr("This needs about {0} and your iPhone has {1} free.", { 0: mb(need), 1: mb(free) }), [
                                       { text: tr("Cancel"), style: "cancel" },

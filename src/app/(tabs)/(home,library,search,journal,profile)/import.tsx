@@ -10,7 +10,7 @@ import { bookLangChoices } from '../../../languages';
 import { keepSource } from '../../../reader';
 import { importBook } from '../../../storage';
 import { syncAudioBooks } from '../../../tracker';
-import { t as tr } from '../../../i18n';
+import { t as tr, errorText } from '../../../i18n';
 import { Chip } from '../../../components/ui';
 import { c } from '../../../theme';
 import { Btn, Page, ss } from '../../../components/settings-ui';
@@ -66,7 +66,7 @@ export default function ImportScreen() {
     return true;
   };
 
-  const fail = (e: unknown) => Alert.alert(e instanceof DrmError ? tr('This book is locked') : tr('Import failed'), e instanceof DrmError ? drmMessage() : tr(String((e as Error).message ?? e)));
+  const fail = (e: unknown) => Alert.alert(e instanceof DrmError ? tr('This book is locked') : tr('Import failed'), e instanceof DrmError ? drmMessage() : errorText(e));
 
   const { file } = useLocalSearchParams<{ file?: string }>();
 

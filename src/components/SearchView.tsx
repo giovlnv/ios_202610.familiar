@@ -1,5 +1,5 @@
 import type React from 'react';
-import { t as tr } from '../i18n';
+import { t as tr, errorText } from '../i18n';
 import { usePad } from '../playback';
 import { useState } from 'react';
 import { ActivityIndicator, FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
@@ -27,7 +27,7 @@ export default function SearchView({ onPick, header }: { onPick: (r: OLResult) =
     try {
       setResults(await searchOpenLibrary(q.trim()));
     } catch (e) {
-      setError(String((e as Error).message ?? e));
+      setError(errorText(e));
     } finally {
       setBusy(false);
     }
@@ -47,7 +47,7 @@ export default function SearchView({ onPick, header }: { onPick: (r: OLResult) =
         autoCorrect={false}
       />
       {busy && <ActivityIndicator color={c.gold} style={{ marginTop: 20 }} />}
-      {!!error && <Text style={s.dim}>{tr("Couldn’t search (")}{error}{tr("). Check the connection and try again.")}</Text>}
+      {!!error && <Text style={s.dim}>{tr("Couldn’t search.")} {error}</Text>}
       <FlatList
         data={results}
         keyExtractor={(r) => r.olKey}

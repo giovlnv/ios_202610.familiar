@@ -1,4 +1,4 @@
-import { t as tr } from '../i18n';
+import { t as tr, errorText } from '../i18n';
 import { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Text, View } from 'react-native';
 import { Pressable } from './Pressable';
@@ -40,7 +40,7 @@ export default function ListenBar({ text }: { text: string }) {
     if (state === 'paused') return (player.current?.play(), setState('playing'));
     const f = new File(Paths.cache, `explain-${hash(chosenVoice(langOf('en')) + text)}.m4a`);
     if (f.exists) return play(f.uri);
-    if (!tts.isReady || !tts.synthesize) return setMsg('The voice is still loading…');
+    if (!tts.isReady || !tts.synthesize) return setMsg(tr('The voice is still loading…'));
     setState('making');
     try {
       const parts: Float32Array[] = [];
@@ -48,14 +48,14 @@ export default function ListenBar({ text }: { text: string }) {
       for await (const ch of tts.synthesize(text, { voice: chosenVoice(langOf('en')) as never, speed: 1 })) {
         parts.push(ch.audio);
         rate = ch.sampleRate;
-        setMsg(`Preparing ${ch.chunkIndex + 1} of ${ch.totalChunks}`);
+        setMsg(tr('Preparing {0} of {1}…', { 0: ch.chunkIndex + 1, 1: ch.totalChunks }));
       }
       await saveM4a(parts, rate, f);
       setMsg('');
       play(f.uri);
     } catch (e) {
       setState('idle');
-      setMsg(`Couldn’t make the audio (${String((e as Error).message ?? e)})`);
+      setMsg(`${tr('Couldn’t make the audio.')} ${errorText(e)}`);
     }
   };
 

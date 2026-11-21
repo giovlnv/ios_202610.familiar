@@ -1,4 +1,4 @@
-import { t as tr } from '../i18n';
+import { t as tr, errorText } from '../i18n';
 import { useState } from 'react';
 import { Alert, Image, Modal, Platform, ScrollView, Text, View } from 'react-native';
 import { Pressable } from './Pressable';
@@ -35,7 +35,7 @@ export function IconPicker({ heading = true }: { heading?: boolean }) {
   const pick = (name: string | null) =>
     setAlternateAppIcon(name as never).then(
       () => setIcon(name as never),
-      (e: Error) => Alert.alert(tr("Couldn’t change the icon"), e?.message ?? String(e)),
+      (e: Error) => Alert.alert(tr("Couldn’t change the icon"), errorText(e)),
     );
   return (
     <>

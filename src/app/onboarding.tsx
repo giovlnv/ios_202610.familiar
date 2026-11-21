@@ -1,7 +1,7 @@
 import { isPublic } from '../variant';
 import * as Updates from 'expo-updates';
 import { getLangPrefs, setLangPrefs } from '../languages';
-import { t as tr, uiLang } from '../i18n';
+import { t as tr, uiLang, errorText } from '../i18n';
 import { useEffect, useState } from 'react';
 import { Alert, Image, KeyboardAvoidingView, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View } from 'react-native';
 import { Pressable } from '../components/Pressable';
@@ -235,7 +235,7 @@ export default function Onboarding() {
             <Head title={tr("Backups are on")} sub={tr("Your library is saved on ares whenever you leave the app, once ares is set in settings → backups.")} />
             <Status icon="server-outline" title={tr("Backup on ares")} text={sync.lastAres ? tr("Last backup {0}", { 0: new Date(sync.lastAres).toLocaleString() }) : tr("Add the ares address in settings → backups")} />
             <Status icon="document-outline" title={tr("Backup file")} text={tr("Saved to Files or iCloud Drive; you get a reminder every 7 days.")} />
-            <Pressable style={st.secondary} onPress={() => backupToFile().catch((e) => Alert.alert(tr("Backup failed"), String(e?.message ?? e)))}>
+            <Pressable style={st.secondary} onPress={() => backupToFile().catch((e) => Alert.alert(tr("Backup failed"), errorText(e)))}>
               <Text style={st.secondaryText}>{tr("Save a backup file now")}</Text>
             </Pressable>
           </>

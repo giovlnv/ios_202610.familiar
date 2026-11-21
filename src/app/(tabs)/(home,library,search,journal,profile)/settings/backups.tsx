@@ -1,5 +1,5 @@
 import { isPublic } from '../../../../variant';
-import { t as tr } from '../../../../i18n';
+import { t as tr, errorText } from '../../../../i18n';
 import { useCallback, useState } from 'react';
 import { Alert, Text, TextInput, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
@@ -30,7 +30,7 @@ export default function Backups() {
       if (typeof r === 'number') await refreshStreamingBooks().catch(() => 0);
       if (ok) Alert.alert(ok, typeof r === 'number' ? (r === 1 ? tr("1 book restored.") : tr("{0} books restored.", { 0: r })) : undefined);
     } catch (e) {
-      Alert.alert(tr("Something went wrong"), String((e as Error).message ?? e));
+      Alert.alert(tr("Something went wrong"), errorText(e));
     } finally {
       setBusy(false);
       refresh();
@@ -43,7 +43,7 @@ export default function Backups() {
       setToken('');
     }, tr("Saved"));
   const status = state.pending
-    ? `${tr("Waiting for ares")}${state.lastError ? ` · ${state.lastError}` : ''}`
+    ? `${tr("Waiting for ares")}${state.lastError ? ` · ${errorText(state.lastError)}` : ''}`
     : tr("Last backup: {0}", { 0: when(state.lastAres) });
 
   return (
@@ -54,7 +54,7 @@ export default function Backups() {
           <Text style={ss.p}>{tr("Notes, readings, progress and your familiars are saved on ares whenever you leave the app and right after a card of the day. Ares keeps 30 daily copies.")}</Text>
           <View style={ss.card}>
             <Text style={ss.meta}>{status}</Text>
-            {state.lastError && !state.pending ? <Text style={[ss.meta, { color: c.claude }]}>{tr("Last error:")}{' '}{state.lastError}</Text> : null}
+            {state.lastError && !state.pending ? <Text style={[ss.meta, { color: c.claude }]}>{tr("Last error:")}{' '}{errorText(state.lastError)}</Text> : null}
             <TextInput style={ss.input} placeholder={tr("ares address (http://ares:8087)")} placeholderTextColor={c.dim} autoCapitalize="none" autoCorrect={false} keyboardType="url" value={url} onChangeText={setUrl} />
             <TextInput
               style={ss.input}

@@ -1,4 +1,4 @@
-import { t as tr } from '../i18n';
+import { loc, t as tr } from '../i18n';
 import { ReactNode } from 'react';
 import { Alert, ScrollView, Text, View } from 'react-native';
 import { Pressable } from './Pressable';
@@ -7,7 +7,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { usePad } from '../playback';
 import { c, F, themed } from '../theme';
 
-export const when = (t?: number) => (t ? new Date(t).toLocaleString() : 'never');
+export const when = (t?: number) => (t ? new Date(t).toLocaleString(loc()) : tr('never'));
 
 export const confirmRestore = (go: () => void) =>
   Alert.alert(tr("Restore?"), tr("Notes, consults and progress in the backup replace the ones on this iPhone."), [

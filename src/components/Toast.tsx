@@ -1,9 +1,15 @@
 import { useEffect, useState } from 'react';
-import { Animated, Text } from 'react-native';
+import { AccessibilityInfo, Animated, Text } from 'react-native';
+import { t as tr } from '../i18n';
 import { c, themed } from '../theme';
 
 const listeners = new Set<(m: string) => void>();
-export const toast = (message: string) => listeners.forEach((fn) => fn(message));
+/** Shows a short confirmation, translated, and reads it out to VoiceOver. */
+export const toast = (message: string) => {
+  const m = tr(message);
+  listeners.forEach((fn) => fn(m));
+  AccessibilityInfo.announceForAccessibility(m);
+};
 
 export default function ToastHost() {
   const [msg, setMsg] = useState('');

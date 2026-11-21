@@ -1,4 +1,4 @@
-import { t as tr } from '../../../../../i18n';
+import { t as tr, errorText } from '../../../../../i18n';
 import { useState } from 'react';
 import { Alert, Switch, Text, useWindowDimensions, View } from 'react-native';
 import { Pressable } from '../../../../../components/Pressable';
@@ -68,9 +68,12 @@ export default function SystemScreen() {
     setBusy(true);
     try {
       const r = await importIntoSystem(sys.id);
-      if (r) setMsg(`${r.matched} pictures added${r.added ? ` · ${r.added} new cards` : ''}${r.skipped.length ? ` · ${r.skipped.length} files not recognised` : ''}`);
+      if (r)
+        setMsg(
+          `${r.matched === 1 ? tr('1 picture added') : tr('{0} pictures added', { 0: r.matched })}${r.added ? ` · ${r.added === 1 ? tr('1 new card') : tr('{0} new cards', { 0: r.added })}` : ''}${r.skipped.length ? ` · ${r.skipped.length === 1 ? tr('1 file not recognised') : tr('{0} files not recognised', { 0: r.skipped.length })}` : ''}`,
+        );
     } catch (e) {
-      Alert.alert(tr("Import"), String((e as Error).message ?? e));
+      Alert.alert(tr("Couldn’t add the pictures"), errorText(e));
     } finally {
       setBusy(false);
     }
