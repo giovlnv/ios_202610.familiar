@@ -9,13 +9,13 @@ import { c, F, themed } from '../theme';
 export const confirmDeleteCard = (id: string, done?: () => void) =>
   Alert.alert(tr('Delete this flashcard?'), undefined, [
     { text: tr('Cancel'), style: 'cancel' },
-    { text: tr('Delete'), style: 'destructive', onPress: () => (removeCard(id), done?.()) },
+    { text: tr('Delete flashcard'), style: 'destructive', onPress: () => (removeCard(id), done?.()) },
   ]);
 
 export const confirmDeleteNote = (id: string, done?: () => void) =>
   Alert.alert(tr('Delete this note?'), undefined, [
     { text: tr('Cancel'), style: 'cancel' },
-    { text: tr('Delete'), style: 'destructive', onPress: () => (removeNote(id), done?.()) },
+    { text: tr('Delete note'), style: 'destructive', onPress: () => (removeNote(id), done?.()) },
   ]);
 
 export function promptSubject(onDone?: (s: Subject) => void) {

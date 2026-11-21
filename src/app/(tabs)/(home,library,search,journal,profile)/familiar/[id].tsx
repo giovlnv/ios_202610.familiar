@@ -28,7 +28,7 @@ export default function FamiliarScreen() {
   const remove = () =>
     Alert.alert(tr("Let {0} go?", { 0: f.name || 'this familiar' }), tr("Its look and name are removed. Your books and notes stay."), [
       { text: tr("Cancel"), style: 'cancel' },
-      { text: tr("Remove"), style: 'destructive', onPress: () => (removeFamiliar(f.id), router.back()) },
+      { text: tr("Remove familiar"), style: 'destructive', onPress: () => (removeFamiliar(f.id), router.back()) },
     ]);
 
   return (
@@ -46,7 +46,7 @@ export default function FamiliarScreen() {
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 6 }}>
         {TABS.filter((t) => cat || t !== 'Shape').map((t) => (
           <Pressable key={t} accessibilityState={{ selected: tab === t }} onPress={() => setTab(t)} style={[s.tab, tab === t && s.tabOn]}>
-            <Text style={[s.tabText, tab === t && { color: c.bg }]}>{!cat && t === 'Eyes' ? tr("Colour & eyes") : t}</Text>
+            <Text style={[s.tabText, tab === t && { color: c.bg }]}>{!cat && t === 'Eyes' ? tr("Colour and eyes") : tr(t)}</Text>
           </Pressable>
         ))}
       </ScrollView>

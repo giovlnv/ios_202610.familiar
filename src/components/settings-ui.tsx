@@ -10,9 +10,9 @@ import { c, F, themed } from '../theme';
 export const when = (t?: number) => (t ? new Date(t).toLocaleString(loc()) : tr('never'));
 
 export const confirmRestore = (go: () => void) =>
-  Alert.alert(tr("Restore?"), tr("Notes, consults and progress in the backup replace the ones on this iPhone."), [
+  Alert.alert(tr("Restore this backup?"), tr("Notes, consults and progress in the backup replace the ones on this iPhone."), [
     { text: tr("Cancel"), style: 'cancel' },
-    { text: tr("Restore"), style: 'destructive', onPress: go },
+    { text: tr("Restore backup"), style: 'destructive', onPress: go },
   ]);
 
 export const Btn = ({ label, onPress, primary }: { label: string; onPress: () => void; primary?: boolean }) => (

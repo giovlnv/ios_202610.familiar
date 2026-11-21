@@ -17,7 +17,7 @@ export default function StudySettings() {
     Alert.alert(tr('Delete {0}?', { 0: name }), tr('Its {0} notes and {1} flashcards are deleted too. Books stay in your library.', { 0: n, 1: k }), [
       { text: tr('Cancel'), style: 'cancel' },
       {
-        text: tr('Delete'),
+        text: tr('Delete subject'),
         style: 'destructive',
         onPress: () => {
           removeSubject(id);

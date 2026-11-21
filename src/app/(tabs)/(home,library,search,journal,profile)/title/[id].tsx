@@ -167,11 +167,11 @@ export default function Title() {
                                   if (free && need > free * 0.8)
                                     return Alert.alert(tr("Not much space left"), tr("This needs about {0} and your iPhone has {1} free.", { 0: mb(need), 1: mb(free) }), [
                                       { text: tr("Cancel"), style: "cancel" },
-                                      { text: tr("Download anyway"), onPress: go },
+                                      { text: tr("Download audio anyway"), onPress: go },
                                     ]);
                                   Alert.alert(tr("Download ~{0}?", { 0: mb(need) }), tr("{0} free on your iPhone.", { 0: mb(free) }), [
                                     { text: tr("Cancel"), style: "cancel" },
-                                    { text: tr("Download"), onPress: go },
+                                    { text: tr("Download audio"), onPress: go },
                                   ]);
                                 },
                               },
@@ -193,7 +193,7 @@ export default function Title() {
                         [
                           { text: tr("Cancel"), style: "cancel" },
                           {
-                            text: tr("Delete"),
+                            text: tr("Delete audiobook"),
                             style: "destructive",
                             onPress: () => {
                               if (b.audio) deleteBook(b.audio);
@@ -359,7 +359,7 @@ export default function Title() {
               Alert.alert(tr("Delete this entry?"), fmtDate(l.date), [
                 { text: tr("Cancel"), style: "cancel" },
                 {
-                  text: tr("Delete"),
+                  text: tr("Delete entry"),
                   style: "destructive",
                   onPress: () => (removeLog(l.id), refresh()),
                 },
@@ -394,8 +394,8 @@ export default function Title() {
           if (folder && item && size > 0)
             setTimeout(async () => {
               if (!(await canStream(folder, item.book))) return;
-              Alert.alert(tr("Finished! Free {0}?", { 0: mb(size) }), tr("Remove this book’s audio from your iPhone. Notes and progress stay, and it streams from GitHub if you listen again."), [
-                { text: tr("Keep"), style: "cancel" },
+              Alert.alert(tr("You finished it. Free {0}?", { 0: mb(size) }), tr("Remove this book’s audio from your iPhone. Notes and progress stay, and it streams from GitHub if you listen again."), [
+                { text: tr("Keep audio"), style: "cancel" },
                 { text: tr("Remove audio"), style: "destructive", onPress: () => (removeAudio(folder), refreshStreamingBooks().catch(() => {}), refresh()) },
               ]);
             }, 500);

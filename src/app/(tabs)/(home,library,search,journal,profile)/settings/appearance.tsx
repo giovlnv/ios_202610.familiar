@@ -24,7 +24,7 @@ export default function Appearance() {
           </Pressable>
         ))}
       </View>
-      <Text accessibilityRole="header" style={ss.h2}>{tr("Colors")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Colours")}</Text>
       <View style={[ss.card, { gap: 2 }]}>
         {PALETTES.map((p) => {
           const pc = scheme === 'light' ? p.light : p.c;

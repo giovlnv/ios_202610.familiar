@@ -82,7 +82,7 @@ export default function SystemScreen() {
     Alert.alert(tr("Delete {0}?", { 0: sys.name }), tr("Its cards and pictures are deleted. Readings made with it stay in your journal, with the card names gone."), [
       { text: tr("Cancel"), style: 'cancel' },
       {
-        text: tr("Delete"),
+        text: tr("Delete system"),
         style: 'destructive',
         onPress: () => {
           setOnboarding({ paths: (getOnboarding().paths ?? []).filter((p) => p !== sys.id) });

@@ -35,7 +35,7 @@ export default function Marks() {
     Alert.alert(tr('This mark'), m.quote.slice(0, 120), [
       { text: tr('Make a flashcard'), onPress: () => setFlash({ subject: bookPaths(id).find(isSubject), back: (m.section !== undefined ? item.book.sections[secIndex.get(m.section) ?? 0]?.paras[m.para ?? 0]?.text : undefined) ?? m.quote, book: id, section: m.section, para: m.para }) },
       { text: tr('Cancel'), style: 'cancel' },
-      { text: tr('Remove'), style: 'destructive', onPress: () => (saveMarks(id, marks.filter((x) => x.id !== m.id)), setMarks(loadMarks(id))) },
+      { text: tr('Remove mark'), style: 'destructive', onPress: () => (saveMarks(id, marks.filter((x) => x.id !== m.id)), setMarks(loadMarks(id))) },
     ]);
   return (
     <View style={s.wrap}>

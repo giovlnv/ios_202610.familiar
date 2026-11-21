@@ -67,7 +67,7 @@ export default function Languages() {
   const drop = (l: AudioLang) =>
     Alert.alert(tr("Remove {0}?", { 0: l.name }), tr("Frees {0}. You can download it again any time.", { 0: mb(langSize(l)) }), [
       { text: tr("Cancel"), style: 'cancel' },
-      { text: tr("Remove"), style: 'destructive', onPress: () => (removeLanguage(l), setOpen(null), refresh()) },
+      { text: tr("Remove language"), style: 'destructive', onPress: () => (removeLanguage(l), setOpen(null), refresh()) },
     ]);
 
   return (

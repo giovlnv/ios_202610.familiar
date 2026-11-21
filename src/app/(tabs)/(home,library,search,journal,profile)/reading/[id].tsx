@@ -114,7 +114,7 @@ export default function ReadingScreen() {
     if (!placed.length) return go();
     Alert.alert(tr("Switch deck?"), tr("The cards placed in this reading are cleared."), [
       { text: tr("Cancel"), style: 'cancel' },
-      { text: tr("Switch"), style: 'destructive', onPress: go },
+      { text: tr("Switch deck"), style: 'destructive', onPress: go },
     ]);
   };
   const deal = () => {
@@ -200,7 +200,7 @@ export default function ReadingScreen() {
                 Alert.alert(tr("Delete this reading?"), undefined, [
                   { text: tr("Cancel"), style: 'cancel' },
                   {
-                    text: tr("Delete"),
+                    text: tr("Delete reading"),
                     style: 'destructive',
                     onPress: () => {
                       removeReading(r.id);
@@ -313,7 +313,7 @@ export default function ReadingScreen() {
                 onPress={() =>
                   Alert.alert(tr("Clear all cards?"), undefined, [
                     { text: tr("Cancel"), style: 'cancel' },
-                    { text: tr("Clear"), style: 'destructive', onPress: () => set({ cards: [] }) },
+                    { text: tr("Clear cards"), style: 'destructive', onPress: () => set({ cards: [] }) },
                   ])
                 }
               />
@@ -408,7 +408,7 @@ export default function ReadingScreen() {
           onLongPress={() =>
             Alert.alert(tr("Delete this answer?"), undefined, [
               { text: tr("Cancel"), style: 'cancel' },
-              { text: tr("Delete"), style: 'destructive', onPress: () => set({ answers: r.answers!.filter((_, k) => k !== i) }) },
+              { text: tr("Delete answer"), style: 'destructive', onPress: () => set({ answers: r.answers!.filter((_, k) => k !== i) }) },
             ])
           }
         >

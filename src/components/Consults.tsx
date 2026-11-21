@@ -275,7 +275,7 @@ export function ConsultList({
                         onPress={() =>
                           Alert.alert(tr("Delete #C{0}?", { 0: x.id }), undefined, [
                             { text: tr("Cancel"), style: 'cancel' },
-                            { text: tr("Delete"), style: 'destructive', onPress: () => onDelete(x) },
+                            { text: tr("Delete consult"), style: 'destructive', onPress: () => onDelete(x) },
                           ])
                         }
                       />
