@@ -95,9 +95,9 @@ export function CardEditor({ draft, source, onClose }: { draft: CardDraft; sourc
       <Text style={s.label}>{tr('Subject')}</Text>
       <SubjectChips value={subject} onChange={setSubject} />
       <Text style={s.label}>{tr('Front side')}</Text>
-      <TextInput style={s.input} value={front} onChangeText={setFront} multiline placeholder={tr('A question or a term')} placeholderTextColor={c.dim} autoFocus={!draft.front} />
+      <TextInput accessibilityLabel={tr('Front side')} style={s.input} value={front} onChangeText={setFront} multiline placeholder={tr('A question or a term')} placeholderTextColor={c.dim} autoFocus={!draft.front} />
       <Text style={s.label}>{tr('Back side')}</Text>
-      <TextInput style={[s.input, { minHeight: 120 }]} value={back} onChangeText={setBack} multiline placeholder={tr('The answer')} placeholderTextColor={c.dim} />
+      <TextInput accessibilityLabel={tr('Back side')} style={[s.input, { minHeight: 120 }]} value={back} onChangeText={setBack} multiline placeholder={tr('The answer')} placeholderTextColor={c.dim} />
       {!!source && <Text style={s.meta}>{tr('From {0}', { 0: source })}</Text>}
     </Sheet>
   );

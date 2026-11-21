@@ -65,7 +65,7 @@ export default function AddBook() {
         <Text style={s.dim}>{file ? tr("{0} MB · tap to change", { 0: ((file.size ?? 0) / 1e6).toFixed(1) }) : tr("from Files or iCloud Drive")}</Text>
       </Pressable>
       <Text style={s.label}>{tr("Title")}</Text>
-      <TextInput style={s.input} value={title} onChangeText={setTitle} placeholder={tr("Book title")} placeholderTextColor={c.dim} />
+      <TextInput accessibilityLabel={tr("Title")} style={s.input} value={title} onChangeText={setTitle} placeholder={tr("Book title")} placeholderTextColor={c.dim} />
       {epub && (
         <>
           <Text style={s.label}>{tr("Sections")}</Text>
@@ -93,7 +93,7 @@ export default function AddBook() {
       {explain && (
         <>
           <Text style={s.label}>{tr("How should the explanations be? (optional)")}</Text>
-          <TextInput
+          <TextInput accessibilityLabel={tr("How should the explanations be? (optional)")}
             style={[s.input, { minHeight: 110, textAlignVertical: 'top' }]}
             multiline
             value={instructions}

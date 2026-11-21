@@ -364,7 +364,7 @@ export default function ReadingScreen() {
       )}
 
       <Text style={s.label}>{tr("My interpretation")}</Text>
-      <TextInput
+      <TextInput accessibilityLabel={tr("My interpretation")}
         style={[s.input, { minHeight: 110 }]}
         value={r.interpretation ?? ''}
         onChangeText={(interpretation) => set({ interpretation })}
@@ -373,7 +373,7 @@ export default function ReadingScreen() {
         multiline
       />
       <Text style={s.label}>{tr("Key points · one per line")}</Text>
-      <TextInput
+      <TextInput accessibilityLabel={tr("Key points · one per line")}
         style={[s.input, { minHeight: 80 }]}
         value={r.keyPoints ?? ''}
         onChangeText={(keyPoints) => set({ keyPoints })}
@@ -382,7 +382,7 @@ export default function ReadingScreen() {
         multiline
       />
       <Text style={s.label}>{tr("Open questions · one per line")}</Text>
-      <TextInput
+      <TextInput accessibilityLabel={tr("Open questions · one per line")}
         style={[s.input, { minHeight: 80 }]}
         value={r.openQuestions ?? ''}
         onChangeText={(openQuestions) => set({ openQuestions })}
@@ -459,21 +459,26 @@ function PersonSheet({
       <Pressable dim={false} accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={onClose} />
       <View style={s.sheet}>
         <Text accessibilityRole="header" style={s.h2}>{tr("Reading for someone")}</Text>
-        <TextInput style={s.input} value={name} onChangeText={setName} placeholder={tr("Name")} placeholderTextColor={c.dim} />
+        <Text style={s.dim}>{tr("Name")}</Text>
+        <TextInput accessibilityLabel={tr("Name")} textContentType="name" autoComplete="name" style={s.input} value={name} onChangeText={setName} />
         <Text style={s.dim}>{tr("Birth date (optional)")}</Text>
         <DateInput style={s.input} value={dob} onChange={setDob} />
+        <Text style={s.dim}>{tr("Short background (optional)")}</Text>
         <TextInput
+          accessibilityLabel={tr("Short background (optional)")}
           style={[s.input, { minHeight: 70 }]}
           value={bg}
           onChangeText={setBg}
-          placeholder={tr("Short background (optional)")}
-          placeholderTextColor={c.dim}
           multiline
         />
         <Button
           label={tr("Save")}
           primary
-          onPress={() => name.trim() && onSave({ name: name.trim(), dob: parseDate(dob), background: bg.trim() || undefined })}
+          onPress={() =>
+            name.trim()
+              ? onSave({ name: name.trim(), dob: parseDate(dob), background: bg.trim() || undefined })
+              : Alert.alert(tr("Add the person’s name to save."))
+          }
         />
       </View>
       </KeyboardAvoidingView>

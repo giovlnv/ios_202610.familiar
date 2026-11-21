@@ -1426,4 +1426,5 @@ export const PT: Record<string, string> = {
   "Restore backup": "Restaurar backup",
   "Species": "Espécie",
   "Shape": "Formato",
+  "Add the person’s name to save.": "Para salvar, escreva o nome da pessoa.",
 };

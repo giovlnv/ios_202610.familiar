@@ -56,9 +56,9 @@ export default function EditProfile() {
       </Pressable>
       <View style={ss.card}>
         <Text style={ss.label}>{tr("Name")}</Text>
-        <TextInput style={ss.input} value={name} onChangeText={setName} placeholder={tr("Your name")} placeholderTextColor={c.dim} />
+        <TextInput accessibilityLabel={tr("Name")} textContentType="name" autoComplete="name" style={ss.input} value={name} onChangeText={setName} placeholder={tr("Your name")} placeholderTextColor={c.dim} />
         <Text style={ss.label}>{tr("Username")}</Text>
-        <TextInput
+        <TextInput accessibilityLabel={tr("Username")} textContentType="username" autoComplete="username"
           style={ss.input}
           value={username}
           onChangeText={(u) => setUsername(u.replace(/[^\w.]/g, '').toLowerCase())}
@@ -87,9 +87,9 @@ export default function EditProfile() {
       {numerology && (
         <View style={ss.card}>
           <Text style={ss.label}>{tr("Full birth name")}</Text>
-          <TextInput style={ss.input} value={birthName} onChangeText={setBirthName} placeholder={tr("As on your birth certificate")} placeholderTextColor={c.dim} autoCorrect={false} />
+          <TextInput accessibilityLabel={tr("Full birth name")} style={ss.input} value={birthName} onChangeText={setBirthName} placeholder={tr("As on your birth certificate")} placeholderTextColor={c.dim} autoCorrect={false} />
           <Text style={ss.label}>{tr("Name you use")}</Text>
-          <TextInput style={ss.input} value={used} onChangeText={(v) => (setUsed(v), v.trim() !== last?.name && since === showDate(last?.since) && setSince(''))} placeholder={tr("If different, e.g. after marriage")} placeholderTextColor={c.dim} autoCorrect={false} />
+          <TextInput accessibilityLabel={tr("Name you use")} style={ss.input} value={used} onChangeText={(v) => (setUsed(v), v.trim() !== last?.name && since === showDate(last?.since) && setSince(''))} placeholder={tr("If different, e.g. after marriage")} placeholderTextColor={c.dim} autoCorrect={false} />
           <Text style={ss.label}>{tr("Using it since")}</Text>
           <DateInput style={ss.input} value={since} onChange={setSince} />
           {names.length > 1 && <Text style={ss.label}>{tr("Earlier names")}</Text>}
