@@ -1,7 +1,8 @@
 import { isPublic } from '../../../../variant';
 import { t as tr } from '../../../../i18n';
 import { useEffect, useState } from 'react';
-import { Alert, KeyboardAvoidingView, Modal, Pressable, ScrollView, Text, TextInput, useWindowDimensions, View } from 'react-native';
+import { Alert, KeyboardAvoidingView, Modal, ScrollView, Text, TextInput, useWindowDimensions, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import * as Clipboard from 'expo-clipboard';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -113,7 +114,7 @@ export default function ReadingScreen() {
     if (!placed.length) return go();
     Alert.alert(tr("Switch deck?"), tr("The cards placed in this reading are cleared."), [
       { text: tr("Cancel"), style: 'cancel' },
-      { text: tr("Switch"), style: 'destructive', onPress: go },
+      { text: tr("Switch deck"), style: 'destructive', onPress: go },
     ]);
   };
   const deal = () => {
@@ -190,7 +191,7 @@ export default function ReadingScreen() {
           title: fmtDate(date, { day: 'numeric', month: 'short' }),
           headerRight: () => draft ? (
             <Pressable hitSlop={10} onPress={() => (saveReading(r), setDraft(false), setJ(loadJournal()))}>
-              <Text style={{ color: c.gold, fontSize: 16, fontWeight: '700' }}>{tr("Save")}</Text>
+              <Text style={{ color: c.gold, fontSize: 17, fontWeight: '700' }}>{tr("Save")}</Text>
             </Pressable>
           ) : (
             <Pressable accessibilityRole="button" accessibilityLabel={tr("Delete this reading?").replace("?", "")}
@@ -199,7 +200,7 @@ export default function ReadingScreen() {
                 Alert.alert(tr("Delete this reading?"), undefined, [
                   { text: tr("Cancel"), style: 'cancel' },
                   {
-                    text: tr("Delete"),
+                    text: tr("Delete reading"),
                     style: 'destructive',
                     onPress: () => {
                       removeReading(r.id);
@@ -312,7 +313,7 @@ export default function ReadingScreen() {
                 onPress={() =>
                   Alert.alert(tr("Clear all cards?"), undefined, [
                     { text: tr("Cancel"), style: 'cancel' },
-                    { text: tr("Clear"), style: 'destructive', onPress: () => set({ cards: [] }) },
+                    { text: tr("Clear cards"), style: 'destructive', onPress: () => set({ cards: [] }) },
                   ])
                 }
               />
@@ -363,7 +364,7 @@ export default function ReadingScreen() {
       )}
 
       <Text style={s.label}>{tr("My interpretation")}</Text>
-      <TextInput
+      <TextInput accessibilityLabel={tr("My interpretation")}
         style={[s.input, { minHeight: 110 }]}
         value={r.interpretation ?? ''}
         onChangeText={(interpretation) => set({ interpretation })}
@@ -372,7 +373,7 @@ export default function ReadingScreen() {
         multiline
       />
       <Text style={s.label}>{tr("Key points · one per line")}</Text>
-      <TextInput
+      <TextInput accessibilityLabel={tr("Key points · one per line")}
         style={[s.input, { minHeight: 80 }]}
         value={r.keyPoints ?? ''}
         onChangeText={(keyPoints) => set({ keyPoints })}
@@ -381,7 +382,7 @@ export default function ReadingScreen() {
         multiline
       />
       <Text style={s.label}>{tr("Open questions · one per line")}</Text>
-      <TextInput
+      <TextInput accessibilityLabel={tr("Open questions · one per line")}
         style={[s.input, { minHeight: 80 }]}
         value={r.openQuestions ?? ''}
         onChangeText={(openQuestions) => set({ openQuestions })}
@@ -407,7 +408,7 @@ export default function ReadingScreen() {
           onLongPress={() =>
             Alert.alert(tr("Delete this answer?"), undefined, [
               { text: tr("Cancel"), style: 'cancel' },
-              { text: tr("Delete"), style: 'destructive', onPress: () => set({ answers: r.answers!.filter((_, k) => k !== i) }) },
+              { text: tr("Delete answer"), style: 'destructive', onPress: () => set({ answers: r.answers!.filter((_, k) => k !== i) }) },
             ])
           }
         >
@@ -455,24 +456,29 @@ function PersonSheet({
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose} onShow={() => (setName(''), setDob(''), setBg(''))}>
       <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
-      <Pressable accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={onClose} />
+      <Pressable dim={false} accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={onClose} />
       <View style={s.sheet}>
-        <Text style={s.h2}>{tr("Reading for someone")}</Text>
-        <TextInput style={s.input} value={name} onChangeText={setName} placeholder={tr("Name")} placeholderTextColor={c.dim} />
+        <Text accessibilityRole="header" style={s.h2}>{tr("Reading for someone")}</Text>
+        <Text style={s.dim}>{tr("Name")}</Text>
+        <TextInput accessibilityLabel={tr("Name")} textContentType="name" autoComplete="name" style={s.input} value={name} onChangeText={setName} />
         <Text style={s.dim}>{tr("Birth date (optional)")}</Text>
         <DateInput style={s.input} value={dob} onChange={setDob} />
+        <Text style={s.dim}>{tr("Short background (optional)")}</Text>
         <TextInput
+          accessibilityLabel={tr("Short background (optional)")}
           style={[s.input, { minHeight: 70 }]}
           value={bg}
           onChangeText={setBg}
-          placeholder={tr("Short background (optional)")}
-          placeholderTextColor={c.dim}
           multiline
         />
         <Button
           label={tr("Save")}
           primary
-          onPress={() => name.trim() && onSave({ name: name.trim(), dob: parseDate(dob), background: bg.trim() || undefined })}
+          onPress={() =>
+            name.trim()
+              ? onSave({ name: name.trim(), dob: parseDate(dob), background: bg.trim() || undefined })
+              : Alert.alert(tr("Add the person’s name to save."))
+          }
         />
       </View>
       </KeyboardAvoidingView>
@@ -482,25 +488,25 @@ function PersonSheet({
 
 const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
-  question: { color: c.text, fontSize: 20, fontWeight: '700', paddingVertical: 12 },
+  question: { color: c.text, fontSize: 22, fontWeight: '700', paddingVertical: 12 },
   stamp: { color: c.dim, fontSize: 13, marginTop: 6, textAlign: 'center' },
   dateRow: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 12, padding: 10 },
   time: { flexDirection: 'row', alignItems: 'center', gap: 4 },
-  timeText: { color: c.text, fontSize: 16, fontWeight: '600' },
-  label: { color: c.dim, fontSize: 13, textTransform: 'uppercase', letterSpacing: 1, marginTop: 18, marginBottom: 8 },
+  timeText: { color: c.text, fontSize: 17, fontWeight: '600' },
+  label: { color: c.dim, fontSize: 13, marginTop: 18, marginBottom: 8 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  dim: { color: c.dim, marginTop: 8 },
+  dim: { fontSize: 15, color: c.dim, marginTop: 8 },
   slots: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 18 },
   empty: { borderWidth: 1, borderStyle: 'dashed', borderColor: c.line, borderRadius: 6, alignItems: 'center', justifyContent: 'center' },
-  pos: { color: c.dim, fontSize: 12 },
-  cardLabel: { color: c.text, fontSize: 12, textAlign: 'center' },
-  hint: { color: c.dim, fontSize: 12, marginTop: 8 },
-  input: { backgroundColor: c.panel, color: c.text, borderRadius: 10, padding: 12, fontSize: 15, textAlignVertical: 'top' },
+  pos: { color: c.dim, fontSize: 13 },
+  cardLabel: { color: c.text, fontSize: 13, textAlign: 'center' },
+  hint: { color: c.dim, fontSize: 13, marginTop: 8 },
+  input: { backgroundColor: c.panel, color: c.text, borderRadius: 10, padding: 12, fontSize: 17, textAlignVertical: 'top' },
   actions: { flexDirection: 'row', gap: 10, marginTop: 20 },
   answer: { backgroundColor: c.panel, borderRadius: 12, padding: 12, marginTop: 10, borderLeftWidth: 3, borderLeftColor: c.claude },
-  answerHead: { color: c.claude, fontSize: 12, fontWeight: '700', marginBottom: 4 },
-  answerText: { color: c.text, fontSize: 15, lineHeight: 21 },
+  answerHead: { color: c.claude, fontSize: 13, fontWeight: '700', marginBottom: 4 },
+  answerText: { color: c.text, fontSize: 17, lineHeight: 25 },
   dimBg: { flex: 1, backgroundColor: '#000a' },
   sheet: { backgroundColor: c.panel, padding: 16, paddingBottom: 36, borderTopLeftRadius: 18, borderTopRightRadius: 18, gap: 10 },
-  h2: { color: c.text, fontSize: 19, fontFamily: F.heading },
+  h2: { color: c.text, fontSize: 22, fontFamily: F.heading },
 }));

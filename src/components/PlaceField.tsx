@@ -1,6 +1,7 @@
 import { t as tr } from '../i18n';
 import { useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Pressable } from './Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { c, themed } from '../theme';
 
@@ -78,5 +79,5 @@ const s = themed(() => ({
   list: { backgroundColor: c.panel, borderRadius: 12, overflow: 'hidden' },
   hit: { paddingHorizontal: 14, paddingVertical: 10, borderBottomWidth: StyleSheet.hairlineWidth, borderColor: c.line },
   hitName: { color: c.text, fontSize: 15, fontWeight: '600' },
-  hitDim: { color: c.dim, fontSize: 12, marginTop: 2 },
+  hitDim: { color: c.dim, fontSize: 13, marginTop: 2 },
 }));

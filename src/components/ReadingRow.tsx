@@ -1,5 +1,6 @@
 import { t as tr } from '../i18n';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { router } from 'expo-router';
 import { CardImage } from './Cards';
 import { JournalData, Reading, spreadOf } from '../journal';
@@ -40,9 +41,9 @@ const s = themed(() => ({
   card: { backgroundColor: c.panel, borderRadius: 12, padding: 12, marginBottom: 10, gap: 8 },
   top: { flexDirection: 'row', gap: 8 },
   q: { color: c.text, fontSize: 15, fontWeight: '600', flex: 1 },
-  time: { color: c.dim, fontSize: 12 },
+  time: { color: c.dim, fontSize: 13 },
   cards: { flexDirection: 'row', gap: 5, alignItems: 'center' },
   tags: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
-  tag: { color: c.dim, fontSize: 12, borderWidth: 1, borderColor: c.line, borderRadius: 10, paddingHorizontal: 8, paddingVertical: 2, overflow: 'hidden' },
-  dim: { color: c.dim, fontSize: 12 },
+  tag: { color: c.dim, fontSize: 13, borderWidth: 1, borderColor: c.line, borderRadius: 10, paddingHorizontal: 8, paddingVertical: 2, overflow: 'hidden' },
+  dim: { color: c.dim, fontSize: 13 },
 }));

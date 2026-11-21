@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Animated, Easing, StyleSheet } from 'react-native';
+import { AccessibilityInfo, Animated, Easing, StyleSheet } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
@@ -14,15 +14,20 @@ export function Splash() {
   useEffect(() => {
     SplashScreen.hideAsync()
       .catch(() => {})
-      .finally(() =>
-        Animated.sequence([
-          Animated.delay(150),
-          Animated.timing(scale, { toValue: 0.82, duration: 300, easing: Easing.out(Easing.quad), useNativeDriver: true }),
-          Animated.parallel([
-            Animated.timing(scale, { toValue: 14, duration: 520, easing: Easing.in(Easing.cubic), useNativeDriver: true }),
-            Animated.timing(fade, { toValue: 0, duration: 380, delay: 220, easing: Easing.in(Easing.quad), useNativeDriver: true }),
-          ]),
-        ]).start(() => setDone(true)),
+      .then(() => AccessibilityInfo.isReduceMotionEnabled().catch(() => false))
+      .then((reduce) =>
+        // With Reduce Motion on, the icon just fades instead of zooming towards the viewer.
+        (reduce
+          ? Animated.timing(fade, { toValue: 0, duration: 300, delay: 150, useNativeDriver: true })
+          : Animated.sequence([
+              Animated.delay(150),
+              Animated.timing(scale, { toValue: 0.82, duration: 300, easing: Easing.out(Easing.quad), useNativeDriver: true }),
+              Animated.parallel([
+                Animated.timing(scale, { toValue: 14, duration: 520, easing: Easing.in(Easing.cubic), useNativeDriver: true }),
+                Animated.timing(fade, { toValue: 0, duration: 380, delay: 220, easing: Easing.in(Easing.quad), useNativeDriver: true }),
+              ]),
+            ])
+        ).start(() => setDone(true)),
       );
   }, [scale, fade]);
 

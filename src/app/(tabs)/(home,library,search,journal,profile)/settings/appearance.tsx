@@ -1,5 +1,6 @@
 import { t as tr } from '../../../../i18n';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { c, Mode, mode, PALETTES, paletteId, scheme, setMode, setPalette } from '../../../../theme';
 import { IconPicker } from '../../../../components/ThemeSheet';
@@ -14,16 +15,16 @@ const MODES = [
 export default function Appearance() {
   return (
     <Page>
-      <Text style={ss.h2}>{tr("Mode")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Mode")}</Text>
       <View style={ss.modes}>
         {MODES.map(([m, label, icon]) => (
-          <Pressable key={m} style={[ss.mode, mode === m && ss.modeOn]} onPress={() => m !== mode && setMode(m as Mode)}>
+          <Pressable key={m} accessibilityState={{ selected: mode === m }} style={[ss.mode, mode === m && ss.modeOn]} onPress={() => m !== mode && setMode(m as Mode)}>
             <Ionicons name={icon} size={15} color={mode === m ? c.bg : c.dim} />
             <Text style={[ss.modeText, mode === m && { color: c.bg }]}>{label}</Text>
           </Pressable>
         ))}
       </View>
-      <Text style={ss.h2}>{tr("Colors")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Colours")}</Text>
       <View style={[ss.card, { gap: 2 }]}>
         {PALETTES.map((p) => {
           const pc = scheme === 'light' ? p.light : p.c;
@@ -41,7 +42,7 @@ export default function Appearance() {
           );
         })}
       </View>
-      <Text style={ss.h2}>{tr("App icon")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("App icon")}</Text>
       <IconPicker heading={false} />
     </Page>
   );

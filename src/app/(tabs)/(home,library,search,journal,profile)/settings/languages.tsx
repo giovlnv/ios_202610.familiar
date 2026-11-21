@@ -2,7 +2,8 @@ import { isPublic } from '../../../../variant';
 import * as Updates from 'expo-updates';
 import { t as tr } from '../../../../i18n';
 import { useState } from 'react';
-import { ActivityIndicator, Alert, Pressable, Text, View } from 'react-native';
+import { ActivityIndicator, Alert, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import {
   AUDIO_LANGS,
@@ -66,7 +67,7 @@ export default function Languages() {
   const drop = (l: AudioLang) =>
     Alert.alert(tr("Remove {0}?", { 0: l.name }), tr("Frees {0}. You can download it again any time.", { 0: mb(langSize(l)) }), [
       { text: tr("Cancel"), style: 'cancel' },
-      { text: tr("Remove"), style: 'destructive', onPress: () => (removeLanguage(l), setOpen(null), refresh()) },
+      { text: tr("Remove language"), style: 'destructive', onPress: () => (removeLanguage(l), setOpen(null), refresh()) },
     ]);
 
   return (
@@ -213,7 +214,7 @@ export default function Languages() {
 const s = themed(() => ({
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 14, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: c.line + '66' },
   indent: { paddingLeft: 46 },
-  title: { color: c.text, fontSize: 16, fontWeight: '600' },
+  title: { color: c.text, fontSize: 17, fontWeight: '600' },
   voices: { paddingHorizontal: 14, paddingBottom: 12, gap: 2, borderBottomWidth: 1, borderBottomColor: c.line + '66' },
   voice: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 9 },
   voiceText: { flex: 1, color: c.text, fontSize: 15 },

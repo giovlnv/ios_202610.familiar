@@ -42,31 +42,31 @@ export function CardStudyView({ d }: { d: Study }) {
         </View>
       </View>
 
-      <Text style={s.h3}>{lx({ pt: 'Símbolos', en: 'Symbols' })}</Text>
+      <Text accessibilityRole="header" style={s.h3}>{lx({ pt: 'Símbolos', en: 'Symbols' })}</Text>
       {d.symbols.map((x) => (
         <View key={x.key} style={s.row}>
           <SymbolDot id={d.id} crop={x.crop} size={64} />
           <View style={{ flex: 1 }}>
-            <Text style={s.h4}>{lx(x.title)}</Text>
+            <Text accessibilityRole="header" style={s.h4}>{lx(x.title)}</Text>
             <Bullets items={lx(x.keywords)} />
           </View>
         </View>
       ))}
 
-      <Text style={s.h3}>{lx({ pt: 'Cores', en: 'Colours' })}</Text>
+      <Text accessibilityRole="header" style={s.h3}>{lx({ pt: 'Cores', en: 'Colours' })}</Text>
       <View style={s.grid}>
         {d.colours.map((x) => (
           <View key={x.hex} style={[s.row, s.half]}>
             <View style={[s.sw, { backgroundColor: x.hex }]} />
             <View style={{ flex: 1 }}>
-              <Text style={s.h4}>{lx(x.name)}</Text>
+              <Text accessibilityRole="header" style={s.h4}>{lx(x.name)}</Text>
               <Bullets items={lx(x.keywords)} />
             </View>
           </View>
         ))}
       </View>
 
-      <Text style={s.h3}>{lx({ pt: 'Na leitura', en: 'In a reading' })}</Text>
+      <Text accessibilityRole="header" style={s.h3}>{lx({ pt: 'Na leitura', en: 'In a reading' })}</Text>
       <View style={s.sum}>
         {lx(d.summary).map((t) => (
           <Text key={t} style={[s.text, { textAlign: 'center' }]}>
@@ -79,7 +79,7 @@ export function CardStudyView({ d }: { d: Study }) {
         const dark = p.id === 'challenge';
         return (
           <View key={p.id} style={[s.plane, { borderLeftColor: TINTS[p.id] ?? c.gold }, dark && s.challenge]}>
-            <Text style={[s.h4, dark && { color: c.gold }]}>{lx(p.title)}</Text>
+            <Text accessibilityRole="header" style={[s.h4, dark && { color: c.gold }]}>{lx(p.title)}</Text>
             <Bullets items={items} />
             {!!items.length && <Text style={s.q}>{lx(p.line)}</Text>}
           </View>
@@ -98,7 +98,7 @@ export function IntroView({ page }: { page: IntroPage }) {
         <Text style={s.lead}>{lx(h.lead)}</Text>
         {h.parts.map((p) => (
           <View key={p.title.en} style={s.part}>
-            <Text style={s.h4}>{lx(p.title)}</Text>
+            <Text accessibilityRole="header" style={s.h4}>{lx(p.title)}</Text>
             <Text style={s.text}>{lx(p.text)}</Text>
           </View>
         ))}
@@ -116,7 +116,7 @@ export function IntroView({ page }: { page: IntroPage }) {
           <View key={x.hex} style={s.row}>
             <View style={[s.sw, { width: 34, height: 34, borderRadius: 17, backgroundColor: x.hex }]} />
             <View style={{ flex: 1 }}>
-              <Text style={s.h4}>{lx(x.name)}</Text>
+              <Text accessibilityRole="header" style={s.h4}>{lx(x.name)}</Text>
               <Text style={s.text}>{lx(x.keywords)}</Text>
             </View>
           </View>
@@ -132,7 +132,7 @@ export function IntroView({ page }: { page: IntroPage }) {
       <Text style={s.lead}>{lx(p.lead)}</Text>
       {p.list.map((x) => (
         <View key={x.id} style={[s.plane, { borderLeftColor: TINTS[x.id] ?? c.gold }, x.id === 'challenge' && s.challenge]}>
-          <Text style={[s.h4, x.id === 'challenge' && { color: c.gold }]}>{lx(x.name)}</Text>
+          <Text accessibilityRole="header" style={[s.h4, x.id === 'challenge' && { color: c.gold }]}>{lx(x.name)}</Text>
           <Text style={s.text}>{lx(x.text)}</Text>
         </View>
       ))}
@@ -157,16 +157,16 @@ const s = themed(() => ({
   dot: { overflow: 'hidden', borderWidth: 1.5, borderColor: c.gold, backgroundColor: c.panel },
   head: { flexDirection: 'row', gap: 14 },
   card: { width: 110, height: 110 * RWS_RATIO, borderRadius: 6, borderWidth: 1.5, borderColor: c.gold },
-  name: { color: c.text, fontFamily: F.heading, fontSize: 24, letterSpacing: 1.5 },
+  name: { color: c.text, fontFamily: F.heading, fontSize: 28, letterSpacing: 1.5 },
   sub: { color: c.gold, fontFamily: F.headingItalic, fontSize: 15 },
   title: { color: c.text, fontFamily: F.heading, fontSize: 28, textAlign: 'center' },
-  lead: { color: c.text, fontSize: 15, lineHeight: 22, textAlign: 'center' },
-  text: { color: c.text, fontSize: 15, lineHeight: 21 },
-  h3: { color: c.gold, fontFamily: F.heading, fontSize: 14, letterSpacing: 2, textTransform: 'uppercase', borderTopWidth: 1, borderTopColor: c.gold, paddingTop: 10, marginTop: 6 },
-  h4: { color: c.text, fontFamily: F.heading, fontSize: 16, marginBottom: 3 },
-  li: { color: c.text, fontSize: 14, lineHeight: 20 },
-  star: { color: c.gold, fontSize: 9 },
-  none: { color: c.dim, fontSize: 18 },
+  lead: { color: c.text, fontSize: 17, lineHeight: 25, textAlign: 'center' },
+  text: { color: c.text, fontSize: 17, lineHeight: 25 },
+  h3: { color: c.gold, fontFamily: F.heading, fontSize: 15, letterSpacing: 2, textTransform: 'uppercase', borderTopWidth: 1, borderTopColor: c.gold, paddingTop: 10, marginTop: 6 },
+  h4: { color: c.text, fontFamily: F.heading, fontSize: 17, marginBottom: 3 },
+  li: { color: c.text, fontSize: 17, lineHeight: 25 },
+  star: { color: c.gold, fontSize: 11 },
+  none: { color: c.dim, fontSize: 17 },
   row: { flexDirection: 'row', gap: 12, alignItems: 'flex-start' },
   grid: { flexDirection: 'row', flexWrap: 'wrap', rowGap: 12 },
   half: { width: '50%', paddingRight: 8 },

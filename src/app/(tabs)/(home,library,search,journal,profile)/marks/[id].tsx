@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
-import { Alert, FlatList, Pressable, Text, View } from 'react-native';
+import { Alert, FlatList, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import { router, Stack, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { getBook } from '../../../../storage';
@@ -34,7 +35,7 @@ export default function Marks() {
     Alert.alert(tr('This mark'), m.quote.slice(0, 120), [
       { text: tr('Make a flashcard'), onPress: () => setFlash({ subject: bookPaths(id).find(isSubject), back: (m.section !== undefined ? item.book.sections[secIndex.get(m.section) ?? 0]?.paras[m.para ?? 0]?.text : undefined) ?? m.quote, book: id, section: m.section, para: m.para }) },
       { text: tr('Cancel'), style: 'cancel' },
-      { text: tr('Remove'), style: 'destructive', onPress: () => (saveMarks(id, marks.filter((x) => x.id !== m.id)), setMarks(loadMarks(id))) },
+      { text: tr('Remove mark'), style: 'destructive', onPress: () => (saveMarks(id, marks.filter((x) => x.id !== m.id)), setMarks(loadMarks(id))) },
     ]);
   return (
     <View style={s.wrap}>
@@ -77,6 +78,6 @@ const s = themed(() => ({
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: 12 },
   row: { flexDirection: 'row', gap: 12, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: c.line + '66', alignItems: 'flex-start' },
   dot: { width: 14, height: 14, borderRadius: 7, marginTop: 3 },
-  where: { color: c.dim, fontSize: 12, marginBottom: 2 },
+  where: { color: c.dim, fontSize: 13, marginBottom: 2 },
   quote: { color: c.text, fontSize: 15, lineHeight: 21 },
 }));

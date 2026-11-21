@@ -1,5 +1,6 @@
 import { t as tr } from '../i18n';
-import { Modal, Pressable, ScrollView, Text, View } from 'react-native';
+import { Modal, ScrollView, Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { c, F, themed } from '../theme';
 import {
@@ -28,10 +29,10 @@ export default function TextStyleSheet({ visible, sample, reader, onClose }: { v
 
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
-      <Pressable style={{ flex: 1 }} onPress={onClose} accessibilityLabel={tr("Close")} />
+      <Pressable dim={false} style={{ flex: 1 }} onPress={onClose} accessibilityLabel={tr("Close")} />
       <View style={s.sheet}>
         <View style={s.top}>
-          <Text style={s.h2}>{tr("Text")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Text")}</Text>
           <View style={{ flexDirection: 'row', gap: 18 }}>
             <Pressable hitSlop={8} onPress={() => setTextStyle({ ...DEFAULT_STYLE, layout: t.layout })}>
               <Text style={s.dimLink}>{tr("Reset")}</Text>
@@ -109,8 +110,8 @@ const s = themed(() => ({
   sheet: { backgroundColor: c.panel, borderTopLeftRadius: 22, borderTopRightRadius: 22, padding: 18, paddingBottom: 34, maxHeight: '62%', gap: 12, borderTopWidth: 1, borderColor: c.line },
   top: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   h2: { color: c.text, fontSize: 22, fontFamily: F.heading },
-  link: { color: c.gold, fontSize: 16, fontWeight: '600' },
-  dimLink: { color: c.dim, fontSize: 16 },
+  link: { color: c.gold, fontSize: 17, fontWeight: '600' },
+  dimLink: { color: c.dim, fontSize: 17 },
   preview: { backgroundColor: c.bg, borderRadius: 12, padding: 12 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 10 },
   label: { flex: 1, color: c.text, fontSize: 15 },

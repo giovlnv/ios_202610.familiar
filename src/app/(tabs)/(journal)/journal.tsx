@@ -1,6 +1,7 @@
 import { t as tr } from '../../../i18n';
 import { useCallback, useMemo, useState } from 'react';
-import { Pressable, ScrollView, SectionList, Text, TextInput, View } from 'react-native';
+import { ScrollView, SectionList, Text, TextInput, View } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import { router, Stack, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { JournalData, loadJournal, matchesReading, mostDrawn, newReading, Reading } from '../../../journal';
@@ -11,7 +12,7 @@ import ReadingRow from '../../../components/ReadingRow';
 import CardSheet from '../../../components/CardSheet';
 import { Chip, fmtDate } from '../../../components/ui';
 import { usePad } from '../../../playback';
-import { c, themed } from '../../../theme';
+import { c, F, themed } from '../../../theme';
 import EmptyState from '../../../components/EmptyState';
 import StudyJournal, { JournalTabs } from '../../../components/StudyJournal';
 import { isSubject, useStudy } from '../../../study';
@@ -89,7 +90,7 @@ export default function Journal() {
           ),
         }}
       />
-      <Text style={s.h3}>{tr("Readings")}</Text>
+      <Text accessibilityRole="header" style={s.h3}>{tr("Readings")}</Text>
       <View style={s.stats}>
         <View style={{ flex: 1, gap: 2 }}>
           <Text style={s.big}>{thisMonth}</Text>
@@ -126,7 +127,7 @@ export default function Journal() {
       </View>
       <View style={s.views}>
         {(['timeline', 'calendar'] as const).map((v) => (
-          <Pressable key={v} style={[s.view, view === v && s.viewOn]} onPress={() => (setView(v), setPicked(null))}>
+          <Pressable key={v} accessibilityState={{ selected: view === v }} style={[s.view, view === v && s.viewOn]} onPress={() => (setView(v), setPicked(null))}>
             <Ionicons name={v === 'timeline' ? 'list' : 'calendar-outline'} size={15} color={view === v ? c.bg : c.dim} />
             <Text style={[s.viewText, view === v && { color: c.bg }]}>{v === 'timeline' ? tr("Timeline") : tr("Calendar")}</Text>
           </Pressable>
@@ -235,31 +236,31 @@ function Calendar({
 
 const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
-  h3: { color: c.text, fontSize: 17, fontWeight: '700', marginTop: 16, marginBottom: 8 },
+  h3: { color: c.text, fontSize: 22, fontFamily: F.heading, marginTop: 16, marginBottom: 8 },
   birthRow: { flexDirection: 'row', gap: 10 },
   birth: { backgroundColor: c.panel, borderRadius: 12, paddingVertical: 12, alignItems: 'center', gap: 4 },
   addBirth: { flexDirection: 'row', gap: 10, alignItems: 'center', backgroundColor: c.panel, borderRadius: 12, padding: 14 },
   stats: { flexDirection: 'row', alignItems: 'center', backgroundColor: c.panel, borderRadius: 14, padding: 16, marginBottom: 14 },
-  statLine: { color: c.text, fontSize: 14 },
-  moreStats: { color: c.gold, fontWeight: '600', fontSize: 14 },
+  statLine: { color: c.text, fontSize: 15 },
+  moreStats: { color: c.gold, fontWeight: '600', fontSize: 15 },
   search: { flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: c.panel, borderRadius: 10, paddingHorizontal: 12, marginBottom: 10 },
   searchInput: { flex: 1, color: c.text, fontSize: 15, paddingVertical: 10 },
-  tileLabel: { color: c.dim, fontSize: 12 },
+  tileLabel: { color: c.dim, fontSize: 13 },
   tileCard: { color: c.text, fontSize: 13, fontWeight: '600', textAlign: 'center', paddingHorizontal: 4 },
-  big: { color: c.gold, fontSize: 40, fontWeight: '700' },
+  big: { color: c.gold, fontSize: 40, fontFamily: F.heading, fontVariant: ['lining-nums'] },
   views: { flexDirection: 'row', backgroundColor: c.panel, borderRadius: 10, padding: 3 },
   view: { flex: 1, flexDirection: 'row', gap: 6, alignItems: 'center', justifyContent: 'center', paddingVertical: 7, borderRadius: 8 },
   viewOn: { backgroundColor: c.gold },
-  viewText: { color: c.dim, fontWeight: '600' },
+  viewText: { fontSize: 15, color: c.dim, fontWeight: '600' },
   chips: { gap: 8, paddingTop: 12 },
-  day: { color: c.gold, fontWeight: '700', fontSize: 13, letterSpacing: 1, textTransform: 'uppercase', marginTop: 18, marginBottom: 8 },
+  day: { color: c.gold, fontWeight: '700', fontSize: 13, marginTop: 18, marginBottom: 8 },
   cal: { backgroundColor: c.panel, borderRadius: 12, padding: 12, marginTop: 12 },
   calHead: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 },
-  calTitle: { color: c.text, fontSize: 16, fontWeight: '700' },
+  calTitle: { color: c.text, fontSize: 17, fontWeight: '700' },
   grid: { flexDirection: 'row', flexWrap: 'wrap' },
   cell: { width: `${100 / 7}%`, alignItems: 'center', paddingVertical: 5, borderRadius: 8 },
   cellOn: { backgroundColor: c.gold },
-  week: { color: c.dim, fontSize: 12, textAlign: 'center' },
-  num: { color: c.text, fontSize: 14 },
+  week: { color: c.dim, fontSize: 13, textAlign: 'center' },
+  num: { color: c.text, fontSize: 15 },
   dot: { width: 5, height: 5, borderRadius: 3, marginTop: 2 },
 }));

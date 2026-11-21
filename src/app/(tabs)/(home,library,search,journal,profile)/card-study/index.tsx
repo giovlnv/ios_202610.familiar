@@ -1,5 +1,6 @@
 import { t as tr } from '../../../../i18n';
-import { Image, Pressable, Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import { router } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { CARDS, cardName } from '../../../../decks';
@@ -31,7 +32,7 @@ export default function Booklet() {
         )}
       </View>
 
-      <Text style={s.h2}>{tr("Introduction")}</Text>
+      <Text accessibilityRole="header" style={s.h2}>{tr("Introduction")}</Text>
       {PAGES.map((p) => (
         <Pressable key={p} style={s.row} onPress={() => open(p)}>
           <Text style={[s.rowText, { flex: 1 }]}>{lx(p === 'how-to' ? intro.howTo.title : p === 'colours' ? intro.colours.title : intro.planes.title)}</Text>
@@ -44,7 +45,7 @@ export default function Booklet() {
         const done = list.filter((x) => hasStudy(x.id)).length;
         return (
           <View key={g}>
-            <Text style={s.h2}>
+            <Text accessibilityRole="header" style={s.h2}>
               {lx({ pt: GROUP_PT[g], en: g })} <Text style={s.small}>{done}/{list.length}</Text>
             </Text>
             {list.map((x) => {
@@ -66,13 +67,13 @@ export default function Booklet() {
 
 const s = themed(() => ({
   top: { alignItems: 'center', gap: 4, marginBottom: 8 },
-  title: { color: c.text, fontFamily: F.heading, fontSize: 30, marginTop: 4 },
-  tag: { color: c.gold, fontFamily: F.headingItalic, fontSize: 16 },
+  title: { color: c.text, fontFamily: F.heading, fontSize: 28, marginTop: 4 },
+  tag: { color: c.gold, fontFamily: F.headingItalic, fontSize: 17 },
   count: { color: c.dim, fontSize: 13, marginTop: 4 },
   start: { backgroundColor: c.gold, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 28, marginTop: 12 },
-  startText: { color: c.bg, fontWeight: '700', fontSize: 16 },
-  link: { color: c.gold, fontWeight: '600', marginTop: 12 },
-  h2: { color: c.text, fontSize: 19, marginTop: 24, marginBottom: 8, fontFamily: F.heading },
+  startText: { color: c.bg, fontWeight: '700', fontSize: 17 },
+  link: { fontSize: 15, color: c.gold, fontWeight: '600', marginTop: 12 },
+  h2: { color: c.text, fontSize: 22, marginTop: 24, marginBottom: 8, fontFamily: F.heading },
   small: { color: c.dim, fontSize: 13 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 12, padding: 12, marginBottom: 6 },
   rowText: { color: c.text, fontSize: 15 },

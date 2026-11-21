@@ -10,11 +10,11 @@ import {
   KeyboardAvoidingView,
   Modal,
   Platform,
-  Pressable,
   Text,
   TextInput,
   View,
 } from "react-native";
+import { Pressable } from "./Pressable";
 import * as Sharing from "expo-sharing";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -526,7 +526,7 @@ export default function Player({
       <Modal visible={sleepOpen} transparent animationType="slide" onRequestClose={() => setSleepOpen(false)}>
         <Pressable style={{ flex: 1, backgroundColor: "#0008" }} onPress={() => setSleepOpen(false)} accessibilityLabel={tr("Close")} />
         <View style={s.sleepSheet}>
-          <Text style={s.h2}>{tr("Sleep timer")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Sleep timer")}</Text>
           {(
             [
               ["off", "Off"],
@@ -927,7 +927,7 @@ const Header = ({
   action?: [string, () => void];
 }) => (
   <View style={s.top}>
-    <Text style={s.h2}>{title}</Text>
+    <Text accessibilityRole="header" style={s.h2}>{title}</Text>
     <View style={s.topRight}>
       {action && (
         <Pressable onPress={action[1]} hitSlop={8}>
@@ -946,19 +946,19 @@ const s = themed(() => ({
   passage: { alignSelf: "stretch", backgroundColor: c.panel, borderRadius: 12, paddingVertical: 10, paddingHorizontal: 14, overflow: "hidden" },
   more: { alignSelf: "center", flexDirection: "row", alignItems: "center", gap: 10, backgroundColor: c.panel, borderRadius: 18, paddingVertical: 8, paddingHorizontal: 22 },
   moreTag: { color: c.dim, fontSize: 13, fontVariant: ["tabular-nums"] },
-  moreHead: { color: c.dim, fontSize: 12, textTransform: "uppercase", letterSpacing: 1, marginBottom: 2 },
+  moreHead: { color: c.dim, fontSize: 13, marginBottom: 2 },
   rates: { flexDirection: "row", gap: 8, marginBottom: 10 },
   rate: { flex: 1, alignItems: "center", backgroundColor: c.raised, borderRadius: 10, paddingVertical: 10 },
   rateOn: { backgroundColor: c.gold },
   rateText: { color: c.text, fontSize: 15, fontVariant: ["tabular-nums"] },
   rateTextOn: { color: c.bg, fontWeight: "700" },
-  cardName: { color: c.text, fontSize: 18, fontFamily: F.heading, textAlign: "center" },
+  cardName: { color: c.text, fontSize: 17, fontFamily: F.heading, textAlign: "center" },
   linkBtn: { flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: c.panel, paddingVertical: 10, paddingHorizontal: 16, borderRadius: 20 },
   textBtn: { width: 28, height: 24, borderRadius: 6, alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: c.dim },
   textBtnOn: { backgroundColor: c.gold, borderColor: c.gold },
   sleepSheet: { backgroundColor: c.panel, borderTopLeftRadius: 22, borderTopRightRadius: 22, padding: 18, paddingBottom: 40, gap: 2 },
   sleepRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingVertical: 12 },
-  sleepNote: { color: c.dim, fontSize: 12, marginTop: 8 },
+  sleepNote: { color: c.dim, fontSize: 13, marginTop: 8 },
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
   top: {
     flexDirection: "row",
@@ -967,10 +967,10 @@ const s = themed(() => ({
     paddingVertical: 10,
   },
   topRight: { flexDirection: "row", gap: 18 },
-  link: { color: c.gold, fontSize: 16 },
+  link: { color: c.gold, fontSize: 17 },
   h2: { color: c.text, fontSize: 22, fontFamily: F.heading },
   book: { color: c.dim, fontSize: 13, marginTop: 4 },
-  sec: { color: c.text, fontSize: 20, fontWeight: "700", marginBottom: 10 },
+  sec: { color: c.text, fontSize: 22, fontWeight: "700", marginBottom: 10 },
   para: {
     paddingVertical: 8,
     paddingHorizontal: 10,
@@ -986,15 +986,11 @@ const s = themed(() => ({
     fontSize: 15,
     fontWeight: "700",
     color: c.gold,
-    textTransform: "uppercase",
-    letterSpacing: 1,
   },
   kExplainHead: {
     fontSize: 15,
     fontWeight: "700",
     color: c.explain,
-    textTransform: "uppercase",
-    letterSpacing: 1,
   },
   kExplain: { color: c.explain },
   follow: {
@@ -1006,7 +1002,7 @@ const s = themed(() => ({
     paddingVertical: 10,
     borderRadius: 20,
   },
-  followText: { color: c.bg, fontWeight: "700" },
+  followText: { fontSize: 15, color: c.bg, fontWeight: "700" },
   controls: {
     borderTopWidth: 1,
     borderColor: c.line,
@@ -1049,8 +1045,8 @@ const s = themed(() => ({
     justifyContent: "center",
   },
   iconLink: { flexDirection: "row", alignItems: "center", gap: 4 },
-  menuText: { color: c.text, fontSize: 16, fontVariant: ["tabular-nums"] },
-  btnText: { color: c.text, fontSize: 16 },
+  menuText: { color: c.text, fontSize: 17, fontVariant: ["tabular-nums"] },
+  btnText: { color: c.text, fontSize: 17 },
   play: {
     backgroundColor: c.gold,
     width: 68,
@@ -1059,7 +1055,7 @@ const s = themed(() => ({
     alignItems: "center",
     justifyContent: "center",
   },
-  empty: { color: c.dim, fontSize: 16, lineHeight: 22, marginTop: 20 },
+  empty: { color: c.dim, fontSize: 17, lineHeight: 23, marginTop: 20 },
   note: {
     backgroundColor: c.panel,
     borderRadius: 12,
@@ -1067,7 +1063,7 @@ const s = themed(() => ({
     marginBottom: 10,
   },
   noteMeta: { color: c.gold, fontSize: 13, marginBottom: 6 },
-  quote: { color: c.dim, fontStyle: "italic", marginBottom: 8 },
+  quote: { fontSize: 15, color: c.dim, fontStyle: "italic", marginBottom: 8 },
   dim: { flex: 1, backgroundColor: "#000a", justifyContent: "flex-end" },
   sheet: {
     backgroundColor: c.panel,

@@ -1,6 +1,7 @@
 import { t as tr } from '../../../../i18n';
 import { useState } from 'react';
-import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
+import { Alert, ScrollView, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { EYES, Familiar, loadFamiliars, newFamiliar, allPaths, removeFamiliar, saveFamiliar } from '../../../../familiar';
@@ -27,7 +28,7 @@ export default function FamiliarScreen() {
   const remove = () =>
     Alert.alert(tr("Let {0} go?", { 0: f.name || 'this familiar' }), tr("Its look and name are removed. Your books and notes stay."), [
       { text: tr("Cancel"), style: 'cancel' },
-      { text: tr("Remove"), style: 'destructive', onPress: () => (removeFamiliar(f.id), router.back()) },
+      { text: tr("Remove familiar"), style: 'destructive', onPress: () => (removeFamiliar(f.id), router.back()) },
     ]);
 
   return (
@@ -44,8 +45,8 @@ export default function FamiliarScreen() {
       />
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 6 }}>
         {TABS.filter((t) => cat || t !== 'Shape').map((t) => (
-          <Pressable key={t} onPress={() => setTab(t)} style={[s.tab, tab === t && s.tabOn]}>
-            <Text style={[s.tabText, tab === t && { color: c.bg }]}>{!cat && t === 'Eyes' ? tr("Colour & eyes") : t}</Text>
+          <Pressable key={t} accessibilityState={{ selected: tab === t }} onPress={() => setTab(t)} style={[s.tab, tab === t && s.tabOn]}>
+            <Text style={[s.tabText, tab === t && { color: c.bg }]}>{!cat && t === 'Eyes' ? tr("Colour and eyes") : tr(t)}</Text>
           </Pressable>
         ))}
       </ScrollView>
@@ -89,7 +90,7 @@ function BasicEyes({ f, set }: { f: Familiar; set: (p: Partial<Familiar>) => voi
   return (
     <View style={{ gap: 14 }}>
       <ShapeCoatStep f={f} set={set} />
-      <Label>{tr("EYES")}</Label>
+      <Label>{tr("Eyes")}</Label>
       <View style={{ flexDirection: 'row', gap: 14 }}>
         {EYES.map((e) => (
           <Pressable
@@ -109,11 +110,11 @@ const s = themed(() => ({
   save: { color: c.gold, fontSize: 17, fontWeight: '600' },
   tab: { backgroundColor: c.panel, borderRadius: 999, paddingHorizontal: 14, paddingVertical: 8 },
   tabOn: { backgroundColor: c.gold },
-  tabText: { color: c.text, fontWeight: '600' },
-  p: { color: c.dim, fontSize: 14, lineHeight: 20 },
+  tabText: { fontSize: 15, color: c.text, fontWeight: '600' },
+  p: { color: c.dim, fontSize: 15, lineHeight: 21 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 14, padding: 14 },
   dot: { width: 14, height: 14, borderRadius: 7 },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },
-  dim: { color: c.dim, fontSize: 12 },
+  dim: { color: c.dim, fontSize: 13 },
   swatch: { width: 34, height: 34, borderRadius: 17, borderWidth: 1, borderColor: c.line },
 }));

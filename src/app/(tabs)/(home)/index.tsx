@@ -3,7 +3,8 @@ import { usePad, usePlayback } from '../../../playback';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { captureRef } from 'react-native-view-shot';
 import { trySyncWidget } from '../../../widget';
-import { Alert, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Alert, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import { router, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { getBook as getAudio, installSampleOnce, loadProgress } from '../../../storage';
@@ -295,11 +296,11 @@ export default function Home() {
 
       {tarotOn && (
         <>
-          <Text style={s.h2}>{tr("Booklet")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Booklet")}</Text>
           <Pressable style={s.booklet} onPress={() => router.push('/card-study')}>
             <BookletCover size={110} />
             <View style={{ flex: 1, gap: 2 }}>
-              <Text style={s.bookletTitle}>{lx(intro.title)}</Text>
+              <Text accessibilityRole="header" style={s.bookletTitle}>{lx(intro.title)}</Text>
               <Text style={s.bookletTag}>{lx(intro.tagline)}</Text>
               <Text style={s.dim}>{tr("{0} of 78 cards", { 0: studyCount() })}</Text>
             </View>
@@ -310,7 +311,7 @@ export default function Home() {
 
       {listening.length > 0 && (
         <>
-          <Text style={s.h2}>{tr("Continue listening")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Continue listening")}</Text>
           {listening.map(({ b, audio, p }) => (
             <Pressable
               key={b.id}
@@ -344,7 +345,7 @@ export default function Home() {
         </>
       )}
 
-      <Text style={s.h2}>{tr("Currently reading")}</Text>
+      <Text accessibilityRole="header" style={s.h2}>{tr("Currently reading")}</Text>
       {reading.length ? (
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 12 }}>
           {reading.map((b) => (
@@ -360,7 +361,7 @@ export default function Home() {
         <Text style={s.dim}>{tr("Mark a book as “Reading” to see it here.")}</Text>
       )}
 
-      <Text style={s.h2}>{tr("Recently logged")}</Text>
+      <Text accessibilityRole="header" style={s.h2}>{tr("Recently logged")}</Text>
       {recent.length ? (
         recent.map((l) => {
           const b = byId.get(l.bookId);
@@ -434,17 +435,17 @@ function DayCard({
         </Text>
         <View style={s.tBtns}>
           {mine?.card ? (
-            <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={onOpen}>
+            <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={onOpen} hitSlop={8}>
               <Ionicons name="book-outline" size={14} color={c.gold} />
               <Text style={[s.logBtnText, { color: c.gold }]}>{tr("Open entry")}</Text>
             </Pressable>
           ) : (
-            <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={onLog}>
+            <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={onLog} hitSlop={8}>
               <Ionicons name="add" size={14} color={c.gold} />
               <Text style={[s.logBtnText, { color: c.gold }]}>{tr("Log yours")}</Text>
             </Pressable>
           )}
-          <Pressable style={s.logBtn} onPress={onWrite}>
+          <Pressable style={s.logBtn} onPress={onWrite} hitSlop={8}>
             <Ionicons name="create-outline" size={14} color={c.bg} />
             <Text style={s.logBtnText}>{tr("Write")}</Text>
           </Pressable>
@@ -459,7 +460,7 @@ function DayCard({
 
 const s = themed(() => ({
   familiar: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 14, paddingVertical: 8, paddingHorizontal: 10, marginTop: 12 },
-  famName: { color: c.text, fontSize: 18, fontFamily: F.heading },
+  famName: { color: c.text, fontSize: 17, fontFamily: F.heading },
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
   todayBox: { marginTop: 12, backgroundColor: c.panel, borderRadius: 14, padding: 14, gap: 6 },
   tHead: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 2 },
@@ -467,23 +468,23 @@ const s = themed(() => ({
   tMoon: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   tCards: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 6 },
   tName: { color: c.text, fontSize: 15, fontFamily: F.heading },
-  tBtns: { flexDirection: 'row', gap: 8, marginTop: 6, alignItems: 'center' },
+  tBtns: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 6, alignItems: 'center' },
   shareBtn: { marginTop: 6, paddingHorizontal: 4 },
-  streak: { color: c.gold, fontSize: 12, fontWeight: '600', marginTop: 2 },
+  streak: { color: c.gold, fontSize: 13, fontWeight: '600', marginTop: 2 },
   shareDate: { color: c.text, fontFamily: F.heading, fontSize: 17 },
-  shareName: { color: c.text, fontFamily: F.heading, fontSize: 18, textAlign: 'center' },
+  shareName: { color: c.text, fontFamily: F.heading, fontSize: 17, textAlign: 'center' },
   daily: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  greet: { color: c.text, fontSize: 14, lineHeight: 20, marginTop: 4 },
+  greet: { color: c.text, fontSize: 15, lineHeight: 21, marginTop: 4 },
   slot: { flex: 1, alignItems: 'center', gap: 5 },
   mid: { alignItems: 'center', gap: 1, paddingHorizontal: 4 },
   midDay: { color: c.dim, fontSize: 11 },
   today: { color: c.text, fontSize: 13 },
   midDate: { color: c.text, fontSize: 28, fontFamily: F.heading },
-  moonName: { color: c.text, fontSize: 12, textAlign: 'center' },
-  tag: { color: c.gold, fontSize: 11, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1.2 },
-  cardName: { color: c.text, fontSize: 14, fontFamily: F.heading, textAlign: 'center' },
+  moonName: { color: c.text, fontSize: 13, textAlign: 'center' },
+  tag: { color: c.gold, fontSize: 13, fontWeight: '700' },
+  cardName: { color: c.text, fontSize: 15, fontFamily: F.heading, textAlign: 'center' },
   blank: { borderWidth: 1, borderStyle: 'dashed', borderColor: c.gold, alignItems: 'center', justifyContent: 'center' },
-  how: { color: c.dim, fontSize: 12, textDecorationLine: 'underline' },
+  how: { color: c.dim, fontSize: 13, textDecorationLine: 'underline' },
   howText: { color: c.dim, fontSize: 13, lineHeight: 19, marginTop: 6 },
   logBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, alignSelf: 'center', backgroundColor: c.gold, borderRadius: 16, paddingVertical: 6, paddingHorizontal: 12, marginTop: 6 },
   logBtnText: { color: c.bg, fontWeight: '700', fontSize: 13 },
@@ -496,15 +497,15 @@ const s = themed(() => ({
   more: { color: c.gold, fontWeight: '600', fontSize: 13, alignSelf: 'flex-end' },
   dots: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 6, marginTop: 6 },
   dotChip: { borderRadius: 12, paddingVertical: 3, paddingHorizontal: 10, borderWidth: 1, borderColor: 'transparent' },
-  dotText: { fontSize: 12, fontWeight: '600' },
+  dotText: { fontSize: 13, fontWeight: '600' },
   booklet: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 14, paddingRight: 14, overflow: 'hidden' },
-  bookletTitle: { color: c.text, fontFamily: F.heading, fontSize: 20 },
+  bookletTitle: { color: c.text, fontFamily: F.heading, fontSize: 22 },
   bookletTag: { color: c.gold, fontFamily: F.headingItalic, fontSize: 13 },
-  h2: { color: c.text, fontSize: 19, marginTop: 24, marginBottom: 10, fontFamily: F.heading },
+  h2: { color: c.text, fontSize: 22, marginTop: 24, marginBottom: 10, fontFamily: F.heading },
   listen: { flexDirection: 'row', gap: 12, alignItems: 'center', backgroundColor: c.panel, borderRadius: 12, padding: 10, marginBottom: 8 },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },
-  small: { color: c.text, fontSize: 12, marginTop: 5 },
-  dim: { color: c.dim, marginTop: 2 },
+  small: { color: c.text, fontSize: 13, marginTop: 5 },
+  dim: { fontSize: 15, color: c.dim, marginTop: 2 },
   bar: { height: 3, backgroundColor: c.line, borderRadius: 2, marginTop: 8, overflow: 'hidden' },
   barFill: { height: 3, backgroundColor: c.gold },
   log: { flexDirection: 'row', gap: 12, alignItems: 'center', paddingVertical: 8, borderBottomWidth: StyleSheet.hairlineWidth, borderColor: c.line },

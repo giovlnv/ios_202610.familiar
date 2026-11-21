@@ -7,13 +7,13 @@ import {
   Linking,
   Modal,
   Platform,
-  Pressable,
   ScrollView,
   Share,
   Text,
   TextInput,
   View,
 } from 'react-native';
+import { Pressable } from './Pressable';
 import * as Clipboard from 'expo-clipboard';
 import { File, Paths } from 'expo-file-system';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -147,7 +147,7 @@ export function ConsultList({
     <Modal visible={visible} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}>
       <SafeAreaView style={s.wrap} edges={['bottom']}>
         <View style={s.top}>
-          <Text style={s.h2}>
+          <Text accessibilityRole="header" style={s.h2}>
             <Ionicons name={tab === 'consults' ? 'sparkles-outline' : 'bulb-outline'} size={20} color={c.claude} />{' '}
             {tab === 'consults' ? tr("Claude consults") : tr("Explanations")}
           </Text>
@@ -164,7 +164,7 @@ export function ConsultList({
         </View>
         <View style={s.filters}>
           {(['consults', 'explained'] as const).map((t) => (
-            <Pressable key={t} onPress={() => setTab(t)} style={[s.chip, tab === t && s.chipOn]}>
+            <Pressable key={t} accessibilityState={{ selected: tab === t }} onPress={() => setTab(t)} style={[s.chip, tab === t && s.chipOn]}>
               <Text style={[s.chipText, tab === t && s.chipTextOn]}>
                 {t === 'consults' ? tr("Consults ({0})", { 0: consults.length }) : tr("Explanations ({0})", { 0: explainedList.length })}
               </Text>
@@ -275,7 +275,7 @@ export function ConsultList({
                         onPress={() =>
                           Alert.alert(tr("Delete #C{0}?", { 0: x.id }), undefined, [
                             { text: tr("Cancel"), style: 'cancel' },
-                            { text: tr("Delete"), style: 'destructive', onPress: () => onDelete(x) },
+                            { text: tr("Delete consult"), style: 'destructive', onPress: () => onDelete(x) },
                           ])
                         }
                       />
@@ -344,27 +344,27 @@ const s = themed(() => ({
   top: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 10 },
   topRight: { flexDirection: 'row', gap: 18 },
   h2: { color: c.text, fontSize: 22, fontFamily: F.heading },
-  link: { color: c.gold, fontSize: 16 },
+  link: { color: c.gold, fontSize: 17 },
   filters: { flexDirection: 'row', gap: 8, marginBottom: 12 },
   chip: { paddingVertical: 6, paddingHorizontal: 12, borderRadius: 16, backgroundColor: c.panel },
   chipOn: { backgroundColor: c.claude },
   chipText: { color: c.dim, fontSize: 13 },
   chipTextOn: { color: c.bg, fontWeight: '700' },
-  empty: { color: c.dim, fontSize: 16, lineHeight: 22, marginTop: 20 },
+  empty: { color: c.dim, fontSize: 17, lineHeight: 23, marginTop: 20 },
   card: { backgroundColor: c.panel, borderRadius: 12, padding: 14, marginBottom: 10 },
   cardTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 8 },
   meta: { color: c.claude, fontSize: 13, flexShrink: 1 },
-  dimSmall: { color: c.dim, fontSize: 12, marginTop: 2 },
+  dimSmall: { color: c.dim, fontSize: 13, marginTop: 2 },
   badge: { fontSize: 11, fontWeight: '700', paddingHorizontal: 8, paddingVertical: 2, borderRadius: 8, overflow: 'hidden' },
   badgeOk: { backgroundColor: c.claude, color: c.bg },
   badgeWait: { backgroundColor: c.line, color: c.text },
-  question: { color: c.text, fontSize: 16, marginTop: 6 },
-  quote: { color: c.dim, fontStyle: 'italic' },
-  answer: { color: c.text, fontSize: 16, lineHeight: 24 },
+  question: { color: c.text, fontSize: 17, marginTop: 6 },
+  quote: { fontSize: 15, color: c.dim, fontStyle: 'italic' },
+  answer: { color: c.text, fontSize: 17, lineHeight: 26 },
   actions: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   btn: { backgroundColor: c.raised, paddingVertical: 10, paddingHorizontal: 12, borderRadius: 10 },
   btnPrimary: { backgroundColor: c.claude },
-  btnText: { color: c.text, fontSize: 14 },
+  btnText: { color: c.text, fontSize: 15 },
   btnTextPrimary: { color: c.bg, fontWeight: '700' },
   dim: { flex: 1, backgroundColor: '#000a', justifyContent: 'flex-end' },
   sheet: { backgroundColor: c.panel, padding: 16, borderTopLeftRadius: 16, borderTopRightRadius: 16, gap: 8 },

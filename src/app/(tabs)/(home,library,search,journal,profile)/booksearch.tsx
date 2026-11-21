@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
-import { FlatList, Pressable, Text, TextInput, View } from 'react-native';
+import { FlatList, Text, TextInput, View } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Hit, searchBooks } from '../../../bookSearch';
@@ -62,9 +63,9 @@ export default function BookSearch() {
 
 const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
-  input: { backgroundColor: c.panel, color: c.text, borderRadius: 10, padding: 12, fontSize: 16, marginTop: 12 },
-  count: { color: c.dim, marginTop: 12 },
+  input: { backgroundColor: c.panel, color: c.text, borderRadius: 10, padding: 12, fontSize: 17, marginTop: 12 },
+  count: { fontSize: 15, color: c.dim, marginTop: 12 },
   row: { flexDirection: 'row', gap: 12, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: c.line + '66' },
-  book: { color: c.dim, fontSize: 12, marginBottom: 2 },
+  book: { color: c.dim, fontSize: 13, marginBottom: 2 },
   text: { color: c.text, fontSize: 15, lineHeight: 21 },
 }));

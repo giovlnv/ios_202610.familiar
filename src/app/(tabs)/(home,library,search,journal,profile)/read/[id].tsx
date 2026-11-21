@@ -1,5 +1,6 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { ActivityIndicator, Alert, FlatList, Image, Modal, Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
+import { ActivityIndicator, Alert, FlatList, Image, Modal, ScrollView, Text, useWindowDimensions, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import * as DocumentPicker from 'expo-document-picker';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -14,7 +15,7 @@ import PagedChapters, { Look, markKey } from '../../../../components/PagedChapte
 import { bodyText, useTextStyle } from '../../../../textStyle';
 import TextStyleSheet from '../../../../components/TextStyleSheet';
 import { usePlayback } from '../../../../playback';
-import { t as tr } from '../../../../i18n';
+import { t as tr, errorText } from '../../../../i18n';
 import { c, F, themed } from '../../../../theme';
 import { Btn } from '../../../../components/settings-ui';
 
@@ -107,7 +108,7 @@ export default function Reader() {
       setBusy(tr('Preparing the book…'));
       setRb(await buildReader(id, item.book, (m) => setBusy(tr('Preparing pictures · {0}', { 0: m }))));
     } catch (e) {
-      Alert.alert(tr('Could not open the book'), String((e as Error).message ?? e));
+      Alert.alert(tr('Couldn’t open the book'), errorText(e));
     } finally {
       setBusy(null);
     }
@@ -153,7 +154,7 @@ export default function Reader() {
       await fetchSource(id);
       setSrc(sourceFile(id));
     } catch (e) {
-      Alert.alert(tr('Download failed'), String((e as Error).message ?? e));
+      Alert.alert(tr('Couldn’t download the book'), errorText(e));
     } finally {
       setBusy(null);
     }
@@ -296,7 +297,7 @@ export default function Reader() {
       )}
       <Modal visible={toc} animationType="slide" presentationStyle="pageSheet" onRequestClose={() => setToc(false)}>
         <View style={s.sheet}>
-          <Text style={s.sheetTitle}>{tr('Contents')}</Text>
+          <Text accessibilityRole="header" style={s.sheetTitle}>{tr('Contents')}</Text>
           <FlatList
             data={rb.chapters}
             keyExtractor={(_, i) => String(i)}
@@ -331,9 +332,9 @@ const s = themed(() => ({
   block: { borderRadius: 6, paddingHorizontal: 4, marginHorizontal: -4 },
   playing: { borderLeftWidth: 3, borderLeftColor: c.gold, paddingLeft: 8 },
   head: { color: c.text, fontFamily: F.heading, marginTop: 14, marginBottom: 10 },
-  pager: { position: 'absolute', bottom: 24, alignSelf: 'center', color: c.dim, fontSize: 12, backgroundColor: c.panel, paddingHorizontal: 10, paddingVertical: 4, borderRadius: 10, overflow: 'hidden' },
+  pager: { position: 'absolute', bottom: 24, alignSelf: 'center', color: c.dim, fontSize: 13, backgroundColor: c.panel, paddingHorizontal: 10, paddingVertical: 4, borderRadius: 10, overflow: 'hidden' },
   sheet: { flex: 1, backgroundColor: c.bg, padding: 16 },
   sheetTitle: { color: c.text, fontFamily: F.heading, fontSize: 22, marginBottom: 12 },
   tocRow: { paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: c.line + '66' },
-  tocText: { color: c.text, fontSize: 16 },
+  tocText: { color: c.text, fontSize: 17 },
 }));

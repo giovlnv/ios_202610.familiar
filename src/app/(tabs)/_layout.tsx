@@ -7,15 +7,20 @@ import { useState } from "react";
 import { View, type ColorValue } from "react-native";
 import { c } from "../../theme";
 
-function icon(name: keyof typeof Ionicons.glyphMap) {
+type IconName = keyof typeof Ionicons.glyphMap;
+
+// The current tab shows a filled icon and the others an outline, so "you are here" isn't told by colour alone.
+function icon(name: IconName) {
   return function TabIcon({
     color,
     size,
+    focused,
   }: {
     color: ColorValue;
     size: number;
+    focused: boolean;
   }) {
-    return <Ionicons name={name} size={size} color={color as string} />;
+    return <Ionicons name={focused ? name : (`${name}-outline` as IconName)} size={size} color={color as string} />;
   };
 }
 

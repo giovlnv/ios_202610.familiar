@@ -1,7 +1,8 @@
 import { isPublic } from '../../../variant';
 import { t as tr } from '../../../i18n';
 import { useCallback, useState } from 'react';
-import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
+import { Alert, ScrollView, Text, View } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import { router, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { describe, loadFamiliars, allPaths } from '../../../familiar';
@@ -30,7 +31,7 @@ export default function Familiars() {
                   <Text style={s.title}>{f.name}</Text>
                   {on && (
                     <View style={s.badge}>
-                      <Text style={s.badgeText}>{tr("WITH YOU")}</Text>
+                      <Text style={s.badgeText}>{tr("With you")}</Text>
                     </View>
                   )}
                 </View>
@@ -78,16 +79,16 @@ export default function Familiars() {
 
 const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg },
-  p: { color: c.dim, fontSize: 14, lineHeight: 20, marginBottom: 4 },
+  p: { color: c.dim, fontSize: 15, lineHeight: 21, marginBottom: 4 },
   card: { flexDirection: 'row', alignItems: 'center', gap: 10, backgroundColor: c.panel, borderRadius: 14, padding: 12, borderWidth: 2, borderColor: 'transparent' },
   cardOn: { borderColor: c.gold },
   main: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 12 },
   art: { width: 64, height: 64, borderRadius: 12, backgroundColor: c.bg, alignItems: 'center', justifyContent: 'center' },
   titleRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  title: { color: c.text, fontSize: 16, fontWeight: '600' },
-  dim: { color: c.dim, fontSize: 12 },
+  title: { color: c.text, fontSize: 17, fontWeight: '600' },
+  dim: { color: c.dim, fontSize: 13 },
   badge: { backgroundColor: c.gold + '29', borderRadius: 999, paddingHorizontal: 8, paddingVertical: 2 },
-  badgeText: { color: c.gold, fontSize: 10, fontWeight: '700' },
+  badgeText: { color: c.gold, fontSize: 11, fontWeight: '700' },
   tags: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
   tag: { borderRadius: 999, paddingHorizontal: 8, paddingVertical: 2 },
   tagText: { fontSize: 11, fontWeight: '600' },

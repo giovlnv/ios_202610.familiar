@@ -1,17 +1,18 @@
-import { t as tr } from '../i18n';
+import { loc, t as tr } from '../i18n';
 import { ReactNode } from 'react';
-import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
+import { Alert, ScrollView, Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { Href, router } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { usePad } from '../playback';
 import { c, F, themed } from '../theme';
 
-export const when = (t?: number) => (t ? new Date(t).toLocaleString() : 'never');
+export const when = (t?: number) => (t ? new Date(t).toLocaleString(loc()) : tr('never'));
 
 export const confirmRestore = (go: () => void) =>
-  Alert.alert(tr("Restore?"), tr("Notes, consults and progress in the backup replace the ones on this iPhone."), [
+  Alert.alert(tr("Restore this backup?"), tr("Notes, consults and progress in the backup replace the ones on this iPhone."), [
     { text: tr("Cancel"), style: 'cancel' },
-    { text: tr("Restore"), style: 'destructive', onPress: go },
+    { text: tr("Restore backup"), style: 'destructive', onPress: go },
   ]);
 
 export const Btn = ({ label, onPress, primary }: { label: string; onPress: () => void; primary?: boolean }) => (
@@ -51,11 +52,11 @@ export function MenuRow({ icon, title, sub, to }: { icon: keyof typeof Ionicons.
 
 export const ss = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg },
-  h2: { color: c.text, fontSize: 18, marginTop: 12, marginBottom: 6, fontFamily: F.heading },
-  p: { color: c.dim, lineHeight: 20, marginBottom: 10 },
+  h2: { color: c.text, fontSize: 17, marginTop: 12, marginBottom: 6, fontFamily: F.heading },
+  p: { fontSize: 15, color: c.dim, lineHeight: 21, marginBottom: 10 },
   card: { backgroundColor: c.panel, borderRadius: 12, padding: 14, gap: 10, marginBottom: 12 },
-  meta: { color: c.dim, fontSize: 14 },
-  label: { color: c.dim, fontSize: 12, fontWeight: '700', letterSpacing: 1, textTransform: 'uppercase', marginTop: 4 },
+  meta: { color: c.dim, fontSize: 15 },
+  label: { color: c.dim, fontSize: 13, fontWeight: '700', marginTop: 4 },
   input: { backgroundColor: c.bg, color: c.text, borderRadius: 10, padding: 12, fontSize: 15 },
   row: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   modes: { flexDirection: 'row', backgroundColor: c.panel, borderRadius: 10, padding: 3, marginBottom: 10 },
@@ -68,10 +69,10 @@ export const ss = themed(() => ({
   paletteName: { color: c.text, fontSize: 15, flex: 1 },
   btn: { backgroundColor: c.raised, paddingVertical: 11, paddingHorizontal: 14, borderRadius: 10 },
   btnPrimary: { backgroundColor: c.gold },
-  btnText: { color: c.text },
+  btnText: { fontSize: 15, color: c.text },
   btnTextPrimary: { color: c.bg, fontWeight: '700' },
   menu: { backgroundColor: c.panel, borderRadius: 14, overflow: 'hidden', marginBottom: 14 },
   menuRow: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 14, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: c.line + '66' },
   menuIcon: { width: 34, height: 34, borderRadius: 10, backgroundColor: c.gold + '1f', alignItems: 'center', justifyContent: 'center' },
-  menuTitle: { color: c.text, fontSize: 16, fontWeight: '600' },
+  menuTitle: { color: c.text, fontSize: 17, fontWeight: '600' },
 }));

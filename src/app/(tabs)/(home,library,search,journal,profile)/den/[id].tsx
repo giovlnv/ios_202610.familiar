@@ -1,6 +1,7 @@
 import { t as tr } from '../../../../i18n';
 import { useCallback, useRef, useState } from 'react';
-import { Animated, Easing, Pressable, ScrollView, Text, View } from 'react-native';
+import { Animated, Easing, ScrollView, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import { router, Stack, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Haptics from 'expo-haptics';
@@ -97,7 +98,7 @@ export default function Den() {
           ),
         }}
       />
-      <Pressable onPress={pet} style={s.stage} accessibilityLabel={asleep ? tr("{0} is asleep", { 0: f.name }) : tr("Pet {0}", { 0: f.name })} accessibilityRole="button">
+      <Pressable dim={false} onPress={pet} style={s.stage} accessibilityLabel={asleep ? tr("{0} is asleep", { 0: f.name }) : tr("Pet {0}", { 0: f.name })} accessibilityRole="button">
         {spider && !asleep && <Animated.View style={[s.thread, { height: Animated.add(drop, 30 + ART * 0.46) }]} />}
         <Animated.View style={{ transform: [{ translateY: spider ? drop : 0 }] }}>
           <FamiliarArt familiar={f} pose={asleep ? 'sleeping' : 'idle'} size={ART} closed={closed} vial alive />
@@ -138,7 +139,7 @@ const s = themed(() => ({
   stage: { backgroundColor: c.panel, borderRadius: 24, alignItems: 'center', justifyContent: 'center', paddingVertical: 24, overflow: 'hidden', minHeight: ART + 60 },
   thread: { position: 'absolute', top: 0, left: '50%', width: 1, marginLeft: -0.5, backgroundColor: c.dim },
   bubble: { position: 'absolute', top: ART * 0.3, color: c.gold, fontSize: 22, fontFamily: F.headingItalic },
-  hint: { color: c.dim, textAlign: 'center', fontSize: 14 },
+  hint: { color: c.dim, textAlign: 'center', fontSize: 15 },
   card: { backgroundColor: c.panel, borderRadius: 14, padding: 14, gap: 4 },
   name: { color: c.text, fontSize: 22, fontFamily: F.heading },
   dim: { color: c.dim, fontSize: 13 },

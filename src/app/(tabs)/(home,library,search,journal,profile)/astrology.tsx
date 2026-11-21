@@ -1,6 +1,7 @@
 import { t as tr } from '../../../i18n';
 import { useCallback, useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import { router, useFocusEffect } from 'expo-router';
 import { astroCards, fmtDeg, HOUSES, myChart, Placement, signOf } from '../../../astrology';
 import { getOnboarding } from '../../../familiar';
@@ -63,7 +64,7 @@ export default function Astrology() {
           <Row key={p.name} p={p} open={open === p.name} onToggle={() => setOpen(open === p.name ? null : p.name)} onCard={(id, role) => setCard({ id, role })} />
         ))}
       </View>
-      <Text style={ss.h2}>{tr("Balance")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Balance")}</Text>
       <View style={ss.card}>
         <Text style={ss.meta}>{tr("Elements:")}{' '}{bal(ch.elements)}</Text>
         <Text style={ss.meta}>{tr("Modalities:")}{' '}{bal(ch.modes)}</Text>
@@ -80,7 +81,7 @@ const s = themed(() => ({
   line: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   glyph: { color: c.gold, fontSize: 18, width: 28, textAlign: 'center' },
   name: { color: c.text, fontSize: 15, fontWeight: '600', width: 92 },
-  sign: { color: c.text, fontSize: 14, flex: 1 },
+  sign: { color: c.text, fontSize: 15, flex: 1 },
   house: { color: c.dim, fontSize: 13, width: 32, textAlign: 'right' },
   cards: { flexDirection: 'row', flexWrap: 'wrap', gap: 5, marginTop: 6, marginLeft: 36 },
 }));

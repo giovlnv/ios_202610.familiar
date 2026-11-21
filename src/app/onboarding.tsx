@@ -1,9 +1,10 @@
 import { isPublic } from '../variant';
 import * as Updates from 'expo-updates';
 import { getLangPrefs, setLangPrefs } from '../languages';
-import { t as tr, uiLang } from '../i18n';
+import { t as tr, uiLang, errorText } from '../i18n';
 import { useEffect, useState } from 'react';
-import { Alert, Image, KeyboardAvoidingView, Pressable, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View } from 'react-native';
+import { Alert, Image, KeyboardAvoidingView, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View } from 'react-native';
+import { Pressable } from '../components/Pressable';
 import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -175,7 +176,7 @@ export default function Onboarding() {
         return (
           <>
             <Head title={tr("Your study helpers")} sub={tr("Claude writes the explanations; GitHub makes the voices; ares keeps your backups.")} />
-            <Label>{tr("GITHUB KEY")}</Label>
+            <Label>{tr("GitHub key")}</Label>
             <TextInput
               style={fs.input}
               value={key}
@@ -186,7 +187,7 @@ export default function Onboarding() {
               autoCorrect={false}
               secureTextEntry
             />
-            <Label>{tr("CLAUDE CHAT FOR QUESTIONS")}</Label>
+            <Label>{tr("Claude chat for questions")}</Label>
             <TextInput
               style={fs.input}
               value={link}
@@ -204,13 +205,13 @@ export default function Onboarding() {
         return (
           <>
             <Head title={tr("A little about you")} sub={tr("Optional. Used for astrology and numerology, never shared.")} />
-            <Label>{tr("BIRTH DATE")}</Label>
+            <Label>{tr("Birth date")}</Label>
             <DateInput style={fs.input} value={dob} onChange={setDob} />
-            <Label>{tr("BIRTH TIME")}</Label>
+            <Label>{tr("Birth time")}</Label>
             <TimeInput style={[fs.input, { maxWidth: 160 }]} value={birthTime} onChange={setBirthTime} />
-            <Label>{tr("BIRTH PLACE")}</Label>
+            <Label>{tr("Birth place")}</Label>
             <PlaceField value={place?.label ?? ''} onPick={setPlace} language={language} />
-            <Label>{tr("LANGUAGE")}</Label>
+            <Label>{tr("Language")}</Label>
             <View style={fs.row}>
               {[
                 ['en', 'English'],
@@ -219,7 +220,7 @@ export default function Onboarding() {
                 <Pill key={id} label={name} on={language === id} onPress={() => setLanguage(id)} />
               ))}
             </View>
-            <Label>{tr("WHAT ARE YOU HOPING FOR?")}</Label>
+            <Label>{tr("What are you hoping for?")}</Label>
             <View style={[fs.row, { flexWrap: 'wrap' }]}>
               {GOALS.map((g) => (
                 <Pill key={g} label={g} on={goals.includes(g)} onPress={() => setGoals(toggle(goals, g))} />
@@ -234,7 +235,7 @@ export default function Onboarding() {
             <Head title={tr("Backups are on")} sub={tr("Your library is saved on ares whenever you leave the app, once ares is set in settings → backups.")} />
             <Status icon="server-outline" title={tr("Backup on ares")} text={sync.lastAres ? tr("Last backup {0}", { 0: new Date(sync.lastAres).toLocaleString() }) : tr("Add the ares address in settings → backups")} />
             <Status icon="document-outline" title={tr("Backup file")} text={tr("Saved to Files or iCloud Drive; you get a reminder every 7 days.")} />
-            <Pressable style={st.secondary} onPress={() => backupToFile().catch((e) => Alert.alert(tr("Backup failed"), String(e?.message ?? e)))}>
+            <Pressable style={st.secondary} onPress={() => backupToFile().catch((e) => Alert.alert(tr("Backup failed"), errorText(e)))}>
               <Text style={st.secondaryText}>{tr("Save a backup file now")}</Text>
             </Pressable>
           </>
@@ -300,7 +301,7 @@ export default function Onboarding() {
 function EyesOnly({ f, set }: { f: Familiar; set: (p: Partial<Familiar>) => void }) {
   return (
     <>
-      <Label>{tr("EYES")}</Label>
+      <Label>{tr("Eyes")}</Label>
       <View style={fs.swatches}>
         {EYES.map((e) => (
           <Pressable key={e.hex} accessibilityLabel={e.name} onPress={() => set({ eyes: e.hex })} style={[fs.swatch, { backgroundColor: e.hex }, f.eyes === e.hex && fs.swatchOn]} />
@@ -313,7 +314,7 @@ function EyesOnly({ f, set }: { f: Familiar; set: (p: Partial<Familiar>) => void
 function Head({ title, sub, center }: { title: string; sub?: string; center?: boolean }) {
   return (
     <View style={{ gap: 6, marginBottom: 4 }}>
-      <Text style={[st.h1, center && { textAlign: 'center' }]}>{title}</Text>
+      <Text accessibilityRole="header" style={[st.h1, center && { textAlign: 'center' }]}>{title}</Text>
       {!!sub && <Text style={[st.sub, center && { textAlign: 'center' }]}>{sub}</Text>}
     </View>
   );
@@ -342,7 +343,7 @@ function Pill({ label, on, onPress }: { label: string; on: boolean; onPress: () 
 function Note({ text }: { text: string }) {
   return (
     <View style={[st.row, { alignItems: 'flex-start' }]}>
-      <Text style={{ color: c.gold, fontSize: 16 }}>✦</Text>
+      <Text style={{ color: c.gold, fontSize: 17 }}>✦</Text>
       <Text style={[st.sub, { flex: 1, fontSize: 13 }]}>{text}</Text>
     </View>
   );
@@ -363,8 +364,8 @@ const st = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg },
   hero: { position: 'absolute', bottom: 0 },
   brand: { alignItems: 'center', gap: 6, marginTop: -28 },
-  word: { color: c.gold, fontSize: 46, fontWeight: '500' },
-  tagline: { color: c.text, fontStyle: 'italic', fontSize: 17 },
+  word: { color: c.gold, fontSize: 40, fontFamily: F.heading },
+  tagline: { color: c.text, fontFamily: F.headingItalic, fontSize: 17 },
   pad: { paddingHorizontal: 22 },
   top: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 16, paddingBottom: 10 },
   dots: { flexDirection: 'row', gap: 6, alignItems: 'center' },
@@ -377,11 +378,11 @@ const st = themed(() => ({
   chip: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
   dot: { width: 12, height: 12, borderRadius: 6 },
   primary: { backgroundColor: c.gold, borderRadius: 14, paddingVertical: 15, alignItems: 'center' },
-  primaryText: { color: c.bg, fontSize: 16, fontWeight: '700' },
+  primaryText: { color: c.bg, fontSize: 17, fontWeight: '700' },
   secondary: { borderWidth: 1, borderColor: c.line, borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
   secondaryText: { color: c.text, fontSize: 15, fontWeight: '600' },
-  link: { color: c.dim, fontSize: 14, fontWeight: '500' },
+  link: { color: c.dim, fontSize: 15, fontWeight: '600' },
   pill: { backgroundColor: c.raised, borderRadius: 999, paddingHorizontal: 14, paddingVertical: 8 },
   pillOn: { backgroundColor: c.gold },
-  pillText: { color: c.text, fontSize: 14 },
+  pillText: { color: c.text, fontSize: 15 },
 }));

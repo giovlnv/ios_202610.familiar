@@ -1,6 +1,7 @@
 import { t as tr } from '../i18n';
 import { useState } from 'react';
-import { KeyboardAvoidingView, Modal, Pressable, ScrollView, Share, Switch, Text, TextInput, View } from 'react-native';
+import { KeyboardAvoidingView, Modal, ScrollView, Share, Switch, Text, TextInput, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Clipboard from 'expo-clipboard';
 import { CARDS, cardName, cardUri } from '../decks';
@@ -69,7 +70,7 @@ export default function ExplainSheet({
       <SafeAreaView style={s.wrap} edges={['bottom']}>
         <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
           <View style={s.top}>
-            <Text style={s.h2}>{tr("Explain this")}{' '}{target.kind}</Text>
+            <Text accessibilityRole="header" style={s.h2}>{target.kind === 'passage' ? tr("Explain this passage") : tr("Explain this section")}</Text>
             <Pressable hitSlop={10} onPress={onClose}>
               <Text style={s.link}>{tr("Done")}</Text>
             </Pressable>
@@ -146,24 +147,24 @@ export default function ExplainSheet({
 const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
   top: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 14 },
-  h2: { color: c.text, fontSize: 21, fontFamily: F.heading },
-  link: { color: c.gold, fontSize: 16, fontWeight: '600' },
+  h2: { color: c.text, fontSize: 22, fontFamily: F.heading },
+  link: { color: c.gold, fontSize: 17, fontWeight: '600' },
   meta: { color: c.gold, fontSize: 13 },
-  passage: { color: c.text, fontSize: 16, lineHeight: 24, backgroundColor: c.panel, borderRadius: 12, padding: 12 },
-  hint: { color: c.dim, fontSize: 12 },
-  label: { color: c.dim, fontSize: 12, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1 },
+  passage: { color: c.text, fontSize: 17, lineHeight: 26, backgroundColor: c.panel, borderRadius: 12, padding: 12 },
+  hint: { color: c.dim, fontSize: 13 },
+  label: { color: c.dim, fontSize: 13, fontWeight: '700' },
   card: { backgroundColor: c.panel, borderRadius: 12, padding: 12, gap: 8 },
-  text: { color: c.explain, fontSize: 15, lineHeight: 22 },
+  text: { color: c.explain, fontSize: 17, lineHeight: 25 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   chip: { borderWidth: 1, borderColor: c.line, borderRadius: 16, paddingVertical: 7, paddingHorizontal: 12 },
   chipOn: { backgroundColor: c.gold, borderColor: c.gold },
-  chipText: { color: c.text, fontSize: 14 },
+  chipText: { color: c.text, fontSize: 15 },
   chipTextOn: { color: c.bg, fontWeight: '700' },
   listenRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   ask: { backgroundColor: c.claude, borderRadius: 12, padding: 14, alignItems: 'center' },
-  askText: { color: c.bg, fontSize: 16, fontWeight: '700' },
-  answer: { minHeight: 140, color: c.text, fontSize: 15, lineHeight: 22, backgroundColor: c.panel, borderRadius: 12, padding: 12, textAlignVertical: 'top' },
+  askText: { color: c.bg, fontSize: 17, fontWeight: '700' },
+  answer: { minHeight: 140, color: c.text, fontSize: 17, lineHeight: 25, backgroundColor: c.panel, borderRadius: 12, padding: 12, textAlignVertical: 'top' },
   btn: { borderRadius: 12, padding: 12, alignItems: 'center', backgroundColor: c.panel },
   btnOn: { backgroundColor: c.gold },
-  btnText: { color: c.text, fontWeight: '700' },
+  btnText: { fontSize: 15, color: c.text, fontWeight: '700' },
 }));
