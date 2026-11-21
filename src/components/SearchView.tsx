@@ -55,7 +55,7 @@ export default function SearchView({ onPick, header }: { onPick: (r: OLResult) =
         ListHeaderComponent={
           mine.length ? (
             <View>
-              <Text style={s.section}>{tr("In your library")}</Text>
+              <Text accessibilityRole="header" style={s.section}>{tr("In your library")}</Text>
               {mine.map((b) => (
                 <Pressable key={b.id} style={s.row} onPress={() => router.push({ pathname: '/title/[id]', params: { id: b.id } })}>
                   <Cover book={b} width={48} />
@@ -69,7 +69,7 @@ export default function SearchView({ onPick, header }: { onPick: (r: OLResult) =
                   </View>
                 </Pressable>
               ))}
-              {!!results.length && <Text style={s.section}>{tr("Open Library")}</Text>}
+              {!!results.length && <Text accessibilityRole="header" style={s.section}>{tr("Open Library")}</Text>}
             </View>
           ) : null
         }

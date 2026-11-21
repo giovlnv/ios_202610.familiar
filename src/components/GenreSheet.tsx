@@ -40,7 +40,7 @@ export function GenreSheet({ book, visible, onClose }: { book: TBook; visible: b
     >
       <Pressable dim={false} accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={onClose} />
       <View style={s.sheet}>
-        <Text style={s.h2}>{tr("Genres")}</Text>
+        <Text accessibilityRole="header" style={s.h2}>{tr("Genres")}</Text>
         <Text style={s.dim}>{tr("Tap to remove. Top 5 are picked from Goodreads, Amazon and Open Library; your edits are kept.")}</Text>
         <View style={s.wrap}>
           {mine.map((g) => (

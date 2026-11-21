@@ -32,7 +32,7 @@ export default function TextStyleSheet({ visible, sample, reader, onClose }: { v
       <Pressable dim={false} style={{ flex: 1 }} onPress={onClose} accessibilityLabel={tr("Close")} />
       <View style={s.sheet}>
         <View style={s.top}>
-          <Text style={s.h2}>{tr("Text")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Text")}</Text>
           <View style={{ flexDirection: 'row', gap: 18 }}>
             <Pressable hitSlop={8} onPress={() => setTextStyle({ ...DEFAULT_STYLE, layout: t.layout })}>
               <Text style={s.dimLink}>{tr("Reset")}</Text>

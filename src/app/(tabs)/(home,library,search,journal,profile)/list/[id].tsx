@@ -140,7 +140,7 @@ export default function ListScreen() {
       <Modal visible={adding} animationType="slide" presentationStyle="pageSheet" onRequestClose={() => setAdding(false)}>
         <View style={[s.wrap, { padding: 16, gap: 10 }]}>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-            <Text style={s.h2}>{tr("Add to")}{' '}{list.name}</Text>
+            <Text accessibilityRole="header" style={s.h2}>{tr("Add to")}{' '}{list.name}</Text>
             <Pressable onPress={() => setAdding(false)} hitSlop={10}>
               <Text style={{ color: c.gold, fontSize: 17 }}>{tr("Done")}</Text>
             </Pressable>

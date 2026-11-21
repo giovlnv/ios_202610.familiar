@@ -349,7 +349,7 @@ export default function Title() {
           </Pressable>
         ))}
 
-      <Text style={s.h2}>{tr("Reading history")}</Text>
+      <Text accessibilityRole="header" style={s.h2}>{tr("Reading history")}</Text>
       {logs.length ? (
         logs.map((l) => (
           <Pressable
@@ -410,7 +410,7 @@ export default function Title() {
       >
         <Pressable dim={false} accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={() => setEditStart(false)} />
         <View style={s.sheet}>
-          <Text style={s.h2}>{tr("Started reading")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Started reading")}</Text>
           <DateStepper
             value={b.started ?? today()}
             max={today()}
@@ -447,7 +447,7 @@ export default function Title() {
       >
         <Pressable dim={false} accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={() => setShelving(false)} />
         <View style={[s.sheet, { maxHeight: "75%" }]}>
-          <Text style={s.h2}>{tr("Shelves")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Shelves")}</Text>
           <ScrollView contentContainerStyle={{ gap: 2 }}>
             {(t.shelves ?? []).map((sh) => {
               const on = sh.books.includes(b.id);
@@ -525,7 +525,7 @@ function LogSheet({
     >
       <Pressable dim={false} accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={onClose} />
       <View style={s.sheet}>
-        <Text style={s.h2}>{tr("Log")}</Text>
+        <Text accessibilityRole="header" style={s.h2}>{tr("Log")}</Text>
         <Text style={s.label}>{tr("Finished on")}</Text>
         <View style={s.dateRow}>
           <Pressable accessibilityRole="button" accessibilityLabel={tr("Previous")} onPress={() => setOffset(offset - 1)} hitSlop={10}>

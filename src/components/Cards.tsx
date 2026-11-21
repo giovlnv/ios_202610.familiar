@@ -72,7 +72,7 @@ export function CardPicker({
     <Modal visible={visible} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}>
       <SafeAreaView style={s.wrap} edges={['bottom']}>
         <View style={s.top}>
-          <Text style={s.h2}>{title}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{title}</Text>
           <Pressable hitSlop={10} onPress={onClose}>
             <Text style={s.link}>{tr("Done")}</Text>
           </Pressable>

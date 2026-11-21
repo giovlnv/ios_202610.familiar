@@ -70,7 +70,7 @@ export default function BookPage() {
                 <Text style={s.toolText}>{tr("Marks")}</Text>
               </Pressable>
             </View>
-            <Text style={s.h2}>{tr("Sections")}</Text>
+            <Text accessibilityRole="header" style={s.h2}>{tr("Sections")}</Text>
           </View>
         }
         renderItem={({ item: x, index }) => {

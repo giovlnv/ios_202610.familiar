@@ -64,7 +64,7 @@ export default function Astrology() {
           <Row key={p.name} p={p} open={open === p.name} onToggle={() => setOpen(open === p.name ? null : p.name)} onCard={(id, role) => setCard({ id, role })} />
         ))}
       </View>
-      <Text style={ss.h2}>{tr("Balance")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Balance")}</Text>
       <View style={ss.card}>
         <Text style={ss.meta}>{tr("Elements:")}{' '}{bal(ch.elements)}</Text>
         <Text style={ss.meta}>{tr("Modalities:")}{' '}{bal(ch.modes)}</Text>

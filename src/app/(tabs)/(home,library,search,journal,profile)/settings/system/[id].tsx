@@ -117,7 +117,7 @@ export default function SystemScreen() {
         </View>
       </View>
 
-      <Text style={ss.h2}>{tr("Cards ·")}{' '}{sys.cards.length}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Cards ·")}{' '}{sys.cards.length}</Text>
       <View style={ss.card}>
         <View style={ss.row}>
           <Btn label={busy ? tr("Importing…") : tr("Import pictures")} primary onPress={doImport} />

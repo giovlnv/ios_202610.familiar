@@ -132,7 +132,7 @@ export default function Review() {
 
       {best.length > 0 && (
         <>
-          <Text style={s.h2}>{tr("Highest rated")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Highest rated")}</Text>
           {best.map((x) => (
             <Pressable key={x.l.id} style={s.row} onPress={() => open(x.b.id)}>
               <Cover book={x.b} width={44} />
@@ -188,7 +188,7 @@ export default function Review() {
         </View>
       )}
 
-      {read.length > 0 && <Text style={s.h2}>{tr("Every book, in order")}</Text>}
+      {read.length > 0 && <Text accessibilityRole="header" style={s.h2}>{tr("Every book, in order")}</Text>}
       <View style={s.grid}>
         {read.map((x) => (
           <Pressable key={x.l.id} onPress={() => open(x.b.id)}>

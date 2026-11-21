@@ -314,7 +314,7 @@ function EyesOnly({ f, set }: { f: Familiar; set: (p: Partial<Familiar>) => void
 function Head({ title, sub, center }: { title: string; sub?: string; center?: boolean }) {
   return (
     <View style={{ gap: 6, marginBottom: 4 }}>
-      <Text style={[st.h1, center && { textAlign: 'center' }]}>{title}</Text>
+      <Text accessibilityRole="header" style={[st.h1, center && { textAlign: 'center' }]}>{title}</Text>
       {!!sub && <Text style={[st.sub, center && { textAlign: 'center' }]}>{sub}</Text>}
     </View>
   );

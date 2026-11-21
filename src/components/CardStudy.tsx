@@ -42,31 +42,31 @@ export function CardStudyView({ d }: { d: Study }) {
         </View>
       </View>
 
-      <Text style={s.h3}>{lx({ pt: 'Símbolos', en: 'Symbols' })}</Text>
+      <Text accessibilityRole="header" style={s.h3}>{lx({ pt: 'Símbolos', en: 'Symbols' })}</Text>
       {d.symbols.map((x) => (
         <View key={x.key} style={s.row}>
           <SymbolDot id={d.id} crop={x.crop} size={64} />
           <View style={{ flex: 1 }}>
-            <Text style={s.h4}>{lx(x.title)}</Text>
+            <Text accessibilityRole="header" style={s.h4}>{lx(x.title)}</Text>
             <Bullets items={lx(x.keywords)} />
           </View>
         </View>
       ))}
 
-      <Text style={s.h3}>{lx({ pt: 'Cores', en: 'Colours' })}</Text>
+      <Text accessibilityRole="header" style={s.h3}>{lx({ pt: 'Cores', en: 'Colours' })}</Text>
       <View style={s.grid}>
         {d.colours.map((x) => (
           <View key={x.hex} style={[s.row, s.half]}>
             <View style={[s.sw, { backgroundColor: x.hex }]} />
             <View style={{ flex: 1 }}>
-              <Text style={s.h4}>{lx(x.name)}</Text>
+              <Text accessibilityRole="header" style={s.h4}>{lx(x.name)}</Text>
               <Bullets items={lx(x.keywords)} />
             </View>
           </View>
         ))}
       </View>
 
-      <Text style={s.h3}>{lx({ pt: 'Na leitura', en: 'In a reading' })}</Text>
+      <Text accessibilityRole="header" style={s.h3}>{lx({ pt: 'Na leitura', en: 'In a reading' })}</Text>
       <View style={s.sum}>
         {lx(d.summary).map((t) => (
           <Text key={t} style={[s.text, { textAlign: 'center' }]}>
@@ -79,7 +79,7 @@ export function CardStudyView({ d }: { d: Study }) {
         const dark = p.id === 'challenge';
         return (
           <View key={p.id} style={[s.plane, { borderLeftColor: TINTS[p.id] ?? c.gold }, dark && s.challenge]}>
-            <Text style={[s.h4, dark && { color: c.gold }]}>{lx(p.title)}</Text>
+            <Text accessibilityRole="header" style={[s.h4, dark && { color: c.gold }]}>{lx(p.title)}</Text>
             <Bullets items={items} />
             {!!items.length && <Text style={s.q}>{lx(p.line)}</Text>}
           </View>
@@ -98,7 +98,7 @@ export function IntroView({ page }: { page: IntroPage }) {
         <Text style={s.lead}>{lx(h.lead)}</Text>
         {h.parts.map((p) => (
           <View key={p.title.en} style={s.part}>
-            <Text style={s.h4}>{lx(p.title)}</Text>
+            <Text accessibilityRole="header" style={s.h4}>{lx(p.title)}</Text>
             <Text style={s.text}>{lx(p.text)}</Text>
           </View>
         ))}
@@ -116,7 +116,7 @@ export function IntroView({ page }: { page: IntroPage }) {
           <View key={x.hex} style={s.row}>
             <View style={[s.sw, { width: 34, height: 34, borderRadius: 17, backgroundColor: x.hex }]} />
             <View style={{ flex: 1 }}>
-              <Text style={s.h4}>{lx(x.name)}</Text>
+              <Text accessibilityRole="header" style={s.h4}>{lx(x.name)}</Text>
               <Text style={s.text}>{lx(x.keywords)}</Text>
             </View>
           </View>
@@ -132,7 +132,7 @@ export function IntroView({ page }: { page: IntroPage }) {
       <Text style={s.lead}>{lx(p.lead)}</Text>
       {p.list.map((x) => (
         <View key={x.id} style={[s.plane, { borderLeftColor: TINTS[x.id] ?? c.gold }, x.id === 'challenge' && s.challenge]}>
-          <Text style={[s.h4, x.id === 'challenge' && { color: c.gold }]}>{lx(x.name)}</Text>
+          <Text accessibilityRole="header" style={[s.h4, x.id === 'challenge' && { color: c.gold }]}>{lx(x.name)}</Text>
           <Text style={s.text}>{lx(x.text)}</Text>
         </View>
       ))}

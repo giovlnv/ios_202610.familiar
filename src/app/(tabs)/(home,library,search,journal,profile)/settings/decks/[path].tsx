@@ -92,7 +92,7 @@ function LenormandDecks() {
   return (
     <Page>
       <Stack.Screen options={{ title: tr("Lenormand") }} />
-      <Text style={ss.h2}>{tr("Decks")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Decks")}</Text>
       <Text style={ss.p}>{tr("The default deck is used for every Lenormand card in the app. Lenormand cards are never reversed.")}</Text>
       <View style={[ss.card, { gap: 2 }]}>
         {decks.map((d) => (
@@ -142,7 +142,7 @@ function LenormandDecks() {
         </Text>
       </View>
 
-      <Text style={ss.h2}>{tr("Card names")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Card names")}</Text>
       <View style={ss.card}>
         <View style={ss.row}>
           <Chip label={tr("Português")} on={prefs.names === 'pt'} onPress={() => setPref({ names: 'pt' })} />
@@ -151,7 +151,7 @@ function LenormandDecks() {
         <Text style={ss.meta}>{tr("Brazilian names (O Cavaleiro, A Cigana) or English (Rider, Lady). Search finds both.")}</Text>
       </View>
 
-      <Text style={ss.h2}>{tr("Significator")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Significator")}</Text>
       <View style={ss.card}>
         <View style={ss.row}>
           <Chip label={tr("29 · A Cigana")} on={prefs.significator === 'l29'} onPress={() => setPref({ significator: 'l29' })} />

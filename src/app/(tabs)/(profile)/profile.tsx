@@ -145,7 +145,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
         <Ionicons name="chevron-forward" size={16} color={c.dim} />
       </Pressable>
       <Pressable style={s.foldHead} onPress={() => (write('top4.txt', top4 ? '0' : '1'), setTop4(!top4))} accessibilityState={{ expanded: top4 }}>
-        <Text style={[s.h2, { marginTop: 0, marginBottom: 0 }]}>{tr("Top 4")}</Text>
+        <Text accessibilityRole="header" style={[s.h2, { marginTop: 0, marginBottom: 0 }]}>{tr("Top 4")}</Text>
         <Ionicons name={top4 ? 'chevron-up' : 'chevron-down'} size={18} color={c.dim} />
       </Pressable>
       {top4 && (
@@ -209,7 +209,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
       </View>
 
       <View style={s.headRow}>
-        <Text style={[s.h2, { margin: 0 }]}>
+        <Text accessibilityRole="header" style={[s.h2, { margin: 0 }]}>
           {all ? tr("By year") : tr("By month")}
         </Text>
         <View style={{ flexDirection: "row", gap: 6 }}>
@@ -236,7 +236,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
 
       {genres.length > 0 && (
         <>
-          <Text style={s.h2}>{tr("Genres")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Genres")}</Text>
           <View style={[s.card, { gap: 10 }]}>
             {genres.map(([g, n]) => (
               <View key={g} style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
@@ -253,7 +253,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
         </>
       )}
 
-      <Text style={s.h2}>{tr("Top authors")}</Text>
+      <Text accessibilityRole="header" style={s.h2}>{tr("Top authors")}</Text>
       {authors.length ? (
         <View style={s.card}>
           {authors.map(([a, n]) => (
@@ -273,7 +273,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
 
       {topAudio.length > 0 && (
         <>
-          <Text style={s.h2}>{tr("Most listened")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Most listened")}</Text>
           {topAudio.map(({ b, n }) => (
             <Pressable key={b!.id} style={s.row} onPress={() => open(b!.id)}>
               <Cover book={b!} width={36} />
@@ -288,7 +288,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
 
       {longest && (
         <>
-          <Text style={s.h2}>{tr("Longest read")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Longest read")}</Text>
           <Pressable style={s.row} onPress={() => open(longest.id)}>
             <Cover book={longest} width={36} />
             <Text style={s.lineText} numberOfLines={1}>
@@ -312,7 +312,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
         </Pressable>
       )}
 
-      <Text style={s.h2}>{tr("Ratings")}</Text>
+      <Text accessibilityRole="header" style={s.h2}>{tr("Ratings")}</Text>
       <Bars
         values={dist}
         labels={["½", "1", "", "2", "", "3", "", "4", "", "5"]}

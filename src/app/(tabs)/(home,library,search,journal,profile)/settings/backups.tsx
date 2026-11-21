@@ -50,7 +50,7 @@ export default function Backups() {
     <Page>
       {!isPublic && (
         <>
-          <Text style={ss.h2}>{tr("Automatic · ares")}</Text>
+          <Text accessibilityRole="header" style={ss.h2}>{tr("Automatic · ares")}</Text>
           <Text style={ss.p}>{tr("Notes, readings, progress and your familiars are saved on ares whenever you leave the app and right after a card of the day. Ares keeps 30 daily copies.")}</Text>
           <View style={ss.card}>
             <Text style={ss.meta}>{status}</Text>
@@ -86,7 +86,7 @@ export default function Backups() {
           </View>
         </>
       )}
-      <Text style={ss.h2}>{tr("Manual · file")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Manual · file")}</Text>
       <Text style={ss.p}>{tr("Save a backup file to Files or iCloud Drive. You’ll get a reminder in the Library after 7 days.")}</Text>
       <View style={ss.card}>
         <Text style={ss.meta}>{tr("Last backup file:")}{' '}{when(state.lastFile)}</Text>

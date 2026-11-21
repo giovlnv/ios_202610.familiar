@@ -91,7 +91,7 @@ export default function Storage() {
       )}
       {books.length ? (
         <>
-          <Text style={ss.h2}>{tr("Audio on this iPhone")}</Text>
+          <Text accessibilityRole="header" style={ss.h2}>{tr("Audio on this iPhone")}</Text>
           {books.map((b) => (
             <Text key={b.title} style={ss.meta}>
               {b.title} · {mb(b.audio)}

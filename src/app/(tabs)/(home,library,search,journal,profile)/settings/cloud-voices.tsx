@@ -103,7 +103,7 @@ export default function CloudVoices() {
         <KeyCard key={p} p={p} has={keys[p]} onSaved={refresh} />
       ))}
       {!!cloudError() && <Text style={[ss.meta, { color: '#E07A7A' }]}>{tr("Last error ·")}{' '}{cloudError()}</Text>}
-      <Text style={ss.h2}>{tr("Voice per language")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Voice per language")}</Text>
       {LANGS.map((l) => {
         const ch = prefs[l.book];
         return (

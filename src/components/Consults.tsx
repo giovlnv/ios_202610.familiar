@@ -147,7 +147,7 @@ export function ConsultList({
     <Modal visible={visible} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}>
       <SafeAreaView style={s.wrap} edges={['bottom']}>
         <View style={s.top}>
-          <Text style={s.h2}>
+          <Text accessibilityRole="header" style={s.h2}>
             <Ionicons name={tab === 'consults' ? 'sparkles-outline' : 'bulb-outline'} size={20} color={c.claude} />{' '}
             {tab === 'consults' ? tr("Claude consults") : tr("Explanations")}
           </Text>

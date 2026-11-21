@@ -63,7 +63,7 @@ function Triangle({ name }: { name: string }) {
   const lessons = karmicLessons(name);
   return (
     <>
-      <Text style={ss.h2}>{tr("Inverted triangle")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Inverted triangle")}</Text>
       <View style={ss.card}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <View style={{ alignItems: 'center' }}>
@@ -82,7 +82,7 @@ function Triangle({ name }: { name: string }) {
           {t.seqs.length ? tr("Negative sequences: {0}", { 0: t.seqs.join(', ') }) : tr("No negative sequences (three equal digits in a row).")}
         </Text>
       </View>
-      <Text style={ss.h2}>{tr("Karmic lessons")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Karmic lessons")}</Text>
       <View style={ss.card}>
         <Text style={[ss.meta, { color: c.text }]}>{lessons.length ? lessons.join(' · ') : tr("None: every number from 1 to 8 is in your name.")}</Text>
         <Text style={ss.meta}>{tr("Numbers missing from the letters of the name.")}</Text>
@@ -109,20 +109,20 @@ export default function Numerology() {
       <Text style={ss.p}>{INTRO[sys]}{' '}{tr("Master numbers are shown with their reduced digit, like 11/2.")}</Text>
       {!!getProfile().dob && (
         <>
-          <Text style={ss.h2}>{tr("Today")}</Text>
+          <Text accessibilityRole="header" style={ss.h2}>{tr("Today")}</Text>
           <Rows rows={today(getProfile().dob!)} onCard={onCard} />
         </>
       )}
       {n.core.length > 0 && (
         <>
-          <Text style={ss.h2}>{tr("Core numbers")}{n.birthName ? ` · ${n.birthName}` : ''}</Text>
+          <Text accessibilityRole="header" style={ss.h2}>{tr("Core numbers")}{n.birthName ? ` · ${n.birthName}` : ''}</Text>
           <Rows rows={n.core} onCard={onCard} />
         </>
       )}
       {!n.birthName && <Text style={ss.p}>{tr("Add your full birth name to see expression, soul urge, personality and maturity.")}</Text>}
       {n.current.length > 0 && (
         <>
-          <Text style={ss.h2}>{sys === 'chaldean' ? tr("Birth name") : tr("Current name")} · {n.currentName}</Text>
+          <Text accessibilityRole="header" style={ss.h2}>{sys === 'chaldean' ? tr("Birth name") : tr("Current name")} · {n.currentName}</Text>
           <Text style={ss.p}>
             {sys === 'chaldean' ? tr("The name on your birth certificate, for comparison.") : tr("The name you use now: its vibration sits on top of your core numbers.")}
           </Text>
@@ -132,7 +132,7 @@ export default function Numerology() {
       {sys === 'nct' && !!n.birthName && <Triangle name={n.birthName} />}
       {n.history.length > 1 && (
         <>
-          <Text style={ss.h2}>{tr("Names")}</Text>
+          <Text accessibilityRole="header" style={ss.h2}>{tr("Names")}</Text>
           <View style={ss.card}>
             {n.history.map((h, i) => (
               <Text key={i} style={[ss.meta, { color: c.text }]}>

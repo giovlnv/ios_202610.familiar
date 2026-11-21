@@ -60,7 +60,7 @@ export function ThemeSheet({ visible, onClose }: { visible: boolean; onClose: ()
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
       <Pressable dim={false} style={s.dim} onPress={onClose} accessibilityLabel={tr("Close")} />
       <View style={s.sheet}>
-        <Text style={s.h2}>{tr("Theme")}</Text>
+        <Text accessibilityRole="header" style={s.h2}>{tr("Theme")}</Text>
         <View style={s.modes}>
           {MODES.map(([m, label, icon]) => (
             <Pressable key={m} accessibilityState={{ selected: mode === m }} style={[s.mode, mode === m && s.modeOn]} onPress={() => (onClose(), setMode(m))}>

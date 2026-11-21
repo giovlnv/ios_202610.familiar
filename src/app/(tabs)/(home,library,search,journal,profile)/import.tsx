@@ -189,11 +189,11 @@ export default function ImportScreen() {
 
   return (
     <Page>
-      <Text style={ss.h2}>{tr('Title')}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr('Title')}</Text>
       <TextInput style={ss.input} value={title} onChangeText={setTitle} placeholderTextColor={c.dim} />
       {!audio && (
         <>
-          <Text style={ss.h2}>{tr('Language')}</Text>
+          <Text accessibilityRole="header" style={ss.h2}>{tr('Language')}</Text>
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
             {bookLangChoices().map((l) => (
               <Chip key={l.book} label={l.native} on={lang === l.book} onPress={() => setLang(l.book)} />
@@ -210,7 +210,7 @@ export default function ImportScreen() {
       )}
       {drafts && (
         <>
-          <Text style={ss.h2}>{tr('Sections · {0} of {1}', { 0: kept, 1: drafts.length })}</Text>
+          <Text accessibilityRole="header" style={ss.h2}>{tr('Sections · {0} of {1}', { 0: kept, 1: drafts.length })}</Text>
           <Text style={ss.meta}>{tr('Tap to leave a section out (covers, contents, notes).')}</Text>
           <View style={ss.card}>
             {drafts.map((d, i) => (

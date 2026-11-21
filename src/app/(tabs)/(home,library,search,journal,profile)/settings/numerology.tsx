@@ -29,7 +29,7 @@ export default function NumerologySettings() {
   const setBook = (id: string, v?: NumSystem) => (patchBook(id, { numSystem: v }), setBooks(load().books.filter((b) => b.paths?.includes('numerology'))));
   return (
     <Page>
-      <Text style={ss.h2}>{tr("System")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("System")}</Text>
       <View style={row}>
         <Chip label={tr("Follow my books")} on={!o.numSystem} onPress={() => set({ numSystem: undefined })} />
         {SYSTEMS.map((v) => (
@@ -49,14 +49,14 @@ export default function NumerologySettings() {
         onChange={(v) => set({ numAccents: v })}
         note={tr("Cabalística only. On: acute +2, tilde +3, circumflex and ring +7, grave, diaeresis and cedilla double the letter. Off: Á counts as A.")}
       />
-      <Text style={ss.h2}>{tr("Value of X")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Value of X")}</Text>
       <View style={row}>
         {[5, 6, 0].map((v) => (
           <Chip key={v} label={v ? String(v) : tr("Not counted")} on={(o.numX ?? 5) === v} onPress={() => set({ numX: v })} />
         ))}
       </View>
       <Text style={ss.meta}>{tr("Chaldean and Cabalística. Cheiro gives 5; some Brazilian tables give 6 or leave X out.")}</Text>
-      <Text style={ss.h2}>{tr("Your numerology books")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Your numerology books")}</Text>
       {books.length === 0 && <Text style={ss.p}>{tr("Tag a book with the Numerology path to set which system it uses.")}</Text>}
       {books.map((b) => (
         <View key={b.id} style={ss.card}>

@@ -458,7 +458,7 @@ function PersonSheet({
       <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
       <Pressable dim={false} accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={onClose} />
       <View style={s.sheet}>
-        <Text style={s.h2}>{tr("Reading for someone")}</Text>
+        <Text accessibilityRole="header" style={s.h2}>{tr("Reading for someone")}</Text>
         <TextInput style={s.input} value={name} onChangeText={setName} placeholder={tr("Name")} placeholderTextColor={c.dim} />
         <Text style={s.dim}>{tr("Birth date (optional)")}</Text>
         <DateInput style={s.input} value={dob} onChange={setDob} />

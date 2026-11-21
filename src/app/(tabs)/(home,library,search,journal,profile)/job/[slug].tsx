@@ -56,7 +56,7 @@ export default function JobScreen() {
       refreshControl={<RefreshControl refreshing={busy} onRefresh={load} tintColor={c.gold} />}
     >
       <Stack.Screen options={{ title: '' }} />
-      <Text style={s.h1}>{job.title}</Text>
+      <Text accessibilityRole="header" style={s.h1}>{job.title}</Text>
       <Text style={[s.dim, { color: job.stage === 'error' ? c.claude : c.gold }]}>{STAGE_LABEL[job.stage]}</Text>
 
       <View style={s.card}>

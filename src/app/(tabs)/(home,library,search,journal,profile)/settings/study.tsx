@@ -53,7 +53,7 @@ export default function StudySettings() {
         </View>
       ))}
       <Btn label={tr('New subject')} primary onPress={() => promptSubject()} />
-      <Text style={ss.h2}>{tr('Flashcard review')}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr('Flashcard review')}</Text>
       <View style={ss.row}>
         <Chip label={tr('Spaced')} on={d.review === 'spaced'} onPress={() => updateStudy((x) => (x.review = 'spaced'))} />
         <Chip label={tr('Simple')} on={d.review === 'simple'} onPress={() => updateStudy((x) => (x.review = 'simple'))} />

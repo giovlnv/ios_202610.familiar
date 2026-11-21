@@ -32,7 +32,7 @@ export default function Booklet() {
         )}
       </View>
 
-      <Text style={s.h2}>{tr("Introduction")}</Text>
+      <Text accessibilityRole="header" style={s.h2}>{tr("Introduction")}</Text>
       {PAGES.map((p) => (
         <Pressable key={p} style={s.row} onPress={() => open(p)}>
           <Text style={[s.rowText, { flex: 1 }]}>{lx(p === 'how-to' ? intro.howTo.title : p === 'colours' ? intro.colours.title : intro.planes.title)}</Text>
@@ -45,7 +45,7 @@ export default function Booklet() {
         const done = list.filter((x) => hasStudy(x.id)).length;
         return (
           <View key={g}>
-            <Text style={s.h2}>
+            <Text accessibilityRole="header" style={s.h2}>
               {lx({ pt: GROUP_PT[g], en: g })} <Text style={s.small}>{done}/{list.length}</Text>
             </Text>
             {list.map((x) => {

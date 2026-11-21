@@ -526,7 +526,7 @@ export default function Player({
       <Modal visible={sleepOpen} transparent animationType="slide" onRequestClose={() => setSleepOpen(false)}>
         <Pressable style={{ flex: 1, backgroundColor: "#0008" }} onPress={() => setSleepOpen(false)} accessibilityLabel={tr("Close")} />
         <View style={s.sleepSheet}>
-          <Text style={s.h2}>{tr("Sleep timer")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Sleep timer")}</Text>
           {(
             [
               ["off", "Off"],
@@ -927,7 +927,7 @@ const Header = ({
   action?: [string, () => void];
 }) => (
   <View style={s.top}>
-    <Text style={s.h2}>{title}</Text>
+    <Text accessibilityRole="header" style={s.h2}>{title}</Text>
     <View style={s.topRight}>
       {action && (
         <Pressable onPress={action[1]} hitSlop={8}>

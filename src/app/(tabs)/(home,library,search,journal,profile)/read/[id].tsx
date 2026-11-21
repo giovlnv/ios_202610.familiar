@@ -297,7 +297,7 @@ export default function Reader() {
       )}
       <Modal visible={toc} animationType="slide" presentationStyle="pageSheet" onRequestClose={() => setToc(false)}>
         <View style={s.sheet}>
-          <Text style={s.sheetTitle}>{tr('Contents')}</Text>
+          <Text accessibilityRole="header" style={s.sheetTitle}>{tr('Contents')}</Text>
           <FlatList
             data={rb.chapters}
             keyExtractor={(_, i) => String(i)}

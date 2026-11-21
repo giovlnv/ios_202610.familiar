@@ -90,7 +90,7 @@ export default function Journal() {
           ),
         }}
       />
-      <Text style={s.h3}>{tr("Readings")}</Text>
+      <Text accessibilityRole="header" style={s.h3}>{tr("Readings")}</Text>
       <View style={s.stats}>
         <View style={{ flex: 1, gap: 2 }}>
           <Text style={s.big}>{thisMonth}</Text>

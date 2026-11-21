@@ -296,11 +296,11 @@ export default function Home() {
 
       {tarotOn && (
         <>
-          <Text style={s.h2}>{tr("Booklet")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Booklet")}</Text>
           <Pressable style={s.booklet} onPress={() => router.push('/card-study')}>
             <BookletCover size={110} />
             <View style={{ flex: 1, gap: 2 }}>
-              <Text style={s.bookletTitle}>{lx(intro.title)}</Text>
+              <Text accessibilityRole="header" style={s.bookletTitle}>{lx(intro.title)}</Text>
               <Text style={s.bookletTag}>{lx(intro.tagline)}</Text>
               <Text style={s.dim}>{tr("{0} of 78 cards", { 0: studyCount() })}</Text>
             </View>
@@ -311,7 +311,7 @@ export default function Home() {
 
       {listening.length > 0 && (
         <>
-          <Text style={s.h2}>{tr("Continue listening")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Continue listening")}</Text>
           {listening.map(({ b, audio, p }) => (
             <Pressable
               key={b.id}
@@ -345,7 +345,7 @@ export default function Home() {
         </>
       )}
 
-      <Text style={s.h2}>{tr("Currently reading")}</Text>
+      <Text accessibilityRole="header" style={s.h2}>{tr("Currently reading")}</Text>
       {reading.length ? (
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 12 }}>
           {reading.map((b) => (
@@ -361,7 +361,7 @@ export default function Home() {
         <Text style={s.dim}>{tr("Mark a book as “Reading” to see it here.")}</Text>
       )}
 
-      <Text style={s.h2}>{tr("Recently logged")}</Text>
+      <Text accessibilityRole="header" style={s.h2}>{tr("Recently logged")}</Text>
       {recent.length ? (
         recent.map((l) => {
           const b = byId.get(l.bookId);

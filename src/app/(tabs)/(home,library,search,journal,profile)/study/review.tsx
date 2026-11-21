@@ -57,7 +57,7 @@ export default function Review() {
       {!card ? (
         <View style={s.done}>
           <Ionicons name="checkmark-circle-outline" size={48} color={c.gold} />
-          <Text style={s.doneTitle}>{queue.length ? tr('Done for now') : tr('Nothing to review')}</Text>
+          <Text accessibilityRole="header" style={s.doneTitle}>{queue.length ? tr('Done for now') : tr('Nothing to review')}</Text>
           {queue.length > 0 && <Text style={s.meta}>{tr('{0} got it · {1} again', { 0: score.ok, 1: score.again })}</Text>}
           <Pressable style={s.btn} onPress={() => router.back()}>
             <Text style={s.btnText}>{tr('Back')}</Text>
