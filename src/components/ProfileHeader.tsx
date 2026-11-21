@@ -241,8 +241,8 @@ export default function ProfileHeader() {
   return (
     <View style={s.head}>
       <Pressable style={s.top} onPress={() => router.push('/settings/profile')}>
-        <Avatar photo={p.photo} name={p.name} size={84} />
-        <FamiliarArt familiar={currentGuide()} pose={playing ? 'reading' : nightNow() ? 'sleeping' : 'idle'} size={84} vial alive />
+        <Avatar photo={p.photo} name={p.name} size={72} />
+        <FamiliarArt familiar={currentGuide()} pose={playing ? 'reading' : nightNow() ? 'sleeping' : 'idle'} size={72} vial alive />
         <View style={{ flex: 1 }}>
           <Text style={s.name}>{p.name || tr("Set up your profile")}</Text>
           <Text style={s.user}>{p.username ? `@${p.username}${p.pronouns ? ` · ${pronounLabel(p.pronouns)}` : ""}` : (pronounLabel(p.pronouns) ?? tr("Add a photo, name and username"))}</Text>
@@ -301,7 +301,7 @@ const s = themed(() => ({
   moreText: { color: c.gold, fontWeight: '600', fontSize: 13 },
   cards: { flexDirection: 'row', justifyContent: 'space-around', gap: 8 },
   cardCol: { alignItems: 'center', gap: 4, flex: 1 },
-  cardLabel: { color: c.gold, fontSize: 11, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1 },
+  cardLabel: { color: c.gold, fontSize: 11, fontWeight: '700' },
   cardName: { color: c.text, fontSize: 13, fontFamily: F.heading, textAlign: 'center' },
   empty: { backgroundColor: c.raised, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: c.line },
   initial: { color: c.gold, fontWeight: '700' },

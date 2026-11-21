@@ -434,17 +434,17 @@ function DayCard({
         </Text>
         <View style={s.tBtns}>
           {mine?.card ? (
-            <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={onOpen}>
+            <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={onOpen} hitSlop={8}>
               <Ionicons name="book-outline" size={14} color={c.gold} />
               <Text style={[s.logBtnText, { color: c.gold }]}>{tr("Open entry")}</Text>
             </Pressable>
           ) : (
-            <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={onLog}>
+            <Pressable style={[s.logBtn, s.logBtnAlt]} onPress={onLog} hitSlop={8}>
               <Ionicons name="add" size={14} color={c.gold} />
               <Text style={[s.logBtnText, { color: c.gold }]}>{tr("Log yours")}</Text>
             </Pressable>
           )}
-          <Pressable style={s.logBtn} onPress={onWrite}>
+          <Pressable style={s.logBtn} onPress={onWrite} hitSlop={8}>
             <Ionicons name="create-outline" size={14} color={c.bg} />
             <Text style={s.logBtnText}>{tr("Write")}</Text>
           </Pressable>
@@ -467,7 +467,7 @@ const s = themed(() => ({
   tMoon: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   tCards: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 6 },
   tName: { color: c.text, fontSize: 15, fontFamily: F.heading },
-  tBtns: { flexDirection: 'row', gap: 8, marginTop: 6, alignItems: 'center' },
+  tBtns: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 6, alignItems: 'center' },
   shareBtn: { marginTop: 6, paddingHorizontal: 4 },
   streak: { color: c.gold, fontSize: 13, fontWeight: '600', marginTop: 2 },
   shareDate: { color: c.text, fontFamily: F.heading, fontSize: 17 },
@@ -480,7 +480,7 @@ const s = themed(() => ({
   today: { color: c.text, fontSize: 13 },
   midDate: { color: c.text, fontSize: 28, fontFamily: F.heading },
   moonName: { color: c.text, fontSize: 13, textAlign: 'center' },
-  tag: { color: c.gold, fontSize: 11, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1.2 },
+  tag: { color: c.gold, fontSize: 13, fontWeight: '700' },
   cardName: { color: c.text, fontSize: 15, fontFamily: F.heading, textAlign: 'center' },
   blank: { borderWidth: 1, borderStyle: 'dashed', borderColor: c.gold, alignItems: 'center', justifyContent: 'center' },
   how: { color: c.dim, fontSize: 13, textDecorationLine: 'underline' },
