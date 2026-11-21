@@ -182,7 +182,7 @@ export default function Reader() {
         ) : (
           <>
             <Text style={s.msg}>{tr('Keep the book file in the app to read it here.')}</Text>
-            <Btn label={tr('Get it from my library on GitHub')} primary onPress={download} />
+            <Btn label={tr('Get it from calliope on ares')} primary onPress={download} />
             <Btn label={tr('Choose the EPUB or PDF file')} onPress={attach} />
           </>
         )}

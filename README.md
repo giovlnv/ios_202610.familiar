@@ -34,7 +34,7 @@ The mascot is the point of view: *becoming familiar* is learning. Your familiar 
 
 | | |
 |---|---|
-| 🎧 **Audiobooks** | Voiced on the iPhone (Kokoro) while you listen, or on GitHub; follow-along text, card view, text style, speed, sleep timer, lock screen; own-key cloud voices (Gemini, ElevenLabs) |
+| 🎧 **Audiobooks** | Voiced on the iPhone (Kokoro) while you listen, or on ares (calliope, personal build); follow-along text, card view, text style, speed, sleep timer, lock screen; own-key cloud voices (Gemini, ElevenLabs) |
 | 📖 **Your own books** | DRM-free EPUB, text or scanned PDF (text recognition on the phone), MP3/M4A/M4B audiobooks with chapters; "Open in Familiar" from other apps |
 | 📄 **Reader** | Real pages for EPUB (or scroll), PDF pages linked to the audio, Listen from here, follows the audio, search, bookmarks and highlights |
 | 🃏 **Paths** | Tarot, Lenormand (Grand Tableau, combinations), astrology (birth chart list, today's sky), numerology (Pythagorean, Chaldean, Cabalística), systems of your own |
@@ -60,26 +60,16 @@ The mascot is the point of view: *becoming familiar* is learning. Your familiar 
 Two ways in:
 
 - **Your own file**, all on the phone: EPUB/PDF → chapters (text recognition for scans) → you check the sections → voiced on the iPhone while you listen.
-- **Through the library pipeline** (personal build):
+- **From calliope** (personal build): tarot books live in calibre on ares (type `nonfiction.tarot`); Kokoro voices them at night and the calliope api serves `book.json` and the chapter audio (`/familiar/books`). The app picks them up by itself, streams them or downloads them for offline. Add book in the app is paused until calliope can take uploads.
 
-```mermaid
-flowchart LR
-    A[EPUB / PDF<br/>uploaded from the app] --> B[Split into sections<br/>GitHub Actions]
-    B --> C{You check<br/>the split}
-    C -->|fix note| B
-    C -->|confirm| D[book.json<br/>text + timings]
-    D --> E[Voices on the iPhone<br/>or Kokoro on GitHub]
-    E --> F[Plays in the app,<br/>streamed or downloaded]
-```
-
-The pipeline lives in a separate **private** repository, because the books are copyrighted. `book.json` holds every section's paragraphs with start and end times, which is what makes the text follow along.
+`book.json` holds every section's paragraphs with start and end times, which is what makes the text follow along. When a book's `book.json` changes (the move from the old GitHub library, or a regenerated book), notes, progress, highlights, card links and flashcards move to the same passage in the new split (`src/remap.ts`).
 
 ## Built with
 
 - **App**: Expo SDK 57 · React Native · TypeScript · Expo Router · expo-audio · react-native-svg (the familiars are SVG templates recoloured at runtime) · Kokoro on Core ML · a local Expo module (AVFoundation, PDFKit, Vision) · astronomy-engine · Playfair Display
-- **Pipeline**: Python · Kokoro text-to-speech · GitHub Actions
+- **Books**: calibre and the calliope api on ares (Kokoro text-to-speech at night)
 - **Design**: Figma (design system, screens, brand) and a Claude design canvas for the mascot drawings
-- **Data**: local files on the device · backups to ares (the calliope api, `PUT/GET /familiar/backup`, 30 daily copies) · GitHub API for jobs and streaming · Open Library · Open-Meteo geocoding
+- **Data**: local files on the device · backups to ares (the calliope api, `PUT/GET /familiar/backup`, 30 daily copies) · calliope api for books and audio · Open Library · Open-Meteo geocoding
 
 ## Installing (no App Store, no Mac)
 
@@ -96,7 +86,10 @@ npm install
 npx expo start      # dev server
 npx tsc --noEmit    # typecheck
 npx expo lint       # lint
+node --test scripts/   # unit tests (remap)
 ```
+
+- Card studies live in `src/card-study/` (one JSON per card); after adding or editing one run `python3 scripts/sync_card_study.py`. The printable booklet: `python3 scripts/card-study/build_booklet.py` (needs `pypdf` and `google-chrome`; art and fonts next to it).
 
 - Add packages with `npx expo install`. `ios/` and `android/` are generated: configure native behaviour in `app.json` and config plugins.
 - Check the versioned Expo docs before touching Expo APIs (see [AGENTS.md](AGENTS.md)).

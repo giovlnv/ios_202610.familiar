@@ -1,7 +1,7 @@
 import { Directory, File, Paths } from 'expo-file-system';
 import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
 import { clean, join, openEpub } from './ownBooks';
-import { getToken } from './sync';
+import { idOf, loadConnection, originalUrl } from './calliope';
 import { Book } from './types';
 
 export type Block = { t: 'h' | 'p' | 'img'; text?: string; src?: string; ratio?: number; at?: [number, number] };
@@ -20,20 +20,32 @@ export function keepSource(folder: string, uri: string, name: string) {
   new File(uri).copySync(dest);
 }
 
-const LIB = 'https://raw.githubusercontent.com/giovlnv/ios_202610.familiar_library/main/sources';
+/** the original EPUB/PDF from calibre through the calliope api */
 export async function fetchSource(folder: string) {
-  const token = await getToken();
-  if (!token) throw new Error('Add your GitHub key in Settings → Keys.');
-  for (const name of ['book.epub', 'book.pdf']) {
-    const r = await fetch(`${LIB}/${encodeURIComponent(folder)}/${name}`, { headers: { Authorization: `token ${token}` } });
-    if (!r.ok) continue;
-    const dest = new File(dir(folder), `source.${name.split('.')[1]}`);
-    if (dest.exists) dest.delete();
-    dest.create();
-    dest.write(new Uint8Array(await r.arrayBuffer()));
-    return dest;
+  const book = (() => {
+    try {
+      return JSON.parse(new File(dir(folder), 'book.json').textSync()) as Book;
+    } catch {
+      return null;
+    }
+  })();
+  const id = idOf(folder, book);
+  if (!id) throw new Error('This book has no original on ares.');
+  await loadConnection();
+  const src = originalUrl(id);
+  if (!src) throw new Error('Add the ares address and token in Settings → Backups.');
+  const r = await fetch(src.uri, { headers: src.headers });
+  if (r.status === 401) throw new Error('ares refused the token');
+  if (!r.ok) throw new Error('The original file is not on ares.');
+  const ext = /pdf/i.test(r.headers.get('content-type') ?? '') ? 'pdf' : 'epub';
+  const dest = new File(dir(folder), `source.${ext}`);
+  for (const old of ['source.epub', 'source.pdf']) {
+    const f = new File(dir(folder), old);
+    if (f.exists) f.delete();
   }
-  throw new Error('The original file is not in your library on GitHub.');
+  dest.create();
+  dest.write(new Uint8Array(await r.arrayBuffer()));
+  return dest;
 }
 
 const key = (s: string) =>

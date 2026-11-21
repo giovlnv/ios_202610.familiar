@@ -10,7 +10,7 @@ Last revised: 21 Oct 2026 · app 1.7.0 · two builds from one code base: **perso
 
 **Listening**
 - Audiobook player: follow-along text, notes, speed menu, 15 s skips, mini player, sleep timer, lock screen, text style, card view per section
-- Voices made on the iPhone (Kokoro) or on GitHub; streaming or downloaded audio; own-key cloud voices (Gemini, ElevenLabs); Arabic with the iPhone voice
+- Voices made on the iPhone (Kokoro) or on ares (calliope, since 2026-11-20; the GitHub library is retired); streaming or downloaded audio; own-key cloud voices (Gemini, ElevenLabs); Arabic with the iPhone voice
 - Explanations on demand, Listen off by default; saved explanations; Ask Claude consults (personal build)
 
 **Books**
