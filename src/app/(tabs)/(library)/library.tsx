@@ -5,12 +5,12 @@ import { useCallback, useEffect, useState } from "react";
 import {
   Alert,
   FlatList,
-  Pressable,
   ScrollView,
   Text,
   useWindowDimensions,
   View,
 } from "react-native";
+import { Pressable } from "../../../components/Pressable";
 import { router, useFocusEffect } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { installSampleOnce } from "../../../storage";
@@ -87,7 +87,7 @@ export default function Library() {
   const views = (
     <View style={s.views}>
       {(["books", "diary"] as const).map((v) => (
-        <Pressable key={v} style={[s.view, view === v && s.viewOn]} onPress={() => setView(v)}>
+        <Pressable key={v} accessibilityState={{ selected: view === v }} style={[s.view, view === v && s.viewOn]} onPress={() => setView(v)}>
           <Ionicons name={v === "books" ? "grid-outline" : "calendar-outline"} size={15} color={view === v ? c.bg : c.dim} />
           <Text style={[s.viewText, view === v && { color: c.bg }]}>{v === "books" ? tr("Books") : tr("Diary")}</Text>
         </Pressable>

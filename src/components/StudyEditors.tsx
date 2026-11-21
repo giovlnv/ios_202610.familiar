@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Alert, Modal, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Alert, Modal, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { addSubject, CardDraft, Flashcard, removeCard, removeNote, saveCard, saveNote, StudyNote, Subject, useStudy } from '../study';
 import { getOnboarding, setOnboarding } from '../familiar';
 import { t as tr } from '../i18n';

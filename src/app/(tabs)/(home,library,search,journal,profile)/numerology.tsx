@@ -1,6 +1,7 @@
 import { t as tr } from '../../../i18n';
 import { useCallback, useState } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import { router, useFocusEffect } from 'expo-router';
 import { activeSystem, karmicLessons, numberCards, numbers, NumberRow, NumSystem, personal, show, SYSTEM_NAME, SYSTEMS, triangle } from '../../../numerology';
 import { Chip } from '../../../components/ui';

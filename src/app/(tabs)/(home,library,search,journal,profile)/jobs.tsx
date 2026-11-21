@@ -1,6 +1,7 @@
 import { t as tr } from '../../../i18n';
 import { useCallback, useState } from 'react';
-import { Alert, FlatList, Pressable, RefreshControl, Text, View } from 'react-native';
+import { Alert, FlatList, RefreshControl, Text, View } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import { router, Stack, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { cancelJob, canCancel, Job, listJobs, STAGE_LABEL } from '../../../jobs';

@@ -2,7 +2,8 @@ import { isPublic } from '../../../../variant';
 import * as Updates from 'expo-updates';
 import { t as tr } from '../../../../i18n';
 import { useState } from 'react';
-import { ActivityIndicator, Alert, Pressable, Text, View } from 'react-native';
+import { ActivityIndicator, Alert, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import {
   AUDIO_LANGS,

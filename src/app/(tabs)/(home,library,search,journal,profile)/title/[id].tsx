@@ -5,13 +5,13 @@ import { useCallback, useState } from "react";
 import {
   Alert,
   Modal,
-  Pressable,
   ScrollView,
   StyleSheet,
   Switch,
   Text,
   View,
 } from "react-native";
+import { Pressable } from "../../../../components/Pressable";
 import {
   router,
   Stack,
@@ -408,7 +408,7 @@ export default function Title() {
         animationType="slide"
         onRequestClose={() => setEditStart(false)}
       >
-        <Pressable accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={() => setEditStart(false)} />
+        <Pressable dim={false} accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={() => setEditStart(false)} />
         <View style={s.sheet}>
           <Text style={s.h2}>{tr("Started reading")}</Text>
           <DateStepper
@@ -445,7 +445,7 @@ export default function Title() {
         animationType="slide"
         onRequestClose={() => setShelving(false)}
       >
-        <Pressable accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={() => setShelving(false)} />
+        <Pressable dim={false} accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={() => setShelving(false)} />
         <View style={[s.sheet, { maxHeight: "75%" }]}>
           <Text style={s.h2}>{tr("Shelves")}</Text>
           <ScrollView contentContainerStyle={{ gap: 2 }}>
@@ -523,7 +523,7 @@ function LogSheet({
         setStarted(initialStart)
       )}
     >
-      <Pressable accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={onClose} />
+      <Pressable dim={false} accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={onClose} />
       <View style={s.sheet}>
         <Text style={s.h2}>{tr("Log")}</Text>
         <Text style={s.label}>{tr("Finished on")}</Text>

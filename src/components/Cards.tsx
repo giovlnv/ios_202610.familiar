@@ -1,6 +1,7 @@
 import { t as tr } from '../i18n';
 import { useEffect, useMemo, useReducer, useState } from 'react';
-import { FlatList, Image, Modal, Pressable, ScrollView, Switch, Text, TextInput, View } from 'react-native';
+import { FlatList, Image, Modal, ScrollView, Switch, Text, TextInput, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { cardName, cardsOf, cardUri, onDecksChange, reversible, System } from '../decks';
 import { onSystemsChange } from '../systems';

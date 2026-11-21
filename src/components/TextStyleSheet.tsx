@@ -1,5 +1,6 @@
 import { t as tr } from '../i18n';
-import { Modal, Pressable, ScrollView, Text, View } from 'react-native';
+import { Modal, ScrollView, Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { c, F, themed } from '../theme';
 import {
@@ -28,7 +29,7 @@ export default function TextStyleSheet({ visible, sample, reader, onClose }: { v
 
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
-      <Pressable style={{ flex: 1 }} onPress={onClose} accessibilityLabel={tr("Close")} />
+      <Pressable dim={false} style={{ flex: 1 }} onPress={onClose} accessibilityLabel={tr("Close")} />
       <View style={s.sheet}>
         <View style={s.top}>
           <Text style={s.h2}>{tr("Text")}</Text>

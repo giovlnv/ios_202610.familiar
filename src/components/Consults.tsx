@@ -7,13 +7,13 @@ import {
   Linking,
   Modal,
   Platform,
-  Pressable,
   ScrollView,
   Share,
   Text,
   TextInput,
   View,
 } from 'react-native';
+import { Pressable } from './Pressable';
 import * as Clipboard from 'expo-clipboard';
 import { File, Paths } from 'expo-file-system';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -164,7 +164,7 @@ export function ConsultList({
         </View>
         <View style={s.filters}>
           {(['consults', 'explained'] as const).map((t) => (
-            <Pressable key={t} onPress={() => setTab(t)} style={[s.chip, tab === t && s.chipOn]}>
+            <Pressable key={t} accessibilityState={{ selected: tab === t }} onPress={() => setTab(t)} style={[s.chip, tab === t && s.chipOn]}>
               <Text style={[s.chipText, tab === t && s.chipTextOn]}>
                 {t === 'consults' ? tr("Consults ({0})", { 0: consults.length }) : tr("Explanations ({0})", { 0: explainedList.length })}
               </Text>

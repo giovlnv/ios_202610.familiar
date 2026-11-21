@@ -1,4 +1,5 @@
-import { Alert, Pressable, Text, View } from 'react-native';
+import { Alert, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { patchSubject, removeSubject, SUBJECT_COLORS, updateStudy, useStudy } from '../../../../study';
 import { getOnboarding, setOnboarding } from '../../../../familiar';

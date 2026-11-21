@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
-import { ActionSheetIOS, FlatList, Pressable, Text, View } from 'react-native';
+import { ActionSheetIOS, FlatList, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import { router, Stack, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { getBook, loadConsults, loadNotes } from '../../../../storage';

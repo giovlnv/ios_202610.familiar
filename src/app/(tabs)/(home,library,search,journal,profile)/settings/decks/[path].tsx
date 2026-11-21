@@ -1,6 +1,7 @@
 import { t as tr } from '../../../../../i18n';
 import { useState } from 'react';
-import { Alert, Pressable, Text, View } from 'react-native';
+import { Alert, Text, View } from 'react-native';
+import { Pressable } from '../../../../../components/Pressable';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { createSystem, defaultDeck, deleteDeck, downloadLenormand, importDeckFromFiles, importDeckFromUrl, LENORMAND_DECK, listDecks, setDefaultDeck } from '../../../../../decks';

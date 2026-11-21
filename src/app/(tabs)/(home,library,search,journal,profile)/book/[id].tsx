@@ -1,7 +1,8 @@
 import { t as tr } from '../../../../i18n';
 import { usePad } from '../../../../playback';
 import { useCallback, useMemo, useState } from 'react';
-import { FlatList, Pressable, Text, View } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import { router, Stack, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { getBook, loadConsults, loadNotes, loadProgress } from '../../../../storage';

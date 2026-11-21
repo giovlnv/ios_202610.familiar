@@ -1,5 +1,6 @@
 import { t as tr } from '../../../../i18n';
-import { Image, Pressable, Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import { router } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { CARDS, cardName } from '../../../../decks';

@@ -2,12 +2,12 @@ import { t as tr } from '../../../../i18n';
 import { usePad } from '../../../../playback';
 import { useMemo } from "react";
 import {
-  Pressable,
   ScrollView,
   Text,
   useWindowDimensions,
   View,
 } from "react-native";
+import { Pressable } from "../../../../components/Pressable";
 import { router, Stack, useLocalSearchParams } from "expo-router";
 import { daysBetween, load, TBook } from "../../../../tracker";
 import { Cover, Stars } from "../../../../components/ui";

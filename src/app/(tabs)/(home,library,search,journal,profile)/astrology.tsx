@@ -1,6 +1,7 @@
 import { t as tr } from '../../../i18n';
 import { useCallback, useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import { router, useFocusEffect } from 'expo-router';
 import { astroCards, fmtDeg, HOUSES, myChart, Placement, signOf } from '../../../astrology';
 import { getOnboarding } from '../../../familiar';

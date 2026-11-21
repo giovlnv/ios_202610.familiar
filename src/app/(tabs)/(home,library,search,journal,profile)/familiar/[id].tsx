@@ -1,6 +1,7 @@
 import { t as tr } from '../../../../i18n';
 import { useState } from 'react';
-import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
+import { Alert, ScrollView, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { EYES, Familiar, loadFamiliars, newFamiliar, allPaths, removeFamiliar, saveFamiliar } from '../../../../familiar';
@@ -44,7 +45,7 @@ export default function FamiliarScreen() {
       />
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 6 }}>
         {TABS.filter((t) => cat || t !== 'Shape').map((t) => (
-          <Pressable key={t} onPress={() => setTab(t)} style={[s.tab, tab === t && s.tabOn]}>
+          <Pressable key={t} accessibilityState={{ selected: tab === t }} onPress={() => setTab(t)} style={[s.tab, tab === t && s.tabOn]}>
             <Text style={[s.tabText, tab === t && { color: c.bg }]}>{!cat && t === 'Eyes' ? tr("Colour & eyes") : t}</Text>
           </Pressable>
         ))}

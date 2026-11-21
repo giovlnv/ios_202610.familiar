@@ -1,6 +1,7 @@
 import { t as tr } from '../../../../i18n';
 import { useCallback, useRef, useState } from 'react';
-import { Animated, Easing, Pressable, ScrollView, Text, View } from 'react-native';
+import { Animated, Easing, ScrollView, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import { router, Stack, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Haptics from 'expo-haptics';
@@ -97,7 +98,7 @@ export default function Den() {
           ),
         }}
       />
-      <Pressable onPress={pet} style={s.stage} accessibilityLabel={asleep ? tr("{0} is asleep", { 0: f.name }) : tr("Pet {0}", { 0: f.name })} accessibilityRole="button">
+      <Pressable dim={false} onPress={pet} style={s.stage} accessibilityLabel={asleep ? tr("{0} is asleep", { 0: f.name }) : tr("Pet {0}", { 0: f.name })} accessibilityRole="button">
         {spider && !asleep && <Animated.View style={[s.thread, { height: Animated.add(drop, 30 + ART * 0.46) }]} />}
         <Animated.View style={{ transform: [{ translateY: spider ? drop : 0 }] }}>
           <FamiliarArt familiar={f} pose={asleep ? 'sleeping' : 'idle'} size={ART} closed={closed} vial alive />

@@ -1,5 +1,6 @@
 import { t as tr } from '../i18n';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { router } from 'expo-router';
 import { CardImage } from './Cards';
 import { JournalData, Reading, spreadOf } from '../journal';

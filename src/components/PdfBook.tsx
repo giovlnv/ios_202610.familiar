@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { router, Stack } from 'expo-router';
 import { File } from 'expo-file-system';
 import Ionicons from '@expo/vector-icons/Ionicons';

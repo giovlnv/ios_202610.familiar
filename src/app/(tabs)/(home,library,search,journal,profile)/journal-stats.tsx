@@ -1,6 +1,7 @@
 import { t as tr } from '../../../i18n';
 import { useCallback, useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import { useFocusEffect } from 'expo-router';
 import { journalStats, loadJournal } from '../../../journal';
 import { cardName } from '../../../decks';

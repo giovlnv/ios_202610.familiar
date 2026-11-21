@@ -2,12 +2,12 @@ import { t as tr } from '../../../i18n';
 import { usePad } from '../../../playback';
 import { useCallback, useState } from "react";
 import {
-  Pressable,
   ScrollView,
   Text,
   useWindowDimensions,
   View,
 } from "react-native";
+import { Pressable } from "../../../components/Pressable";
 import { router, Stack, useFocusEffect } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { daysBetween, load, Tracker } from "../../../tracker";

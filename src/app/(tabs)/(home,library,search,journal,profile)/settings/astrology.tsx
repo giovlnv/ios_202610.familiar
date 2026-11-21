@@ -1,6 +1,7 @@
 import { t as tr } from '../../../../i18n';
 import { useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { getOnboarding, setOnboarding } from '../../../../familiar';
 import { HOUSES } from '../../../../astrology';

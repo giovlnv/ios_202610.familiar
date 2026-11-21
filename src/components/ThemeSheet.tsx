@@ -1,6 +1,7 @@
 import { t as tr } from '../i18n';
 import { useState } from 'react';
-import { Alert, Image, Modal, Platform, Pressable, ScrollView, Text, View } from 'react-native';
+import { Alert, Image, Modal, Platform, ScrollView, Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { getAppIconName, setAlternateAppIcon } from 'expo-alternate-app-icons';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { c, F, Mode, mode, PALETTES, paletteId, scheme, setMode, setPalette, themed } from '../theme';
@@ -57,12 +58,12 @@ export function IconPicker({ heading = true }: { heading?: boolean }) {
 export function ThemeSheet({ visible, onClose }: { visible: boolean; onClose: () => void }) {
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
-      <Pressable style={s.dim} onPress={onClose} accessibilityLabel={tr("Close")} />
+      <Pressable dim={false} style={s.dim} onPress={onClose} accessibilityLabel={tr("Close")} />
       <View style={s.sheet}>
         <Text style={s.h2}>{tr("Theme")}</Text>
         <View style={s.modes}>
           {MODES.map(([m, label, icon]) => (
-            <Pressable key={m} style={[s.mode, mode === m && s.modeOn]} onPress={() => (onClose(), setMode(m))}>
+            <Pressable key={m} accessibilityState={{ selected: mode === m }} style={[s.mode, mode === m && s.modeOn]} onPress={() => (onClose(), setMode(m))}>
               <Ionicons name={icon} size={15} color={mode === m ? c.bg : c.dim} />
               <Text style={[s.modeText, mode === m && { color: c.bg }]}>{label}</Text>
             </Pressable>

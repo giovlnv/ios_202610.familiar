@@ -1,6 +1,7 @@
 import { t as tr } from '../i18n';
 import { useState } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { CardImage } from './Cards';
 import { Chip } from './ui';

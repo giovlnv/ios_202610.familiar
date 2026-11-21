@@ -1,6 +1,7 @@
 import { t as tr } from '../i18n';
 import { useState } from 'react';
-import { ActivityIndicator, Alert, Modal, Pressable, Text, View } from 'react-native';
+import { ActivityIndicator, Alert, Modal, Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { fetchGenres, setGenres } from '../genres';
 import { TBook } from '../tracker';
@@ -37,7 +38,7 @@ export function GenreSheet({ book, visible, onClose }: { book: TBook; visible: b
         if (!book.genres?.length) find();
       }}
     >
-      <Pressable accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={onClose} />
+      <Pressable dim={false} accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={onClose} />
       <View style={s.sheet}>
         <Text style={s.h2}>{tr("Genres")}</Text>
         <Text style={s.dim}>{tr("Tap to remove. Top 5 are picked from Goodreads, Amazon and Open Library; your edits are kept.")}</Text>

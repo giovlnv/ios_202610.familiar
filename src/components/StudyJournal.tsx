@@ -1,5 +1,6 @@
 import { ReactNode, useState } from 'react';
-import { ActionSheetIOS, FlatList, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { ActionSheetIOS, FlatList, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { router, Stack } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { CardDraft, Flashcard, isDue, StudyNote, updateStudy, useStudy } from '../study';
@@ -155,7 +156,7 @@ export function JournalTabs({ tab, onTab }: { tab: 'readings' | 'notes' | 'cards
   return (
     <View style={s.tabs}>
       {items.map(([id, label, icon]) => (
-        <Pressable key={id} style={[s.tab, tab === id && s.tabOn]} onPress={() => onTab(id)}>
+        <Pressable key={id} accessibilityState={{ selected: tab === id }} style={[s.tab, tab === id && s.tabOn]} onPress={() => onTab(id)}>
           <Ionicons name={icon} size={15} color={tab === id ? c.bg : c.dim} />
           <Text style={[s.tabText, tab === id && { color: c.bg }]}>{tr(label)}</Text>
         </Pressable>

@@ -1,6 +1,7 @@
 import { t as tr } from '../i18n';
 import { useEffect, useMemo, useState } from 'react';
-import { AccessibilityInfo, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { AccessibilityInfo, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { SvgXml } from 'react-native-svg';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { COATS, COLORS, Element, EYES, Familiar, familiarXml, Mark, LIGHTS, MARK_COLORS, MARKS, Pose, SPECIES, STRIPES, sunSign } from '../familiar';
@@ -156,7 +157,7 @@ export function ShapeCoatStep({ f, set }: StepProps) {
       {cat && (
         <View style={s.seg}>
           {(['round', 'slim'] as const).map((b) => (
-            <Pressable key={b} style={[s.segItem, f.build === b && s.segOn]} onPress={() => set({ build: b })}>
+            <Pressable key={b} accessibilityState={{ selected: f.build === b }} style={[s.segItem, f.build === b && s.segOn]} onPress={() => set({ build: b })}>
               <Text style={[s.segText, f.build === b && s.segTextOn]}>{b === 'round' ? tr("Round") : tr("Slim")}</Text>
             </Pressable>
           ))}

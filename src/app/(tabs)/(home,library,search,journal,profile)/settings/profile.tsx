@@ -1,7 +1,8 @@
 import { pronounKey, pronounLabel, PRONOUNS, setPronouns, t as tr } from '../../../../i18n';
 import { Chip } from '../../../../components/ui';
 import { useState } from 'react';
-import { Pressable, Text, TextInput, View } from 'react-native';
+import { Text, TextInput, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { router } from 'expo-router';
 import { getProfile, NameEntry, setProfile } from '../../../../tracker';

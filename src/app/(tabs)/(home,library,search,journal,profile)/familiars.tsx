@@ -1,7 +1,8 @@
 import { isPublic } from '../../../variant';
 import { t as tr } from '../../../i18n';
 import { useCallback, useState } from 'react';
-import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
+import { Alert, ScrollView, Text, View } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import { router, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { describe, loadFamiliars, allPaths } from '../../../familiar';

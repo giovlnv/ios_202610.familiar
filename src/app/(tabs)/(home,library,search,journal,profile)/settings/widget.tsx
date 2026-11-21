@@ -1,6 +1,7 @@
 import { t as tr } from '../../../../i18n';
 import { useState } from 'react';
-import { Pressable, Switch, Text, View } from 'react-native';
+import { Switch, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import { Page, ss } from '../../../../components/settings-ui';
 import { ACCENT, appGroup, appGroups, BG, getWidgetColors, setWidgetColors, TEXT, WidgetColors, widgetStatus } from '../../../../widget';
 import { c, themed } from '../../../../theme';

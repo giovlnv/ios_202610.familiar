@@ -1,6 +1,7 @@
 import { t as tr } from '../../../i18n';
 import { useCallback, useMemo, useState } from 'react';
-import { Pressable, ScrollView, SectionList, Text, TextInput, View } from 'react-native';
+import { ScrollView, SectionList, Text, TextInput, View } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import { router, Stack, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { JournalData, loadJournal, matchesReading, mostDrawn, newReading, Reading } from '../../../journal';
@@ -126,7 +127,7 @@ export default function Journal() {
       </View>
       <View style={s.views}>
         {(['timeline', 'calendar'] as const).map((v) => (
-          <Pressable key={v} style={[s.view, view === v && s.viewOn]} onPress={() => (setView(v), setPicked(null))}>
+          <Pressable key={v} accessibilityState={{ selected: view === v }} style={[s.view, view === v && s.viewOn]} onPress={() => (setView(v), setPicked(null))}>
             <Ionicons name={v === 'timeline' ? 'list' : 'calendar-outline'} size={15} color={view === v ? c.bg : c.dim} />
             <Text style={[s.viewText, view === v && { color: c.bg }]}>{v === 'timeline' ? tr("Timeline") : tr("Calendar")}</Text>
           </Pressable>

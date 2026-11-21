@@ -1,6 +1,7 @@
 import { t as tr } from '../i18n';
 import { ReactNode } from 'react';
-import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
+import { Alert, ScrollView, Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { Href, router } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { usePad } from '../playback';

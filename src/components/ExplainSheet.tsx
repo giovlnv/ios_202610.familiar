@@ -1,6 +1,7 @@
 import { t as tr } from '../i18n';
 import { useState } from 'react';
-import { KeyboardAvoidingView, Modal, Pressable, ScrollView, Share, Switch, Text, TextInput, View } from 'react-native';
+import { KeyboardAvoidingView, Modal, ScrollView, Share, Switch, Text, TextInput, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Clipboard from 'expo-clipboard';
 import { CARDS, cardName, cardUri } from '../decks';

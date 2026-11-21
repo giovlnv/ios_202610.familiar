@@ -1,6 +1,7 @@
 import { t as tr } from '../../../../../i18n';
 import { useState } from 'react';
-import { Alert, Pressable, Switch, Text, useWindowDimensions, View } from 'react-native';
+import { Alert, Switch, Text, useWindowDimensions, View } from 'react-native';
+import { Pressable } from '../../../../../components/Pressable';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import * as ImagePicker from 'expo-image-picker';
 import { deleteSystem, importIntoSystem, removeCustomCard, setCardImage } from '../../../../../decks';

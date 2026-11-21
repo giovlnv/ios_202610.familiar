@@ -1,6 +1,7 @@
 import { t as tr } from '../i18n';
 import { useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, Pressable, Text, View } from 'react-native';
+import { ActivityIndicator, Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { File, Paths } from 'expo-file-system';
 import { AudioPlayer, createAudioPlayer } from 'expo-audio';
@@ -63,7 +64,7 @@ export default function ListenBar({ text }: { text: string }) {
   const pct = Math.min(100, Math.round(raw > 1 ? raw : raw * 100));
   return (
     <View style={s.bar}>
-      <Pressable style={s.play} onPress={start} disabled={state === 'making'} accessibilityLabel={tr("Listen")}>
+      <Pressable style={s.play} onPress={start} disabled={state === 'making'} accessibilityLabel={state === 'playing' ? tr("Pause") : tr("Listen")} accessibilityState={{ busy: state === 'making' }}>
         {state === 'making' ? <ActivityIndicator color={c.bg} /> : <Ionicons name={state === 'playing' ? 'pause' : 'play'} size={20} color={c.bg} />}
       </Pressable>
       <Text style={s.text}>
