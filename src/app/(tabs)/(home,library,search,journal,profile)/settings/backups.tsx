@@ -41,6 +41,7 @@ export default function Backups() {
       const a = await getAres();
       await setAres(url, token || a?.token || '');
       setToken('');
+      void refreshStreamingBooks().catch(() => 0);
     }, tr("Saved"));
   const status = state.pending
     ? `${tr("Waiting for ares")}${state.lastError ? ` · ${state.lastError}` : ''}`
@@ -51,7 +52,7 @@ export default function Backups() {
       {!isPublic && (
         <>
           <Text style={ss.h2}>{tr("Automatic · ares")}</Text>
-          <Text style={ss.p}>{tr("Notes, readings, progress and your familiars are saved on ares whenever you leave the app and right after a card of the day. Ares keeps 30 daily copies.")}</Text>
+          <Text style={ss.p}>{tr("Notes, readings, progress and your familiars are saved on ares whenever you leave the app and right after a card of the day. Ares keeps 30 daily copies.")}{' '}{tr("The same address and token bring your tarot books and their audio from calliope.")}</Text>
           <View style={ss.card}>
             <Text style={ss.meta}>{status}</Text>
             {state.lastError && !state.pending ? <Text style={[ss.meta, { color: c.claude }]}>{tr("Last error:")}{' '}{state.lastError}</Text> : null}

@@ -1,4 +1,3 @@
-import { isPublic } from '../../../../variant';
 import * as Updates from 'expo-updates';
 import { t as tr } from '../../../../i18n';
 import { useState } from 'react';
@@ -24,7 +23,6 @@ import {
   voices,
 } from '../../../../languages';
 import { mb } from '../../../../storage';
-import { getVoiceMode, setVoiceMode, VoiceMode } from '../../../../voicer';
 import { MenuRow, Page, ss } from '../../../../components/settings-ui';
 import { c, themed } from '../../../../theme';
 
@@ -89,24 +87,6 @@ export default function Languages() {
               {!u.ready && <Text style={ss.meta}>{tr("Work in progress")}</Text>}
             </View>
             {prefs.ui === u.id && <Ionicons name="checkmark" size={20} color={c.gold} />}
-          </Pressable>
-        ))}
-      </View>
-
-      <Text style={ss.label}>{tr("Make book voices")}</Text>
-      <View style={[ss.menu, { marginTop: 6 }]}>
-        {(
-          [
-            ['phone', 'On this iPhone', 'Made while you listen, two sections ahead. Works offline.'],
-            ['github', 'On GitHub', 'The whole book is made at once; uses GitHub minutes.'],
-          ] as [VoiceMode, string, string][]
-        ).filter(([m]) => !isPublic || m === 'phone').map(([m, title, sub]) => (
-          <Pressable key={m} style={s.row} onPress={() => (setVoiceMode(m), refresh())}>
-            <View style={{ flex: 1 }}>
-              <Text style={s.title}>{title}</Text>
-              <Text style={ss.meta}>{sub}</Text>
-            </View>
-            {getVoiceMode() === m && <Ionicons name="checkmark" size={20} color={c.gold} />}
           </Pressable>
         ))}
       </View>

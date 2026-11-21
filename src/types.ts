@@ -4,7 +4,8 @@ export type Para = { kind: ParaKind; text: string; start: number; end: number; p
 
 export type Section = { id: string; title: string; summary?: string; audio: string; duration: number; paras: Para[]; explain?: string[] };
 
-export type Book = { title: string; sections: Section[] };
+/** calibre_id: set on books from calliope (Kokoro audio on ares); GitHub-era books lack it */
+export type Book = { title: string; sections: Section[]; calibre_id?: number };
 
 export type Note = {
   id: string;

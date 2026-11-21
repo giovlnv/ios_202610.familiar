@@ -1,4 +1,3 @@
-import { isPublic } from '../../../variant';
 import { t as tr } from '../../../i18n';
 import { Alert, Pressable, Text } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -31,9 +30,7 @@ export default function Search() {
         if (match) return router.push({ pathname: '/title/[id]', params: { id: match.id } });
         Alert.alert(r.title, tr("Use these details for one of your audiobooks, or upload this book to make it one."), [
           ...books.map((b) => ({ text: b.title, onPress: () => apply(b.id, r) })),
-          isPublic
-            ? { text: tr("Import a book or audiobook"), onPress: () => router.push('/import') }
-            : { text: tr("Upload this book…"), onPress: () => router.push({ pathname: '/add', params: { title: r.title } }) },
+          { text: tr("Import a book or audiobook"), onPress: () => router.push('/import') },
           { text: tr("Cancel"), style: 'cancel' as const },
         ]);
       }}

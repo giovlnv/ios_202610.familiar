@@ -146,8 +146,8 @@ export default function Title() {
                                 text: tr("Remove downloaded audio ({0})", { 0: mb(size) }),
                                 onPress: async () => {
                                   if (!(await canStream(folder, item.book)))
-                                    return Alert.alert(tr("Can't stream this book yet"), tr("Its audio isn't on GitHub, so removing it would lose it. Keep it for now."));
-                                  Alert.alert(tr("Free {0}?", { 0: mb(size) }), tr("Notes, progress and card links stay. The book plays by streaming from your library on GitHub (needs internet)."), [
+                                    return Alert.alert(tr("Can't stream this book yet"), tr("Its audio isn't on ares, so removing it would lose it. Keep it for now."));
+                                  Alert.alert(tr("Free {0}?", { 0: mb(size) }), tr("Notes, progress and card links stay. The book plays by streaming from calliope on ares (needs your tailnet)."), [
                                     { text: tr("Cancel"), style: "cancel" },
                                     { text: tr("Remove audio"), style: "destructive", onPress: () => (removeAudio(folder), refreshStreamingBooks().catch(() => {}), setT(load())) },
                                   ]);
@@ -394,7 +394,7 @@ export default function Title() {
           if (folder && item && size > 0)
             setTimeout(async () => {
               if (!(await canStream(folder, item.book))) return;
-              Alert.alert(tr("Finished! Free {0}?", { 0: mb(size) }), tr("Remove this book’s audio from your iPhone. Notes and progress stay, and it streams from GitHub if you listen again."), [
+              Alert.alert(tr("Finished! Free {0}?", { 0: mb(size) }), tr("Remove this book’s audio from your iPhone. Notes and progress stay, and it streams from ares if you listen again."), [
                 { text: tr("Keep"), style: "cancel" },
                 { text: tr("Remove audio"), style: "destructive", onPress: () => (removeAudio(folder), refreshStreamingBooks().catch(() => {}), refresh()) },
               ]);
