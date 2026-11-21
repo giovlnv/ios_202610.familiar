@@ -21,5 +21,7 @@ jobs:
         run: npx tsc --noEmit
       - name: Lint (no errors or warnings allowed)
         run: npx eslint src --max-warnings 0
+      - name: Unit tests
+        run: node --test scripts/
       - name: App bundle builds
         run: npx expo export --platform ios --output-dir /tmp/export
