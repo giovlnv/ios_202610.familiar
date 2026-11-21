@@ -70,7 +70,7 @@ export default function ExplainSheet({
       <SafeAreaView style={s.wrap} edges={['bottom']}>
         <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
           <View style={s.top}>
-            <Text accessibilityRole="header" style={s.h2}>{tr("Explain this")}{' '}{target.kind}</Text>
+            <Text accessibilityRole="header" style={s.h2}>{target.kind === 'passage' ? tr("Explain this passage") : tr("Explain this section")}</Text>
             <Pressable hitSlop={10} onPress={onClose}>
               <Text style={s.link}>{tr("Done")}</Text>
             </Pressable>
