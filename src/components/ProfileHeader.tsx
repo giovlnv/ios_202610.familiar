@@ -294,7 +294,7 @@ const s = themed(() => ({
   chipText: { fontSize: 13, fontWeight: '600' },
   tiles: { flexDirection: 'row', gap: 8 },
   tile: { flex: 1, backgroundColor: c.raised, borderRadius: 10, paddingVertical: 10, paddingHorizontal: 6, alignItems: 'center', gap: 2 },
-  tileValue: { color: c.gold, fontSize: 18, fontFamily: F.heading },
+  tileValue: { color: c.gold, fontSize: 17, fontFamily: F.heading },
   tileLabel: { color: c.dim, fontSize: 11 },
   line: { color: c.text, fontSize: 13 },
   more: { flexDirection: 'row', alignItems: 'center', gap: 4, alignSelf: 'flex-end' },
@@ -305,6 +305,6 @@ const s = themed(() => ({
   cardName: { color: c.text, fontSize: 13, fontFamily: F.heading, textAlign: 'center' },
   empty: { backgroundColor: c.raised, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: c.line },
   initial: { color: c.gold, fontWeight: '700' },
-  name: { color: c.text, fontSize: 21, fontWeight: '700' },
+  name: { color: c.text, fontSize: 22, fontWeight: '700' },
   user: { color: c.dim, marginTop: 2 },
 }));

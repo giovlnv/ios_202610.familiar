@@ -190,7 +190,7 @@ export default function ReadingScreen() {
           title: fmtDate(date, { day: 'numeric', month: 'short' }),
           headerRight: () => draft ? (
             <Pressable hitSlop={10} onPress={() => (saveReading(r), setDraft(false), setJ(loadJournal()))}>
-              <Text style={{ color: c.gold, fontSize: 16, fontWeight: '700' }}>{tr("Save")}</Text>
+              <Text style={{ color: c.gold, fontSize: 17, fontWeight: '700' }}>{tr("Save")}</Text>
             </Pressable>
           ) : (
             <Pressable accessibilityRole="button" accessibilityLabel={tr("Delete this reading?").replace("?", "")}
@@ -482,25 +482,25 @@ function PersonSheet({
 
 const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
-  question: { color: c.text, fontSize: 20, fontWeight: '700', paddingVertical: 12 },
+  question: { color: c.text, fontSize: 22, fontWeight: '700', paddingVertical: 12 },
   stamp: { color: c.dim, fontSize: 13, marginTop: 6, textAlign: 'center' },
   dateRow: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 12, padding: 10 },
   time: { flexDirection: 'row', alignItems: 'center', gap: 4 },
-  timeText: { color: c.text, fontSize: 16, fontWeight: '600' },
+  timeText: { color: c.text, fontSize: 17, fontWeight: '600' },
   label: { color: c.dim, fontSize: 13, textTransform: 'uppercase', letterSpacing: 1, marginTop: 18, marginBottom: 8 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   dim: { color: c.dim, marginTop: 8 },
   slots: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 18 },
   empty: { borderWidth: 1, borderStyle: 'dashed', borderColor: c.line, borderRadius: 6, alignItems: 'center', justifyContent: 'center' },
-  pos: { color: c.dim, fontSize: 12 },
-  cardLabel: { color: c.text, fontSize: 12, textAlign: 'center' },
-  hint: { color: c.dim, fontSize: 12, marginTop: 8 },
-  input: { backgroundColor: c.panel, color: c.text, borderRadius: 10, padding: 12, fontSize: 15, textAlignVertical: 'top' },
+  pos: { color: c.dim, fontSize: 13 },
+  cardLabel: { color: c.text, fontSize: 13, textAlign: 'center' },
+  hint: { color: c.dim, fontSize: 13, marginTop: 8 },
+  input: { backgroundColor: c.panel, color: c.text, borderRadius: 10, padding: 12, fontSize: 17, textAlignVertical: 'top' },
   actions: { flexDirection: 'row', gap: 10, marginTop: 20 },
   answer: { backgroundColor: c.panel, borderRadius: 12, padding: 12, marginTop: 10, borderLeftWidth: 3, borderLeftColor: c.claude },
-  answerHead: { color: c.claude, fontSize: 12, fontWeight: '700', marginBottom: 4 },
-  answerText: { color: c.text, fontSize: 15, lineHeight: 21 },
+  answerHead: { color: c.claude, fontSize: 13, fontWeight: '700', marginBottom: 4 },
+  answerText: { color: c.text, fontSize: 17, lineHeight: 25 },
   dimBg: { flex: 1, backgroundColor: '#000a' },
   sheet: { backgroundColor: c.panel, padding: 16, paddingBottom: 36, borderTopLeftRadius: 18, borderTopRightRadius: 18, gap: 10 },
-  h2: { color: c.text, fontSize: 19, fontFamily: F.heading },
+  h2: { color: c.text, fontSize: 22, fontFamily: F.heading },
 }));

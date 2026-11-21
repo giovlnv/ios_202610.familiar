@@ -35,7 +35,7 @@ export default function StudySettings() {
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
             <Ionicons name="book-outline" size={20} color={x.color} />
             <Pressable style={{ flex: 1 }} onPress={() => Alert.prompt(tr('Rename'), undefined, (n) => n?.trim() && patchSubject(x.id, { name: n.trim() }), 'plain-text', x.name)}>
-              <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{x.name}</Text>
+              <Text style={{ color: c.text, fontSize: 17, fontWeight: '600' }}>{x.name}</Text>
               <Text style={ss.meta}>
                 {tr('{0} notes · {1} flashcards', { 0: d.notes.filter((n) => n.subject === x.id).length, 1: d.cards.filter((k) => k.subject === x.id).length })}
               </Text>

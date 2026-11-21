@@ -31,7 +31,7 @@ function KeyCard({ p, has, onSaved }: { p: Provider; has: boolean; onSaved: () =
   const save = (k: string) => setKey(p, k).then(() => (setDraft(''), onSaved()));
   return (
     <View style={ss.card}>
-      <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{PROVIDER_NAME[p]}</Text>
+      <Text style={{ color: c.text, fontSize: 17, fontWeight: '600' }}>{PROVIDER_NAME[p]}</Text>
       <Text style={ss.meta}>{tr("Status:")}{' '}{has ? tr("key saved") : tr("no key")}</Text>
       <TextInput
         style={ss.input}
@@ -108,7 +108,7 @@ export default function CloudVoices() {
         const ch = prefs[l.book];
         return (
           <View key={l.book} style={ss.card}>
-            <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{l.name}</Text>
+            <Text style={{ color: c.text, fontSize: 17, fontWeight: '600' }}>{l.name}</Text>
             <View style={row}>
               <Chip label={tr("This iPhone")} on={!ch} onPress={() => choose(l.book, null)} />
               {PROVIDERS.filter((p) => keys[p]).map((p) => (

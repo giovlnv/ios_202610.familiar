@@ -12,7 +12,7 @@ function Toggle({ label, value, onChange, note }: { label: string; value: boolea
   return (
     <View style={ss.card}>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
-        <Text style={{ color: c.text, fontSize: 16, flex: 1 }}>{label}</Text>
+        <Text style={{ color: c.text, fontSize: 17, flex: 1 }}>{label}</Text>
         <Switch value={value} onValueChange={onChange} trackColor={{ true: c.gold }} />
       </View>
       <Text style={ss.meta}>{note}</Text>
@@ -60,7 +60,7 @@ export default function NumerologySettings() {
       {books.length === 0 && <Text style={ss.p}>{tr("Tag a book with the Numerology path to set which system it uses.")}</Text>}
       {books.map((b) => (
         <View key={b.id} style={ss.card}>
-          <Text style={{ color: c.text, fontSize: 16 }}>{b.title}</Text>
+          <Text style={{ color: c.text, fontSize: 17 }}>{b.title}</Text>
           <View style={row}>
             <Chip label={tr("Not set")} on={!b.numSystem} onPress={() => setBook(b.id)} />
             {SYSTEMS.map((v) => (

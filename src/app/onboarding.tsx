@@ -342,7 +342,7 @@ function Pill({ label, on, onPress }: { label: string; on: boolean; onPress: () 
 function Note({ text }: { text: string }) {
   return (
     <View style={[st.row, { alignItems: 'flex-start' }]}>
-      <Text style={{ color: c.gold, fontSize: 16 }}>✦</Text>
+      <Text style={{ color: c.gold, fontSize: 17 }}>✦</Text>
       <Text style={[st.sub, { flex: 1, fontSize: 13 }]}>{text}</Text>
     </View>
   );
@@ -363,7 +363,7 @@ const st = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg },
   hero: { position: 'absolute', bottom: 0 },
   brand: { alignItems: 'center', gap: 6, marginTop: -28 },
-  word: { color: c.gold, fontSize: 46, fontWeight: '500' },
+  word: { color: c.gold, fontSize: 40, fontWeight: '500' },
   tagline: { color: c.text, fontStyle: 'italic', fontSize: 17 },
   pad: { paddingHorizontal: 22 },
   top: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 16, paddingBottom: 10 },
@@ -377,11 +377,11 @@ const st = themed(() => ({
   chip: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
   dot: { width: 12, height: 12, borderRadius: 6 },
   primary: { backgroundColor: c.gold, borderRadius: 14, paddingVertical: 15, alignItems: 'center' },
-  primaryText: { color: c.bg, fontSize: 16, fontWeight: '700' },
+  primaryText: { color: c.bg, fontSize: 17, fontWeight: '700' },
   secondary: { borderWidth: 1, borderColor: c.line, borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
   secondaryText: { color: c.text, fontSize: 15, fontWeight: '600' },
-  link: { color: c.dim, fontSize: 14, fontWeight: '500' },
+  link: { color: c.dim, fontSize: 15, fontWeight: '500' },
   pill: { backgroundColor: c.raised, borderRadius: 999, paddingHorizontal: 14, paddingVertical: 8 },
   pillOn: { backgroundColor: c.gold },
-  pillText: { color: c.text, fontSize: 14 },
+  pillText: { color: c.text, fontSize: 15 },
 }));

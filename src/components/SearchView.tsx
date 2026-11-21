@@ -94,9 +94,9 @@ export default function SearchView({ onPick, header }: { onPick: (r: OLResult) =
 
 const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16, paddingTop: 12 },
-  section: { color: c.dim, fontSize: 12, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1, marginTop: 12, marginBottom: 2 },
-  input: { backgroundColor: c.panel, color: c.text, borderRadius: 12, padding: 14, fontSize: 16, marginBottom: 8 },
+  section: { color: c.dim, fontSize: 13, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1, marginTop: 12, marginBottom: 2 },
+  input: { backgroundColor: c.panel, color: c.text, borderRadius: 12, padding: 14, fontSize: 17, marginBottom: 8 },
   row: { flexDirection: 'row', gap: 12, alignItems: 'center', paddingVertical: 8, borderBottomWidth: StyleSheet.hairlineWidth, borderColor: c.line },
-  title: { color: c.text, fontSize: 16, fontWeight: '600' },
+  title: { color: c.text, fontSize: 17, fontWeight: '600' },
   dim: { color: c.dim, marginTop: 2 },
 }));

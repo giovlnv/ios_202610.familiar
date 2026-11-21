@@ -66,13 +66,13 @@ export default function Booklet() {
 
 const s = themed(() => ({
   top: { alignItems: 'center', gap: 4, marginBottom: 8 },
-  title: { color: c.text, fontFamily: F.heading, fontSize: 30, marginTop: 4 },
-  tag: { color: c.gold, fontFamily: F.headingItalic, fontSize: 16 },
+  title: { color: c.text, fontFamily: F.heading, fontSize: 28, marginTop: 4 },
+  tag: { color: c.gold, fontFamily: F.headingItalic, fontSize: 17 },
   count: { color: c.dim, fontSize: 13, marginTop: 4 },
   start: { backgroundColor: c.gold, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 28, marginTop: 12 },
-  startText: { color: c.bg, fontWeight: '700', fontSize: 16 },
+  startText: { color: c.bg, fontWeight: '700', fontSize: 17 },
   link: { color: c.gold, fontWeight: '600', marginTop: 12 },
-  h2: { color: c.text, fontSize: 19, marginTop: 24, marginBottom: 8, fontFamily: F.heading },
+  h2: { color: c.text, fontSize: 22, marginTop: 24, marginBottom: 8, fontFamily: F.heading },
   small: { color: c.dim, fontSize: 13 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 12, padding: 12, marginBottom: 6 },
   rowText: { color: c.text, fontSize: 15 },

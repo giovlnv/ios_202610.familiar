@@ -138,7 +138,7 @@ const s = themed(() => ({
   stage: { backgroundColor: c.panel, borderRadius: 24, alignItems: 'center', justifyContent: 'center', paddingVertical: 24, overflow: 'hidden', minHeight: ART + 60 },
   thread: { position: 'absolute', top: 0, left: '50%', width: 1, marginLeft: -0.5, backgroundColor: c.dim },
   bubble: { position: 'absolute', top: ART * 0.3, color: c.gold, fontSize: 22, fontFamily: F.headingItalic },
-  hint: { color: c.dim, textAlign: 'center', fontSize: 14 },
+  hint: { color: c.dim, textAlign: 'center', fontSize: 15 },
   card: { backgroundColor: c.panel, borderRadius: 14, padding: 14, gap: 4 },
   name: { color: c.text, fontSize: 22, fontFamily: F.heading },
   dim: { color: c.dim, fontSize: 13 },

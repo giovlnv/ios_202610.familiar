@@ -30,5 +30,5 @@ export default function ToastHost() {
 
 const s = themed(() => ({
   wrap: { position: 'absolute', top: 60, alignSelf: 'center', backgroundColor: c.raised, borderColor: c.gold, borderWidth: 1, borderRadius: 20, paddingVertical: 9, paddingHorizontal: 16, zIndex: 999 },
-  text: { color: c.text, fontSize: 14, fontWeight: '600' },
+  text: { color: c.text, fontSize: 15, fontWeight: '600' },
 }));

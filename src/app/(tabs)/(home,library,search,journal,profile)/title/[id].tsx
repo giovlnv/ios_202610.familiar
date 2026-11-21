@@ -612,7 +612,7 @@ function LogSheet({
 
 const s = themed(() => ({
   pathChip: { borderWidth: 1, borderRadius: 999, paddingHorizontal: 10, paddingVertical: 4 },
-  pathText: { fontSize: 12, fontWeight: '600' },
+  pathText: { fontSize: 13, fontWeight: '600' },
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
   head: { flexDirection: "row", gap: 16, marginTop: 8 },
   title: { color: c.text, fontSize: 22, fontWeight: "700" },
@@ -632,7 +632,7 @@ const s = themed(() => ({
   rowText: { color: c.text, flex: 1, fontSize: 15 },
   h2: {
     color: c.text,
-    fontSize: 19,
+    fontSize: 22,
     marginTop: 24,
     marginBottom: 10, fontFamily: F.heading },
   log: {
@@ -666,7 +666,7 @@ const s = themed(() => ({
     justifyContent: "space-between",
     paddingHorizontal: 8,
   },
-  date: { color: c.text, fontSize: 18, fontWeight: "600" },
+  date: { color: c.text, fontSize: 17, fontWeight: "600" },
   quick: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
   switchRow: { flexDirection: "row", alignItems: "center", paddingVertical: 6 },
   shelfRow: {

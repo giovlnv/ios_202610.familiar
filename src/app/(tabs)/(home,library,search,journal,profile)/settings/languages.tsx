@@ -213,7 +213,7 @@ export default function Languages() {
 const s = themed(() => ({
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 14, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: c.line + '66' },
   indent: { paddingLeft: 46 },
-  title: { color: c.text, fontSize: 16, fontWeight: '600' },
+  title: { color: c.text, fontSize: 17, fontWeight: '600' },
   voices: { paddingHorizontal: 14, paddingBottom: 12, gap: 2, borderBottomWidth: 1, borderBottomColor: c.line + '66' },
   voice: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 9 },
   voiceText: { flex: 1, color: c.text, fontSize: 15 },

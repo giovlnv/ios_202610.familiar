@@ -76,5 +76,5 @@ export default function ListenBar({ text }: { text: string }) {
 const s = themed(() => ({
   bar: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 12, padding: 10 },
   play: { width: 40, height: 40, borderRadius: 20, backgroundColor: c.gold, alignItems: 'center', justifyContent: 'center' },
-  text: { color: c.text, fontSize: 14, flex: 1 },
+  text: { color: c.text, fontSize: 15, flex: 1 },
 }));

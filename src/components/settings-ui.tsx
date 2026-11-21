@@ -51,11 +51,11 @@ export function MenuRow({ icon, title, sub, to }: { icon: keyof typeof Ionicons.
 
 export const ss = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg },
-  h2: { color: c.text, fontSize: 18, marginTop: 12, marginBottom: 6, fontFamily: F.heading },
+  h2: { color: c.text, fontSize: 17, marginTop: 12, marginBottom: 6, fontFamily: F.heading },
   p: { color: c.dim, lineHeight: 20, marginBottom: 10 },
   card: { backgroundColor: c.panel, borderRadius: 12, padding: 14, gap: 10, marginBottom: 12 },
-  meta: { color: c.dim, fontSize: 14 },
-  label: { color: c.dim, fontSize: 12, fontWeight: '700', letterSpacing: 1, textTransform: 'uppercase', marginTop: 4 },
+  meta: { color: c.dim, fontSize: 15 },
+  label: { color: c.dim, fontSize: 13, fontWeight: '700', letterSpacing: 1, textTransform: 'uppercase', marginTop: 4 },
   input: { backgroundColor: c.bg, color: c.text, borderRadius: 10, padding: 12, fontSize: 15 },
   row: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   modes: { flexDirection: 'row', backgroundColor: c.panel, borderRadius: 10, padding: 3, marginBottom: 10 },
@@ -73,5 +73,5 @@ export const ss = themed(() => ({
   menu: { backgroundColor: c.panel, borderRadius: 14, overflow: 'hidden', marginBottom: 14 },
   menuRow: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 14, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: c.line + '66' },
   menuIcon: { width: 34, height: 34, borderRadius: 10, backgroundColor: c.gold + '1f', alignItems: 'center', justifyContent: 'center' },
-  menuTitle: { color: c.text, fontSize: 16, fontWeight: '600' },
+  menuTitle: { color: c.text, fontSize: 17, fontWeight: '600' },
 }));

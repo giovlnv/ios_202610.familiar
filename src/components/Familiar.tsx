@@ -296,7 +296,7 @@ export const s = themed(() => ({
   half: { width: '48%', flexGrow: 1 },
   locked: { width: '100%', flexDirection: 'row', alignItems: 'center', gap: 10, opacity: 0.7 },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },
-  dim: { color: c.dim, fontSize: 12 },
+  dim: { color: c.dim, fontSize: 13 },
   small: { color: c.dim, fontSize: 11, fontWeight: '500' },
   preview: { backgroundColor: c.panel, borderRadius: 20, alignItems: 'center', paddingVertical: 6 },
   seg: { flexDirection: 'row', backgroundColor: c.panel, borderRadius: 12, padding: 4, gap: 4 },

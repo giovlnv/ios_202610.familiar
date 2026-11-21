@@ -331,9 +331,9 @@ const s = themed(() => ({
   block: { borderRadius: 6, paddingHorizontal: 4, marginHorizontal: -4 },
   playing: { borderLeftWidth: 3, borderLeftColor: c.gold, paddingLeft: 8 },
   head: { color: c.text, fontFamily: F.heading, marginTop: 14, marginBottom: 10 },
-  pager: { position: 'absolute', bottom: 24, alignSelf: 'center', color: c.dim, fontSize: 12, backgroundColor: c.panel, paddingHorizontal: 10, paddingVertical: 4, borderRadius: 10, overflow: 'hidden' },
+  pager: { position: 'absolute', bottom: 24, alignSelf: 'center', color: c.dim, fontSize: 13, backgroundColor: c.panel, paddingHorizontal: 10, paddingVertical: 4, borderRadius: 10, overflow: 'hidden' },
   sheet: { flex: 1, backgroundColor: c.bg, padding: 16 },
   sheetTitle: { color: c.text, fontFamily: F.heading, fontSize: 22, marginBottom: 12 },
   tocRow: { paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: c.line + '66' },
-  tocText: { color: c.text, fontSize: 16 },
+  tocText: { color: c.text, fontSize: 17 },
 }));

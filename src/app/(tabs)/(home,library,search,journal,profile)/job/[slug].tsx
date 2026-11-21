@@ -227,7 +227,7 @@ const s = themed(() => ({
   row: { flexDirection: 'row', gap: 10 },
   secRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
   num: { color: c.dim, fontSize: 13, width: 24 },
-  secTitle: { color: c.text, fontSize: 14, flex: 1 },
+  secTitle: { color: c.text, fontSize: 15, flex: 1 },
   quote: { backgroundColor: c.panel, borderRadius: 10, padding: 12, borderLeftWidth: 3, borderLeftColor: c.claude },
-  quoteText: { color: c.text, fontSize: 14, lineHeight: 20 },
+  quoteText: { color: c.text, fontSize: 15, lineHeight: 21 },
 }));

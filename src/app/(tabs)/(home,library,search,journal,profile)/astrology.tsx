@@ -80,7 +80,7 @@ const s = themed(() => ({
   line: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   glyph: { color: c.gold, fontSize: 18, width: 28, textAlign: 'center' },
   name: { color: c.text, fontSize: 15, fontWeight: '600', width: 92 },
-  sign: { color: c.text, fontSize: 14, flex: 1 },
+  sign: { color: c.text, fontSize: 15, flex: 1 },
   house: { color: c.dim, fontSize: 13, width: 32, textAlign: 'right' },
   cards: { flexDirection: 'row', flexWrap: 'wrap', gap: 5, marginTop: 6, marginLeft: 36 },
 }));

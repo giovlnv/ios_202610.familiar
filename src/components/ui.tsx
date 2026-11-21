@@ -81,7 +81,7 @@ export function Cover({
       ) : (
         <View style={s.placeholder}>
           <Text
-            style={[s.phText, { fontSize: Math.max(10, width / 8) }]}
+            style={[s.phText, { fontSize: Math.max(11, width / 8) }]}
             numberOfLines={5}
           >
             {book.title}

@@ -77,6 +77,6 @@ const s = themed(() => ({
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: 12 },
   row: { flexDirection: 'row', gap: 12, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: c.line + '66', alignItems: 'flex-start' },
   dot: { width: 14, height: 14, borderRadius: 7, marginTop: 3 },
-  where: { color: c.dim, fontSize: 12, marginBottom: 2 },
+  where: { color: c.dim, fontSize: 13, marginBottom: 2 },
   quote: { color: c.text, fontSize: 15, lineHeight: 21 },
 }));

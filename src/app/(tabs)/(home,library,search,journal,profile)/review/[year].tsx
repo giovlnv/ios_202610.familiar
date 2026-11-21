@@ -220,12 +220,12 @@ const s = themed(() => ({
     borderRadius: 12,
     padding: 14,
   },
-  factNum: { color: c.gold, fontSize: 30, fontWeight: "800" },
+  factNum: { color: c.gold, fontSize: 28, fontWeight: "800" },
   dim: { color: c.dim },
-  p: { color: c.dim, marginTop: 20, fontSize: 16 },
+  p: { color: c.dim, marginTop: 20, fontSize: 17 },
   h2: {
     color: c.text,
-    fontSize: 19,
+    fontSize: 22,
     marginTop: 24,
     marginBottom: 10, fontFamily: F.heading },
   row: {

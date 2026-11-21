@@ -153,6 +153,6 @@ const s = themed(() => ({
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
   tri: { color: c.dim, fontFamily: 'Menlo', fontSize: 13, letterSpacing: 4 },
   cards: { flexDirection: 'row', flexWrap: 'wrap', gap: 5, marginTop: 6 },
-  num: { color: c.gold, fontSize: 26, fontFamily: F.heading, minWidth: 54, textAlign: 'center' },
-  label: { color: c.text, fontSize: 16, fontWeight: '600' },
+  num: { color: c.gold, fontSize: 28, fontFamily: F.heading, minWidth: 54, textAlign: 'center' },
+  label: { color: c.text, fontSize: 17, fontWeight: '600' },
 }));

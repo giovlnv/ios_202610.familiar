@@ -164,12 +164,12 @@ export default function ImportScreen() {
         <Text style={ss.p}>{tr('Bring a book you own. It stays on this iPhone and is read aloud by the voices you chose in Settings → Languages.')}</Text>
         <Pressable style={ss.card} onPress={() => startEpub()}>
           <Ionicons name="book-outline" size={22} color={c.gold} />
-          <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{tr('A book to read aloud (EPUB or PDF)')}</Text>
+          <Text style={{ color: c.text, fontSize: 17, fontWeight: '600' }}>{tr('A book to read aloud (EPUB or PDF)')}</Text>
           <Text style={ss.meta}>{tr('Split into chapters from its table of contents. Voiced on this iPhone while you listen.')}</Text>
         </Pressable>
         <Pressable style={ss.card} onPress={startAudio}>
           <Ionicons name="headset-outline" size={22} color={c.gold} />
-          <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{tr('An audiobook (MP3, M4A, M4B)')}</Text>
+          <Text style={{ color: c.text, fontSize: 17, fontWeight: '600' }}>{tr('An audiobook (MP3, M4A, M4B)')}</Text>
           <Text style={ss.meta}>{tr('One file per chapter, or one M4B with chapters. You can add the book’s EPUB or PDF to follow the text chapter by chapter.')}</Text>
         </Pressable>
         <Btn
@@ -202,7 +202,7 @@ export default function ImportScreen() {
       )}
       {audio && (
         <View style={ss.card}>
-          <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{tr('{0} audio files', { 0: audio.length })}</Text>
+          <Text style={{ color: c.text, fontSize: 17, fontWeight: '600' }}>{tr('{0} audio files', { 0: audio.length })}</Text>
           <Text style={ss.meta}>{tr('Sorted by file name: one section per file.')}</Text>
           {!drafts && <Btn label={tr('Add the book’s text (EPUB or PDF, optional)')} onPress={addText} />}
         </View>

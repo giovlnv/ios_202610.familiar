@@ -78,5 +78,5 @@ const s = themed(() => ({
   list: { backgroundColor: c.panel, borderRadius: 12, overflow: 'hidden' },
   hit: { paddingHorizontal: 14, paddingVertical: 10, borderBottomWidth: StyleSheet.hairlineWidth, borderColor: c.line },
   hitName: { color: c.text, fontSize: 15, fontWeight: '600' },
-  hitDim: { color: c.dim, fontSize: 12, marginTop: 2 },
+  hitDim: { color: c.dim, fontSize: 13, marginTop: 2 },
 }));

@@ -25,7 +25,7 @@ export function CardImage({ id, reversed, width, deck }: { id: string; reversed?
   if (uri) return <Image source={{ uri }} style={[box, turn, { borderWidth: reversed ? 2 : 0, borderColor: c.claude }]} resizeMode="cover" />;
   return (
     <View style={[box, s.blank, turn, reversed && { borderColor: c.claude }]}>
-      <Text style={[s.blankText, { fontSize: Math.max(9, width / 9) }]} numberOfLines={4}>
+      <Text style={[s.blankText, { fontSize: Math.max(11, width / 9) }]} numberOfLines={4}>
         {cardName(id)}
       </Text>
     </View>
@@ -120,13 +120,13 @@ export function CardPicker({
 const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
   top: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 14 },
-  h2: { color: c.text, fontSize: 20, fontFamily: F.heading },
-  link: { color: c.gold, fontSize: 16, fontWeight: '600' },
+  h2: { color: c.text, fontSize: 22, fontFamily: F.heading },
+  link: { color: c.gold, fontSize: 17, fontWeight: '600' },
   input: { backgroundColor: c.panel, color: c.text, borderRadius: 12, padding: 12, fontSize: 15 },
   chips: { gap: 8, paddingVertical: 10 },
   switchRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 4, marginBottom: 6 },
   text: { color: c.text, fontSize: 15 },
-  name: { color: c.dim, fontSize: 12, marginTop: 4 },
+  name: { color: c.dim, fontSize: 13, marginTop: 4 },
   blank: { backgroundColor: c.raised, borderWidth: 1, borderColor: c.gold, alignItems: 'center', justifyContent: 'center', padding: 4 },
   blankText: { color: c.gold, textAlign: 'center' },
 }));

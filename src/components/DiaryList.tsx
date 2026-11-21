@@ -71,7 +71,7 @@ const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg },
   month: { color: c.gold, fontWeight: '700', fontSize: 13, letterSpacing: 1, textTransform: 'uppercase', marginTop: 18, marginBottom: 6 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 8, borderBottomWidth: StyleSheet.hairlineWidth, borderColor: c.line },
-  day: { color: c.text, fontSize: 20, fontWeight: '700', width: 28, textAlign: 'center' },
+  day: { color: c.text, fontSize: 22, fontWeight: '700', width: 28, textAlign: 'center' },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },
   author: { color: c.dim, fontSize: 13, marginTop: 2 },
 }));

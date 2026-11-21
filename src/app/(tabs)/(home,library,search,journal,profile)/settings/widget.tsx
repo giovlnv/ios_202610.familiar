@@ -50,7 +50,7 @@ export default function WidgetSettings() {
       </View>
       <View style={[s.preview, { backgroundColor: col.theme ? c.bg : col.bg }]}>
         <Text style={{ color: col.theme ? c.gold : col.accent, fontSize: 22, fontWeight: '700' }}>7</Text>
-        <Text style={{ color: col.theme ? c.text : col.text, fontSize: 14 }}>{tr("Preview · Personal day")}</Text>
+        <Text style={{ color: col.theme ? c.text : col.text, fontSize: 15 }}>{tr("Preview · Personal day")}</Text>
       </View>
     </Page>
   );
@@ -58,7 +58,7 @@ export default function WidgetSettings() {
 
 const s = themed(() => ({
   between: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  title: { color: c.text, fontSize: 16, fontWeight: '600' },
+  title: { color: c.text, fontSize: 17, fontWeight: '600' },
   swatches: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
   swatch: { width: 36, height: 36, borderRadius: 18, borderWidth: 1, borderColor: c.line },
   on: { borderWidth: 3, borderColor: c.gold },

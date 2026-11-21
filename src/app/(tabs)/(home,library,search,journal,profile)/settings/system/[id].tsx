@@ -161,5 +161,5 @@ const s = themed(() => ({
   link: { color: c.gold, fontWeight: '600' },
   swatch: { width: 30, height: 30, borderRadius: 15, borderWidth: 2, borderColor: 'transparent' },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
-  name: { color: c.dim, fontSize: 12, marginTop: 4 },
+  name: { color: c.dim, fontSize: 13, marginTop: 4 },
 }));

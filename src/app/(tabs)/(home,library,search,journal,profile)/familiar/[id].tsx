@@ -110,10 +110,10 @@ const s = themed(() => ({
   tab: { backgroundColor: c.panel, borderRadius: 999, paddingHorizontal: 14, paddingVertical: 8 },
   tabOn: { backgroundColor: c.gold },
   tabText: { color: c.text, fontWeight: '600' },
-  p: { color: c.dim, fontSize: 14, lineHeight: 20 },
+  p: { color: c.dim, fontSize: 15, lineHeight: 21 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 14, padding: 14 },
   dot: { width: 14, height: 14, borderRadius: 7 },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },
-  dim: { color: c.dim, fontSize: 12 },
+  dim: { color: c.dim, fontSize: 13 },
   swatch: { width: 34, height: 34, borderRadius: 17, borderWidth: 1, borderColor: c.line },
 }));

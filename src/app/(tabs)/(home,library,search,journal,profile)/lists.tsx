@@ -64,6 +64,6 @@ const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg },
   card: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 12, padding: 12 },
   covers: { flexDirection: 'row', minWidth: 44 },
-  title: { color: c.text, fontSize: 16, fontWeight: '600' },
+  title: { color: c.text, fontSize: 17, fontWeight: '600' },
   dim: { color: c.dim, fontSize: 13 },
 }));

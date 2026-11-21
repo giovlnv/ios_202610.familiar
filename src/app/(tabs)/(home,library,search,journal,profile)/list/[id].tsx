@@ -141,7 +141,7 @@ export default function ListScreen() {
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
             <Text style={s.h2}>{tr("Add to")}{' '}{list.name}</Text>
             <Pressable onPress={() => setAdding(false)} hitSlop={10}>
-              <Text style={{ color: c.gold, fontSize: 16 }}>{tr("Done")}</Text>
+              <Text style={{ color: c.gold, fontSize: 17 }}>{tr("Done")}</Text>
             </Pressable>
           </View>
           <TextInput style={s.input} value={q} onChangeText={setQ} placeholder={tr("Search your library")} placeholderTextColor={c.dim} autoCorrect={false} />
@@ -171,17 +171,17 @@ export default function ListScreen() {
 const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg },
   dim: { color: c.dim, fontSize: 13, marginBottom: 8 },
-  h2: { color: c.text, fontSize: 19, fontFamily: F.heading },
+  h2: { color: c.text, fontSize: 22, fontFamily: F.heading },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 10, borderBottomWidth: StyleSheet.hairlineWidth, borderColor: c.line },
-  rank: { color: c.gold, fontSize: 26, fontWeight: '800', width: 32, textAlign: 'center' },
+  rank: { color: c.gold, fontSize: 28, fontWeight: '800', width: 32, textAlign: 'center' },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },
   author: { color: c.gold, fontSize: 13 },
   note: { color: c.dim, fontSize: 13, fontStyle: 'italic' },
   input: { backgroundColor: c.panel, color: c.text, borderRadius: 10, padding: 12, fontSize: 15 },
   offscreen: { position: 'absolute', left: -2000, top: 0 },
   shareCard: { width: 390, backgroundColor: c.bg, padding: 24, gap: 14 },
-  shareTitle: { color: c.gold, fontSize: 26, fontWeight: '800' },
+  shareTitle: { color: c.gold, fontSize: 28, fontWeight: '800' },
   shareRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   shareRank: { color: c.gold, fontSize: 22, fontWeight: '800', width: 28, textAlign: 'center' },
-  brand: { color: c.dim, fontSize: 12, textAlign: 'right', marginTop: 6 },
+  brand: { color: c.dim, fontSize: 13, textAlign: 'right', marginTop: 6 },
 }));

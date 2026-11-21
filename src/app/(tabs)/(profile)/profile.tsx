@@ -369,7 +369,7 @@ const count = (xs: string[]) =>
 const s = themed(() => ({
   familiar: { flexDirection: "row", alignItems: "center", gap: 12, backgroundColor: c.panel, borderRadius: 14, padding: 10, marginTop: 12 },
   famTitle: { color: c.text, fontSize: 15, fontWeight: "600" },
-  famDim: { color: c.dim, fontSize: 12, marginTop: 2 },
+  famDim: { color: c.dim, fontSize: 13, marginTop: 2 },
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
   chips: { gap: 8, paddingVertical: 12 },
   tiles: { flexDirection: "row", flexWrap: "wrap", gap: 10 },
@@ -381,7 +381,7 @@ const s = themed(() => ({
     padding: 12,
   },
   tileNum: { color: c.gold, fontSize: 22, fontWeight: "800" },
-  tileLabel: { color: c.dim, fontSize: 12, marginTop: 2 },
+  tileLabel: { color: c.dim, fontSize: 13, marginTop: 2 },
   headRow: {
     flexDirection: "row",
     alignItems: "center",
@@ -391,7 +391,7 @@ const s = themed(() => ({
   },
   h2: {
     color: c.text,
-    fontSize: 19,
+    fontSize: 22,
     marginTop: 24,
     marginBottom: 10, fontFamily: F.heading },
   card: { backgroundColor: c.panel, borderRadius: 12, padding: 14 },
@@ -408,7 +408,7 @@ const s = themed(() => ({
     borderRadius: 3,
     minHeight: 2,
   },
-  val: { color: c.dim, fontSize: 9, marginBottom: 2 },
+  val: { color: c.dim, fontSize: 11, marginBottom: 2 },
   axis: { flexDirection: "row", gap: 4, marginTop: 6 },
   axisText: { flex: 1, color: c.dim, fontSize: 11, textAlign: "center" },
   line: {
@@ -425,7 +425,7 @@ const s = themed(() => ({
     paddingVertical: 6,
   },
   dim: { color: c.dim },
-  note: { color: c.dim, fontSize: 12, marginTop: 6 },
+  note: { color: c.dim, fontSize: 13, marginTop: 6 },
   link: {
     flexDirection: "row",
     alignItems: "center",
@@ -435,7 +435,7 @@ const s = themed(() => ({
     padding: 14,
     marginTop: 28,
   },
-  linkText: { color: c.text, flex: 1, fontSize: 16 },
+  linkText: { color: c.text, flex: 1, fontSize: 17 },
   favs: { flexDirection: "row", gap: 10 },
   foldHead: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: 14, marginBottom: 6 },
   favEmpty: {

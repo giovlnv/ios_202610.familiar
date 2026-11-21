@@ -210,7 +210,7 @@ const s = themed(() => ({
   view: { flex: 1, flexDirection: "row", gap: 6, alignItems: "center", justifyContent: "center", paddingVertical: 7, borderRadius: 8 },
   viewOn: { backgroundColor: c.gold },
   viewText: { color: c.dim, fontWeight: "600" },
-  empty: { color: c.dim, fontSize: 16, lineHeight: 22, marginTop: 20 },
+  empty: { color: c.dim, fontSize: 17, lineHeight: 23, marginTop: 20 },
   title: { color: c.text, fontSize: 13, marginTop: 6, marginBottom: 3 },
   import: {
     flexDirection: "row",
