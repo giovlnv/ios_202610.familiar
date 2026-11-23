@@ -163,10 +163,6 @@ export default function Library() {
             {!isPublic && <><Pressable style={s.import} onPress={() => router.push('/add')}>
               <Ionicons name="cloud-upload-outline" size={16} color={c.gold} />
               <Text style={s.importText}>{tr("Add a book (EPUB or PDF)")}</Text>
-            </Pressable>
-            <Pressable style={s.import} onPress={() => router.push('/jobs')}>
-              <Ionicons name="timer-outline" size={16} color={c.gold} />
-              <Text style={s.importText}>{tr("Books in progress")}</Text>
             </Pressable></>}
             <Pressable style={s.import} onPress={() => router.push('/import')}>
               <Ionicons name="headset" size={16} color={c.gold} />

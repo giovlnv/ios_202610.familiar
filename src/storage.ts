@@ -1,6 +1,10 @@
 import { Directory, File, Paths } from 'expo-file-system';
 import * as DocumentPicker from 'expo-document-picker';
 import { Asset } from 'expo-asset';
+import { audioUrl, bookJsonText, connected, folderFor, idOf, listCalliope, loadConnection } from './calliope';
+import { Mark } from './marks';
+import { remapAll } from './remap';
+import { loadStudy, updateStudy } from './study';
 import { Book, Consult, Note, Progress } from './types';
 
 const root = () => {
@@ -38,18 +42,15 @@ export function getBook(folder: string): LibraryItem | null {
   return book ? { folder, book } : null;
 }
 
-const RAW = 'https://raw.githubusercontent.com/giovlnv/ios_202610.familiar_library/refs/heads/audio';
-let token = '';
-export const setStreamToken = (t: string | null) => (token = t ?? '');
-
-export const remoteAudio = (folder: string, name: string) => ({
-  uri: `${RAW}/${encodeURIComponent(folder)}/${encodeURIComponent(name)}`,
-  headers: token ? { Authorization: `token ${token}` } : undefined,
-});
+/** calliope's copy of a track, only once this book.json is calliope's (a GitHub-era split doesn't match its audio) */
+export const remoteAudio = (folder: string, name: string) => {
+  const id = readJson<Book | null>(new File(root(), folder, 'book.json'), null)?.calibre_id;
+  return id ? audioUrl(id, name) : null;
+};
 
 export function audioSource(folder: string, name: string) {
   const f = new File(root(), folder, name);
-  return f.exists ? { uri: f.uri } : remoteAudio(folder, name);
+  return f.exists ? { uri: f.uri } : (remoteAudio(folder, name) ?? { uri: f.uri });
 }
 
 const audioFiles = (folder: string) =>
@@ -67,55 +68,86 @@ export function bookSizes(folder: string) {
   return { audio, other };
 }
 
+/** true when this book.json's audio is on calliope, so downloaded audio can go */
 export async function canStream(folder: string, book: Book) {
   const first = book.sections[0];
-  if (!first || !token) return false;
+  if (!first || !book.calibre_id) return false;
   const src = remoteAudio(folder, first.audio);
+  if (!src) return false;
   const r = await fetch(src.uri, { method: 'HEAD', headers: src.headers }).catch(() => null);
   return !!r?.ok;
 }
 
-/** Folders restored from a backup have notes and progress but no book.json: fetch it from GitHub. */
-async function restoreMissingBooks() {
-  const dir = root();
-  if (!dir.exists) return 0;
-  let n = 0;
-  for (const d of dir.list()) {
-    if (!(d instanceof Directory) || new File(d, 'book.json').exists) continue;
-    const src = remoteAudio(d.name, 'book.json');
-    const r = await fetch(src.uri, { headers: src.headers }).catch(() => null);
-    if (!r?.ok) continue;
-    const text = await r.text();
-    try {
-      JSON.parse(text);
-    } catch {
-      continue;
+/** moves notes, progress, marks, card links and flashcards from one book.json to another by passage text; all computed before anything is written */
+function migrate(folder: string, from: Book, to: Book) {
+  const r = remapAll(from, to);
+  const d = new Directory(root(), folder);
+  const writes: (() => void)[] = [];
+  const edit = <T,>(name: string, fn: (x: T) => T) => {
+    const f = new File(d, name);
+    const x = readJson<T | null>(f, null);
+    if (x) {
+      const y = fn(x);
+      writes.push(() => writeJson(f, y));
     }
-    new File(d, 'book.json').write(text);
-    n++;
+  };
+  edit<Progress>('progress.json', r.progress);
+  edit<Note[]>('notes.json', r.notes);
+  edit<Consult[]>('consults.json', r.consults);
+  edit<Mark[]>('marks.json', (ms) => ms.map((m) => (m.section ? r.spot({ ...m, section: m.section }) : m)));
+  edit<Record<string, unknown>>('cards.json', r.links);
+  writes.forEach((w) => w());
+  if (loadStudy().cards.some((c) => c.book === folder && c.section))
+    updateStudy((st) => (st.cards = st.cards.map((c) => (c.book === folder && c.section ? r.spot({ ...c, section: c.section }) : c))));
+  for (const name of ['reader.json', 'reader']) {
+    const x = name.includes('.') ? new File(d, name) : new Directory(d, name);
+    if (x.exists) x.delete();
   }
-  return n;
 }
 
-export async function refreshStreamingBooks() {
-  if (!token) return 0;
-  let n = await restoreMissingBooks();
-  for (const b of listBooks()) {
-    if (bookSizes(b.folder).audio > 0) continue;
-    const src = remoteAudio(b.folder, 'book.json');
-    const r = await fetch(src.uri, { headers: src.headers }).catch(() => null);
-    if (!r?.ok) continue;
-    const text = await r.text();
-    const f = new File(root(), b.folder, 'book.json');
-    if (f.exists && f.textSync() === text) continue;
-    try {
-      JSON.parse(text);
-    } catch {
-      continue;
-    }
-    f.write(text);
-    n++;
+/** puts calliope's book.json in place; a GitHub-era book moves its data over and loses its old audio (calliope's is split differently) */
+async function updateBook(folder: string, id: number): Promise<boolean> {
+  const f = new File(root(), folder, 'book.json');
+  const local = readJson<Book | null>(f, null);
+  const downloaded = bookSizes(folder).audio > 0;
+  if (local?.calibre_id && downloaded) return false;
+  const text = await bookJsonText(id);
+  if (!text || (f.exists && f.textSync() === text)) return false;
+  let next: Book;
+  try {
+    next = JSON.parse(text);
+  } catch {
+    return false;
   }
+  new Directory(root(), folder).create({ idempotent: true, intermediates: true });
+  if (local?.sections?.length) migrate(folder, local, next);
+  if (downloaded) removeAudio(folder);
+  writeJson(f, next);
+  return true;
+}
+
+/** books from calliope: restores book.json after a restore, switches GitHub-era books over, adds new tarot books with audio */
+let refreshing: Promise<number> | null = null;
+export function refreshStreamingBooks() {
+  refreshing ??= refresh().finally(() => (refreshing = null));
+  return refreshing;
+}
+
+async function refresh() {
+  await loadConnection();
+  if (!connected()) return 0;
+  const remote = await listCalliope();
+  const withAudio = new Set(remote.filter((b) => b.audio).map((b) => b.id));
+  let n = 0;
+  const seen = new Set<number>();
+  for (const d of root().list()) {
+    if (!(d instanceof Directory)) continue;
+    const id = idOf(d.name, readJson<Book | null>(new File(d, 'book.json'), null));
+    if (!id) continue;
+    seen.add(id);
+    if (withAudio.has(id) && (await updateBook(d.name, id).catch(() => false))) n++;
+  }
+  for (const id of withAudio) if (!seen.has(id) && (await updateBook(folderFor(id), id).catch(() => false))) n++;
   return n;
 }
 
@@ -130,6 +162,7 @@ export async function downloadAudio(folder: string, book: Book, onProgress: (don
     const dest = new File(dir, s.audio);
     if (!dest.exists) {
       const src = remoteAudio(folder, s.audio);
+      if (!src) throw new Error('This book has no audio on ares.');
       await File.downloadFileAsync(src.uri, dest, { headers: src.headers, idempotent: true });
     }
     onProgress(i + 1, book.sections.length);

@@ -2,12 +2,7 @@ import { Directory, File, Paths } from 'expo-file-system';
 import type { KokoroTtsChunk } from 'react-native-executorch';
 import AudioEncoder from '../modules/audio-encoder';
 import { saveM4a, wav } from './kokoro';
-import { read, write } from './theme';
 import { Book, Para, Section } from './types';
-
-export type VoiceMode = 'phone' | 'github';
-export const getVoiceMode = (): VoiceMode => (read('voice-mode.txt') === 'github' ? 'github' : 'phone');
-export const setVoiceMode = (m: VoiceMode) => write('voice-mode.txt', m);
 
 type Synth = (text: string) => AsyncGenerator<KokoroTtsChunk>;
 type Live = { folder: string; id: string; parts: Float32Array[]; rate: number; seconds: number; done: boolean };

@@ -99,10 +99,6 @@ export async function restoreFromFile() {
   return apply(JSON.parse(await new File(res.assets[0].uri).text()));
 }
 
-export const getToken = () => SecureStore.getItemAsync('github-token');
-export const setToken = (t: string) =>
-  t ? SecureStore.setItemAsync('github-token', t.trim()) : SecureStore.deleteItemAsync('github-token');
-
 export async function getAres(): Promise<{ url: string; token: string } | null> {
   const [url, token] = await Promise.all([SecureStore.getItemAsync('ares-url'), SecureStore.getItemAsync('ares-token')]);
   return url && token ? { url, token } : null;

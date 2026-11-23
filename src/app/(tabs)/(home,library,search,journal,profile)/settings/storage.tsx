@@ -99,7 +99,7 @@ export default function Storage() {
           ))}
         </>
       ) : null}
-      <Text style={ss.p}>{tr("To free space, open a book’s page → ⋯ → Remove downloaded audio; it then streams from GitHub.")}</Text>
+      <Text style={ss.p}>{tr("To free space, open a book’s page → ⋯ → Remove downloaded audio; it then streams from ares.")}</Text>
       {(() => {
         const unused = unusedVoices().reduce((n, f) => n + (f.size ?? 0), 0);
         return unused > 0 ? (

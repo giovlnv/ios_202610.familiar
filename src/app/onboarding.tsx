@@ -2,7 +2,7 @@ import { isPublic } from '../variant';
 import * as Updates from 'expo-updates';
 import { getLangPrefs, setLangPrefs } from '../languages';
 import { t as tr, uiLang, errorText } from '../i18n';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Alert, Image, KeyboardAvoidingView, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View } from 'react-native';
 import { Pressable } from '../components/Pressable';
 import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
@@ -13,7 +13,7 @@ import { addSubject } from '../study';
 import { EYES, Familiar, getOnboarding, allPaths, saveFamiliar, setOnboarding, setWithYou, withYou } from '../familiar';
 import { EyesMarkStep, FamiliarArt, Label, NameStep, ShapeCoatStep, SpeciesStep, s as fs } from '../components/Familiar';
 import { getClaudeLink, setClaudeLink } from '../components/Consults';
-import { backupToFile, getState, getToken, setToken } from '../sync';
+import { backupToFile, getState } from '../sync';
 import { getProfile, setProfile } from '../tracker';
 import { parseDate, showDate } from '../journal';
 import { c, F, themed } from '../theme';
@@ -35,17 +35,12 @@ export default function Onboarding() {
   const [i, setI] = useState(0);
   const [f, setF] = useState<Familiar>(withYou);
   const [paths, setPaths] = useState<string[]>(saved.paths ?? ['tarot']);
-  const [hasKey, setHasKey] = useState(false);
-  const [key, setKey] = useState('');
   const [link, setLink] = useState(getClaudeLink());
   const [dob, setDob] = useState(showDate(getProfile().dob));
   const [birthTime, setBirthTime] = useState(saved.birthTime ?? '');
   const [place, setPlace] = useState<Place | undefined>(saved.birthPlace ? { label: saved.birthPlace, lat: saved.birthLat ?? 0, lon: saved.birthLon ?? 0, timezone: saved.birthTz } : undefined);
   const [language, setLanguage] = useState(saved.language ?? 'en');
   const [goals, setGoals] = useState<string[]>(saved.goals ?? []);
-  useEffect(() => {
-    getToken().then((t) => setHasKey(!!t));
-  }, []);
 
   const step: Step = STEPS[i];
   const go = (to: Step) => setI(STEPS.indexOf(to));
@@ -58,7 +53,6 @@ export default function Onboarding() {
     }
     if (step === 'paths') setOnboarding({ paths });
     if (step === 'claude') {
-      if (key.trim()) setToken(key.trim()).then(() => setHasKey(true));
       if (link.trim()) setClaudeLink(link.trim());
     }
     if (step === 'about') {
@@ -175,18 +169,7 @@ export default function Onboarding() {
       case 'claude':
         return (
           <>
-            <Head title={tr("Your study helpers")} sub={tr("Claude writes the explanations; GitHub makes the voices; ares keeps your backups.")} />
-            <Label>{tr("GitHub key")}</Label>
-            <TextInput
-              style={fs.input}
-              value={key}
-              onChangeText={setKey}
-              placeholder={hasKey ? tr("Saved — type to replace") : tr("github_pat_…")}
-              placeholderTextColor={c.dim}
-              autoCapitalize="none"
-              autoCorrect={false}
-              secureTextEntry
-            />
+            <Head title={tr("Your study helpers")} sub={tr("Claude writes the explanations; ares keeps your backups and brings your tarot books.")} />
             <Label>{tr("Claude chat for questions")}</Label>
             <TextInput
               style={fs.input}
@@ -198,7 +181,7 @@ export default function Onboarding() {
               autoCorrect={false}
               keyboardType="url"
             />
-            <Note text={tr("Books you add are split here, explained by Claude in the FAMILIAR project, and voiced on GitHub.")} />
+            <Note text={tr("Your tarot books and their audio come from calliope on ares: add its address and token in Settings → Backups.")} />
           </>
         );
       case 'about':

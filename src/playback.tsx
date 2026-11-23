@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useContext, useEffect, useRef, useState } from 'react';
 import { AudioPlayer, AudioStatus, setAudioModeAsync, useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
-import { audioSource, clearOldExplanationAudio, LibraryItem, loadProgress, refreshStreamingBooks, saveProgress, setStreamToken } from './storage';
-import { getToken } from './sync';
+import { retireGithubLeftovers } from './retired';
+import { audioSource, clearOldExplanationAudio, LibraryItem, loadProgress, refreshStreamingBooks, saveProgress } from './storage';
 import { write } from './theme';
 import { addListening } from './tracker';
 import { explainStart, explanationsOn, useExplanations } from './explanations';
@@ -70,7 +70,8 @@ export function PlaybackProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     setAudioModeAsync({ playsInSilentMode: true, shouldPlayInBackground: true, interruptionMode: 'doNotMix' });
-    getToken().then((t) => (setStreamToken(t), refreshStreamingBooks().catch(() => {})));
+    refreshStreamingBooks().catch(() => {});
+    void retireGithubLeftovers();
     clearOldExplanationAudio();
   }, []);
 
