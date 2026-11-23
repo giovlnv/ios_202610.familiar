@@ -1,6 +1,7 @@
-import { t as tr } from '../../../../../i18n';
+import { t as tr, errorText } from '../../../../../i18n';
 import { useState } from 'react';
-import { Alert, Pressable, Switch, Text, useWindowDimensions, View } from 'react-native';
+import { Alert, Switch, Text, useWindowDimensions, View } from 'react-native';
+import { Pressable } from '../../../../../components/Pressable';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import * as ImagePicker from 'expo-image-picker';
 import { deleteSystem, importIntoSystem, removeCustomCard, setCardImage } from '../../../../../decks';
@@ -67,9 +68,12 @@ export default function SystemScreen() {
     setBusy(true);
     try {
       const r = await importIntoSystem(sys.id);
-      if (r) setMsg(`${r.matched} pictures added${r.added ? ` · ${r.added} new cards` : ''}${r.skipped.length ? ` · ${r.skipped.length} files not recognised` : ''}`);
+      if (r)
+        setMsg(
+          `${r.matched === 1 ? tr('1 picture added') : tr('{0} pictures added', { 0: r.matched })}${r.added ? ` · ${r.added === 1 ? tr('1 new card') : tr('{0} new cards', { 0: r.added })}` : ''}${r.skipped.length ? ` · ${r.skipped.length === 1 ? tr('1 file not recognised') : tr('{0} files not recognised', { 0: r.skipped.length })}` : ''}`,
+        );
     } catch (e) {
-      Alert.alert(tr("Import"), String((e as Error).message ?? e));
+      Alert.alert(tr("Couldn’t add the pictures"), errorText(e));
     } finally {
       setBusy(false);
     }
@@ -78,7 +82,7 @@ export default function SystemScreen() {
     Alert.alert(tr("Delete {0}?", { 0: sys.name }), tr("Its cards and pictures are deleted. Readings made with it stay in your journal, with the card names gone."), [
       { text: tr("Cancel"), style: 'cancel' },
       {
-        text: tr("Delete"),
+        text: tr("Delete system"),
         style: 'destructive',
         onPress: () => {
           setOnboarding({ paths: (getOnboarding().paths ?? []).filter((p) => p !== sys.id) });
@@ -116,7 +120,7 @@ export default function SystemScreen() {
         </View>
       </View>
 
-      <Text style={ss.h2}>{tr("Cards ·")}{' '}{sys.cards.length}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Cards ·")}{' '}{sys.cards.length}</Text>
       <View style={ss.card}>
         <View style={ss.row}>
           <Btn label={busy ? tr("Importing…") : tr("Import pictures")} primary onPress={doImport} />
@@ -158,8 +162,8 @@ export default function SystemScreen() {
 
 const s = themed(() => ({
   row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10 },
-  link: { color: c.gold, fontWeight: '600' },
+  link: { fontSize: 15, color: c.gold, fontWeight: '600' },
   swatch: { width: 30, height: 30, borderRadius: 15, borderWidth: 2, borderColor: 'transparent' },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
-  name: { color: c.dim, fontSize: 12, marginTop: 4 },
+  name: { color: c.dim, fontSize: 13, marginTop: 4 },
 }));

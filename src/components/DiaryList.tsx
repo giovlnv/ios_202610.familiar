@@ -2,7 +2,8 @@ import { t as tr } from '../i18n';
 import { usePad } from '../playback';
 import type { ReactElement } from 'react';
 import { useCallback, useState } from 'react';
-import { Pressable, SectionList, StyleSheet, Text, View } from 'react-native';
+import { SectionList, StyleSheet, Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { router, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { load, Tracker } from '../tracker';
@@ -69,9 +70,9 @@ export default function DiaryList({ header }: { header?: ReactElement }) {
 
 const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg },
-  month: { color: c.gold, fontWeight: '700', fontSize: 13, letterSpacing: 1, textTransform: 'uppercase', marginTop: 18, marginBottom: 6 },
+  month: { color: c.gold, fontWeight: '700', fontSize: 13, marginTop: 18, marginBottom: 6 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 8, borderBottomWidth: StyleSheet.hairlineWidth, borderColor: c.line },
-  day: { color: c.text, fontSize: 20, fontWeight: '700', width: 28, textAlign: 'center' },
+  day: { color: c.text, fontSize: 22, fontWeight: '700', width: 28, textAlign: 'center' },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },
   author: { color: c.dim, fontSize: 13, marginTop: 2 },
 }));

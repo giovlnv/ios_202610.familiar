@@ -1,6 +1,7 @@
-import { t as tr } from '../../../i18n';
+import { t as tr, errorText } from '../../../i18n';
 import { useState } from 'react';
-import { Alert, Pressable, ScrollView, Switch, Text, TextInput, View } from 'react-native';
+import { Alert, ScrollView, Switch, Text, TextInput, View } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import { router, useLocalSearchParams } from 'expo-router';
 import * as DocumentPicker from 'expo-document-picker';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -50,7 +51,7 @@ export default function AddBook() {
       const slug = await uploadBook({ ...file, title: title.trim(), instructions: explain ? instructions.trim() : '', lang, explanations: explain, split: epub ? split : 'toc' });
       router.replace({ pathname: '/jobs', params: { fresh: slug } });
     } catch (e) {
-      Alert.alert(tr("Upload failed"), String((e as Error).message ?? e));
+      Alert.alert(tr("Upload failed"), errorText(e));
     } finally {
       setBusy(false);
     }
@@ -64,7 +65,7 @@ export default function AddBook() {
         <Text style={s.dim}>{file ? tr("{0} MB · tap to change", { 0: ((file.size ?? 0) / 1e6).toFixed(1) }) : tr("from Files or iCloud Drive")}</Text>
       </Pressable>
       <Text style={s.label}>{tr("Title")}</Text>
-      <TextInput style={s.input} value={title} onChangeText={setTitle} placeholder={tr("Book title")} placeholderTextColor={c.dim} />
+      <TextInput accessibilityLabel={tr("Title")} style={s.input} value={title} onChangeText={setTitle} placeholder={tr("Book title")} placeholderTextColor={c.dim} />
       {epub && (
         <>
           <Text style={s.label}>{tr("Sections")}</Text>
@@ -92,7 +93,7 @@ export default function AddBook() {
       {explain && (
         <>
           <Text style={s.label}>{tr("How should the explanations be? (optional)")}</Text>
-          <TextInput
+          <TextInput accessibilityLabel={tr("How should the explanations be? (optional)")}
             style={[s.input, { minHeight: 110, textAlignVertical: 'top' }]}
             multiline
             value={instructions}
@@ -131,12 +132,12 @@ const s = themed(() => ({
   drop: { alignItems: 'center', gap: 8, paddingVertical: 28, borderRadius: 14, borderWidth: 1, borderStyle: 'dashed', borderColor: c.line },
   dropTitle: { color: c.text, fontSize: 15, fontWeight: '600', textAlign: 'center', paddingHorizontal: 12 },
   dim: { color: c.dim, fontSize: 13 },
-  label: { color: c.dim, fontSize: 13, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1, marginTop: 4 },
+  label: { color: c.dim, fontSize: 13, fontWeight: '700', marginTop: 4 },
   input: { backgroundColor: c.panel, color: c.text, borderRadius: 10, padding: 12, fontSize: 15 },
   row: { flexDirection: 'row', gap: 8 },
-  small: { color: c.dim, fontSize: 12, lineHeight: 17 },
+  small: { color: c.dim, fontSize: 13, lineHeight: 18 },
   switchRow: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 12, padding: 14, marginTop: 4 },
-  switchTitle: { color: c.text, fontSize: 16, fontWeight: '600' },
+  switchTitle: { color: c.text, fontSize: 17, fontWeight: '600' },
   hints: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   hint: { flexDirection: 'row', alignItems: 'center', gap: 4, borderWidth: 1, borderColor: c.line, borderRadius: 16, paddingVertical: 6, paddingHorizontal: 10 },
   hintText: { color: c.text, fontSize: 13 },

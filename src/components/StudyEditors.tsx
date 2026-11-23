@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Alert, Modal, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Alert, Modal, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { addSubject, CardDraft, Flashcard, removeCard, removeNote, saveCard, saveNote, StudyNote, Subject, useStudy } from '../study';
 import { getOnboarding, setOnboarding } from '../familiar';
 import { t as tr } from '../i18n';
@@ -8,13 +9,13 @@ import { c, F, themed } from '../theme';
 export const confirmDeleteCard = (id: string, done?: () => void) =>
   Alert.alert(tr('Delete this flashcard?'), undefined, [
     { text: tr('Cancel'), style: 'cancel' },
-    { text: tr('Delete'), style: 'destructive', onPress: () => (removeCard(id), done?.()) },
+    { text: tr('Delete flashcard'), style: 'destructive', onPress: () => (removeCard(id), done?.()) },
   ]);
 
 export const confirmDeleteNote = (id: string, done?: () => void) =>
   Alert.alert(tr('Delete this note?'), undefined, [
     { text: tr('Cancel'), style: 'cancel' },
-    { text: tr('Delete'), style: 'destructive', onPress: () => (removeNote(id), done?.()) },
+    { text: tr('Delete note'), style: 'destructive', onPress: () => (removeNote(id), done?.()) },
   ]);
 
 export function promptSubject(onDone?: (s: Subject) => void) {
@@ -94,9 +95,9 @@ export function CardEditor({ draft, source, onClose }: { draft: CardDraft; sourc
       <Text style={s.label}>{tr('Subject')}</Text>
       <SubjectChips value={subject} onChange={setSubject} />
       <Text style={s.label}>{tr('Front side')}</Text>
-      <TextInput style={s.input} value={front} onChangeText={setFront} multiline placeholder={tr('A question or a term')} placeholderTextColor={c.dim} autoFocus={!draft.front} />
+      <TextInput accessibilityLabel={tr('Front side')} style={s.input} value={front} onChangeText={setFront} multiline placeholder={tr('A question or a term')} placeholderTextColor={c.dim} autoFocus={!draft.front} />
       <Text style={s.label}>{tr('Back side')}</Text>
-      <TextInput style={[s.input, { minHeight: 120 }]} value={back} onChangeText={setBack} multiline placeholder={tr('The answer')} placeholderTextColor={c.dim} />
+      <TextInput accessibilityLabel={tr('Back side')} style={[s.input, { minHeight: 120 }]} value={back} onChangeText={setBack} multiline placeholder={tr('The answer')} placeholderTextColor={c.dim} />
       {!!source && <Text style={s.meta}>{tr('From {0}', { 0: source })}</Text>}
     </Sheet>
   );
@@ -131,13 +132,13 @@ export function NoteEditor({ draft, onClose }: { draft: Partial<StudyNote>; onCl
 const s = themed(() => ({
   sheet: { flex: 1, backgroundColor: c.bg, padding: 16 },
   top: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 },
-  title: { color: c.text, fontFamily: F.heading, fontSize: 19 },
-  link: { color: c.gold, fontSize: 16, fontWeight: '600' },
-  dim: { color: c.dim, fontSize: 16 },
-  label: { color: c.dim, fontSize: 12, fontWeight: '700', letterSpacing: 1, textTransform: 'uppercase', marginTop: 6 },
+  title: { color: c.text, fontFamily: F.heading, fontSize: 22 },
+  link: { color: c.gold, fontSize: 17, fontWeight: '600' },
+  dim: { color: c.dim, fontSize: 17 },
+  label: { color: c.dim, fontSize: 13, fontWeight: '700', marginTop: 6 },
   meta: { color: c.dim, fontSize: 13 },
-  input: { backgroundColor: c.panel, color: c.text, borderRadius: 10, padding: 12, fontSize: 16, textAlignVertical: 'top' },
-  noteTitle: { fontFamily: F.heading, fontSize: 18 },
+  input: { backgroundColor: c.panel, color: c.text, borderRadius: 10, padding: 12, fontSize: 17, textAlignVertical: 'top' },
+  noteTitle: { fontFamily: F.heading, fontSize: 17 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   chip: { borderRadius: 14, paddingVertical: 6, paddingHorizontal: 12, borderWidth: 1 },
   chipText: { fontSize: 13, fontWeight: '600' },

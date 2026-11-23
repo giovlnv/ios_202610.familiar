@@ -1,17 +1,17 @@
 import { exportAudio, exportBookZip } from '../../../../ownBooks';
-import { t as tr } from '../../../../i18n';
+import { t as tr, errorText } from '../../../../i18n';
 import { usePad } from '../../../../playback';
 import { useCallback, useState } from "react";
 import {
   Alert,
   Modal,
-  Pressable,
   ScrollView,
   StyleSheet,
   Switch,
   Text,
   View,
 } from "react-native";
+import { Pressable } from "../../../../components/Pressable";
 import {
   router,
   Stack,
@@ -137,7 +137,7 @@ export default function Title() {
                                   const s = item.book.sections[loadProgress(folder).section] ?? item.book.sections[0];
                                   Alert.alert(tr("Export audio"), tr("For your own use. Choose what to export."), [
                                     { text: tr("This section: {0}", { 0: s.title }), onPress: () => void exportAudio(folder, s) },
-                                    { text: tr("Whole book (.zip)"), onPress: () => void exportBookZip(folder, item.book).catch((e) => Alert.alert(tr("Export failed"), String(e?.message ?? e))) },
+                                    { text: tr("Whole book (.zip)"), onPress: () => void exportBookZip(folder, item.book).catch((e) => Alert.alert(tr("Couldn’t export the audio"), errorText(e))) },
                                     { text: tr("Cancel"), style: "cancel" },
                                   ]);
                                 },
@@ -163,15 +163,15 @@ export default function Title() {
                                   const go = () =>
                                     downloadAudio(folder, item.book, () => {})
                                       .then(() => Alert.alert(tr("Downloaded"), tr("{0} on this iPhone.", { 0: mb(bookSizes(folder).audio) })))
-                                      .catch((e) => Alert.alert(tr("Download failed"), String(e?.message ?? e)));
+                                      .catch((e) => Alert.alert(tr("Couldn’t download the audio"), errorText(e)));
                                   if (free && need > free * 0.8)
                                     return Alert.alert(tr("Not much space left"), tr("This needs about {0} and your iPhone has {1} free.", { 0: mb(need), 1: mb(free) }), [
                                       { text: tr("Cancel"), style: "cancel" },
-                                      { text: tr("Download anyway"), onPress: go },
+                                      { text: tr("Download audio anyway"), onPress: go },
                                     ]);
                                   Alert.alert(tr("Download ~{0}?", { 0: mb(need) }), tr("{0} free on your iPhone.", { 0: mb(free) }), [
                                     { text: tr("Cancel"), style: "cancel" },
-                                    { text: tr("Download"), onPress: go },
+                                    { text: tr("Download audio"), onPress: go },
                                   ]);
                                 },
                               },
@@ -193,7 +193,7 @@ export default function Title() {
                         [
                           { text: tr("Cancel"), style: "cancel" },
                           {
-                            text: tr("Delete"),
+                            text: tr("Delete audiobook"),
                             style: "destructive",
                             onPress: () => {
                               if (b.audio) deleteBook(b.audio);
@@ -349,7 +349,7 @@ export default function Title() {
           </Pressable>
         ))}
 
-      <Text style={s.h2}>{tr("Reading history")}</Text>
+      <Text accessibilityRole="header" style={s.h2}>{tr("Reading history")}</Text>
       {logs.length ? (
         logs.map((l) => (
           <Pressable
@@ -359,7 +359,7 @@ export default function Title() {
               Alert.alert(tr("Delete this entry?"), fmtDate(l.date), [
                 { text: tr("Cancel"), style: "cancel" },
                 {
-                  text: tr("Delete"),
+                  text: tr("Delete entry"),
                   style: "destructive",
                   onPress: () => (removeLog(l.id), refresh()),
                 },
@@ -394,8 +394,8 @@ export default function Title() {
           if (folder && item && size > 0)
             setTimeout(async () => {
               if (!(await canStream(folder, item.book))) return;
-              Alert.alert(tr("Finished! Free {0}?", { 0: mb(size) }), tr("Remove this book’s audio from your iPhone. Notes and progress stay, and it streams from GitHub if you listen again."), [
-                { text: tr("Keep"), style: "cancel" },
+              Alert.alert(tr("You finished it. Free {0}?", { 0: mb(size) }), tr("Remove this book’s audio from your iPhone. Notes and progress stay, and it streams from GitHub if you listen again."), [
+                { text: tr("Keep audio"), style: "cancel" },
                 { text: tr("Remove audio"), style: "destructive", onPress: () => (removeAudio(folder), refreshStreamingBooks().catch(() => {}), refresh()) },
               ]);
             }, 500);
@@ -408,9 +408,9 @@ export default function Title() {
         animationType="slide"
         onRequestClose={() => setEditStart(false)}
       >
-        <Pressable accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={() => setEditStart(false)} />
+        <Pressable dim={false} accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={() => setEditStart(false)} />
         <View style={s.sheet}>
-          <Text style={s.h2}>{tr("Started reading")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Started reading")}</Text>
           <DateStepper
             value={b.started ?? today()}
             max={today()}
@@ -445,9 +445,9 @@ export default function Title() {
         animationType="slide"
         onRequestClose={() => setShelving(false)}
       >
-        <Pressable accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={() => setShelving(false)} />
+        <Pressable dim={false} accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={() => setShelving(false)} />
         <View style={[s.sheet, { maxHeight: "75%" }]}>
-          <Text style={s.h2}>{tr("Shelves")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Shelves")}</Text>
           <ScrollView contentContainerStyle={{ gap: 2 }}>
             {(t.shelves ?? []).map((sh) => {
               const on = sh.books.includes(b.id);
@@ -523,9 +523,9 @@ function LogSheet({
         setStarted(initialStart)
       )}
     >
-      <Pressable accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={onClose} />
+      <Pressable dim={false} accessibilityRole="button" accessibilityLabel={tr("Close")} style={s.dimBg} onPress={onClose} />
       <View style={s.sheet}>
-        <Text style={s.h2}>{tr("Log")}</Text>
+        <Text accessibilityRole="header" style={s.h2}>{tr("Log")}</Text>
         <Text style={s.label}>{tr("Finished on")}</Text>
         <View style={s.dateRow}>
           <Pressable accessibilityRole="button" accessibilityLabel={tr("Previous")} onPress={() => setOffset(offset - 1)} hitSlop={10}>
@@ -612,7 +612,7 @@ function LogSheet({
 
 const s = themed(() => ({
   pathChip: { borderWidth: 1, borderRadius: 999, paddingHorizontal: 10, paddingVertical: 4 },
-  pathText: { fontSize: 12, fontWeight: '600' },
+  pathText: { fontSize: 13, fontWeight: '600' },
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
   head: { flexDirection: "row", gap: 16, marginTop: 8 },
   title: { color: c.text, fontSize: 22, fontWeight: "700" },
@@ -632,7 +632,7 @@ const s = themed(() => ({
   rowText: { color: c.text, flex: 1, fontSize: 15 },
   h2: {
     color: c.text,
-    fontSize: 19,
+    fontSize: 22,
     marginTop: 24,
     marginBottom: 10, fontFamily: F.heading },
   log: {
@@ -656,8 +656,6 @@ const s = themed(() => ({
   label: {
     color: c.dim,
     fontSize: 13,
-    textTransform: "uppercase",
-    letterSpacing: 1,
     marginTop: 6,
   },
   dateRow: {
@@ -666,7 +664,7 @@ const s = themed(() => ({
     justifyContent: "space-between",
     paddingHorizontal: 8,
   },
-  date: { color: c.text, fontSize: 18, fontWeight: "600" },
+  date: { color: c.text, fontSize: 17, fontWeight: "600" },
   quick: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
   switchRow: { flexDirection: "row", alignItems: "center", paddingVertical: 6 },
   shelfRow: {

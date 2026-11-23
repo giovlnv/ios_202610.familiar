@@ -1,4 +1,4 @@
-import { t as tr } from '../../../../i18n';
+import { t as tr, errorText } from '../../../../i18n';
 import { useCallback, useState } from 'react';
 import { Alert, Text, TextInput, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
@@ -16,11 +16,11 @@ export default function Account() {
   const save = (t: string) =>
     setToken(t)
       .then(() => (setDraft(''), refresh()))
-      .catch((e) => Alert.alert(tr("Something went wrong"), String(e?.message ?? e)));
+      .catch((e) => Alert.alert(tr("Couldn’t save the key"), errorText(e)));
 
   return (
     <Page>
-      <Text style={ss.h2}>{tr("GitHub")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("GitHub")}</Text>
       <Text style={ss.p}>{tr("The key lets the app send books to the audiobook pipeline and stream them. Backups go to ares (settings → backups).")}</Text>
       <View style={ss.card}>
         <Text style={ss.meta}>{tr("Status:")}{' '}{hasToken ? 'connected' : tr("not connected")}</Text>
@@ -39,7 +39,7 @@ export default function Account() {
           {hasToken && <Btn label={tr("Remove key")} onPress={() => save('')} />}
         </View>
       </View>
-      <Text style={ss.h2}>{tr("Claude chat")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Claude chat")}</Text>
       <Text style={ss.p}>{tr("“Send to Claude” copies the message and opens this chat. Paste it there.")}</Text>
       <View style={ss.card}>
         <TextInput

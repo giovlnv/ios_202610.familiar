@@ -1,6 +1,7 @@
-import { t as tr } from '../../../i18n';
+import { t as tr, errorText } from '../../../i18n';
 import { useCallback, useState } from 'react';
-import { Alert, FlatList, Pressable, RefreshControl, Text, View } from 'react-native';
+import { Alert, FlatList, RefreshControl, Text, View } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import { router, Stack, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { cancelJob, canCancel, Job, listJobs, STAGE_LABEL } from '../../../jobs';
@@ -29,7 +30,7 @@ export default function Jobs() {
     setBusy(true);
     listJobs()
       .then((j) => (setJobs(j), setErr('')))
-      .catch((e) => setErr(String(e.message ?? e)))
+      .catch((e) => setErr(errorText(e)))
       .finally(() => setBusy(false));
   }, []);
   useFocusEffect(load);
@@ -70,7 +71,7 @@ export default function Jobs() {
                 onPress: () =>
                   cancelJob(j)
                     .then(load)
-                    .catch((e) => Alert.alert(tr("Could not cancel"), String(e.message ?? e))),
+                    .catch((e) => Alert.alert(tr("Couldn’t cancel the book"), errorText(e))),
               },
             ])
           }
@@ -97,5 +98,5 @@ const s = themed(() => ({
   card: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 12, padding: 14 },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },
   dim: { color: c.dim, fontSize: 13 },
-  err: { color: c.claude, marginBottom: 10 },
+  err: { fontSize: 15, color: c.claude, marginBottom: 10 },
 }));

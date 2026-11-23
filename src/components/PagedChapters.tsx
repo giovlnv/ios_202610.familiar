@@ -1,5 +1,6 @@
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
-import { FlatList, Image, Pressable, Text, View } from 'react-native';
+import { FlatList, Image, Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Block, Chapter, imageUri } from '../reader';
 import { highlightBg, HighlightColour } from '../marks';
@@ -267,5 +268,5 @@ const s = themed(() => ({
   block: { borderRadius: 6, paddingHorizontal: 4, marginHorizontal: -4 },
   bar: { position: 'absolute' as const, left: -6, top: 4, bottom: 4, width: 3, borderRadius: 2, backgroundColor: c.gold },
   bm: { position: 'absolute' as const, left: -16, top: 4 },
-  pager: { position: 'absolute' as const, bottom: 24, alignSelf: 'center' as const, color: c.dim, fontSize: 12, backgroundColor: c.panel, paddingHorizontal: 10, paddingVertical: 4, borderRadius: 10, overflow: 'hidden' as const },
+  pager: { position: 'absolute' as const, bottom: 24, alignSelf: 'center' as const, color: c.dim, fontSize: 13, backgroundColor: c.panel, paddingHorizontal: 10, paddingVertical: 4, borderRadius: 10, overflow: 'hidden' as const },
 }));

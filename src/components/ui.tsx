@@ -1,6 +1,7 @@
 import { loc, t as tr } from '../i18n';
 import { useState } from "react";
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
+import { Pressable } from "./Pressable";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { coverUrl, TBook } from "../tracker";
 import { c, themed } from "../theme";
@@ -81,7 +82,7 @@ export function Cover({
       ) : (
         <View style={s.placeholder}>
           <Text
-            style={[s.phText, { fontSize: Math.max(10, width / 8) }]}
+            style={[s.phText, { fontSize: Math.max(11, width / 8) }]}
             numberOfLines={5}
           >
             {book.title}
@@ -116,6 +117,7 @@ export function Chip({
     <Pressable
       onPress={onPress}
       onLongPress={onLongPress}
+      accessibilityState={{ selected: !!on }}
       style={[s.chip, on && s.chipOn]}
     >
       <Text style={[s.chipText, on && s.chipTextOn]}>{label}</Text>
@@ -219,21 +221,21 @@ export function DateStepper({
   };
   return (
     <View style={s.stepper}>
-      <Pressable accessibilityRole="button" accessibilityLabel={tr("Back 30 days")} onPress={() => shift(-30)} hitSlop={6}>
+      <Pressable accessibilityRole="button" accessibilityLabel={tr("Back 30 days")} onPress={() => shift(-30)} hitSlop={13}>
         <Ionicons name="play-back-outline" size={18} color={c.dim} />
       </Pressable>
-      <Pressable accessibilityRole="button" accessibilityLabel={tr("Previous day")} onPress={() => shift(-1)} hitSlop={10}>
+      <Pressable accessibilityRole="button" accessibilityLabel={tr("Previous day")} onPress={() => shift(-1)} hitSlop={11}>
         <Ionicons name="chevron-back" size={22} color={c.gold} />
       </Pressable>
       <Text style={s.stepDate}>{fmtDate(value)}</Text>
-      <Pressable accessibilityRole="button" accessibilityLabel={tr("Next day")} onPress={() => shift(1)} hitSlop={10}>
+      <Pressable accessibilityRole="button" accessibilityLabel={tr("Next day")} accessibilityState={{ disabled: !!max && value >= max }} onPress={() => shift(1)} hitSlop={11}>
         <Ionicons
           name="chevron-forward"
           size={22}
           color={!max || value < max ? c.gold : c.line}
         />
       </Pressable>
-      <Pressable accessibilityRole="button" accessibilityLabel={tr("Forward 30 days")} onPress={() => shift(30)} hitSlop={6}>
+      <Pressable accessibilityRole="button" accessibilityLabel={tr("Forward 30 days")} onPress={() => shift(30)} hitSlop={13}>
         <Ionicons name="play-forward-outline" size={18} color={c.dim} />
       </Pressable>
     </View>

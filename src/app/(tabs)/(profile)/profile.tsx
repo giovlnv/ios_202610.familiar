@@ -2,12 +2,12 @@ import { t as tr } from '../../../i18n';
 import { usePad } from '../../../playback';
 import { useCallback, useState } from "react";
 import {
-  Pressable,
   ScrollView,
   Text,
   useWindowDimensions,
   View,
 } from "react-native";
+import { Pressable } from "../../../components/Pressable";
 import { router, Stack, useFocusEffect } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { daysBetween, load, Tracker } from "../../../tracker";
@@ -145,7 +145,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
         <Ionicons name="chevron-forward" size={16} color={c.dim} />
       </Pressable>
       <Pressable style={s.foldHead} onPress={() => (write('top4.txt', top4 ? '0' : '1'), setTop4(!top4))} accessibilityState={{ expanded: top4 }}>
-        <Text style={[s.h2, { marginTop: 0, marginBottom: 0 }]}>{tr("Top 4")}</Text>
+        <Text accessibilityRole="header" style={[s.h2, { marginTop: 0, marginBottom: 0 }]}>{tr("Top 4")}</Text>
         <Ionicons name={top4 ? 'chevron-up' : 'chevron-down'} size={18} color={c.dim} />
       </Pressable>
       {top4 && (
@@ -209,7 +209,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
       </View>
 
       <View style={s.headRow}>
-        <Text style={[s.h2, { margin: 0 }]}>
+        <Text accessibilityRole="header" style={[s.h2, { margin: 0 }]}>
           {all ? tr("By year") : tr("By month")}
         </Text>
         <View style={{ flexDirection: "row", gap: 6 }}>
@@ -236,7 +236,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
 
       {genres.length > 0 && (
         <>
-          <Text style={s.h2}>{tr("Genres")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Genres")}</Text>
           <View style={[s.card, { gap: 10 }]}>
             {genres.map(([g, n]) => (
               <View key={g} style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
@@ -253,7 +253,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
         </>
       )}
 
-      <Text style={s.h2}>{tr("Top authors")}</Text>
+      <Text accessibilityRole="header" style={s.h2}>{tr("Top authors")}</Text>
       {authors.length ? (
         <View style={s.card}>
           {authors.map(([a, n]) => (
@@ -273,7 +273,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
 
       {topAudio.length > 0 && (
         <>
-          <Text style={s.h2}>{tr("Most listened")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Most listened")}</Text>
           {topAudio.map(({ b, n }) => (
             <Pressable key={b!.id} style={s.row} onPress={() => open(b!.id)}>
               <Cover book={b!} width={36} />
@@ -288,7 +288,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
 
       {longest && (
         <>
-          <Text style={s.h2}>{tr("Longest read")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Longest read")}</Text>
           <Pressable style={s.row} onPress={() => open(longest.id)}>
             <Cover book={longest} width={36} />
             <Text style={s.lineText} numberOfLines={1}>
@@ -312,7 +312,7 @@ export default function Profile({ mode }: { mode?: 'stats' }) {
         </Pressable>
       )}
 
-      <Text style={s.h2}>{tr("Ratings")}</Text>
+      <Text accessibilityRole="header" style={s.h2}>{tr("Ratings")}</Text>
       <Bars
         values={dist}
         labels={["½", "1", "", "2", "", "3", "", "4", "", "5"]}
@@ -369,7 +369,7 @@ const count = (xs: string[]) =>
 const s = themed(() => ({
   familiar: { flexDirection: "row", alignItems: "center", gap: 12, backgroundColor: c.panel, borderRadius: 14, padding: 10, marginTop: 12 },
   famTitle: { color: c.text, fontSize: 15, fontWeight: "600" },
-  famDim: { color: c.dim, fontSize: 12, marginTop: 2 },
+  famDim: { color: c.dim, fontSize: 13, marginTop: 2 },
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
   chips: { gap: 8, paddingVertical: 12 },
   tiles: { flexDirection: "row", flexWrap: "wrap", gap: 10 },
@@ -380,8 +380,8 @@ const s = themed(() => ({
     borderRadius: 12,
     padding: 12,
   },
-  tileNum: { color: c.gold, fontSize: 22, fontWeight: "800" },
-  tileLabel: { color: c.dim, fontSize: 12, marginTop: 2 },
+  tileNum: { color: c.gold, fontSize: 22, fontFamily: F.heading, fontVariant: ["lining-nums"] },
+  tileLabel: { color: c.dim, fontSize: 13, marginTop: 2 },
   headRow: {
     flexDirection: "row",
     alignItems: "center",
@@ -391,7 +391,7 @@ const s = themed(() => ({
   },
   h2: {
     color: c.text,
-    fontSize: 19,
+    fontSize: 22,
     marginTop: 24,
     marginBottom: 10, fontFamily: F.heading },
   card: { backgroundColor: c.panel, borderRadius: 12, padding: 14 },
@@ -408,7 +408,7 @@ const s = themed(() => ({
     borderRadius: 3,
     minHeight: 2,
   },
-  val: { color: c.dim, fontSize: 9, marginBottom: 2 },
+  val: { color: c.dim, fontSize: 11, marginBottom: 2 },
   axis: { flexDirection: "row", gap: 4, marginTop: 6 },
   axisText: { flex: 1, color: c.dim, fontSize: 11, textAlign: "center" },
   line: {
@@ -425,7 +425,7 @@ const s = themed(() => ({
     paddingVertical: 6,
   },
   dim: { color: c.dim },
-  note: { color: c.dim, fontSize: 12, marginTop: 6 },
+  note: { color: c.dim, fontSize: 13, marginTop: 6 },
   link: {
     flexDirection: "row",
     alignItems: "center",
@@ -435,7 +435,7 @@ const s = themed(() => ({
     padding: 14,
     marginTop: 28,
   },
-  linkText: { color: c.text, flex: 1, fontSize: 16 },
+  linkText: { color: c.text, flex: 1, fontSize: 17 },
   favs: { flexDirection: "row", gap: 10 },
   foldHead: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: 14, marginBottom: 6 },
   favEmpty: {

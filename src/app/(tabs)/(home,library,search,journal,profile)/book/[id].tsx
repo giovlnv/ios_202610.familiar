@@ -1,7 +1,8 @@
 import { t as tr } from '../../../../i18n';
 import { usePad } from '../../../../playback';
 import { useCallback, useMemo, useState } from 'react';
-import { FlatList, Pressable, Text, View } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import { router, Stack, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { getBook, loadConsults, loadNotes, loadProgress } from '../../../../storage';
@@ -69,7 +70,7 @@ export default function BookPage() {
                 <Text style={s.toolText}>{tr("Marks")}</Text>
               </Pressable>
             </View>
-            <Text style={s.h2}>{tr("Sections")}</Text>
+            <Text accessibilityRole="header" style={s.h2}>{tr("Sections")}</Text>
           </View>
         }
         renderItem={({ item: x, index }) => {
@@ -106,22 +107,22 @@ export default function BookPage() {
 const s = themed(() => ({
   tools: { flexDirection: 'row', gap: 8, marginTop: 12 },
   tool: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, backgroundColor: c.panel, borderRadius: 10, paddingVertical: 10 },
-  toolText: { color: c.gold, fontWeight: '600' },
+  toolText: { fontSize: 15, color: c.gold, fontWeight: '600' },
   wrap: { flex: 1, backgroundColor: c.bg, paddingHorizontal: 16 },
-  empty: { color: c.dim, padding: 16 },
+  empty: { fontSize: 15, color: c.dim, padding: 16 },
   head: { paddingBottom: 8 },
-  title: { color: c.gold, fontSize: 26, fontWeight: '700' },
-  meta: { color: c.dim, marginTop: 6 },
+  title: { color: c.gold, fontSize: 28, fontFamily: F.heading },
+  meta: { fontSize: 15, color: c.dim, marginTop: 6 },
   btn: { backgroundColor: c.gold, borderRadius: 12, padding: 14, alignItems: 'center', marginTop: 16 },
-  btnText: { color: c.bg, fontWeight: '700', fontSize: 16 },
+  btnText: { color: c.bg, fontWeight: '700', fontSize: 17 },
   btnSub: { color: c.bg, opacity: 0.75, fontSize: 13, marginTop: 2 },
-  h2: { color: c.text, fontSize: 18, marginTop: 24, marginBottom: 8, fontFamily: F.heading },
+  h2: { color: c.text, fontSize: 17, marginTop: 24, marginBottom: 8, fontFamily: F.heading },
   row: { paddingVertical: 10, paddingHorizontal: 10, borderRadius: 10, marginBottom: 2 },
   rowOn: { backgroundColor: c.raised },
   rowTop: { flexDirection: 'row', alignItems: 'center', gap: 10 },
-  num: { color: c.dim, width: 24, fontVariant: ['tabular-nums'] },
-  secTitle: { color: c.text, fontSize: 16, flex: 1 },
+  num: { fontSize: 15, color: c.dim, width: 24, fontVariant: ['tabular-nums'] },
+  secTitle: { color: c.text, fontSize: 17, flex: 1 },
   secDone: { color: c.dim },
   marks: { color: c.dim, fontSize: 13, fontVariant: ['tabular-nums'] },
-  summary: { color: c.dim, fontSize: 14, lineHeight: 19, marginTop: 4, marginLeft: 34 },
+  summary: { color: c.dim, fontSize: 15, lineHeight: 20, marginTop: 4, marginLeft: 34 },
 }));

@@ -1,6 +1,7 @@
-import { loc, t as tr } from '../../../../i18n';
+import { loc, t as tr, errorText } from '../../../../i18n';
 import { useCallback, useState } from 'react';
-import { Alert, Pressable, RefreshControl, ScrollView, Text, View } from 'react-native';
+import { Alert, RefreshControl, ScrollView, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import { router, Stack, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import * as Clipboard from 'expo-clipboard';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -24,7 +25,7 @@ export default function JobScreen() {
     setBusy(true);
     getJob(slug)
       .then((j) => setJob(j ?? { slug, title: slug, stage: 'splitting' }))
-      .catch((e) => Alert.alert(tr("Could not load"), String(e.message ?? e)))
+      .catch((e) => Alert.alert(tr("Couldn’t load the book"), errorText(e)))
       .finally(() => setBusy(false));
   }, [slug]);
   useFocusEffect(load);
@@ -35,7 +36,7 @@ export default function JobScreen() {
       const j = await fn();
       if (j) setJob(j);
     } catch (e) {
-      Alert.alert(tr("Something went wrong"), String((e as Error).message ?? e));
+      Alert.alert(tr("Something went wrong"), errorText(e));
     } finally {
       setBusy(false);
       setProgress('');
@@ -55,7 +56,7 @@ export default function JobScreen() {
       refreshControl={<RefreshControl refreshing={busy} onRefresh={load} tintColor={c.gold} />}
     >
       <Stack.Screen options={{ title: '' }} />
-      <Text style={s.h1}>{job.title}</Text>
+      <Text accessibilityRole="header" style={s.h1}>{job.title}</Text>
       <Text style={[s.dim, { color: job.stage === 'error' ? c.claude : c.gold }]}>{STAGE_LABEL[job.stage]}</Text>
 
       <View style={s.card}>
@@ -220,14 +221,14 @@ const s = themed(() => ({
   h1: { color: c.text, fontSize: 22, fontFamily: F.heading },
   dim: { color: c.dim, fontSize: 13 },
   p: { color: c.text, fontSize: 15, lineHeight: 21 },
-  label: { color: c.dim, fontSize: 13, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1, marginTop: 8 },
+  label: { color: c.dim, fontSize: 13, fontWeight: '700', marginTop: 8 },
   card: { backgroundColor: c.panel, borderRadius: 12, padding: 14, gap: 10 },
   stepRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
   step: { color: c.text, fontSize: 15 },
   row: { flexDirection: 'row', gap: 10 },
   secRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
   num: { color: c.dim, fontSize: 13, width: 24 },
-  secTitle: { color: c.text, fontSize: 14, flex: 1 },
+  secTitle: { color: c.text, fontSize: 15, flex: 1 },
   quote: { backgroundColor: c.panel, borderRadius: 10, padding: 12, borderLeftWidth: 3, borderLeftColor: c.claude },
-  quoteText: { color: c.text, fontSize: 14, lineHeight: 20 },
+  quoteText: { color: c.text, fontSize: 15, lineHeight: 21 },
 }));

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, Alert, Pressable, Text, TextInput, View } from 'react-native';
+import { ActivityIndicator, Alert, Text, TextInput, View } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import { router, useLocalSearchParams } from 'expo-router';
 import * as DocumentPicker from 'expo-document-picker';
 import { Directory, File, Paths } from 'expo-file-system';
@@ -9,7 +10,7 @@ import { bookLangChoices } from '../../../languages';
 import { keepSource } from '../../../reader';
 import { importBook } from '../../../storage';
 import { syncAudioBooks } from '../../../tracker';
-import { t as tr } from '../../../i18n';
+import { t as tr, errorText } from '../../../i18n';
 import { Chip } from '../../../components/ui';
 import { c } from '../../../theme';
 import { Btn, Page, ss } from '../../../components/settings-ui';
@@ -65,7 +66,7 @@ export default function ImportScreen() {
     return true;
   };
 
-  const fail = (e: unknown) => Alert.alert(e instanceof DrmError ? tr('This book is locked') : tr('Import failed'), e instanceof DrmError ? drmMessage() : tr(String((e as Error).message ?? e)));
+  const fail = (e: unknown) => Alert.alert(e instanceof DrmError ? tr('This book is locked') : tr('Import failed'), e instanceof DrmError ? drmMessage() : errorText(e));
 
   const { file } = useLocalSearchParams<{ file?: string }>();
 
@@ -164,12 +165,12 @@ export default function ImportScreen() {
         <Text style={ss.p}>{tr('Bring a book you own. It stays on this iPhone and is read aloud by the voices you chose in Settings → Languages.')}</Text>
         <Pressable style={ss.card} onPress={() => startEpub()}>
           <Ionicons name="book-outline" size={22} color={c.gold} />
-          <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{tr('A book to read aloud (EPUB or PDF)')}</Text>
+          <Text style={{ color: c.text, fontSize: 17, fontWeight: '600' }}>{tr('A book to read aloud (EPUB or PDF)')}</Text>
           <Text style={ss.meta}>{tr('Split into chapters from its table of contents. Voiced on this iPhone while you listen.')}</Text>
         </Pressable>
         <Pressable style={ss.card} onPress={startAudio}>
           <Ionicons name="headset-outline" size={22} color={c.gold} />
-          <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{tr('An audiobook (MP3, M4A, M4B)')}</Text>
+          <Text style={{ color: c.text, fontSize: 17, fontWeight: '600' }}>{tr('An audiobook (MP3, M4A, M4B)')}</Text>
           <Text style={ss.meta}>{tr('One file per chapter, or one M4B with chapters. You can add the book’s EPUB or PDF to follow the text chapter by chapter.')}</Text>
         </Pressable>
         <Btn
@@ -188,11 +189,11 @@ export default function ImportScreen() {
 
   return (
     <Page>
-      <Text style={ss.h2}>{tr('Title')}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr('Title')}</Text>
       <TextInput style={ss.input} value={title} onChangeText={setTitle} placeholderTextColor={c.dim} />
       {!audio && (
         <>
-          <Text style={ss.h2}>{tr('Language')}</Text>
+          <Text accessibilityRole="header" style={ss.h2}>{tr('Language')}</Text>
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
             {bookLangChoices().map((l) => (
               <Chip key={l.book} label={l.native} on={lang === l.book} onPress={() => setLang(l.book)} />
@@ -202,14 +203,14 @@ export default function ImportScreen() {
       )}
       {audio && (
         <View style={ss.card}>
-          <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{tr('{0} audio files', { 0: audio.length })}</Text>
+          <Text style={{ color: c.text, fontSize: 17, fontWeight: '600' }}>{tr('{0} audio files', { 0: audio.length })}</Text>
           <Text style={ss.meta}>{tr('Sorted by file name: one section per file.')}</Text>
           {!drafts && <Btn label={tr('Add the book’s text (EPUB or PDF, optional)')} onPress={addText} />}
         </View>
       )}
       {drafts && (
         <>
-          <Text style={ss.h2}>{tr('Sections · {0} of {1}', { 0: kept, 1: drafts.length })}</Text>
+          <Text accessibilityRole="header" style={ss.h2}>{tr('Sections · {0} of {1}', { 0: kept, 1: drafts.length })}</Text>
           <Text style={ss.meta}>{tr('Tap to leave a section out (covers, contents, notes).')}</Text>
           <View style={ss.card}>
             {drafts.map((d, i) => (

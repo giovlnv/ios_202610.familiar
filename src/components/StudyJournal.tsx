@@ -1,5 +1,6 @@
 import { ReactNode, useState } from 'react';
-import { ActionSheetIOS, FlatList, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { ActionSheetIOS, FlatList, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { router, Stack } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { CardDraft, Flashcard, isDue, StudyNote, updateStudy, useStudy } from '../study';
@@ -155,7 +156,7 @@ export function JournalTabs({ tab, onTab }: { tab: 'readings' | 'notes' | 'cards
   return (
     <View style={s.tabs}>
       {items.map(([id, label, icon]) => (
-        <Pressable key={id} style={[s.tab, tab === id && s.tabOn]} onPress={() => onTab(id)}>
+        <Pressable key={id} accessibilityState={{ selected: tab === id }} style={[s.tab, tab === id && s.tabOn]} onPress={() => onTab(id)}>
           <Ionicons name={icon} size={15} color={tab === id ? c.bg : c.dim} />
           <Text style={[s.tabText, tab === id && { color: c.bg }]}>{tr(label)}</Text>
         </Pressable>
@@ -172,17 +173,17 @@ const s = themed(() => ({
   tabText: { color: c.dim, fontSize: 13, fontWeight: '600' },
   chips: { flexDirection: 'row', gap: 8 },
   review: { flexDirection: 'row', alignItems: 'center', backgroundColor: c.panel, borderRadius: 14, padding: 14, gap: 12 },
-  big: { color: c.gold, fontSize: 30, fontFamily: F.heading },
-  meta: { color: c.dim, fontSize: 14, textAlign: 'center' },
+  big: { color: c.gold, fontSize: 28, fontFamily: F.heading },
+  meta: { color: c.dim, fontSize: 15, textAlign: 'center' },
   go: { flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: c.gold, borderRadius: 18, paddingVertical: 9, paddingHorizontal: 16 },
   goText: { color: c.bg, fontWeight: '700', fontSize: 15 },
   search: { flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: c.panel, borderRadius: 10, paddingHorizontal: 10 },
   searchInput: { flex: 1, color: c.text, paddingVertical: 9, fontSize: 15 },
   row: { flexDirection: 'row', gap: 10, backgroundColor: c.panel, borderRadius: 12, padding: 12 },
   dot: { width: 8, height: 8, borderRadius: 4, marginTop: 7 },
-  title: { color: c.text, fontSize: 16, fontFamily: F.heading },
-  text: { color: c.dim, fontSize: 14, lineHeight: 19 },
-  small: { color: c.dim, fontSize: 12 },
+  title: { color: c.text, fontSize: 17, fontFamily: F.heading },
+  text: { color: c.dim, fontSize: 15, lineHeight: 20 },
+  small: { color: c.dim, fontSize: 13 },
   empty: { alignItems: 'center', gap: 12, paddingVertical: 40, paddingHorizontal: 24 },
 }));
 
@@ -196,7 +197,7 @@ export function StudyDay({ id }: { id: string }) {
   if (!sub) return null;
   return (
     <View style={{ gap: 10, paddingVertical: 6 }}>
-      <Text style={[s.small, { color: sub.color, fontWeight: '700', letterSpacing: 1, textTransform: 'uppercase' }]}>{sub.name}</Text>
+      <Text style={[s.small, { color: sub.color, fontWeight: '700' }]}>{sub.name}</Text>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
         <View style={{ flex: 1 }}>
           <Text style={s.big}>{due}</Text>
