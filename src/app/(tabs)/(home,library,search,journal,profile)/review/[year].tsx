@@ -2,12 +2,12 @@ import { t as tr } from '../../../../i18n';
 import { usePad } from '../../../../playback';
 import { useMemo } from "react";
 import {
-  Pressable,
   ScrollView,
   Text,
   useWindowDimensions,
   View,
 } from "react-native";
+import { Pressable } from "../../../../components/Pressable";
 import { router, Stack, useLocalSearchParams } from "expo-router";
 import { daysBetween, load, TBook } from "../../../../tracker";
 import { Cover, Stars } from "../../../../components/ui";
@@ -132,7 +132,7 @@ export default function Review() {
 
       {best.length > 0 && (
         <>
-          <Text style={s.h2}>{tr("Highest rated")}</Text>
+          <Text accessibilityRole="header" style={s.h2}>{tr("Highest rated")}</Text>
           {best.map((x) => (
             <Pressable key={x.l.id} style={s.row} onPress={() => open(x.b.id)}>
               <Cover book={x.b} width={44} />
@@ -188,7 +188,7 @@ export default function Review() {
         </View>
       )}
 
-      {read.length > 0 && <Text style={s.h2}>{tr("Every book, in order")}</Text>}
+      {read.length > 0 && <Text accessibilityRole="header" style={s.h2}>{tr("Every book, in order")}</Text>}
       <View style={s.grid}>
         {read.map((x) => (
           <Pressable key={x.l.id} onPress={() => open(x.b.id)}>
@@ -220,12 +220,12 @@ const s = themed(() => ({
     borderRadius: 12,
     padding: 14,
   },
-  factNum: { color: c.gold, fontSize: 30, fontWeight: "800" },
+  factNum: { color: c.gold, fontSize: 28, fontFamily: F.heading, fontVariant: ["lining-nums"] },
   dim: { color: c.dim },
-  p: { color: c.dim, marginTop: 20, fontSize: 16 },
+  p: { color: c.dim, marginTop: 20, fontSize: 17 },
   h2: {
     color: c.text,
-    fontSize: 19,
+    fontSize: 22,
     marginTop: 24,
     marginBottom: 10, fontFamily: F.heading },
   row: {

@@ -1,6 +1,7 @@
 import { t as tr } from '../../../i18n';
 import { useCallback, useState } from 'react';
-import { Alert, FlatList, Pressable, Text, View } from 'react-native';
+import { Alert, FlatList, Text, View } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import { router, Stack, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { addList, load, Tracker } from '../../../tracker';
@@ -64,6 +65,6 @@ const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg },
   card: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 12, padding: 12 },
   covers: { flexDirection: 'row', minWidth: 44 },
-  title: { color: c.text, fontSize: 16, fontWeight: '600' },
+  title: { color: c.text, fontSize: 17, fontWeight: '600' },
   dim: { color: c.dim, fontSize: 13 },
 }));

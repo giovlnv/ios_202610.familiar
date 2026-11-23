@@ -1,4 +1,4 @@
-import { t as tr } from '../../../../i18n';
+import { t as tr, errorText } from '../../../../i18n';
 import { useCallback, useState } from 'react';
 import { ActivityIndicator, Alert, Text, TextInput, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
@@ -31,7 +31,7 @@ function KeyCard({ p, has, onSaved }: { p: Provider; has: boolean; onSaved: () =
   const save = (k: string) => setKey(p, k).then(() => (setDraft(''), onSaved()));
   return (
     <View style={ss.card}>
-      <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{PROVIDER_NAME[p]}</Text>
+      <Text style={{ color: c.text, fontSize: 17, fontWeight: '600' }}>{PROVIDER_NAME[p]}</Text>
       <Text style={ss.meta}>{tr("Status:")}{' '}{has ? tr("key saved") : tr("no key")}</Text>
       <TextInput
         style={ss.input}
@@ -68,7 +68,7 @@ export default function CloudVoices() {
     setBusy('eleven');
     elevenVoices(k)
       .then(setEleven)
-      .catch((e) => Alert.alert(tr("Could not load voices"), String(e.message ?? e)))
+      .catch((e) => Alert.alert(tr("Couldn’t load the voices"), errorText(e)))
       .finally(() => setBusy(null));
   };
 
@@ -90,7 +90,7 @@ export default function CloudVoices() {
     setBusy(lang);
     testVoice(ch, k)
       .then((ok) => Alert.alert(ok ? tr("It works") : tr("No audio came back")))
-      .catch((e) => Alert.alert(tr("It did not work"), String(e.message ?? e)))
+      .catch((e) => Alert.alert(tr("The voice didn’t work"), errorText(e)))
       .finally(() => setBusy(null));
   };
 
@@ -103,12 +103,12 @@ export default function CloudVoices() {
         <KeyCard key={p} p={p} has={keys[p]} onSaved={refresh} />
       ))}
       {!!cloudError() && <Text style={[ss.meta, { color: '#E07A7A' }]}>{tr("Last error ·")}{' '}{cloudError()}</Text>}
-      <Text style={ss.h2}>{tr("Voice per language")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Voice per language")}</Text>
       {LANGS.map((l) => {
         const ch = prefs[l.book];
         return (
           <View key={l.book} style={ss.card}>
-            <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{l.name}</Text>
+            <Text style={{ color: c.text, fontSize: 17, fontWeight: '600' }}>{l.name}</Text>
             <View style={row}>
               <Chip label={tr("This iPhone")} on={!ch} onPress={() => choose(l.book, null)} />
               {PROVIDERS.filter((p) => keys[p]).map((p) => (

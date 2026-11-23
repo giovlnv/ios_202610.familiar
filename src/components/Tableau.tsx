@@ -1,6 +1,7 @@
 import { t as tr } from '../i18n';
 import { useState } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { CardImage } from './Cards';
 import { Chip } from './ui';
@@ -105,12 +106,12 @@ const s = themed(() => ({
   near: { borderColor: c.claude },
   empty: { borderWidth: 1, borderStyle: 'dashed', borderColor: c.line, borderRadius: 4, alignItems: 'center', justifyContent: 'center' },
   emptyNum: { color: c.dim, fontSize: 11 },
-  num: { color: c.dim, fontSize: 10, marginTop: 1 },
+  num: { color: c.dim, fontSize: 11, marginTop: 1 },
   info: { backgroundColor: c.panel, borderRadius: 12, padding: 12, gap: 4 },
-  infoHead: { color: c.gold, fontSize: 12, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1 },
-  infoText: { color: c.text, fontSize: 14, lineHeight: 20 },
+  infoHead: { color: c.gold, fontSize: 13, fontWeight: '700' },
+  infoText: { color: c.text, fontSize: 15, lineHeight: 21 },
   more: { flexDirection: 'row', alignItems: 'center', gap: 2, alignSelf: 'flex-end' },
   moreText: { color: c.gold, fontWeight: '600', fontSize: 13 },
-  hint: { color: c.dim, fontSize: 12 },
+  hint: { color: c.dim, fontSize: 13 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
 }));

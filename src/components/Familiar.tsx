@@ -1,6 +1,7 @@
 import { t as tr } from '../i18n';
 import { useEffect, useMemo, useState } from 'react';
-import { AccessibilityInfo, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { AccessibilityInfo, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { SvgXml } from 'react-native-svg';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { COATS, COLORS, Element, EYES, Familiar, familiarXml, Mark, LIGHTS, MARK_COLORS, MARKS, Pose, SPECIES, STRIPES, sunSign } from '../familiar';
@@ -156,7 +157,7 @@ export function ShapeCoatStep({ f, set }: StepProps) {
       {cat && (
         <View style={s.seg}>
           {(['round', 'slim'] as const).map((b) => (
-            <Pressable key={b} style={[s.segItem, f.build === b && s.segOn]} onPress={() => set({ build: b })}>
+            <Pressable key={b} accessibilityState={{ selected: f.build === b }} style={[s.segItem, f.build === b && s.segOn]} onPress={() => set({ build: b })}>
               <Text style={[s.segText, f.build === b && s.segTextOn]}>{b === 'round' ? tr("Round") : tr("Slim")}</Text>
             </Pressable>
           ))}
@@ -164,7 +165,7 @@ export function ShapeCoatStep({ f, set }: StepProps) {
       )}
       {cat && (
         <>
-          <Label>{tr("COAT")}</Label>
+          <Label>{tr("Coat")}</Label>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8 }}>
             {COATS.map((co) => (
               <Card key={co.id} on={f.coat === co.id} style={s.coat} onPress={() => set({ coat: co.id })}>
@@ -175,11 +176,11 @@ export function ShapeCoatStep({ f, set }: StepProps) {
           </ScrollView>
         </>
       )}
-      <Label>{cat && f.coat === 'colourpoint' ? tr("POINTS COLOUR") : tr("COLOUR")}</Label>
+      <Label>{cat && f.coat === 'colourpoint' ? tr("Points colour") : tr("Colour")}</Label>
       <Swatches list={COLORS[f.species]} value={f.color} onPick={(hex) => set({ color: hex })} />
       {cat && f.coat === 'tabby' && (
         <>
-          <Label>{tr("STRIPES")}</Label>
+          <Label>{tr("Stripes")}</Label>
           <View style={s.swatches}>
             {STRIPES.map((x) => (
               <Pressable key={x.name} onPress={() => set({ stripe: x.hex || undefined })} style={{ alignItems: 'center', gap: 4 }} accessibilityLabel={`${x.name} stripes`}>
@@ -194,7 +195,7 @@ export function ShapeCoatStep({ f, set }: StepProps) {
       )}
       {cat && f.coat === 'colourpoint' && (
         <>
-          <Label>{tr("BODY COLOUR")}</Label>
+          <Label>{tr("Body colour")}</Label>
           <Swatches list={LIGHTS.map((hex) => ({ hex, name: hex }))} value={f.light ?? LIGHTS[0]} onPick={(hex) => set({ light: hex })} />
         </>
       )}
@@ -223,7 +224,7 @@ export function EyesMarkStep({ f, set }: StepProps) {
   return (
     <View style={{ gap: 14 }}>
       <Preview f={f} />
-      <Label>{tr("EYES")}</Label>
+      <Label>{tr("Eyes")}</Label>
       <View style={s.swatches}>
         {EYES.map((e) => (
           <Pressable key={e.hex} onPress={() => set({ eyes: e.hex })} style={{ alignItems: 'center', gap: 4 }}>
@@ -232,7 +233,7 @@ export function EyesMarkStep({ f, set }: StepProps) {
           </Pressable>
         ))}
       </View>
-      <Label>{tr("MARK")}</Label>
+      <Label>{tr("Mark")}</Label>
       <View style={s.row}>
         {MARKS.map((m) => (
           <Card key={m.id} on={f.mark === m.id} style={{ flex: 1, paddingVertical: 10 }} onPress={() => set({ mark: m.id })}>
@@ -243,7 +244,7 @@ export function EyesMarkStep({ f, set }: StepProps) {
       </View>
       {f.mark !== 'none' && (
         <>
-          <Label>{tr("MARK COLOUR")}</Label>
+          <Label>{tr("Mark colour")}</Label>
           <View style={s.swatches}>
             {MARK_COLORS.map((m) => (
               <Pressable key={m.hex} onPress={() => set({ markColor: m.hex })} style={{ alignItems: 'center', gap: 4 }} accessibilityLabel={m.name}>
@@ -266,7 +267,7 @@ export function NameStep({ f, set }: StepProps) {
       <View style={{ alignItems: 'center' }}>
         <FamiliarArt familiar={f} size={190} vial />
       </View>
-      <Label>{tr("NAME")}</Label>
+      <Label>{tr("Name")}</Label>
       <TextInput
         style={s.input}
         value={f.name}
@@ -289,20 +290,20 @@ export function NameStep({ f, set }: StepProps) {
 }
 
 export const s = themed(() => ({
-  label: { color: c.dim, fontSize: 11, fontWeight: '700', letterSpacing: 1 },
+  label: { color: c.dim, fontSize: 13, fontWeight: '700' },
   card: { backgroundColor: c.panel, borderRadius: 14, padding: 12, alignItems: 'center', gap: 4, borderWidth: 2, borderColor: 'transparent' },
   cardOn: { borderColor: c.gold },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
   half: { width: '48%', flexGrow: 1 },
   locked: { width: '100%', flexDirection: 'row', alignItems: 'center', gap: 10, opacity: 0.7 },
   title: { color: c.text, fontSize: 15, fontWeight: '600' },
-  dim: { color: c.dim, fontSize: 12 },
-  small: { color: c.dim, fontSize: 11, fontWeight: '500' },
+  dim: { color: c.dim, fontSize: 13 },
+  small: { color: c.dim, fontSize: 11 },
   preview: { backgroundColor: c.panel, borderRadius: 20, alignItems: 'center', paddingVertical: 6 },
   seg: { flexDirection: 'row', backgroundColor: c.panel, borderRadius: 12, padding: 4, gap: 4 },
   segItem: { flex: 1, paddingVertical: 9, borderRadius: 9, alignItems: 'center' },
   segOn: { backgroundColor: c.gold },
-  segText: { color: c.text, fontWeight: '600' },
+  segText: { fontSize: 15, color: c.text, fontWeight: '600' },
   segTextOn: { color: c.bg },
   coat: { width: 76, paddingVertical: 6 },
   swatches: { flexDirection: 'row', gap: 14, flexWrap: 'wrap' },

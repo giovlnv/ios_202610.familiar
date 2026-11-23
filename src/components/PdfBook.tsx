@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import { router, Stack } from 'expo-router';
 import { File } from 'expo-file-system';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -79,5 +80,5 @@ const s = themed(() => ({
   bar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 12, paddingVertical: 10, paddingBottom: 28, backgroundColor: c.panel, borderTopWidth: 1, borderTopColor: c.line },
   pager: { color: c.dim, fontSize: 13 },
   listen: { flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: c.gold, borderRadius: 16, paddingVertical: 7, paddingHorizontal: 14 },
-  listenText: { color: c.bg, fontSize: 14, fontWeight: '600' },
+  listenText: { color: c.bg, fontSize: 15, fontWeight: '600' },
 }));

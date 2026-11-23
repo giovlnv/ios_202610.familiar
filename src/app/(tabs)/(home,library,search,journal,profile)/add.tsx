@@ -13,7 +13,7 @@ export default function AddBook() {
     <ScrollView style={s.wrap} contentContainerStyle={{ gap: 14, paddingBottom: pad + 24 }}>
       <View style={s.box}>
         <Ionicons name="library-outline" size={28} color={c.gold} />
-        <Text style={s.title}>{tr("Books now come from calliope")}</Text>
+        <Text accessibilityRole="header" style={s.title}>{tr("Books now come from calliope")}</Text>
         <Text style={s.p}>
           {tr("Adding a book from here is paused. Put the EPUB in calibre on ares with the type nonfiction.tarot: Kokoro voices it at night, and it shows up in your library by itself.")}
         </Text>

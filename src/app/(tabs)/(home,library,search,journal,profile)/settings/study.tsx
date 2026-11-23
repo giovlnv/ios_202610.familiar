@@ -1,4 +1,5 @@
-import { Alert, Pressable, Text, View } from 'react-native';
+import { Alert, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { patchSubject, removeSubject, SUBJECT_COLORS, updateStudy, useStudy } from '../../../../study';
 import { getOnboarding, setOnboarding } from '../../../../familiar';
@@ -16,7 +17,7 @@ export default function StudySettings() {
     Alert.alert(tr('Delete {0}?', { 0: name }), tr('Its {0} notes and {1} flashcards are deleted too. Books stay in your library.', { 0: n, 1: k }), [
       { text: tr('Cancel'), style: 'cancel' },
       {
-        text: tr('Delete'),
+        text: tr('Delete subject'),
         style: 'destructive',
         onPress: () => {
           removeSubject(id);
@@ -35,7 +36,7 @@ export default function StudySettings() {
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
             <Ionicons name="book-outline" size={20} color={x.color} />
             <Pressable style={{ flex: 1 }} onPress={() => Alert.prompt(tr('Rename'), undefined, (n) => n?.trim() && patchSubject(x.id, { name: n.trim() }), 'plain-text', x.name)}>
-              <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{x.name}</Text>
+              <Text style={{ color: c.text, fontSize: 17, fontWeight: '600' }}>{x.name}</Text>
               <Text style={ss.meta}>
                 {tr('{0} notes · {1} flashcards', { 0: d.notes.filter((n) => n.subject === x.id).length, 1: d.cards.filter((k) => k.subject === x.id).length })}
               </Text>
@@ -52,7 +53,7 @@ export default function StudySettings() {
         </View>
       ))}
       <Btn label={tr('New subject')} primary onPress={() => promptSubject()} />
-      <Text style={ss.h2}>{tr('Flashcard review')}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr('Flashcard review')}</Text>
       <View style={ss.row}>
         <Chip label={tr('Spaced')} on={d.review === 'spaced'} onPress={() => updateStudy((x) => (x.review = 'spaced'))} />
         <Chip label={tr('Simple')} on={d.review === 'simple'} onPress={() => updateStudy((x) => (x.review = 'simple'))} />

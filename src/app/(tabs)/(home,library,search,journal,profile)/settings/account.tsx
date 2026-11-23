@@ -10,7 +10,7 @@ export default function Account() {
 
   return (
     <Page>
-      <Text style={ss.h2}>{tr("Claude chat")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Claude chat")}</Text>
       <Text style={ss.p}>{tr("“Send to Claude” copies the message and opens this chat. Paste it there.")}</Text>
       <View style={ss.card}>
         <TextInput

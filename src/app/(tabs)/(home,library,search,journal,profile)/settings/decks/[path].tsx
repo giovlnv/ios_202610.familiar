@@ -1,6 +1,7 @@
-import { t as tr } from '../../../../../i18n';
-import { useState } from 'react';
-import { Alert, Pressable, Text, View } from 'react-native';
+import { t as tr, errorText } from '../../../../../i18n';
+import { useRef, useState } from 'react';
+import { Alert, Text, View } from 'react-native';
+import { Pressable } from '../../../../../components/Pressable';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { createSystem, defaultDeck, deleteDeck, downloadLenormand, importDeckFromFiles, importDeckFromUrl, LENORMAND_DECK, listDecks, setDefaultDeck } from '../../../../../decks';
@@ -73,25 +74,28 @@ function LenormandDecks() {
   const def = defaultDeck('lenormand');
   const [msg, setMsg] = useState('');
   const [browse, setBrowse] = useState<string | null>(null);
+  const downloading = useRef(false);
+  const progress = (m: string) => ((downloading.current = true), setMsg(m));
   const [prefs, setPrefs] = useState(lenormandPrefs);
   const setPref = (p: Parameters<typeof setLenormandPrefs>[0]) => (setLenormandPrefs(p), setPrefs(lenormandPrefs()));
   const run = async (fn: () => Promise<unknown>) => {
     try {
       await fn();
     } catch (e) {
-      Alert.alert(tr("Deck"), String((e as Error).message ?? e));
+      Alert.alert(tr("Couldn’t add the deck"), errorText(e));
     } finally {
-      setMsg((m) => (m.startsWith('Downloading') ? '' : m));
+      setMsg((m) => (downloading.current ? '' : m));
+      downloading.current = false;
     }
   };
   const report = (r: { matched: number; skipped: string[] } | null) =>
-    r && setMsg(`${r.matched} of 36 cards found${r.skipped.length ? ` · ${r.skipped.length} files not recognised` : ''}`);
+    r && ((downloading.current = false), setMsg(`${tr('{0} of {1} cards found', { 0: r.matched, 1: 36 })}${r.skipped.length ? ` · ${r.skipped.length === 1 ? tr('1 file not recognised') : tr('{0} files not recognised', { 0: r.skipped.length })}` : ''}`));
   const askName = (then: (name: string) => void) => Alert.prompt(tr("Deck name"), undefined, (n) => n?.trim() && then(n.trim()), 'plain-text', '');
 
   return (
     <Page>
       <Stack.Screen options={{ title: tr("Lenormand") }} />
-      <Text style={ss.h2}>{tr("Decks")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Decks")}</Text>
       <Text style={ss.p}>{tr("The default deck is used for every Lenormand card in the app. Lenormand cards are never reversed.")}</Text>
       <View style={[ss.card, { gap: 2 }]}>
         {decks.map((d) => (
@@ -121,7 +125,7 @@ function LenormandDecks() {
         {!!msg && <Text style={ss.meta}>{msg}</Text>}
         <View style={[ss.row, { marginTop: 8 }]}>
           {!decks.some((d) => d.id === LENORMAND_DECK && d.cards.length === 36) && (
-            <Btn label={tr("Get Dondorf (1910)")} primary onPress={() => run(() => downloadLenormand((n, t) => setMsg(`Downloading ${n}/${t}`)))} />
+            <Btn label={tr("Get Dondorf (1910)")} primary onPress={() => run(() => downloadLenormand((n, t) => progress(tr('Downloading {0} of {1}…', { 0: n, 1: t }))))} />
           )}
           <Btn label={tr("Import from Files")} onPress={() => askName((n) => run(async () => report(await importDeckFromFiles(n, 'lenormand'))))} />
           <Btn
@@ -129,7 +133,7 @@ function LenormandDecks() {
             onPress={() =>
               askName((n) =>
                 Alert.prompt(tr("Zip link"), tr("A direct link to a .zip of card images"), (url) =>
-                  url?.trim() && run(async () => (setMsg('Downloading…'), report(await importDeckFromUrl(n, url.trim(), 'lenormand')))),
+                  url?.trim() && run(async () => (progress(tr('Downloading…')), report(await importDeckFromUrl(n, url.trim(), 'lenormand')))),
                 ),
               )
             }
@@ -141,7 +145,7 @@ function LenormandDecks() {
         </Text>
       </View>
 
-      <Text style={ss.h2}>{tr("Card names")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Card names")}</Text>
       <View style={ss.card}>
         <View style={ss.row}>
           <Chip label={tr("Português")} on={prefs.names === 'pt'} onPress={() => setPref({ names: 'pt' })} />
@@ -150,7 +154,7 @@ function LenormandDecks() {
         <Text style={ss.meta}>{tr("Brazilian names (O Cavaleiro, A Cigana) or English (Rider, Lady). Search finds both.")}</Text>
       </View>
 
-      <Text style={ss.h2}>{tr("Significator")}</Text>
+      <Text accessibilityRole="header" style={ss.h2}>{tr("Significator")}</Text>
       <View style={ss.card}>
         <View style={ss.row}>
           <Chip label={tr("29 · A Cigana")} on={prefs.significator === 'l29'} onPress={() => setPref({ significator: 'l29' })} />

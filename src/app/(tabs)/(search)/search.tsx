@@ -1,5 +1,6 @@
 import { t as tr } from '../../../i18n';
-import { Alert, Pressable, Text } from 'react-native';
+import { Alert, Text } from 'react-native';
+import { Pressable } from '../../../components/Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { c } from '../../../theme';
 import { router } from 'expo-router';

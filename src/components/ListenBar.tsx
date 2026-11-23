@@ -1,6 +1,7 @@
-import { t as tr } from '../i18n';
+import { t as tr, errorText } from '../i18n';
 import { useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, Pressable, Text, View } from 'react-native';
+import { ActivityIndicator, Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { File, Paths } from 'expo-file-system';
 import { AudioPlayer, createAudioPlayer } from 'expo-audio';
@@ -39,7 +40,7 @@ export default function ListenBar({ text }: { text: string }) {
     if (state === 'paused') return (player.current?.play(), setState('playing'));
     const f = new File(Paths.cache, `explain-${hash(chosenVoice(langOf('en')) + text)}.m4a`);
     if (f.exists) return play(f.uri);
-    if (!tts.isReady || !tts.synthesize) return setMsg('The voice is still loading…');
+    if (!tts.isReady || !tts.synthesize) return setMsg(tr('The voice is still loading…'));
     setState('making');
     try {
       const parts: Float32Array[] = [];
@@ -47,14 +48,14 @@ export default function ListenBar({ text }: { text: string }) {
       for await (const ch of tts.synthesize(text, { voice: chosenVoice(langOf('en')) as never, speed: 1 })) {
         parts.push(ch.audio);
         rate = ch.sampleRate;
-        setMsg(`Preparing ${ch.chunkIndex + 1} of ${ch.totalChunks}`);
+        setMsg(tr('Preparing {0} of {1}…', { 0: ch.chunkIndex + 1, 1: ch.totalChunks }));
       }
       await saveM4a(parts, rate, f);
       setMsg('');
       play(f.uri);
     } catch (e) {
       setState('idle');
-      setMsg(`Couldn’t make the audio (${String((e as Error).message ?? e)})`);
+      setMsg(`${tr('Couldn’t make the audio.')} ${errorText(e)}`);
     }
   };
 
@@ -63,7 +64,7 @@ export default function ListenBar({ text }: { text: string }) {
   const pct = Math.min(100, Math.round(raw > 1 ? raw : raw * 100));
   return (
     <View style={s.bar}>
-      <Pressable style={s.play} onPress={start} disabled={state === 'making'} accessibilityLabel={tr("Listen")}>
+      <Pressable style={s.play} onPress={start} disabled={state === 'making'} accessibilityLabel={state === 'playing' ? tr("Pause") : tr("Listen")} accessibilityState={{ busy: state === 'making' }}>
         {state === 'making' ? <ActivityIndicator color={c.bg} /> : <Ionicons name={state === 'playing' ? 'pause' : 'play'} size={20} color={c.bg} />}
       </Pressable>
       <Text style={s.text}>
@@ -76,5 +77,5 @@ export default function ListenBar({ text }: { text: string }) {
 const s = themed(() => ({
   bar: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: c.panel, borderRadius: 12, padding: 10 },
   play: { width: 40, height: 40, borderRadius: 20, backgroundColor: c.gold, alignItems: 'center', justifyContent: 'center' },
-  text: { color: c.text, fontSize: 14, flex: 1 },
+  text: { color: c.text, fontSize: 15, flex: 1 },
 }));

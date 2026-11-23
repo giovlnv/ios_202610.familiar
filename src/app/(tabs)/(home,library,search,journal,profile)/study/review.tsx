@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { CardDraft, dueCards, grade, loadStudy, subjectOf, useStudy } from '../../../../study';
@@ -56,7 +57,7 @@ export default function Review() {
       {!card ? (
         <View style={s.done}>
           <Ionicons name="checkmark-circle-outline" size={48} color={c.gold} />
-          <Text style={s.doneTitle}>{queue.length ? tr('Done for now') : tr('Nothing to review')}</Text>
+          <Text accessibilityRole="header" style={s.doneTitle}>{queue.length ? tr('Done for now') : tr('Nothing to review')}</Text>
           {queue.length > 0 && <Text style={s.meta}>{tr('{0} got it · {1} again', { 0: score.ok, 1: score.again })}</Text>}
           <Pressable style={s.btn} onPress={() => router.back()}>
             <Text style={s.btnText}>{tr('Back')}</Text>
@@ -93,15 +94,15 @@ export default function Review() {
 
 const s = themed(() => ({
   wrap: { flex: 1, backgroundColor: c.bg, padding: 16, gap: 14 },
-  meta: { color: c.dim, fontSize: 14, textAlign: 'center' },
+  meta: { color: c.dim, fontSize: 15, textAlign: 'center' },
   card: { flex: 1, backgroundColor: c.panel, borderRadius: 20, borderWidth: 1, padding: 22 },
   front: { color: c.text, fontSize: 22, fontFamily: F.heading, textAlign: 'center' },
   back: { color: c.text, fontSize: 17, lineHeight: 25, textAlign: 'center' },
-  hint: { color: c.dim, fontSize: 14, textAlign: 'center' },
+  hint: { color: c.dim, fontSize: 15, textAlign: 'center' },
   row: { flexDirection: 'row', gap: 12 },
   btn: { flex: 1, alignItems: 'center', backgroundColor: c.gold, borderRadius: 14, paddingVertical: 14, paddingHorizontal: 24 },
   again: { backgroundColor: c.raised },
-  btnText: { color: c.bg, fontWeight: '700', fontSize: 16 },
+  btnText: { color: c.bg, fontWeight: '700', fontSize: 17 },
   done: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 },
   doneTitle: { color: c.text, fontSize: 22, fontFamily: F.heading },
 }));

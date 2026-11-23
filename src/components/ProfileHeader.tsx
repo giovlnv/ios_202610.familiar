@@ -2,7 +2,8 @@ import { pronounLabel, t as tr } from '../i18n';
 import { streaks } from '../streaks';
 import { useCallback, useState } from 'react';
 import { Href, router, useFocusEffect } from 'expo-router';
-import { Image, Pressable, Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
+import { Pressable } from './Pressable';
 import * as ImagePicker from 'expo-image-picker';
 import { File, Paths } from 'expo-file-system';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -241,8 +242,8 @@ export default function ProfileHeader() {
   return (
     <View style={s.head}>
       <Pressable style={s.top} onPress={() => router.push('/settings/profile')}>
-        <Avatar photo={p.photo} name={p.name} size={84} />
-        <FamiliarArt familiar={currentGuide()} pose={playing ? 'reading' : nightNow() ? 'sleeping' : 'idle'} size={84} vial alive />
+        <Avatar photo={p.photo} name={p.name} size={72} />
+        <FamiliarArt familiar={currentGuide()} pose={playing ? 'reading' : nightNow() ? 'sleeping' : 'idle'} size={72} vial alive />
         <View style={{ flex: 1 }}>
           <Text style={s.name}>{p.name || tr("Set up your profile")}</Text>
           <Text style={s.user}>{p.username ? `@${p.username}${p.pronouns ? ` · ${pronounLabel(p.pronouns)}` : ""}` : (pronounLabel(p.pronouns) ?? tr("Add a photo, name and username"))}</Text>
@@ -294,17 +295,17 @@ const s = themed(() => ({
   chipText: { fontSize: 13, fontWeight: '600' },
   tiles: { flexDirection: 'row', gap: 8 },
   tile: { flex: 1, backgroundColor: c.raised, borderRadius: 10, paddingVertical: 10, paddingHorizontal: 6, alignItems: 'center', gap: 2 },
-  tileValue: { color: c.gold, fontSize: 18, fontFamily: F.heading },
+  tileValue: { color: c.gold, fontSize: 17, fontFamily: F.heading },
   tileLabel: { color: c.dim, fontSize: 11 },
   line: { color: c.text, fontSize: 13 },
   more: { flexDirection: 'row', alignItems: 'center', gap: 4, alignSelf: 'flex-end' },
   moreText: { color: c.gold, fontWeight: '600', fontSize: 13 },
   cards: { flexDirection: 'row', justifyContent: 'space-around', gap: 8 },
   cardCol: { alignItems: 'center', gap: 4, flex: 1 },
-  cardLabel: { color: c.gold, fontSize: 11, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1 },
+  cardLabel: { color: c.gold, fontSize: 11, fontWeight: '700' },
   cardName: { color: c.text, fontSize: 13, fontFamily: F.heading, textAlign: 'center' },
   empty: { backgroundColor: c.raised, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: c.line },
   initial: { color: c.gold, fontWeight: '700' },
-  name: { color: c.text, fontSize: 21, fontWeight: '700' },
-  user: { color: c.dim, marginTop: 2 },
+  name: { color: c.text, fontSize: 22, fontFamily: F.heading },
+  user: { fontSize: 15, color: c.dim, marginTop: 2 },
 }));

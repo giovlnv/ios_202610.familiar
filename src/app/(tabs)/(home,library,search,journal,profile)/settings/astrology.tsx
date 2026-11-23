@@ -1,6 +1,7 @@
 import { t as tr } from '../../../../i18n';
 import { useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { Pressable } from '../../../../components/Pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { getOnboarding, setOnboarding } from '../../../../familiar';
 import { HOUSES } from '../../../../astrology';
@@ -23,7 +24,7 @@ export default function AstrologySettings() {
           <Pressable key={h.id} onPress={() => (setOnboarding({ houses: h.id }), setSys(h.id))} style={{ flexDirection: 'row', gap: 12, alignItems: 'center' }}>
             <Ionicons name={sys === h.id ? 'radio-button-on' : 'radio-button-off'} size={20} color={c.gold} />
             <View style={{ flex: 1 }}>
-              <Text style={{ color: c.text, fontSize: 16 }}>{h.name}</Text>
+              <Text style={{ color: c.text, fontSize: 17 }}>{h.name}</Text>
               <Text style={ss.meta}>{ABOUT[h.id]}</Text>
             </View>
           </Pressable>
